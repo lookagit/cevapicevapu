@@ -21,6 +21,9 @@
     "myScript": "npm run build && npm run server"
   },
   "devDependencies": {
+
+  },
+  "dependencies": {
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.0",
@@ -99,8 +102,5 @@
     "redux-thunk": "^2.2.0",
     "regenerator-runtime": "^0.10.5",
     "seamless-immutable": "^7.1.2",
-  },
-  "dependencies": {
-
   }
 }
