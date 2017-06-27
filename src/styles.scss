@@ -1,0 +1,278 @@
+$background: #ffc107;
+.example {
+  background-color: $background;
+}
+.sectionHeadlineMain {
+  .sectionHeadlineTitle {
+    text-align: center;
+    text-transform:uppercase;
+    margin-bottom: 10px;
+    font-size: 46px;
+    margin-top: 60px;
+  }
+  .sectionHeadlineInnerText {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top:0;
+    margin-bottom: 60px;
+    font-size:20px;
+  }
+}
+
+.threeGallery{
+  width: 100%;
+  display: flex;
+}
+
+.boxStylez{
+  width: 333px;
+  border: 5px solid white;
+  margin: 0 auto;
+  height: 330px;
+  overflow: hidden;
+  .bsPrice {
+    text-align: right;
+    margin-top: 0;
+    color: orange;
+  }
+  .bsText {
+    margin-bottom: 0;
+    font-weight: 100;
+    color: #300804;
+  }
+  .bsInnerInner {
+    height: 250px;
+    overflow: hidden;
+    .boxStylezInner {
+      width: 100%;
+      height: 250px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      -moz-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .boxStylezInner:hover {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.featured {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top:130px;
+  padding-bottom: 100px;
+  .featuredLeftImage{
+    max-width: 500px;
+    width:500px;
+    height: 500px;
+    background-size:cover;
+    float:left;
+    margin-right: 82px;
+  }
+  .featuredLeftText{
+    margin-top: 0px;
+    h2{
+      margin-top: 0px;
+      color: #363639;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 48px;
+    }
+    p{
+      font-weight: 500;
+      font-size: 19px;
+      color: #363639;
+    }
+    .buttonP {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 29px;
+      padding: 0;
+      font-size: 18px;
+      line-height: 26px;
+      margin-top: 50px;
+      a {
+        background: #363639;
+        border: 1px solid #363639;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #fff;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        line-height: 58px;
+        margin-top: 30px;
+        padding: 25px 47px;
+        text-transform: uppercase;
+        transition: .3s;
+      }
+      a:hover {
+        background: transparent;
+        border: 1px solid #363639;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: black;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        line-height: 58px;
+        margin-top: 30px;
+        padding: 25px 47px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+@-webkit-keyframes floating-arrow {
+    from {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
+    65% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px)
+    }
+    to {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
+}
+
+@keyframes floating-arrow {
+    from {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
+    65% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px)
+    }
+    to {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
+}
+
+@-webkit-keyframes floating-arrow-up {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px)
+    }
+    75% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
+}
+
+@keyframes floating-arrow-up {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px)
+    }
+    75% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px)
+    }
+}
+.mbrArrowFloating  {
+    bottom: 48px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    .mbrArrowIcon {
+      -webkit-animation: floating-arrow 1.6s infinite ease-in-out 0s;
+      animation: floating-arrow 1.6s infinite ease-in-out 0s;
+      background: hsla(0,0%,100%,.5);
+      border-radius: 3px;
+      color: #4d4d4d;
+      display: inline-block;
+      height: 46px;
+      outline-style: none!important;
+      position: relative;
+      text-decoration: none;
+      transition: all .3s ease-in-out;
+      width: 46px;
+    }
+    .mbrArrowIcon::before {
+        content: "\203a";
+        display: inline-block;
+        font-family: serif;
+        font-size: 32px;
+        line-height: 1;
+        font-style: normal;
+        left: 4px;
+        position: relative;
+        top: 6px;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+.footer{
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.95)
+    ), url('http://bizu.rs/wp-content/uploads/2017/02/footer-image.jpg');
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  .itemWrap{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top:50px;
+    padding-bottom: 50px;
+    display: flex;
+    .footerItem{
+      width: 300px;
+      margin: 0 auto;
+      h2{
+        font-size:20px;
+        font-weight: bolder;
+        color:orange;
+      }
+      p{
+        color:white;
+      }
+      a{
+        text-decoration: none;
+        color:orange;
+        font-size:15px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.botFooter{
+  background-color: #1c1c1e;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  p{
+    margin: 0;
+    color: #999;
+  }
+
+}

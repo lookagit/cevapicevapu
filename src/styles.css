@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:700,800');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+/* Define some variables we might want to use elsewhere */
+html, body {
+  height: 100%;
+  margin:0;
+}
+p, h1, h2, h3, h4, h5, span, a {
+  font-family: 'Lato', sans-serif;
+}
+#main {
+  height: 100%;
+}
+:root {
+  --fg: #0b2296;
+  --bg: #00bcd4;
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .caption {
+    position: absolute;
+    left:0;
+    top:50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    .caption span.border{
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+  }
+
+}
+.heroHomepage {
+  background-image: url("http://www.cevabdzinica.de/wp-content/uploads/2016/02/Cevapcici-beste-in-Muenchen-mit-Ajvar-Schmand-und-Brot-in-Butter-vom-Grill-IMG_3815-e1455037381718.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hello {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  h1 {
+    margin: 0;
+    /* Variables can be injected into our resulting CSS */
+    color: var(--fg);
+    font-size: 4rem;
+  }
+  /* We can nest other classnames, too, which are automatically hashed */
+  .logo {
+    width: 200px;
+    padding: 15px 15px 10px 15px;
+  }
+
+  ul {
+    margin-top:37px;
+    float:right;
+    padding-right: 10px;
+    li {
+      display: inline-block;
+      margin-right:5px;
+      border-radius:3px;
+
+      a {
+        font-size: 22px;
+        font-family: 'Kanit', sans-serif !important;
+        text-decoration: none;
+        color: #4d4d4d;
+        padding: 5px;
+      }
+      a:visited {
+        color: #4d4d4d;
+      }
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+/* We can define as many top-level classes as we like, and they will all
+be hashed in our HTML */
+.data {
+  li {
+    margin-bottom: 0.5em;
+    font-size: 1.4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+}
+
+.styleExamples {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+    padding: 10px;
+  }
+}
+
+.example {
+  background-color: var(--bg);
+}
