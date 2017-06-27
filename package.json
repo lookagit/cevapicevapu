@@ -101,6 +101,6 @@
     "redux": "^3.7.0",
     "redux-thunk": "^2.2.0",
     "regenerator-runtime": "^0.10.5",
-    "seamless-immutable": "^7.1.2",
+    "seamless-immutable": "^7.1.2"
   }
 }
