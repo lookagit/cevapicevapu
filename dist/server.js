@@ -721,7 +721,7 @@ const defaultHost = 'localhost';
 // types (browser, server, static) are catered for
 const defaultPorts = {
   production: {
-    server: 4000
+    server: 80,
   },
   development: {
     browser: 8080,
@@ -1945,7 +1945,7 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.ab5ed4b08eae7de6c
 
     var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
     doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
-  
+
 
     var names = {};
     function unique(defs) {
@@ -1973,7 +1973,7 @@ module.exports = doc;
 
     var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
     doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
-  
+
 
     var names = {};
     function unique(defs) {
@@ -1990,7 +1990,7 @@ module.exports = doc;
         }
       )
     }
-  
+
 module.exports = doc;
 
 /***/ }),
@@ -2063,19 +2063,19 @@ module.exports = require("react-dom/server");
 /* 44 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square");
+module.exports = require("react-icons/lib/fa/facebook-square.js");
 
 /***/ }),
 /* 45 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/instagram");
+module.exports = require("react-icons/lib/fa/instagram.js");
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square");
+module.exports = require("react-icons/lib/fa/youtube-square.js");
 
 /***/ }),
 /* 47 */
