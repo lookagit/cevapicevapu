@@ -31,7 +31,7 @@ import server, { createReactHandler, staticMiddleware } from './server';
 
 // Host and port -- from the environment
 const HOST = getHost();
-const PORT = getPort();
+const PORT = process.env.PORT || getPort();
 
 // Read in manifest files
 const [manifest, chunkManifest] = ['manifest', 'chunk-manifest'].map(
