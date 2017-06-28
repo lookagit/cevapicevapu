@@ -264,7 +264,7 @@ const HOST = (0, _env.getHost)();
 
 // Needed to read manifest files
 
-const PORT = (0, _env.getPort)();
+const PORT = process.env.PORT || (0, _env.getPort)();
 
 // Read in manifest files
 const [manifest, chunkManifest] = ['manifest', 'chunk-manifest'].map(name => JSON.parse((0, _fs.readFileSync)(_path2.default.resolve(_paths2.default.dist, `${name}.json`), 'utf8')));
@@ -721,7 +721,7 @@ const defaultHost = 'localhost';
 // types (browser, server, static) are catered for
 const defaultPorts = {
   production: {
-    server: process.env.PORT || 4000,
+    server: 4000
   },
   development: {
     browser: 8080,
@@ -1936,16 +1936,16 @@ exports.default = () => _react2.default.createElement(
 /* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/logodrama.ab5ed4b08eae7de6c7548f124be3d280.png";
+module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png";
 
 /***/ }),
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
-
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
+    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request"};
+  
 
     var names = {};
     function unique(defs) {
@@ -1971,9 +1971,9 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
-    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
-
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
+    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request"};
+  
 
     var names = {};
     function unique(defs) {
@@ -1990,7 +1990,7 @@ module.exports = doc;
         }
       )
     }
-
+  
 module.exports = doc;
 
 /***/ }),
@@ -2063,19 +2063,19 @@ module.exports = require("react-dom/server");
 /* 44 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square.js");
+module.exports = require("react-icons/lib/fa/facebook-square");
 
 /***/ }),
 /* 45 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/instagram.js");
+module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square.js");
+module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
 /* 47 */
