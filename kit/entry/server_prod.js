@@ -31,7 +31,7 @@ import server, { createReactHandler, staticMiddleware } from './server';
 
 // Host and port -- from the environment
 const HOST = getHost();
-const PORT = process.env.PORT || getPort();
+const PORT = process.env.PORT || 5000;
 
 // Read in manifest files
 const [manifest, chunkManifest] = ['manifest', 'chunk-manifest'].map(
@@ -56,11 +56,5 @@ server.then(({ router, app }) => {
     .use(router.routes())
     .use(router.allowedMethods());
 
-  app.listen({ host: HOST, port: PORT }, () => {
-    logServerStarted({
-      type: 'server',
-      host: HOST,
-      port: PORT,
-    });
-  });
+  app.listen(PORT);
 });
