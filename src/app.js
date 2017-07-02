@@ -155,10 +155,11 @@ export default () => (
       title="DRAMA Ćevapi"
       meta={[{
         name: 'description',
-        content: '100% organsko meso',
+        content: '100% organsko meso'
       }]} />
     <div className={css.hello}>
       <img src={logo} alt="Drama logo" className={css.logo} />
+      <div className={css.mobileIcon}>.</div>
       <ul>
       <li><Link to="/">Početna</Link></li>
       <li><Link to="/page/about">Jelovnik</Link></li>
