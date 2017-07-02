@@ -106,6 +106,7 @@ module.exports = {
 
 module.exports = {
 	"main": "main-vv2718wGHLD6lThS8mcwI",
+	"mobileIcon": "mobileIcon-2icoMzpdrZbPYIfQjxivTq",
 	"parallax": "parallax-3oYy3E6XoJCClgZR0R7xDr",
 	"caption": "caption-21tp0xAudjV1bavcaINc0T",
 	"border": "border-aQNY2OtxwHs6C26ekD14K",
@@ -114,7 +115,8 @@ module.exports = {
 	"logo": "logo-1tNzgJsJwXMqFQ0a4xMkPk",
 	"data": "data-1oklYPlS4mQJRj2Dp24Czw",
 	"styleExamples": "styleExamples-2cmVxjYoxVhR_tpCfyIq_T",
-	"example": "example-3quOHBYrr7YOUvefuRPyGa"
+	"example": "example-3quOHBYrr7YOUvefuRPyGa",
+	"showing": "showing-3xt5gLGL3jWtxcqt2fKVHR"
 };
 
 /***/ }),
@@ -1853,15 +1855,20 @@ exports.default = () => _react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(_reactHelmet2.default, {
-    title: 'ReactQL application',
+    title: 'DRAMA \u0106evapi',
     meta: [{
       name: 'description',
-      content: 'ReactQL starter kit app'
+      content: '100% organsko meso'
     }] }),
   _react2.default.createElement(
     'div',
     { className: _styles2.default.hello },
-    _react2.default.createElement('img', { src: _logodrama2.default, alt: 'ReactQL', className: _styles2.default.logo }),
+    _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo }),
+    _react2.default.createElement(
+      'div',
+      { className: _styles2.default.mobileIcon },
+      '.'
+    ),
     _react2.default.createElement(
       'ul',
       null,
@@ -1931,8 +1938,8 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
+    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request"};
   
 
     var names = {};
@@ -1959,8 +1966,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
-    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
+    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request"};
   
 
     var names = {};

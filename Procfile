@@ -1,1 +1,1 @@
-web: npm run myScript
+web: npm run server

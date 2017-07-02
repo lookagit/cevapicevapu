@@ -15,7 +15,30 @@ p, h1, h2, h3, h4, h5, span, a {
   --fg: #0b2296;
   --bg: #00bcd4;
 }
-
+.mobileIcon {
+	width: 100%;
+	text-align: right;
+	box-sizing: border-box;
+	cursor: pointer;
+	color: #fff;
+	display: none;
+	font-size: 20px;
+	font-family: bold;
+	margin: 2% 2%;
+	position: relative;
+	padding-left: 1.25em;
+}
+/* style of mobile icron */
+.mobileIcon:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.2em;
+	width: 1.2em;
+	height: 0.16em;
+	background: white;
+	box-shadow: 0 0.35em 0 0 white, 0 0.7em 0 0 white;
+}
 .parallax {
   position: relative;
   background-attachment: fixed;
@@ -55,16 +78,13 @@ p, h1, h2, h3, h4, h5, span, a {
   background: rgba(255,255,255,0.5);
   h1 {
     margin: 0;
-    /* Variables can be injected into our resulting CSS */
     color: var(--fg);
     font-size: 4rem;
   }
-  /* We can nest other classnames, too, which are automatically hashed */
   .logo {
     width: 200px;
     padding: 15px 15px 10px 15px;
   }
-
   ul {
     margin-top:37px;
     float:right;
@@ -73,7 +93,6 @@ p, h1, h2, h3, h4, h5, span, a {
       display: inline-block;
       margin-right:5px;
       border-radius:3px;
-
       a {
         font-size: 22px;
         font-family: 'Kanit', sans-serif !important;
@@ -90,9 +109,6 @@ p, h1, h2, h3, h4, h5, span, a {
     }
   }
 }
-
-/* We can define as many top-level classes as we like, and they will all
-be hashed in our HTML */
 .data {
   li {
     margin-bottom: 0.5em;
@@ -120,4 +136,41 @@ be hashed in our HTML */
 
 .example {
   background-color: var(--bg);
+}
+@media screen and (max-width: 943px) {
+  .mobileIcon {
+		display: block;
+	}
+  .hello {
+    width:100%;
+		background-color: #222;
+    display: block;
+    ul {
+      max-height: 0px;
+      padding: 0px;
+      overflow: hidden;
+      text-align: right;
+      padding: 1%;
+      margin-left: 0;
+      -webkit-transition: max-height 0.4s;
+      -ms-transition: max-height 0.4s;
+      -moz-transition: max-height 0.4s;
+      transition: max-height 0.4s;
+    }
+    ul li {
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center;
+    }
+    ul li:hover {
+      background-color: #fff;
+      width: 100%;
+      color: #70B8FF;
+    }
+    .showing {
+      max-height: 20em;
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+  }
 }
