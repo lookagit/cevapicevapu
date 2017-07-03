@@ -1,5 +1,5 @@
 import React from 'react';
-import scss from './styles.scss';
+import css from './styles.css';
 class SectionHeadline extends React.Component {
   constructor(props) {
     super(props);
@@ -24,9 +24,9 @@ class SectionHeadline extends React.Component {
   }
   render() {
     return (
-      <div className={scss.sectionHeadlineMain}>
-        <h1 className={scss.sectionHeadlineTitle}>{this.state.title}</h1>
-        <p className={scss.sectionHeadlineInnerText}>{this.state.innerText}</p>
+      <div className={css.sectionHeadlineMain}>
+        <h1 className={css.sectionHeadlineTitle}>{this.state.title}</h1>
+        <p className={css.sectionHeadlineInnerText}>{this.state.innerText}</p>
       </div>
     );
   }

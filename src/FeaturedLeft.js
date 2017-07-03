@@ -1,5 +1,5 @@
 import React from 'react';
-import scss from './styles.scss';
+import css from './styles.css';
 class FeaturedLeft extends React.Component {
   constructor(props) {
     super(props);
@@ -7,9 +7,9 @@ class FeaturedLeft extends React.Component {
   render() {
     return (
       <div style={{display: "flex", backgroundColor: "#f2ebe0"}}>
-        <div className={scss.featured}>
-          <div className={scss.featuredLeftImage} style={{backgroundImage: "url('pleska.jpg')"}}></div>
-          <div className={scss.featuredLeftText}>
+        <div className={css.featured}>
+          <div className={css.featuredLeftImage} style={{backgroundImage: "url('pleska.jpg')"}}></div>
+          <div className={css.featuredLeftText}>
             <h2>
               Osetite duh Sarajeva u centru Beograda
             </h2>
@@ -23,7 +23,7 @@ class FeaturedLeft extends React.Component {
               Power is lived means oh every in we quiet. Remainder provision an in intention.
               Saw supported too joy promotion engrossed propriety. Me till like it sure no sons.
             </p>
-            <p className={scss.buttonP}>
+            <p className={css.buttonP}>
               <a>
                 Pogledajte našu ponudu
               </a>

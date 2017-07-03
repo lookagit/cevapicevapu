@@ -12,25 +12,30 @@ import { NotFound, Redirect } from 'kit/lib/routing';
 import allMessages from 'src/queries/all_messages.gql';
 import './styles.global.css';
 import css from './styles.css';
-import logo from './logodrama.png';
 import Header from './Header.js';
 import SectionHeadline from './SectionHeadline';
 import ParalaxContainer from './ParalaxContainer.js';
 import ThreeGallery from './ThreeGallery.js';
 import FeaturedLeft from './FeaturedLeft.js';
 import Footer from './Footer.js';
+import MainMenu from './MainMenu.js';
+import DecisionRoute from './DecisionRoute.js';
+import ScrollableAnchor from 'react-scrollable-anchor'
 const stylee = {
-  backgroundImage : 'url("https://www.esnlund.org/sites/default/files/events/images/barbecue-07.jpg")',
+  backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
   height: '300px',
 }
 const sndlax = {
-  backgroundImage : 'url("https://mojkrug.rs/wp-content/uploads/2016/06/savcic-1.jpg")',
+  backgroundImage : 'url("/parallax-nova-drama-rostilj.jpg")',
   height: '350px',
 }
+
 const Home = () => (
   <div>
     <Header />
+    <ScrollableAnchor id={'section1'}>
     <SectionHeadline title="Ćevapi koje ćete voleti" innerText="100% organsko meso" />
+    </ScrollableAnchor>
     <ParalaxContainer stylee={stylee} />
     <SectionHeadline title="Najbolji ćevapi u gradu" innerText="Probajte obavežno" />
     <ThreeGallery />
@@ -42,9 +47,11 @@ const Home = () => (
 // Helper component that will be conditionally shown when the route matches.
 // This gives you an idea how React Router v4 works
 const Page = ({ match }) => (
-  <h1>Changed route: {match.params.name}</h1>
+  <DecisionRoute />
 );
-
+const Contact = ({ match }) => (
+  <h1>Contact</h1>
+);
 // Create a route that will be displayed when the code isn't found
 const WhenNotFound = () => (
   <NotFound>
@@ -146,6 +153,7 @@ class ReduxCounter extends React.PureComponent {
   }
 }
 
+
 // Export a simple component that allows clicking on list items to change
 // the route, along with a <Route> 'listener' that will conditionally display
 // the <Page> component based on the route name
@@ -157,19 +165,11 @@ export default () => (
         name: 'description',
         content: '100% organsko meso'
       }]} />
-    <div className={css.hello}>
-      <img src={logo} alt="Drama logo" className={css.logo} />
-      <div className={css.mobileIcon}>.</div>
-      <ul>
-      <li><Link to="/">Početna</Link></li>
-      <li><Link to="/page/about">Jelovnik</Link></li>
-      <li><Link to="/page/contact">O nama</Link></li>
-      <li><Link to="/old/path">Kontakt</Link></li>
-      </ul>
-    </div>
+    <MainMenu />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/page/:name" component={Page} />
+      <Route path="/page/about" component={Page} />
+      <Route path="/page/contact" component={Contact} />
       <Redirect from="/old/path" to="/new/path" />
       <Route component={WhenNotFound} />
     </Switch>

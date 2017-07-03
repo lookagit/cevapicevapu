@@ -1,11 +1,6 @@
 import React from 'react';
-import scss from './styles.scss';
+import css from './styles.css';
 import InstaImage from './InstaImage.js';
-const stylez = {
-  margin: "0 auto",
-  maxWidth: "1200px",
-  display: "flex",
-}
 const srcFirst = {
   backgroundImage:'url("http://www.lepaisrecna.rs/thumbnail.php?file=2017/05/najlepse_jelo_od_mlevenog_mesa_gurmanska_pljeskavica_sa_lukom_i_dimljenom_slaninom_recept_213236330.jpg&size=article_medium")',
 }
@@ -24,8 +19,8 @@ class ThreeGallery extends React.Component {
   }
   render() {
     return (
-      <div className={scss.threeGallery}>
-        <div style={stylez}>
+      <div className={css.threeGallery}>
+        <div className={css.flexo}>
           <InstaImage src={srcFirst} tekst="Gurmanska pljeskavica 300gr" />
           <InstaImage src={srcSecond} tekst="Leskovacka muckalica 300gr" />
           <InstaImage src={srcThird} tekst="10 ćevapa 300gr" />

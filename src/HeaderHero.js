@@ -10,7 +10,7 @@ class HeaderHero extends React.Component {
       <div>
        <div className={css.heroHomepage}>
          <div className={scss.mbrArrowFloating}>
-          <a className={scss.mbrArrowIcon}></a>
+          <a href="#section1" className={scss.mbrArrowIcon}></a>
          </div>
        </div>
       </div>
