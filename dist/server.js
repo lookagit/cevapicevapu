@@ -1162,7 +1162,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: '\u0106evapi sa srcem za sva\u010Diju du\u0161u', bgImage: { backgroundImage: 'url(http://sarajevski-cevapi.com/wp-content/uploads/2013/12/cevapi03-950x350.jpg)' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: '\u0106evapi sa srcem za sva\u010Diju du\u0161u', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama.jpg")' } }),
       _react2.default.createElement(_ContentBoxes2.default, null)
     );
   }
@@ -1564,7 +1564,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
       null,
       _react2.default.createElement(
         'div',
-        { className: _styles2.default.heroHomepage },
+        { className: _styles2.default.heroHomepage, style: { backgroundImage: 'url("/na-kover-drama-rostilj.jpg")' } },
         _react2.default.createElement(
           'div',
           { className: _styles4.default.mbrArrowFloating },
@@ -1890,10 +1890,10 @@ var _InstaImage2 = _interopRequireDefault(_InstaImage);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const srcFirst = {
-  backgroundImage: 'url("http://www.lepaisrecna.rs/thumbnail.php?file=2017/05/najlepse_jelo_od_mlevenog_mesa_gurmanska_pljeskavica_sa_lukom_i_dimljenom_slaninom_recept_213236330.jpg&size=article_medium")'
+  backgroundImage: 'url("/pljeska1.jpg")'
 };
 const srcSecond = {
-  backgroundImage: 'url("http://varna.zavedenia.com/system/storage/images/varna/medium/1427314c21da81f2f1bdf4d2dc6966cd4ed03.jpg")'
+  backgroundImage: 'url("/pljeska2.jpg")'
 };
 const srcThird = {
   backgroundImage: 'url("https://adriaticmedianethr.files.wordpress.com/2017/01/c487evapi.jpg?quality=100&strip=all&w=669&strip=all")'
