@@ -15,6 +15,7 @@ p, h1, h2, h3, h4, h5, span, a {
   --fg: #0b2296;
   --bg: #00bcd4;
 }
+
 .mobileIcon {
   color: #fff;
 display: none;
@@ -47,7 +48,7 @@ right: 15px;
   }
 }
 .heroHomepage {
-  background-image: url("http://www.cevabdzinica.de/wp-content/uploads/2016/02/Cevapcici-beste-in-Muenchen-mit-Ajvar-Schmand-und-Brot-in-Butter-vom-Grill-IMG_3815-e1455037381718.jpg");
+
   min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -356,7 +357,7 @@ right: 15px;
   .pleskaBgOne{
     width: 100%;
     height:380px;
-    background-image: url('http://4.bp.blogspot.com/-WSfhrNiVAq8/VD01XzSfsmI/AAAAAAAAM-w/pxgS0IP7wOY/s1600/BELO%2BMESO%2BNA%2BROSTILJU.jpg');
+    background-image: url('/belo-meso-na-rostilju.jpg');
     margin: 20px 0;
   }
 
@@ -405,7 +406,7 @@ right: 15px;
   .pleskaBgTwo{
     width:100%;
     height:380px;
-    background-image: url('http://4.bp.blogspot.com/-62-j8nDKlFo/Vmck8ZoEq7I/AAAAAAAAB4k/BxUxHkr4mVM/s1600/12346588_1056454987738708_310791744083625113_n.jpg');
+    background-image: url('/rolovano-drama-rostilj.jpg');
     background-size: cover;
     margin: 20px 0;
   }

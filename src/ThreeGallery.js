@@ -2,10 +2,10 @@ import React from 'react';
 import css from './styles.css';
 import InstaImage from './InstaImage.js';
 const srcFirst = {
-  backgroundImage:'url("http://www.lepaisrecna.rs/thumbnail.php?file=2017/05/najlepse_jelo_od_mlevenog_mesa_gurmanska_pljeskavica_sa_lukom_i_dimljenom_slaninom_recept_213236330.jpg&size=article_medium")',
+  backgroundImage:'url("/pljeska1.jpg")',
 }
 const srcSecond = {
-  backgroundImage:'url("http://varna.zavedenia.com/system/storage/images/varna/medium/1427314c21da81f2f1bdf4d2dc6966cd4ed03.jpg")',
+  backgroundImage:'url("/pljeska2.jpg")',
 }
 const srcThird = {
   backgroundImage:'url("https://adriaticmedianethr.files.wordpress.com/2017/01/c487evapi.jpg?quality=100&strip=all&w=669&strip=all")',

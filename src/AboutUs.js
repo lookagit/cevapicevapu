@@ -7,7 +7,7 @@ export default class AboutUs extends React.Component {
   render() {
     return(
       <div>
-        <TopHero title="O NAMA" subtitle="Ćevapi sa srcem za svačiju dušu" bgImage={{backgroundImage: 'url(http://sarajevski-cevapi.com/wp-content/uploads/2013/12/cevapi03-950x350.jpg)'}} />
+        <TopHero title="O NAMA" subtitle="Ćevapi sa srcem za svačiju dušu" bgImage={{backgroundImage: 'url("/sarajevski-cevap-drama.jpg")'}} />
         <ContentBoxes />
       </div>
     );
