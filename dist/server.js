@@ -468,7 +468,7 @@ var _microseconds = __webpack_require__(49);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(56);
+var _reactRouter = __webpack_require__(55);
 
 var _reactHelmet = __webpack_require__(9);
 
@@ -1185,7 +1185,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactFlexboxGrid = __webpack_require__(51);
+var _reactStyledFlexboxgrid = __webpack_require__(57);
 
 var _styles = __webpack_require__(1);
 
@@ -1200,7 +1200,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
   }
   render() {
     return _react2.default.createElement(
-      _reactFlexboxGrid.Grid,
+      _reactStyledFlexboxgrid.Grid,
       null,
       _react2.default.createElement(
         'h1',
@@ -1208,10 +1208,10 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
         'KOD NAS CEVAPI IMAJU TO NESTO'
       ),
       _react2.default.createElement(
-        _reactFlexboxGrid.Row,
+        _reactStyledFlexboxgrid.Row,
         { className: _styles2.default.rowOne },
         _react2.default.createElement(
-          _reactFlexboxGrid.Col,
+          _reactStyledFlexboxgrid.Col,
           { xs: 12, sm: 6, md: 5, lg: 4 },
           _react2.default.createElement(
             'div',
@@ -1220,7 +1220,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           )
         ),
         _react2.default.createElement(
-          _reactFlexboxGrid.Col,
+          _reactStyledFlexboxgrid.Col,
           { xs: 12, sm: 6, md: 7, lg: 8 },
           _react2.default.createElement(
             'div',
@@ -1245,10 +1245,10 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
       ),
       _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
       _react2.default.createElement(
-        _reactFlexboxGrid.Row,
+        _reactStyledFlexboxgrid.Row,
         { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
         _react2.default.createElement(
-          _reactFlexboxGrid.Col,
+          _reactStyledFlexboxgrid.Col,
           { xs: 12, sm: 6, md: 7, lg: 8 },
           _react2.default.createElement(
             'div',
@@ -1271,7 +1271,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           )
         ),
         _react2.default.createElement(
-          _reactFlexboxGrid.Col,
+          _reactStyledFlexboxgrid.Col,
           { xs: 12, sm: 6, md: 5, lg: 4 },
           _react2.default.createElement(
             'div',
@@ -1406,15 +1406,15 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(52);
+var _facebookSquare = __webpack_require__(51);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(53);
+var _instagram = __webpack_require__(52);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(54);
+var _youtubeSquare = __webpack_require__(53);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -2014,7 +2014,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(3);
 
-var _reactRedux = __webpack_require__(55);
+var _reactRedux = __webpack_require__(54);
 
 var _reactRouterDom = __webpack_require__(4);
 
@@ -2066,7 +2066,7 @@ var _DecisionRoute = __webpack_require__(22);
 
 var _DecisionRoute2 = _interopRequireDefault(_DecisionRoute);
 
-var _reactScrollableAnchor = __webpack_require__(57);
+var _reactScrollableAnchor = __webpack_require__(56);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -2429,43 +2429,43 @@ module.exports = require("react-dom/server");
 /* 51 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-flexbox-grid");
+module.exports = require("react-icons/lib/fa/facebook-square");
 
 /***/ }),
 /* 52 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square");
+module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ }),
 /* 53 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/instagram");
+module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
 /* 54 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 55 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("react-router");
 
 /***/ }),
 /* 56 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
 /* 58 */

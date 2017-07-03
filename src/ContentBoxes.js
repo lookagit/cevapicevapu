@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 import css from './styles.css';
 export default class ContentBoxes extends React.Component {
 
