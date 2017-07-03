@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 51);
+/******/ 	return __webpack_require__(__webpack_require__.s = 60);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -77,57 +77,65 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = {
-	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
-	"sectionHeadlineMain": "sectionHeadlineMain-zwasbjTotgWnhSsqYpp1y",
-	"sectionHeadlineTitle": "sectionHeadlineTitle-2xKReaoMX9LGx3D3-7hbWW",
-	"sectionHeadlineInnerText": "sectionHeadlineInnerText-1S8DW8gKQS0kFqXuobcW_t",
-	"threeGallery": "threeGallery-3SNY77P36uO49UUwhntBuA",
-	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
-	"bsPrice": "bsPrice-3ljTYa9XaCKTLnoE1QLFa2",
-	"bsText": "bsText-3glj6OL5XYMIoQa9X2rcTh",
-	"bsInnerInner": "bsInnerInner-Sn87SKTD9jjTjQRG70MrY",
-	"boxStylezInner": "boxStylezInner-dPOMWFk0hOl84lqJTVTCX",
-	"featured": "featured-3Ps0u1AgXehbGvhcSPQjNr",
-	"featuredLeftImage": "featuredLeftImage-93E_W98y5LD8DDdqKXX-p",
-	"featuredLeftText": "featuredLeftText-3f67f6hj9E1nl51sVq7CQx",
-	"buttonP": "buttonP-1pnKB7HeunberheJ1lD_fk",
-	"mbrArrowFloating": "mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV",
-	"mbrArrowIcon": "mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0",
-	"a": "a-3CLQjXJ95FwwMe6Mc8CB2V",
-	"footer": "footer-2HnTKYGhfyVJTtF-PvXmqO",
-	"itemWrap": "itemWrap-PJ9uOXSq66jscH11OqUPJ",
-	"footerItem": "footerItem-2E3DCIxlNyGBBtaKIPiv4-",
-	"botFooter": "botFooter-1xPRJXF5YLUPsHHjsqKgbd"
+	"main": "main-vv2718wGHLD6lThS8mcwI",
+	"mobileIcon": "mobileIcon-2icoMzpdrZbPYIfQjxivTq",
+	"parallax": "parallax-3oYy3E6XoJCClgZR0R7xDr",
+	"caption": "caption-21tp0xAudjV1bavcaINc0T",
+	"border": "border-aQNY2OtxwHs6C26ekD14K",
+	"heroHomepage": "heroHomepage-3cr8Nd5W9Je_pIy-MhMdqV",
+	"featured": "featured-tBVkb2dk8NKSVh-MiZvpy",
+	"featuredLeftImage": "featuredLeftImage-1Gox6liBJlELhedy2ZEoQ4",
+	"featuredLeftText": "featuredLeftText-2ulA7B5hZq3aI0K1nomPKa",
+	"buttonP": "buttonP-2o61Dqeeal8MbCZT8JYmre",
+	"hello": "hello-1P9zCbIx8YQ5eID6A-67d6",
+	"logo": "logo-1tNzgJsJwXMqFQ0a4xMkPk",
+	"data": "data-1oklYPlS4mQJRj2Dp24Czw",
+	"styleExamples": "styleExamples-2cmVxjYoxVhR_tpCfyIq_T",
+	"example": "example-3quOHBYrr7YOUvefuRPyGa",
+	"footer": "footer-3k9kabI8HJWNNVio6VNJUN",
+	"itemWrap": "itemWrap-17n62GBEbcZ0YKeiE5pH_p",
+	"footerItem": "footerItem-3WuDvZVUsFhM8FTQboIhu",
+	"botFooter": "botFooter-GqWr1UPbpIsarc8kMzKLs",
+	"showing": "showing-3xt5gLGL3jWtxcqt2fKVHR",
+	"sectionHeadlineMain": "sectionHeadlineMain-3BS5Nojw6gcyNS7jnqmoOV",
+	"sectionHeadlineTitle": "sectionHeadlineTitle-3EJeE510K8dqtj9UpGRobp",
+	"sectionHeadlineInnerText": "sectionHeadlineInnerText-2rGs1qrSJSuR3vUGVNiPn4",
+	"threeGallery": "threeGallery-1S3vfrzqPjPi0_s-_tCQbv",
+	"flexo": "flexo-3dzWYlf-9R2_5EYj5quZCB",
+	"topHero": "topHero-14OIZyWV1neWIczIqc2ndD",
+	"topHeroInner": "topHeroInner-1R18bJ737GlmHsja_ddmAW",
+	"topHeader": "topHeader-2ri4gaarPV6WmDH6vNh10V",
+	"topSubHeader": "topSubHeader-nYw22H9bj_R5j6XFCrO5v",
+	"aboutNaslov": "aboutNaslov-d4SC59v7D83X9vn1noPVn",
+	"rowOne": "rowOne-1ZsZTwNatJNARSw-jUxDls",
+	"pleskaOne": "pleskaOne-2JKZfl6X9YnWW2SPZRZaTo",
+	"pleskaBgOne": "pleskaBgOne-1wnnaVKyyasxnkvVHaP3Hs",
+	"pleskaTekstOne": "pleskaTekstOne-33M7mQhjuVcjKCeWb5G3Rv",
+	"hrDebilni": "hrDebilni-3zeZ5gSEsPkrgWlN-__jJk",
+	"rowTwo": "rowTwo-337mFG2UpEw6hK2VQwwrfR",
+	"tekstTwo": "tekstTwo-3kXEBwp22JH95sjgbOWm5E",
+	"pleskaTwo": "pleskaTwo-2zs2ikr9x8Sa5YpP0kmzKH",
+	"pleskaBgTwo": "pleskaBgTwo-L6PMiWuJodAv0Y2AtAd_",
+	"pleskaTekstTwo": "pleskaTekstTwo-DHz89PWqxLvJcevMrzVsL"
 };
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = {
-	"main": "main-vv2718wGHLD6lThS8mcwI",
-	"parallax": "parallax-3oYy3E6XoJCClgZR0R7xDr",
-	"caption": "caption-21tp0xAudjV1bavcaINc0T",
-	"border": "border-aQNY2OtxwHs6C26ekD14K",
-	"heroHomepage": "heroHomepage-3cr8Nd5W9Je_pIy-MhMdqV",
-	"hello": "hello-1P9zCbIx8YQ5eID6A-67d6",
-	"logo": "logo-1tNzgJsJwXMqFQ0a4xMkPk",
-	"data": "data-1oklYPlS4mQJRj2Dp24Czw",
-	"styleExamples": "styleExamples-2cmVxjYoxVhR_tpCfyIq_T",
-	"example": "example-3quOHBYrr7YOUvefuRPyGa"
-};
+module.exports = require("prop-types");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("prop-types");
+module.exports = require("react-apollo");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-apollo");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 5 */
@@ -139,7 +147,7 @@ module.exports = require("react-apollo");
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(6);
+const path = __webpack_require__(8);
 
 // ----------------------
 
@@ -184,50 +192,163 @@ module.exports = {
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("path");
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = require("seamless-immutable");
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _path = __webpack_require__(6);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Redirect = exports.NotFound = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(4);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// ----------------------
+
+// <Status code="xxx"> component.  Updates the context router's context, which
+// can be used by the server handler to respond to the status on the server.
+let Status = class Status extends _react2.default.PureComponent {
+
+  render() {
+    const { code, children } = this.props;
+    return _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
+        if (staticContext) {
+          staticContext.status = code;
+        }
+        return children;
+      } });
+  }
+};
+
+// <NotFound> component.  If this renders on the server in development mode,
+// it will attempt to proxyify the request to the upstream `webpack-dev-server`.
+// In production, it will issue a hard 404 and render.  In the browser, it will
+// simply render.
+/* eslint-disable no-param-reassign */
+
+// ----------------------
+// IMPORTS
+
+Status.propTypes = {
+  code: _propTypes2.default.number.isRequired,
+  children: _propTypes2.default.node
+};
+Status.defaultProps = {
+  children: null
+};
+let NotFound = exports.NotFound = class NotFound extends _react2.default.PureComponent {
+
+  render() {
+    const { children } = this.props;
+
+    return _react2.default.createElement(
+      Status,
+      { code: 404 },
+      children
+    );
+  }
+};
+
+// <Redirect> component. Mirrors React Router's component by the same name,
+// except it sets a 301/302 status code for setting server-side HTTP headers.
+
+NotFound.propTypes = {
+  children: _propTypes2.default.node
+};
+NotFound.defaultProps = {
+  children: null
+};
+let Redirect = exports.Redirect = class Redirect extends _react2.default.PureComponent {
+
+  render() {
+    const { to, from, push, permanent } = this.props;
+    const code = permanent ? 301 : 302;
+    return _react2.default.createElement(
+      Status,
+      { code: code },
+      _react2.default.createElement(_reactRouterDom.Redirect, { to: to, from: from, push: push })
+    );
+  }
+};
+Redirect.propTypes = {
+  to: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]).isRequired,
+  from: _propTypes2.default.string,
+  push: _propTypes2.default.bool,
+  permanent: _propTypes2.default.bool
+};
+Redirect.defaultProps = {
+  from: null,
+  push: false,
+  permanent: false
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
+	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
+	"bsPrice": "bsPrice-3ljTYa9XaCKTLnoE1QLFa2",
+	"bsText": "bsText-3glj6OL5XYMIoQa9X2rcTh",
+	"bsInnerInner": "bsInnerInner-Sn87SKTD9jjTjQRG70MrY",
+	"boxStylezInner": "boxStylezInner-dPOMWFk0hOl84lqJTVTCX",
+	"mbrArrowFloating": "mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV",
+	"mbrArrowIcon": "mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0",
+	"a": "a-3CLQjXJ95FwwMe6Mc8CB2V"
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-helmet");
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("seamless-immutable");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _path = __webpack_require__(8);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _fs = __webpack_require__(35);
+var _fs = __webpack_require__(42);
 
 var _paths = __webpack_require__(5);
 
 var _paths2 = _interopRequireDefault(_paths);
 
-var _env = __webpack_require__(15);
+var _env = __webpack_require__(16);
 
-var _console = __webpack_require__(14);
+var _console = __webpack_require__(15);
 
-var _server = __webpack_require__(12);
+var _server = __webpack_require__(13);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -283,7 +404,7 @@ _server2.default.then(({ router, app }) => {
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -303,7 +424,7 @@ const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -315,47 +436,47 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(37);
+__webpack_require__(44);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(43);
+var _server = __webpack_require__(50);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(38);
+var _koa = __webpack_require__(45);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
-var _koaSend = __webpack_require__(41);
+var _koaSend = __webpack_require__(48);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(39);
+var _koaHelmet = __webpack_require__(46);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(40);
+var _koaRouter = __webpack_require__(47);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(42);
+var _microseconds = __webpack_require__(49);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(48);
+var _reactRouter = __webpack_require__(56);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(9);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _apollo = __webpack_require__(13);
+var _apollo = __webpack_require__(14);
 
-var _redux = __webpack_require__(16);
+var _redux = __webpack_require__(17);
 
 var _redux2 = _interopRequireDefault(_redux);
 
@@ -363,7 +484,7 @@ var _ssr = __webpack_require__(18);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(28);
+var _app = __webpack_require__(33);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -373,7 +494,37 @@ var _paths2 = _interopRequireDefault(_paths);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /* eslint-disable no-param-reassign, no-console */
+// ----------------------
+
+// Static file middleware
+
+
+// App entry point
+
+
+// Custom redux store creator.  This will allow us to create a store 'outside'
+// of Apollo, so we can apply our own reducers and make use of the Redux dev
+// tools in the browser
+
+
+// <Helmet> component for retrieving <head> section, so we can set page
+// title, meta info, etc along with the initial HTML
+
+
+// High-precision timing, so we can debug response time to serve a request
+
+
+// HTTP header hardening
+
+
+// Apollo tools to connect to a GraphQL server.  We'll grab the
+// `ApolloProvider` HOC component, which will inject any 'listening' React
+// components with GraphQL data props.  We'll also use `getDataFromTree`
+// to await data being ready before rendering back HTML to the client
+
+
+// React utility to transform JSX to HTML (to send back to the client)
+/* eslint-disable no-param-reassign, no-console */
 
 // Server entry point, for Webpack.  This will spawn a Koa web server
 // and listen for HTTP requests.  Clients will get a return render of React
@@ -389,42 +540,31 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /* NPM */
 
 // Patch global.`fetch` so that Apollo calls to GraphQL work
+function staticMiddleware() {
+  return async function staticMiddlewareHandler(ctx, next) {
+    try {
+      if (ctx.path !== '/') {
+        return await (0, _koaSend2.default)(ctx, ctx.path,  true ? {
+          root: _paths2.default.public,
+          immutable: true
+        } : {
+          root: _paths2.default.distDev
+        });
+      }
+    } catch (e) {/* Errors will fall through */}
+    return next();
+  };
+}
+
+// Function to create a React handler, per the environment's correct
+// manifest files
 
 
-// React UI
+// Import paths.  We'll use this to figure out where our public folder is
+// so we can serve static files
 
 
-// React utility to transform JSX to HTML (to send back to the client)
-
-
-// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
-// the React render, or any of the static assets being compiled
-
-
-// Apollo tools to connect to a GraphQL server.  We'll grab the
-// `ApolloProvider` HOC component, which will inject any 'listening' React
-// components with GraphQL data props.  We'll also use `getDataFromTree`
-// to await data being ready before rendering back HTML to the client
-
-
-// Static file handler
-
-
-// HTTP header hardening
-
-
-// Koa Router, for handling URL requests
-
-
-// High-precision timing, so we can debug response time to serve a request
-
-
-// React Router HOC for figuring out the exact React hierarchy to display
-// based on the URL
-
-
-// <Helmet> component for retrieving <head> section, so we can set page
-// title, meta info, etc along with the initial HTML
+// Initial view to send back HTML render
 
 
 /* Local */
@@ -432,203 +572,134 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 // Grab the shared Apollo Client
 
 
-// Custom redux store creator.  This will allow us to create a store 'outside'
-// of Apollo, so we can apply our own reducers and make use of the Redux dev
-// tools in the browser
+// React Router HOC for figuring out the exact React hierarchy to display
+// based on the URL
 
 
-// Initial view to send back HTML render
+// Koa Router, for handling URL requests
 
 
-// App entry point
+// Static file handler
 
 
-// Import paths.  We'll use this to figure out where our public folder is
-// so we can serve static files
+// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
+// the React render, or any of the static assets being compiled
 
 
-// ----------------------
-
-// Static file middleware
-function staticMiddleware() {
-  return (() => {
-    var _ref = _asyncToGenerator(function* (ctx, next) {
-      try {
-        if (ctx.path !== '/') {
-          return yield (0, _koaSend2.default)(ctx, ctx.path,  true ? {
-            root: _paths2.default.public,
-            immutable: true
-          } : {
-            root: _paths2.default.distDev
-          });
-        }
-      } catch (e) {/* Errors will fall through */}
-      return next();
-    });
-
-    function staticMiddlewareHandler(_x, _x2) {
-      return _ref.apply(this, arguments);
-    }
-
-    return staticMiddlewareHandler;
-  })();
-}
-
-// Function to create a React handler, per the environment's correct
-// manifest files
+// React UI
 function createReactHandler(css = [], scripts = [], chunkManifest = {}) {
-  return (() => {
-    var _ref2 = _asyncToGenerator(function* (ctx) {
-      const routeContext = {};
+  return async function reactHandler(ctx) {
+    const routeContext = {};
 
-      // Create a new server Apollo client for this request
-      const client = (0, _apollo.serverClient)();
+    // Create a new server Apollo client for this request
+    const client = (0, _apollo.serverClient)();
 
-      // Create a new Redux store for this request
-      const store = (0, _redux2.default)(client);
+    // Create a new Redux store for this request
+    const store = (0, _redux2.default)(client);
 
-      // Generate the HTML from our React tree.  We're wrapping the result
-      // in `react-router`'s <StaticRouter> which will pull out URL info and
-      // store it in our empty `route` object
-      const components = _react2.default.createElement(
-        _reactRouter.StaticRouter,
-        { location: ctx.request.url, context: routeContext },
-        _react2.default.createElement(
-          _reactApollo.ApolloProvider,
-          { store: store, client: client },
-          _react2.default.createElement(_app2.default, null)
-        )
-      );
+    // Generate the HTML from our React tree.  We're wrapping the result
+    // in `react-router`'s <StaticRouter> which will pull out URL info and
+    // store it in our empty `route` object
+    const components = _react2.default.createElement(
+      _reactRouter.StaticRouter,
+      { location: ctx.request.url, context: routeContext },
+      _react2.default.createElement(
+        _reactApollo.ApolloProvider,
+        { store: store, client: client },
+        _react2.default.createElement(_app2.default, null)
+      )
+    );
 
-      // Wait for GraphQL data to be available in our initial render,
-      // before dumping HTML back to the client
-      yield (0, _reactApollo.getDataFromTree)(components);
+    // Wait for GraphQL data to be available in our initial render,
+    // before dumping HTML back to the client
+    await (0, _reactApollo.getDataFromTree)(components);
 
-      // Full React HTML render
-      const html = _server2.default.renderToString(components);
+    // Full React HTML render
+    const html = _server2.default.renderToString(components);
 
-      // Handle redirects
-      if ([301, 302].includes(routeContext.status)) {
-        // 301 = permanent redirect, 302 = temporary
-        ctx.status = routeContext.status;
+    // Handle redirects
+    if ([301, 302].includes(routeContext.status)) {
+      // 301 = permanent redirect, 302 = temporary
+      ctx.status = routeContext.status;
 
-        // Issue the new `Location:` header
-        ctx.redirect(routeContext.url);
+      // Issue the new `Location:` header
+      ctx.redirect(routeContext.url);
 
-        // Return early -- no need to set a response body
-        return;
-      }
-
-      // Handle 404 Not Found
-      if (routeContext.status === 404) {
-        // By default, just set the status code to 404.  You can add your
-        // own custom logic here, if you want to redirect to a permanent
-        // 404 route or set a different response on `ctx.body`
-        ctx.status = routeContext.status;
-      }
-
-      // Render the view with our injected React data.  We'll pass in the
-      // Helmet component to generate the <head> tag, as well as our Redux
-      // store state so that the browser can continue from the server
-      ctx.body = `<!DOCTYPE html>\n${_server2.default.renderToStaticMarkup(_react2.default.createElement(_ssr2.default, {
-        html: html,
-        head: _reactHelmet2.default.rewind(),
-        window: {
-          webpackManifest: chunkManifest,
-          __STATE__: store.getState()
-        },
-        css: css,
-        scripts: scripts }))}`;
-    });
-
-    function reactHandler(_x3) {
-      return _ref2.apply(this, arguments);
+      // Return early -- no need to set a response body
+      return;
     }
 
-    return reactHandler;
-  })();
+    // Handle 404 Not Found
+    if (routeContext.status === 404) {
+      // By default, just set the status code to 404.  You can add your
+      // own custom logic here, if you want to redirect to a permanent
+      // 404 route or set a different response on `ctx.body`
+      ctx.status = routeContext.status;
+    }
+
+    // Render the view with our injected React data.  We'll pass in the
+    // Helmet component to generate the <head> tag, as well as our Redux
+    // store state so that the browser can continue from the server
+    ctx.body = `<!DOCTYPE html>\n${_server2.default.renderToStaticMarkup(_react2.default.createElement(_ssr2.default, {
+      html: html,
+      head: _reactHelmet2.default.rewind(),
+      window: {
+        webpackManifest: chunkManifest,
+        __STATE__: store.getState()
+      },
+      css: css,
+      scripts: scripts }))}`;
+  };
 }
 
 // Run the server
 
-exports.default = (() => {
-  var _ref3 = _asyncToGenerator(function* () {
-    return {
-      router: new _koaRouter2.default().
-      // Set-up a general purpose /ping route to check the server is alive
-      get('/ping', (() => {
-        var _ref4 = _asyncToGenerator(function* (ctx) {
-          ctx.body = 'pong';
-        });
+exports.default = async function server() {
+  return {
+    router: new _koaRouter2.default().
+    // Set-up a general purpose /ping route to check the server is alive
+    get('/ping', async ctx => {
+      ctx.body = 'pong';
+    })
 
-        return function (_x4) {
-          return _ref4.apply(this, arguments);
-        };
-      })())
+    // Favicon.ico.  By default, we'll serve this as a 204 No Content.
+    // If /favicon.ico is available as a static file, it'll try that first
+    .get('/favicon.ico', async ctx => {
+      ctx.res.statusCode = 204;
+    }),
+    app: new _koa2.default()
 
-      // Favicon.ico.  By default, we'll serve this as a 204 No Content.
-      // If /favicon.ico is available as a static file, it'll try that first
-      .get('/favicon.ico', (() => {
-        var _ref5 = _asyncToGenerator(function* (ctx) {
-          ctx.res.statusCode = 204;
-        });
+    // Preliminary security for HTTP headers
+    .use((0, _koaHelmet2.default)())
 
-        return function (_x5) {
-          return _ref5.apply(this, arguments);
-        };
-      })()),
-      app: new _koa2.default()
+    // Error wrapper.  If an error manages to slip through the middleware
+    // chain, it will be caught and logged back here
+    .use(async (ctx, next) => {
+      try {
+        await next();
+      } catch (e) {
+        // TODO we've used rudimentary console logging here.  In your own
+        // app, I'd recommend you implement third-party logging so you can
+        // capture errors properly
+        console.log('Error', e.message);
+        ctx.body = 'There was an error. Please try again later.';
+      }
+    })
 
-      // Preliminary security for HTTP headers
-      .use((0, _koaHelmet2.default)())
-
-      // Error wrapper.  If an error manages to slip through the middleware
-      // chain, it will be caught and logged back here
-      .use((() => {
-        var _ref6 = _asyncToGenerator(function* (ctx, next) {
-          try {
-            yield next();
-          } catch (e) {
-            // TODO we've used rudimentary console logging here.  In your own
-            // app, I'd recommend you implement third-party logging so you can
-            // capture errors properly
-            console.log('Error', e.message);
-            ctx.body = 'There was an error. Please try again later.';
-          }
-        });
-
-        return function (_x6, _x7) {
-          return _ref6.apply(this, arguments);
-        };
-      })())
-
-      // It's useful to see how long a request takes to respond.  Add the
-      // timing to a HTTP Response header
-      .use((() => {
-        var _ref7 = _asyncToGenerator(function* (ctx, next) {
-          const start = _microseconds2.default.now();
-          yield next();
-          const end = _microseconds2.default.parse(_microseconds2.default.since(start));
-          const total = end.microseconds + end.milliseconds * 1e3 + end.seconds * 1e6;
-          ctx.set('Response-Time', `${total / 1e3}ms`);
-        });
-
-        return function (_x8, _x9) {
-          return _ref7.apply(this, arguments);
-        };
-      })())
-    };
-  });
-
-  function server() {
-    return _ref3.apply(this, arguments);
-  }
-
-  return server;
-})()();
+    // It's useful to see how long a request takes to respond.  Add the
+    // timing to a HTTP Response header
+    .use(async (ctx, next) => {
+      const start = _microseconds2.default.now();
+      await next();
+      const end = _microseconds2.default.parse(_microseconds2.default.since(start));
+      const total = end.microseconds + end.milliseconds * 1e3 + end.seconds * 1e6;
+      ctx.set('Response-Time', `${total / 1e3}ms`);
+    })
+  };
+}();
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -640,9 +711,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
-var _project = __webpack_require__(11);
+var _project = __webpack_require__(12);
 
 // ----------------------
 
@@ -682,7 +753,7 @@ function serverClient() {
 }
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -693,15 +764,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(33);
+var _boxen = __webpack_require__(40);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(34);
+var _chalk = __webpack_require__(41);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(36);
+var _ip = __webpack_require__(43);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -739,7 +810,7 @@ function logServerStarted(opt = {}) {
 // Display a border around a message
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -841,7 +912,7 @@ function getURL() {
 }
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -872,13 +943,13 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(49);
+var _redux = __webpack_require__(58);
 
-var _reduxThunk = __webpack_require__(50);
+var _reduxThunk = __webpack_require__(59);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _seamlessImmutable = __webpack_require__(9);
+var _seamlessImmutable = __webpack_require__(10);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -933,109 +1004,6 @@ function createNewStore(apolloClient) {
 }
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Redirect = exports.NotFound = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(8);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// ----------------------
-
-// <Status code="xxx"> component.  Updates the context router's context, which
-// can be used by the server handler to respond to the status on the server.
-let Status = class Status extends _react2.default.PureComponent {
-
-  render() {
-    const { code, children } = this.props;
-    return _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
-        if (staticContext) {
-          staticContext.status = code;
-        }
-        return children;
-      } });
-  }
-};
-
-// <NotFound> component.  If this renders on the server in development mode,
-// it will attempt to proxyify the request to the upstream `webpack-dev-server`.
-// In production, it will issue a hard 404 and render.  In the browser, it will
-// simply render.
-/* eslint-disable no-param-reassign */
-
-// ----------------------
-// IMPORTS
-
-Status.propTypes = {
-  code: _propTypes2.default.number.isRequired,
-  children: _propTypes2.default.node
-};
-Status.defaultProps = {
-  children: null
-};
-let NotFound = exports.NotFound = class NotFound extends _react2.default.PureComponent {
-
-  render() {
-    const { children } = this.props;
-
-    return _react2.default.createElement(
-      Status,
-      { code: 404 },
-      children
-    );
-  }
-};
-
-// <Redirect> component. Mirrors React Router's component by the same name,
-// except it sets a 301/302 status code for setting server-side HTTP headers.
-
-NotFound.propTypes = {
-  children: _propTypes2.default.node
-};
-NotFound.defaultProps = {
-  children: null
-};
-let Redirect = exports.Redirect = class Redirect extends _react2.default.PureComponent {
-
-  render() {
-    const { to, from, push, permanent } = this.props;
-    const code = permanent ? 301 : 302;
-    return _react2.default.createElement(
-      Status,
-      { code: code },
-      _react2.default.createElement(_reactRouterDom.Redirect, { to: to, from: from, push: push })
-    );
-  }
-};
-Redirect.propTypes = {
-  to: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]).isRequired,
-  from: _propTypes2.default.string,
-  push: _propTypes2.default.bool,
-  permanent: _propTypes2.default.bool
-};
-Redirect.defaultProps = {
-  from: null,
-  push: false,
-  permanent: false
-};
-
-/***/ }),
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1050,7 +1018,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1113,7 +1081,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _seamlessImmutable = __webpack_require__(9);
+var _seamlessImmutable = __webpack_require__(10);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -1157,6 +1125,203 @@ exports.default = {
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _TopHero = __webpack_require__(32);
+
+var _TopHero2 = _interopRequireDefault(_TopHero);
+
+var _serbianburger = __webpack_require__(37);
+
+var _serbianburger2 = _interopRequireDefault(_serbianburger);
+
+var _ContentBoxes = __webpack_require__(21);
+
+var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let AboutUs = class AboutUs extends _react2.default.Component {
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: '\u0106evapi sa srcem za sva\u010Diju du\u0161u', bgImage: { backgroundImage: 'url(http://sarajevski-cevapi.com/wp-content/uploads/2013/12/cevapi03-950x350.jpg)' } }),
+      _react2.default.createElement(_ContentBoxes2.default, null)
+    );
+  }
+};
+exports.default = AboutUs;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactFlexboxGrid = __webpack_require__(51);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let ContentBoxes = class ContentBoxes extends _react2.default.Component {
+
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return _react2.default.createElement(
+      _reactFlexboxGrid.Grid,
+      null,
+      _react2.default.createElement(
+        'h1',
+        { className: _styles2.default.aboutNaslov },
+        'KOD NAS CEVAPI IMAJU TO NESTO'
+      ),
+      _react2.default.createElement(
+        _reactFlexboxGrid.Row,
+        { className: _styles2.default.rowOne },
+        _react2.default.createElement(
+          _reactFlexboxGrid.Col,
+          { xs: 12, sm: 6, md: 5, lg: 4 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.pleskaOne },
+            _react2.default.createElement('div', { className: _styles2.default.pleskaBgOne })
+          )
+        ),
+        _react2.default.createElement(
+          _reactFlexboxGrid.Col,
+          { xs: 12, sm: 6, md: 7, lg: 8 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.pleskaTekstOne },
+            _react2.default.createElement(
+              'h2',
+              null,
+              '10 GODINA VRHUNSKOG ROSTILJA'
+            ),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Ko bi to radio da nije nas'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+            )
+          )
+        )
+      ),
+      _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
+      _react2.default.createElement(
+        _reactFlexboxGrid.Row,
+        { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
+        _react2.default.createElement(
+          _reactFlexboxGrid.Col,
+          { xs: 12, sm: 6, md: 7, lg: 8 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.tekstTwo },
+            _react2.default.createElement(
+              'h2',
+              null,
+              '10 GODINA VREDNOG RADA'
+            ),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Ko bi to radio da nije nas'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactFlexboxGrid.Col,
+          { xs: 12, sm: 6, md: 5, lg: 4 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.pleskaTwo },
+            _react2.default.createElement('div', { className: _styles2.default.pleskaBgTwo })
+          )
+        )
+      )
+    );
+  }
+};
+exports.default = ContentBoxes;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _AboutUs = __webpack_require__(20);
+
+var _AboutUs2 = _interopRequireDefault(_AboutUs);
+
+var _routing = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let DecisionRoute = class DecisionRoute extends _react2.default.Component {
+
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return _react2.default.createElement(_AboutUs2.default, null);
+  }
+};
+exports.default = DecisionRoute;
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1223,7 +1388,7 @@ let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
 exports.default = FeaturedLeft;
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1241,15 +1406,15 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(44);
+var _facebookSquare = __webpack_require__(52);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(45);
+var _instagram = __webpack_require__(53);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(46);
+var _youtubeSquare = __webpack_require__(54);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -1281,11 +1446,6 @@ let Footer = class Footer extends _react2.default.Component {
               'p',
               null,
               'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            ),
-            _react2.default.createElement(
-              'a',
-              null,
-              'Pro\u010Ditaj vi\u0161e ->'
             )
           ),
           _react2.default.createElement(
@@ -1331,7 +1491,7 @@ let Footer = class Footer extends _react2.default.Component {
 exports.default = Footer;
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1345,11 +1505,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HeaderHero = __webpack_require__(23);
+var _HeaderHero = __webpack_require__(26);
 
 var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -1370,7 +1530,7 @@ let Header = class Header extends _react2.default.Component {
 exports.default = Header;
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1384,11 +1544,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _styles3 = __webpack_require__(1);
+var _styles3 = __webpack_require__(7);
 
 var _styles4 = _interopRequireDefault(_styles3);
 
@@ -1408,7 +1568,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
         _react2.default.createElement(
           'div',
           { className: _styles4.default.mbrArrowFloating },
-          _react2.default.createElement('a', { className: _styles4.default.mbrArrowIcon })
+          _react2.default.createElement('a', { href: '#section1', className: _styles4.default.mbrArrowIcon })
         )
       )
     );
@@ -1417,7 +1577,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
 exports.default = HeaderHero;
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1431,7 +1591,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(1);
+var _styles = __webpack_require__(7);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -1480,7 +1640,7 @@ let InstaImage = class InstaImage extends _react2.default.Component {
 exports.default = InstaImage;
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1494,7 +1654,121 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(4);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _logodrama = __webpack_require__(36);
+
+var _logodrama2 = _interopRequireDefault(_logodrama);
+
+var _hamburger = __webpack_require__(35);
+
+var _hamburger2 = _interopRequireDefault(_hamburger);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let MainMenu = class MainMenu extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+
+    this.opener = () => {
+      if (!this.state.open) {
+        console.log("{sdadsadsad1231}");
+        this.setState({
+          open: true,
+          stylee: { overflow: 'visible' }
+        });
+      } else {
+        console.log("{sdadsadsad}");
+        this.setState({
+          open: false,
+          stylee: { overflow: 'hidden' }
+        });
+      }
+    };
+
+    this.state = {
+      open: false,
+      stylee: {}
+    };
+  }
+
+  render() {
+    return _react2.default.createElement(
+      'div',
+      { className: _styles2.default.hello },
+      _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo }),
+      _react2.default.createElement(
+        'div',
+        {
+          className: _styles2.default.mobileIcon,
+          onClick: this.opener },
+        _react2.default.createElement('img', { src: _hamburger2.default, alt: 'menu', height: '35px', width: '45px' })
+      ),
+      _react2.default.createElement(
+        'ul',
+        { style: this.state.stylee },
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/', onClick: this.opener },
+            'Po\u010Detna'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/page/contact', onClick: this.opener },
+            'Jelovnik'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/page/about', onClick: this.opener },
+            'O nama'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/old/path', onClick: this.opener },
+            'Kontakt'
+          )
+        )
+      )
+    );
+  }
+};
+exports.default = MainMenu;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -1529,7 +1803,7 @@ let ParalaxContainer = class ParalaxContainer extends _react2.default.Component 
 exports.default = ParalaxContainer;
 
 /***/ }),
-/* 26 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1591,7 +1865,7 @@ let SectionHeadline = class SectionHeadline extends _react2.default.Component {
 exports.default = SectionHeadline;
 
 /***/ }),
-/* 27 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1609,17 +1883,12 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _InstaImage = __webpack_require__(24);
+var _InstaImage = __webpack_require__(27);
 
 var _InstaImage2 = _interopRequireDefault(_InstaImage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const stylez = {
-  margin: "0 auto",
-  maxWidth: "1200px",
-  display: "flex"
-};
 const srcFirst = {
   backgroundImage: 'url("http://www.lepaisrecna.rs/thumbnail.php?file=2017/05/najlepse_jelo_od_mlevenog_mesa_gurmanska_pljeskavica_sa_lukom_i_dimljenom_slaninom_recept_213236330.jpg&size=article_medium")'
 };
@@ -1640,7 +1909,7 @@ let ThreeGallery = class ThreeGallery extends _react2.default.Component {
       { className: _styles2.default.threeGallery },
       _react2.default.createElement(
         'div',
-        { style: stylez },
+        { className: _styles2.default.flexo },
         _react2.default.createElement(_InstaImage2.default, { src: srcFirst, tekst: 'Gurmanska pljeskavica 300gr' }),
         _react2.default.createElement(_InstaImage2.default, { src: srcSecond, tekst: 'Leskovacka muckalica 300gr' }),
         _react2.default.createElement(_InstaImage2.default, { src: srcThird, tekst: '10 \u0107evapa 300gr' })
@@ -1651,7 +1920,79 @@ let ThreeGallery = class ThreeGallery extends _react2.default.Component {
 exports.default = ThreeGallery;
 
 /***/ }),
-/* 28 */
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let TopHero = class TopHero extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bgImage: false,
+      title: false,
+      subtitle: false
+    };
+  }
+  componentWillMount() {
+    if (this.props.bgImage && this.props.title && this.props.subtitle) {
+      const subtitle = this.props.subtitle;
+      const title = this.props.title;
+      const bgImage = this.props.bgImage;
+      this.setState({
+        bgImage: bgImage,
+        title: title,
+        subtitle: subtitle
+      });
+    } else {
+      this.setState({
+        bgImage: {},
+        title: "Ne postoji strana",
+        subtitle: "404"
+      });
+    }
+  }
+  render() {
+    return _react2.default.createElement(
+      'div',
+      { className: _styles2.default.topHero, style: this.state.bgImage },
+      _react2.default.createElement(
+        'div',
+        { className: _styles2.default.topHeroInner },
+        _react2.default.createElement(
+          'h2',
+          { className: _styles2.default.topHeader },
+          this.state.title
+        ),
+        _react2.default.createElement(
+          'h4',
+          { className: _styles2.default.topSubHeader },
+          this.state.subtitle
+        )
+      )
+    );
+  }
+};
+exports.default = TopHero;
+
+/***/ }),
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1667,75 +2008,88 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
-var _reactRedux = __webpack_require__(47);
+var _reactRedux = __webpack_require__(55);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(4);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(9);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _routing = __webpack_require__(17);
+var _routing = __webpack_require__(6);
 
-var _all_messages = __webpack_require__(31);
+var _all_messages = __webpack_require__(38);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(29);
+__webpack_require__(34);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(30);
-
-var _logodrama2 = _interopRequireDefault(_logodrama);
-
-var _Header = __webpack_require__(22);
+var _Header = __webpack_require__(25);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _SectionHeadline = __webpack_require__(26);
+var _SectionHeadline = __webpack_require__(30);
 
 var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
 
-var _ParalaxContainer = __webpack_require__(25);
+var _ParalaxContainer = __webpack_require__(29);
 
 var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
 
-var _ThreeGallery = __webpack_require__(27);
+var _ThreeGallery = __webpack_require__(31);
 
 var _ThreeGallery2 = _interopRequireDefault(_ThreeGallery);
 
-var _FeaturedLeft = __webpack_require__(20);
+var _FeaturedLeft = __webpack_require__(23);
 
 var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
 
-var _Footer = __webpack_require__(21);
+var _Footer = __webpack_require__(24);
 
 var _Footer2 = _interopRequireDefault(_Footer);
+
+var _MainMenu = __webpack_require__(28);
+
+var _MainMenu2 = _interopRequireDefault(_MainMenu);
+
+var _DecisionRoute = __webpack_require__(22);
+
+var _DecisionRoute2 = _interopRequireDefault(_DecisionRoute);
+
+var _reactScrollableAnchor = __webpack_require__(57);
+
+var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const stylee = {
-  backgroundImage: 'url("https://www.esnlund.org/sites/default/files/events/images/barbecue-07.jpg")',
+  backgroundImage: 'url("/slika-za-parallax-drama-rostilj.jpg")',
   height: '300px'
 };
 const sndlax = {
-  backgroundImage: 'url("https://mojkrug.rs/wp-content/uploads/2016/06/savcic-1.jpg")',
+  backgroundImage: 'url("/parallax-nova-drama-rostilj.jpg")',
   height: '350px'
 };
+
 const Home = () => _react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(_Header2.default, null),
-  _react2.default.createElement(_SectionHeadline2.default, { title: '\u0106evapi koje \u0107ete voleti', innerText: '100% organsko meso' }),
+  _react2.default.createElement(
+    _reactScrollableAnchor2.default,
+    { id: 'section1' },
+    _react2.default.createElement(_SectionHeadline2.default, { title: '\u0106evapi koje \u0107ete voleti', innerText: '100% organsko meso' })
+  ),
   _react2.default.createElement(_ParalaxContainer2.default, { stylee: stylee }),
   _react2.default.createElement(_SectionHeadline2.default, { title: 'Najbolji \u0107evapi u gradu', innerText: 'Probajte obave\u017Eno' }),
   _react2.default.createElement(_ThreeGallery2.default, null),
@@ -1745,13 +2099,12 @@ const Home = () => _react2.default.createElement(
 
 // Helper component that will be conditionally shown when the route matches.
 // This gives you an idea how React Router v4 works
-const Page = ({ match }) => _react2.default.createElement(
+const Page = ({ match }) => _react2.default.createElement(_DecisionRoute2.default, null);
+const Contact = ({ match }) => _react2.default.createElement(
   'h1',
   null,
-  'Changed route: ',
-  match.params.name
+  'Contact'
 );
-
 // Create a route that will be displayed when the code isn't found
 const WhenNotFound = () => _react2.default.createElement(
   _routing.NotFound,
@@ -1909,61 +2262,18 @@ exports.default = () => _react2.default.createElement(
   'div',
   null,
   _react2.default.createElement(_reactHelmet2.default, {
-    title: 'ReactQL application',
+    title: 'DRAMA \u0106evapi',
     meta: [{
       name: 'description',
-      content: 'ReactQL starter kit app'
+      content: '100% organsko meso'
     }] }),
-  _react2.default.createElement(
-    'div',
-    { className: _styles2.default.hello },
-    _react2.default.createElement('img', { src: _logodrama2.default, alt: 'ReactQL', className: _styles2.default.logo }),
-    _react2.default.createElement(
-      'ul',
-      null,
-      _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/' },
-          'Po\u010Detna'
-        )
-      ),
-      _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/page/about' },
-          'Jelovnik'
-        )
-      ),
-      _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/page/contact' },
-          'O nama'
-        )
-      ),
-      _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/old/path' },
-          'Kontakt'
-        )
-      )
-    )
-  ),
+  _react2.default.createElement(_MainMenu2.default, null),
   _react2.default.createElement(
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/:name', component: Page }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: Page }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/contact', component: Contact }),
     _react2.default.createElement(_routing.Redirect, { from: '/old/path', to: '/new/path' }),
     _react2.default.createElement(_reactRouterDom.Route, { component: WhenNotFound })
   ),
@@ -1971,197 +2281,209 @@ exports.default = () => _react2.default.createElement(
 );
 
 /***/ }),
-/* 29 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png";
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-<<<<<<< HEAD
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
-
-=======
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request"};
-
->>>>>>> bee9132bbcc7504bc5de68396e0a63709c448865
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(32).definitions));
-
-module.exports = doc;
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-
-<<<<<<< HEAD
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
-    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
-
-=======
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
-    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request"};
-
->>>>>>> bee9132bbcc7504bc5de68396e0a63709c448865
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-
-module.exports = doc;
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-module.exports = require("boxen");
-
-/***/ }),
 /* 34 */
 /***/ (function(module, exports) {
 
-module.exports = require("chalk");
+
 
 /***/ }),
 /* 35 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("fs");
+module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png";
 
 /***/ }),
 /* 36 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("ip");
+module.exports = __webpack_require__.p + "assets/img/logodrama.ab5ed4b08eae7de6c7548f124be3d280.png";
 
 /***/ }),
 /* 37 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("isomorphic-fetch");
+module.exports = __webpack_require__.p + "assets/img/serbianburger.412051e330e10d39d9aa0d5e3db3c09b.jpg";
 
 /***/ }),
 /* 38 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("koa");
+
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
+    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(39).definitions));
+
+module.exports = doc;
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-helmet");
+
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
+    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
+module.exports = doc;
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-router");
+module.exports = require("boxen");
 
 /***/ }),
 /* 41 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-send");
+module.exports = require("chalk");
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports) {
 
-module.exports = require("microseconds");
+module.exports = require("fs");
 
 /***/ }),
 /* 43 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("ip");
 
 /***/ }),
 /* 44 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square");
+module.exports = require("isomorphic-fetch");
 
 /***/ }),
 /* 45 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/instagram");
+module.exports = require("koa");
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square");
+module.exports = require("koa-helmet");
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("koa-router");
 
 /***/ }),
 /* 48 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("koa-send");
 
 /***/ }),
 /* 49 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("microseconds");
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 51 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-flexbox-grid");
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/facebook-square");
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/instagram");
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/youtube-square");
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-scrollable-anchor");
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(10);
+module.exports = __webpack_require__(11);
 
 
 /***/ })
