@@ -63,130 +63,49 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = require("react");
+module.exports = require("chalk");
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = {
-	"main": "main-vv2718wGHLD6lThS8mcwI",
-	"mobileIcon": "mobileIcon-2icoMzpdrZbPYIfQjxivTq",
-	"parallax": "parallax-3oYy3E6XoJCClgZR0R7xDr",
-	"caption": "caption-21tp0xAudjV1bavcaINc0T",
-	"border": "border-aQNY2OtxwHs6C26ekD14K",
-	"heroHomepage": "heroHomepage-3cr8Nd5W9Je_pIy-MhMdqV",
-	"featured": "featured-tBVkb2dk8NKSVh-MiZvpy",
-	"featuredLeftImage": "featuredLeftImage-1Gox6liBJlELhedy2ZEoQ4",
-	"featuredLeftText": "featuredLeftText-2ulA7B5hZq3aI0K1nomPKa",
-	"buttonP": "buttonP-2o61Dqeeal8MbCZT8JYmre",
-	"hello": "hello-1P9zCbIx8YQ5eID6A-67d6",
-	"logo": "logo-1tNzgJsJwXMqFQ0a4xMkPk",
-	"data": "data-1oklYPlS4mQJRj2Dp24Czw",
-	"styleExamples": "styleExamples-2cmVxjYoxVhR_tpCfyIq_T",
-	"example": "example-3quOHBYrr7YOUvefuRPyGa",
-	"footer": "footer-3k9kabI8HJWNNVio6VNJUN",
-	"itemWrap": "itemWrap-17n62GBEbcZ0YKeiE5pH_p",
-	"footerItem": "footerItem-3WuDvZVUsFhM8FTQboIhu",
-	"botFooter": "botFooter-GqWr1UPbpIsarc8kMzKLs",
-	"showing": "showing-3xt5gLGL3jWtxcqt2fKVHR",
-	"sectionHeadlineMain": "sectionHeadlineMain-3BS5Nojw6gcyNS7jnqmoOV",
-	"sectionHeadlineTitle": "sectionHeadlineTitle-3EJeE510K8dqtj9UpGRobp",
-	"sectionHeadlineInnerText": "sectionHeadlineInnerText-2rGs1qrSJSuR3vUGVNiPn4",
-	"threeGallery": "threeGallery-1S3vfrzqPjPi0_s-_tCQbv",
-	"flexo": "flexo-3dzWYlf-9R2_5EYj5quZCB",
-	"topHero": "topHero-14OIZyWV1neWIczIqc2ndD",
-	"topHeroInner": "topHeroInner-1R18bJ737GlmHsja_ddmAW",
-	"topHeader": "topHeader-2ri4gaarPV6WmDH6vNh10V",
-	"topSubHeader": "topSubHeader-nYw22H9bj_R5j6XFCrO5v",
-	"aboutNaslov": "aboutNaslov-d4SC59v7D83X9vn1noPVn",
-	"rowOne": "rowOne-1ZsZTwNatJNARSw-jUxDls",
-	"pleskaOne": "pleskaOne-2JKZfl6X9YnWW2SPZRZaTo",
-	"pleskaBgOne": "pleskaBgOne-1wnnaVKyyasxnkvVHaP3Hs",
-	"pleskaTekstOne": "pleskaTekstOne-33M7mQhjuVcjKCeWb5G3Rv",
-	"hrDebilni": "hrDebilni-3zeZ5gSEsPkrgWlN-__jJk",
-	"rowTwo": "rowTwo-337mFG2UpEw6hK2VQwwrfR",
-	"tekstTwo": "tekstTwo-3kXEBwp22JH95sjgbOWm5E",
-	"pleskaTwo": "pleskaTwo-2zs2ikr9x8Sa5YpP0kmzKH",
-	"pleskaBgTwo": "pleskaBgTwo-L6PMiWuJodAv0Y2AtAd_",
-	"pleskaTekstTwo": "pleskaTekstTwo-DHz89PWqxLvJcevMrzVsL"
-};
+module.exports = require("react");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("prop-types");
+module.exports = require("react-apollo");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-apollo");
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
-	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
-	"bsPrice": "bsPrice-3ljTYa9XaCKTLnoE1QLFa2",
-	"bsText": "bsText-3glj6OL5XYMIoQa9X2rcTh",
-	"bsInnerInner": "bsInnerInner-Sn87SKTD9jjTjQRG70MrY",
-	"boxStylezInner": "boxStylezInner-dPOMWFk0hOl84lqJTVTCX",
-	"mbrArrowFloating": "mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV",
-	"mbrArrowIcon": "mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0",
-	"a": "a-3CLQjXJ95FwwMe6Mc8CB2V"
-};
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("chalk");
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
 module.exports = require("seamless-immutable");
 
 /***/ }),
-/* 9 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _chalk = __webpack_require__(6);
+var _chalk = __webpack_require__(0);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _env = __webpack_require__(15);
+var _env = __webpack_require__(10);
 
-var _console = __webpack_require__(14);
+var _console = __webpack_require__(9);
 
-var _server = __webpack_require__(12);
+var _server = __webpack_require__(7);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -242,7 +161,7 @@ _server2.default.then(({ router, app }) => {
 });
 
 /***/ }),
-/* 10 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -251,7 +170,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(47);
+const path = __webpack_require__(23);
 
 // ----------------------
 
@@ -295,7 +214,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 11 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -315,7 +234,7 @@ const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
 };
 
 /***/ }),
-/* 12 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -327,59 +246,59 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(41);
+__webpack_require__(17);
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(48);
+var _server = __webpack_require__(25);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(42);
+var _koa = __webpack_require__(18);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(3);
+var _reactApollo = __webpack_require__(2);
 
-var _koaSend = __webpack_require__(45);
+var _koaSend = __webpack_require__(21);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(43);
+var _koaHelmet = __webpack_require__(19);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(44);
+var _koaRouter = __webpack_require__(20);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(46);
+var _microseconds = __webpack_require__(22);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(53);
+var _reactRouter = __webpack_require__(27);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(26);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _apollo = __webpack_require__(13);
+var _apollo = __webpack_require__(8);
 
-var _redux = __webpack_require__(16);
+var _redux = __webpack_require__(11);
 
 var _redux2 = _interopRequireDefault(_redux);
 
-var _ssr = __webpack_require__(18);
+var _ssr = __webpack_require__(12);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(32);
+var _app = __webpack_require__(14);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _paths = __webpack_require__(10);
+var _paths = __webpack_require__(5);
 
 var _paths2 = _interopRequireDefault(_paths);
 
@@ -590,7 +509,7 @@ exports.default = async function server() {
 }();
 
 /***/ }),
-/* 13 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -602,9 +521,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(3);
+var _reactApollo = __webpack_require__(2);
 
-var _project = __webpack_require__(11);
+var _project = __webpack_require__(6);
 
 // ----------------------
 
@@ -644,7 +563,7 @@ function serverClient() {
 }
 
 /***/ }),
-/* 14 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -655,15 +574,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(39);
+var _boxen = __webpack_require__(15);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(6);
+var _chalk = __webpack_require__(0);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(40);
+var _ip = __webpack_require__(16);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -701,7 +620,7 @@ function logServerStarted(opt = {}) {
 // Display a border around a message
 
 /***/ }),
-/* 15 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -803,7 +722,7 @@ function getURL() {
 }
 
 /***/ }),
-/* 16 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -834,17 +753,17 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(56);
+var _redux = __webpack_require__(28);
 
-var _reduxThunk = __webpack_require__(57);
+var _reduxThunk = __webpack_require__(29);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _seamlessImmutable = __webpack_require__(8);
+var _seamlessImmutable = __webpack_require__(3);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
-var _counter = __webpack_require__(19);
+var _counter = __webpack_require__(13);
 
 var _counter2 = _interopRequireDefault(_counter);
 
@@ -895,110 +814,7 @@ function createNewStore(apolloClient) {
 }
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Redirect = exports.NotFound = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// ----------------------
-
-// <Status code="xxx"> component.  Updates the context router's context, which
-// can be used by the server handler to respond to the status on the server.
-let Status = class Status extends _react2.default.PureComponent {
-
-  render() {
-    const { code, children } = this.props;
-    return _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
-        if (staticContext) {
-          staticContext.status = code;
-        }
-        return children;
-      } });
-  }
-};
-
-// <NotFound> component.  If this renders on the server in development mode,
-// it will attempt to proxyify the request to the upstream `webpack-dev-server`.
-// In production, it will issue a hard 404 and render.  In the browser, it will
-// simply render.
-/* eslint-disable no-param-reassign */
-
-// ----------------------
-// IMPORTS
-
-Status.propTypes = {
-  code: _propTypes2.default.number.isRequired,
-  children: _propTypes2.default.node
-};
-Status.defaultProps = {
-  children: null
-};
-let NotFound = exports.NotFound = class NotFound extends _react2.default.PureComponent {
-
-  render() {
-    const { children } = this.props;
-
-    return _react2.default.createElement(
-      Status,
-      { code: 404 },
-      children
-    );
-  }
-};
-
-// <Redirect> component. Mirrors React Router's component by the same name,
-// except it sets a 301/302 status code for setting server-side HTTP headers.
-
-NotFound.propTypes = {
-  children: _propTypes2.default.node
-};
-NotFound.defaultProps = {
-  children: null
-};
-let Redirect = exports.Redirect = class Redirect extends _react2.default.PureComponent {
-
-  render() {
-    const { to, from, push, permanent } = this.props;
-    const code = permanent ? 301 : 302;
-    return _react2.default.createElement(
-      Status,
-      { code: code },
-      _react2.default.createElement(_reactRouterDom.Redirect, { to: to, from: from, push: push })
-    );
-  }
-};
-Redirect.propTypes = {
-  to: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]).isRequired,
-  from: _propTypes2.default.string,
-  push: _propTypes2.default.bool,
-  permanent: _propTypes2.default.bool
-};
-Redirect.defaultProps = {
-  from: null,
-  push: false,
-  permanent: false
-};
-
-/***/ }),
-/* 18 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1008,11 +824,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(0);
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(24);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1065,7 +881,7 @@ Html.propTypes = {
 exports.default = Html;
 
 /***/ }),
-/* 19 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1075,7 +891,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _seamlessImmutable = __webpack_require__(8);
+var _seamlessImmutable = __webpack_require__(3);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -1118,1333 +934,106 @@ exports.default = {
 };
 
 /***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _TopHero = __webpack_require__(31);
-
-var _TopHero2 = _interopRequireDefault(_TopHero);
-
-var _serbianburger = __webpack_require__(36);
-
-var _serbianburger2 = _interopRequireDefault(_serbianburger);
-
-var _ContentBoxes = __webpack_require__(21);
-
-var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let AboutUs = class AboutUs extends _react2.default.Component {
-  render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: '\u0106evapi sa srcem za sva\u010Diju du\u0161u', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama.jpg")' } }),
-      _react2.default.createElement(_ContentBoxes2.default, null)
-    );
-  }
-};
-exports.default = AboutUs;
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactStyledFlexboxgrid = __webpack_require__(55);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let ContentBoxes = class ContentBoxes extends _react2.default.Component {
-
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      _reactStyledFlexboxgrid.Grid,
-      null,
-      _react2.default.createElement(
-        'h1',
-        { className: _styles2.default.aboutNaslov },
-        'KOD NAS CEVAPI IMAJU TO NESTO'
-      ),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { className: _styles2.default.rowOne },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 5, lg: 4 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaOne },
-            _react2.default.createElement('div', { className: _styles2.default.pleskaBgOne })
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 7, lg: 8 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaTekstOne },
-            _react2.default.createElement(
-              'h2',
-              null,
-              '10 GODINA VRHUNSKOG ROSTILJA'
-            ),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          )
-        )
-      ),
-      _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 7, lg: 8 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.tekstTwo },
-            _react2.default.createElement(
-              'h2',
-              null,
-              '10 GODINA VREDNOG RADA'
-            ),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 5, lg: 4 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaTwo },
-            _react2.default.createElement('div', { className: _styles2.default.pleskaBgTwo })
-          )
-        )
-      )
-    );
-  }
-};
-exports.default = ContentBoxes;
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { style: { display: "flex", backgroundColor: "#f2ebe0" } },
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.featured },
-        _react2.default.createElement('div', { className: _styles2.default.featuredLeftImage, style: { backgroundImage: "url('pleska.jpg')" } }),
-        _react2.default.createElement(
-          'div',
-          { className: _styles2.default.featuredLeftText },
-          _react2.default.createElement(
-            'h2',
-            null,
-            'Osetite duh Sarajeva u centru Beograda'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Society excited by cottage private an it esteems. Fully begin on by wound an. Girl rich in do up or both. At declared in as rejoiced of together. He impression collecting delightful unpleasant by prosperous as on. End too talent she object mrs wanted remove giving.'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Do commanded an shameless we disposing do. Indulgence ten remarkably nor are impression out. Power is lived means oh every in we quiet. Remainder provision an in intention. Saw supported too joy promotion engrossed propriety. Me till like it sure no sons.'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: _styles2.default.buttonP },
-            _react2.default.createElement(
-              'a',
-              null,
-              'Pogledajte na\u0161u ponudu'
-            )
-          )
-        )
-      )
-    );
-  }
-};
-exports.default = FeaturedLeft;
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _facebookSquare = __webpack_require__(49);
-
-var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
-
-var _instagram = __webpack_require__(50);
-
-var _instagram2 = _interopRequireDefault(_instagram);
-
-var _youtubeSquare = __webpack_require__(51);
-
-var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let Footer = class Footer extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.footer },
-        _react2.default.createElement(
-          'div',
-          { className: _styles2.default.itemWrap },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'O NAMA'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'DOSTAVA'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Donosimo hranu za podrucje Beograda na kucnu adresu. Radno vreme dostave je od 08:00 - 22:00. Za porudzbine preko 2000rsd. dostava je besplatna. Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti da uzivate u kvalitetnoj hrani u toplini vaseg doma'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'REACH US'
-            ),
-            _react2.default.createElement(_facebookSquare2.default, { fill: '#fff', width: '3em', height: '3em' }),
-            _react2.default.createElement(_instagram2.default, { fill: '#fff', width: '3em', height: '3em' }),
-            _react2.default.createElement(_youtubeSquare2.default, { fill: '#fff', width: '3em', height: '3em' })
-          )
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.botFooter },
-        _react2.default.createElement(
-          'p',
-          null,
-          'DRAMA \u0106evapi Ori\u0111inale'
-        )
-      )
-    );
-  }
-};
-exports.default = Footer;
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _HeaderHero = __webpack_require__(25);
-
-var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let Header = class Header extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_HeaderHero2.default, null)
-    );
-  }
-};
-exports.default = Header;
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _styles3 = __webpack_require__(5);
-
-var _styles4 = _interopRequireDefault(_styles3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let HeaderHero = class HeaderHero extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.heroHomepage, style: { backgroundImage: 'url("/na-kover-drama-rostilj.jpg")' } },
-        _react2.default.createElement(
-          'div',
-          { className: _styles4.default.mbrArrowFloating },
-          _react2.default.createElement('a', { href: '#section1', className: _styles4.default.mbrArrowIcon })
-        )
-      )
-    );
-  }
-};
-exports.default = HeaderHero;
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(5);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let InstaImage = class InstaImage extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      srcStyle: {},
-      tekst: '',
-      cena: ''
-    };
-  }
-  componentWillMount() {
-    if (this.props.src && this.props.tekst) {
-      this.setState({
-        src: this.props.src,
-        tekst: this.props.tekst
-      });
-      console.log("YOYO");
-    }
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { className: _styles2.default.boxStylez },
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.bsInnerInner },
-        _react2.default.createElement('div', { style: this.state.src, className: _styles2.default.boxStylezInner })
-      ),
-      _react2.default.createElement(
-        'h3',
-        { className: _styles2.default.bsText },
-        this.state.tekst
-      ),
-      _react2.default.createElement(
-        'h4',
-        { className: _styles2.default.bsPrice },
-        '330din'
-      )
-    );
-  }
-};
-exports.default = InstaImage;
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(4);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _logodrama = __webpack_require__(35);
-
-var _logodrama2 = _interopRequireDefault(_logodrama);
-
-var _hamburger = __webpack_require__(34);
-
-var _hamburger2 = _interopRequireDefault(_hamburger);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let MainMenu = class MainMenu extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-
-    this.opener = () => {
-      if (!this.state.open) {
-        console.log("{sdadsadsad1231}");
-        this.setState({
-          open: true,
-          stylee: { overflow: 'visible' }
-        });
-      } else {
-        console.log("{sdadsadsad}");
-        this.setState({
-          open: false,
-          stylee: { overflow: 'hidden' }
-        });
-      }
-    };
-
-    this.state = {
-      open: false,
-      stylee: {}
-    };
-  }
-
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { className: _styles2.default.hello },
-      _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo }),
-      _react2.default.createElement(
-        'div',
-        {
-          className: _styles2.default.mobileIcon,
-          onClick: this.opener },
-        _react2.default.createElement('img', { src: _hamburger2.default, alt: 'menu', height: '35px', width: '45px' })
-      ),
-      _react2.default.createElement(
-        'ul',
-        { style: this.state.stylee },
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/', onClick: this.opener },
-            'Po\u010Detna'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/page/jelovnik', onClick: this.opener },
-            'Jelovnik'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/page/about', onClick: this.opener },
-            'O nama'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/contact', onClick: this.opener },
-            'Kontakt'
-          )
-        )
-      )
-    );
-  }
-};
-exports.default = MainMenu;
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let ParalaxContainer = class ParalaxContainer extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      stylee: {}
-    };
-  }
-  componentWillMount() {
-    if (this.props.stylee) {
-      const stylee = this.props.stylee;
-      this.setState({
-        stylee
-      });
-    } else {
-      this.setState({
-        stylee: {
-          backgroundImage: 'url("http://www.cevabdzinica.de/wp-content/uploads/2016/02/Cevapcici-beste-in-Muenchen-mit-Ajvar-Schmand-und-Brot-in-Butter-vom-Grill-IMG_3815-e1455037381718.jpg")',
-          height: '400px'
-        }
-      });
-    }
-  }
-  render() {
-    return _react2.default.createElement('div', { className: _styles2.default.parallax, style: this.state.stylee });
-  }
-};
-exports.default = ParalaxContainer;
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let SectionHeadline = class SectionHeadline extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      innerText: ""
-    };
-  }
-  componentWillMount() {
-    const title = this.props.title;
-    const innerText = this.props.innerText;
-    if (!innerText) {
-      this.setState({
-        title
-      });
-    } else {
-      this.setState({
-        title,
-        innerText
-      });
-    }
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { className: _styles2.default.sectionHeadlineMain },
-      _react2.default.createElement(
-        'h1',
-        { className: _styles2.default.sectionHeadlineTitle },
-        this.state.title
-      ),
-      _react2.default.createElement(
-        'p',
-        { className: _styles2.default.sectionHeadlineInnerText },
-        this.state.innerText
-      )
-    );
-  }
-};
-exports.default = SectionHeadline;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _InstaImage = __webpack_require__(26);
-
-var _InstaImage2 = _interopRequireDefault(_InstaImage);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const srcFirst = {
-  backgroundImage: 'url("/pljeska1.jpg")'
-};
-const srcSecond = {
-  backgroundImage: 'url("/pljeska2.jpg")'
-};
-const srcThird = {
-  backgroundImage: 'url("https://adriaticmedianethr.files.wordpress.com/2017/01/c487evapi.jpg?quality=100&strip=all&w=669&strip=all")'
-};
-let ThreeGallery = class ThreeGallery extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { className: _styles2.default.threeGallery },
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.flexo },
-        _react2.default.createElement(_InstaImage2.default, { src: srcFirst, tekst: 'Gurmanska pljeskavica 300gr' }),
-        _react2.default.createElement(_InstaImage2.default, { src: srcSecond, tekst: 'Leskovacka muckalica 300gr' }),
-        _react2.default.createElement(_InstaImage2.default, { src: srcThird, tekst: '10 \u0107evapa 300gr' })
-      )
-    );
-  }
-};
-exports.default = ThreeGallery;
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let TopHero = class TopHero extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      bgImage: false,
-      title: false,
-      subtitle: false
-    };
-  }
-  componentWillMount() {
-    if (this.props.bgImage && this.props.title && this.props.subtitle) {
-      const subtitle = this.props.subtitle;
-      const title = this.props.title;
-      const bgImage = this.props.bgImage;
-      this.setState({
-        bgImage: bgImage,
-        title: title,
-        subtitle: subtitle
-      });
-    } else {
-      this.setState({
-        bgImage: {},
-        title: "Ne postoji strana",
-        subtitle: "404"
-      });
-    }
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { className: _styles2.default.topHero, style: this.state.bgImage },
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.topHeroInner },
-        _react2.default.createElement(
-          'h2',
-          { className: _styles2.default.topHeader },
-          this.state.title
-        ),
-        _react2.default.createElement(
-          'h4',
-          { className: _styles2.default.topSubHeader },
-          this.state.subtitle
-        )
-      )
-    );
-  }
-};
-exports.default = TopHero;
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _dec, _class, _dec2, _class2;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactApollo = __webpack_require__(3);
-
-var _reactRedux = __webpack_require__(52);
-
-var _reactRouterDom = __webpack_require__(4);
-
-var _reactHelmet = __webpack_require__(7);
-
-var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
-
-var _routing = __webpack_require__(17);
-
-var _all_messages = __webpack_require__(37);
-
-var _all_messages2 = _interopRequireDefault(_all_messages);
-
-__webpack_require__(33);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _Header = __webpack_require__(24);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _SectionHeadline = __webpack_require__(29);
-
-var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
-
-var _ParalaxContainer = __webpack_require__(28);
-
-var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
-
-var _ThreeGallery = __webpack_require__(30);
-
-var _ThreeGallery2 = _interopRequireDefault(_ThreeGallery);
-
-var _FeaturedLeft = __webpack_require__(22);
-
-var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
-
-var _Footer = __webpack_require__(23);
-
-var _Footer2 = _interopRequireDefault(_Footer);
-
-var _MainMenu = __webpack_require__(27);
-
-var _MainMenu2 = _interopRequireDefault(_MainMenu);
-
-var _AboutUs = __webpack_require__(20);
-
-var _AboutUs2 = _interopRequireDefault(_AboutUs);
-
-var _reactScrollableAnchor = __webpack_require__(54);
-
-var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const stylee = {
-  backgroundImage: 'url("/slika-za-parallax-drama-rostilj.jpg")',
-  height: '300px'
-};
-const sndlax = {
-  backgroundImage: 'url("/parallax-nova-drama-rostilj.jpg")',
-  height: '350px'
-};
-
-const Home = () => _react2.default.createElement(
-  'div',
-  null,
-  _react2.default.createElement(_Header2.default, null),
-  _react2.default.createElement(
-    _reactScrollableAnchor2.default,
-    { id: 'section1' },
-    _react2.default.createElement(_SectionHeadline2.default, { title: '\u0106evapi koje \u0107ete voleti', innerText: '100% organsko meso' })
-  ),
-  _react2.default.createElement(_ParalaxContainer2.default, { stylee: stylee }),
-  _react2.default.createElement(_SectionHeadline2.default, { title: 'Najbolji \u0107evapi u gradu', innerText: 'Probajte obave\u017Eno' }),
-  _react2.default.createElement(_ThreeGallery2.default, null),
-  _react2.default.createElement(_ParalaxContainer2.default, { stylee: sndlax }),
-  _react2.default.createElement(_FeaturedLeft2.default, null)
-);
-
-// Helper component that will be conditionally shown when the route matches.
-// This gives you an idea how React Router v4 works
-const About = ({ match }) => _react2.default.createElement(_AboutUs2.default, null);
-const Contact = ({ match }) => _react2.default.createElement(
-  'h1',
-  null,
-  'Contact'
-);
-
-const Jelovnik = ({ match }) => _react2.default.createElement(
-  'h2',
-  null,
-  'JELOVNIK A'
-);
-
-const WhenNotFound = () => _react2.default.createElement(
-  _routing.NotFound,
-  null,
-  _react2.default.createElement(
-    'h1',
-    null,
-    'Unknown route - the 404 handler was triggered!'
-  )
-);
-
-// Specify PropTypes if the `match` object, which is injected to props by
-// the <Route> component
-
-
-// Stats pulled from the environment.  This demonstrates how data will
-// change depending where we're running the code (environment vars, etc)
-// and also how we can connect a 'vanilla' React component to an RxJS
-// observable source, and feed eventual values in as properties
-const Stats = () => {
-  const info = [['Environment', "development"]];
-
-  return _react2.default.createElement(
-    'ul',
-    { className: _styles2.default.data },
-    info.map(([key, val]) => _react2.default.createElement(
-      'li',
-      { key: key },
-      key,
-      ': ',
-      _react2.default.createElement(
-        'span',
-        null,
-        val
-      )
-    ))
-  );
-};
-
-// Now, let's create a GraphQL-enabled component...
-
-// ... then, let's create the component and decorate it with the `graphql`
-// HOC that will automatically populate `this.props` with the query data
-// once the GraphQL API request has been completed
-let GraphQLMessage = (_dec = (0, _reactApollo.graphql)(_all_messages2.default), _dec(_class = class GraphQLMessage extends _react2.default.PureComponent {
-
-  render() {
-    const { data } = this.props;
-    const message = data.allMessages && data.allMessages[0].text;
-    const isLoading = data.loading ? 'yes' : 'nope';
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Message from GraphQL server: ',
-        _react2.default.createElement(
-          'em',
-          null,
-          message
-        )
-      ),
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Currently loading?: ',
-        isLoading
-      )
-    );
-  }
-}) || _class);
-
-// Example of CSS, SASS and LESS styles being used together
-
-GraphQLMessage.propTypes = {
-  data: _propTypes2.default.shape({
-    allMessages: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-      text: _propTypes2.default.string.isRequired
-    }))
-  })
-};
-const Styles = () => _react2.default.createElement(
-  'ul',
-  { className: _styles2.default.styleExamples },
-  _react2.default.createElement(
-    'li',
-    { className: _styles2.default.example },
-    'Styled by CSS'
-  ),
-  _react2.default.createElement(
-    'li',
-    { className: sass.example },
-    'Styled by SASS'
-  ),
-  _react2.default.createElement(
-    'li',
-    { className: less.example },
-    'Styled by LESS'
-  )
-);
-
-// Sample component that demonstrates using a part of the Redux store
-// outside of Apollo.  We can import own custom reducers in `kit/lib/redux`
-// and 'listen' to them here
-let ReduxCounter = (_dec2 = (0, _reactRedux.connect)(state => ({ counter: state.counter })), _dec2(_class2 = class ReduxCounter extends _react2.default.PureComponent {
-  constructor(...args) {
-    var _temp;
-
-    return _temp = super(...args), this.triggerIncrement = () => {
-      this.props.dispatch({
-        type: 'INCREMENT_COUNTER'
-      });
-    }, _temp;
-  }
-
-  // Trigger the `INCREMENT_COUNTER` action in Redux, to add 1 to the total
-
-
-  render() {
-    const { count } = this.props.counter;
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Listening to Redux counter: ',
-        count
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: this.triggerIncrement },
-        'Increment'
-      )
-    );
-  }
-}) || _class2);
-
-// Export a simple component that allows clicking on list items to change
-// the route, along with a <Route> 'listener' that will conditionally display
-// the <Page> component based on the route name
-
-ReduxCounter.propTypes = {
-  counter: _propTypes2.default.shape({
-    count: _propTypes2.default.number.isRequired
-  })
-};
-
-exports.default = () => _react2.default.createElement(
-  'div',
-  null,
-  _react2.default.createElement(_reactHelmet2.default, {
-    title: 'DRAMA \u0106evapi',
-    meta: [{
-      name: 'description',
-      content: '100% organsko meso'
-    }] }),
-  _react2.default.createElement(_MainMenu2.default, null),
-  _react2.default.createElement(
-    _reactRouterDom.Switch,
-    null,
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
-<<<<<<< Updated upstream
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/jelovnik', component: Jelovnik }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/contact', component: Contact }),
-=======
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: Page }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/contact', component: Contact }),
->>>>>>> Stashed changes
-    _react2.default.createElement(_routing.Redirect, { from: '/old/path', to: '/new/path' }),
-    _react2.default.createElement(_reactRouterDom.Route, { component: WhenNotFound })
-  ),
-  _react2.default.createElement(_Footer2.default, null)
-);
-
-/***/ }),
-/* 33 */
+/* 14 */
 /***/ (function(module, exports) {
 
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f8616c1388468fff.png";
+throw new Error("Module build failed: SyntaxError: C:/Users/Terminal/Documents/cevapicevapu/cevapicevapu/src/app.js: Unexpected token (171:1)\n\n\u001b[0m \u001b[90m 169 | \u001b[39m    \u001b[33m<\u001b[39m\u001b[33mSwitch\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 170 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m exact path\u001b[33m=\u001b[39m\u001b[32m\"/\"\u001b[39m component\u001b[33m=\u001b[39m{\u001b[33mHome\u001b[39m} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 171 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mUpdated\u001b[39m upstream\n \u001b[90m     | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 172 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/page/jelovnik\"\u001b[39m component\u001b[33m=\u001b[39m{\u001b[33mJelovnik\u001b[39m} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 173 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/page/about\"\u001b[39m component\u001b[33m=\u001b[39m{\u001b[33mAbout\u001b[39m} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 174 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/page/contact\"\u001b[39m component\u001b[33m=\u001b[39m{\u001b[33mContact\u001b[39m} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030eb1f711c7b7b64f570e.jpg";
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
-  
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(38).definitions));
-
-module.exports = doc;
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
-    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
-  
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  
-module.exports = doc;
-
-/***/ }),
-/* 39 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 40 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 41 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 42 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 43 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 44 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 45 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 46 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 47 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 48 */
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 49 */
+/* 26 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square");
+module.exports = require("react-helmet");
 
 /***/ }),
-/* 50 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/lib/fa/instagram");
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/lib/fa/youtube-square");
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-/* 53 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 54 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-scrollable-anchor");
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-styled-flexboxgrid");
-
-/***/ }),
-/* 56 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 57 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 58 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(9);
+module.exports = __webpack_require__(4);
 
 
 /***/ })
