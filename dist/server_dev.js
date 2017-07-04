@@ -551,21 +551,21 @@ exports.default = async function server() {
     // Set-up a general purpose /ping route to check the server is alive
     get('/ping', async ctx => {
       ctx.body = 'pong';
-    })
+    }
 
     // Favicon.ico.  By default, we'll serve this as a 204 No Content.
     // If /favicon.ico is available as a static file, it'll try that first
-    .get('/favicon.ico', async ctx => {
+    ).get('/favicon.ico', async ctx => {
       ctx.res.statusCode = 204;
     }),
     app: new _koa2.default()
 
     // Preliminary security for HTTP headers
-    .use((0, _koaHelmet2.default)())
+    .use((0, _koaHelmet2.default)()
 
     // Error wrapper.  If an error manages to slip through the middleware
     // chain, it will be caught and logged back here
-    .use(async (ctx, next) => {
+    ).use(async (ctx, next) => {
       try {
         await next();
       } catch (e) {
@@ -575,11 +575,11 @@ exports.default = async function server() {
         console.log('Error', e.message);
         ctx.body = 'There was an error. Please try again later.';
       }
-    })
+    }
 
     // It's useful to see how long a request takes to respond.  Add the
     // timing to a HTTP Response header
-    .use(async (ctx, next) => {
+    ).use(async (ctx, next) => {
       const start = _microseconds2.default.now();
       await next();
       const end = _microseconds2.default.parse(_microseconds2.default.since(start));
@@ -1702,7 +1702,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           null,
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/old/path', onClick: this.opener },
+            { to: '/contact', onClick: this.opener },
             'Kontakt'
           )
         )
@@ -2233,9 +2233,14 @@ exports.default = () => _react2.default.createElement(
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
+<<<<<<< Updated upstream
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/jelovnik', component: Jelovnik }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/contact', component: Contact }),
+=======
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: Page }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/contact', component: Contact }),
+>>>>>>> Stashed changes
     _react2.default.createElement(_routing.Redirect, { from: '/old/path', to: '/new/path' }),
     _react2.default.createElement(_reactRouterDom.Route, { component: WhenNotFound })
   ),
