@@ -168,14 +168,9 @@ export default () => (
     <MainMenu />
     <Switch>
       <Route exact path="/" component={Home} />
-<<<<<<< Updated upstream
       <Route path="/page/jelovnik" component={Jelovnik} />
       <Route path="/page/about" component={About} />
       <Route path="/page/contact" component={Contact} />
-=======
-      <Route path="/page/about" component={Page} />
-      <Route path="/contact" component={Contact} />
->>>>>>> Stashed changes
       <Redirect from="/old/path" to="/new/path" />
       <Route component={WhenNotFound} />
     </Switch>
