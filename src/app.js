@@ -20,6 +20,7 @@ import FeaturedLeft from './FeaturedLeft.js';
 import Footer from './Footer.js';
 import MainMenu from './MainMenu.js';
 import AboutUs from './AboutUs.js';
+import AlaCart from './AlaCart.js';
 import ScrollableAnchor from 'react-scrollable-anchor'
 const stylee = {
   backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
@@ -54,7 +55,7 @@ const Contact = ({ match }) => (
 );
 
 const Jelovnik = ({ match }) => (
-  <h2>JELOVNIK A</h2>
+  <AlaCart />
 );
 
 const WhenNotFound = () => (
