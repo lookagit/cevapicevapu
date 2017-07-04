@@ -19,7 +19,7 @@ import ThreeGallery from './ThreeGallery.js';
 import FeaturedLeft from './FeaturedLeft.js';
 import Footer from './Footer.js';
 import MainMenu from './MainMenu.js';
-import DecisionRoute from './DecisionRoute.js';
+import AboutUs from './AboutUs.js';
 import ScrollableAnchor from 'react-scrollable-anchor'
 const stylee = {
   backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
@@ -46,13 +46,17 @@ const Home = () => (
 
 // Helper component that will be conditionally shown when the route matches.
 // This gives you an idea how React Router v4 works
-const Page = ({ match }) => (
-  <DecisionRoute />
+const About = ({ match }) => (
+  <AboutUs />
 );
 const Contact = ({ match }) => (
   <h1>Contact</h1>
 );
-// Create a route that will be displayed when the code isn't found
+
+const Jelovnik = ({ match }) => (
+  <h2>JELOVNIK A</h2>
+);
+
 const WhenNotFound = () => (
   <NotFound>
     <h1>Unknown route - the 404 handler was triggered!</h1>
@@ -61,11 +65,7 @@ const WhenNotFound = () => (
 
 // Specify PropTypes if the `match` object, which is injected to props by
 // the <Route> component
-Page.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.object,
-  }).isRequired,
-};
+
 
 // Stats pulled from the environment.  This demonstrates how data will
 // change depending where we're running the code (environment vars, etc)
@@ -168,7 +168,8 @@ export default () => (
     <MainMenu />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/page/about" component={Page} />
+      <Route path="/page/jelovnik" component={Jelovnik} />
+      <Route path="/page/about" component={About} />
       <Route path="/page/contact" component={Contact} />
       <Redirect from="/old/path" to="/new/path" />
       <Route component={WhenNotFound} />

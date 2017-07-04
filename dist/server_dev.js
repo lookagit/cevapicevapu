@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 58);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -139,109 +139,6 @@ module.exports = require("react-router-dom");
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Redirect = exports.NotFound = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// ----------------------
-
-// <Status code="xxx"> component.  Updates the context router's context, which
-// can be used by the server handler to respond to the status on the server.
-let Status = class Status extends _react2.default.PureComponent {
-
-  render() {
-    const { code, children } = this.props;
-    return _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
-        if (staticContext) {
-          staticContext.status = code;
-        }
-        return children;
-      } });
-  }
-};
-
-// <NotFound> component.  If this renders on the server in development mode,
-// it will attempt to proxyify the request to the upstream `webpack-dev-server`.
-// In production, it will issue a hard 404 and render.  In the browser, it will
-// simply render.
-/* eslint-disable no-param-reassign */
-
-// ----------------------
-// IMPORTS
-
-Status.propTypes = {
-  code: _propTypes2.default.number.isRequired,
-  children: _propTypes2.default.node
-};
-Status.defaultProps = {
-  children: null
-};
-let NotFound = exports.NotFound = class NotFound extends _react2.default.PureComponent {
-
-  render() {
-    const { children } = this.props;
-
-    return _react2.default.createElement(
-      Status,
-      { code: 404 },
-      children
-    );
-  }
-};
-
-// <Redirect> component. Mirrors React Router's component by the same name,
-// except it sets a 301/302 status code for setting server-side HTTP headers.
-
-NotFound.propTypes = {
-  children: _propTypes2.default.node
-};
-NotFound.defaultProps = {
-  children: null
-};
-let Redirect = exports.Redirect = class Redirect extends _react2.default.PureComponent {
-
-  render() {
-    const { to, from, push, permanent } = this.props;
-    const code = permanent ? 301 : 302;
-    return _react2.default.createElement(
-      Status,
-      { code: code },
-      _react2.default.createElement(_reactRouterDom.Redirect, { to: to, from: from, push: push })
-    );
-  }
-};
-Redirect.propTypes = {
-  to: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]).isRequired,
-  from: _propTypes2.default.string,
-  push: _propTypes2.default.bool,
-  permanent: _propTypes2.default.bool
-};
-Redirect.defaultProps = {
-  from: null,
-  push: false,
-  permanent: false
-};
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -257,39 +154,39 @@ module.exports = {
 };
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = require("chalk");
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-helmet");
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 module.exports = require("seamless-immutable");
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _chalk = __webpack_require__(7);
+var _chalk = __webpack_require__(6);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _env = __webpack_require__(16);
+var _env = __webpack_require__(15);
 
-var _console = __webpack_require__(15);
+var _console = __webpack_require__(14);
 
-var _server = __webpack_require__(13);
+var _server = __webpack_require__(12);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -345,7 +242,7 @@ _server2.default.then(({ router, app }) => {
 });
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -354,7 +251,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(48);
+const path = __webpack_require__(47);
 
 // ----------------------
 
@@ -398,7 +295,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -418,7 +315,7 @@ const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
 };
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -430,47 +327,47 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(42);
+__webpack_require__(41);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(49);
+var _server = __webpack_require__(48);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(43);
+var _koa = __webpack_require__(42);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(3);
 
-var _koaSend = __webpack_require__(46);
+var _koaSend = __webpack_require__(45);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(44);
+var _koaHelmet = __webpack_require__(43);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(45);
+var _koaRouter = __webpack_require__(44);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(47);
+var _microseconds = __webpack_require__(46);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(54);
+var _reactRouter = __webpack_require__(53);
 
-var _reactHelmet = __webpack_require__(8);
+var _reactHelmet = __webpack_require__(7);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _apollo = __webpack_require__(14);
+var _apollo = __webpack_require__(13);
 
-var _redux = __webpack_require__(17);
+var _redux = __webpack_require__(16);
 
 var _redux2 = _interopRequireDefault(_redux);
 
@@ -478,11 +375,11 @@ var _ssr = __webpack_require__(18);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(33);
+var _app = __webpack_require__(32);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _paths = __webpack_require__(11);
+var _paths = __webpack_require__(10);
 
 var _paths2 = _interopRequireDefault(_paths);
 
@@ -693,7 +590,7 @@ exports.default = async function server() {
 }();
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -707,7 +604,7 @@ exports.serverClient = serverClient;
 
 var _reactApollo = __webpack_require__(3);
 
-var _project = __webpack_require__(12);
+var _project = __webpack_require__(11);
 
 // ----------------------
 
@@ -747,7 +644,7 @@ function serverClient() {
 }
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -758,15 +655,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(40);
+var _boxen = __webpack_require__(39);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(7);
+var _chalk = __webpack_require__(6);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(41);
+var _ip = __webpack_require__(40);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -804,7 +701,7 @@ function logServerStarted(opt = {}) {
 // Display a border around a message
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -906,7 +803,7 @@ function getURL() {
 }
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -937,13 +834,13 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(57);
+var _redux = __webpack_require__(56);
 
-var _reduxThunk = __webpack_require__(58);
+var _reduxThunk = __webpack_require__(57);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _seamlessImmutable = __webpack_require__(9);
+var _seamlessImmutable = __webpack_require__(8);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -996,6 +893,109 @@ function createNewStore(apolloClient) {
 
   return store;
 }
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Redirect = exports.NotFound = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(4);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// ----------------------
+
+// <Status code="xxx"> component.  Updates the context router's context, which
+// can be used by the server handler to respond to the status on the server.
+let Status = class Status extends _react2.default.PureComponent {
+
+  render() {
+    const { code, children } = this.props;
+    return _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
+        if (staticContext) {
+          staticContext.status = code;
+        }
+        return children;
+      } });
+  }
+};
+
+// <NotFound> component.  If this renders on the server in development mode,
+// it will attempt to proxyify the request to the upstream `webpack-dev-server`.
+// In production, it will issue a hard 404 and render.  In the browser, it will
+// simply render.
+/* eslint-disable no-param-reassign */
+
+// ----------------------
+// IMPORTS
+
+Status.propTypes = {
+  code: _propTypes2.default.number.isRequired,
+  children: _propTypes2.default.node
+};
+Status.defaultProps = {
+  children: null
+};
+let NotFound = exports.NotFound = class NotFound extends _react2.default.PureComponent {
+
+  render() {
+    const { children } = this.props;
+
+    return _react2.default.createElement(
+      Status,
+      { code: 404 },
+      children
+    );
+  }
+};
+
+// <Redirect> component. Mirrors React Router's component by the same name,
+// except it sets a 301/302 status code for setting server-side HTTP headers.
+
+NotFound.propTypes = {
+  children: _propTypes2.default.node
+};
+NotFound.defaultProps = {
+  children: null
+};
+let Redirect = exports.Redirect = class Redirect extends _react2.default.PureComponent {
+
+  render() {
+    const { to, from, push, permanent } = this.props;
+    const code = permanent ? 301 : 302;
+    return _react2.default.createElement(
+      Status,
+      { code: code },
+      _react2.default.createElement(_reactRouterDom.Redirect, { to: to, from: from, push: push })
+    );
+  }
+};
+Redirect.propTypes = {
+  to: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]).isRequired,
+  from: _propTypes2.default.string,
+  push: _propTypes2.default.bool,
+  permanent: _propTypes2.default.bool
+};
+Redirect.defaultProps = {
+  from: null,
+  push: false,
+  permanent: false
+};
 
 /***/ }),
 /* 18 */
@@ -1075,7 +1075,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _seamlessImmutable = __webpack_require__(9);
+var _seamlessImmutable = __webpack_require__(8);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -1137,11 +1137,11 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(32);
+var _TopHero = __webpack_require__(31);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _serbianburger = __webpack_require__(37);
+var _serbianburger = __webpack_require__(36);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
@@ -1179,7 +1179,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(56);
+var _reactStyledFlexboxgrid = __webpack_require__(55);
 
 var _styles = __webpack_require__(1);
 
@@ -1289,41 +1289,6 @@ exports.default = ContentBoxes;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _AboutUs = __webpack_require__(20);
-
-var _AboutUs2 = _interopRequireDefault(_AboutUs);
-
-var _routing = __webpack_require__(5);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let DecisionRoute = class DecisionRoute extends _react2.default.Component {
-
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(_AboutUs2.default, null);
-  }
-};
-exports.default = DecisionRoute;
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
 var _react = __webpack_require__(0);
 
@@ -1382,7 +1347,7 @@ let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
 exports.default = FeaturedLeft;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1400,15 +1365,15 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(50);
+var _facebookSquare = __webpack_require__(49);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(51);
+var _instagram = __webpack_require__(50);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(52);
+var _youtubeSquare = __webpack_require__(51);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -1485,7 +1450,7 @@ let Footer = class Footer extends _react2.default.Component {
 exports.default = Footer;
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1499,7 +1464,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HeaderHero = __webpack_require__(26);
+var _HeaderHero = __webpack_require__(25);
 
 var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
 
@@ -1524,7 +1489,7 @@ let Header = class Header extends _react2.default.Component {
 exports.default = Header;
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1542,7 +1507,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _styles3 = __webpack_require__(6);
+var _styles3 = __webpack_require__(5);
 
 var _styles4 = _interopRequireDefault(_styles3);
 
@@ -1571,7 +1536,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
 exports.default = HeaderHero;
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1585,7 +1550,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(6);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -1634,7 +1599,7 @@ let InstaImage = class InstaImage extends _react2.default.Component {
 exports.default = InstaImage;
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1654,11 +1619,11 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(36);
+var _logodrama = __webpack_require__(35);
 
 var _logodrama2 = _interopRequireDefault(_logodrama);
 
-var _hamburger = __webpack_require__(35);
+var _hamburger = __webpack_require__(34);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
@@ -1719,7 +1684,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           null,
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/page/contact', onClick: this.opener },
+            { to: '/page/jelovnik', onClick: this.opener },
             'Jelovnik'
           )
         ),
@@ -1748,7 +1713,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 exports.default = MainMenu;
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1797,7 +1762,7 @@ let ParalaxContainer = class ParalaxContainer extends _react2.default.Component 
 exports.default = ParalaxContainer;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1859,7 +1824,7 @@ let SectionHeadline = class SectionHeadline extends _react2.default.Component {
 exports.default = SectionHeadline;
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1877,7 +1842,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _InstaImage = __webpack_require__(27);
+var _InstaImage = __webpack_require__(26);
 
 var _InstaImage2 = _interopRequireDefault(_InstaImage);
 
@@ -1914,7 +1879,7 @@ let ThreeGallery = class ThreeGallery extends _react2.default.Component {
 exports.default = ThreeGallery;
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1986,7 +1951,7 @@ let TopHero = class TopHero extends _react2.default.Component {
 exports.default = TopHero;
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2008,59 +1973,59 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(3);
 
-var _reactRedux = __webpack_require__(53);
+var _reactRedux = __webpack_require__(52);
 
 var _reactRouterDom = __webpack_require__(4);
 
-var _reactHelmet = __webpack_require__(8);
+var _reactHelmet = __webpack_require__(7);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _routing = __webpack_require__(5);
+var _routing = __webpack_require__(17);
 
-var _all_messages = __webpack_require__(38);
+var _all_messages = __webpack_require__(37);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(34);
+__webpack_require__(33);
 
 var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _Header = __webpack_require__(25);
+var _Header = __webpack_require__(24);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _SectionHeadline = __webpack_require__(30);
+var _SectionHeadline = __webpack_require__(29);
 
 var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
 
-var _ParalaxContainer = __webpack_require__(29);
+var _ParalaxContainer = __webpack_require__(28);
 
 var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
 
-var _ThreeGallery = __webpack_require__(31);
+var _ThreeGallery = __webpack_require__(30);
 
 var _ThreeGallery2 = _interopRequireDefault(_ThreeGallery);
 
-var _FeaturedLeft = __webpack_require__(23);
+var _FeaturedLeft = __webpack_require__(22);
 
 var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
 
-var _Footer = __webpack_require__(24);
+var _Footer = __webpack_require__(23);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _MainMenu = __webpack_require__(28);
+var _MainMenu = __webpack_require__(27);
 
 var _MainMenu2 = _interopRequireDefault(_MainMenu);
 
-var _DecisionRoute = __webpack_require__(22);
+var _AboutUs = __webpack_require__(20);
 
-var _DecisionRoute2 = _interopRequireDefault(_DecisionRoute);
+var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
-var _reactScrollableAnchor = __webpack_require__(55);
+var _reactScrollableAnchor = __webpack_require__(54);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -2093,13 +2058,19 @@ const Home = () => _react2.default.createElement(
 
 // Helper component that will be conditionally shown when the route matches.
 // This gives you an idea how React Router v4 works
-const Page = ({ match }) => _react2.default.createElement(_DecisionRoute2.default, null);
+const About = ({ match }) => _react2.default.createElement(_AboutUs2.default, null);
 const Contact = ({ match }) => _react2.default.createElement(
   'h1',
   null,
   'Contact'
 );
-// Create a route that will be displayed when the code isn't found
+
+const Jelovnik = ({ match }) => _react2.default.createElement(
+  'h2',
+  null,
+  'JELOVNIK A'
+);
+
 const WhenNotFound = () => _react2.default.createElement(
   _routing.NotFound,
   null,
@@ -2112,11 +2083,7 @@ const WhenNotFound = () => _react2.default.createElement(
 
 // Specify PropTypes if the `match` object, which is injected to props by
 // the <Route> component
-Page.propTypes = {
-  match: _propTypes2.default.shape({
-    params: _propTypes2.default.object
-  }).isRequired
-};
+
 
 // Stats pulled from the environment.  This demonstrates how data will
 // change depending where we're running the code (environment vars, etc)
@@ -2266,7 +2233,8 @@ exports.default = () => _react2.default.createElement(
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: Page }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/jelovnik', component: Jelovnik }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/contact', component: Contact }),
     _react2.default.createElement(_routing.Redirect, { from: '/old/path', to: '/new/path' }),
     _react2.default.createElement(_reactRouterDom.Route, { component: WhenNotFound })
@@ -2275,31 +2243,31 @@ exports.default = () => _react2.default.createElement(
 );
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f8616c1388468fff.png";
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030eb1f711c7b7b64f570e.jpg";
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -2322,12 +2290,12 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(39).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(38).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports) {
 
 
@@ -2354,124 +2322,124 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/facebook-square");
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-redux");
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-scrollable-anchor");
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(10);
+module.exports = __webpack_require__(9);
 
 
 /***/ })
