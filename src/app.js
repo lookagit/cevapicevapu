@@ -22,6 +22,7 @@ import MainMenu from './MainMenu.js';
 import AboutUs from './AboutUs.js';
 import AlaCart from './AlaCart.js';
 import Gally from './Gally.js';
+import ContactUs from './ContactUs.js'
 import ScrollableAnchor from 'react-scrollable-anchor';
 const stylee = {
   backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
@@ -52,7 +53,7 @@ const About = ({ match }) => (
   <AboutUs />
 );
 const Contact = ({ match }) => (
-  <h1>Contact</h1>
+  <ContactUs />
 );
 
 const Jelovnik = ({ match }) => (
@@ -178,7 +179,6 @@ export default () => (
       <Route path="/page/about" component={About} />
       <Route path="/page/galerija" component={Galerija} />
       <Route path="/page/contact" component={Contact} />
-      <Redirect from="/old/path" to="/new/path" />
       <Route component={WhenNotFound} />
     </Switch>
     <Footer />
