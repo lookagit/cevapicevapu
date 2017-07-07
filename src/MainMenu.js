@@ -38,6 +38,7 @@ class MainMenu extends React.Component {
         <ul style={this.state.stylee}>
         <li><Link to="/" onClick={this.opener}>Početna</Link></li>
         <li><Link to="/page/jelovnik" onClick={this.opener}>Jelovnik</Link></li>
+        <li><Link to="/page/galerija" onClick={this.opener}>Galerija</Link></li>
         <li><Link to="/page/about" onClick={this.opener}>O nama</Link></li>
         <li><Link to="/contact" onClick={this.opener}>Kontakt</Link></li>
         </ul>

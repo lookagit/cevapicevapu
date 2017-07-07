@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 65);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -127,134 +127,6 @@ module.exports = require("prop-types");
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-apollo");
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactStyledFlexboxgrid = __webpack_require__(56);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let ContentBoxes = class ContentBoxes extends _react2.default.Component {
-
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      _reactStyledFlexboxgrid.Grid,
-      null,
-      _react2.default.createElement(
-        'h1',
-        { className: _styles2.default.aboutNaslov },
-        'KOD NAS CEVAPI IMAJU TO NESTO'
-      ),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { className: _styles2.default.rowOne },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 5, lg: 4 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaOne },
-            _react2.default.createElement('div', { className: _styles2.default.pleskaBgOne })
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 7, lg: 8 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaTekstOne },
-            _react2.default.createElement(
-              'h2',
-              null,
-              '10 GODINA VRHUNSKOG ROSTILJA'
-            ),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          )
-        )
-      ),
-      _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 7, lg: 8 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.tekstTwo },
-            _react2.default.createElement(
-              'h2',
-              null,
-              '10 GODINA VREDNOG RADA'
-            ),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 5, lg: 4 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaTwo },
-            _react2.default.createElement('div', { className: _styles2.default.pleskaBgTwo })
-          )
-        )
-      )
-    );
-  }
-};
-exports.default = ContentBoxes;
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -324,6 +196,24 @@ let TopHero = class TopHero extends _react2.default.Component {
   }
 };
 exports.default = TopHero;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-apollo");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
 /* 7 */
@@ -445,7 +335,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(48);
+const path = __webpack_require__(54);
 
 // ----------------------
 
@@ -521,39 +411,39 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(42);
+__webpack_require__(48);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(49);
+var _server = __webpack_require__(55);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(43);
+var _koa = __webpack_require__(49);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(3);
+var _reactApollo = __webpack_require__(4);
 
-var _koaSend = __webpack_require__(46);
+var _koaSend = __webpack_require__(52);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(44);
+var _koaHelmet = __webpack_require__(50);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(45);
+var _koaRouter = __webpack_require__(51);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(47);
+var _microseconds = __webpack_require__(53);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(54);
+var _reactRouter = __webpack_require__(61);
 
 var _reactHelmet = __webpack_require__(10);
 
@@ -569,7 +459,7 @@ var _ssr = __webpack_require__(21);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(34);
+var _app = __webpack_require__(39);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -796,7 +686,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(3);
+var _reactApollo = __webpack_require__(4);
 
 var _project = __webpack_require__(14);
 
@@ -849,7 +739,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(40);
+var _boxen = __webpack_require__(46);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
@@ -857,7 +747,7 @@ var _chalk = __webpack_require__(9);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(41);
+var _ip = __webpack_require__(47);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -1028,9 +918,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(57);
+var _redux = __webpack_require__(63);
 
-var _reduxThunk = __webpack_require__(58);
+var _reduxThunk = __webpack_require__(64);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1108,7 +998,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1331,7 +1221,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(6);
+var _TopHero = __webpack_require__(3);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -1339,7 +1229,7 @@ var _serbianburger = __webpack_require__(8);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
-var _ContentBoxes = __webpack_require__(5);
+var _ContentBoxes = __webpack_require__(26);
 
 var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
 
@@ -1377,7 +1267,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(6);
+var _TopHero = __webpack_require__(3);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -1385,7 +1275,7 @@ var _serbianburger = __webpack_require__(8);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
-var _AlaCartGridMenu = __webpack_require__(60);
+var _AlaCartGridMenu = __webpack_require__(25);
 
 var _AlaCartGridMenu2 = _interopRequireDefault(_AlaCartGridMenu);
 
@@ -1405,6 +1295,284 @@ exports.default = AlaCart;
 
 /***/ }),
 /* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactStyledFlexboxgrid = __webpack_require__(6);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let ContentBoxes = class ContentBoxes extends _react2.default.Component {
+
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Grid,
+      null,
+      _react2.default.createElement(
+        'h1',
+        { style: { textAlign: 'center', textTransform: 'uppercase', margin: '60px 0' } },
+        'Pogledajte nasu jedinstvenu ponudu i uzivajte'
+      ),
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Row,
+        { style: { padding: '0' } },
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 4, lg: 4 },
+          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')", boxShadow: '1px 3px 15px rgba(0,0,0,.26)', backgroundPosition: 'center center', backgroundSize: 'cover' } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { marginTop: '10px', marginBottom: '0' } },
+            'Pljeskavica Drama'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', marginBottom: '0' } },
+            'Sastojci: 100% junece meso'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold' } },
+            'Cena: 330rsd'
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 4, lg: 4 },
+          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')", boxShadow: '1px 3px 15px rgba(0,0,0,.26)', backgroundPosition: 'center center', backgroundSize: 'cover' } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { marginTop: '10px', marginBottom: '0' } },
+            'Pljeskavica Drama'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', marginBottom: '0' } },
+            'Sastojci: 100% junece meso'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold' } },
+            'Cena: 330rsd'
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 4, lg: 4 },
+          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')", boxShadow: '1px 3px 15px rgba(0,0,0,.26)', backgroundPosition: 'center center', backgroundSize: 'cover' } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { marginTop: '10px', marginBottom: '0' } },
+            'Pljeskavica Drama'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', marginBottom: '0' } },
+            'Sastojci: 100% junece meso'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold' } },
+            'Cena: 330rsd'
+          )
+        )
+      ),
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Row,
+        { style: { padding: '60px 0 60px 0' } },
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 4, lg: 4 },
+          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
+            'Cena: 330rsd'
+          ),
+          _react2.default.createElement(
+            'h2',
+            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
+            'Pljeskavica Drama'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
+            '100% junece meso, 300gr.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 4, lg: 4 },
+          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
+            'Cena: 330rsd'
+          ),
+          _react2.default.createElement(
+            'h2',
+            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
+            'Pljeskavica Drama'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
+            '100% junece meso, 300gr.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 4, lg: 4 },
+          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
+            'Cena: 330rsd'
+          ),
+          _react2.default.createElement(
+            'h2',
+            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
+            'Pljeskavica Drama'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
+            '100% junece meso, 300gr.'
+          )
+        )
+      )
+    );
+  }
+};
+exports.default = ContentBoxes;
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactStyledFlexboxgrid = __webpack_require__(6);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let ContentBoxes = class ContentBoxes extends _react2.default.Component {
+
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Grid,
+      null,
+      _react2.default.createElement(
+        'h1',
+        { className: _styles2.default.aboutNaslov },
+        'KOD NAS CEVAPI IMAJU TO NESTO'
+      ),
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Row,
+        { className: _styles2.default.rowOne },
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 6, md: 5, lg: 4 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.pleskaOne },
+            _react2.default.createElement('div', { className: _styles2.default.pleskaBgOne })
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 6, md: 7, lg: 8 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.pleskaTekstOne },
+            _react2.default.createElement(
+              'h2',
+              null,
+              '10 GODINA VRHUNSKOG ROSTILJA'
+            ),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Ko bi to radio da nije nas'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+            )
+          )
+        )
+      ),
+      _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Row,
+        { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 8, smOffset: 2 },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.tekstTwo },
+            _react2.default.createElement(
+              'h2',
+              null,
+              '10 GODINA VREDNOG RADA'
+            ),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Ko bi to radio da nije nas'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+            )
+          )
+        )
+      )
+    );
+  }
+};
+exports.default = ContentBoxes;
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1471,7 +1639,7 @@ let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
 exports.default = FeaturedLeft;
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1489,15 +1657,15 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(50);
+var _facebookSquare = __webpack_require__(56);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(51);
+var _instagram = __webpack_require__(57);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(52);
+var _youtubeSquare = __webpack_require__(58);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -1523,12 +1691,12 @@ let Footer = class Footer extends _react2.default.Component {
             _react2.default.createElement(
               'h2',
               null,
-              'O NAMA'
+              '\u0106EVAPI DRAMA'
             ),
             _react2.default.createElement(
               'p',
               null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+              'Svi na\u0161i proizvodi su proizvedeni u sopstvenom proizvodnom pogonu po HACCP (HASAP) standardu koji garantuje kvalitet na\u0161ih proizvoda.'
             )
           ),
           _react2.default.createElement(
@@ -1542,7 +1710,7 @@ let Footer = class Footer extends _react2.default.Component {
             _react2.default.createElement(
               'p',
               null,
-              'Donosimo hranu za podrucje Beograda na kucnu adresu. Radno vreme dostave je od 08:00 - 22:00. Za porudzbine preko 2000rsd. dostava je besplatna. Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti da uzivate u kvalitetnoj hrani u toplini vaseg doma'
+              ' Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti da uzivate u kvalitetnoj hrani u toplini vaseg doma.'
             )
           ),
           _react2.default.createElement(
@@ -1551,7 +1719,7 @@ let Footer = class Footer extends _react2.default.Component {
             _react2.default.createElement(
               'h2',
               null,
-              'REACH US'
+              'DRU\u0160TVENE MRE\u017DE'
             ),
             _react2.default.createElement(_facebookSquare2.default, { fill: '#fff', width: '3em', height: '3em' }),
             _react2.default.createElement(_instagram2.default, { fill: '#fff', width: '3em', height: '3em' }),
@@ -1574,7 +1742,341 @@ let Footer = class Footer extends _react2.default.Component {
 exports.default = Footer;
 
 /***/ }),
-/* 27 */
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _TopHero = __webpack_require__(3);
+
+var _TopHero2 = _interopRequireDefault(_TopHero);
+
+var _GallyGrid = __webpack_require__(30);
+
+var _GallyGrid2 = _interopRequireDefault(_GallyGrid);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Gally = class Gally extends _react2.default.Component {
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("/o-nama-slika.jpg")' } }),
+      _react2.default.createElement(_GallyGrid2.default, null)
+    );
+  }
+};
+exports.default = Gally;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactStyledFlexboxgrid = __webpack_require__(6);
+
+var _GallyLib = __webpack_require__(31);
+
+var _GallyLib2 = _interopRequireDefault(_GallyLib);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function makeUnsplashSrc(id) {
+  return `https://images.unsplash.com/photo-${id}?dpr=2&auto=format&w=1024&h=1024`;
+}
+
+function makeUnsplashSrcSet(id, size) {
+  return `https://images.unsplash.com/photo-${id}?dpr=2&auto=format&w=${size} ${size}w`;
+}
+
+function makeUnsplashThumbnail(id, orientation = 'landscape') {
+  const dimensions = orientation === 'square' ? 'w=300&h=300' : 'w=240&h=159';
+
+  return `https://images.unsplash.com/photo-${id}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
+}
+
+// Unsplash images from the "Spirit Animals" collection
+// https://unsplash.com/collections/158825/spirit-animals
+
+const DEFAULT_IMAGES = [{ id: '1470619549108-b85c56fe5be8', caption: 'Photo by Alan Emery', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/SYzUF6XcWBY (Flamingo)
+{ id: '1471079502516-250c19af6928', caption: 'Photo by Jeremy Bishop', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/GIpGxe2_cT4 (Turtle)
+{ id: '1454023492550-5696f8ff10e1', caption: 'Photo by Jessica Weiller', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/LmVSKeDy6EA (Tiger)
+{ id: '1470854989922-5be2f7456d78', caption: 'Photo by Piotr Łaskawski', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/GXMr7BadXQo (Hedgehog)
+{ id: '1470317596697-cbdeda56f999', caption: 'Photo by Michel Bosma', orientation: 'landscape', useForDemo: true }];
+
+let GallyGrid = class GallyGrid extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+
+    this.closeLightbox = () => {
+      console.log("HOJHOJHJO");
+      this.setState({
+        lightboxIsOpen: false
+      });
+    };
+
+    this.state = {
+      lightboxIsOpen: true
+    };
+  }
+
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Grid,
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Under Construction'
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Row,
+          null,
+          _react2.default.createElement(
+            _reactStyledFlexboxgrid.Col,
+            { xs: 12 },
+            _react2.default.createElement(_GallyLib2.default, { images: DEFAULT_IMAGES.map(({ caption, id, orientation, useForDemo }) => ({
+                src: makeUnsplashSrc(id),
+                thumbnail: makeUnsplashThumbnail(id, orientation),
+                srcset: [makeUnsplashSrcSet(id, 1024), makeUnsplashSrcSet(id, 800), makeUnsplashSrcSet(id, 500), makeUnsplashSrcSet(id, 320)],
+                caption,
+                orientation,
+                useForDemo
+              })) })
+          )
+        )
+      )
+    );
+  }
+};
+exports.default = GallyGrid;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _noImportant = __webpack_require__(45);
+
+var _reactImages = __webpack_require__(59);
+
+var _reactImages2 = _interopRequireDefault(_reactImages);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Gallery = class Gallery extends _react.Component {
+	constructor() {
+		super();
+
+		this.state = {
+			lightboxIsOpen: false,
+			currentImage: 0
+		};
+
+		this.closeLightbox = this.closeLightbox.bind(this);
+		this.gotoNext = this.gotoNext.bind(this);
+		this.gotoPrevious = this.gotoPrevious.bind(this);
+		this.gotoImage = this.gotoImage.bind(this);
+		this.handleClickImage = this.handleClickImage.bind(this);
+		this.openLightbox = this.openLightbox.bind(this);
+	}
+	openLightbox(index, event) {
+		event.preventDefault();
+		this.setState({
+			currentImage: index,
+			lightboxIsOpen: true
+		});
+	}
+	closeLightbox() {
+		this.setState({
+			currentImage: 0,
+			lightboxIsOpen: false
+		});
+	}
+	gotoPrevious() {
+		this.setState({
+			currentImage: this.state.currentImage - 1
+		});
+	}
+	gotoNext() {
+		this.setState({
+			currentImage: this.state.currentImage + 1
+		});
+	}
+	gotoImage(index) {
+		this.setState({
+			currentImage: index
+		});
+	}
+	handleClickImage() {
+		if (this.state.currentImage === this.props.images.length - 1) return;
+
+		this.gotoNext();
+	}
+	renderGallery() {
+		const { images } = this.props;
+
+		if (!images) return;
+
+		const gallery = images.filter(i => i.useForDemo).map((obj, i) => {
+			return _react2.default.createElement(
+				'a',
+				{
+					href: obj.src,
+					className: (0, _noImportant.css)(classes.thumbnail, classes[obj.orientation]),
+					key: i,
+					onClick: e => this.openLightbox(i, e)
+				},
+				_react2.default.createElement('img', { src: obj.thumbnail, className: (0, _noImportant.css)(classes.source) })
+			);
+		});
+
+		return _react2.default.createElement(
+			'div',
+			{ className: (0, _noImportant.css)(classes.gallery) },
+			gallery
+		);
+	}
+	render() {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'section' },
+			this.props.heading && _react2.default.createElement(
+				'h2',
+				null,
+				this.props.heading
+			),
+			this.props.subheading && _react2.default.createElement(
+				'p',
+				null,
+				this.props.subheading
+			),
+			this.renderGallery(),
+			_react2.default.createElement(_reactImages2.default, {
+				currentImage: this.state.currentImage,
+				images: this.props.images,
+				isOpen: this.state.lightboxIsOpen,
+				onClickImage: this.handleClickImage,
+				onClickNext: this.gotoNext,
+				onClickPrev: this.gotoPrevious,
+				onClickThumbnail: this.gotoImage,
+				onClose: this.closeLightbox,
+				showThumbnails: this.props.showThumbnails,
+				theme: this.props.theme
+			})
+		);
+	}
+};
+
+
+Gallery.displayName = 'Gallery';
+Gallery.propTypes = {
+	heading: _propTypes2.default.string,
+	images: _propTypes2.default.array,
+	showThumbnails: _propTypes2.default.bool,
+	subheading: _propTypes2.default.string
+};
+
+const gutter = {
+	small: 2,
+	large: 4
+};
+const classes = _noImportant.StyleSheet.create({
+	gallery: {
+		marginRight: -gutter.small,
+		overflow: 'hidden',
+
+		'@media (min-width: 500px)': {
+			marginRight: -gutter.large
+		}
+	},
+
+	// anchor
+	thumbnail: {
+		boxSizing: 'border-box',
+		display: 'block',
+		float: 'left',
+		lineHeight: 0,
+		paddingRight: gutter.small,
+		paddingBottom: gutter.small,
+		overflow: 'hidden',
+
+		'@media (min-width: 500px)': {
+			paddingRight: gutter.large,
+			paddingBottom: gutter.large
+		}
+	},
+
+	// orientation
+	landscape: {
+		width: '33.3%'
+	},
+	square: {
+		paddingBottom: 0,
+		width: '40%',
+
+		'@media (min-width: 500px)': {
+			paddingBottom: 0
+		}
+	},
+
+	// actual <img />
+	source: {
+		border: 0,
+		display: 'block',
+		height: 'auto',
+		maxWidth: '100%',
+		width: 'auto'
+	}
+});
+
+exports.default = Gallery;
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1588,7 +2090,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HeaderHero = __webpack_require__(28);
+var _HeaderHero = __webpack_require__(33);
 
 var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
 
@@ -1613,7 +2115,7 @@ let Header = class Header extends _react2.default.Component {
 exports.default = Header;
 
 /***/ }),
-/* 28 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1660,7 +2162,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
 exports.default = HeaderHero;
 
 /***/ }),
-/* 29 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1723,7 +2225,7 @@ let InstaImage = class InstaImage extends _react2.default.Component {
 exports.default = InstaImage;
 
 /***/ }),
-/* 30 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1737,17 +2239,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(5);
 
 var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(37);
+var _logodrama = __webpack_require__(42);
 
 var _logodrama2 = _interopRequireDefault(_logodrama);
 
-var _hamburger = __webpack_require__(36);
+var _hamburger = __webpack_require__(41);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
@@ -1817,6 +2319,15 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           null,
           _react2.default.createElement(
             _reactRouterDom.Link,
+            { to: '/page/galerija', onClick: this.opener },
+            'Galerija'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
             { to: '/page/about', onClick: this.opener },
             'O nama'
           )
@@ -1837,7 +2348,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 exports.default = MainMenu;
 
 /***/ }),
-/* 31 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1886,7 +2397,7 @@ let ParalaxContainer = class ParalaxContainer extends _react2.default.Component 
 exports.default = ParalaxContainer;
 
 /***/ }),
-/* 32 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1948,7 +2459,7 @@ let SectionHeadline = class SectionHeadline extends _react2.default.Component {
 exports.default = SectionHeadline;
 
 /***/ }),
-/* 33 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1966,7 +2477,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _InstaImage = __webpack_require__(29);
+var _InstaImage = __webpack_require__(34);
 
 var _InstaImage2 = _interopRequireDefault(_InstaImage);
 
@@ -2003,7 +2514,7 @@ let ThreeGallery = class ThreeGallery extends _react2.default.Component {
 exports.default = ThreeGallery;
 
 /***/ }),
-/* 34 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2023,11 +2534,11 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(3);
+var _reactApollo = __webpack_require__(4);
 
-var _reactRedux = __webpack_require__(53);
+var _reactRedux = __webpack_require__(60);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(5);
 
 var _reactHelmet = __webpack_require__(10);
 
@@ -2035,41 +2546,41 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 var _routing = __webpack_require__(20);
 
-var _all_messages = __webpack_require__(38);
+var _all_messages = __webpack_require__(43);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(35);
+__webpack_require__(40);
 
 var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _Header = __webpack_require__(27);
+var _Header = __webpack_require__(32);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _SectionHeadline = __webpack_require__(32);
+var _SectionHeadline = __webpack_require__(37);
 
 var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
 
-var _ParalaxContainer = __webpack_require__(31);
+var _ParalaxContainer = __webpack_require__(36);
 
 var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
 
-var _ThreeGallery = __webpack_require__(33);
+var _ThreeGallery = __webpack_require__(38);
 
 var _ThreeGallery2 = _interopRequireDefault(_ThreeGallery);
 
-var _FeaturedLeft = __webpack_require__(25);
+var _FeaturedLeft = __webpack_require__(27);
 
 var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
 
-var _Footer = __webpack_require__(26);
+var _Footer = __webpack_require__(28);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _MainMenu = __webpack_require__(30);
+var _MainMenu = __webpack_require__(35);
 
 var _MainMenu2 = _interopRequireDefault(_MainMenu);
 
@@ -2081,7 +2592,11 @@ var _AlaCart = __webpack_require__(24);
 
 var _AlaCart2 = _interopRequireDefault(_AlaCart);
 
-var _reactScrollableAnchor = __webpack_require__(55);
+var _Gally = __webpack_require__(29);
+
+var _Gally2 = _interopRequireDefault(_Gally);
+
+var _reactScrollableAnchor = __webpack_require__(62);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -2122,6 +2637,8 @@ const Contact = ({ match }) => _react2.default.createElement(
 );
 
 const Jelovnik = ({ match }) => _react2.default.createElement(_AlaCart2.default, null);
+
+const Galerija = ({ match }) => _react2.default.createElement(_Gally2.default, null);
 
 const WhenNotFound = () => _react2.default.createElement(
   _routing.NotFound,
@@ -2287,6 +2804,7 @@ exports.default = () => _react2.default.createElement(
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/jelovnik', component: Jelovnik }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/galerija', component: Galerija }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/contact', component: Contact }),
     _react2.default.createElement(_routing.Redirect, { from: '/old/path', to: '/new/path' }),
     _react2.default.createElement(_reactRouterDom.Route, { component: WhenNotFound })
@@ -2295,25 +2813,25 @@ exports.default = () => _react2.default.createElement(
 );
 
 /***/ }),
-/* 35 */
+/* 40 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 36 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f8616c1388468fff.png";
 
 /***/ }),
-/* 37 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
 
 /***/ }),
-/* 38 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -2336,12 +2854,12 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(39).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(44).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 39 */
+/* 44 */
 /***/ (function(module, exports) {
 
 
@@ -2368,296 +2886,131 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 40 */
-/***/ (function(module, exports) {
-
-module.exports = require("boxen");
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports) {
-
-module.exports = require("ip");
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-fetch");
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa");
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa-helmet");
-
-/***/ }),
 /* 45 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-router");
+module.exports = require("aphrodite/no-important");
 
 /***/ }),
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-send");
+module.exports = require("boxen");
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports) {
 
-module.exports = require("microseconds");
+module.exports = require("ip");
 
 /***/ }),
 /* 48 */
 /***/ (function(module, exports) {
 
-module.exports = require("path");
+module.exports = require("isomorphic-fetch");
 
 /***/ }),
 /* 49 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("koa");
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square");
+module.exports = require("koa-helmet");
 
 /***/ }),
 /* 51 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/instagram");
+module.exports = require("koa-router");
 
 /***/ }),
 /* 52 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square");
+module.exports = require("koa-send");
 
 /***/ }),
 /* 53 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("microseconds");
 
 /***/ }),
 /* 54 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("path");
 
 /***/ }),
 /* 55 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 56 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-styled-flexboxgrid");
+module.exports = require("react-icons/lib/fa/facebook-square");
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ }),
 /* 58 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
 /* 59 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-images");
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-scrollable-anchor");
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(12);
 
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactStyledFlexboxgrid = __webpack_require__(56);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let ContentBoxes = class ContentBoxes extends _react2.default.Component {
-
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      _reactStyledFlexboxgrid.Grid,
-      null,
-      _react2.default.createElement(
-        'h1',
-        { style: { textAlign: 'center', textTransform: 'uppercase', margin: '60px 0' } },
-        'Pogledajte nasu jedinstvenu ponudu i uzivajte'
-      ),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { style: { padding: '0' } },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 4, lg: 4 },
-          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')", boxShadow: '1px 3px 15px rgba(0,0,0,.26)', backgroundPosition: 'center center', backgroundSize: 'cover' } }),
-          _react2.default.createElement(
-            'h2',
-            { style: { marginTop: '10px', marginBottom: '0' } },
-            'Pljeskavica Drama'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', marginBottom: '0' } },
-            'Sastojci: 100% junece meso'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold' } },
-            'Cena: 330rsd'
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 4, lg: 4 },
-          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')", boxShadow: '1px 3px 15px rgba(0,0,0,.26)', backgroundPosition: 'center center', backgroundSize: 'cover' } }),
-          _react2.default.createElement(
-            'h2',
-            { style: { marginTop: '10px', marginBottom: '0' } },
-            'Pljeskavica Drama'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', marginBottom: '0' } },
-            'Sastojci: 100% junece meso'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold' } },
-            'Cena: 330rsd'
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 4, lg: 4 },
-          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')", boxShadow: '1px 3px 15px rgba(0,0,0,.26)', backgroundPosition: 'center center', backgroundSize: 'cover' } }),
-          _react2.default.createElement(
-            'h2',
-            { style: { marginTop: '10px', marginBottom: '0' } },
-            'Pljeskavica Drama'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', marginBottom: '0' } },
-            'Sastojci: 100% junece meso'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold' } },
-            'Cena: 330rsd'
-          )
-        )
-      ),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { style: { padding: '60px 0 60px 0' } },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 4, lg: 4 },
-          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
-            'Cena: 330rsd'
-          ),
-          _react2.default.createElement(
-            'h2',
-            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
-            'Pljeskavica Drama'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
-            '100% junece meso, 300gr.'
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 4, lg: 4 },
-          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
-            'Cena: 330rsd'
-          ),
-          _react2.default.createElement(
-            'h2',
-            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
-            'Pljeskavica Drama'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
-            '100% junece meso, 300gr.'
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 4, lg: 4 },
-          _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
-            'Cena: 330rsd'
-          ),
-          _react2.default.createElement(
-            'h2',
-            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
-            'Pljeskavica Drama'
-          ),
-          _react2.default.createElement(
-            'p',
-            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
-            '100% junece meso, 300gr.'
-          )
-        )
-      )
-    );
-  }
-};
-exports.default = ContentBoxes;
 
 /***/ })
 /******/ ]);

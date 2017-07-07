@@ -14,21 +14,17 @@ class Footer extends React.Component {
         <div className={css.footer}>
           <div className={css.itemWrap}>
             <div className={css.footerItem}>
-              <h2>O NAMA</h2>
-              <p>Creative matching and contrasting the tastes, reaserching new combos,
-               a gastronomic intersection of sea and the land.
-               We also prepare some things that are quite national and traditional,
-               feel free to ask, not everything is on the menu.</p>
+              <h2>ĆEVAPI DRAMA</h2>
+              <p>Svi naši proizvodi su proizvedeni u sopstvenom proizvodnom pogonu po HACCP (HASAP) standardu koji garantuje kvalitet naših proizvoda.</p>
             </div>
             <div className={css.footerItem}>
             <h2>DOSTAVA</h2>
-            <p>Donosimo hranu za podrucje Beograda na kucnu adresu. Radno vreme dostave je od 08:00 - 22:00.
-              Za porudzbine preko 2000rsd. dostava je besplatna. Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti
-              da uzivate u kvalitetnoj hrani u toplini vaseg doma
+            <p> Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti
+              da uzivate u kvalitetnoj hrani u toplini vaseg doma.
                </p>
             </div>
             <div className={css.footerItem}>
-            <h2>REACH US</h2>
+            <h2>DRUŠTVENE MREŽE</h2>
             <FacebookSquare fill="#fff" width="3em" height="3em"/>
             <InstagramSquare fill="#fff" width="3em" height="3em" />
             <YoutubeSquare fill="#fff" width="3em" height="3em" />
