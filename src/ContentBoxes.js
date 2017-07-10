@@ -9,29 +9,25 @@ export default class ContentBoxes extends React.Component {
   render() {
     return(
       <Grid>
-      <h1 className={css.aboutNaslov}>KOD NAS CEVAPI IMAJU TO NESTO</h1>
-        <Row className={css.rowOne}>
-          <Col xs={12} sm={6} md={5} lg={4}>
-            <div className={css.pleskaOne}>
-              <div className={css.pleskaBgOne}></div>
-            </div>
-          </Col>
-          <Col xs={12} sm={6} md={7} lg={8} >
-          <div className={css.pleskaTekstOne}>
-            <h2>10 GODINA VRHUNSKOG ROSTILJA</h2>
-            <h4>Ko bi to radio da nije nas</h4>
-            <p>Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.</p>
-          </div>
-          </Col>
-        </Row>
-        <div className={css.hrDebilni}></div>
         <Row className={css.rowTwo} style={{padding: '0 0 60px 0'}}>
           <Col xs={12} sm={8} smOffset={2} >
             <div className={css.tekstTwo}>
-              <h2>10 GODINA VREDNOG RADA</h2>
-              <h4>Ko bi to radio da nije nas</h4>
-              <p>Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.</p>
+              <h2 style={{textAlign: "center"}}>10 GODINA VREDNOG RADA</h2>
+              <h4 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h4>
+              <p style={{textAlign: "justify"}}>Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.</p>
             </div>
+          </Col>
+          <Col xs={12} sm={6}>
+          <img src="/belo-meso-na-rostilju.jpg" style={{width: "100%", height: "auto"}}/>
+          <h2 style={{textAlign: "center"}}>KVALITET</h2>
+          <h4 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h4>
+          <p style={{textAlign: "justify"}}> Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</p>
+          </Col>
+          <Col xs={12} sm={6}>
+          <img src="/belo-meso-na-rostilju.jpg" style={{width: "100%", height: "auto"}}/>
+          <h2 style={{textAlign: "center"}}>VAS IZBOR</h2>
+          <h4 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h4>
+          <p style={{textAlign: "justify"}}> Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</p>
           </Col>
         </Row>
       </Grid>

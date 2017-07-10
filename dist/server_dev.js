@@ -1691,48 +1691,6 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
       _reactStyledFlexboxgrid.Grid,
       null,
       _react2.default.createElement(
-        'h1',
-        { className: _styles2.default.aboutNaslov },
-        'KOD NAS CEVAPI IMAJU TO NESTO'
-      ),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { className: _styles2.default.rowOne },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 5, lg: 4 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaOne },
-            _react2.default.createElement('div', { className: _styles2.default.pleskaBgOne })
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 7, lg: 8 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaTekstOne },
-            _react2.default.createElement(
-              'h2',
-              null,
-              '10 GODINA VRHUNSKOG ROSTILJA'
-            ),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          )
-        )
-      ),
-      _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
-      _react2.default.createElement(
         _reactStyledFlexboxgrid.Row,
         { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
         _react2.default.createElement(
@@ -1743,19 +1701,59 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
             { className: _styles2.default.tekstTwo },
             _react2.default.createElement(
               'h2',
-              null,
+              { style: { textAlign: "center" } },
               '10 GODINA VREDNOG RADA'
             ),
             _react2.default.createElement(
               'h4',
-              null,
+              { style: { textAlign: "center" } },
               'Ko bi to radio da nije nas'
             ),
             _react2.default.createElement(
               'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+              { style: { textAlign: "justify" } },
+              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
             )
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 6 },
+          _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { textAlign: "center" } },
+            'KVALITET'
+          ),
+          _react2.default.createElement(
+            'h4',
+            { style: { textAlign: "center" } },
+            'Ko bi to radio da nije nas'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { textAlign: "justify" } },
+            ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 6 },
+          _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { textAlign: "center" } },
+            'VAS IZBOR'
+          ),
+          _react2.default.createElement(
+            'h4',
+            { style: { textAlign: "center" } },
+            'Ko bi to radio da nije nas'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { textAlign: "justify" } },
+            ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
           )
         )
       )
