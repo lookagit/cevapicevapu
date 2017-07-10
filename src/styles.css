@@ -16,6 +16,19 @@ p, h1, h2, h3, h4, h5, span, a {
   --bg: #00bcd4;
 }
 
+.linkFooter{
+  a {
+      color: #cd2700 !important;
+  }
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  list-style: none;
+}
+
+.linkFooterUl{
+  padding-left: 0px;
+}
 .mobileIcon {
   color: #fff;
 display: none;
@@ -558,6 +571,15 @@ right: 15px;
   }
   .topSubHeader {
     font-size: 25px !important;
+  }
+  .linkFooter{
+            a {
+                color: #cd2700 !important;
+            }
+    display: block;
+    float: none;
+    margin-right: 0px;
+    list-style: none;
   }
 }
 

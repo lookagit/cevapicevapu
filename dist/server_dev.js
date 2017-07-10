@@ -78,6 +78,8 @@ module.exports = require("react");
 
 module.exports = {
 	"main": "main-vv2718wGHLD6lThS8mcwI",
+	"linkFooter": "linkFooter-1q4bO9K2r8_AM0vXma5jzK",
+	"linkFooterUl": "linkFooterUl-2mLK5p9nce_rPqTupocKcL",
 	"mobileIcon": "mobileIcon-2icoMzpdrZbPYIfQjxivTq",
 	"parallax": "parallax-3oYy3E6XoJCClgZR0R7xDr",
 	"caption": "caption-21tp0xAudjV1bavcaINc0T",
@@ -1860,6 +1862,8 @@ var _youtubeSquare = __webpack_require__(13);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
+var _reactRouterDom = __webpack_require__(6);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Footer = class Footer extends _react2.default.Component {
@@ -1882,39 +1886,64 @@ let Footer = class Footer extends _react2.default.Component {
             _react2.default.createElement(
               'h2',
               null,
-              '\u0106EVAPI DRAMA'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Svi na\u0161i proizvodi su proizvedeni u sopstvenom proizvodnom pogonu po HACCP (HASAP) standardu koji garantuje kvalitet na\u0161ih proizvoda.'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'DOSTAVA'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              ' Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti da uzivate u kvalitetnoj hrani u toplini vaseg doma.'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
               'DRU\u0160TVENE MRE\u017DE'
             ),
             _react2.default.createElement(_facebookSquare2.default, { fill: '#fff', width: '3em', height: '3em' }),
             _react2.default.createElement(_instagram2.default, { fill: '#fff', width: '3em', height: '3em' }),
             _react2.default.createElement(_youtubeSquare2.default, { fill: '#fff', width: '3em', height: '3em' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.footerItem, style: { width: "450px" } },
+            _react2.default.createElement(
+              'ul',
+              { className: _styles2.default.linkFooterUl },
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/' },
+                  'Po\u010Detna'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/jelovnik' },
+                  'Jelovnik'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/galerija' },
+                  'Galerija'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/about' },
+                  'O nama'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/contact' },
+                  'Kontakt'
+                )
+              )
+            )
           )
         )
       ),
@@ -3025,8 +3054,8 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
+    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request"};
   
 
     var names = {};
@@ -3053,8 +3082,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
-    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
+    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request"};
   
 
     var names = {};
