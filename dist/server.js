@@ -78,6 +78,8 @@ module.exports = require("react");
 
 module.exports = {
 	"main": "main-vv2718wGHLD6lThS8mcwI",
+	"linkFooter": "linkFooter-1q4bO9K2r8_AM0vXma5jzK",
+	"linkFooterUl": "linkFooterUl-2mLK5p9nce_rPqTupocKcL",
 	"mobileIcon": "mobileIcon-2icoMzpdrZbPYIfQjxivTq",
 	"parallax": "parallax-3oYy3E6XoJCClgZR0R7xDr",
 	"caption": "caption-21tp0xAudjV1bavcaINc0T",
@@ -206,19 +208,19 @@ module.exports = require("prop-types");
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-styled-flexboxgrid");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-apollo");
+module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("react-apollo");
 
 /***/ }),
 /* 7 */
@@ -454,7 +456,7 @@ var _koa = __webpack_require__(55);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(5);
+var _reactApollo = __webpack_require__(6);
 
 var _koaSend = __webpack_require__(58);
 
@@ -715,7 +717,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(5);
+var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(17);
 
@@ -1027,7 +1029,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1338,7 +1340,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(4);
+var _reactStyledFlexboxgrid = __webpack_require__(5);
 
 var _styles = __webpack_require__(1);
 
@@ -1513,7 +1515,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(4);
+var _reactStyledFlexboxgrid = __webpack_require__(5);
 
 var _TopHero = __webpack_require__(2);
 
@@ -1677,7 +1679,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(4);
+var _reactStyledFlexboxgrid = __webpack_require__(5);
 
 var _styles = __webpack_require__(1);
 
@@ -1695,48 +1697,6 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
       _reactStyledFlexboxgrid.Grid,
       null,
       _react2.default.createElement(
-        'h1',
-        { className: _styles2.default.aboutNaslov },
-        'KOD NAS CEVAPI IMAJU TO NESTO'
-      ),
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Row,
-        { className: _styles2.default.rowOne },
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 5, lg: 4 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaOne },
-            _react2.default.createElement('div', { className: _styles2.default.pleskaBgOne })
-          )
-        ),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Col,
-          { xs: 12, sm: 6, md: 7, lg: 8 },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.pleskaTekstOne },
-            _react2.default.createElement(
-              'h2',
-              null,
-              '10 GODINA VRHUNSKOG ROSTILJA'
-            ),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
-            )
-          )
-        )
-      ),
-      _react2.default.createElement('div', { className: _styles2.default.hrDebilni }),
-      _react2.default.createElement(
         _reactStyledFlexboxgrid.Row,
         { className: _styles2.default.rowTwo, style: { padding: '0 0 60px 0' } },
         _react2.default.createElement(
@@ -1747,19 +1707,59 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
             { className: _styles2.default.tekstTwo },
             _react2.default.createElement(
               'h2',
-              null,
+              { style: { textAlign: "center" } },
               '10 GODINA VREDNOG RADA'
             ),
             _react2.default.createElement(
               'h4',
-              null,
+              { style: { textAlign: "center" } },
               'Ko bi to radio da nije nas'
             ),
             _react2.default.createElement(
               'p',
-              null,
-              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+              { style: { textAlign: "justify" } },
+              'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
             )
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 6 },
+          _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { textAlign: "center" } },
+            'KVALITET'
+          ),
+          _react2.default.createElement(
+            'h4',
+            { style: { textAlign: "center" } },
+            'Ko bi to radio da nije nas'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { textAlign: "justify" } },
+            ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Col,
+          { xs: 12, sm: 6 },
+          _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } }),
+          _react2.default.createElement(
+            'h2',
+            { style: { textAlign: "center" } },
+            'VAS IZBOR'
+          ),
+          _react2.default.createElement(
+            'h4',
+            { style: { textAlign: "center" } },
+            'Ko bi to radio da nije nas'
+          ),
+          _react2.default.createElement(
+            'p',
+            { style: { textAlign: "justify" } },
+            ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
           )
         )
       )
@@ -1866,6 +1866,8 @@ var _youtubeSquare = __webpack_require__(14);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
+var _reactRouterDom = __webpack_require__(4);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Footer = class Footer extends _react2.default.Component {
@@ -1888,39 +1890,64 @@ let Footer = class Footer extends _react2.default.Component {
             _react2.default.createElement(
               'h2',
               null,
-              '\u0106EVAPI DRAMA'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Svi na\u0161i proizvodi su proizvedeni u sopstvenom proizvodnom pogonu po HACCP (HASAP) standardu koji garantuje kvalitet na\u0161ih proizvoda.'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'DOSTAVA'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              ' Pozovite nas i porucite vasu omiljenu hranu sa rostilja a mi cemo se pobrinuti da uzivate u kvalitetnoj hrani u toplini vaseg doma.'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.footerItem },
-            _react2.default.createElement(
-              'h2',
-              null,
               'DRU\u0160TVENE MRE\u017DE'
             ),
             _react2.default.createElement(_facebookSquare2.default, { fill: '#fff', width: '3em', height: '3em' }),
             _react2.default.createElement(_instagram2.default, { fill: '#fff', width: '3em', height: '3em' }),
             _react2.default.createElement(_youtubeSquare2.default, { fill: '#fff', width: '3em', height: '3em' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.footerItem, style: { width: "450px" } },
+            _react2.default.createElement(
+              'ul',
+              { className: _styles2.default.linkFooterUl },
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/' },
+                  'Po\u010Detna'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/jelovnik' },
+                  'Jelovnik'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/galerija' },
+                  'Galerija'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/about' },
+                  'O nama'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/contact' },
+                  'Kontakt'
+                )
+              )
+            )
           )
         )
       ),
@@ -1996,7 +2023,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(4);
+var _reactStyledFlexboxgrid = __webpack_require__(5);
 
 var _GallyLib = __webpack_require__(35);
 
@@ -2436,7 +2463,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(4);
 
 var _styles = __webpack_require__(1);
 
@@ -2731,11 +2758,11 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(5);
+var _reactApollo = __webpack_require__(6);
 
 var _reactRedux = __webpack_require__(62);
 
-var _reactRouterDom = __webpack_require__(6);
+var _reactRouterDom = __webpack_require__(4);
 
 var _reactHelmet = __webpack_require__(11);
 
