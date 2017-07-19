@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:700,800');
+@import url('https://fonts.googleapis.com/css?family=Lato:500,700,900');
+/* Define some variables we might want to use elsewhere */
+html, body {
+  height: 100%;
+  margin:0;
+}
+p, h1, h2, h3, h4, h5, span, a {
+  font-family: 'Lato', sans-serif;
+}
+#main {
+  height: 100%;
+}
+:root {
+  --fg: #0b2296;
+  --bg: #00bcd4;
+}
+
+.linkFooter{
+  a {
+      color: #cd2700 !important;
+  }
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  list-style: none;
+}
+
+.linkFooterUl{
+  padding-left: 0px;
+}
+.mobileIcon {
+  color: #fff;
+display: none;
+font-size: 30px;
+font-family: bold;
+position: absolute;
+top: 30px;
+right: 15px;
+}
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .caption {
+    position: absolute;
+    left:0;
+    top:50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    .caption span.border{
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+  }
+}
+.heroHomepage {
+
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.featured {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top:130px;
+  padding-bottom: 100px;
+  .featuredLeftImage{
+    max-width: 500px;
+    width:500px;
+    height: 500px;
+    background-size:cover;
+    float:left;
+    margin-right: 82px;
+  }
+  .featuredLeftText{
+    margin-top: 0px;
+    h2{
+      margin-top: 0px;
+      color: #363639;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 43px;
+    }
+    p{
+      font-weight: 500;
+      font-size: 19px;
+      color: #363639;
+    }
+    .buttonP {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 29px;
+      padding: 0;
+      font-size: 18px;
+      line-height: 26px;
+      margin-top: 50px;
+      a {
+        background: #363639;
+        border: 1px solid #363639;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #fff;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        line-height: 58px;
+        margin-top: 30px;
+        padding: 25px 47px;
+        text-transform: uppercase;
+        transition: .3s;
+      }
+      a:hover {
+        background: transparent;
+        border: 1px solid #363639;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: black;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        line-height: 58px;
+        margin-top: 30px;
+        padding: 25px 47px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.hello {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  h1 {
+    margin: 0;
+    color: var(--fg);
+    font-size: 4rem;
+  }
+  .logo {
+    width: 150px;
+    padding: 15px 15px 10px 15px;
+  }
+  ul {
+    margin-top:30px;
+    float:right;
+    padding-right: 10px;
+    li {
+      display: inline-block;
+      margin-right:5px;
+      border-radius:3px;
+      a {
+        font-size: 22px;
+        font-family: 'Kanit', sans-serif !important;
+        text-decoration: none;
+        color: #4d4d4d;
+        padding: 5px;
+      }
+      a:visited {
+        color: #4d4d4d;
+      }
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+.data {
+  li {
+    margin-bottom: 0.5em;
+    font-size: 1.4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span {
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+}
+
+.styleExamples {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+    padding: 10px;
+  }
+}
+
+.example {
+  background-color: var(--bg);
+}
+.footer{
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.95)
+    ), url('/footer-drama-rostilj.jpg');
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  .itemWrap{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top:50px;
+    padding-bottom: 50px;
+    display: flex;
+    .footerItem{
+      width: 300px;
+      margin: 0 auto;
+      h2{
+        font-size:20px;
+        font-weight: bolder;
+        color:#cd2700;
+      }
+      p{
+        color:white;
+      }
+      a{
+        text-decoration: none;
+        color:orange;
+        font-size:15px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.botFooter{
+  background-color: #1c1c1e;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  p{
+    margin: 0;
+    color: #999;
+  }
+
+}
+
+@media screen and (max-width: 943px) {
+  .mobileIcon {
+		display: block;
+	}
+  .hello {
+    width:100%;
+		background-color: white;
+    display: block;
+    ul {
+      width: 100%;
+      max-height: 0px;
+      padding: 0px;
+      overflow: hidden;
+      text-align: right;
+      margin: 0;
+      -webkit-transition: max-height 0.4s;
+      -ms-transition: max-height 0.4s;
+      -moz-transition: max-height 0.4s;
+      transition: max-height 0.4s;
+    }
+    ul li {
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center;
+      background: white;
+      padding: 5px;
+    }
+    ul li:hover {
+      background-color: #fff;
+      width: 100%;
+      color: #70B8FF;
+    }
+    .showing {
+      max-height: 20em;
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+  }
+}
+.sectionHeadlineMain {
+  .sectionHeadlineTitle {
+    text-align: center;
+    text-transform:uppercase;
+    margin-bottom: 10px;
+    font-size: 46px;
+    margin-top: 100px;
+  }
+  .sectionHeadlineInnerText {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top:0;
+    margin-bottom: 60px;
+    font-size:20px;
+  }
+}
+.threeGallery{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+}
+.flexo {
+  margin: 0 auto;
+  maxWidth: 1200px;
+  display: flex;
+}
+.topHero{
+  height: 500px;
+  width: 100%;
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -ms-flexbox;
+  background-position: 100% 50%;
+  .topHeroInner{
+    margin:0 auto;
+    .topHeader {
+      font-family: 'Lato';
+      font-size: 90px;
+      color: white;
+      margin-top: 160px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .topSubHeader {
+      font-size: 35px;
+      color: white !important;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}
+
+.aboutNaslov{
+  text-align: center;
+  margin-top:60px;
+  font-size: 32px;
+
+
+}
+
+.rowOne{
+  padding: 60px 0 0 0;
+  .pleskaOne{
+    display: flex;
+     height:400px;
+  }
+
+  .pleskaBgOne{
+    width: 100%;
+    height:380px;
+    background-image: url('/belo-meso-na-rostilju.jpg');
+    margin: 20px 0;
+  }
+
+  .pleskaTekstOne{
+    height:400px;
+    padding: 10px;
+    h4{
+      margin-top:0;
+      font-size: 18px;
+      color: #848484;
+      font-style: italic;
+    }
+    p{
+      font-size:24px;
+    }
+  }
+}
+
+.hrDebilni{
+  height: 2px;
+  background: #cd2700;
+  margin: 60px 0;
+
+}
+.rowTwo{
+  padding: 0 0 60px 0;
+}
+
+.tekstTwo{
+  height:260px;
+  padding: 10px;
+  h4{
+    margin-top:0;
+    font-size: 18px;
+    color: #848484;
+    font-style: italic;
+  }
+  p{
+    font-size:24px;
+  }
+}
+
+.pleskaTwo{
+  display: flex;
+  height:400px;
+  .pleskaBgTwo{
+    width:100%;
+    height:380px;
+    background-image: url('/rolovano-drama-rostilj.jpg');
+    background-size: cover;
+    margin: 20px 0;
+  }
+}
+@media(min-width:1200px){
+
+}
+@media (min-width:1026px) and (max-width:1199px){
+  .aboutNaslov{
+    margin-top: 20px;
+  }
+  .rowOne{
+    padding-top:10px;
+  }
+  .hrDebilni{
+    margin:20px;
+  }
+}
+@media (min-width: 768px) and (max-width:1025px){
+  .hrDebilni{
+    margin:10px;
+  }
+  .rowOne{
+    padding-top:0px;
+  }
+  .aboutNaslov{
+    margin-top: 10px;
+  }
+  .pleskaTekstOne{
+    p{
+      font-size:18px !important;
+    }
+  }
+  .pleskaTekstTwo{
+    p{
+      font-size:18px !important;
+    }
+  }
+  .tekstTwo p {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 767px){
+  body {
+    overflow-x: hidden;
+  }
+  .footerItem {
+    width: 100% !important;
+  }
+  .featured {
+    width: 100%;
+    padding-top: 70px;
+    .featuredLeftImage {
+      margin-bottom: 45px;
+    }
+  }
+  .buttonP {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 29px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 50px;
+    a {
+      font-size: 11px !important;
+      padding: 25px 25px !important;
+    }
+    a:hover {
+      font-size: 11px !important;
+      padding: 25px 25px !important;
+    }
+  }
+  .topHero {
+    background-position: center center !important;
+  }
+  .itemWrap {
+    flex-direction: column;
+    .footerItem {
+      text-align: center;
+    }
+  }
+  .featuredLeftText h2 {
+    font-size: 30px !important;
+    text-align: center;
+  }
+  .featuredLeftText p {
+    font-weight: 500;
+    font-size: 17px !important;
+    color: #363639;
+    text-align: center;
+  }
+  .flexo {
+    margin: 0 auto;
+    maxWidth: 1200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sectionHeadlineMain {
+    .sectionHeadlineTitle {
+      font-size: 26px;
+      margin-top: 60px;
+    }
+    .sectionHeadlineInnerText {
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 0;
+      padding-top:0;
+      margin-bottom: 60px;
+      font-size:20px;
+    }
+  }
+  .rowOne {
+    padding-top:0px;
+  }
+  .pleskaBgOne {
+    background-size: cover;
+    height: 380px;
+    margin: 0 !important;
+  }
+  .pleskaBgTwo {
+    background-size:cover;
+  }
+  .aboutNaslov {
+    margin: 20px 0;
+        font-size: 25px !important;
+  }
+  .hrDebilni {
+    display: none;
+  }
+  .pleskaTekstOne p {
+    font-size: 18px !important;
+  }
+  .pleskaTekstOne  {
+    text-align: center;
+    height: inherit !important;
+    padding: 0 15px;
+  }
+  .tekstTwo {
+    height: inherit !important;
+    text-align: center;
+  }
+  .tekstTwo p {
+    font-size: 18px !important;
+  }
+  .topHeader {
+    font-size: 60px !important;
+  }
+  .topSubHeader {
+    font-size: 25px !important;
+  }
+  .linkFooter{
+            a {
+                color: #cd2700 !important;
+            }
+    display: block;
+    float: none;
+    margin-right: 0px;
+    list-style: none;
+  }
+}
+
+/** CONTACT CSS THERE **/
+.contactRowOne{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.contactColOne{
+  h4{
+    margin: 16px 0;
+    font-weight: bolder;
+  }
+  h5{
+    margin-top:10px;
+    margin-bottom: 0px;
+  }
+  p{
+    color:#666;
+    margin:5px 0;
+  }
+}
+
+.contactColTwo{
+  input{
+
+    width:500px;
+    height: 30px;
+    font-size:16px;
+    background-color: rgb(243, 241, 237);
+    border-radius: 0px;
+    border-style: none;
+    box-shadow: none;
+    outline-style: none;
+    padding: 10px 15px;
+    word-spacing: 0px;
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color:    #666;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color:    #666;
+      opacity:  1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color:    #666;
+      opacity:  1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color:    #666;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color:    #666;
+    }
+
+  }
+
+  .poruka{
+    textarea{
+      font-family:arial;
+      height: 150px;
+      vertical-align: top;
+      width:500px;
+      font-size:16px;
+      background-color: rgb(243, 241, 237);
+      border-radius: 0px;
+      border-style: none;
+      box-shadow: none;
+      outline-style: none;
+      padding: 10px 15px;
+      word-spacing: 0px;
+      -webkit-appearance: none;
+      -webkit-rtl-ordering: logical;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #666;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #666;
+        opacity:  1;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #666;
+        opacity:  1;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #666;
+      }
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color:    #666;
+      }
+    }
+  }
+  .posalji{
+    font-size:18px;
+    font-weight: bold;
+    width:200px;
+    height:40px;
+    background-color: rgb(255,165,0);
+    border: 0;
+    color:#fff;
+  }
+
+@media (min-width: 768px) and (max-width:1025px){
+  input{
+    width:400px;
+    margin-right: 50px;
+  }
+  .poruka{
+    textarea{
+      width:400px;
+    }
+
+  }
+
+}
+@media  (max-width:767px){
+  input{
+    width:300px;
+  }
+  .poruka{
+    textarea{
+      width:300px;
+    }
+
+  }
+}
+}
