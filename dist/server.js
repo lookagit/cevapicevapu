@@ -133,7 +133,8 @@ module.exports = {
 	"rIconsFb": "rIconsFb-JUIQwKp17pNLrHEtbIS7Z",
 	"rIconsIg": "rIconsIg-vPm7Jwe3uYLvV9KFqr1Zg",
 	"rIconsYt": "rIconsYt-XWoktoihdcDSZ_Ehg1Wk_",
-	"pozadina2": "pozadina2-30GqqfhEqYCObRVJgJn3vh"
+	"pozadina2": "pozadina2-30GqqfhEqYCObRVJgJn3vh",
+	"alaHeader": "alaHeader-1YAOiL77EhgdfKZtV2CW5i"
 };
 
 /***/ }),
@@ -2934,7 +2935,7 @@ let AlaCart = class AlaCart extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: ' ', subtitle: ' ', bgImage: { backgroundImage: 'url("/vrh.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok necete zaboraviti', bgImage: { backgroundImage: 'url("/pozadina.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -2978,7 +2979,15 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Grid,
       null,
-      _react2.default.createElement('div', { style: { width: '1200px', height: '130px', extAlign: 'center', textTransform: 'uppercase', marginTop: '0px', marginBottom: '60px', backgroundImage: 'url("/pogledajbrt.png")', backgroundSize: 'contain' } }),
+      _react2.default.createElement(
+        'div',
+        { className: _styles2.default.alaHeader, style: { width: '100%' } },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'POGLEDAJTE NASU JEDINSTVENU PONUDU I UZIVAJTE'
+        )
+      ),
       _react2.default.createElement(
         _reactStyledFlexboxgrid.Row,
         { style: { padding: '0' } },
@@ -3052,17 +3061,17 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
           _react2.default.createElement(
             'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
+            { style: { marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
             'Cena: 330rsd'
           ),
           _react2.default.createElement(
             'h2',
-            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
+            { style: { marginTop: '10px', marginBottom: '0', color: 'white', fontWeight: '900', textAlign: 'center' } },
             'Pljeskavica Drama'
           ),
           _react2.default.createElement(
             'p',
-            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
+            { style: { marginTop: '5px', marginBottom: '0', color: 'white', textAlign: 'center' } },
             '100% junece meso, 300gr.'
           )
         ),
@@ -3072,17 +3081,17 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
           _react2.default.createElement(
             'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
+            { style: { marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
             'Cena: 330rsd'
           ),
           _react2.default.createElement(
             'h2',
-            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
+            { style: { marginTop: '10px', marginBottom: '0', color: 'white', fontWeight: '900', textAlign: 'center' } },
             'Pljeskavica Drama'
           ),
           _react2.default.createElement(
             'p',
-            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
+            { style: { marginTop: '5px', marginBottom: '0', color: 'white', textAlign: 'center' } },
             '100% junece meso, 300gr.'
           )
         ),
@@ -3092,17 +3101,17 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           _react2.default.createElement('div', { style: { width: '100%', height: '300px', backgroundImage: "url('/pljeskaPngZaMenu.png')", backgroundPosition: 'center center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' } }),
           _react2.default.createElement(
             'p',
-            { style: { marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
+            { style: { marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold', textAlign: 'center', fontSize: '30px', marginBottom: '0' } },
             'Cena: 330rsd'
           ),
           _react2.default.createElement(
             'h2',
-            { style: { marginTop: '10px', marginBottom: '0', fontWeight: '900', textAlign: 'center' } },
+            { style: { marginTop: '10px', marginBottom: '0', color: 'white', fontWeight: '900', textAlign: 'center' } },
             'Pljeskavica Drama'
           ),
           _react2.default.createElement(
             'p',
-            { style: { marginTop: '5px', marginBottom: '0', textAlign: 'center' } },
+            { style: { marginTop: '5px', marginBottom: '0', color: 'white', textAlign: 'center' } },
             '100% junece meso, 300gr.'
           )
         )
@@ -3157,7 +3166,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: ' ', subtitle: ' ', bgImage: { backgroundImage: 'url("/pozadina.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: 'url("/pozadinadrvo.jpg")' } },
@@ -3628,7 +3637,7 @@ let Gally = class Gally extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("/o-nama-slika.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("/galerija.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -4494,7 +4503,11 @@ const Home = () => _react2.default.createElement(
   _react2.default.createElement(
     _reactScrollableAnchor2.default,
     { id: 'section1' },
-    _react2.default.createElement('div', { style: { width: '100%', height: '370px', backgroundImage: "url('/cevapi.jpg')" } })
+    _react2.default.createElement(
+      'div',
+      { style: { width: '100%', height: 'auto' } },
+      _react2.default.createElement('img', { src: '/cevapi.jpg', style: { width: "100%", height: "auto", verticalAlign: 'top' } })
+    )
   ),
   _react2.default.createElement(_ParalaxContainer2.default, { stylee: stylee }),
   _react2.default.createElement(

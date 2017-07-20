@@ -9,7 +9,9 @@ export default class ContentBoxes extends React.Component {
   render() {
     return(
       <Grid>
-        <div style={{width:'1200px', height:'130px', extAlign: 'center',textTransform: 'uppercase',marginTop: '0px', marginBottom:'60px', backgroundImage:'url("/pogledajbrt.png")', backgroundSize: 'contain'}}></div>
+        <div className={css.alaHeader} style={{width:'100%'}}>
+          <h2>POGLEDAJTE NASU JEDINSTVENU PONUDU I UZIVAJTE</h2>
+        </div>
         <Row style={{padding: '0'}}>
           <Col xs={12} sm={4} lg={4}>
            <div style={{width:'100%', height:'300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')",border:'5px solid #d9ab6f', borderRadius: '3px',backgroundPosition: 'center center',backgroundSize:'cover'}}>
@@ -37,23 +39,23 @@ export default class ContentBoxes extends React.Component {
           <Col xs={12} sm={4} lg={4}>
            <div style={{width:'100%', height:'300px', backgroundImage: "url('/pljeskaPngZaMenu.png')",backgroundPosition: 'center center',backgroundSize: 'contain',backgroundRepeat: 'no-repeat'}}>
            </div>
-           <p style={{marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold',textAlign: 'center', fontSize: '30px',marginBottom: '0'}}>Cena: 330rsd</p>
-           <h2 style={{marginTop: '10px', marginBottom: '0',fontWeight:'900',textAlign:'center'}}>Pljeskavica Drama</h2>
-           <p style={{marginTop: '5px', marginBottom: '0',textAlign: 'center'}}>100% junece meso, 300gr.</p>
+           <p style={{marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold',textAlign: 'center', fontSize: '30px',marginBottom: '0'}}>Cena: 330rsd</p>
+           <h2 style={{marginTop: '10px', marginBottom: '0', color: 'white',fontWeight:'900',textAlign:'center'}}>Pljeskavica Drama</h2>
+           <p style={{marginTop: '5px', marginBottom: '0', color: 'white',textAlign: 'center'}}>100% junece meso, 300gr.</p>
           </Col>
           <Col xs={12} sm={4} lg={4}>
            <div style={{width:'100%', height:'300px', backgroundImage: "url('/pljeskaPngZaMenu.png')",backgroundPosition: 'center center',backgroundSize: 'contain',backgroundRepeat: 'no-repeat'}}>
            </div>
-           <p style={{marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold',textAlign: 'center', fontSize: '30px',marginBottom: '0'}}>Cena: 330rsd</p>
-           <h2 style={{marginTop: '10px', marginBottom: '0',fontWeight:'900',textAlign:'center'}}>Pljeskavica Drama</h2>
-           <p style={{marginTop: '5px', marginBottom: '0',textAlign: 'center'}}>100% junece meso, 300gr.</p>
+           <p style={{marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold',textAlign: 'center', fontSize: '30px',marginBottom: '0'}}>Cena: 330rsd</p>
+           <h2 style={{marginTop: '10px', marginBottom: '0', color: 'white', fontWeight:'900',textAlign:'center'}}>Pljeskavica Drama</h2>
+           <p style={{marginTop: '5px', marginBottom: '0', color: 'white', textAlign: 'center'}}>100% junece meso, 300gr.</p>
           </Col>
           <Col xs={12} sm={4} lg={4}>
-           <div style={{width:'100%', height:'300px', backgroundImage: "url('/pljeskaPngZaMenu.png')",backgroundPosition: 'center center',backgroundSize: 'contain',backgroundRepeat: 'no-repeat'}}>
+           <div style={{width:'100%', height:'300px',  backgroundImage: "url('/pljeskaPngZaMenu.png')",backgroundPosition: 'center center',backgroundSize: 'contain',backgroundRepeat: 'no-repeat'}}>
            </div>
-           <p style={{marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold',textAlign: 'center', fontSize: '30px',marginBottom: '0'}}>Cena: 330rsd</p>
-           <h2 style={{marginTop: '10px', marginBottom: '0',fontWeight:'900',textAlign:'center'}}>Pljeskavica Drama</h2>
-           <p style={{marginTop: '5px', marginBottom: '0',textAlign: 'center'}}>100% junece meso, 300gr.</p>
+           <p style={{marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold',textAlign: 'center', fontSize: '30px',marginBottom: '0'}}>Cena: 330rsd</p>
+           <h2 style={{marginTop: '10px', marginBottom: '0', color: 'white',fontWeight:'900',textAlign:'center'}}>Pljeskavica Drama</h2>
+           <p style={{marginTop: '5px', marginBottom: '0', color: 'white', textAlign: 'center'}}>100% junece meso, 300gr.</p>
           </Col>
         </Row>
       </Grid>

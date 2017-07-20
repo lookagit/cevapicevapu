@@ -9,7 +9,7 @@ export default class ContactUs extends React.Component{
   render(){
     return(
       <div>
-        <TopHero title=" " subtitle=" " bgImage={{backgroundImage: 'url("/pozadina.jpg")'}} />
+        <TopHero title="KONTAKT" subtitle=" " bgImage={{backgroundImage: 'url("/sarajevski-cevap-drama.jpg")'}} />
         <div style={{backgroundImage:'url("/pozadinadrvo.jpg")'}}>
         <Grid>
           <Row className={css.contactRowOne}>

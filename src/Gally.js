@@ -6,7 +6,7 @@ export default class Gally extends React.Component {
   render() {
     return(
       <div>
-        <TopHero title="GALERIJA" subtitle="Dobrodosli na 100% juneću pljeskavicu" bgImage={{backgroundImage: 'url("/o-nama-slika.jpg")'}} />
+        <TopHero title="GALERIJA" subtitle="Dobrodosli na 100% juneću pljeskavicu" bgImage={{backgroundImage: 'url("/galerija.jpg")'}} />
         <div style={{backgroundImage:"url('/pozadinadrvo.jpg')", backgroundSize:'cover'}}>
           <GallyGrid />
         </div>

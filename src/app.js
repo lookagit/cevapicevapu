@@ -37,7 +37,8 @@ const Home = () => (
   <div>
     <Header />
     <ScrollableAnchor id={'section1'}>
-    <div style={{width:'100%', height:'370px', backgroundImage:"url('/cevapi.jpg')"}}>
+    <div style={{width:'100%', height:'auto'}}>
+      <img src="/cevapi.jpg" style={{width: "100%", height: "auto", verticalAlign:'top'}}/>
     </div>
     </ScrollableAnchor>
     <ParalaxContainer stylee={stylee} />
