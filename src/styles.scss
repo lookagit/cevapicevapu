@@ -108,9 +108,9 @@ $background: #ffc107;
     .mbrArrowIcon {
       -webkit-animation: floating-arrow 1.6s infinite ease-in-out 0s;
       animation: floating-arrow 1.6s infinite ease-in-out 0s;
-      background: white;
+      background: rgba(0,0,0,0);
       border-radius: 3px;
-      color: orange;
+      color: #d9ab6f;
       display: inline-block;
       height: 46px;
       outline-style: none!important;
@@ -118,6 +118,8 @@ $background: #ffc107;
       text-decoration: none;
       transition: all .3s ease-in-out;
       width: 46px;
+      border: 3px solid #d9ab6f;
+      border-radius: 7px;
     }
     .mbrArrowIcon::before {
         content: "\203a";
@@ -132,4 +134,54 @@ $background: #ffc107;
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
     }
+}
+
+
+.headerTxt {
+  position: absolute;
+  top: 40%;
+  left:26%;
+  text-align: center;
+  color:white;
+  h2{
+    font-weight: 800;
+    font-size:65px;
+    margin: 15px auto;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange;
+  }
+  h3{
+    font-weight: 800;
+    font-size:55px;
+    margin: 0 auto;
+  }
+}
+
+.gallyNaslov {
+  text-align: center;
+  h1{
+    margin-top:0px !important;
+    color:white;
+  }
+}
+
+.gallyDiv {
+  border: 3px solid #d9ab6f;
+  overflow: hidden;
+}
+
+.gallyDiv img {
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.gallyDiv img:hover {
+  -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
 }

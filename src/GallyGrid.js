@@ -1,6 +1,7 @@
 import React from 'react';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 import Gallery from './GallyLib';
+import scss from './styles.scss';
 
 function makeUnsplashSrc (id) {
 	return `https://images.unsplash.com/photo-${id}?dpr=2&auto=format&w=1024&h=1024`;
@@ -46,7 +47,9 @@ export default class GallyGrid extends React.Component {
     return(
       <div>
        <Grid>
-			 <h1>Under Construction</h1>
+			 	<div className={scss.gallyNaslov}>
+			 		<h1>Under Construction</h1>
+				</div>
          <Row>
          <Col xs={12}>
       <Gallery images={DEFAULT_IMAGES.map(({ caption, id, orientation, useForDemo }) => ({

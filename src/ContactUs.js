@@ -9,7 +9,8 @@ export default class ContactUs extends React.Component{
   render(){
     return(
       <div>
-        <TopHero title="Kontakt" subtitle="Ovde su sve nase informacije za kontakt" bgImage={{backgroundImage: 'url("/sarajevski-cevap-drama.jpg")'}} />
+        <TopHero title=" " subtitle=" " bgImage={{backgroundImage: 'url("/pozadina.jpg")'}} />
+        <div style={{backgroundImage:'url("/pozadinadrvo.jpg")'}}>
         <Grid>
           <Row className={css.contactRowOne}>
             <Col xsOffset={1} md={10} smOffset={0} mdOffset={1}>
@@ -52,6 +53,7 @@ export default class ContactUs extends React.Component{
             </Col>
           </Row>
         </Grid>
+        </div>
       </div>
     );
   }

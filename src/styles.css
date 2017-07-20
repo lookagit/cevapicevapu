@@ -18,13 +18,19 @@ p, h1, h2, h3, h4, h5, span, a {
 
 .linkFooter{
   a {
-      color: #cd2700 !important;
+      color: #d9ab6f !important;
   }
   display: inline;
   float: left;
   margin-right: 10px;
   list-style: none;
 }
+.linkFooter:hover{
+  a {
+    color: white !important;
+  }
+}
+
 
 .linkFooterUl{
   padding-left: 0px;
@@ -227,14 +233,14 @@ right: 15px;
       h2{
         font-size:20px;
         font-weight: bolder;
-        color:#cd2700;
+        color:#d9ab6f;
       }
       p{
         color:white;
       }
       a{
         text-decoration: none;
-        color:orange;
+        color:#d9ab6f;
         font-size:15px;
         text-transform: uppercase;
         font-weight: 700;
@@ -300,9 +306,10 @@ right: 15px;
   .sectionHeadlineTitle {
     text-align: center;
     text-transform:uppercase;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     font-size: 46px;
-    margin-top: 100px;
+    padding-top: 100px;
+    margin:0 auto !important;
   }
   .sectionHeadlineInnerText {
     text-align: center;
@@ -317,7 +324,7 @@ right: 15px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 .flexo {
   margin: 0 auto;
@@ -522,7 +529,8 @@ right: 15px;
   .sectionHeadlineMain {
     .sectionHeadlineTitle {
       font-size: 26px;
-      margin-top: 60px;
+      padding-top: 60px;
+      margin: 0 auto !important;
     }
     .sectionHeadlineInnerText {
       text-align: center;
@@ -574,7 +582,7 @@ right: 15px;
   }
   .linkFooter{
             a {
-                color: #cd2700 !important;
+                color: #d9ab6f !important;
             }
     display: block;
     float: none;
@@ -585,20 +593,25 @@ right: 15px;
 
 /** CONTACT CSS THERE **/
 .contactRowOne{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
 }
 .contactColOne{
+  background-color:rgba(200,200,200,0.3);
+  border-radius:4px;
+  padding-left:20px;
   h4{
+    font-size: 1.6rem;
     margin: 16px 0;
-    font-weight: bolder;
+    font-weight: 800;
   }
   h5{
+    font-size: 1.5rem;
     margin-top:10px;
     margin-bottom: 0px;
   }
   p{
-    color:#666;
+    font-size: 1.4rem;
     margin:5px 0;
   }
 }
@@ -606,6 +619,7 @@ right: 15px;
 .contactColTwo{
   input{
 
+    padding-top:25px;
     width:500px;
     height: 30px;
     font-size:16px;
@@ -637,6 +651,11 @@ right: 15px;
       color:    #666;
     }
 
+  }
+
+  input:focus {
+    border: 3px solid #6b4a1e;
+    height: 24px;
   }
 
   .poruka{
@@ -674,15 +693,27 @@ right: 15px;
         color:    #666;
       }
     }
+    textarea:focus {
+      border: 3px solid #6b4a1e;
+      height: 144px;
+    }
   }
+
+
   .posalji{
     font-size:18px;
     font-weight: bold;
     width:200px;
     height:40px;
-    background-color: rgb(255,165,0);
+    background-color: #6b4a1e;
     border: 0;
     color:#fff;
+  }
+
+  .posalji:hover {
+    border: 3px solid #6b4a1e;
+    background-color:white;
+    color:black;
   }
 
 @media (min-width: 768px) and (max-width:1025px){
@@ -709,4 +740,34 @@ right: 15px;
 
   }
 }
+}
+
+.rIconsFb {
+  display: inline-block;
+  color: white;
+}
+
+.rIconsFb:hover {
+  color:#3b5998;
+}
+.rIconsIg {
+  display: inline-block;
+  color: white;
+}
+
+.rIconsIg:hover{
+  color: #cd486b;
+}
+
+.rIconsYt {
+  display: inline-block;
+  color: white;
+}
+
+.rIconsYt:hover{
+  color:#cc181e;
+}
+
+.pozadina2 {
+  background-size: cover;
 }

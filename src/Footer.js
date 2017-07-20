@@ -15,10 +15,16 @@ class Footer extends React.Component {
         <div className={css.footer}>
           <div className={css.itemWrap}>
             <div className={css.footerItem}>
-            <h2>DRUŠTVENE MREŽE</h2>
-            <FacebookSquare fill="#fff" width="3em" height="3em"/>
-            <InstagramSquare fill="#fff" width="3em" height="3em" />
-            <YoutubeSquare fill="#fff" width="3em" height="3em" />
+              <h2>DRUŠTVENE MREŽE</h2>
+              <div className={css.rIconsFb}>
+                <FacebookSquare width="3em" height="3em"/>
+              </div>
+              <div className={css.rIconsIg}>
+                <InstagramSquare width="3em" height="3em" />
+              </div>
+              <div className={css.rIconsYt}>
+                <YoutubeSquare width="3em" height="3em" />
+              </div>
             </div>
             <div className={css.footerItem} style={{width: "450px"}}>
             <ul className={css.linkFooterUl}>
@@ -30,9 +36,6 @@ class Footer extends React.Component {
             </ul>
             </div>
           </div>
-        </div>
-        <div className={css.botFooter}>
-          <p>DRAMA Ćevapi Oriđinale</p>
         </div>
       </div>
     )

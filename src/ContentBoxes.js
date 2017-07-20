@@ -8,6 +8,7 @@ export default class ContentBoxes extends React.Component {
   }
   render() {
     return(
+      <div style={{backgroundImage:"url('/Pozadina2.jpg')",backgroundSize:'cover'}}>
       <Grid>
         <Row className={css.rowTwo} style={{padding: '0 0 60px 0'}}>
           <Col xs={12} sm={8} smOffset={2} >
@@ -31,6 +32,7 @@ export default class ContentBoxes extends React.Component {
           </Col>
         </Row>
       </Grid>
+      </div>
     );
   }
 }

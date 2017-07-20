@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { css, StyleSheet } from 'aphrodite/no-important';
 import Lightbox from 'react-images';
+import scss from './styles.scss';
 
 class Gallery extends Component {
 	constructor () {
@@ -65,7 +66,9 @@ class Gallery extends Component {
 					key={i}
 					onClick={(e) => this.openLightbox(i, e)}
 				>
-					<img src={obj.thumbnail} className={css(classes.source)} />
+					<div className={scss.gallyDiv}>
+						<img src={obj.thumbnail} className={css(classes.source)} />
+					</div>
 				</a>
 			);
 		});

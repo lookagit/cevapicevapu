@@ -37,13 +37,18 @@ const Home = () => (
   <div>
     <Header />
     <ScrollableAnchor id={'section1'}>
-    <SectionHeadline title="Ćevapi koje ćete voleti" innerText="100% organsko meso" />
+    <div style={{width:'100%', height:'370px', backgroundImage:"url('/cevapi.jpg')"}}>
+    </div>
     </ScrollableAnchor>
     <ParalaxContainer stylee={stylee} />
-    <SectionHeadline title="Najbolji ćevapi u gradu" innerText="Probajte obavežno" />
-    <ThreeGallery />
+    <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
+      <SectionHeadline title="Najbolji ćevapi u gradu" innerText="Probajte obavežno" />
+      <ThreeGallery />
+    </div>
     <ParalaxContainer stylee={sndlax} />
-    <FeaturedLeft />
+    <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
+      <FeaturedLeft />
+    </div>
   </div>
 );
 

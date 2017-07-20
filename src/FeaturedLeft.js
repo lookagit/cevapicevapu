@@ -6,7 +6,7 @@ class FeaturedLeft extends React.Component {
   }
   render() {
     return (
-      <div style={{display: "flex", backgroundColor: "#f2ebe0"}}>
+      <div style={{display: "flex"}}>
         <div className={css.featured}>
           <div className={css.featuredLeftImage} style={{backgroundImage: "url('pleska.jpg')"}}></div>
           <div className={css.featuredLeftText}>
@@ -14,14 +14,13 @@ class FeaturedLeft extends React.Component {
               Osetite duh Sarajeva u centru Beograda
             </h2>
             <p>
-              Society excited by cottage private an it esteems. Fully begin on by wound an.
-              Girl rich in do up or both. At declared in as rejoiced of together.
-              He impression collecting delightful unpleasant by prosperous as on.
-              End too talent she object mrs wanted remove giving.</p>
+              Kada se rodila ideja da otvorimo Marendu želja nam je bila da u srcu Vračara kreiramo oazu dobre atmosfere
+               i sjajne hrane. Izazov je bilo na sjajnoj lokaciji kreirati nešto što će Beograđani prihvatiti kao svoje,
+                a oni koji dolaze u posetu prepoznati kao kvalitetno i vredno pažnje.</p>
             <p>
-              Do commanded an shameless we disposing do. Indulgence ten remarkably nor are impression out.
-              Power is lived means oh every in we quiet. Remainder provision an in intention.
-              Saw supported too joy promotion engrossed propriety. Me till like it sure no sons.
+            Svesni smo da je to veliki izazov i zato se trudimo da našim posetiocima ugodimo na različite načine - enterijerom, uslugom,
+             kvalitetnom hranom, napicima, predivnom letnjom terasom sa pogledom na Hram Sv. Save, muzikom...
+             
             </p>
             <p className={css.buttonP}>
               <a>

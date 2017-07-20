@@ -9,28 +9,28 @@ export default class ContentBoxes extends React.Component {
   render() {
     return(
       <Grid>
-        <h1 style={{textAlign: 'center',textTransform: 'uppercase',margin: '60px 0'}}>Pogledajte nasu jedinstvenu ponudu i uzivajte</h1>
+        <div style={{width:'1200px', height:'130px', extAlign: 'center',textTransform: 'uppercase',marginTop: '0px', marginBottom:'60px', backgroundImage:'url("/pogledajbrt.png")', backgroundSize: 'contain'}}></div>
         <Row style={{padding: '0'}}>
           <Col xs={12} sm={4} lg={4}>
-           <div style={{width:'100%', height:'300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')",boxShadow: '1px 3px 15px rgba(0,0,0,.26)',backgroundPosition: 'center center',backgroundSize:'cover'}}>
+           <div style={{width:'100%', height:'300px', backgroundImage: "url('/drama-cevapi-menu-drugi.jpg')",border:'5px solid #d9ab6f', borderRadius: '3px',backgroundPosition: 'center center',backgroundSize:'cover'}}>
            </div>
-           <h2 style={{marginTop: '10px', marginBottom: '0'}}>Pljeskavica Drama</h2>
-           <p style={{marginTop: '5px', marginBottom: '0'}}>Sastojci: 100% junece meso</p>
-           <p style={{marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold'}}>Cena: 330rsd</p>
+           <h2 style={{marginTop: '10px', marginBottom: '0', color:'white'}}>Pljeskavica Drama</h2>
+           <p style={{marginTop: '5px', marginBottom: '0', color:'white'}}>Sastojci: 100% junece meso</p>
+           <p style={{marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold'}}>Cena: 330rsd</p>
           </Col>
           <Col xs={12} sm={4}  lg={4}>
-           <div style={{width:'100%', height:'300px', backgroundImage:  "url('/drama-cevapi-menu-drugi.jpg')",boxShadow: '1px 3px 15px rgba(0,0,0,.26)',backgroundPosition: 'center center',backgroundSize:'cover'}}>
+           <div style={{width:'100%', height:'300px', backgroundImage:  "url('/drama-cevapi-menu-drugi.jpg')",border:'5px solid #d9ab6f', borderRadius: '3px',backgroundPosition: 'center center',backgroundSize:'cover'}}>
            </div>
-           <h2 style={{marginTop: '10px', marginBottom: '0'}}>Pljeskavica Drama</h2>
-           <p style={{marginTop: '5px', marginBottom: '0'}}>Sastojci: 100% junece meso</p>
-           <p style={{marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold'}}>Cena: 330rsd</p>
+           <h2 style={{marginTop: '10px', marginBottom: '0', color: 'white'}}>Pljeskavica Drama</h2>
+           <p style={{marginTop: '5px', marginBottom: '0', color: 'white'}}>Sastojci: 100% junece meso</p>
+           <p style={{marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold'}}>Cena: 330rsd</p>
           </Col>
           <Col xs={12} sm={4} lg={4}>
-           <div style={{width:'100%', height:'300px', backgroundImage:  "url('/drama-cevapi-menu-drugi.jpg')",boxShadow: '1px 3px 15px rgba(0,0,0,.26)',backgroundPosition: 'center center',backgroundSize:'cover'}}>
+           <div style={{width:'100%', height:'300px', backgroundImage:  "url('/drama-cevapi-menu-drugi.jpg')",border:'5px solid #d9ab6f', borderRadius: '3px',backgroundPosition: 'center center',backgroundSize:'cover'}}>
            </div>
-           <h2 style={{marginTop: '10px', marginBottom: '0'}}>Pljeskavica Drama</h2>
-           <p style={{marginTop: '5px', marginBottom: '0'}}>Sastojci: 100% junece meso</p>
-           <p style={{marginTop: '5px', textAlign: 'right', color: 'orange', fontWeight: 'bold'}}>Cena: 330rsd</p>
+           <h2 style={{marginTop: '10px', marginBottom: '0', color:'white'}}>Pljeskavica Drama</h2>
+           <p style={{marginTop: '5px', marginBottom: '0', color:'white'}}>Sastojci: 100% junece meso</p>
+           <p style={{marginTop: '5px', textAlign: 'right', color: 'white', fontWeight: 'bold'}}>Cena: 330rsd</p>
           </Col>
         </Row>
         <Row style={{padding: '60px 0 60px 0'}}>

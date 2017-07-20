@@ -7,8 +7,10 @@ export default class AlaCart extends React.Component {
   render() {
     return(
       <div>
-        <TopHero title="JELOVNIK" subtitle="Ovaj obrok necete zaboraviti" bgImage={{backgroundImage: 'url("/o-nama-slika.jpg")'}} />
-        <AlaCartGridMenu />
+        <TopHero title=" " subtitle=" " bgImage={{backgroundImage: 'url("/vrh.jpg")'}} />
+        <div style={{backgroundImage:"url('/pozadinadrvo.jpg')", backgroundSize:'cover'}}>
+          <AlaCartGridMenu />
+        </div>
       </div>
     );
   }
