@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 69);
+/******/ 	return __webpack_require__(__webpack_require__.s = 68);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -368,7 +368,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(61);
+const path = __webpack_require__(60);
 
 // ----------------------
 
@@ -444,39 +444,39 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(55);
+__webpack_require__(54);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(62);
+var _server = __webpack_require__(61);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(56);
+var _koa = __webpack_require__(55);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(7);
 
-var _koaSend = __webpack_require__(59);
+var _koaSend = __webpack_require__(58);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(57);
+var _koaHelmet = __webpack_require__(56);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(58);
+var _koaRouter = __webpack_require__(57);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(60);
+var _microseconds = __webpack_require__(59);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(65);
+var _reactRouter = __webpack_require__(64);
 
 var _reactHelmet = __webpack_require__(10);
 
@@ -772,7 +772,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(52);
+var _boxen = __webpack_require__(51);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
@@ -780,7 +780,7 @@ var _chalk = __webpack_require__(9);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(54);
+var _ip = __webpack_require__(53);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -951,9 +951,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(67);
+var _redux = __webpack_require__(66);
 
-var _reduxThunk = __webpack_require__(68);
+var _reduxThunk = __webpack_require__(67);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1311,10 +1311,6 @@ var _serbianburger2 = _interopRequireDefault(_serbianburger);
 var _AlaCartGridMenu = __webpack_require__(28);
 
 var _AlaCartGridMenu2 = _interopRequireDefault(_AlaCartGridMenu);
-
-var _pozadina = __webpack_require__(47);
-
-var _pozadina2 = _interopRequireDefault(_pozadina);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2169,9 +2165,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _noImportant = __webpack_require__(51);
+var _noImportant = __webpack_require__(50);
 
-var _reactImages = __webpack_require__(63);
+var _reactImages = __webpack_require__(62);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2369,7 +2365,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _googleMapReact = __webpack_require__(53);
+var _googleMapReact = __webpack_require__(52);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -2380,14 +2376,18 @@ const AnyReactComponent = ({ text }) => _react2.default.createElement(
   null,
   text
 );
-
+const GoogleMapConfig = {
+  key: "AIzaSyByxy70NlYzOYmoO-Y0JdTekVjReTaVXeM",
+  libraries: 'places'
+};
 let GoogleMaps = class GoogleMaps extends _react.Component {
   render() {
     return _react2.default.createElement(
       _googleMapReact2.default,
       {
         defaultCenter: this.props.center,
-        defaultZoom: this.props.zoom
+        defaultZoom: this.props.zoom,
+        bootstrapURLKeys: GoogleMapConfig
       },
       _react2.default.createElement(AnyReactComponent, {
         lat: 44.817231,
@@ -2573,7 +2573,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(48);
+var _logodrama = __webpack_require__(47);
 
 var _logodrama2 = _interopRequireDefault(_logodrama);
 
@@ -2864,7 +2864,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(7);
 
-var _reactRedux = __webpack_require__(64);
+var _reactRedux = __webpack_require__(63);
 
 var _reactRouterDom = __webpack_require__(5);
 
@@ -2874,7 +2874,7 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 var _routing = __webpack_require__(23);
 
-var _all_messages = __webpack_require__(49);
+var _all_messages = __webpack_require__(48);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
@@ -2928,7 +2928,7 @@ var _ContactUs = __webpack_require__(29);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(66);
+var _reactScrollableAnchor = __webpack_require__(65);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -3167,16 +3167,10 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/pozadina.0e278f2ee449d398d8242db5b5cb09c4.jpg";
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
 module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -3199,12 +3193,12 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(50).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(49).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports) {
 
 
@@ -3231,115 +3225,115 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = require("aphrodite/no-important");
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = require("google-map-react");
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-redux");
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-scrollable-anchor");
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(15);
