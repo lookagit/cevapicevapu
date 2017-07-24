@@ -5,6 +5,7 @@ import TopHero from './TopHero.js';
 import FacebookSquare from 'react-icons/lib/fa/facebook-square';
 import InstagramSquare from 'react-icons/lib/fa/instagram';
 import YoutubeSquare from 'react-icons/lib/fa/youtube-square';
+import GoogleMaps from './GoogleMaps.js';
 export default class ContactUs extends React.Component{
   render(){
     return(
@@ -53,6 +54,9 @@ export default class ContactUs extends React.Component{
             </Col>
           </Row>
         </Grid>
+        <div style={{width: '100%', height: '400px'}}>
+          <GoogleMaps />
+        </div>
         </div>
       </div>
     );

@@ -3,6 +3,7 @@ import css from './styles.css'
 import TopHero from './TopHero.js';
 import SerbianBurger from './serbianburger.jpg';
 import AlaCartGridMenu from './AlaCartGridMenu.js';
+import CartPozadina from './images/pozadina.jpg';
 export default class AlaCart extends React.Component {
   render() {
     return(
