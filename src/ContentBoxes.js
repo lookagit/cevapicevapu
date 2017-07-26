@@ -13,9 +13,13 @@ export default class ContentBoxes extends React.Component {
         <Row className={css.rowTwo} style={{padding: '0 0 60px 0'}}>
           <Col xs={12} sm={8} smOffset={2} >
             <div className={css.tekstTwo}>
-              <h2 style={{textAlign: "center"}}>10 GODINA VREDNOG RADA</h2>
-              <h4 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h4>
-              <p style={{textAlign: "justify"}}>Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.</p>
+              <p style={{textAlign: "justify"}}>
+              Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedničkog malog restorana izbor ćevapa se sam nametnuo.
+              Srpska tradicionalna hrana koju gotovo svi vole, a čijim kvalitetom po prestoničkim restoranima nismo uopšte bili srećni. Sećala
+              nas je nostalgija mirisa ćevapčića iz detinjstva i pomislili smo: "Može to bolje".
+              Krenuli smo u misiju: "Ćevapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa
+              interneta nam govore da smo uspeli... Na Vama je da presudite. 
+              </p>
             </div>
           </Col>
           <Col xs={12} sm={6}>
