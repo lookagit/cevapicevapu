@@ -22,8 +22,11 @@ import MainMenu from './MainMenu.js';
 import AboutUs from './AboutUs.js';
 import AlaCart from './AlaCart.js';
 import Gally from './Gally.js';
+import NaruciNesto from './NaruciNesto';
 import ContactUs from './ContactUs.js'
 import ScrollableAnchor from 'react-scrollable-anchor';
+import Admir from './admin/Admin';
+import Korpa from './Korpa';
 const stylee = {
   backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
   height: '300px',
@@ -53,6 +56,10 @@ const Home = () => (
   </div>
 );
 
+const Admin = () => (
+  <Admir />
+);
+
 // Helper component that will be conditionally shown when the route matches.
 // This gives you an idea how React Router v4 works
 const About = ({ match }) => (
@@ -68,6 +75,14 @@ const Jelovnik = ({ match }) => (
 
 const Galerija = ({ match }) => (
   <Gally />
+);
+
+const Naruci = ({ match }) => (
+  <NaruciNesto />
+);
+
+const Bucket = () => (
+  <Korpa />
 );
 
 const WhenNotFound = () => (
@@ -185,6 +200,9 @@ export default () => (
       <Route path="/page/about" component={About} />
       <Route path="/page/galerija" component={Galerija} />
       <Route path="/page/contact" component={Contact} />
+      <Route path="/page/naruci" component={Naruci} />
+      <Route path="/admin" component={Admin} />
+      <Route path="/korpa" component={Bucket} />
       <Route component={WhenNotFound} />
     </Switch>
     <Footer />

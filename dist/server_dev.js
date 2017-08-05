@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 68);
+/******/ 	return __webpack_require__(__webpack_require__.s = 86);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -133,6 +133,39 @@ module.exports = {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-styled-flexboxgrid");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
+	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
+	"bsPrice": "bsPrice-3ljTYa9XaCKTLnoE1QLFa2",
+	"bsText": "bsText-3glj6OL5XYMIoQa9X2rcTh",
+	"bsInnerInner": "bsInnerInner-Sn87SKTD9jjTjQRG70MrY",
+	"boxStylezInner": "boxStylezInner-dPOMWFk0hOl84lqJTVTCX",
+	"mbrArrowFloating": "mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV",
+	"mbrArrowIcon": "mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0",
+	"a": "a-3CLQjXJ95FwwMe6Mc8CB2V",
+	"headerTxt": "headerTxt-2380IQRzL_oUTSiFLwSaSW",
+	"gallyNaslov": "gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW",
+	"gallyDiv": "gallyDiv-q57aq7BHmjYCDkCtV3wol",
+	"product": "product-rfL07y3RJIeqdPROAh0wO",
+	"proizvodList": "proizvodList-269fUlrCyJkVR2zWxxemxX"
+};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -204,106 +237,120 @@ let TopHero = class TopHero extends _react2.default.Component {
 exports.default = TopHero;
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = {
-	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
-	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
-	"bsPrice": "bsPrice-3ljTYa9XaCKTLnoE1QLFa2",
-	"bsText": "bsText-3glj6OL5XYMIoQa9X2rcTh",
-	"bsInnerInner": "bsInnerInner-Sn87SKTD9jjTjQRG70MrY",
-	"boxStylezInner": "boxStylezInner-dPOMWFk0hOl84lqJTVTCX",
-	"mbrArrowFloating": "mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV",
-	"mbrArrowIcon": "mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0",
-	"a": "a-3CLQjXJ95FwwMe6Mc8CB2V",
-	"headerTxt": "headerTxt-2380IQRzL_oUTSiFLwSaSW",
-	"gallyNaslov": "gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW",
-	"gallyDiv": "gallyDiv-q57aq7BHmjYCDkCtV3wol"
-};
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-styled-flexboxgrid");
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-apollo");
 
 /***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg";
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030eb1f711c7b7b64f570e.jpg";
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = require("chalk");
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/facebook-square");
+
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":87}};
+    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request"};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
+module.exports = doc;
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/instagram");
+module.exports = require("chalk");
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square");
+module.exports = require("graphql-tag");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = require("seamless-immutable");
+module.exports = require("react-helmet");
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/facebook-square");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/instagram");
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/youtube-square");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("seamless-immutable");
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _chalk = __webpack_require__(9);
+var _chalk = __webpack_require__(12);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _env = __webpack_require__(21);
+var _env = __webpack_require__(25);
 
-var _console = __webpack_require__(20);
+var _console = __webpack_require__(24);
 
-var _server = __webpack_require__(18);
+var _server = __webpack_require__(22);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -359,7 +406,7 @@ _server2.default.then(({ router, app }) => {
 });
 
 /***/ }),
-/* 16 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -368,7 +415,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(60);
+const path = __webpack_require__(79);
 
 // ----------------------
 
@@ -412,7 +459,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 17 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -424,7 +471,7 @@ Object.defineProperty(exports, "__esModule", {
 /* eslint-disable import/prefer-default-export */
 
 const APOLLO = exports.APOLLO = {
-  uri: 'https://api.graph.cool/simple/v1/cinomw2r1018601o42x5z69uc'
+  uri: 'https://api.graph.cool/simple/v1/cj5s24jocv1ft0122c36eji5n'
 };
 
 const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
@@ -432,7 +479,7 @@ const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
 };
 
 /***/ }),
-/* 18 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -444,59 +491,59 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(54);
+__webpack_require__(73);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(61);
+var _server = __webpack_require__(80);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(55);
+var _koa = __webpack_require__(74);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(7);
+var _reactApollo = __webpack_require__(6);
 
-var _koaSend = __webpack_require__(58);
+var _koaSend = __webpack_require__(77);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(56);
+var _koaHelmet = __webpack_require__(75);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(57);
+var _koaRouter = __webpack_require__(76);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(59);
+var _microseconds = __webpack_require__(78);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(64);
+var _reactRouter = __webpack_require__(82);
 
-var _reactHelmet = __webpack_require__(10);
+var _reactHelmet = __webpack_require__(14);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _apollo = __webpack_require__(19);
+var _apollo = __webpack_require__(23);
 
-var _redux = __webpack_require__(22);
+var _redux = __webpack_require__(26);
 
 var _redux2 = _interopRequireDefault(_redux);
 
-var _ssr = __webpack_require__(24);
+var _ssr = __webpack_require__(28);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(44);
+var _app = __webpack_require__(57);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _paths = __webpack_require__(16);
+var _paths = __webpack_require__(20);
 
 var _paths2 = _interopRequireDefault(_paths);
 
@@ -707,7 +754,7 @@ exports.default = async function server() {
 }();
 
 /***/ }),
-/* 19 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -719,9 +766,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(7);
+var _reactApollo = __webpack_require__(6);
 
-var _project = __webpack_require__(17);
+var _project = __webpack_require__(21);
 
 // ----------------------
 
@@ -761,7 +808,7 @@ function serverClient() {
 }
 
 /***/ }),
-/* 20 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -772,15 +819,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(51);
+var _boxen = __webpack_require__(70);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(9);
+var _chalk = __webpack_require__(12);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(53);
+var _ip = __webpack_require__(72);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -818,7 +865,7 @@ function logServerStarted(opt = {}) {
 // Display a border around a message
 
 /***/ }),
-/* 21 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -920,7 +967,7 @@ function getURL() {
 }
 
 /***/ }),
-/* 22 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,17 +998,17 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(66);
+var _redux = __webpack_require__(84);
 
-var _reduxThunk = __webpack_require__(67);
+var _reduxThunk = __webpack_require__(85);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _seamlessImmutable = __webpack_require__(14);
+var _seamlessImmutable = __webpack_require__(18);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
-var _counter = __webpack_require__(25);
+var _counter = __webpack_require__(29);
 
 var _counter2 = _interopRequireDefault(_counter);
 
@@ -1012,7 +1059,7 @@ function createNewStore(apolloClient) {
 }
 
 /***/ }),
-/* 23 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1027,11 +1074,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(4);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1115,7 +1162,7 @@ Redirect.defaultProps = {
 };
 
 /***/ }),
-/* 24 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1129,7 +1176,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(4);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1182,7 +1229,7 @@ Html.propTypes = {
 exports.default = Html;
 
 /***/ }),
-/* 25 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1192,7 +1239,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _seamlessImmutable = __webpack_require__(14);
+var _seamlessImmutable = __webpack_require__(18);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -1215,12 +1262,30 @@ const initialState = (0, _seamlessImmutable2.default)({
 // IMPORTS
 
 /* NPM */
+
+const ordersInitial = [];
+
 exports.default = {
 
   // The shape that our Redux handler in `kit/lib/redux` expects is
   // { stateKey: { state, reducer() } } -- the `stateKey` is where in the `state`
   // object starts looking, `state` is the initial state, and `reducer()` is the
   // function that handles the 'listening' to Redux to know how to manipulate state
+  orders: {
+    state: ordersInitial,
+    reducer(state = ordersInitial, action) {
+      if (action.type === 'ADD_ORDER') {
+        console.log(action.orders);
+        const newState = state;
+        newState.push(action.orders);
+        return newState;
+      } else if (action.type === 'REMOVE_ORDER') {
+        state = [];
+        return state;
+      }
+      return state;
+    }
+  },
   counter: {
     state: initialState,
     reducer(state = initialState, action) {
@@ -1235,7 +1300,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 26 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1254,17 +1319,21 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(2);
+var _TopHero = __webpack_require__(5);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _serbianburger = __webpack_require__(8);
+var _serbianburger = __webpack_require__(10);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
-var _ContentBoxes = __webpack_require__(30);
+var _ContentBoxes = __webpack_require__(34);
 
 var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
+
+var _sarajevskiCevapDrama = __webpack_require__(63);
+
+var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1273,7 +1342,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: '\u0106evapi sa srcem za sva\u010Diju du\u0161u', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: 'Kako je nastala DRAMA', bgImage: { backgroundImage: 'url("' + _sarajevskiCevapDrama2.default + '")' } }),
       _react2.default.createElement(_ContentBoxes2.default, null)
     );
   }
@@ -1281,7 +1350,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
 exports.default = AboutUs;
 
 /***/ }),
-/* 27 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1300,17 +1369,21 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(2);
+var _TopHero = __webpack_require__(5);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _serbianburger = __webpack_require__(8);
+var _serbianburger = __webpack_require__(10);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
-var _AlaCartGridMenu = __webpack_require__(28);
+var _AlaCartGridMenu = __webpack_require__(32);
 
 var _AlaCartGridMenu2 = _interopRequireDefault(_AlaCartGridMenu);
+
+var _pozadina = __webpack_require__(62);
+
+var _pozadina2 = _interopRequireDefault(_pozadina);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1319,7 +1392,7 @@ let AlaCart = class AlaCart extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok necete zaboraviti', bgImage: { backgroundImage: 'url("/pozadina.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok necete zaboraviti', bgImage: { backgroundImage: 'url("' + _pozadina2.default + '")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -1331,7 +1404,7 @@ let AlaCart = class AlaCart extends _react2.default.Component {
 exports.default = AlaCart;
 
 /***/ }),
-/* 28 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1346,7 +1419,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(6);
+var _reactStyledFlexboxgrid = __webpack_require__(3);
 
 var _styles = __webpack_require__(1);
 
@@ -1506,7 +1579,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
 exports.default = ContentBoxes;
 
 /***/ }),
-/* 29 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1525,25 +1598,25 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(6);
+var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _TopHero = __webpack_require__(2);
+var _TopHero = __webpack_require__(5);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _facebookSquare = __webpack_require__(11);
+var _facebookSquare = __webpack_require__(15);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(12);
+var _instagram = __webpack_require__(16);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(13);
+var _youtubeSquare = __webpack_require__(17);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
-var _GoogleMaps = __webpack_require__(36);
+var _GoogleMaps = __webpack_require__(40);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
@@ -1623,7 +1696,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   _react2.default.createElement(
                     'p',
                     null,
-                    'Beograd, Dositejeva, 7'
+                    'Beograd, Ugao Dositejeve i Bra\u0107e Jugovi\u0107.'
                   ),
                   _react2.default.createElement(
                     'h5',
@@ -1633,7 +1706,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   _react2.default.createElement(
                     'p',
                     null,
-                    '066/449-411'
+                    '+381 66 449 411'
                   ),
                   _react2.default.createElement(
                     'h5',
@@ -1658,7 +1731,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   _react2.default.createElement(
                     'p',
                     null,
-                    'Vikendom 09:00h - 03:00h'
+                    'Vikendom 09:00h - 01:00h'
                   ),
                   _react2.default.createElement(
                     'h5',
@@ -1668,7 +1741,12 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   _react2.default.createElement(
                     'p',
                     null,
-                    '11:00 - 19:35'
+                    '12:00 - 20:00 h'
+                  ),
+                  _react2.default.createElement(
+                    'h5',
+                    null,
+                    'Dostava od 20:00 do 24:00 putem kurirske sluzbe Potrcko'
                   )
                 )
               )
@@ -1687,7 +1765,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
 exports.default = ContactUs;
 
 /***/ }),
-/* 30 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1702,7 +1780,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(6);
+var _reactStyledFlexboxgrid = __webpack_require__(3);
 
 var _styles = __webpack_require__(1);
 
@@ -1732,19 +1810,9 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
               'div',
               { className: _styles2.default.tekstTwo },
               _react2.default.createElement(
-                'h2',
-                { style: { textAlign: "center" } },
-                '10 GODINA VREDNOG RADA'
-              ),
-              _react2.default.createElement(
-                'h4',
-                { style: { textAlign: "center" } },
-                'Ko bi to radio da nije nas'
-              ),
-              _react2.default.createElement(
                 'p',
                 { style: { textAlign: "justify" } },
-                'Creative matching and contrasting the tastes, reaserching new combos, a gastronomic intersection of sea and the land. We also prepare some things that are quite national and traditional, feel free to ask, not everything is on the menu.'
+                'Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedni\u010Dkog malog restorana izbor \u0107evapa se sam nametnuo. Srpska tradicionalna hrana koju gotovo svi vole, a \u010Dijim kvalitetom po prestoni\u010Dkim restoranima nismo uop\u0161te bili sre\u0107ni. Se\u0107ala nas je nostalgija mirisa \u0107evap\u010Di\u0107a iz detinjstva i pomislili smo: "Mo\u017Ee to bolje". Krenuli smo u misiju: "\u0106evapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa interneta nam govore da smo uspeli... Na Vama je da presudite.'
               )
             )
           ),
@@ -1796,7 +1864,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
 exports.default = ContentBoxes;
 
 /***/ }),
-/* 31 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1863,7 +1931,7 @@ let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
 exports.default = FeaturedLeft;
 
 /***/ }),
-/* 32 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1881,19 +1949,19 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(11);
+var _facebookSquare = __webpack_require__(15);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(12);
+var _instagram = __webpack_require__(16);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(13);
+var _youtubeSquare = __webpack_require__(17);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1996,7 +2064,7 @@ let Footer = class Footer extends _react2.default.Component {
 exports.default = Footer;
 
 /***/ }),
-/* 33 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2015,13 +2083,17 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(2);
+var _TopHero = __webpack_require__(5);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _GallyGrid = __webpack_require__(34);
+var _GallyGrid = __webpack_require__(38);
 
 var _GallyGrid2 = _interopRequireDefault(_GallyGrid);
+
+var _galerija = __webpack_require__(61);
+
+var _galerija2 = _interopRequireDefault(_galerija);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2030,7 +2102,7 @@ let Gally = class Gally extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("/galerija.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("' + _galerija2.default + '")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -2042,7 +2114,7 @@ let Gally = class Gally extends _react2.default.Component {
 exports.default = Gally;
 
 /***/ }),
-/* 34 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2057,13 +2129,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(6);
+var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _GallyLib = __webpack_require__(35);
+var _GallyLib = __webpack_require__(39);
 
 var _GallyLib2 = _interopRequireDefault(_GallyLib);
 
-var _styles = __webpack_require__(3);
+var _styles = __webpack_require__(4);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2147,7 +2219,7 @@ let GallyGrid = class GallyGrid extends _react2.default.Component {
 exports.default = GallyGrid;
 
 /***/ }),
-/* 35 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2157,7 +2229,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _propTypes = __webpack_require__(4);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2165,13 +2237,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _noImportant = __webpack_require__(50);
+var _noImportant = __webpack_require__(69);
 
-var _reactImages = __webpack_require__(62);
+var _reactImages = __webpack_require__(81);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
-var _styles = __webpack_require__(3);
+var _styles = __webpack_require__(4);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2350,7 +2422,7 @@ const classes = _noImportant.StyleSheet.create({
 exports.default = Gallery;
 
 /***/ }),
-/* 36 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2365,7 +2437,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _googleMapReact = __webpack_require__(52);
+var _googleMapReact = __webpack_require__(71);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -2404,7 +2476,7 @@ GoogleMaps.defaultProps = {
 exports.default = GoogleMaps;
 
 /***/ }),
-/* 37 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2418,7 +2490,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HeaderHero = __webpack_require__(38);
+var _HeaderHero = __webpack_require__(42);
 
 var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
 
@@ -2443,7 +2515,7 @@ let Header = class Header extends _react2.default.Component {
 exports.default = Header;
 
 /***/ }),
-/* 38 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2461,7 +2533,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _styles3 = __webpack_require__(3);
+var _styles3 = __webpack_require__(4);
 
 var _styles4 = _interopRequireDefault(_styles3);
 
@@ -2490,7 +2562,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
 exports.default = HeaderHero;
 
 /***/ }),
-/* 39 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2504,7 +2576,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(3);
+var _styles = __webpack_require__(4);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2553,7 +2625,260 @@ let InstaImage = class InstaImage extends _react2.default.Component {
 exports.default = InstaImage;
 
 /***/ }),
-/* 40 */
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _oNamaSlika = __webpack_require__(9);
+
+var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
+
+var _TopHero = __webpack_require__(5);
+
+var _TopHero2 = _interopRequireDefault(_TopHero);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(7);
+
+var _KorpaPorudzbina = __webpack_require__(45);
+
+var _KorpaPorudzbina2 = _interopRequireDefault(_KorpaPorudzbina);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })), _dec(_class = class Korpa extends _react.Component {
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_TopHero2.default, { title: 'Dostava', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("' + _oNamaSlika2.default + '")' } }),
+      this.props.orders && this.props.orders.map((proiz, index) => _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h2',
+          null,
+          proiz.proizvodid
+        ),
+        _react2.default.createElement('img', { src: proiz.urlSlike, width: '150px' }),
+        _react2.default.createElement(
+          'h3',
+          null,
+          proiz.naslov
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Kolicina: '
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          proiz.kolicina
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Cena: '
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          proiz.cena
+        )
+      )),
+      _react2.default.createElement(_KorpaPorudzbina2.default, { orders: this.props.orders })
+    );
+  }
+}) || _class);
+Korpa.propTypes = {
+  orders: _propTypes2.default.array
+};
+exports.default = Korpa;
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _dec2, _dec3, _dec4, _dec5, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactApollo = __webpack_require__(6);
+
+var _graphqlTag = __webpack_require__(13);
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _PorudzbinaConfirm = __webpack_require__(49);
+
+var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
+
+var _reactRedux = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {
+    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {
+      id
+    },
+  }`, {
+  name: 'createPorudzbina'
+}), _dec3 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation createStavkePorudzbine($kolicina: Int!) {
+    createStavkePorudzbine (kolicina: $kolicina) {
+      id
+    }
+  }`, {
+  name: 'createStavkePorudzbine'
+}), _dec4 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation addToPorudzbinaOnStavkePorudzbine($stavkePorudzbinesStavkePorudzbineId: ID!, $porudzbinaPorudzbinaId: ID!) {
+    addToPorudzbinaOnStavkePorudzbine (stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, porudzbinaPorudzbinaId: $porudzbinaPorudzbinaId) {
+      porudzbinaPorudzbina {
+        adresa
+      }
+    }
+  }`, {
+  name: 'addToPorudzbinaOnStavkePorudzbine'
+}), _dec5 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation addToStavkePorudzbineOnProizvod($stavkePorudzbinesStavkePorudzbineId: ID!, $proizvodProizvodId: ID!){
+    addToStavkePorudzbineOnProizvod(stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, proizvodProizvodId: $proizvodProizvodId){
+      stavkePorudzbinesStavkePorudzbine{
+        id
+      }
+    }
+  }`, {
+  name: 'addToStavkePorudzbineOnProizvod'
+}), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = _dec5(_class = class KorpaPorudzbina extends _react2.default.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.izmeniAdresu = event => {
+      this.setState({ adresa: event.target.value });
+    };
+
+    this.izmeniBroj = event => {
+      this.setState({ brojTelefona: parseInt(event.target.value) });
+    };
+
+    this.nekaFunkcija = async () => {
+      const pravimPorudzbinu = await this.props.createPorudzbina({
+        variables: {
+          adresa: this.state.adresa,
+          brojTelefona: this.state.brojTelefona
+        }
+      });
+
+      if (pravimPorudzbinu) {
+        if (this.props.orders) {
+          this.props.orders.map(async (stavka, index) => {
+            const pravim = {};
+            pravim.stavku = await this.props.createStavkePorudzbine({
+              variables: {
+                kolicina: parseInt(stavka.kolicina)
+              }
+            });
+            pravim.vezuPorudzbine = await this.props.addToPorudzbinaOnStavkePorudzbine({
+              variables: {
+                stavkePorudzbinesStavkePorudzbineId: pravim.stavku.data.createStavkePorudzbine.id,
+                porudzbinaPorudzbinaId: pravimPorudzbinu.data.createPorudzbina.id
+              }
+            });
+            pravim.vezuProizvod = await this.props.addToStavkePorudzbineOnProizvod({
+              variables: {
+                stavkePorudzbinesStavkePorudzbineId: pravim.stavku.data.createStavkePorudzbine.id,
+                proizvodProizvodId: stavka.proizvodid
+              }
+            });
+          });
+        }
+      }
+      this.setState({ poslato: true });
+      this.props.dispatch({
+        type: 'REMOVE_ORDER'
+      });
+    };
+
+    this.state = {
+      adresa: "Random Adresa",
+      brojTelefona: 123456,
+      porudzbinaId: '123',
+      poslato: false
+    };
+  }
+
+  render() {
+    console.log("JUNGLE ", this.props);
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'label',
+        null,
+        'Adresa'
+      ),
+      _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu }),
+      _react2.default.createElement(
+        'label',
+        null,
+        'Broj Telefona'
+      ),
+      _react2.default.createElement('input', { type: 'number', onChange: this.izmeniBroj }),
+      _react2.default.createElement(
+        'button',
+        { onClick: () => {
+            this.nekaFunkcija();
+          } },
+        'Napravi Porudzbinu'
+      ),
+      _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato })
+    );
+  }
+}) || _class) || _class) || _class) || _class) || _class);
+KorpaPorudzbina.propTypes = {
+  data: _propTypes2.default.shape({
+    allPorudzbinas: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+      adresa: _propTypes2.default.string.isRequired,
+      brojTelefona: _propTypes2.default.number.isRequired
+    }))
+  })
+};
+exports.default = KorpaPorudzbina;
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2567,17 +2892,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(8);
 
 var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(47);
+var _logodrama = __webpack_require__(64);
 
 var _logodrama2 = _interopRequireDefault(_logodrama);
 
-var _hamburger = __webpack_require__(46);
+var _hamburger = __webpack_require__(60);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
@@ -2638,6 +2963,15 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           null,
           _react2.default.createElement(
             _reactRouterDom.Link,
+            { to: '/page/naruci', onClick: this.opener },
+            'Naruci'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
             { to: '/page/about', onClick: this.opener },
             'O nama'
           )
@@ -2668,6 +3002,15 @@ let MainMenu = class MainMenu extends _react2.default.Component {
             { to: '/page/contact', onClick: this.opener },
             'Kontakt'
           )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/korpa', onClick: this.opener },
+            'Korpa'
+          )
         )
       )
     );
@@ -2676,7 +3019,55 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 exports.default = MainMenu;
 
 /***/ }),
-/* 41 */
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _oNamaSlika = __webpack_require__(9);
+
+var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
+
+var _TopHero = __webpack_require__(5);
+
+var _TopHero2 = _interopRequireDefault(_TopHero);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _Proizvod = __webpack_require__(50);
+
+var _Proizvod2 = _interopRequireDefault(_Proizvod);
+
+var _styles = __webpack_require__(4);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let NaruciNesto = class NaruciNesto extends _react2.default.Component {
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_TopHero2.default, { title: 'Dostava', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("' + _oNamaSlika2.default + '")' } }),
+      _react2.default.createElement(_Proizvod2.default, null)
+    );
+  }
+};
+exports.default = NaruciNesto;
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2725,7 +3116,242 @@ let ParalaxContainer = class ParalaxContainer extends _react2.default.Component 
 exports.default = ParalaxContainer;
 
 /***/ }),
-/* 42 */
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let PorudzbinaConfirm = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec(_class = class PorudzbinaConfirm extends _react2.default.Component {
+
+  componentDidMount() {
+    if (this.props.poslato) {
+      this.props.dispatch({
+        type: 'REMOVE_ORDER'
+      });
+      console.log("BRISEM");
+    }
+    console.log('Mauntovan');
+  }
+
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      this.props.poslato ? _react2.default.createElement(
+        'h2',
+        null,
+        'Poslali ste'
+      ) : _react2.default.createElement(
+        'h2',
+        null,
+        'Posaljite porudzbinu'
+      )
+    );
+  }
+}) || _class);
+exports.default = PorudzbinaConfirm;
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactApollo = __webpack_require__(6);
+
+var _getProizvodi = __webpack_require__(11);
+
+var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
+
+var _styles = __webpack_require__(4);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _ProizvodItem = __webpack_require__(51);
+
+var _ProizvodItem2 = _interopRequireDefault(_ProizvodItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Proizvod = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _dec(_class = class Proizvod extends _react2.default.PureComponent {
+  constructor(...args) {
+    var _temp;
+
+    return _temp = super(...args), this.ubaciProizvod = proizvod => {
+      console.log(proizvod);
+    }, _temp;
+  }
+
+  render() {
+    const { data } = this.props;
+    const naziv = data.allProizvods && data.allProizvods[2].naslov;
+    console.log(data.allProizvods);
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Grid,
+      null,
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Row,
+        null,
+        data.allProizvods && data.allProizvods.map((proiz, index) => _react2.default.createElement(_ProizvodItem2.default, { proiz: proiz }))
+      )
+    );
+  }
+}) || _class);
+Proizvod.propTypes = {
+  data: _propTypes2.default.shape({
+    allProizvods: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+      naslov: _propTypes2.default.string.isRequired
+    }))
+  })
+};
+exports.default = Proizvod;
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _styles = __webpack_require__(4);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec(_class = class ProizvodItem extends _react.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.upaliIncrement = () => {
+      this.props.dispatch({
+        type: 'ADD_ORDER',
+        orders: {
+          proizvodid: this.props.proiz.id,
+          kolicina: this.state.kolicina,
+          cena: this.props.proiz.cena * this.state.kolicina,
+          urlSlike: this.props.proiz.urlSlike,
+          naslov: this.props.proiz.naslov
+        }
+      });
+      console.log("EVO ME");
+    };
+
+    this.izmeniKolicinu = event => {
+      this.setState({ kolicina: event.target.value });
+    };
+
+    this.state = {
+      kolicina: 0
+    };
+  }
+
+  render() {
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Col,
+      { xs: 12, sm: 6, md: 4, lg: 3 },
+      _react2.default.createElement(
+        'div',
+        { className: _styles2.default.product },
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('img', { src: this.props.proiz.urlSlike }),
+          _react2.default.createElement(
+            'h2',
+            null,
+            this.props.proiz.naslov
+          ),
+          _react2.default.createElement(
+            'h3',
+            null,
+            this.props.proiz.cena,
+            ' RSD'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: () => this.upaliIncrement() },
+            'Naruci'
+          ),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Kolicina'
+          ),
+          ' ',
+          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu })
+        )
+      )
+    );
+  }
+}) || _class);
+ProizvodItem.propTypes = {
+  counter: _propTypes2.default.shape({
+    count: _propTypes2.default.number.isRequired
+  })
+};
+exports.default = ProizvodItem;
+
+/***/ }),
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2787,7 +3413,7 @@ let SectionHeadline = class SectionHeadline extends _react2.default.Component {
 exports.default = SectionHeadline;
 
 /***/ }),
-/* 43 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2805,7 +3431,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _InstaImage = __webpack_require__(39);
+var _InstaImage = __webpack_require__(43);
 
 var _InstaImage2 = _interopRequireDefault(_InstaImage);
 
@@ -2842,7 +3468,282 @@ let ThreeGallery = class ThreeGallery extends _react2.default.Component {
 exports.default = ThreeGallery;
 
 /***/ }),
-/* 44 */
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TopHero = __webpack_require__(5);
+
+var _TopHero2 = _interopRequireDefault(_TopHero);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _ProizvodList = __webpack_require__(56);
+
+var _ProizvodList2 = _interopRequireDefault(_ProizvodList);
+
+var _Porudzbine = __webpack_require__(55);
+
+var _Porudzbine2 = _interopRequireDefault(_Porudzbine);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Admin = class Admin extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pin: "1312",
+      inputOn: false,
+      enteredPin: "1312"
+    };
+  }
+
+  checkPin() {
+    let pin = this.state.pin;
+    let enpin = this.state.enteredPin;
+    if (pin == enpin) {
+      console.log("jea");
+    } else {
+      this.setState({ enteredPin: "1312" });
+      checkPin();
+    }
+  }
+
+  handleChange(event) {
+    this.setState({ enteredPin: event.target.enteredPin });
+  }
+
+  checkInput() {}
+
+  render() {
+    let putinput = null;
+    if (this.state.inputOn) {
+      putinput = _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('input', { value: this.state.enteredPin, onChange: this.handleChange, type: 'number' }),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.checkPin },
+          'Unesi pin'
+        )
+      );
+    } else {
+      putinput = _react2.default.createElement(
+        _reactStyledFlexboxgrid.Grid,
+        null,
+        _react2.default.createElement(
+          _reactStyledFlexboxgrid.Row,
+          null,
+          _react2.default.createElement(_Porudzbine2.default, null),
+          _react2.default.createElement(_ProizvodList2.default, null)
+        )
+      );
+    }
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_TopHero2.default, { title: 'ADMIN', subtitle: 'Kontrolni Panel', bgImage: { backgroundImage: 'url("/admin.jpg")' } }),
+      putinput
+    );
+  }
+};
+exports.default = Admin;
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _porudzbine = __webpack_require__(59);
+
+var _porudzbine2 = _interopRequireDefault(_porudzbine);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactApollo = __webpack_require__(6);
+
+var _allPorudzbinas = __webpack_require__(66);
+
+var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
+
+var _createPorudzbina = __webpack_require__(65);
+
+var _createPorudzbina2 = _interopRequireDefault(_createPorudzbina);
+
+var _graphqlTag = __webpack_require__(13);
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = class Porudzbine extends _react2.default.Component {
+
+  render() {
+    const { data } = this.props;
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Col,
+      { xs: 12, sm: 12, md: 8, lg: 8 },
+      _react2.default.createElement(
+        'div',
+        { className: _porudzbine2.default.porudzbine },
+        data.allPorudzbinas && data.allPorudzbinas.map((porudz, index) => _react2.default.createElement(
+          'div',
+          { className: _porudzbine2.default.proizvodItem },
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Adresa: ',
+            porudz.adresa
+          ),
+          _react2.default.createElement(
+            'h4',
+            null,
+            'Broj Telefona: ',
+            porudz.brojTelefona
+          ),
+          porudz.stavkePorudzbines && porudz.stavkePorudzbines.map((stavka, index) => _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Proizvod:',
+              stavka.proizvod.naslov
+            )
+          )),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Opis: ',
+            porudz.opis
+          )
+        ))
+      )
+    );
+  }
+}) || _class);
+Porudzbine.propTypes = {
+  data: _propTypes2.default.shape({
+    allPorudzbinas: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+      adresa: _propTypes2.default.string.isRequired,
+      brojTelefona: _propTypes2.default.number.isRequired
+    }))
+  })
+};
+exports.default = Porudzbine;
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactApollo = __webpack_require__(6);
+
+var _getProizvodi = __webpack_require__(11);
+
+var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
+
+var _styles = __webpack_require__(4);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let ProizvodList = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _dec(_class = class ProizvodList extends _react2.default.Component {
+
+  render() {
+    const { data } = this.props;
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Col,
+      { xs: 12, sm: 12, md: 4, lg: 4 },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Lista Proizvoda'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: _styles2.default.proizvodList },
+        data.allProizvods && data.allProizvods.map((proiz, index) => _react2.default.createElement(
+          'div',
+          { className: _styles2.default.proizvodItem },
+          _react2.default.createElement('img', { src: proiz.urlSlike }),
+          _react2.default.createElement(
+            'h4',
+            null,
+            proiz.naslov
+          ),
+          _react2.default.createElement(
+            'h4',
+            null,
+            proiz.cena,
+            ' RSD'
+          )
+        ))
+      )
+    );
+  }
+}) || _class);
+ProizvodList.propTypes = {
+  data: _propTypes2.default.shape({
+    allProizvods: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+      naslov: _propTypes2.default.string.isRequired,
+      cena: _propTypes2.default.number.isRequired
+    }))
+  })
+};
+exports.default = ProizvodList;
+
+/***/ }),
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2858,79 +3759,91 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(4);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(7);
+var _reactApollo = __webpack_require__(6);
 
-var _reactRedux = __webpack_require__(63);
+var _reactRedux = __webpack_require__(7);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(8);
 
-var _reactHelmet = __webpack_require__(10);
+var _reactHelmet = __webpack_require__(14);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _routing = __webpack_require__(23);
+var _routing = __webpack_require__(27);
 
-var _all_messages = __webpack_require__(48);
+var _all_messages = __webpack_require__(67);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(45);
+__webpack_require__(58);
 
 var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _Header = __webpack_require__(37);
+var _Header = __webpack_require__(41);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _SectionHeadline = __webpack_require__(42);
+var _SectionHeadline = __webpack_require__(52);
 
 var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
 
-var _ParalaxContainer = __webpack_require__(41);
+var _ParalaxContainer = __webpack_require__(48);
 
 var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
 
-var _ThreeGallery = __webpack_require__(43);
+var _ThreeGallery = __webpack_require__(53);
 
 var _ThreeGallery2 = _interopRequireDefault(_ThreeGallery);
 
-var _FeaturedLeft = __webpack_require__(31);
+var _FeaturedLeft = __webpack_require__(35);
 
 var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
 
-var _Footer = __webpack_require__(32);
+var _Footer = __webpack_require__(36);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _MainMenu = __webpack_require__(40);
+var _MainMenu = __webpack_require__(46);
 
 var _MainMenu2 = _interopRequireDefault(_MainMenu);
 
-var _AboutUs = __webpack_require__(26);
+var _AboutUs = __webpack_require__(30);
 
 var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
-var _AlaCart = __webpack_require__(27);
+var _AlaCart = __webpack_require__(31);
 
 var _AlaCart2 = _interopRequireDefault(_AlaCart);
 
-var _Gally = __webpack_require__(33);
+var _Gally = __webpack_require__(37);
 
 var _Gally2 = _interopRequireDefault(_Gally);
 
-var _ContactUs = __webpack_require__(29);
+var _NaruciNesto = __webpack_require__(47);
+
+var _NaruciNesto2 = _interopRequireDefault(_NaruciNesto);
+
+var _ContactUs = __webpack_require__(33);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(65);
+var _reactScrollableAnchor = __webpack_require__(83);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
+
+var _Admin = __webpack_require__(54);
+
+var _Admin2 = _interopRequireDefault(_Admin);
+
+var _Korpa = __webpack_require__(44);
+
+var _Korpa2 = _interopRequireDefault(_Korpa);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2971,6 +3884,8 @@ const Home = () => _react2.default.createElement(
   )
 );
 
+const Admin = () => _react2.default.createElement(_Admin2.default, null);
+
 // Helper component that will be conditionally shown when the route matches.
 // This gives you an idea how React Router v4 works
 const About = ({ match }) => _react2.default.createElement(_AboutUs2.default, null);
@@ -2979,6 +3894,10 @@ const Contact = ({ match }) => _react2.default.createElement(_ContactUs2.default
 const Jelovnik = ({ match }) => _react2.default.createElement(_AlaCart2.default, null);
 
 const Galerija = ({ match }) => _react2.default.createElement(_Gally2.default, null);
+
+const Naruci = ({ match }) => _react2.default.createElement(_NaruciNesto2.default, null);
+
+const Bucket = () => _react2.default.createElement(_Korpa2.default, null);
 
 const WhenNotFound = () => _react2.default.createElement(
   _routing.NotFound,
@@ -3146,31 +4065,114 @@ exports.default = () => _react2.default.createElement(
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/galerija', component: Galerija }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/contact', component: Contact }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/page/naruci', component: Naruci }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', component: Admin }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/korpa', component: Bucket }),
     _react2.default.createElement(_reactRouterDom.Route, { component: WhenNotFound })
   ),
   _react2.default.createElement(_Footer2.default, null)
 );
 
 /***/ }),
-/* 45 */
+/* 58 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 46 */
+/* 59 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"proizvodItem": "proizvodItem-cEWGAfW0RjBtn6FS2p2Nq"
+};
+
+/***/ }),
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f8616c1388468fff.png";
 
 /***/ }),
-/* 47 */
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/galerija.b5483bba2ddc874b9c43234af5e9efd9.jpg";
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/pozadina.0e278f2ee449d398d8242db5b5cb09c4.jpg";
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.7e486aecc2c0f1abc9d2a6dbce72bdad.jpg";
+
+/***/ }),
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
 
 /***/ }),
-/* 48 */
+/* 65 */
+/***/ (function(module, exports) {
+
+
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"adresa"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"defaultValue":null},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"brojTelefona"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},"defaultValue":null}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createPorudzbina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"adresa"},"value":{"kind":"Variable","name":{"kind":"Name","value":"adresa"}}},{"kind":"Argument","name":{"kind":"Name","value":"brojTelefona"},"value":{"kind":"Variable","name":{"kind":"Name","value":"brojTelefona"}}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":129}};
+    doc.loc.source = {"body":"mutation($adresa: String!, $brojTelefona: Int!) {\n  createPorudzbina(adresa: $adresa, brojTelefona: $brojTelefona){\n    id\n  }\n}\n","name":"GraphQL request"};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
+module.exports = doc;
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":183}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request"};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
+module.exports = doc;
+
+/***/ }),
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -3193,12 +4195,12 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(49).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(68).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 49 */
+/* 68 */
 /***/ (function(module, exports) {
 
 
@@ -3225,118 +4227,112 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 50 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = require("aphrodite/no-important");
 
 /***/ }),
-/* 51 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 52 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("google-map-react");
 
 /***/ }),
-/* 53 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 54 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 55 */
+/* 74 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 56 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 57 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 58 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 59 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 60 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 61 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 62 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 63 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-/* 64 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 65 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-scrollable-anchor");
 
 /***/ }),
-/* 66 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 67 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 68 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(15);
+module.exports = __webpack_require__(19);
 
 
 /***/ })

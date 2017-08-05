@@ -18,6 +18,7 @@ import Immutable from 'seamless-immutable';
 const initialState = Immutable({
   count: 0,
 });
+const ordersInitial = [];
 
 export default {
 
@@ -25,6 +26,21 @@ export default {
   // { stateKey: { state, reducer() } } -- the `stateKey` is where in the `state`
   // object starts looking, `state` is the initial state, and `reducer()` is the
   // function that handles the 'listening' to Redux to know how to manipulate state
+  orders: {
+    state: ordersInitial,
+    reducer(state = ordersInitial, action) {
+      if(action.type === 'ADD_ORDER') {
+        console.log(action.orders);
+        const newState = state;
+        newState.push(action.orders);
+        return newState;
+      } else if (action.type === 'REMOVE_ORDER') {
+        state = [];
+        return state;
+      }
+      return state;
+    }
+  },
   counter: {
     state: initialState,
     reducer(state = initialState, action) {
