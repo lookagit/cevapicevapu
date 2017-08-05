@@ -1,0 +1,5 @@
+mutation($adresa: String!, $brojTelefona: Int!) {
+  createPorudzbina(adresa: $adresa, brojTelefona: $brojTelefona){
+    id
+  }
+}

@@ -1,0 +1,15 @@
+query AllPorudzbinas {
+  allPorudzbinas {
+    id,
+    adresa,
+    opis,
+    brojTelefona,
+    stavkePorudzbines{
+      kolicina,
+      proizvod {
+        naslov,
+      }
+
+    }
+  }
+}

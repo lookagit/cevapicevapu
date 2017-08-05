@@ -1,0 +1,8 @@
+query AllProizvods {
+  allProizvods {
+    id,
+    cena,
+    naslov,
+    urlSlike
+  }
+}
