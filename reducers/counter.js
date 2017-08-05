@@ -31,7 +31,7 @@ export default {
     reducer(state = ordersInitial, action) {
       if(action.type === 'ADD_ORDER') {
         console.log(action.orders);
-        const newState = state;
+        const newState = [...state];
         newState.push(action.orders);
         return newState;
       } else if (action.type === 'REMOVE_ORDER') {

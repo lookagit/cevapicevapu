@@ -492,6 +492,8 @@ Redirect.defaultProps = {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_seamless_immutable__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_seamless_immutable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_seamless_immutable__);
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 // Sample reducer, showing how you can 'listen' to the `INCREMENT_COUNTER`
 // action, and update the counter state
 
@@ -528,7 +530,7 @@ var ordersInitial = [];
 
       if (action.type === 'ADD_ORDER') {
         console.log(action.orders);
-        var newState = state;
+        var newState = [].concat(_toConsumableArray(state));
         newState.push(action.orders);
         return newState;
       } else if (action.type === 'REMOVE_ORDER') {
