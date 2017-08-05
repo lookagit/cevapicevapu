@@ -38,17 +38,16 @@ export default class ContactUs extends React.Component{
                 <Col xs={12} sm={4} md={4} lg={4} className={css.contactColOne}>
                   <h4 styles="margin:0;">INFORMACIJE</h4>
                   <h5>Adresa: </h5>
-                  <p>Beograd, Ugao Dositejeve i Braće Jugović.</p>
+                  <p>Beograd, Dositejeva, 7</p>
                   <h5>Telefon:</h5>
-                  <p>+381 66 449 411</p>
+                  <p>066/449-411</p>
                   <h5>E-mail:</h5>
                   <p>info@drama.rs</p>
                   <h5>Radno Vreme:</h5>
                   <p>09:00h - 24:00h</p>
-                  <p>Vikendom 09:00h - 01:00h</p>
+                  <p>Vikendom 09:00h - 03:00h</p>
                   <h5>Dostava:</h5>
-                  <p>12:00 - 20:00 h</p>
-                  <h5>Dostava od 20:00 do 24:00 putem kurirske sluzbe Potrcko</h5>
+                  <p>11:00 - 19:35</p>
                 </Col>
 
               </Row>
