@@ -2,8 +2,10 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
+import PorudzbinaConfirm from './PorudzbinaConfirm';
+import { connect } from 'react-redux';
 
-
+@connect(state => ({ counter: state.counter, orders: state.orders }))
 @graphql(gql`
   mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {
     createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {
@@ -57,6 +59,7 @@ export default class KorpaPorudzbina extends React.Component {
       adresa: "Random Adresa",
       brojTelefona: 123456,
       porudzbinaId: '123',
+      poslato: false,
     }
   }
 
@@ -78,6 +81,8 @@ export default class KorpaPorudzbina extends React.Component {
       ),
     }),
   }
+
+
   nekaFunkcija = async () => {
     const pravimPorudzbinu = await this.props.createPorudzbina({
       variables: {
@@ -107,15 +112,18 @@ export default class KorpaPorudzbina extends React.Component {
               proizvodProizvodId: stavka.proizvodid,
             }
           });
-          console.log('pravim stavku ', pravim.stavku );
-          console.log('PRAVIM VEZU PORUDZBINE ', pravim.vezuPorudzbine);
-          console.log('PRAVIM VEZU PROIZVOD ', pravim.vezuProizvod);
+
         })
       }
     }
+    this.setState({poslato: true});
+    this.props.dispatch({
+      type: 'REMOVE_ORDER',
+    });
   }
 
   render() {
+    console.log("JUNGLE ", this.props);
     return(
       <div>
         <label>Adresa</label>
@@ -125,6 +133,7 @@ export default class KorpaPorudzbina extends React.Component {
         <button  onClick={() => {
           this.nekaFunkcija();
         }}>Napravi Porudzbinu</button>
+        <PorudzbinaConfirm poslato={this.state.poslato} />
       </div>
     );
   }

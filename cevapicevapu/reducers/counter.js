@@ -34,6 +34,9 @@ export default {
         const newState = state;
         newState.push(action.orders);
         return newState;
+      } else if (action.type === 'REMOVE_ORDER') {
+        state = [];
+        return state;
       }
       return state;
     }

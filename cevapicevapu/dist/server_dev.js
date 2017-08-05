@@ -1279,6 +1279,9 @@ exports.default = {
         const newState = state;
         newState.push(action.orders);
         return newState;
+      } else if (action.type === 'REMOVE_ORDER') {
+        state = [];
+        return state;
       }
       return state;
     }
@@ -2721,7 +2724,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dec, _dec2, _dec3, _dec4, _class;
+var _dec, _dec2, _dec3, _dec4, _dec5, _class;
 
 var _react = __webpack_require__(0);
 
@@ -2737,23 +2740,29 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _PorudzbinaConfirm = __webpack_require__(87);
+
+var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
+
+var _reactRedux = __webpack_require__(8);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-let KorpaPorudzbina = (_dec = (0, _reactApollo.graphql)(_graphqlTag2.default`
+let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {
     createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {
       id
     },
   }`, {
   name: 'createPorudzbina'
-}), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+}), _dec3 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   mutation createStavkePorudzbine($kolicina: Int!) {
     createStavkePorudzbine (kolicina: $kolicina) {
       id
     }
   }`, {
   name: 'createStavkePorudzbine'
-}), _dec3 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+}), _dec4 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   mutation addToPorudzbinaOnStavkePorudzbine($stavkePorudzbinesStavkePorudzbineId: ID!, $porudzbinaPorudzbinaId: ID!) {
     addToPorudzbinaOnStavkePorudzbine (stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, porudzbinaPorudzbinaId: $porudzbinaPorudzbinaId) {
       porudzbinaPorudzbina {
@@ -2762,7 +2771,7 @@ let KorpaPorudzbina = (_dec = (0, _reactApollo.graphql)(_graphqlTag2.default`
     }
   }`, {
   name: 'addToPorudzbinaOnStavkePorudzbine'
-}), _dec4 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+}), _dec5 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   mutation addToStavkePorudzbineOnProizvod($stavkePorudzbinesStavkePorudzbineId: ID!, $proizvodProizvodId: ID!){
     addToStavkePorudzbineOnProizvod(stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, proizvodProizvodId: $proizvodProizvodId){
       stavkePorudzbinesStavkePorudzbine{
@@ -2771,7 +2780,7 @@ let KorpaPorudzbina = (_dec = (0, _reactApollo.graphql)(_graphqlTag2.default`
     }
   }`, {
   name: 'addToStavkePorudzbineOnProizvod'
-}), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = class KorpaPorudzbina extends _react2.default.Component {
+}), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = _dec5(_class = class KorpaPorudzbina extends _react2.default.Component {
 
   constructor(props) {
     super(props);
@@ -2813,22 +2822,25 @@ let KorpaPorudzbina = (_dec = (0, _reactApollo.graphql)(_graphqlTag2.default`
                 proizvodProizvodId: stavka.proizvodid
               }
             });
-            console.log('pravim stavku ', pravim.stavku);
-            console.log('PRAVIM VEZU PORUDZBINE ', pravim.vezuPorudzbine);
-            console.log('PRAVIM VEZU PROIZVOD ', pravim.vezuProizvod);
           });
         }
       }
+      this.setState({ poslato: true });
+      this.props.dispatch({
+        type: 'REMOVE_ORDER'
+      });
     };
 
     this.state = {
       adresa: "Random Adresa",
       brojTelefona: 123456,
-      porudzbinaId: '123'
+      porudzbinaId: '123',
+      poslato: false
     };
   }
 
   render() {
+    console.log("JUNGLE ", this.props);
     return _react2.default.createElement(
       'div',
       null,
@@ -2850,10 +2862,11 @@ let KorpaPorudzbina = (_dec = (0, _reactApollo.graphql)(_graphqlTag2.default`
             this.nekaFunkcija();
           } },
         'Napravi Porudzbinu'
-      )
+      ),
+      _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato })
     );
   }
-}) || _class) || _class) || _class) || _class);
+}) || _class) || _class) || _class) || _class) || _class);
 KorpaPorudzbina.propTypes = {
   data: _propTypes2.default.shape({
     allPorudzbinas: _propTypes2.default.arrayOf(_propTypes2.default.shape({
@@ -4266,6 +4279,62 @@ module.exports = __webpack_require__(19);
     }
   
 module.exports = doc;
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(8);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let PorudzbinaConfirm = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec(_class = class PorudzbinaConfirm extends _react2.default.Component {
+
+  componentDidMount() {
+    if (this.props.poslato) {
+      this.props.dispatch({
+        type: 'REMOVE_ORDER'
+      });
+      console.log("BRISEM");
+    }
+    console.log('Mauntovan');
+  }
+
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      this.props.poslato ? _react2.default.createElement(
+        'h2',
+        null,
+        'Poslali ste'
+      ) : _react2.default.createElement(
+        'h2',
+        null,
+        'Posaljite porudzbinu'
+      )
+    );
+  }
+}) || _class);
+exports.default = PorudzbinaConfirm;
 
 /***/ })
 /******/ ]);

@@ -531,6 +531,9 @@ var ordersInitial = [];
         var newState = state;
         newState.push(action.orders);
         return newState;
+      } else if (action.type === 'REMOVE_ORDER') {
+        state = [];
+        return state;
       }
       return state;
     }
@@ -2176,9 +2179,11 @@ Korpa.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux__ = __webpack_require__(94);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _dec2, _dec3, _dec4, _class;
+var _dec, _dec2, _dec3, _dec4, _dec5, _class;
 
 var _templateObject = _taggedTemplateLiteral(['\n  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {\n    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {\n      id\n    },\n  }'], ['\n  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {\n    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {\n      id\n    },\n  }']),
     _templateObject2 = _taggedTemplateLiteral(['\n  mutation createStavkePorudzbine($kolicina: Int!) {\n    createStavkePorudzbine (kolicina: $kolicina) {\n      id\n    }\n  }'], ['\n  mutation createStavkePorudzbine($kolicina: Int!) {\n    createStavkePorudzbine (kolicina: $kolicina) {\n      id\n    }\n  }']),
@@ -2200,15 +2205,19 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 
 
-var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject), {
+
+
+var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_react_redux__["a" /* connect */])(function (state) {
+  return { counter: state.counter, orders: state.orders };
+}), _dec2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject), {
   name: 'createPorudzbina'
-}), _dec2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject2), {
+}), _dec3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject2), {
   name: 'createStavkePorudzbine'
-}), _dec3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject3), {
+}), _dec4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject3), {
   name: 'addToPorudzbinaOnStavkePorudzbine'
-}), _dec4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject4), {
+}), _dec5 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject4), {
   name: 'addToStavkePorudzbineOnProizvod'
-}), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_React$Component) {
+}), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = _dec5(_class = function (_React$Component) {
   _inherits(KorpaPorudzbina, _React$Component);
 
   function KorpaPorudzbina(props) {
@@ -2284,11 +2293,7 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_
                             case 9:
                               pravim.vezuProizvod = _context.sent;
 
-                              console.log('pravim stavku ', pravim.stavku);
-                              console.log('PRAVIM VEZU PORUDZBINE ', pravim.vezuPorudzbine);
-                              console.log('PRAVIM VEZU PROIZVOD ', pravim.vezuProizvod);
-
-                            case 13:
+                            case 10:
                             case 'end':
                               return _context.stop();
                           }
@@ -2302,8 +2307,12 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_
                   }());
                 }
               }
+              _this.setState({ poslato: true });
+              _this.props.dispatch({
+                type: 'REMOVE_ORDER'
+              });
 
-            case 4:
+            case 6:
             case 'end':
               return _context2.stop();
           }
@@ -2314,7 +2323,8 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_
     _this.state = {
       adresa: "Random Adresa",
       brojTelefona: 123456,
-      porudzbinaId: '123'
+      porudzbinaId: '123',
+      poslato: false
     };
     return _this;
   }
@@ -2324,6 +2334,7 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_
     value: function render() {
       var _this3 = this;
 
+      console.log("JUNGLE ", this.props);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
@@ -2345,13 +2356,14 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_
               _this3.nekaFunkcija();
             } },
           'Napravi Porudzbinu'
-        )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__["a" /* default */], { poslato: this.state.poslato })
       );
     }
   }]);
 
   return KorpaPorudzbina;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class) || _class) || _class);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class) || _class) || _class) || _class);
 KorpaPorudzbina.propTypes = {
   data: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.shape({
     allPorudzbinas: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.shape({
@@ -3934,6 +3946,78 @@ module.exports = __webpack_require__(180);
     }
   
 module.exports = doc;
+
+/***/ }),
+
+/***/ 494:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbinaConfirm; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__(94);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _dec, _class;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* connect */])(function (state) {
+  return { counter: state.counter, orders: state.orders };
+}), _dec(_class = function (_React$Component) {
+  _inherits(PorudzbinaConfirm, _React$Component);
+
+  function PorudzbinaConfirm() {
+    _classCallCheck(this, PorudzbinaConfirm);
+
+    return _possibleConstructorReturn(this, (PorudzbinaConfirm.__proto__ || Object.getPrototypeOf(PorudzbinaConfirm)).apply(this, arguments));
+  }
+
+  _createClass(PorudzbinaConfirm, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.poslato) {
+        this.props.dispatch({
+          type: 'REMOVE_ORDER'
+        });
+        console.log("BRISEM");
+      }
+      console.log('Mauntovan');
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        null,
+        this.props.poslato ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          null,
+          'Poslali ste'
+        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          null,
+          'Posaljite porudzbinu'
+        )
+      );
+    }
+  }]);
+
+  return PorudzbinaConfirm;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 
