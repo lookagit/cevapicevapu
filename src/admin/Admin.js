@@ -3,46 +3,78 @@ import TopHero from '../TopHero';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import ProizvodList from './ProizvodList';
 import Porudzbine from './Porudzbine';
-
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+import { connect } from 'react-redux';
+import md5 from 'js-md5';
+@connect(state => ({ counter: state.counter, orders: state.orders, users: state.users }))
+@graphql(gql`
+  query giveMeUsers($password: String!, $userName: String!) {
+    allUserAdmins(filter: { password: $password, userName: $userName}) {
+      userName
+    }
+  }`,
+  {
+   options: (props) => ({
+     variables: {
+       userName: props.users.userName,
+       password: props.users.password,
+     }
+   })
+ }
+)
 export default class Admin extends React.Component {
   constructor(props) {
     super (props);
     this.state = {
-      pin: "1312",
+      pin: '',
       inputOn: false,
-      enteredPin: "1312",
+      enteredPin: '',
+      enteredUsername: '',
     }
   }
-
-  checkPin () {
-    let pin = this.state.pin;
-    let enpin = this.state.enteredPin;
-    if (pin == enpin) {
-      console.log("jea");
+  componentWillReceiveProps(nextProps) {
+    if(!this.props.data.loading && this.props.data.allUserAdmins.length) {
+      console.log("ULOGOVO SI SE ");
+    }
+  }
+  handleChangePass = (event) => {
+   this.setState({enteredPin: event.target.value});
+   let password = md5(event.target.value);
+   this.props.dispatch({
+     type: 'CHANGE_PASSWORD',
+     password,
+   });
+  }
+  handleChangeUser = (event) => {
+   this.setState({enteredUsername: event.target.value});
+   this.props.dispatch({
+     type: 'CHANGE_USERNAME',
+     userName: event.target.value,
+   });
+  }
+  checkPin = async () => {
+    const respons = await this.props.data.refetch();
+    if(!respons.data.loading && respons.data.allUserAdmins.length) {
+      this.setState({
+        inputOn: true,
+      })
     } else {
-      this.setState({enteredPin: "1312"});
-      checkPin();
+      console.log("ZAO MI JE NISI ");
     }
   }
-
-  handleChange(event) {
-   this.setState({enteredPin: event.target.enteredPin});
-  }
-
-  checkInput () {
-
-  }
-
   render () {
     let putinput = null;
-    if(this.state.inputOn) {
+    console.log("OVO JE PROPS", this.props)
+    if(!this.state.inputOn) {
       putinput =
        <div>
-        <input value={this.state.enteredPin} onChange={this.handleChange} type="number" />
+        <h1>PASS</h1>
+        <input value={this.state.enteredPin} onChange={this.handleChangePass} type="text" />
+        <h1>USER</h1>
+        <input value={this.state.enteredUsername} onChange={this.handleChangeUser} type="text" />
         <button onClick={this.checkPin}>Unesi pin</button>
-      </div>
-
-       ;
+      </div>;
     }else {
       putinput =
         <Grid>
@@ -50,9 +82,7 @@ export default class Admin extends React.Component {
             <Porudzbine />
             <ProizvodList />
           </Row>
-        </Grid>
-
-      ;
+        </Grid>;
     }
     return (
       <div>

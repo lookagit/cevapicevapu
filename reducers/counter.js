@@ -19,13 +19,29 @@ const initialState = Immutable({
   count: 0,
 });
 const ordersInitial = [];
-
+const usersInitial = {
+  userName: '',
+  password: '',
+}
 export default {
 
   // The shape that our Redux handler in `kit/lib/redux` expects is
   // { stateKey: { state, reducer() } } -- the `stateKey` is where in the `state`
   // object starts looking, `state` is the initial state, and `reducer()` is the
   // function that handles the 'listening' to Redux to know how to manipulate state
+  users: {
+    state: usersInitial,
+    reducer(state = usersInitial, action) {
+      if(action.type === 'CHANGE_PASSWORD') {
+        const newState = {...state, password: action.password}
+        return newState;
+      } else if (action.type === 'CHANGE_USERNAME') {
+        const newState = {...state, userName: action.userName}
+        return newState;
+      }
+      return state;
+    }
+  },
   orders: {
     state: ordersInitial,
     reducer(state = ordersInitial, action) {

@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import allPorudzbinas from 'src/queries/allPorudzbinas.gql';
 import createPorudzbina from 'src/mutations/createPorudzbina.gql';
-import gql from 'graphql-tag';
-
 @graphql(allPorudzbinas)
 export default class Porudzbine extends React.Component {
   static propTypes = {
@@ -19,7 +17,6 @@ export default class Porudzbine extends React.Component {
       ),
     }),
   }
-
   render () {
     const { data } = this.props;
     return (
