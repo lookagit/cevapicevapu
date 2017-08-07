@@ -1,3 +1,7 @@
+/*WEBPACK KOMPRESION PLUGIN U BROWSER PROD JE ZAKOMENTARISAN DA RADI ZOPLI ALGORITAM
+JER TRENUTNO NE RADI Zopfli REPO OK? XD
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
