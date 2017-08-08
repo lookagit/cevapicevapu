@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -58,11 +59,11 @@ export default class KorpaPorudzbina extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      opis: "Bez Opisa",
       adresa: "Random Adresa",
       brojTelefona: 123456,
       porudzbinaId: '123',
       poslato: false,
+      opis: "Bez Opisa",
     }
   }
 
@@ -73,7 +74,6 @@ export default class KorpaPorudzbina extends React.Component {
   izmeniBroj = (event) => {
     this.setState({brojTelefona: parseInt(event.target.value)});
   }
-
   izmeniOpis = (event) => {
     this.setState({opis: event.target.value});
   }
@@ -135,27 +135,27 @@ export default class KorpaPorudzbina extends React.Component {
     console.log("JUNGLE ", this.props);
     return(
       <Row>
-        <Col xs={12}>
+       <Col xs={12}>
 
-          <form className={scss.korpaForm}>
-            <PorudzbinaConfirm poslato={this.state.poslato} />
-            <p>
-              <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
-            </p>
-            <p>
-              <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
-            </p>
-            <p>
-              <textarea onChange={this.izmeniBroj} placeholder="Opis" />
-            </p>
-            <p>
-              <button onClick={() => {
-                this.nekaFunkcija();
-              }}>POSALJI</button>
-            </p>
-          </form>
-        </Col>
-      </Row>
+         <form className={scss.korpaForm}>
+           <PorudzbinaConfirm poslato={this.state.poslato} />
+           <p>
+             <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
+           </p>
+           <p>
+             <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
+           </p>
+           <p>
+            <textarea onChange={this.izmeniOpis} placeholder="Opis" />
+          </p>
+           <p>
+             <button type="button" onClick={() => {
+               this.nekaFunkcija();
+             }}>POSALJI</button>
+           </p>
+         </form>
+       </Col>
+     </Row>
     );
   }
 }

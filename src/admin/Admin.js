@@ -4,6 +4,7 @@ import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import ProizvodList from './ProizvodList';
 import Porudzbine from './Porudzbine';
 import NavBar from './NavBar';
+import scss from '../styles.scss';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { connect } from 'react-redux';
@@ -84,13 +85,21 @@ export default class Admin extends React.Component {
     console.log("OVO JE PROPS", this.props)
     if(!this.state.inputOn) {
       putinput =
+      <div className={scss.adminLog}>
        <div>
-        <h1>PASS</h1>
-        <input value={this.state.enteredPin} onChange={this.handleChangePass} type="text" />
-        <h1>USER</h1>
-        <input value={this.state.enteredUsername} onChange={this.handleChangeUser} type="text" />
-        <button onClick={this.checkPin}>Unesi pin</button>
-      </div>;
+         <form>
+           <p>
+             <input value={this.state.enteredUsername} placeholder="Username" onChange={this.handleChangeUser} type="text" />
+           </p>
+           <p>
+             <input value={this.state.enteredPin} type="password" placeholder="Password" onChange={this.handleChangePass} type="text" />
+           </p>
+           <p>
+             <button onClick={this.checkPin}>Unesi pin</button>
+           </p>
+         </form>
+       </div>
+     </div>;
     }else {
       putinput =
         <div>

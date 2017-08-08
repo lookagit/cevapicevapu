@@ -49,8 +49,8 @@ export default class ProizvodItem extends Component {
             <img src={this.props.proiz.urlSlike} />
             <h2>{this.props.proiz.naslov}</h2>
             <h3>{this.props.proiz.cena} RSD</h3>
+            <label>Kolicina &nbsp;</label> <input type="number" onChange={this.izmeniKolicinu} />
             <button onClick={() => this.upaliIncrement()}>Naruci</button>
-            <label>Kolicina</label> <input type="number" onChange={this.izmeniKolicinu} />
           </div>
         </div>
       </Col>

@@ -63,11 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 88);
-=======
-/******/ 	return __webpack_require__(__webpack_require__.s = 90);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+/******/ 	return __webpack_require__(__webpack_require__.s = 89);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -139,13 +135,13 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("prop-types");
+module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-styled-flexboxgrid");
+module.exports = require("prop-types");
 
 /***/ }),
 /* 4 */
@@ -169,7 +165,9 @@ module.exports = {
 	"korpa": "korpa-3_yg0jPsNVfw9Ilw-urZMv",
 	"korpaItems": "korpaItems-goX6CZSRXXww1sm6JVSWu",
 	"korpaForm": "korpaForm-3xBTwwK71Y3k8fSqQnbDkc",
-	"korpaItem": "korpaItem-1QNpyh9mR0F8rn7OE_XTES"
+	"korpaItem": "korpaItem-1QNpyh9mR0F8rn7OE_XTES",
+	"adminLog": "adminLog-1FbsXfLXwhZvvwmYgHLVG1",
+	"adminNavbar": "adminNavbar-2SsCfZupjTp2ePWyYaQX9E"
 };
 
 /***/ }),
@@ -423,11 +421,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-<<<<<<< HEAD
-const path = __webpack_require__(81);
-=======
-const path = __webpack_require__(83);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+const path = __webpack_require__(82);
 
 // ----------------------
 
@@ -509,43 +503,16 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-<<<<<<< HEAD
-var _server = __webpack_require__(82);
-
-var _server2 = _interopRequireDefault(_server);
-
-var _koa = __webpack_require__(75);
-=======
-var _server = __webpack_require__(84);
+var _server = __webpack_require__(83);
 
 var _server2 = _interopRequireDefault(_server);
 
 var _koa = __webpack_require__(76);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(5);
 
-<<<<<<< HEAD
-var _koaSend = __webpack_require__(78);
-
-var _koaSend2 = _interopRequireDefault(_koaSend);
-
-var _koaHelmet = __webpack_require__(76);
-
-var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
-
-var _koaRouter = __webpack_require__(77);
-
-var _koaRouter2 = _interopRequireDefault(_koaRouter);
-
-var _microseconds = __webpack_require__(79);
-
-var _microseconds2 = _interopRequireDefault(_microseconds);
-
-var _reactRouter = __webpack_require__(84);
-=======
 var _koaSend = __webpack_require__(79);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
@@ -558,12 +525,11 @@ var _koaRouter = __webpack_require__(78);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(81);
+var _microseconds = __webpack_require__(80);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(86);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+var _reactRouter = __webpack_require__(85);
 
 var _reactHelmet = __webpack_require__(14);
 
@@ -1038,15 +1004,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-<<<<<<< HEAD
-var _redux = __webpack_require__(86);
+var _redux = __webpack_require__(87);
 
-var _reduxThunk = __webpack_require__(87);
-=======
-var _redux = __webpack_require__(88);
-
-var _reduxThunk = __webpack_require__(89);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+var _reduxThunk = __webpack_require__(88);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1120,7 +1080,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1222,7 +1182,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1399,11 +1359,7 @@ var _sarajevskiCevapDrama = __webpack_require__(64);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-<<<<<<< HEAD
-var _passwordHash = __webpack_require__(80);
-=======
-var _passwordHash = __webpack_require__(82);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+var _passwordHash = __webpack_require__(81);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1491,7 +1447,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _styles = __webpack_require__(1);
 
@@ -1670,7 +1626,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _TopHero = __webpack_require__(6);
 
@@ -1852,7 +1808,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _styles = __webpack_require__(1);
 
@@ -2201,7 +2157,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _GallyLib = __webpack_require__(39);
 
@@ -2301,7 +2257,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2311,11 +2267,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(70);
 
-<<<<<<< HEAD
-var _reactImages = __webpack_require__(83);
-=======
-var _reactImages = __webpack_require__(85);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+var _reactImages = __webpack_require__(84);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2726,7 +2678,7 @@ var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2736,7 +2688,7 @@ var _KorpaPorudzbina = __webpack_require__(45);
 
 var _KorpaPorudzbina2 = _interopRequireDefault(_KorpaPorudzbina);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _styles = __webpack_require__(4);
 
@@ -2817,7 +2769,7 @@ var _graphqlTag = __webpack_require__(13);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2827,7 +2779,7 @@ var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
 
 var _reactRedux = __webpack_require__(7);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _styles = __webpack_require__(4);
 
@@ -2924,11 +2876,11 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
     };
 
     this.state = {
-      opis: "Bez Opisa",
       adresa: "Random Adresa",
       brojTelefona: 123456,
       porudzbinaId: '123',
-      poslato: false
+      poslato: false,
+      opis: "Bez Opisa"
     };
   }
 
@@ -2957,14 +2909,14 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
           _react2.default.createElement(
             'p',
             null,
-            _react2.default.createElement('textarea', { onChange: this.izmeniBroj, placeholder: 'Opis' })
+            _react2.default.createElement('textarea', { onChange: this.izmeniOpis, placeholder: 'Opis' })
           ),
           _react2.default.createElement(
             'p',
             null,
             _react2.default.createElement(
               'button',
-              { onClick: () => {
+              { type: 'button', onClick: () => {
                   this.nekaFunkcija();
                 } },
               'POSALJI'
@@ -3151,7 +3103,7 @@ var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _Proizvod = __webpack_require__(50);
 
@@ -3242,7 +3194,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3298,7 +3250,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3312,7 +3264,7 @@ var _styles = __webpack_require__(4);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _ProizvodItem = __webpack_require__(51);
 
@@ -3371,13 +3323,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _styles = __webpack_require__(4);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3436,17 +3388,17 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
             ' RSD'
           ),
           _react2.default.createElement(
+            'label',
+            null,
+            'Kolicina \xA0'
+          ),
+          ' ',
+          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu }),
+          _react2.default.createElement(
             'button',
             { onClick: () => this.upaliIncrement() },
             'Naruci'
-          ),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Kolicina'
-          ),
-          ' ',
-          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu })
+          )
         )
       )
     );
@@ -3598,7 +3550,7 @@ var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _ProizvodList = __webpack_require__(57);
 
@@ -3612,6 +3564,10 @@ var _NavBar = __webpack_require__(55);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
+var _styles = __webpack_require__(4);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 var _graphqlTag = __webpack_require__(13);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
@@ -3620,11 +3576,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(7);
 
-<<<<<<< HEAD
-var _jsMd = __webpack_require__(74);
-=======
 var _jsMd = __webpack_require__(75);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -3706,23 +3658,33 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
     if (!this.state.inputOn) {
       putinput = _react2.default.createElement(
         'div',
-        null,
+        { className: _styles2.default.adminLog },
         _react2.default.createElement(
-          'h1',
+          'div',
           null,
-          'PASS'
-        ),
-        _react2.default.createElement('input', { value: this.state.enteredPin, onChange: this.handleChangePass, type: 'text' }),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'USER'
-        ),
-        _react2.default.createElement('input', { value: this.state.enteredUsername, onChange: this.handleChangeUser, type: 'text' }),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.checkPin },
-          'Unesi pin'
+          _react2.default.createElement(
+            'form',
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: this.checkPin },
+                'Unesi pin'
+              )
+            )
+          )
         )
       );
     } else {
@@ -3768,6 +3730,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _styles = __webpack_require__(4);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const styles = {
@@ -3798,7 +3764,7 @@ let NavBar = class NavBar extends _react2.default.Component {
   render() {
     return _react2.default.createElement(
       'div',
-      { style: { width: '100%', height: '60px', background: '#d9ab6f', display: 'flex' } },
+      { className: _styles2.default.adminNavbar },
       _react2.default.createElement(
         'div',
         { style: { width: '1000px', margin: '0 auto' } },
@@ -3806,7 +3772,7 @@ let NavBar = class NavBar extends _react2.default.Component {
           'div',
           { style: { float: 'right' } },
           _react2.default.createElement(
-            'a',
+            'button',
             { href: '#', onClick: () => {
                 this.handleChange();
               } },
@@ -3837,13 +3803,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
 var _porudzbine = __webpack_require__(60);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3862,11 +3828,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = class Porudzbine extends _react2.default.Component {
   render() {
     const { data } = this.props;
-
-    const obrnuto = {};
-    if (data.allPorudzbinas) {
-      obrnuto.jedan = data.allPorudzbinas.reverse();
-    }
 
     console.log('Ja sam data ', data);
 
@@ -3940,9 +3901,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(3);
+var _reactStyledFlexboxgrid = __webpack_require__(2);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -4022,7 +3983,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -4096,11 +4057,7 @@ var _ContactUs = __webpack_require__(33);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-<<<<<<< HEAD
-var _reactScrollableAnchor = __webpack_require__(85);
-=======
-var _reactScrollableAnchor = __webpack_require__(87);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
+var _reactScrollableAnchor = __webpack_require__(86);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4533,104 +4490,87 @@ module.exports = require("js-md5");
 /* 76 */
 /***/ (function(module, exports) {
 
-module.exports = require("js-md5");
+module.exports = require("koa");
 
 /***/ }),
 /* 77 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa");
+module.exports = require("koa-helmet");
 
 /***/ }),
 /* 78 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-helmet");
+module.exports = require("koa-router");
 
 /***/ }),
 /* 79 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-router");
-
-/***/ }),
-/* 80 */,
-/* 81 */
-/***/ (function(module, exports) {
-
 module.exports = require("koa-send");
 
 /***/ }),
-/* 82 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 83 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("password-hash");
 
 /***/ }),
-/* 84 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 85 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 86 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 87 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 88 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-scrollable-anchor");
 
 /***/ }),
-/* 89 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-<<<<<<< HEAD
-/* 87 */
+/* 88 */
 /***/ (function(module, exports) {
-=======
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(19);
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
 
 module.exports = require("redux-thunk");
 
-<<<<<<< HEAD
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19);
 
 
-=======
->>>>>>> 16c8ccd5638569d49220d5dd437c1b369dc8e28f
 /***/ })
 /******/ ]);
 //# sourceMappingURL=server_dev.js.map

@@ -20,11 +20,6 @@ export default class Porudzbine extends React.Component {
   render () {
     const { data } = this.props;
 
-    const obrnuto = {};
-    if(data.allPorudzbinas){
-      obrnuto.jedan = data.allPorudzbinas.reverse();
-    }
-
     console.log('Ja sam data ', data);
 
     return (

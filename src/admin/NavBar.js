@@ -1,4 +1,5 @@
 import React from 'react';
+import scss from '../styles.scss';
 
 const styles = {
   headline: {
@@ -26,10 +27,10 @@ export default class NavBar extends React.Component {
 
   render() {
     return (
-      <div style={{width: '100%', height: '60px',background: '#d9ab6f', display: 'flex',}}>
+      <div className={scss.adminNavbar}>
         <div style={{width: '1000px', margin: '0 auto'}}>
           <div style={{float: 'right',}}>
-          <a href="#" onClick={() => {this.handleChange()}}>Izlogujte se</a>
+            <button href="#" onClick={() => {this.handleChange()}}>Izlogujte se</button>
           </div>
         </div>
       </div>

@@ -192,7 +192,8 @@ $background: #ffc107;
   margin: 25px auto;
   div{
     display: inline-block;
-    border: 2px solid black;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
     img {
       width: 300px;
       height: 300px;
@@ -204,10 +205,16 @@ $background: #ffc107;
       width: 100px;
       background-color: rgba(0,0,0,0.2);
       margin: 10px 20px;
+      border: none;
+    }
+    button:hover {
+      background-color:rgba(255,255,255,0.2);
     }
     input {
-
-      width: 30px;
+      font-size: 18px;
+      height: 30px;
+      width: 50px;
+      border: none;
     }
   }
 }
@@ -314,5 +321,83 @@ $background: #ffc107;
       border: 3px solid rgba(0,0,0,0.3);
       height: 144px;
     }
+  }
+}
+
+.adminLog {
+  text-align: center;
+  div {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 3px;
+    margin: 20px auto;
+    padding: 0 20px;
+    input {
+      width: 500px;
+      border-radius: 0px;
+      border-style: none;
+      box-shadow: none;
+      outline-style: none;
+      height: 30px;
+      font-size:16px;
+      background-color: rgb(243, 241, 237);
+      padding: 10px 15px;
+      word-spacing: 0px;
+      -webkit-appearance: none;
+      -webkit-rtl-ordering: logical;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #666;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #666;
+        opacity:  1;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #666;
+        opacity:  1;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #666;
+      }
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color:    #666;
+      }
+    }
+
+    input:focus {
+      border: 3px solid rgba(0,0,0,0.3);
+      height: 24px;
+    }
+    button {
+      font-size: 25px;
+      height: 40px;
+      width: 200px;
+      background-color: rgba(0,0,0,0.2);
+      margin: 10px 20px;
+      border: none;
+    }
+    button:hover {
+      background-color:rgba(255,255,255,0.2);
+    }
+  }
+
+}
+
+.adminNavbar {
+  width: 100%;
+  height: 60px;
+  background: #d9ab6f;
+  display: flex;
+  button {
+    font-size: 25px;
+    height: 40px;
+    width: 200px;
+    background-color: rgba(0,0,0,0.2);
+    margin: 10px 20px;
+    border: none;
+  }
+  button:hover {
+    background-color:rgba(255,255,255,0.2);
   }
 }
