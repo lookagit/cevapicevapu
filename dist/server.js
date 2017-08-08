@@ -135,18 +135,6 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("prop-types");
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-styled-flexboxgrid");
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
 module.exports = {
 	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
 	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
@@ -161,8 +149,26 @@ module.exports = {
 	"gallyNaslov": "gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW",
 	"gallyDiv": "gallyDiv-q57aq7BHmjYCDkCtV3wol",
 	"product": "product-rfL07y3RJIeqdPROAh0wO",
-	"proizvodList": "proizvodList-269fUlrCyJkVR2zWxxemxX"
+	"proizvodList": "proizvodList-269fUlrCyJkVR2zWxxemxX",
+	"korpa": "korpa-3_yg0jPsNVfw9Ilw-urZMv",
+	"korpaItems": "korpaItems-goX6CZSRXXww1sm6JVSWu",
+	"korpaForm": "korpaForm-3xBTwwK71Y3k8fSqQnbDkc",
+	"korpaItem": "korpaItem-1QNpyh9mR0F8rn7OE_XTES",
+	"adminLog": "adminLog-1FbsXfLXwhZvvwmYgHLVG1",
+	"adminNavbar": "adminNavbar-2SsCfZupjTp2ePWyYaQX9E"
 };
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-styled-flexboxgrid");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
 
 /***/ }),
 /* 5 */
@@ -1080,7 +1086,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1182,7 +1188,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2163,7 +2169,7 @@ var _GallyLib = __webpack_require__(39);
 
 var _GallyLib2 = _interopRequireDefault(_GallyLib);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2257,7 +2263,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2271,7 +2277,7 @@ var _reactImages = __webpack_require__(85);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2561,7 +2567,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _styles3 = __webpack_require__(4);
+var _styles3 = __webpack_require__(2);
 
 var _styles4 = _interopRequireDefault(_styles3);
 
@@ -2604,7 +2610,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -2678,7 +2684,7 @@ var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2688,6 +2694,12 @@ var _KorpaPorudzbina = __webpack_require__(45);
 
 var _KorpaPorudzbina2 = _interopRequireDefault(_KorpaPorudzbina);
 
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _styles = __webpack_require__(2);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })), _dec(_class = class Korpa extends _react.Component {
@@ -2696,42 +2708,41 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
       'div',
       null,
       _react2.default.createElement(_TopHero2.default, { title: 'Dostava', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("' + _oNamaSlika2.default + '")' } }),
-      this.props.orders && this.props.orders.map((proiz, index) => _react2.default.createElement(
+      _react2.default.createElement(
         'div',
-        null,
+        { className: _styles2.default.korpa },
         _react2.default.createElement(
-          'h2',
+          _reactStyledFlexboxgrid.Grid,
           null,
-          proiz.proizvodid
-        ),
-        _react2.default.createElement('img', { src: proiz.urlSlike, width: '150px' }),
-        _react2.default.createElement(
-          'h3',
-          null,
-          proiz.naslov
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Kolicina: '
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          proiz.kolicina
-        ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Cena: '
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          proiz.cena
+          _react2.default.createElement(
+            _reactStyledFlexboxgrid.Row,
+            { className: _styles2.default.korpaItems },
+            this.props.orders && this.props.orders.map((proiz, index) => _react2.default.createElement(
+              _reactStyledFlexboxgrid.Col,
+              { xs: 12, sm: 6, md: 4, lg: 3, className: _styles2.default.korpaItem },
+              _react2.default.createElement('img', { src: proiz.urlSlike, width: '150px' }),
+              _react2.default.createElement(
+                'h3',
+                null,
+                proiz.naslov
+              ),
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Kolicina: ',
+                proiz.kolicina
+              ),
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Cena: ',
+                proiz.cena
+              )
+            ))
+          ),
+          _react2.default.createElement(_KorpaPorudzbina2.default, { orders: this.props.orders })
         )
-      )),
-      _react2.default.createElement(_KorpaPorudzbina2.default, { orders: this.props.orders })
+      )
     );
   }
 }) || _class);
@@ -2764,7 +2775,7 @@ var _graphqlTag = __webpack_require__(13);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2774,11 +2785,17 @@ var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
 
 var _reactRedux = __webpack_require__(7);
 
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _styles = __webpack_require__(2);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
-  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {
-    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {
+  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!) {
+    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis) {
       id
     },
   }`, {
@@ -2821,11 +2838,16 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
       this.setState({ brojTelefona: parseInt(event.target.value) });
     };
 
+    this.izmeniOpis = event => {
+      this.setState({ opis: event.target.value });
+    };
+
     this.nekaFunkcija = async () => {
       const pravimPorudzbinu = await this.props.createPorudzbina({
         variables: {
           adresa: this.state.adresa,
-          brojTelefona: this.state.brojTelefona
+          brojTelefona: this.state.brojTelefona,
+          opis: this.state.opis
         }
       });
 
@@ -2863,35 +2885,51 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
       adresa: "Random Adresa",
       brojTelefona: 123456,
       porudzbinaId: '123',
-      poslato: false
+      poslato: false,
+      opis: "Bez Opisa"
     };
   }
 
   render() {
     console.log("JUNGLE ", this.props);
     return _react2.default.createElement(
-      'div',
+      _reactStyledFlexboxgrid.Row,
       null,
       _react2.default.createElement(
-        'label',
-        null,
-        'Adresa'
-      ),
-      _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu }),
-      _react2.default.createElement(
-        'label',
-        null,
-        'Broj Telefona'
-      ),
-      _react2.default.createElement('input', { type: 'number', onChange: this.izmeniBroj }),
-      _react2.default.createElement(
-        'button',
-        { onClick: () => {
-            this.nekaFunkcija();
-          } },
-        'Napravi Porudzbinu'
-      ),
-      _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato })
+        _reactStyledFlexboxgrid.Col,
+        { xs: 12 },
+        _react2.default.createElement(
+          'form',
+          { className: _styles2.default.korpaForm },
+          _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato }),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Vasa Adresa:' })
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniBroj, placeholder: 'Broj Telefona' })
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement('textarea', { onChange: this.izmeniOpis, placeholder: 'Opis' })
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement(
+              'button',
+              { type: 'button', onClick: () => {
+                  this.nekaFunkcija();
+                } },
+              'POSALJI'
+            )
+          )
+        )
+      )
     );
   }
 }) || _class) || _class) || _class) || _class) || _class);
@@ -2899,7 +2937,8 @@ KorpaPorudzbina.propTypes = {
   data: _propTypes2.default.shape({
     allPorudzbinas: _propTypes2.default.arrayOf(_propTypes2.default.shape({
       adresa: _propTypes2.default.string.isRequired,
-      brojTelefona: _propTypes2.default.number.isRequired
+      brojTelefona: _propTypes2.default.number.isRequired,
+      opis: _propTypes2.default.string.isRequired
     }))
   })
 };
@@ -3076,7 +3115,7 @@ var _Proizvod = __webpack_require__(50);
 
 var _Proizvod2 = _interopRequireDefault(_Proizvod);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -3161,7 +3200,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3217,7 +3256,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3227,7 +3266,7 @@ var _getProizvodi = __webpack_require__(12);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -3292,11 +3331,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3355,17 +3394,17 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
             ' RSD'
           ),
           _react2.default.createElement(
+            'label',
+            null,
+            'Kolicina \xA0'
+          ),
+          ' ',
+          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu }),
+          _react2.default.createElement(
             'button',
             { onClick: () => this.upaliIncrement() },
             'Naruci'
-          ),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Kolicina'
-          ),
-          ' ',
-          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu })
+          )
         )
       )
     );
@@ -3531,6 +3570,10 @@ var _NavBar = __webpack_require__(55);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
+var _styles = __webpack_require__(2);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 var _graphqlTag = __webpack_require__(13);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
@@ -3621,23 +3664,33 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
     if (!this.state.inputOn) {
       putinput = _react2.default.createElement(
         'div',
-        null,
+        { className: _styles2.default.adminLog },
         _react2.default.createElement(
-          'h1',
+          'div',
           null,
-          'PASS'
-        ),
-        _react2.default.createElement('input', { value: this.state.enteredPin, onChange: this.handleChangePass, type: 'text' }),
-        _react2.default.createElement(
-          'h1',
-          null,
-          'USER'
-        ),
-        _react2.default.createElement('input', { value: this.state.enteredUsername, onChange: this.handleChangeUser, type: 'text' }),
-        _react2.default.createElement(
-          'button',
-          { onClick: this.checkPin },
-          'Unesi pin'
+          _react2.default.createElement(
+            'form',
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: this.checkPin },
+                'Unesi pin'
+              )
+            )
+          )
         )
       );
     } else {
@@ -3683,6 +3736,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _styles = __webpack_require__(2);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const styles = {
@@ -3713,7 +3770,7 @@ let NavBar = class NavBar extends _react2.default.Component {
   render() {
     return _react2.default.createElement(
       'div',
-      { style: { width: '100%', height: '60px', background: '#d9ab6f', display: 'flex' } },
+      { className: _styles2.default.adminNavbar },
       _react2.default.createElement(
         'div',
         { style: { width: '1000px', margin: '0 auto' } },
@@ -3721,7 +3778,7 @@ let NavBar = class NavBar extends _react2.default.Component {
           'div',
           { style: { float: 'right' } },
           _react2.default.createElement(
-            'a',
+            'button',
             { href: '#', onClick: () => {
                 this.handleChange();
               } },
@@ -3758,7 +3815,7 @@ var _porudzbine = __webpack_require__(60);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3777,6 +3834,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = class Porudzbine extends _react2.default.Component {
   render() {
     const { data } = this.props;
+
+    console.log('Ja sam data ', data);
+
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Col,
       { xs: 12, sm: 12, md: 8, lg: 8 },
@@ -3849,7 +3909,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3859,7 +3919,7 @@ var _getProizvodi = __webpack_require__(12);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
-var _styles = __webpack_require__(4);
+var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -3929,7 +3989,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(2);
+var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
