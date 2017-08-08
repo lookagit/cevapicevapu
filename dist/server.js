@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 87);
+/******/ 	return __webpack_require__(__webpack_require__.s = 89);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -166,6 +166,12 @@ module.exports = {
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-apollo");
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -235,12 +241,6 @@ let TopHero = class TopHero extends _react2.default.Component {
   }
 };
 exports.default = TopHero;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-apollo");
 
 /***/ }),
 /* 7 */
@@ -503,33 +503,33 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(81);
+var _server = __webpack_require__(83);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(76);
+var _koa = __webpack_require__(77);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
-var _koaSend = __webpack_require__(79);
+var _koaSend = __webpack_require__(80);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(77);
+var _koaHelmet = __webpack_require__(78);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(78);
+var _koaRouter = __webpack_require__(79);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(80);
+var _microseconds = __webpack_require__(81);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(83);
+var _reactRouter = __webpack_require__(85);
 
 var _reactHelmet = __webpack_require__(15);
 
@@ -772,7 +772,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(21);
 
@@ -1004,9 +1004,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(85);
+var _redux = __webpack_require__(87);
 
-var _reduxThunk = __webpack_require__(86);
+var _reduxThunk = __webpack_require__(88);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1245,6 +1245,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // Sample reducer, showing how you can 'listen' to the `INCREMENT_COUNTER`
+// action, and update the counter state
+
+// ----------------------
+// IMPORTS
+
+/* NPM */
+
+
 var _seamlessImmutable = __webpack_require__(19);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
@@ -1261,22 +1270,31 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // this outside of Redux, which is a good pattern to enforce
 const initialState = (0, _seamlessImmutable2.default)({
   count: 0
-}); // Sample reducer, showing how you can 'listen' to the `INCREMENT_COUNTER`
-// action, and update the counter state
-
-// ----------------------
-// IMPORTS
-
-/* NPM */
-
+});
 const ordersInitial = [];
-
+const usersInitial = {
+  userName: '',
+  password: ''
+};
 exports.default = {
 
   // The shape that our Redux handler in `kit/lib/redux` expects is
   // { stateKey: { state, reducer() } } -- the `stateKey` is where in the `state`
   // object starts looking, `state` is the initial state, and `reducer()` is the
   // function that handles the 'listening' to Redux to know how to manipulate state
+  users: {
+    state: usersInitial,
+    reducer(state = usersInitial, action) {
+      if (action.type === 'CHANGE_PASSWORD') {
+        const newState = _extends({}, state, { password: action.password });
+        return newState;
+      } else if (action.type === 'CHANGE_USERNAME') {
+        const newState = _extends({}, state, { userName: action.userName });
+        return newState;
+      }
+      return state;
+    }
+  },
   orders: {
     state: ordersInitial,
     reducer(state = ordersInitial, action) {
@@ -1325,7 +1343,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -1340,6 +1358,10 @@ var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
 var _sarajevskiCevapDrama = __webpack_require__(63);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
+
+var _passwordHash = __webpack_require__(82);
+
+var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1375,7 +1397,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -1606,7 +1628,7 @@ var _styles2 = _interopRequireDefault(_styles);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -2089,7 +2111,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -2245,7 +2267,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(69);
 
-var _reactImages = __webpack_require__(82);
+var _reactImages = __webpack_require__(84);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2652,7 +2674,7 @@ var _oNamaSlika = __webpack_require__(10);
 
 var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -2736,7 +2758,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
 var _graphqlTag = __webpack_require__(13);
 
@@ -3044,7 +3066,7 @@ var _oNamaSlika = __webpack_require__(10);
 
 var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -3199,7 +3221,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
 var _getProizvodi = __webpack_require__(12);
 
@@ -3485,11 +3507,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _dec, _dec2, _class;
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TopHero = __webpack_require__(5);
+var _TopHero = __webpack_require__(6);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
@@ -3503,42 +3527,96 @@ var _Porudzbine = __webpack_require__(55);
 
 var _Porudzbine2 = _interopRequireDefault(_Porudzbine);
 
+var _graphqlTag = __webpack_require__(13);
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
+var _reactApollo = __webpack_require__(5);
+
+var _reactRedux = __webpack_require__(7);
+
+var _jsMd = __webpack_require__(76);
+
+var _jsMd2 = _interopRequireDefault(_jsMd);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-let Admin = class Admin extends _react2.default.Component {
+let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders, users: state.users })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  query giveMeUsers($password: String!, $userName: String!) {
+    allUserAdmins(filter: { password: $password, userName: $userName}) {
+      userName
+    }
+  }`, {
+  options: props => ({
+    variables: {
+      userName: props.users.userName,
+      password: props.users.password
+    }
+  })
+}), _dec(_class = _dec2(_class = class Admin extends _react2.default.Component {
   constructor(props) {
     super(props);
+
+    this.handleChangePass = event => {
+      this.setState({ enteredPin: event.target.value });
+      let password = (0, _jsMd2.default)(event.target.value);
+      this.props.dispatch({
+        type: 'CHANGE_PASSWORD',
+        password
+      });
+    };
+
+    this.handleChangeUser = event => {
+      this.setState({ enteredUsername: event.target.value });
+      this.props.dispatch({
+        type: 'CHANGE_USERNAME',
+        userName: event.target.value
+      });
+    };
+
+    this.checkPin = async () => {
+      const respons = await this.props.data.refetch();
+      if (!respons.data.loading && respons.data.allUserAdmins.length) {
+        this.setState({
+          inputOn: true
+        });
+      } else {
+        console.log("ZAO MI JE NISI ");
+      }
+    };
+
     this.state = {
-      pin: "1312",
+      pin: '',
       inputOn: false,
-      enteredPin: "1312"
+      enteredPin: '',
+      enteredUsername: ''
     };
   }
-
-  checkPin() {
-    let pin = this.state.pin;
-    let enpin = this.state.enteredPin;
-    if (pin == enpin) {
-      console.log("jea");
-    } else {
-      this.setState({ enteredPin: "1312" });
-      checkPin();
+  componentWillReceiveProps(nextProps) {
+    if (!this.props.data.loading && this.props.data.allUserAdmins.length) {
+      console.log("ULOGOVO SI SE ");
     }
   }
 
-  handleChange(event) {
-    this.setState({ enteredPin: event.target.enteredPin });
-  }
-
-  checkInput() {}
-
   render() {
     let putinput = null;
-    if (this.state.inputOn) {
+    console.log("OVO JE PROPS", this.props);
+    if (!this.state.inputOn) {
       putinput = _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('input', { value: this.state.enteredPin, onChange: this.handleChange, type: 'number' }),
+        _react2.default.createElement(
+          'h1',
+          null,
+          'PASS'
+        ),
+        _react2.default.createElement('input', { value: this.state.enteredPin, onChange: this.handleChangePass, type: 'text' }),
+        _react2.default.createElement(
+          'h1',
+          null,
+          'USER'
+        ),
+        _react2.default.createElement('input', { value: this.state.enteredUsername, onChange: this.handleChangeUser, type: 'text' }),
         _react2.default.createElement(
           'button',
           { onClick: this.checkPin },
@@ -3564,7 +3642,7 @@ let Admin = class Admin extends _react2.default.Component {
       putinput
     );
   }
-};
+}) || _class) || _class);
 exports.default = Admin;
 
 /***/ }),
@@ -3595,7 +3673,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
 var _allPorudzbinas = __webpack_require__(66);
 
@@ -3605,14 +3683,9 @@ var _createPorudzbina = __webpack_require__(65);
 
 var _createPorudzbina2 = _interopRequireDefault(_createPorudzbina);
 
-var _graphqlTag = __webpack_require__(13);
-
-var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = class Porudzbine extends _react2.default.Component {
-
   render() {
     const { data } = this.props;
     return _react2.default.createElement(
@@ -3691,7 +3764,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
 var _getProizvodi = __webpack_require__(12);
 
@@ -3769,7 +3842,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(6);
+var _reactApollo = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(7);
 
@@ -3839,7 +3912,7 @@ var _ContactUs = __webpack_require__(33);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(84);
+var _reactScrollableAnchor = __webpack_require__(86);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4278,70 +4351,82 @@ module.exports = require("isomorphic-fetch");
 /* 76 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa");
+module.exports = require("js-md5");
 
 /***/ }),
 /* 77 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-helmet");
+module.exports = require("koa");
 
 /***/ }),
 /* 78 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-router");
+module.exports = require("koa-helmet");
 
 /***/ }),
 /* 79 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-send");
+module.exports = require("koa-router");
 
 /***/ }),
 /* 80 */
 /***/ (function(module, exports) {
 
-module.exports = require("microseconds");
+module.exports = require("koa-send");
 
 /***/ }),
 /* 81 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("microseconds");
 
 /***/ }),
 /* 82 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("password-hash");
 
 /***/ }),
 /* 83 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 84 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-images");
 
 /***/ }),
 /* 85 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-router");
 
 /***/ }),
 /* 86 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 87 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(20);

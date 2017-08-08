@@ -128,7 +128,7 @@ export default new WebpackConfig().extend({
     // serve those instead of the full-sized version
     new CompressionPlugin({
       // Use Zopfli compression
-      algorithm: 'zopfli',
+      //algorithm: 'zopfli',
       // Overwrite the default 80% compression-- anything is better than
       // nothing
       minRatio: 0.99,
