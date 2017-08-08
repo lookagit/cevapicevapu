@@ -3,6 +3,7 @@ import TopHero from '../TopHero';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import ProizvodList from './ProizvodList';
 import Porudzbine from './Porudzbine';
+import NavBar from './NavBar';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { connect } from 'react-redux';
@@ -12,6 +13,7 @@ import md5 from 'js-md5';
   query giveMeUsers($password: String!, $userName: String!) {
     allUserAdmins(filter: { password: $password, userName: $userName}) {
       userName
+      password
     }
   }`,
   {
@@ -33,9 +35,19 @@ export default class Admin extends React.Component {
       enteredUsername: '',
     }
   }
-  componentWillReceiveProps(nextProps) {
-    if(!this.props.data.loading && this.props.data.allUserAdmins.length) {
-      console.log("ULOGOVO SI SE ");
+  componentWillMount() {
+
+  }
+  componentDidMount() {
+    if(typeof window !== 'undefined' && window.document) {
+      if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {
+        console.log("JOJO00", localStorage.getItem("userName"));
+      } else {
+        this.setState({
+          inputOn: true,
+        })
+        console.log("EVO ME");
+      }
     }
   }
   handleChangePass = (event) => {
@@ -47,18 +59,22 @@ export default class Admin extends React.Component {
    });
   }
   handleChangeUser = (event) => {
-   this.setState({enteredUsername: event.target.value});
-   this.props.dispatch({
-     type: 'CHANGE_USERNAME',
-     userName: event.target.value,
-   });
+    this.setState({enteredUsername: event.target.value});
+    this.props.dispatch({
+      type: 'CHANGE_USERNAME',
+      userName: event.target.value,
+    });
   }
   checkPin = async () => {
     const respons = await this.props.data.refetch();
     if(!respons.data.loading && respons.data.allUserAdmins.length) {
+      let userName = respons.data.allUserAdmins[0].userName;
+      let password = respons.data.allUserAdmins[0].password;
+      localStorage.setItem("userName", userName);
+      localStorage.setItem("password", password);
       this.setState({
         inputOn: true,
-      })
+      });
     } else {
       console.log("ZAO MI JE NISI ");
     }
@@ -77,12 +93,16 @@ export default class Admin extends React.Component {
       </div>;
     }else {
       putinput =
-        <Grid>
-          <Row>
-            <Porudzbine />
-            <ProizvodList />
-          </Row>
-        </Grid>;
+        <div>
+          <NavBar />
+          <Grid>
+            <Row>
+              <Porudzbine />
+              <ProizvodList />
+            </Row>
+          </Grid>
+        </div>
+        ;
     }
     return (
       <div>
