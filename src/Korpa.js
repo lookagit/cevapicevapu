@@ -4,6 +4,8 @@ import TopHero from './TopHero';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import KorpaPorudzbina from './KorpaPorudzbina';
+import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import scss from './styles.scss';
 
 @connect(state => ({orders: state.orders}))
 export default class Korpa extends Component {
@@ -15,16 +17,21 @@ export default class Korpa extends Component {
     return(
       <div>
         <TopHero title="Dostava" subtitle="Naručite nešto kod nas skroz dobro" bgImage={{backgroundImage: 'url("'+bgImg+'")'}} />
-        {this.props.orders && this.props.orders.map((proiz, index) => (
-          <div>
-            <h2>{proiz.proizvodid}</h2>
-            <img src={proiz.urlSlike} width="150px" />
-            <h3>{proiz.naslov}</h3>
-            <h3>Kolicina: </h3><p>{proiz.kolicina}</p>
-            <h3>Cena: </h3><p>{proiz.cena}</p>
-          </div>
-        ))}
-        <KorpaPorudzbina orders={this.props.orders} />
+        <div className={scss.korpa}>
+          <Grid>
+            <Row className={scss.korpaItems}>
+              {this.props.orders && this.props.orders.map((proiz, index) => (
+                <Col xs={12} sm={6} md={4} lg={3} className={scss.korpaItem}>
+                  <img src={proiz.urlSlike} width="150px" />
+                  <h3>{proiz.naslov}</h3>
+                  <h3>Kolicina: {proiz.kolicina}</h3>
+                  <h3>Cena: {proiz.cena}</h3>
+                </Col>
+              ))}
+            </Row>
+          <KorpaPorudzbina orders={this.props.orders} />
+          </Grid>
+        </div>
       </div>
 
     );

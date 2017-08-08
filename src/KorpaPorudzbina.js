@@ -4,11 +4,13 @@ import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 import PorudzbinaConfirm from './PorudzbinaConfirm';
 import { connect } from 'react-redux';
+import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import scss from './styles.scss';
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 @graphql(gql`
-  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!) {
-    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona) {
+  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!) {
+    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis) {
       id
     },
   }`,
@@ -56,6 +58,7 @@ export default class KorpaPorudzbina extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      opis: "Bez Opisa",
       adresa: "Random Adresa",
       brojTelefona: 123456,
       porudzbinaId: '123',
@@ -71,12 +74,17 @@ export default class KorpaPorudzbina extends React.Component {
     this.setState({brojTelefona: parseInt(event.target.value)});
   }
 
+  izmeniOpis = (event) => {
+    this.setState({opis: event.target.value});
+  }
+
   static propTypes = {
     data: PropTypes.shape({
       allPorudzbinas: PropTypes.arrayOf(
         PropTypes.shape({
           adresa: PropTypes.string.isRequired,
           brojTelefona: PropTypes.number.isRequired,
+          opis: PropTypes.string.isRequired,
         }),
       ),
     }),
@@ -88,6 +96,7 @@ export default class KorpaPorudzbina extends React.Component {
       variables: {
         adresa: this.state.adresa,
         brojTelefona: this.state.brojTelefona,
+        opis: this.state.opis,
       }
     });
 
@@ -125,16 +134,28 @@ export default class KorpaPorudzbina extends React.Component {
   render() {
     console.log("JUNGLE ", this.props);
     return(
-      <div>
-        <label>Adresa</label>
-        <input type="text" onChange={this.izmeniAdresu} />
-        <label>Broj Telefona</label>
-        <input type="number" onChange={this.izmeniBroj} />
-        <button  onClick={() => {
-          this.nekaFunkcija();
-        }}>Napravi Porudzbinu</button>
-        <PorudzbinaConfirm poslato={this.state.poslato} />
-      </div>
+      <Row>
+        <Col xs={12}>
+
+          <form className={scss.korpaForm}>
+            <PorudzbinaConfirm poslato={this.state.poslato} />
+            <p>
+              <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
+            </p>
+            <p>
+              <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
+            </p>
+            <p>
+              <textarea onChange={this.izmeniBroj} placeholder="Opis" />
+            </p>
+            <p>
+              <button onClick={() => {
+                this.nekaFunkcija();
+              }}>POSALJI</button>
+            </p>
+          </form>
+        </Col>
+      </Row>
     );
   }
 }
