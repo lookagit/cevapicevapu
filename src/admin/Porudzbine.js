@@ -22,6 +22,14 @@ export default class Porudzbine extends React.Component {
 
   render () {
     const { data } = this.props;
+
+    const obrnuto = {};
+    if(data.allPorudzbinas){
+      obrnuto.jedan = data.allPorudzbinas.reverse();
+    }
+
+    console.log('Ja sam data ', data);
+
     return (
       <Col xs={12} sm={12} md={8} lg={8}>
         <div className={scss.porudzbine}>

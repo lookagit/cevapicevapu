@@ -3195,7 +3195,7 @@ var Admin = function (_React$Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Porudzbine; });
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Porudzbine; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__ = __webpack_require__(15);
@@ -3243,6 +3243,14 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react
     key: 'render',
     value: function render() {
       var data = this.props.data;
+
+
+      var obrnuto = {};
+      if (data.allPorudzbinas) {
+        obrnuto.jedan = data.allPorudzbinas.reverse();
+      }
+
+      console.log('Ja sam data ', data);
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
@@ -3302,6 +3310,7 @@ Porudzbine.propTypes = {
   })
 };
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 

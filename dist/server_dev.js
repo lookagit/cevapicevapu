@@ -3609,6 +3609,14 @@ let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _d
 
   render() {
     const { data } = this.props;
+
+    const obrnuto = {};
+    if (data.allPorudzbinas) {
+      obrnuto.jedan = data.allPorudzbinas.reverse();
+    }
+
+    console.log('Ja sam data ', data);
+
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Col,
       { xs: 12, sm: 12, md: 8, lg: 8 },
