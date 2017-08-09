@@ -3,7 +3,7 @@ import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import scss from './styles.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 export default class ProizvodItem extends Component {
@@ -11,7 +11,8 @@ export default class ProizvodItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      kolicina: 0,
+      kolicina: "",
+      isShowingModal: false,
     }
   }
 
@@ -20,19 +21,21 @@ export default class ProizvodItem extends Component {
       count: PropTypes.number.isRequired,
     }),
   };
-
+  handleClick = () => this.setState({isShowingModal: true})
+  handleClose = () => this.setState({isShowingModal: false, kolicina: ''})
   upaliIncrement = () => {
-    this.props.dispatch({
-      type: 'ADD_ORDER',
-      orders: {
-        proizvodid: this.props.proiz.id,
-        kolicina: this.state.kolicina,
-        cena: this.props.proiz.cena * this.state.kolicina,
-        urlSlike: this.props.proiz.urlSlike,
-        naslov: this.props.proiz.naslov,
-      },
-    });
-    console.log("EVO ME")
+    if(this.state.kolicina > 0) {
+      this.props.dispatch({
+        type: 'ADD_ORDER',
+        orders: {
+          proizvodid: this.props.proiz.id,
+          kolicina: this.state.kolicina,
+          cena: this.props.proiz.cena * this.state.kolicina,
+          urlSlike: this.props.proiz.urlSlike,
+          naslov: this.props.proiz.naslov,
+        },
+      });
+    }
   }
 
   izmeniKolicinu = (event) => {
@@ -40,8 +43,18 @@ export default class ProizvodItem extends Component {
   }
 
 
-
+  button = () => {
+    if(this.state.kolicina === 0 || this.state.kolicina === '0' || this.state.kolicina === '') {
+      return (<button disabled={true}>Naruci</button>)
+    } else {
+      return (<button onClick={() => this.handleClick()}>Naruci</button>)
+    }
+  }
   render () {
+    let ukupno = "";
+    if(this.state.kolicina !== 0 || this.state.kolicina !== '' || this.state.kolicina !== '0' || this.props.proiz) {
+      ukupno = parseInt(this.state.kolicina) * parseInt(this.props.proiz.cena);
+    }
     return (
       <Col xs={12} sm={6} md={4} lg={3} className={scss.productBox}>
         <div className={scss.product}>
@@ -49,11 +62,43 @@ export default class ProizvodItem extends Component {
             <img src={this.props.proiz.urlSlike} />
             <h2>{this.props.proiz.naslov}</h2>
             <h3>{this.props.proiz.cena} RSD</h3>
-            <label>Kolicina &nbsp;</label> <input type="number" onChange={this.izmeniKolicinu} />
-            <button onClick={() => this.upaliIncrement()}>Naruci</button>
+            <label>Kolicina &nbsp;</label> <input type="number"  min="1" onChange={this.izmeniKolicinu} value={this.state.kolicina} />
+            {
+              this.button()
+            }
+            {
+              this.state.isShowingModal &&
+              <ModalContainer onClose={this.handleClose}>
+                <ModalDialog onClose={this.handleClose}>
+                  <h2>Poručili ste: </h2>
+                  <p>{this.props.proiz.naslov}</p>
+                  <p>Količina: {this.state.kolicina} </p>
+                  <p>Cena: {ukupno}</p>
+                  <button style={stylee.buttonStyle} onClick={() => this.handleClose()}>Otkaži</button>
+                  <button style={stylee.buttonStyle} onClick={() => {
+                    this.upaliIncrement();
+                    this.handleClose();
+                  }}>Potvrdi</button>
+                </ModalDialog>
+              </ModalContainer>
+            }
           </div>
         </div>
       </Col>
     );
+  }
+}
+const stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '10px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer',
   }
 }

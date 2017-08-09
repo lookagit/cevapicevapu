@@ -156,7 +156,8 @@ module.exports = {
 	"trash": "trash-2XX9Y94Iz7AHXzhZJtltHn",
 	"korpaForm": "korpaForm-3xBTwwK71Y3k8fSqQnbDkc",
 	"adminLog": "adminLog-1FbsXfLXwhZvvwmYgHLVG1",
-	"adminNavbar": "adminNavbar-2SsCfZupjTp2ePWyYaQX9E"
+	"adminNavbar": "adminNavbar-2SsCfZupjTp2ePWyYaQX9E",
+	"buttonModal": "buttonModal-oQhRp8mZSwic4C68ZmHUD"
 };
 
 /***/ }),
@@ -3167,6 +3168,8 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(7);
 
+var _reactModalDialog = __webpack_require__(92);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec(_class = class ProizvodItem extends _react.Component {
@@ -3174,30 +3177,56 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
   constructor(props) {
     super(props);
 
+    this.handleClick = () => this.setState({ isShowingModal: true });
+
+    this.handleClose = () => this.setState({ isShowingModal: false, kolicina: '' });
+
     this.upaliIncrement = () => {
-      this.props.dispatch({
-        type: 'ADD_ORDER',
-        orders: {
-          proizvodid: this.props.proiz.id,
-          kolicina: this.state.kolicina,
-          cena: this.props.proiz.cena * this.state.kolicina,
-          urlSlike: this.props.proiz.urlSlike,
-          naslov: this.props.proiz.naslov
-        }
-      });
-      console.log("EVO ME");
+      if (this.state.kolicina > 0) {
+        this.props.dispatch({
+          type: 'ADD_ORDER',
+          orders: {
+            proizvodid: this.props.proiz.id,
+            kolicina: this.state.kolicina,
+            cena: this.props.proiz.cena * this.state.kolicina,
+            urlSlike: this.props.proiz.urlSlike,
+            naslov: this.props.proiz.naslov
+          }
+        });
+      }
     };
 
     this.izmeniKolicinu = event => {
       this.setState({ kolicina: event.target.value });
     };
 
+    this.button = () => {
+      if (this.state.kolicina === 0 || this.state.kolicina === '0' || this.state.kolicina === '') {
+        return _react2.default.createElement(
+          'button',
+          { disabled: true },
+          'Naruci'
+        );
+      } else {
+        return _react2.default.createElement(
+          'button',
+          { onClick: () => this.handleClick() },
+          'Naruci'
+        );
+      }
+    };
+
     this.state = {
-      kolicina: 0
+      kolicina: "",
+      isShowingModal: false
     };
   }
 
   render() {
+    let ukupno = "";
+    if (this.state.kolicina !== 0 || this.state.kolicina !== '' || this.state.kolicina !== '0' || this.props.proiz) {
+      ukupno = parseInt(this.state.kolicina) * parseInt(this.props.proiz.cena);
+    }
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Col,
       { xs: 12, sm: 6, md: 4, lg: 3, className: _styles2.default.productBox },
@@ -3225,11 +3254,51 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
             'Kolicina \xA0'
           ),
           ' ',
-          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu }),
-          _react2.default.createElement(
-            'button',
-            { onClick: () => this.upaliIncrement() },
-            'Naruci'
+          _react2.default.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu, value: this.state.kolicina }),
+          this.button(),
+          this.state.isShowingModal && _react2.default.createElement(
+            _reactModalDialog.ModalContainer,
+            { onClose: this.handleClose },
+            _react2.default.createElement(
+              _reactModalDialog.ModalDialog,
+              { onClose: this.handleClose },
+              _react2.default.createElement(
+                'h2',
+                null,
+                'Poru\u010Dili ste: '
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                this.props.proiz.naslov
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Koli\u010Dina: ',
+                this.state.kolicina,
+                ' '
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Cena: ',
+                ukupno
+              ),
+              _react2.default.createElement(
+                'button',
+                { style: stylee.buttonStyle, onClick: () => this.handleClose() },
+                'Otka\u017Ei'
+              ),
+              _react2.default.createElement(
+                'button',
+                { style: stylee.buttonStyle, onClick: () => {
+                    this.upaliIncrement();
+                    this.handleClose();
+                  } },
+                'Potvrdi'
+              )
+            )
           )
         )
       )
@@ -3242,6 +3311,21 @@ ProizvodItem.propTypes = {
   })
 };
 exports.default = ProizvodItem;
+
+const stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '10px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer'
+  }
+};
 
 /***/ }),
 /* 50 */
@@ -4669,6 +4753,12 @@ exports.default = PorudzbinaConfirm;
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/trash");
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-modal-dialog");
 
 /***/ })
 /******/ ]);

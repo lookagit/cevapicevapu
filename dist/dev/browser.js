@@ -26,7 +26,11 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+<<<<<<< HEAD
 module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","trash":"trash-2XX9Y94Iz7AHXzhZJtltHn","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E"};
+=======
+module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E","buttonModal":"buttonModal-oQhRp8mZSwic4C68ZmHUD"};
+>>>>>>> a8dc247372e66131cf001386590e6b21ef9cfefd
 
 /***/ }),
 
@@ -596,7 +600,7 @@ var usersInitial = {
     }
   }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -990,7 +994,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
   return Admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -1693,7 +1697,7 @@ var GallyGrid = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2182,7 +2186,7 @@ var InstaImage = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (InstaImage);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2886,7 +2890,7 @@ var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
   return PorudzbinaConfirm;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2975,7 +2979,7 @@ Proizvod.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2983,7 +2987,7 @@ Proizvod.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodItem; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__ = __webpack_require__(21);
@@ -2992,6 +2996,8 @@ Proizvod.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_redux__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -3001,6 +3007,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -3018,26 +3025,54 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
 
     var _this = _possibleConstructorReturn(this, (ProizvodItem.__proto__ || Object.getPrototypeOf(ProizvodItem)).call(this, props));
 
+    _this.handleClick = function () {
+      return _this.setState({ isShowingModal: true });
+    };
+
+    _this.handleClose = function () {
+      return _this.setState({ isShowingModal: false, kolicina: '' });
+    };
+
     _this.upaliIncrement = function () {
-      _this.props.dispatch({
-        type: 'ADD_ORDER',
-        orders: {
-          proizvodid: _this.props.proiz.id,
-          kolicina: _this.state.kolicina,
-          cena: _this.props.proiz.cena * _this.state.kolicina,
-          urlSlike: _this.props.proiz.urlSlike,
-          naslov: _this.props.proiz.naslov
-        }
-      });
-      console.log("EVO ME");
+      if (_this.state.kolicina > 0) {
+        _this.props.dispatch({
+          type: 'ADD_ORDER',
+          orders: {
+            proizvodid: _this.props.proiz.id,
+            kolicina: _this.state.kolicina,
+            cena: _this.props.proiz.cena * _this.state.kolicina,
+            urlSlike: _this.props.proiz.urlSlike,
+            naslov: _this.props.proiz.naslov
+          }
+        });
+      }
     };
 
     _this.izmeniKolicinu = function (event) {
       _this.setState({ kolicina: event.target.value });
     };
 
+    _this.button = function () {
+      if (_this.state.kolicina === 0 || _this.state.kolicina === '0' || _this.state.kolicina === '') {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { disabled: true },
+          'Naruci'
+        );
+      } else {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this.handleClick();
+            } },
+          'Naruci'
+        );
+      }
+    };
+
     _this.state = {
-      kolicina: 0
+      kolicina: "",
+      isShowingModal: false
     };
     return _this;
   }
@@ -3047,6 +3082,10 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
     value: function render() {
       var _this2 = this;
 
+      var ukupno = "";
+      if (this.state.kolicina !== 0 || this.state.kolicina !== '' || this.state.kolicina !== '0' || this.props.proiz) {
+        ukupno = parseInt(this.state.kolicina) * parseInt(this.props.proiz.cena);
+      }
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
         { xs: 12, sm: 6, md: 4, lg: 3, className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.productBox },
@@ -3074,13 +3113,53 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
               'Kolicina \xA0'
             ),
             ' ',
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', onChange: this.izmeniKolicinu }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'button',
-              { onClick: function onClick() {
-                  return _this2.upaliIncrement();
-                } },
-              'Naruci'
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu, value: this.state.kolicina }),
+            this.button(),
+            this.state.isShowingModal && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__["ModalContainer"],
+              { onClose: this.handleClose },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__["ModalDialog"],
+                { onClose: this.handleClose },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'h2',
+                  null,
+                  'Poru\u010Dili ste: '
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  this.props.proiz.naslov
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Koli\u010Dina: ',
+                  this.state.kolicina,
+                  ' '
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Cena: ',
+                  ukupno
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'button',
+                  { style: stylee.buttonStyle, onClick: function onClick() {
+                      return _this2.handleClose();
+                    } },
+                  'Otka\u017Ei'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'button',
+                  { style: stylee.buttonStyle, onClick: function onClick() {
+                      _this2.upaliIncrement();
+                      _this2.handleClose();
+                    } },
+                  'Potvrdi'
+                )
+              )
             )
           )
         )
@@ -3096,7 +3175,21 @@ ProizvodItem.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+
+var stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '10px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer'
+  }
+};
 
 /***/ }),
 
@@ -3456,7 +3549,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
   return Admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -3653,7 +3746,7 @@ Porudzbine.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 

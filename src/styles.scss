@@ -224,6 +224,8 @@ $background: #ffc107;
       font-size: 19px;
       height: 40px;
       width: 100px;
+      color: white;
+      font-weight: 900;
       background-color: rgba(0,0,0,0.2);
       margin: 10px 20px;
       border: 2px solid white;
@@ -231,12 +233,14 @@ $background: #ffc107;
     }
     button:hover {
       background-color:rgba(255,255,255,0.2);
+      cursor:pointer;
     }
     input {
       font-size: 18px;
       height: 35px;
       width: 50px;
-      border: 6px solid rgba(0,0,0,0.3);
+      border: 3px solid rgba(0,0,0,0.3);
+      border-radius: 6px;
 
     }
   }
@@ -442,4 +446,15 @@ $background: #ffc107;
   height: 60px;
   background: #d9ab6f;
   display: 'flex'
+}
+.buttonModal {
+  font-size: 19px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  font-weight: 900;
+  background-color: rgba(0,0,0,0.2);
+  margin: 10px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
 }
