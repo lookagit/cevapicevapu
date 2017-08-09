@@ -43,7 +43,7 @@ export default class ProizvodItem extends Component {
 
   render () {
     return (
-      <Col xs={12} sm={6} md={4} lg={3}>
+      <Col xs={12} sm={6} md={4} lg={3} className={scss.productBox}>
         <div className={scss.product}>
           <div>
             <img src={this.props.proiz.urlSlike} />

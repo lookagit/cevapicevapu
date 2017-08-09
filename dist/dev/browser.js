@@ -2945,7 +2945,7 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
-        { xs: 12, sm: 6, md: 4, lg: 3 },
+        { xs: 12, sm: 6, md: 4, lg: 3, className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.productBox },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.product },

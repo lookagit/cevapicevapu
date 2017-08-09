@@ -186,24 +186,42 @@ $background: #ffc107;
      transform:scale(1.25);
 }
 
+.productBox {
+
+}
+
 .product {
   text-align: center;
   height: auto;
   margin: 25px auto;
   font-family: 'Arial';
   font-weight: bolder;
+
   div{
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     display: inline-block;
     background-color: rgba(0,0,0,0.2);
-    border: 2px solid rgba(0,0,0,0.3);
+    border: 2px solid rgba(0,0,0,0.1);
     border-radius: 3px;
     img {
-      width: 300px;
+      width: 290px;
       height: 300px;
     }
 
+    h2 {
+      color: #545450;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    label {
+      font-weight: 900;
+    }
+
     button {
-      font-size: 25px;
+      font-size: 19px;
       height: 40px;
       width: 100px;
       background-color: rgba(0,0,0,0.2);
@@ -218,7 +236,7 @@ $background: #ffc107;
       font-size: 18px;
       height: 35px;
       width: 50px;
-      border: 2px solid rgba(0,0,0,0.3);
+      border: 6px solid rgba(0,0,0,0.3);
 
     }
   }
