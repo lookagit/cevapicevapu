@@ -5,7 +5,6 @@ import allProizvods from 'src/queries/getProizvodi.gql';
 import scss from './styles.scss';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import ProizvodItem from './ProizvodItem';
-import KorpaModal from './KorpaModal';
 
 @graphql(allProizvods)
 export default class Proizvod extends React.PureComponent {
@@ -33,7 +32,6 @@ export default class Proizvod extends React.PureComponent {
       {data.allProizvods && data.allProizvods.map((proiz, index) => (
         <ProizvodItem proiz={proiz} />
       ))}
-        <KorpaModal />
         </Row>
       </Grid>
     );
