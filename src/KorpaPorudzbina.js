@@ -132,6 +132,7 @@ export default class KorpaPorudzbina extends React.Component {
   }
 
   render() {
+<<<<<<< HEAD
     console.log("JUNGLE ", this.props);
     let imali;
     if(typeof this.props.orders !== 'undefined' && this.props.orders.length > 0) {
@@ -162,6 +163,8 @@ export default class KorpaPorudzbina extends React.Component {
         imali = <h2>Korpa je prazna, dodajte nešto u porudžbinu!</h2>;
       }
     }
+=======
+>>>>>>> 1709035a1238c89e1276329d8cb7e265be27f62c
     return(
       <Row>
        <Col xs={12}>
