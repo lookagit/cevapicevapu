@@ -262,6 +262,9 @@ $background: #ffc107;
   .korpaItems {
     background-color:rgba(0,0,0,0.2);
     .korpaItem {
+      h3 {
+        margin-top: 0px !important;
+      }
       text-align: center;
     }
   }

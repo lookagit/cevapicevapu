@@ -152,8 +152,8 @@ module.exports = {
 	"proizvodList": "proizvodList-269fUlrCyJkVR2zWxxemxX",
 	"korpa": "korpa-3_yg0jPsNVfw9Ilw-urZMv",
 	"korpaItems": "korpaItems-goX6CZSRXXww1sm6JVSWu",
-	"korpaForm": "korpaForm-3xBTwwK71Y3k8fSqQnbDkc",
 	"korpaItem": "korpaItem-1QNpyh9mR0F8rn7OE_XTES",
+	"korpaForm": "korpaForm-3xBTwwK71Y3k8fSqQnbDkc",
 	"adminLog": "adminLog-1FbsXfLXwhZvvwmYgHLVG1",
 	"adminNavbar": "adminNavbar-2SsCfZupjTp2ePWyYaQX9E"
 };
@@ -2886,43 +2886,61 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
 
   render() {
     console.log("JUNGLE ", this.props);
+    let imali;
+    if (typeof this.props.orders !== 'undefined' && this.props.orders.length > 0) {
+      imali = _react2.default.createElement(
+        'form',
+        { className: _styles2.default.korpaForm },
+        _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato }),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Vasa Adresa:' })
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement('input', { type: 'text', onChange: this.izmeniBroj, placeholder: 'Broj Telefona' })
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement('textarea', { onChange: this.izmeniOpis, placeholder: 'Opis' })
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          _react2.default.createElement(
+            'button',
+            { type: 'button', onClick: () => {
+                this.nekaFunkcija();
+              } },
+            'POSALJI'
+          )
+        )
+      );
+    } else {
+      if (this.state.poslato) {
+        imali = _react2.default.createElement(
+          'h2',
+          null,
+          'Uspe\u0161no ste poslali porud\u017Ebinu!'
+        );
+      } else {
+        imali = _react2.default.createElement(
+          'h2',
+          null,
+          'Korpa je prazna, dodajte ne\u0161to u porud\u017Ebinu!'
+        );
+      }
+    }
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Row,
       null,
       _react2.default.createElement(
         _reactStyledFlexboxgrid.Col,
         { xs: 12 },
-        _react2.default.createElement(
-          'form',
-          { className: _styles2.default.korpaForm },
-          _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato }),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Vasa Adresa:' })
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniBroj, placeholder: 'Broj Telefona' })
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement('textarea', { onChange: this.izmeniOpis, placeholder: 'Opis' })
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'button',
-              { type: 'button', onClick: () => {
-                  this.nekaFunkcija();
-                } },
-              'POSALJI'
-            )
-          )
-        )
+        imali
       )
     );
   }
@@ -3270,6 +3288,10 @@ var _ProizvodItem = __webpack_require__(51);
 
 var _ProizvodItem2 = _interopRequireDefault(_ProizvodItem);
 
+var _KorpaModal = __webpack_require__(90);
+
+var _KorpaModal2 = _interopRequireDefault(_KorpaModal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Proizvod = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _dec(_class = class Proizvod extends _react2.default.PureComponent {
@@ -3291,7 +3313,8 @@ let Proizvod = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _dec(_
       _react2.default.createElement(
         _reactStyledFlexboxgrid.Row,
         null,
-        data.allProizvods && data.allProizvods.map((proiz, index) => _react2.default.createElement(_ProizvodItem2.default, { proiz: proiz }))
+        data.allProizvods && data.allProizvods.map((proiz, index) => _react2.default.createElement(_ProizvodItem2.default, { proiz: proiz })),
+        _react2.default.createElement(_KorpaModal2.default, null)
       )
     );
   }
@@ -3681,7 +3704,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
               _react2.default.createElement(
                 'button',
                 { onClick: this.checkPin },
-                'Unesi pin'
+                'Unesite \u0160ifru'
               )
             )
           )
@@ -4570,6 +4593,66 @@ module.exports = require("redux-thunk");
 
 module.exports = __webpack_require__(19);
 
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(4);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let KorpaModal = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })), _dec(_class = class KorpaModal extends _react2.default.Component {
+
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      this.props.orders && this.props.orders.map((proiz, index) => _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('img', { width: '100px', src: proiz.urlSlike }),
+        _react2.default.createElement(
+          'h3',
+          null,
+          proiz.naslov
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          proiz.kolicina
+        ),
+        _react2.default.createElement(
+          'h4',
+          null,
+          proiz.cena
+        )
+      ))
+    );
+  }
+}) || _class);
+KorpaModal.propTypes = {
+  orders: _propTypes2.default.array
+};
+exports.default = KorpaModal;
 
 /***/ })
 /******/ ]);

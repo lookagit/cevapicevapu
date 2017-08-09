@@ -133,27 +133,39 @@ export default class KorpaPorudzbina extends React.Component {
 
   render() {
     console.log("JUNGLE ", this.props);
+    let imali;
+    if(typeof this.props.orders !== 'undefined' && this.props.orders.length > 0) {
+      imali =
+      <form className={scss.korpaForm}>
+         <PorudzbinaConfirm poslato={this.state.poslato} />
+         <p>
+           <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
+         </p>
+         <p>
+           <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
+         </p>
+         <p>
+          <textarea onChange={this.izmeniOpis} placeholder="Opis" />
+        </p>
+         <p>
+           <button type="button" onClick={() => {
+             this.nekaFunkcija();
+           }}>POSALJI</button>
+         </p>
+       </form>;
+    }
+    else {
+      if(this.state.poslato) {
+        imali = <h2>Uspešno ste poslali porudžbinu!</h2>
+      }
+      else {
+        imali = <h2>Korpa je prazna, dodajte nešto u porudžbinu!</h2>;
+      }
+    }
     return(
       <Row>
        <Col xs={12}>
-
-         <form className={scss.korpaForm}>
-           <PorudzbinaConfirm poslato={this.state.poslato} />
-           <p>
-             <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
-           </p>
-           <p>
-             <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
-           </p>
-           <p>
-            <textarea onChange={this.izmeniOpis} placeholder="Opis" />
-          </p>
-           <p>
-             <button type="button" onClick={() => {
-               this.nekaFunkcija();
-             }}>POSALJI</button>
-           </p>
-         </form>
+        {imali}
        </Col>
      </Row>
     );
