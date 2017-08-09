@@ -592,7 +592,7 @@ var usersInitial = {
     }
   }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -986,7 +986,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
   return Admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -1689,7 +1689,7 @@ var GallyGrid = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2178,7 +2178,7 @@ var InstaImage = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (InstaImage);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2861,7 +2861,7 @@ var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
   return PorudzbinaConfirm;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2950,7 +2950,7 @@ Proizvod.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -2958,7 +2958,7 @@ Proizvod.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodItem; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__ = __webpack_require__(21);
@@ -2994,21 +2994,42 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
     var _this = _possibleConstructorReturn(this, (ProizvodItem.__proto__ || Object.getPrototypeOf(ProizvodItem)).call(this, props));
 
     _this.upaliIncrement = function () {
-      _this.props.dispatch({
-        type: 'ADD_ORDER',
-        orders: {
-          proizvodid: _this.props.proiz.id,
-          kolicina: _this.state.kolicina,
-          cena: _this.props.proiz.cena * _this.state.kolicina,
-          urlSlike: _this.props.proiz.urlSlike,
-          naslov: _this.props.proiz.naslov
-        }
-      });
-      console.log("EVO ME");
+      if (_this.state.kolicina > 0) {
+        _this.props.dispatch({
+          type: 'ADD_ORDER',
+          orders: {
+            proizvodid: _this.props.proiz.id,
+            kolicina: _this.state.kolicina,
+            cena: _this.props.proiz.cena * _this.state.kolicina,
+            urlSlike: _this.props.proiz.urlSlike,
+            naslov: _this.props.proiz.naslov
+          }
+        });
+      }
     };
 
     _this.izmeniKolicinu = function (event) {
       _this.setState({ kolicina: event.target.value });
+    };
+
+    _this.button = function () {
+      if (_this.state.kolicina === 0) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this.upaliIncrement();
+            }, disabled: true },
+          'Naruci'
+        );
+      } else {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this.upaliIncrement();
+            } },
+          'Naruci'
+        );
+      }
     };
 
     _this.state = {
@@ -3020,8 +3041,6 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
   _createClass(ProizvodItem, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
         { xs: 12, sm: 6, md: 4, lg: 3, className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.productBox },
@@ -3049,14 +3068,8 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
               'Kolicina \xA0'
             ),
             ' ',
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', onChange: this.izmeniKolicinu }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'button',
-              { onClick: function onClick() {
-                  return _this2.upaliIncrement();
-                } },
-              'Naruci'
-            )
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu }),
+            this.button()
           )
         )
       );
@@ -3071,7 +3084,6 @@ ProizvodItem.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 
@@ -3431,7 +3443,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
   return Admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 
@@ -3628,7 +3640,7 @@ Porudzbine.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
 

@@ -3408,21 +3408,38 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
     super(props);
 
     this.upaliIncrement = () => {
-      this.props.dispatch({
-        type: 'ADD_ORDER',
-        orders: {
-          proizvodid: this.props.proiz.id,
-          kolicina: this.state.kolicina,
-          cena: this.props.proiz.cena * this.state.kolicina,
-          urlSlike: this.props.proiz.urlSlike,
-          naslov: this.props.proiz.naslov
-        }
-      });
-      console.log("EVO ME");
+      if (this.state.kolicina > 0) {
+        this.props.dispatch({
+          type: 'ADD_ORDER',
+          orders: {
+            proizvodid: this.props.proiz.id,
+            kolicina: this.state.kolicina,
+            cena: this.props.proiz.cena * this.state.kolicina,
+            urlSlike: this.props.proiz.urlSlike,
+            naslov: this.props.proiz.naslov
+          }
+        });
+      }
     };
 
     this.izmeniKolicinu = event => {
       this.setState({ kolicina: event.target.value });
+    };
+
+    this.button = () => {
+      if (this.state.kolicina === 0) {
+        return _react2.default.createElement(
+          'button',
+          { onClick: () => this.upaliIncrement(), disabled: true },
+          'Naruci'
+        );
+      } else {
+        return _react2.default.createElement(
+          'button',
+          { onClick: () => this.upaliIncrement() },
+          'Naruci'
+        );
+      }
     };
 
     this.state = {
@@ -3458,12 +3475,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
             'Kolicina \xA0'
           ),
           ' ',
-          _react2.default.createElement('input', { type: 'number', onChange: this.izmeniKolicinu }),
-          _react2.default.createElement(
-            'button',
-            { onClick: () => this.upaliIncrement() },
-            'Naruci'
-          )
+          _react2.default.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu }),
+          this.button()
         )
       )
     );

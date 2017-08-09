@@ -22,17 +22,18 @@ export default class ProizvodItem extends Component {
   };
 
   upaliIncrement = () => {
-    this.props.dispatch({
-      type: 'ADD_ORDER',
-      orders: {
-        proizvodid: this.props.proiz.id,
-        kolicina: this.state.kolicina,
-        cena: this.props.proiz.cena * this.state.kolicina,
-        urlSlike: this.props.proiz.urlSlike,
-        naslov: this.props.proiz.naslov,
-      },
-    });
-    console.log("EVO ME")
+    if(this.state.kolicina > 0) {
+      this.props.dispatch({
+        type: 'ADD_ORDER',
+        orders: {
+          proizvodid: this.props.proiz.id,
+          kolicina: this.state.kolicina,
+          cena: this.props.proiz.cena * this.state.kolicina,
+          urlSlike: this.props.proiz.urlSlike,
+          naslov: this.props.proiz.naslov,
+        },
+      });
+    }
   }
 
   izmeniKolicinu = (event) => {
@@ -40,7 +41,13 @@ export default class ProizvodItem extends Component {
   }
 
 
-
+  button = () => {
+    if(this.state.kolicina === 0) {
+      return (<button onClick={() => this.upaliIncrement()} disabled={true}>Naruci</button>)
+    } else {
+      return (<button onClick={() => this.upaliIncrement()}>Naruci</button>)
+    }
+  }
   render () {
     return (
       <Col xs={12} sm={6} md={4} lg={3} className={scss.productBox}>
@@ -49,8 +56,8 @@ export default class ProizvodItem extends Component {
             <img src={this.props.proiz.urlSlike} />
             <h2>{this.props.proiz.naslov}</h2>
             <h3>{this.props.proiz.cena} RSD</h3>
-            <label>Kolicina &nbsp;</label> <input type="number" onChange={this.izmeniKolicinu} />
-            <button onClick={() => this.upaliIncrement()}>Naruci</button>
+            <label>Kolicina &nbsp;</label> <input type="number"  min="1" onChange={this.izmeniKolicinu} />
+            {this.button()}
           </div>
         </div>
       </Col>
