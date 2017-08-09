@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import KorpaPorudzbina from './KorpaPorudzbina';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import scss from './styles.scss';
+import Trash from 'react-icons/lib/fa/trash';
 
 @connect(state => ({orders: state.orders}))
 export default class Korpa extends Component {
@@ -13,6 +14,14 @@ export default class Korpa extends Component {
   static propTypes = {
      orders: PropTypes.array,
    };
+
+   izbrisiItem = (broj) => {
+     this.props.dispatch({
+       type: 'REMOVE_ITEM',
+       index: broj,
+     });
+   }
+
   render() {
     return(
       <div>
@@ -26,6 +35,7 @@ export default class Korpa extends Component {
                   <h3>{proiz.naslov}</h3>
                   <h3>Kolicina: {proiz.kolicina}</h3>
                   <h3>Cena: {proiz.cena}</h3>
+                  <Trash className={scss.trash} onClick={() => this.izbrisiItem(index)} />
                 </Col>
               ))}
             </Row>

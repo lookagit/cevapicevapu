@@ -265,6 +265,14 @@ $background: #ffc107;
       h3 {
         margin-top: 0px !important;
       }
+      .trash {
+        color: black;
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+      .trash:hover {
+        color: red;
+      }
       text-align: center;
     }
   }

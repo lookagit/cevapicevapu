@@ -26,7 +26,7 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E"};
+module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","trash":"trash-2XX9Y94Iz7AHXzhZJtltHn","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E"};
 
 /***/ }),
 
@@ -573,6 +573,10 @@ var usersInitial = {
       } else if (action.type === 'REMOVE_ORDER') {
         state = [];
         return state;
+      } else if (action.type === 'REMOVE_ITEM') {
+        var _newState2 = [].concat(_toConsumableArray(state));
+        _newState2.splice(action.index, 1);
+        return _newState2;
       }
       return state;
     }
@@ -2199,6 +2203,8 @@ var InstaImage = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_scss__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__styles_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_icons_lib_fa_trash__ = __webpack_require__(647);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_icons_lib_fa_trash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_icons_lib_fa_trash__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -2218,20 +2224,36 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var Korpa = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_redux__["a" /* connect */])(function (state) {
   return { orders: state.orders };
 }), _dec(_class = function (_Component) {
   _inherits(Korpa, _Component);
 
   function Korpa() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Korpa);
 
-    return _possibleConstructorReturn(this, (Korpa.__proto__ || Object.getPrototypeOf(Korpa)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Korpa.__proto__ || Object.getPrototypeOf(Korpa)).call.apply(_ref, [this].concat(args))), _this), _this.izbrisiItem = function (broj) {
+      _this.props.dispatch({
+        type: 'REMOVE_ITEM',
+        index: broj
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Korpa, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
@@ -2266,7 +2288,10 @@ var Korpa = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_redu
                     null,
                     'Cena: ',
                     proiz.cena
-                  )
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8_react_icons_lib_fa_trash___default.a, { className: __WEBPACK_IMPORTED_MODULE_7__styles_scss___default.a.trash, onClick: function onClick() {
+                      return _this2.izbrisiItem(index);
+                    } })
                 );
               })
             ),
@@ -2290,7 +2315,7 @@ Korpa.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaPorudzbina; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaPorudzbina; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__(30);
@@ -2465,62 +2490,43 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
     value: function render() {
       var _this3 = this;
 
-      console.log("JUNGLE ", this.props);
-      var imali = void 0;
-      if (typeof this.props.orders !== 'undefined' && this.props.orders.length > 0) {
-        imali = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'form',
-          { className: __WEBPACK_IMPORTED_MODULE_7__styles_scss___default.a.korpaForm },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__["a" /* default */], { poslato: this.state.poslato }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Vasa Adresa:' })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.izmeniBroj, placeholder: 'Broj Telefona' })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { onChange: this.izmeniOpis, placeholder: 'Opis' })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'p',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'button',
-              { type: 'button', onClick: function onClick() {
-                  _this3.nekaFunkcija();
-                } },
-              'POSALJI'
-            )
-          )
-        );
-      } else {
-        if (this.state.poslato) {
-          imali = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            null,
-            'Uspe\u0161no ste poslali porud\u017Ebinu!'
-          );
-        } else {
-          imali = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            null,
-            'Korpa je prazna, dodajte ne\u0161to u porud\u017Ebinu!'
-          );
-        }
-      }
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["b" /* Row */],
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["c" /* Col */],
           { xs: 12 },
-          imali
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'form',
+            { className: __WEBPACK_IMPORTED_MODULE_7__styles_scss___default.a.korpaForm },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__["a" /* default */], { poslato: this.state.poslato }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Vasa Adresa:' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.izmeniBroj, placeholder: 'Broj Telefona' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { onChange: this.izmeniOpis, placeholder: 'Opis' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { type: 'button', onClick: function onClick() {
+                    _this3.nekaFunkcija();
+                  } },
+                'POSALJI'
+              )
+            )
+          )
         )
       );
     }
@@ -2538,7 +2544,6 @@ KorpaPorudzbina.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 

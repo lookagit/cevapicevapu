@@ -53,6 +53,10 @@ export default {
       } else if (action.type === 'REMOVE_ORDER') {
         state = [];
         return state;
+      } else if (action.type === 'REMOVE_ITEM') {
+        const newState = [...state];
+        newState.splice(action.index,1);
+        return newState;
       }
       return state;
     }
