@@ -44406,7 +44406,7 @@ module.exports = {
 	"_args": [
 		[
 			"elliptic@6.4.0",
-			"/home/user1/cevapicevapu"
+			"/home/shane/CYBELE/react/cevapicevapu/cevapicevapu"
 		]
 	],
 	"_from": "elliptic@6.4.0",
@@ -44431,7 +44431,7 @@ module.exports = {
 	],
 	"_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
 	"_spec": "6.4.0",
-	"_where": "/home/user1/cevapicevapu",
+	"_where": "/home/shane/CYBELE/react/cevapicevapu/cevapicevapu",
 	"author": {
 		"name": "Fedor Indutny",
 		"email": "fedor@indutny.com"

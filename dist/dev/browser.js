@@ -2290,7 +2290,7 @@ Korpa.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaPorudzbina; });
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaPorudzbina; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__(30);
@@ -2465,7 +2465,6 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
     value: function render() {
       var _this3 = this;
 
-<<<<<<< HEAD
       console.log("JUNGLE ", this.props);
       var imali = void 0;
       if (typeof this.props.orders !== 'undefined' && this.props.orders.length > 0) {
@@ -2515,8 +2514,6 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
           );
         }
       }
-=======
->>>>>>> 1709035a1238c89e1276329d8cb7e265be27f62c
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["b" /* Row */],
         null,
@@ -2541,6 +2538,7 @@ KorpaPorudzbina.propTypes = {
   })
 };
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 
@@ -2903,12 +2901,7 @@ var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_scss__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__styles_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_styled_flexboxgrid__ = __webpack_require__(21);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ProizvodItem__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__KorpaModal__ = __webpack_require__(644);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ProizvodItem__ = __webpack_require__(303);
->>>>>>> 2539d7310ccebe33c348a3d00ef676b86ccc5a70
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -2918,7 +2911,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -2962,8 +2954,7 @@ var Proizvod = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_react_a
           null,
           data.allProizvods && data.allProizvods.map(function (proiz, index) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ProizvodItem__["a" /* default */], { proiz: proiz });
-          }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__KorpaModal__["a" /* default */], null)
+          })
         )
       );
     }
@@ -4395,137 +4386,6 @@ module.exports = doc;
 module.exports = __webpack_require__(246);
 
 
-<<<<<<< HEAD
-/***/ }),
-
-<<<<<<< HEAD
-/***/ 644:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaModal; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__(47);
-=======
-/***/ 647:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Admin; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart__ = __webpack_require__(646);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart__);
->>>>>>> 1709035a1238c89e1276329d8cb7e265be27f62c
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _dec, _class;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-<<<<<<< HEAD
-
-var KorpaModal = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* connect */])(function (state) {
-  return { orders: state.orders };
-}), _dec(_class = function (_React$Component) {
-  _inherits(KorpaModal, _React$Component);
-
-  function KorpaModal() {
-    _classCallCheck(this, KorpaModal);
-
-    return _possibleConstructorReturn(this, (KorpaModal.__proto__ || Object.getPrototypeOf(KorpaModal)).apply(this, arguments));
-  }
-
-  _createClass(KorpaModal, [{
-    key: 'render',
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        null,
-        this.props.orders && this.props.orders.map(function (proiz, index) {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { width: '100px', src: proiz.urlSlike }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h3',
-              null,
-              proiz.naslov
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h4',
-              null,
-              proiz.kolicina
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h4',
-              null,
-              proiz.cena
-            )
-          );
-        })
-=======
-var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redux__["a" /* connect */])(function (state) {
-  return { orders: state.orders };
-}), _dec(_class = function (_React$Component) {
-  _inherits(Admin, _React$Component);
-
-  function Admin(props) {
-    _classCallCheck(this, Admin);
-
-    var _this = _possibleConstructorReturn(this, (Admin.__proto__ || Object.getPrototypeOf(Admin)).call(this, props));
-
-    _this.state = {
-      cartCount: 0
-    };
-    return _this;
-  }
-
-  _createClass(Admin, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      console.log("PROPS, ", this.props);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'span',
-        null,
-        '3',
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart___default.a, { style: { fontSize: '32px', verticalAlign: 'middle', marginTop: '-10px' } })
->>>>>>> 1709035a1238c89e1276329d8cb7e265be27f62c
-      );
-    }
-  }]);
-
-<<<<<<< HEAD
-  return KorpaModal;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
-KorpaModal.propTypes = {
-  orders: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.array
-};
-
-=======
-  return Admin;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
-
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
->>>>>>> 1709035a1238c89e1276329d8cb7e265be27f62c
-
-=======
->>>>>>> 2539d7310ccebe33c348a3d00ef676b86ccc5a70
 /***/ })
 
 },[645]);
