@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import css from './styles.css';
 import logo from './logodrama.png';
 import menuIcon from './hamburger.png';
+import CartBucket from './CartBucket.js';
 class MainMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -13,13 +14,11 @@ class MainMenu extends React.Component {
   }
   opener = () => {
     if(!this.state.open) {
-      console.log("{sdadsadsad1231}");
       this.setState({
         open: true,
         stylee: {overflow: 'visible'}
       });
     } else {
-      console.log("{sdadsadsad}");
       this.setState({
         open: false,
         stylee: {overflow: 'hidden'}
@@ -42,7 +41,7 @@ class MainMenu extends React.Component {
         <li><Link to="/page/jelovnik" onClick={this.opener}>Jelovnik</Link></li>
         <li><Link to="/page/galerija" onClick={this.opener}>Galerija</Link></li>
         <li><Link to="/page/contact" onClick={this.opener}>Kontakt</Link></li>
-        <li><Link to="/korpa" onClick={this.opener}>Korpa</Link></li>
+        <li><Link to="/korpa" onClick={this.opener}><CartBucket /></Link></li>
         </ul>
       </div>
     )

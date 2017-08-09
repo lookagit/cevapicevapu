@@ -132,7 +132,6 @@ export default class KorpaPorudzbina extends React.Component {
   }
 
   render() {
-    console.log("JUNGLE ", this.props);
     return(
       <Row>
        <Col xs={12}>

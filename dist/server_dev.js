@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 89);
+/******/ 	return __webpack_require__(__webpack_require__.s = 90);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -529,7 +529,7 @@ var _microseconds = __webpack_require__(80);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(85);
+var _reactRouter = __webpack_require__(86);
 
 var _reactHelmet = __webpack_require__(14);
 
@@ -1004,9 +1004,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(87);
+var _redux = __webpack_require__(88);
 
-var _reduxThunk = __webpack_require__(88);
+var _reduxThunk = __webpack_require__(89);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -2267,7 +2267,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(70);
 
-var _reactImages = __webpack_require__(84);
+var _reactImages = __webpack_require__(85);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2885,7 +2885,6 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
   }
 
   render() {
-    console.log("JUNGLE ", this.props);
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Row,
       null,
@@ -2967,6 +2966,10 @@ var _hamburger = __webpack_require__(61);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
+var _CartBucket = __webpack_require__(92);
+
+var _CartBucket2 = _interopRequireDefault(_CartBucket);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let MainMenu = class MainMenu extends _react2.default.Component {
@@ -2975,13 +2978,11 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 
     this.opener = () => {
       if (!this.state.open) {
-        console.log("{sdadsadsad1231}");
         this.setState({
           open: true,
           stylee: { overflow: 'visible' }
         });
       } else {
-        console.log("{sdadsadsad}");
         this.setState({
           open: false,
           stylee: { overflow: 'hidden' }
@@ -3070,7 +3071,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/korpa', onClick: this.opener },
-            'Korpa'
+            _react2.default.createElement(_CartBucket2.default, null)
           )
         )
       )
@@ -3681,7 +3682,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
               _react2.default.createElement(
                 'button',
                 { onClick: this.checkPin },
-                'Unesi pin'
+                'Unesite \u0160ifru'
               )
             )
           )
@@ -4057,7 +4058,7 @@ var _ContactUs = __webpack_require__(33);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(86);
+var _reactScrollableAnchor = __webpack_require__(87);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4535,41 +4536,95 @@ module.exports = require("path");
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 84 */
+/* 84 */,
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-scrollable-anchor");
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19);
 
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/shopping-cart");
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(7);
+
+var _shoppingCart = __webpack_require__(91);
+
+var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })), _dec(_class = class Admin extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartCount: 0
+    };
+  }
+  componentWillMount() {
+    console.log("PROPS, ", this.props);
+  }
+  render() {
+    return _react2.default.createElement(
+      'span',
+      null,
+      '3',
+      _react2.default.createElement(_shoppingCart2.default, { style: { fontSize: '32px', verticalAlign: 'middle', marginTop: '-10px' } })
+    );
+  }
+}) || _class);
+exports.default = Admin;
 
 /***/ })
 /******/ ]);
