@@ -436,3 +436,14 @@ $background: #ffc107;
   background: #d9ab6f;
   display: 'flex'
 }
+.buttonModal {
+  font-size: 19px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  font-weight: 900;
+  background-color: rgba(0,0,0,0.2);
+  margin: 10px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+}

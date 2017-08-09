@@ -26,7 +26,7 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E"};
+module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E","buttonModal":"buttonModal-oQhRp8mZSwic4C68ZmHUD"};
 
 /***/ }),
 
@@ -2967,6 +2967,8 @@ Proizvod.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_redux__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -2983,6 +2985,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_redux__["a" /* connect */])(function (state) {
   return { counter: state.counter, orders: state.orders };
 }), _dec(_class = function (_Component) {
@@ -2992,6 +2995,14 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
     _classCallCheck(this, ProizvodItem);
 
     var _this = _possibleConstructorReturn(this, (ProizvodItem.__proto__ || Object.getPrototypeOf(ProizvodItem)).call(this, props));
+
+    _this.handleClick = function () {
+      return _this.setState({ isShowingModal: true });
+    };
+
+    _this.handleClose = function () {
+      return _this.setState({ isShowingModal: false, kolicina: '' });
+    };
 
     _this.upaliIncrement = function () {
       if (_this.state.kolicina > 0) {
@@ -3013,19 +3024,17 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
     };
 
     _this.button = function () {
-      if (_this.state.kolicina === 0) {
+      if (_this.state.kolicina === 0 || _this.state.kolicina === '0' || _this.state.kolicina === '') {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
-          { onClick: function onClick() {
-              return _this.upaliIncrement();
-            }, disabled: true },
+          { disabled: true },
           'Naruci'
         );
       } else {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
           { onClick: function onClick() {
-              return _this.upaliIncrement();
+              return _this.handleClick();
             } },
           'Naruci'
         );
@@ -3033,7 +3042,8 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
     };
 
     _this.state = {
-      kolicina: 0
+      kolicina: "",
+      isShowingModal: false
     };
     return _this;
   }
@@ -3041,6 +3051,12 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
   _createClass(ProizvodItem, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var ukupno = "";
+      if (this.state.kolicina !== 0 || this.state.kolicina !== '' || this.state.kolicina !== '0' || this.props.proiz) {
+        ukupno = parseInt(this.state.kolicina) * parseInt(this.props.proiz.cena);
+      }
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
         { xs: 12, sm: 6, md: 4, lg: 3, className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.productBox },
@@ -3068,8 +3084,54 @@ var ProizvodItem = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rea
               'Kolicina \xA0'
             ),
             ' ',
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu }),
-            this.button()
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu, value: this.state.kolicina }),
+            this.button(),
+            this.state.isShowingModal && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__["ModalContainer"],
+              { onClose: this.handleClose },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_5_react_modal_dialog__["ModalDialog"],
+                { onClose: this.handleClose },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'h2',
+                  null,
+                  'Poru\u010Dili ste: '
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  this.props.proiz.naslov
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Koli\u010Dina: ',
+                  this.state.kolicina,
+                  ' '
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'p',
+                  null,
+                  'Cena: ',
+                  ukupno
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'button',
+                  { style: stylee.buttonStyle, onClick: function onClick() {
+                      return _this2.handleClose();
+                    } },
+                  'Otka\u017Ei'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'button',
+                  { style: stylee.buttonStyle, onClick: function onClick() {
+                      _this2.upaliIncrement();
+                      _this2.handleClose();
+                    } },
+                  'Potvrdi'
+                )
+              )
+            )
           )
         )
       );
@@ -3084,6 +3146,21 @@ ProizvodItem.propTypes = {
   })
 };
 
+
+var stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '10px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer'
+  }
+};
 
 /***/ }),
 
