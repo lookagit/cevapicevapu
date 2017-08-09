@@ -3374,7 +3374,7 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
   render() {
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Col,
-      { xs: 12, sm: 6, md: 4, lg: 3 },
+      { xs: 12, sm: 6, md: 4, lg: 3, className: _styles2.default.productBox },
       _react2.default.createElement(
         'div',
         { className: _styles2.default.product },
@@ -3687,7 +3687,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
               _react2.default.createElement(
                 'button',
                 { onClick: this.checkPin },
-                'Unesi pin'
+                'Unesite \u0160ifru'
               )
             )
           )
