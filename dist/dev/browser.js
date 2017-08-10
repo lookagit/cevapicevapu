@@ -969,7 +969,11 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
           cartCount: numb
         });
         console.log("OVO JE numb", this.state.cartCount);
-      } else {}
+      } else {
+        this.setState({
+          cartCount: ""
+        });
+      }
     }
   }, {
     key: 'render',

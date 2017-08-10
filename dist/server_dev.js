@@ -1659,7 +1659,11 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
         cartCount: numb
       });
       console.log("OVO JE numb", this.state.cartCount);
-    } else {}
+    } else {
+      this.setState({
+        cartCount: ""
+      });
+    }
   }
   render() {
     return _react2.default.createElement(
