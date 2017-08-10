@@ -3971,7 +3971,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dec, _class;
+var _dec, _dec2, _dec3, _class;
 
 var _react = __webpack_require__(0);
 
@@ -3997,9 +3997,72 @@ var _createPorudzbina = __webpack_require__(67);
 
 var _createPorudzbina2 = _interopRequireDefault(_createPorudzbina);
 
+var _graphqlTag = __webpack_require__(13);
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
+var _reactModalDialog = __webpack_require__(88);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = class Porudzbine extends _react2.default.Component {
+let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation deletePorudzbinu($id: ID!){
+    deletePorudzbina(id: $id){
+      id
+    }
+  }`, {
+  name: 'deletePorudzbinu'
+}), _dec3 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation deleteStavkePorudzbine($id: ID!){
+    deleteStavkePorudzbine(id: $id){
+      id
+    }
+  }`, {
+  name: 'deleteStavkePorudzbine'
+}), _dec(_class = _dec2(_class = _dec3(_class = class Porudzbine extends _react2.default.Component {
+  constructor() {
+    super();
+
+    this.handleClick = () => this.setState({ isShowingModal: true });
+
+    this.handleClose = () => this.setState({ isShowingModal: false, kolicina: '' });
+
+    this.forceUpdateHandler = () => {
+      this.forceUpdate();
+    };
+
+    this.brisanjePorudzbina = async ajDi => {
+      console.log(ajDi.id);
+      console.log(ajDi.stavkePorudzbines);
+      const brisemPorudzbinu = await this.props.deletePorudzbinu({
+        variables: {
+          id: ajDi.id
+        }
+      });
+      ajDi.stavkePorudzbines.map(async (stavka, index) => {
+        const brisem = await this.props.deleteStavkePorudzbine({
+          variables: {
+            id: stavka.id
+          }
+        });
+      });
+      this.setState({ fakestejt: 'josjednom' });
+    };
+
+    this.button = () => {
+      return _react2.default.createElement(
+        'button',
+        { onClick: () => this.handleClick() },
+        'Obrisi porudzbinu'
+      );
+    };
+
+    this.state = {
+      fakestejt: 'fejkstejt',
+      isShowingModal: false
+    };
+  }
+
   render() {
     const { data } = this.props;
 
@@ -4034,6 +4097,12 @@ let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _d
               null,
               'Proizvod:',
               stavka.proizvod.naslov
+            ),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Kolicina: ',
+              stavka.kolicina
             )
           )),
           _react2.default.createElement(
@@ -4041,12 +4110,39 @@ let Porudzbine = (_dec = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _d
             null,
             'Opis: ',
             porudz.opis
+          ),
+          this.button(),
+          this.state.isShowingModal && _react2.default.createElement(
+            _reactModalDialog.ModalContainer,
+            { onClose: this.handleClose },
+            _react2.default.createElement(
+              _reactModalDialog.ModalDialog,
+              { onClose: this.handleClose },
+              _react2.default.createElement(
+                'h2',
+                null,
+                'Da li zelite obrisati ovu porudzbinu?'
+              ),
+              _react2.default.createElement(
+                'button',
+                { style: stylee.buttonStyle, onClick: () => this.handleClose() },
+                'Otka\u017Ei'
+              ),
+              _react2.default.createElement(
+                'button',
+                { style: stylee.buttonStyle, onClick: () => {
+                    this.brisanjePorudzbina(porudz);
+                    this.handleClose();
+                  } },
+                'Potvrdi'
+              )
+            )
           )
         ))
       )
     );
   }
-}) || _class);
+}) || _class) || _class) || _class);
 Porudzbine.propTypes = {
   data: _propTypes2.default.shape({
     allPorudzbinas: _propTypes2.default.arrayOf(_propTypes2.default.shape({
@@ -4056,6 +4152,21 @@ Porudzbine.propTypes = {
   })
 };
 exports.default = Porudzbine;
+
+const stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '20px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer'
+  }
+};
 
 /***/ }),
 /* 58 */
@@ -4547,8 +4658,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":183}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":193}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request"};
   
 
     var names = {};

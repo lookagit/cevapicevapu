@@ -5,6 +5,7 @@ query AllPorudzbinas {
     opis,
     brojTelefona,
     stavkePorudzbines{
+      id,
       kolicina,
       proizvod {
         naslov,

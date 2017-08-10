@@ -3654,9 +3654,18 @@ var NavBar = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_src_queries_allPorudzbinas_gql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_src_queries_allPorudzbinas_gql__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_src_mutations_createPorudzbina_gql__ = __webpack_require__(417);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_src_mutations_createPorudzbina_gql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_src_mutations_createPorudzbina_gql__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_graphql_tag__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_graphql_tag__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_modal_dialog__ = __webpack_require__(594);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_modal_dialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_modal_dialog__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _class;
+var _dec, _dec2, _dec3, _class;
+
+var _templateObject = _taggedTemplateLiteral(['\n  mutation deletePorudzbinu($id: ID!){\n    deletePorudzbina(id: $id){\n      id\n    }\n  }'], ['\n  mutation deletePorudzbinu($id: ID!){\n    deletePorudzbina(id: $id){\n      id\n    }\n  }']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  mutation deleteStavkePorudzbine($id: ID!){\n    deleteStavkePorudzbine(id: $id){\n      id\n    }\n  }'], ['\n  mutation deleteStavkePorudzbine($id: ID!){\n    deleteStavkePorudzbine(id: $id){\n      id\n    }\n  }']);
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3664,6 +3673,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
@@ -3671,18 +3681,121 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_5_src_queries_allPorudzbinas_gql___default.a), _dec(_class = function (_React$Component) {
+
+
+
+
+var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_5_src_queries_allPorudzbinas_gql___default.a), _dec2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_7_graphql_tag___default()(_templateObject), {
+  name: 'deletePorudzbinu'
+}), _dec3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_7_graphql_tag___default()(_templateObject2), {
+  name: 'deleteStavkePorudzbine'
+}), _dec(_class = _dec2(_class = _dec3(_class = function (_React$Component) {
   _inherits(Porudzbine, _React$Component);
 
   function Porudzbine() {
+    var _this2 = this;
+
     _classCallCheck(this, Porudzbine);
 
-    return _possibleConstructorReturn(this, (Porudzbine.__proto__ || Object.getPrototypeOf(Porudzbine)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Porudzbine.__proto__ || Object.getPrototypeOf(Porudzbine)).call(this));
+
+    _this.handleClick = function () {
+      return _this.setState({ isShowingModal: true });
+    };
+
+    _this.handleClose = function () {
+      return _this.setState({ isShowingModal: false, kolicina: '' });
+    };
+
+    _this.forceUpdateHandler = function () {
+      _this.forceUpdate();
+    };
+
+    _this.brisanjePorudzbina = function () {
+      var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(ajDi) {
+        var brisemPorudzbinu;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                console.log(ajDi.id);
+                console.log(ajDi.stavkePorudzbines);
+                _context2.next = 4;
+                return _this.props.deletePorudzbinu({
+                  variables: {
+                    id: ajDi.id
+                  }
+                });
+
+              case 4:
+                brisemPorudzbinu = _context2.sent;
+
+                ajDi.stavkePorudzbines.map(function () {
+                  var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee(stavka, index) {
+                    var brisem;
+                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                      while (1) {
+                        switch (_context.prev = _context.next) {
+                          case 0:
+                            _context.next = 2;
+                            return _this.props.deleteStavkePorudzbine({
+                              variables: {
+                                id: stavka.id
+                              }
+                            });
+
+                          case 2:
+                            brisem = _context.sent;
+
+                          case 3:
+                          case 'end':
+                            return _context.stop();
+                        }
+                      }
+                    }, _callee, _this2);
+                  }));
+
+                  return function (_x2, _x3) {
+                    return _ref2.apply(this, arguments);
+                  };
+                }());
+                _this.setState({ fakestejt: 'josjednom' });
+
+              case 7:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, _this2);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    _this.button = function () {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'button',
+        { onClick: function onClick() {
+            return _this.handleClick();
+          } },
+        'Obrisi porudzbinu'
+      );
+    };
+
+    _this.state = {
+      fakestejt: 'fejkstejt',
+      isShowingModal: false
+    };
+    return _this;
   }
 
   _createClass(Porudzbine, [{
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var data = this.props.data;
 
 
@@ -3719,6 +3832,12 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react
                     null,
                     'Proizvod:',
                     stavka.proizvod.naslov
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h4',
+                    null,
+                    'Kolicina: ',
+                    stavka.kolicina
                   )
                 );
               }),
@@ -3727,6 +3846,35 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react
                 null,
                 'Opis: ',
                 porudz.opis
+              ),
+              _this3.button(),
+              _this3.state.isShowingModal && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_8_react_modal_dialog__["ModalContainer"],
+                { onClose: _this3.handleClose },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_8_react_modal_dialog__["ModalDialog"],
+                  { onClose: _this3.handleClose },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h2',
+                    null,
+                    'Da li zelite obrisati ovu porudzbinu?'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { style: stylee.buttonStyle, onClick: function onClick() {
+                        return _this3.handleClose();
+                      } },
+                    'Otka\u017Ei'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { style: stylee.buttonStyle, onClick: function onClick() {
+                        _this3.brisanjePorudzbina(porudz);
+                        _this3.handleClose();
+                      } },
+                    'Potvrdi'
+                  )
+                )
               )
             );
           })
@@ -3736,7 +3884,7 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react
   }]);
 
   return Porudzbine;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class) || _class);
 Porudzbine.propTypes = {
   data: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.shape({
     allPorudzbinas: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.shape({
@@ -3746,6 +3894,21 @@ Porudzbine.propTypes = {
   })
 };
 
+
+var stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '20px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer'
+  }
+};
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
@@ -4383,8 +4546,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":183}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":193}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request"};
   
 
     var names = {};

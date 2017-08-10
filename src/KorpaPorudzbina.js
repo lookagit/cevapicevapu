@@ -91,6 +91,7 @@ export default class KorpaPorudzbina extends React.Component {
   }
 
 
+
   nekaFunkcija = async () => {
     const pravimPorudzbinu = await this.props.createPorudzbina({
       variables: {
