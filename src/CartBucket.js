@@ -24,7 +24,9 @@ export default class Admin extends React.Component {
       })
       console.log("OVO JE numb", this.state.cartCount);
     } else {
-
+      this.setState({
+        cartCount: "",
+      })
     }
   }
   render() {
