@@ -23,12 +23,25 @@ const usersInitial = {
   userName: '',
   password: '',
 }
+const deletedInitial = false;
 export default {
 
   // The shape that our Redux handler in `kit/lib/redux` expects is
   // { stateKey: { state, reducer() } } -- the `stateKey` is where in the `state`
   // object starts looking, `state` is the initial state, and `reducer()` is the
   // function that handles the 'listening' to Redux to know how to manipulate state
+  deleted: {
+    state: deletedInitial,
+    reducer(state = deletedInitial, action) {
+      if(action.type === 'DELETE_PROIZVOD') {
+        state = true;
+      } else if (action.type === 'DELETION_ACK') {
+        state = false;
+      }
+      return state;
+    }
+  },
+
   users: {
     state: usersInitial,
     reducer(state = usersInitial, action) {
