@@ -27,14 +27,14 @@ export default class Korpa extends Component {
       <div>
         <TopHero title="Dostava" subtitle="Naručite nešto kod nas skroz dobro" bgImage={{backgroundImage: 'url("'+bgImg+'")'}} />
         <div className={scss.korpa}>
-          <Grid>
-            <Row className={scss.korpaItems}>
+          <Grid style={{width: '100%'}}>
+            <Row style={{width: '100%'}} className={scss.korpaItems}>
               {this.props.orders && this.props.orders.map((proiz, index) => (
                 <Col xs={12} sm={6} md={4} lg={3} className={scss.korpaItem}>
                   <img src={proiz.urlSlike} width="150px" />
-                  <h3>{proiz.naslov}</h3>
+                  <h3 style={{color: 'white'}}>{proiz.naslov}</h3>
                   <h3>Kolicina: {proiz.kolicina}</h3>
-                  <h3>Cena: {proiz.cena}</h3>
+                  <h3 style={{color: 'orange', fontSize: '23px'}}>Cena: {proiz.cena} RSD</h3>
                   <Trash className={scss.trash} onClick={() => this.izbrisiItem(index)} />
                 </Col>
               ))}

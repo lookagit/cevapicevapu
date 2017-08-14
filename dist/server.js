@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 95);
+/******/ 	return __webpack_require__(__webpack_require__.s = 98);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -790,28 +790,45 @@ var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(22);
 
+var _subscriptionsTransportWs = __webpack_require__(96);
+
+var _ws = __webpack_require__(97);
+
+var _ws2 = _interopRequireDefault(_ws);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // ----------------------
 
-// Create a new Apollo network interface, to point to our API server.
-// Note:  By default in this kit, we'll connect to a sample endpoint that
-// repsonds with simple messages.  Update [root]/config.js as needed.
 // ----------------------
 // IMPORTS
 
 // Apollo client library
+const wsClient = new _subscriptionsTransportWs.SubscriptionClient('wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n', {
+  reconnect: true,
+  connectionParams: {
+    authToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDEwNzA4NDUsImNsaWVudElkIjoiY2o1a3l0bmc2amFveTAxMzRva3dndnoyeSJ9.4CZKrxqHXKEufrb-ALU9twDvLIeBgLXvViWbkaVm9Sc"
+  }
+}, _ws2.default);
+
+// Create a new Apollo network interface, to point to our API server.
+// Note:  By default in this kit, we'll connect to a sample endpoint that
+// repsonds with simple messages.  Update [root]/config.js as needed.
+
+
+// Custom configuration/settings
 const networkInterface = (0, _reactApollo.createNetworkInterface)({
   uri: _project.APOLLO.uri
 });
 
+const networkInterfaceWithSubscriptions = (0, _subscriptionsTransportWs.addGraphQLSubscriptions)(networkInterface, wsClient);
+
 // Helper function to create a new Apollo client, by merging in
 // passed options alongside the defaults
-
-
-// Custom configuration/settings
 function createClient(opt = {}) {
   return new _reactApollo.ApolloClient(Object.assign({
     reduxRootSelector: state => state.apollo,
-    networkInterface
+    networkInterface: networkInterfaceWithSubscriptions
   }, opt));
 }
 
@@ -2821,17 +2838,17 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
         { className: _styles2.default.korpa },
         _react2.default.createElement(
           _reactStyledFlexboxgrid.Grid,
-          null,
+          { style: { width: '100%' } },
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Row,
-            { className: _styles2.default.korpaItems },
+            { style: { width: '100%' }, className: _styles2.default.korpaItems },
             this.props.orders && this.props.orders.map((proiz, index) => _react2.default.createElement(
               _reactStyledFlexboxgrid.Col,
               { xs: 12, sm: 6, md: 4, lg: 3, className: _styles2.default.korpaItem },
               _react2.default.createElement('img', { src: proiz.urlSlike, width: '150px' }),
               _react2.default.createElement(
                 'h3',
-                null,
+                { style: { color: 'white' } },
                 proiz.naslov
               ),
               _react2.default.createElement(
@@ -2842,9 +2859,10 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
               ),
               _react2.default.createElement(
                 'h3',
-                null,
+                { style: { color: 'orange', fontSize: '23px' } },
                 'Cena: ',
-                proiz.cena
+                proiz.cena,
+                ' RSD'
               ),
               _react2.default.createElement(_trash2.default, { className: _styles2.default.trash, onClick: () => this.izbrisiItem(index) })
             ))
@@ -3151,15 +3169,6 @@ let MainMenu = class MainMenu extends _react2.default.Component {
             _reactRouterDom.Link,
             { to: '/page/about', onClick: this.opener },
             'O nama'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/page/jelovnik', onClick: this.opener },
-            'Jelovnik'
           )
         ),
         _react2.default.createElement(
@@ -4034,7 +4043,13 @@ var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(6);
 
+var _reversejs = __webpack_require__(95);
+
+var _reversejs2 = _interopRequireDefault(_reversejs);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';*/
 
 let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.deleted })), _dec2 = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = _dec2(_class = class Porudzbine extends _react2.default.Component {
   constructor() {
@@ -4044,6 +4059,22 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
       isShowingModal: false
     };
   }
+
+  /*
+    componentWillMount() {
+      this.props.data.subscribeToMore({
+        document: Porudzbina,
+        updateQuery: (prev, {subscriptionData}) => {
+          if(!subscriptionData.data) {
+            return prev;
+          }
+          const newPorudzbina = subscriptionData.data.Porudzbina;
+          return {
+            allPorudzbinas: [newPorudzbina, ...prev.allPorudzbinas],
+          };
+        },
+      });
+    }*/
 
   componentWillReceiveProps(newProps) {
     if (newProps.deleted) {
@@ -4059,13 +4090,22 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
 
     console.log('Ja sam data ', data);
 
+    const porudzbine = {};
+
+    if (data.allPorudzbinas) {
+      porudzbine.lista = data.allPorudzbinas;
+      console.log("Bez revers", porudzbine.lista);
+      porudzbine.revers = (0, _reversejs2.default)(porudzbine.lista);
+      console.log("Revers", porudzbine.revers);
+    }
+
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Col,
       { xs: 12, sm: 12, md: 8, lg: 8 },
       _react2.default.createElement(
         'div',
         { className: _porudzbine2.default.porudzbine },
-        data.allPorudzbinas && data.allPorudzbinas.map((porudz, index) => _react2.default.createElement(
+        porudzbine.revers && porudzbine.revers.map((porudz, index) => _react2.default.createElement(
           'div',
           { className: _porudzbine2.default.proizvodItem },
           _react2.default.createElement(_PorudzbineSingle2.default, { porudzbina: porudz })
@@ -4956,6 +4996,24 @@ module.exports = require("redux-thunk");
 
 /***/ }),
 /* 95 */
+/***/ (function(module, exports) {
+
+module.exports = require("reversejs");
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports) {
+
+module.exports = require("ws");
+
+/***/ }),
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21);

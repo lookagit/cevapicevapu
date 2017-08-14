@@ -1,0 +1,19 @@
+subscription {
+  Porudzbina {
+    node {
+      id,
+    adresa,
+    opis,
+    brojTelefona,
+    stavkePorudzbines{
+      id,
+      kolicina,
+      proizvod {
+        naslov,
+      }
+
+    }
+    }
+
+  }
+}
