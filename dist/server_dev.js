@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 95);
+/******/ 	return __webpack_require__(__webpack_require__.s = 97);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -429,7 +429,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(85);
+const path = __webpack_require__(86);
 
 // ----------------------
 
@@ -505,39 +505,39 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(77);
+__webpack_require__(78);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(86);
+var _server = __webpack_require__(87);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(79);
+var _koa = __webpack_require__(80);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(5);
 
-var _koaSend = __webpack_require__(82);
+var _koaSend = __webpack_require__(83);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(80);
+var _koaHelmet = __webpack_require__(81);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(81);
+var _koaRouter = __webpack_require__(82);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(83);
+var _microseconds = __webpack_require__(84);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(90);
+var _reactRouter = __webpack_require__(91);
 
 var _reactHelmet = __webpack_require__(15);
 
@@ -786,31 +786,39 @@ var _project = __webpack_require__(22);
 
 var _subscriptionsTransportWs = __webpack_require__(96);
 
-// Custom configuration/settings
-const wsClient = new _subscriptionsTransportWs.SubscriptionClient(`wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n`, {
-  reconnect: true
-});
-
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
 // repsonds with simple messages.  Update [root]/config.js as needed.
-// ----------------------
-// IMPORTS
 
-// Apollo client library
+
+// Custom configuration/settings
 const networkInterface = (0, _reactApollo.createNetworkInterface)({
   uri: _project.APOLLO.uri
 });
 
-const networkInterfaceWithSubscriptions = (0, _subscriptionsTransportWs.addGraphQLSubscriptions)(networkInterface, wsClient);
-
 // Helper function to create a new Apollo client, by merging in
 // passed options alongside the defaults
+
+// ----------------------
+// IMPORTS
+
+// Apollo client library
 function createClient(opt = {}) {
-  return new _reactApollo.ApolloClient(Object.assign({
-    reduxRootSelector: state => state.apollo,
-    networkInterface: networkInterfaceWithSubscriptions
-  }, opt));
+  if (process.browser) {
+    const wsClient = new _subscriptionsTransportWs.SubscriptionClient(`wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n`, {
+      reconnect: true
+    });
+    const networkInterfaceWithSubscriptions = (0, _subscriptionsTransportWs.addGraphQLSubscriptions)(networkInterface, wsClient);
+    return new _reactApollo.ApolloClient(Object.assign({
+      reduxRootSelector: state => state.apollo,
+      networkInterface: networkInterfaceWithSubscriptions
+    }, opt));
+  } else {
+    return new _reactApollo.ApolloClient(Object.assign({
+      reduxRootSelector: state => state.apollo,
+      networkInterface
+    }, opt));
+  }
 }
 
 // Creates a new browser client
@@ -837,7 +845,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(74);
+var _boxen = __webpack_require__(75);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
@@ -845,7 +853,7 @@ var _chalk = __webpack_require__(14);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(76);
+var _ip = __webpack_require__(77);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -1016,9 +1024,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(92);
+var _redux = __webpack_require__(93);
 
-var _reduxThunk = __webpack_require__(93);
+var _reduxThunk = __webpack_require__(94);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1388,7 +1396,7 @@ var _sarajevskiCevapDrama = __webpack_require__(67);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(84);
+var _passwordHash = __webpack_require__(85);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1655,7 +1663,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _shoppingCart = __webpack_require__(87);
+var _shoppingCart = __webpack_require__(88);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2362,9 +2370,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _noImportant = __webpack_require__(73);
+var _noImportant = __webpack_require__(74);
 
-var _reactImages = __webpack_require__(89);
+var _reactImages = __webpack_require__(90);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2562,7 +2570,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _googleMapReact = __webpack_require__(75);
+var _googleMapReact = __webpack_require__(76);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -2791,7 +2799,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(88);
+var _trash = __webpack_require__(89);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3765,7 +3773,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(6);
 
-var _jsMd = __webpack_require__(78);
+var _jsMd = __webpack_require__(79);
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -4008,10 +4016,6 @@ var _allPorudzbinas = __webpack_require__(70);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
 
-var _createPorudzbina = __webpack_require__(69);
-
-var _createPorudzbina2 = _interopRequireDefault(_createPorudzbina);
-
 var _graphqlTag = __webpack_require__(8);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
@@ -4024,11 +4028,11 @@ var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(6);
 
-var _reversejs = __webpack_require__(94);
+var _reversejs = __webpack_require__(95);
 
 var _reversejs2 = _interopRequireDefault(_reversejs);
 
-var _PorudzbinaAdd = __webpack_require__(97);
+var _PorudzbinaAdd = __webpack_require__(73);
 
 var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
 
@@ -4043,17 +4047,16 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.data.subscribeToMore({
       document: _PorudzbinaAdd2.default,
       updateQuery: (prev, { subscriptionData }) => {
+        if (subscriptionData.data) {
+          this.props.data.refetch();
+        }
         if (!subscriptionData.data) {
           return prev;
         }
-        const newPorudzbina = subscriptionData.data.Porudzbina;
-        return {
-          allPorudzbinas: [newPorudzbina, ...prev.allPorudzbinas]
-        };
       }
     });
   }
@@ -4070,15 +4073,11 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
   render() {
     const { data } = this.props;
 
-    console.log('Ja sam data ', data);
-
     const porudzbine = {};
 
     if (data.allPorudzbinas) {
       porudzbine.lista = data.allPorudzbinas;
-      console.log("Bez revers", porudzbine.lista);
       porudzbine.revers = (0, _reversejs2.default)(porudzbine.lista);
-      console.log("Revers", porudzbine.revers);
     }
 
     return _react2.default.createElement(
@@ -4451,7 +4450,7 @@ var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(91);
+var _reactScrollableAnchor = __webpack_require__(92);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4736,33 +4735,7 @@ module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.7e48
 module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
 
 /***/ }),
-/* 69 */
-/***/ (function(module, exports) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"adresa"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"defaultValue":null},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"brojTelefona"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},"defaultValue":null}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createPorudzbina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"adresa"},"value":{"kind":"Variable","name":{"kind":"Name","value":"adresa"}}},{"kind":"Argument","name":{"kind":"Name","value":"brojTelefona"},"value":{"kind":"Variable","name":{"kind":"Name","value":"brojTelefona"}}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":129}};
-    doc.loc.source = {"body":"mutation($adresa: String!, $brojTelefona: Int!) {\n  createPorudzbina(adresa: $adresa, brojTelefona: $brojTelefona){\n    id\n  }\n}\n","name":"GraphQL request"};
-  
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  
-module.exports = doc;
-
-/***/ }),
+/* 69 */,
 /* 70 */
 /***/ (function(module, exports) {
 
@@ -4848,154 +4821,9 @@ module.exports = doc;
 /* 73 */
 /***/ (function(module, exports) {
 
-module.exports = require("aphrodite/no-important");
 
-/***/ }),
-/* 74 */
-/***/ (function(module, exports) {
-
-module.exports = require("boxen");
-
-/***/ }),
-/* 75 */
-/***/ (function(module, exports) {
-
-module.exports = require("google-map-react");
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports) {
-
-module.exports = require("ip");
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-fetch");
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports) {
-
-module.exports = require("js-md5");
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa");
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa-helmet");
-
-/***/ }),
-/* 81 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa-router");
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports) {
-
-module.exports = require("koa-send");
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports) {
-
-module.exports = require("microseconds");
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports) {
-
-module.exports = require("password-hash");
-
-/***/ }),
-/* 85 */
-/***/ (function(module, exports) {
-
-module.exports = require("path");
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom/server");
-
-/***/ }),
-/* 87 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/lib/fa/shopping-cart");
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-icons/lib/fa/trash");
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-images");
-
-/***/ }),
-/* 90 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router");
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-scrollable-anchor");
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports) {
-
-module.exports = require("reversejs");
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(20);
-
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports) {
-
-module.exports = require("subscriptions-transport-ws");
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":201}};
-    doc.loc.source = {"body":"subscription {\n  Porudzbina {\n    node {\n      id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n    }\n\n  }\n}\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":244}};
+    doc.loc.source = {"body":"subscription {\n  Porudzbina {\n\t\t\tnode {\n        id,\n        adresa,\n        brojTelefona,\n        opis,\n        stavkePorudzbines {\n          id,\n          kolicina,\n          proizvod {\n            naslov\n          }\n        }\n      }\n    }\n}\n","name":"GraphQL request"};
   
 
     var names = {};
@@ -5015,6 +4843,151 @@ module.exports = require("subscriptions-transport-ws");
     }
   
 module.exports = doc;
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+module.exports = require("aphrodite/no-important");
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+module.exports = require("boxen");
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+module.exports = require("google-map-react");
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports) {
+
+module.exports = require("ip");
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-fetch");
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports) {
+
+module.exports = require("js-md5");
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa");
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-helmet");
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-router");
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+module.exports = require("koa-send");
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+module.exports = require("microseconds");
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports) {
+
+module.exports = require("password-hash");
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/shopping-cart");
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/trash");
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-images");
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-scrollable-anchor");
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports) {
+
+module.exports = require("reversejs");
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(20);
+
 
 /***/ })
 /******/ ]);

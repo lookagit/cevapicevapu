@@ -4,7 +4,6 @@ import scss from './css/porudzbine.scss';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import allPorudzbinas from 'src/queries/allPorudzbinas.gql';
-import createPorudzbina from 'src/mutations/createPorudzbina.gql';
 import gql from 'graphql-tag';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import PorudzbineSingle from './PorudzbineSingle';
@@ -26,17 +25,16 @@ export default class Porudzbine extends React.Component {
   };
 
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.data.subscribeToMore({
       document: PorudzbinaAdd,
       updateQuery: (prev, {subscriptionData}) => {
+        if(subscriptionData.data) {
+          this.props.data.refetch();
+        }
         if(!subscriptionData.data) {
           return prev;
         }
-        const newPorudzbina = subscriptionData.data.Porudzbina;
-        return {
-          allPorudzbinas: [newPorudzbina, ...prev.allPorudzbinas],
-        };
       },
     });
   }
@@ -65,15 +63,11 @@ export default class Porudzbine extends React.Component {
   render () {
     const { data } = this.props;
 
-    console.log('Ja sam data ', data);
-
     const porudzbine = {};
 
     if(data.allPorudzbinas) {
       porudzbine.lista = data.allPorudzbinas;
-      console.log("Bez revers" , porudzbine.lista);
       porudzbine.revers = reverse(porudzbine.lista);
-      console.log("Revers" , porudzbine.revers);
     }
 
     return (

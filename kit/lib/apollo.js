@@ -9,9 +9,6 @@ import { APOLLO } from 'config/project';
 import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws';
 
 
-const wsClient = new SubscriptionClient(`wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n`, {
-  reconnect: true
-})
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -20,19 +17,32 @@ const networkInterface = createNetworkInterface({
   uri: APOLLO.uri,
 });
 
-const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(
-  networkInterface,
-  wsClient
-);
+
 
 
 // Helper function to create a new Apollo client, by merging in
 // passed options alongside the defaults
+
 function createClient(opt = {}) {
-  return new ApolloClient(Object.assign({
-    reduxRootSelector: state => state.apollo,
-    networkInterface:networkInterfaceWithSubscriptions,
-  }, opt));
+  if(process.browser) {
+    const wsClient = new SubscriptionClient(`wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n`, {
+      reconnect: true
+    });
+    const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(
+      networkInterface,
+      wsClient
+    );
+    return new ApolloClient(Object.assign({
+      reduxRootSelector: state => state.apollo,
+      networkInterface: networkInterfaceWithSubscriptions,
+    }, opt));
+  } else {
+    return new ApolloClient(Object.assign({
+      reduxRootSelector: state => state.apollo,
+      networkInterface,
+    }, opt));
+  }
+
 }
 
 // Creates a new browser client
