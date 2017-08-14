@@ -10,7 +10,7 @@ import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import PorudzbineSingle from './PorudzbineSingle';
 import { connect } from 'react-redux';
 import reverse from 'reversejs';
-/*import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';*/
+import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';
 
 
 
@@ -25,10 +25,10 @@ export default class Porudzbine extends React.Component {
     }
   };
 
-/*
+
   componentWillMount() {
     this.props.data.subscribeToMore({
-      document: Porudzbina,
+      document: PorudzbinaAdd,
       updateQuery: (prev, {subscriptionData}) => {
         if(!subscriptionData.data) {
           return prev;
@@ -39,7 +39,7 @@ export default class Porudzbine extends React.Component {
         };
       },
     });
-  }*/
+  }
 
   componentWillReceiveProps(newProps) {
     if(newProps.deleted) {
