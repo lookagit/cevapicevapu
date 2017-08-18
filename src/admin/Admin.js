@@ -94,9 +94,7 @@ export default class Admin extends React.Component {
         <p>
          <input value={this.state.enteredPin} type="password" placeholder="Password" onChange={this.handleChangePass} type="text" />
         </p>
-        <p>
          <h3 onClick={this.checkPin}>Unesite Šifru</h3>
-        </p>
        </div>
      </div>;
     }else {

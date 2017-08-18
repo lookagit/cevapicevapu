@@ -3451,61 +3451,9 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
   _inherits(Admin, _React$Component);
 
   function Admin(props) {
-    var _this2 = this;
-
     _classCallCheck(this, Admin);
 
     var _this = _possibleConstructorReturn(this, (Admin.__proto__ || Object.getPrototypeOf(Admin)).call(this, props));
-
-    _this.handleChangePass = function (event) {
-      _this.setState({ enteredPin: event.target.value });
-      var password = __WEBPACK_IMPORTED_MODULE_10_js_md5___default()(event.target.value);
-      _this.props.dispatch({
-        type: 'CHANGE_PASSWORD',
-        password: password
-      });
-    };
-
-    _this.handleChangeUser = function (event) {
-      _this.setState({ enteredUsername: event.target.value });
-      _this.props.dispatch({
-        type: 'CHANGE_USERNAME',
-        userName: event.target.value
-      });
-    };
-
-    _this.checkPin = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var respons, userName, password;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return _this.props.data.refetch();
-
-            case 2:
-              respons = _context.sent;
-
-              if (!respons.data.loading && respons.data.allUserAdmins.length) {
-                userName = respons.data.allUserAdmins[0].userName;
-                password = respons.data.allUserAdmins[0].password;
-
-                localStorage.setItem("userName", userName);
-                localStorage.setItem("password", password);
-                _this.setState({
-                  inputOn: true
-                });
-              } else {
-                console.log("ZAO MI JE NISI ");
-              }
-
-            case 4:
-            case 'end':
-              return _context.stop();
-          }
-        }
-      }, _callee, _this2);
-    }));
 
     _this.state = {
       pin: '',
@@ -3513,13 +3461,13 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
       enteredPin: '',
       enteredUsername: ''
     };
+    _this.checkPin = _this._checkPin.bind(_this);
+    _this.handleChangePass = _this._handleChangePass.bind(_this);
+    _this.handleChangeUser = _this._handleChangeUser.bind(_this);
     return _this;
   }
 
   _createClass(Admin, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {}
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (typeof window !== 'undefined' && window.document) {
@@ -3534,9 +3482,70 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
       }
     }
   }, {
+    key: '_handleChangePass',
+    value: function _handleChangePass(event) {
+      this.setState({ enteredPin: event.target.value });
+      var password = __WEBPACK_IMPORTED_MODULE_10_js_md5___default()(event.target.value);
+      this.props.dispatch({
+        type: 'CHANGE_PASSWORD',
+        password: password
+      });
+    }
+  }, {
+    key: '_handleChangeUser',
+    value: function _handleChangeUser(event) {
+      this.setState({ enteredUsername: event.target.value });
+      this.props.dispatch({
+        type: 'CHANGE_USERNAME',
+        userName: event.target.value
+      });
+    }
+  }, {
+    key: '_checkPin',
+    value: function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var respons, userName, password;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.props.data.refetch();
+
+              case 2:
+                respons = _context.sent;
+
+                if (!respons.data.loading && respons.data.allUserAdmins.length) {
+                  userName = respons.data.allUserAdmins[0].userName;
+                  password = respons.data.allUserAdmins[0].password;
+
+                  localStorage.setItem("userName", userName);
+                  localStorage.setItem("password", password);
+                  this.setState({
+                    inputOn: true
+                  });
+                } else {
+                  console.log("ZAO MI JE NISI ");
+                }
+
+              case 4:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function _checkPin() {
+        return _ref.apply(this, arguments);
+      }
+
+      return _checkPin;
+    }()
+  }, {
     key: 'render',
     value: function render() {
-      var putinput = null;
+      var putinput = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
       console.log("OVO JE PROPS", this.props);
       if (!this.state.inputOn) {
         putinput = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -3546,27 +3555,19 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
             'div',
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'form',
+              'p',
               null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', _defineProperty({ value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass }, 'type', 'text'))
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'p',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'h3',
-                  { onClick: this.checkPin },
-                  'Unesite \u0160ifru'
-                )
-              )
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'p',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', _defineProperty({ value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass }, 'type', 'text'))
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h3',
+              { onClick: this.checkPin },
+              'Unesite \u0160ifru'
             )
           )
         );
