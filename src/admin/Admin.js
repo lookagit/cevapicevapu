@@ -84,6 +84,17 @@ export default class Admin extends React.Component {
       putinput =
       <div className={scss.adminLog}>
        <div>
+         <form>
+           <p>
+             <input value={() => this.state.enteredUsername()} placeholder="Username" onChange={this.handleChangeUser} type="text" />
+           </p>
+           <p>
+             <input value={() => this.state.enteredPin()} type="password" placeholder="Password" onChange={this.handleChangePass} type="text" />
+           </p>
+           <p>
+             <h3 onClick={() => this.checkPin()}>Unesite Šifru</h3>
+           </p>
+         </form>
        </div>
      </div>;
     }else {

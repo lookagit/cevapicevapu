@@ -3949,7 +3949,33 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
       putinput = _react2.default.createElement(
         'div',
         { className: _styles2.default.adminLog },
-        _react2.default.createElement('div', null)
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'form',
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement('input', { value: () => this.state.enteredUsername(), placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement('input', { value: () => this.state.enteredPin(), type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'h3',
+                { onClick: () => this.checkPin() },
+                'Unesite \u0160ifru'
+              )
+            )
+          )
+        )
       );
     } else {
       putinput = _react2.default.createElement(
