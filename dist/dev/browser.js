@@ -3562,13 +3562,9 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
                 'p',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'a',
-                  { href: '#' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'h3',
-                    { onClick: this.checkPin },
-                    'Unesite \u0160ifru'
-                  )
+                  'h3',
+                  { onClick: this.checkPin },
+                  'Unesite \u0160ifru'
                 )
               )
             )

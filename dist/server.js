@@ -3908,13 +3908,9 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
               'p',
               null,
               _react2.default.createElement(
-                'a',
-                { href: '#' },
-                _react2.default.createElement(
-                  'h3',
-                  { onClick: this.checkPin },
-                  'Unesite \u0160ifru'
-                )
+                'h3',
+                { onClick: this.checkPin },
+                'Unesite \u0160ifru'
               )
             )
           )
