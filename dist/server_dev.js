@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 95);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -784,7 +784,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(95);
+var _subscriptionsTransportWs = __webpack_require__(94);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -3007,13 +3007,30 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
   }
 
   render() {
-    return _react2.default.createElement(
-      _reactStyledFlexboxgrid.Row,
-      null,
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Col,
-        { xs: 12 },
+    let forma;
+    if (this.state.poslato) {
+      forma = _react2.default.createElement(
+        'div',
+        { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
         _react2.default.createElement(
+          'h2',
+          null,
+          'Uspesno ste poslali porudzbinu!'
+        )
+      );
+    } else {
+      if (this.props.orders.length < 1) {
+        forma = _react2.default.createElement(
+          'div',
+          { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Niste jos nista porucili kod nas!'
+          )
+        );
+      } else {
+        forma = _react2.default.createElement(
           'form',
           { className: _styles2.default.korpaForm },
           _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato }),
@@ -3043,7 +3060,16 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
               'POSALJI'
             )
           )
-        )
+        );
+      }
+    }
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Row,
+      null,
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Col,
+        { xs: 12 },
+        forma
       )
     );
   }
@@ -3876,9 +3902,13 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
               'p',
               null,
               _react2.default.createElement(
-                'button',
-                { onClick: this.checkPin },
-                'Unesite \u0160ifru'
+                'a',
+                { href: '#' },
+                _react2.default.createElement(
+                  'h3',
+                  { onClick: this.checkPin },
+                  'Unesite \u0160ifru'
+                )
               )
             )
           )
@@ -4028,10 +4058,6 @@ var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(6);
 
-var _reversejs = __webpack_require__(94);
-
-var _reversejs2 = _interopRequireDefault(_reversejs);
-
 var _PorudzbinaAdd = __webpack_require__(72);
 
 var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
@@ -4077,7 +4103,7 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
 
     if (data.allPorudzbinas) {
       porudzbine.lista = data.allPorudzbinas;
-      porudzbine.revers = (0, _reversejs2.default)(porudzbine.lista);
+      porudzbine.revers = porudzbine.lista;
     }
 
     return _react2.default.createElement(
@@ -4192,6 +4218,7 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
   }
 
   render() {
+    let datum = Date.parse(this.props.porudzbina.createdAt);
     return _react2.default.createElement(
       'div',
       null,
@@ -4739,8 +4766,8 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":193}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":208}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4973,16 +5000,10 @@ module.exports = require("redux-thunk");
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("reversejs");
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports) {
-
 module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(20);

@@ -4,6 +4,7 @@ query AllPorudzbinas {
     adresa,
     opis,
     brojTelefona,
+    createdAt,
     stavkePorudzbines{
       id,
       kolicina,

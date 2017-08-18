@@ -8,9 +8,7 @@ import gql from 'graphql-tag';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import PorudzbineSingle from './PorudzbineSingle';
 import { connect } from 'react-redux';
-import reverse from 'reversejs';
 import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';
-
 
 
 @connect(state => ({ deleted: state.deleted }))
@@ -67,7 +65,7 @@ export default class Porudzbine extends React.Component {
 
     if(data.allPorudzbinas) {
       porudzbine.lista = data.allPorudzbinas;
-      porudzbine.revers = reverse(porudzbine.lista);
+      porudzbine.revers = porudzbine.lista;
     }
 
     return (

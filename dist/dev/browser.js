@@ -211,7 +211,7 @@ var BUNDLE_ANALYZER = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_apollo__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react_apollo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_config_project__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws__ = __webpack_require__(686);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws__ = __webpack_require__(685);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws__);
 // ----------------------
 // IMPORTS
@@ -2527,13 +2527,30 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
     value: function render() {
       var _this3 = this;
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["b" /* Row */],
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["c" /* Col */],
-          { xs: 12 },
+      var forma = void 0;
+      if (this.state.poslato) {
+        forma = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h2',
+            null,
+            'Uspesno ste poslali porudzbinu!'
+          )
+        );
+      } else {
+        if (this.props.orders.length < 1) {
+          forma = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h2',
+              null,
+              'Niste jos nista porucili kod nas!'
+            )
+          );
+        } else {
+          forma = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'form',
             { className: __WEBPACK_IMPORTED_MODULE_7__styles_scss___default.a.korpaForm },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__["a" /* default */], { poslato: this.state.poslato }),
@@ -2563,7 +2580,16 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
                 'POSALJI'
               )
             )
-          )
+          );
+        }
+      }
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["b" /* Row */],
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["c" /* Col */],
+          { xs: 12 },
+          forma
         )
       );
     }
@@ -3536,9 +3562,13 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
                 'p',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'button',
-                  { onClick: this.checkPin },
-                  'Unesite \u0160ifru'
+                  'a',
+                  { href: '#' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h3',
+                    { onClick: this.checkPin },
+                    'Unesite \u0160ifru'
+                  )
                 )
               )
             )
@@ -3682,10 +3712,8 @@ var NavBar = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_modal_dialog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_modal_dialog__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__PorudzbineSingle__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_redux__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_reversejs__ = __webpack_require__(675);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_reversejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_reversejs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__subscriptions_PorudzbinaAdd_gql__ = __webpack_require__(435);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__subscriptions_PorudzbinaAdd_gql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__subscriptions_PorudzbinaAdd_gql__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__subscriptions_PorudzbinaAdd_gql__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__subscriptions_PorudzbinaAdd_gql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__subscriptions_PorudzbinaAdd_gql__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _dec2, _class;
@@ -3695,7 +3723,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -3732,7 +3759,7 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react
       var _this2 = this;
 
       this.props.data.subscribeToMore({
-        document: __WEBPACK_IMPORTED_MODULE_11__subscriptions_PorudzbinaAdd_gql___default.a,
+        document: __WEBPACK_IMPORTED_MODULE_10__subscriptions_PorudzbinaAdd_gql___default.a,
         updateQuery: function updateQuery(prev, _ref) {
           var subscriptionData = _ref.subscriptionData;
 
@@ -3765,7 +3792,7 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react
 
       if (data.allPorudzbinas) {
         porudzbine.lista = data.allPorudzbinas;
-        porudzbine.revers = __WEBPACK_IMPORTED_MODULE_10_reversejs___default()(porudzbine.lista);
+        porudzbine.revers = porudzbine.lista;
       }
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -3948,6 +3975,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
     value: function render() {
       var _this3 = this;
 
+      var datum = Date.parse(this.props.porudzbina.createdAt);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
@@ -4647,8 +4675,8 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":193}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":208}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4756,6 +4784,13 @@ module.exports = doc;
 
 /***/ }),
 
+/***/ 700:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
 /***/ 701:
 /***/ (function(module, exports) {
 
@@ -4771,13 +4806,6 @@ module.exports = doc;
 /***/ }),
 
 /***/ 703:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 704:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(272);
@@ -4785,5 +4813,5 @@ module.exports = __webpack_require__(272);
 
 /***/ })
 
-},[704]);
+},[703]);
 //# sourceMappingURL=browser.js.map

@@ -66,6 +66,7 @@ export default class PorudzbineSingle extends React.Component {
 
 
   render() {
+    let datum = Date.parse(this.props.porudzbina.createdAt);
     return(
       <div>
         <h4>Adresa: {this.props.porudzbina.adresa}</h4>

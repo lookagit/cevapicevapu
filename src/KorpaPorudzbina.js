@@ -133,27 +133,37 @@ export default class KorpaPorudzbina extends React.Component {
   }
 
   render() {
+    let forma;
+    if(this.state.poslato) {
+      forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Uspesno ste poslali porudzbinu!</h2></div>;
+    } else {
+      if (this.props.orders.length < 1) {
+          forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Niste jos nista porucili kod nas!</h2></div>;
+      }
+      else {
+        forma = <form className={scss.korpaForm}>
+          <PorudzbinaConfirm poslato={this.state.poslato} />
+          <p>
+            <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
+          </p>
+          <p>
+            <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
+          </p>
+          <p>
+           <textarea onChange={this.izmeniOpis} placeholder="Opis" />
+         </p>
+          <p>
+            <button type="button" onClick={() => {
+              this.nekaFunkcija();
+            }}>POSALJI</button>
+          </p>
+        </form>;
+      }
+    }
     return(
       <Row>
        <Col xs={12}>
-
-         <form className={scss.korpaForm}>
-           <PorudzbinaConfirm poslato={this.state.poslato} />
-           <p>
-             <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
-           </p>
-           <p>
-             <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />
-           </p>
-           <p>
-            <textarea onChange={this.izmeniOpis} placeholder="Opis" />
-          </p>
-           <p>
-             <button type="button" onClick={() => {
-               this.nekaFunkcija();
-             }}>POSALJI</button>
-           </p>
-         </form>
+        {forma}
        </Col>
      </Row>
     );

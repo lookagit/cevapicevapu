@@ -6,8 +6,9 @@
   "assets/img/pozadina.jpg": "/assets/img/pozadina.555fb9005bc5a8b46130573b5ffc075c.jpg",
   "assets/img/sarajevski-cevap-drama.jpg": "/assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg",
   "assets/img/serbianburger.jpg": "/assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg",
-  "browser.css": "/assets/css/style.be3437ba54a39520c1762529373c3bf9.css",
-  "browser.js": "/browser.44535e176f416bb5ac45.js",
+  "browser.css": "/assets/css/style.570ff0e976f97d9b8ca69a9f6e642740.css",
+  "browser.js": "/browser.7898f0ec86c2617f2292.js",
   "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
-  "vendor.js": "/vendor.06640db9518ccf7293be.js"
+  "manifest.json": "/../chunk-manifest.json",
+  "vendor.js": "/vendor.420d071f813ba6d9e61a.js"
 }

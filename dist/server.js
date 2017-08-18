@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 98);
+/******/ 	return __webpack_require__(__webpack_require__.s = 96);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -345,7 +345,7 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039
 
 
     var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":87}};
-    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request"};
+    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -735,21 +735,21 @@ exports.default = async function server() {
     // Set-up a general purpose /ping route to check the server is alive
     get('/ping', async ctx => {
       ctx.body = 'pong';
-    }
+    })
 
     // Favicon.ico.  By default, we'll serve this as a 204 No Content.
     // If /favicon.ico is available as a static file, it'll try that first
-    ).get('/favicon.ico', async ctx => {
+    .get('/favicon.ico', async ctx => {
       ctx.res.statusCode = 204;
     }),
     app: new _koa2.default()
 
     // Preliminary security for HTTP headers
-    .use((0, _koaHelmet2.default)()
+    .use((0, _koaHelmet2.default)())
 
     // Error wrapper.  If an error manages to slip through the middleware
     // chain, it will be caught and logged back here
-    ).use(async (ctx, next) => {
+    .use(async (ctx, next) => {
       try {
         await next();
       } catch (e) {
@@ -759,11 +759,11 @@ exports.default = async function server() {
         console.log('Error', e.message);
         ctx.body = 'There was an error. Please try again later.';
       }
-    }
+    })
 
     // It's useful to see how long a request takes to respond.  Add the
     // timing to a HTTP Response header
-    ).use(async (ctx, next) => {
+    .use(async (ctx, next) => {
       const start = _microseconds2.default.now();
       await next();
       const end = _microseconds2.default.parse(_microseconds2.default.since(start));
@@ -790,26 +790,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(96);
-
-var _ws = __webpack_require__(97);
-
-var _ws2 = _interopRequireDefault(_ws);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// ----------------------
-
-// ----------------------
-// IMPORTS
-
-// Apollo client library
-const wsClient = new _subscriptionsTransportWs.SubscriptionClient('wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n', {
-  reconnect: true,
-  connectionParams: {
-    authToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDEwNzA4NDUsImNsaWVudElkIjoiY2o1a3l0bmc2amFveTAxMzRva3dndnoyeSJ9.4CZKrxqHXKEufrb-ALU9twDvLIeBgLXvViWbkaVm9Sc"
-  }
-}, _ws2.default);
+var _subscriptionsTransportWs = __webpack_require__(95);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -821,15 +802,29 @@ const networkInterface = (0, _reactApollo.createNetworkInterface)({
   uri: _project.APOLLO.uri
 });
 
-const networkInterfaceWithSubscriptions = (0, _subscriptionsTransportWs.addGraphQLSubscriptions)(networkInterface, wsClient);
-
 // Helper function to create a new Apollo client, by merging in
 // passed options alongside the defaults
+
+// ----------------------
+// IMPORTS
+
+// Apollo client library
 function createClient(opt = {}) {
-  return new _reactApollo.ApolloClient(Object.assign({
-    reduxRootSelector: state => state.apollo,
-    networkInterface: networkInterfaceWithSubscriptions
-  }, opt));
+  if (process.browser) {
+    const wsClient = new _subscriptionsTransportWs.SubscriptionClient(`wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n`, {
+      reconnect: true
+    });
+    const networkInterfaceWithSubscriptions = (0, _subscriptionsTransportWs.addGraphQLSubscriptions)(networkInterface, wsClient);
+    return new _reactApollo.ApolloClient(Object.assign({
+      reduxRootSelector: state => state.apollo,
+      networkInterface: networkInterfaceWithSubscriptions
+    }, opt));
+  } else {
+    return new _reactApollo.ApolloClient(Object.assign({
+      reduxRootSelector: state => state.apollo,
+      networkInterface
+    }, opt));
+  }
 }
 
 // Creates a new browser client
@@ -3018,13 +3013,30 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
   }
 
   render() {
-    return _react2.default.createElement(
-      _reactStyledFlexboxgrid.Row,
-      null,
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Col,
-        { xs: 12 },
+    let forma;
+    if (this.state.poslato) {
+      forma = _react2.default.createElement(
+        'div',
+        { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
         _react2.default.createElement(
+          'h2',
+          null,
+          'Uspesno ste poslali porudzbinu!'
+        )
+      );
+    } else {
+      if (this.props.orders.length < 1) {
+        forma = _react2.default.createElement(
+          'div',
+          { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Niste jos nista porucili kod nas!'
+          )
+        );
+      } else {
+        forma = _react2.default.createElement(
           'form',
           { className: _styles2.default.korpaForm },
           _react2.default.createElement(_PorudzbinaConfirm2.default, { poslato: this.state.poslato }),
@@ -3054,7 +3066,16 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
               'POSALJI'
             )
           )
-        )
+        );
+      }
+    }
+    return _react2.default.createElement(
+      _reactStyledFlexboxgrid.Row,
+      null,
+      _react2.default.createElement(
+        _reactStyledFlexboxgrid.Col,
+        { xs: 12 },
+        forma
       )
     );
   }
@@ -3887,9 +3908,13 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
               'p',
               null,
               _react2.default.createElement(
-                'button',
-                { onClick: this.checkPin },
-                'Unesite \u0160ifru'
+                'a',
+                { href: '#' },
+                _react2.default.createElement(
+                  'h3',
+                  { onClick: this.checkPin },
+                  'Unesite \u0160ifru'
+                )
               )
             )
           )
@@ -4023,13 +4048,9 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(5);
 
-var _allPorudzbinas = __webpack_require__(70);
+var _allPorudzbinas = __webpack_require__(69);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
-
-var _createPorudzbina = __webpack_require__(69);
-
-var _createPorudzbina2 = _interopRequireDefault(_createPorudzbina);
 
 var _graphqlTag = __webpack_require__(8);
 
@@ -4043,13 +4064,11 @@ var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(6);
 
-var _reversejs = __webpack_require__(95);
+var _PorudzbinaAdd = __webpack_require__(72);
 
-var _reversejs2 = _interopRequireDefault(_reversejs);
+var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';*/
 
 let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.deleted })), _dec2 = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = _dec2(_class = class Porudzbine extends _react2.default.Component {
   constructor() {
@@ -4060,21 +4079,19 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
     };
   }
 
-  /*
-    componentWillMount() {
-      this.props.data.subscribeToMore({
-        document: Porudzbina,
-        updateQuery: (prev, {subscriptionData}) => {
-          if(!subscriptionData.data) {
-            return prev;
-          }
-          const newPorudzbina = subscriptionData.data.Porudzbina;
-          return {
-            allPorudzbinas: [newPorudzbina, ...prev.allPorudzbinas],
-          };
-        },
-      });
-    }*/
+  componentDidMount() {
+    this.props.data.subscribeToMore({
+      document: _PorudzbinaAdd2.default,
+      updateQuery: (prev, { subscriptionData }) => {
+        if (subscriptionData.data) {
+          this.props.data.refetch();
+        }
+        if (!subscriptionData.data) {
+          return prev;
+        }
+      }
+    });
+  }
 
   componentWillReceiveProps(newProps) {
     if (newProps.deleted) {
@@ -4088,15 +4105,11 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
   render() {
     const { data } = this.props;
 
-    console.log('Ja sam data ', data);
-
     const porudzbine = {};
 
     if (data.allPorudzbinas) {
       porudzbine.lista = data.allPorudzbinas;
-      console.log("Bez revers", porudzbine.lista);
-      porudzbine.revers = (0, _reversejs2.default)(porudzbine.lista);
-      console.log("Revers", porudzbine.revers);
+      porudzbine.revers = porudzbine.lista;
     }
 
     return _react2.default.createElement(
@@ -4211,6 +4224,7 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
   }
 
   render() {
+    let datum = Date.parse(this.props.porudzbina.createdAt);
     return _react2.default.createElement(
       'div',
       null,
@@ -4411,7 +4425,7 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 var _routing = __webpack_require__(28);
 
-var _all_messages = __webpack_require__(71);
+var _all_messages = __webpack_require__(70);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
@@ -4758,8 +4772,8 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"adresa"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"defaultValue":null},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"brojTelefona"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},"defaultValue":null}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createPorudzbina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"adresa"},"value":{"kind":"Variable","name":{"kind":"Name","value":"adresa"}}},{"kind":"Argument","name":{"kind":"Name","value":"brojTelefona"},"value":{"kind":"Variable","name":{"kind":"Name","value":"brojTelefona"}}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":129}};
-    doc.loc.source = {"body":"mutation($adresa: String!, $brojTelefona: Int!) {\n  createPorudzbina(adresa: $adresa, brojTelefona: $brojTelefona){\n    id\n  }\n}\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":208}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4782,38 +4796,11 @@ module.exports = doc;
 
 /***/ }),
 /* 70 */
-/***/ (function(module, exports) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":193}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request"};
-  
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  
-module.exports = doc;
-
-/***/ }),
-/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request"};
+    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4831,8 +4818,35 @@ module.exports = doc;
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(72).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(71).definitions));
 
+module.exports = doc;
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports) {
+
+
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
+    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
 module.exports = doc;
 
 /***/ }),
@@ -4840,8 +4854,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
-    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request"};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":244}};
+    doc.loc.source = {"body":"subscription {\n  Porudzbina {\n\t\t\tnode {\n        id,\n        adresa,\n        brojTelefona,\n        opis,\n        stavkePorudzbines {\n          id,\n          kolicina,\n          proizvod {\n            naslov\n          }\n        }\n      }\n    }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4998,22 +5012,10 @@ module.exports = require("redux-thunk");
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("reversejs");
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports) {
-
 module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
-/* 97 */
-/***/ (function(module, exports) {
-
-module.exports = require("ws");
-
-/***/ }),
-/* 98 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21);
