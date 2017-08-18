@@ -3887,47 +3887,16 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
   })
 }), _dec(_class = _dec2(_class = class Admin extends _react2.default.Component {
   constructor(props) {
-    var _this;
-
-    _this = super(props);
-
-    this.handleChangePass = event => {
-      this.setState({ enteredPin: event.target.value });
-      let password = (0, _jsMd2.default)(event.target.value);
-      this.props.dispatch({
-        type: 'CHANGE_PASSWORD',
-        password
-      });
-    };
-
-    this.handleChangeUser = event => {
-      this.setState({ enteredUsername: event.target.value });
-      this.props.dispatch({
-        type: 'CHANGE_USERNAME',
-        userName: event.target.value
-      });
-    };
-
-    this.checkPin = _asyncToGenerator(function* () {
-      const respons = yield _this.props.data.refetch();
-      if (!respons.data.loading && respons.data.allUserAdmins.length) {
-        let userName = respons.data.allUserAdmins[0].userName;
-        let password = respons.data.allUserAdmins[0].password;
-        localStorage.setItem("userName", userName);
-        localStorage.setItem("password", password);
-        _this.setState({
-          inputOn: true
-        });
-      } else {
-        console.log("ZAO MI JE NISI ");
-      }
-    });
+    super(props);
     this.state = {
       pin: '',
       inputOn: false,
       enteredPin: '',
       enteredUsername: ''
     };
+    this.checkPin = this._checkPin.bind(this);
+    this.handleChangePass = this._handleChangePass.bind(this);
+    this.handleChangeUser = this._handleChangeUser.bind(this);
   }
 
   componentDidMount() {
@@ -3942,7 +3911,39 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
       }
     }
   }
+  _handleChangePass(event) {
+    this.setState({ enteredPin: event.target.value });
+    let password = (0, _jsMd2.default)(event.target.value);
+    this.props.dispatch({
+      type: 'CHANGE_PASSWORD',
+      password
+    });
+  }
+  _handleChangeUser(event) {
+    this.setState({ enteredUsername: event.target.value });
+    this.props.dispatch({
+      type: 'CHANGE_USERNAME',
+      userName: event.target.value
+    });
+  }
+  _checkPin() {
+    var _this = this;
 
+    return _asyncToGenerator(function* () {
+      const respons = yield _this.props.data.refetch();
+      if (!respons.data.loading && respons.data.allUserAdmins.length) {
+        let userName = respons.data.allUserAdmins[0].userName;
+        let password = respons.data.allUserAdmins[0].password;
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("password", password);
+        _this.setState({
+          inputOn: true
+        });
+      } else {
+        console.log("ZAO MI JE NISI ");
+      }
+    })();
+  }
   render() {
     let putinput = _react2.default.createElement('div', null);
     console.log("OVO JE PROPS", this.props);
@@ -3956,19 +3957,19 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
           _react2.default.createElement(
             'p',
             null,
-            _react2.default.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: () => this.handleChangeUser(), type: 'text' })
+            _react2.default.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
           ),
           _react2.default.createElement(
             'p',
             null,
-            _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: () => this.handleChangePass(), type: 'text' })
+            _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
           ),
           _react2.default.createElement(
             'p',
             null,
             _react2.default.createElement(
               'h3',
-              { onClick: () => this.checkPin() },
+              { onClick: this.checkPin },
               'Unesite \u0160ifru'
             )
           )

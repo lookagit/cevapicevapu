@@ -35,6 +35,9 @@ export default class Admin extends React.Component {
       enteredPin: '',
       enteredUsername: '',
     }
+    this.checkPin = this._checkPin.bind(this);
+    this.handleChangePass = this._handleChangePass.bind(this);
+    this.handleChangeUser = this._handleChangeUser.bind(this);
   }
 
   componentDidMount() {
@@ -49,7 +52,7 @@ export default class Admin extends React.Component {
       }
     }
   }
-  handleChangePass = (event) => {
+  _handleChangePass(event) {
    this.setState({enteredPin: event.target.value});
    let password = md5(event.target.value);
    this.props.dispatch({
@@ -57,14 +60,14 @@ export default class Admin extends React.Component {
      password,
    });
   }
-  handleChangeUser = (event) => {
+  _handleChangeUser(event) {
     this.setState({enteredUsername: event.target.value});
     this.props.dispatch({
       type: 'CHANGE_USERNAME',
       userName: event.target.value,
     });
   }
-  checkPin = async () => {
+  async _checkPin() {
     const respons = await this.props.data.refetch();
     if(!respons.data.loading && respons.data.allUserAdmins.length) {
       let userName = respons.data.allUserAdmins[0].userName;
@@ -86,13 +89,13 @@ export default class Admin extends React.Component {
       <div className={scss.adminLog}>
        <div>
         <p>
-         <input value={this.state.enteredUsername} placeholder="Username" onChange={() => this.handleChangeUser()} type="text" />
+         <input value={this.state.enteredUsername} placeholder="Username" onChange={this.handleChangeUser} type="text" />
         </p>
         <p>
-         <input value={this.state.enteredPin} type="password" placeholder="Password" onChange={() => this.handleChangePass()} type="text" />
+         <input value={this.state.enteredPin} type="password" placeholder="Password" onChange={this.handleChangePass} type="text" />
         </p>
         <p>
-         <h3 onClick={() => this.checkPin()}>Unesite Šifru</h3>
+         <h3 onClick={this.checkPin}>Unesite Šifru</h3>
         </p>
        </div>
      </div>;
