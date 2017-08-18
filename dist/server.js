@@ -569,7 +569,37 @@ var _paths2 = _interopRequireDefault(_paths);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /* eslint-disable no-param-reassign, no-console */
+// ----------------------
+
+// Static file middleware
+
+
+// App entry point
+
+
+// Custom redux store creator.  This will allow us to create a store 'outside'
+// of Apollo, so we can apply our own reducers and make use of the Redux dev
+// tools in the browser
+
+
+// <Helmet> component for retrieving <head> section, so we can set page
+// title, meta info, etc along with the initial HTML
+
+
+// High-precision timing, so we can debug response time to serve a request
+
+
+// HTTP header hardening
+
+
+// Apollo tools to connect to a GraphQL server.  We'll grab the
+// `ApolloProvider` HOC component, which will inject any 'listening' React
+// components with GraphQL data props.  We'll also use `getDataFromTree`
+// to await data being ready before rendering back HTML to the client
+
+
+// React utility to transform JSX to HTML (to send back to the client)
+/* eslint-disable no-param-reassign, no-console */
 
 // Server entry point, for Webpack.  This will spawn a Koa web server
 // and listen for HTTP requests.  Clients will get a return render of React
@@ -585,42 +615,31 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /* NPM */
 
 // Patch global.`fetch` so that Apollo calls to GraphQL work
+function staticMiddleware() {
+  return async function staticMiddlewareHandler(ctx, next) {
+    try {
+      if (ctx.path !== '/') {
+        return await (0, _koaSend2.default)(ctx, ctx.path,  true ? {
+          root: _paths2.default.public,
+          immutable: true
+        } : {
+          root: _paths2.default.distDev
+        });
+      }
+    } catch (e) {/* Errors will fall through */}
+    return next();
+  };
+}
+
+// Function to create a React handler, per the environment's correct
+// manifest files
 
 
-// React UI
+// Import paths.  We'll use this to figure out where our public folder is
+// so we can serve static files
 
 
-// React utility to transform JSX to HTML (to send back to the client)
-
-
-// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
-// the React render, or any of the static assets being compiled
-
-
-// Apollo tools to connect to a GraphQL server.  We'll grab the
-// `ApolloProvider` HOC component, which will inject any 'listening' React
-// components with GraphQL data props.  We'll also use `getDataFromTree`
-// to await data being ready before rendering back HTML to the client
-
-
-// Static file handler
-
-
-// HTTP header hardening
-
-
-// Koa Router, for handling URL requests
-
-
-// High-precision timing, so we can debug response time to serve a request
-
-
-// React Router HOC for figuring out the exact React hierarchy to display
-// based on the URL
-
-
-// <Helmet> component for retrieving <head> section, so we can set page
-// title, meta info, etc along with the initial HTML
+// Initial view to send back HTML render
 
 
 /* Local */
@@ -628,200 +647,131 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 // Grab the shared Apollo Client
 
 
-// Custom redux store creator.  This will allow us to create a store 'outside'
-// of Apollo, so we can apply our own reducers and make use of the Redux dev
-// tools in the browser
+// React Router HOC for figuring out the exact React hierarchy to display
+// based on the URL
 
 
-// Initial view to send back HTML render
+// Koa Router, for handling URL requests
 
 
-// App entry point
+// Static file handler
 
 
-// Import paths.  We'll use this to figure out where our public folder is
-// so we can serve static files
+// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
+// the React render, or any of the static assets being compiled
 
 
-// ----------------------
-
-// Static file middleware
-function staticMiddleware() {
-  return (() => {
-    var _ref = _asyncToGenerator(function* (ctx, next) {
-      try {
-        if (ctx.path !== '/') {
-          return yield (0, _koaSend2.default)(ctx, ctx.path,  true ? {
-            root: _paths2.default.public,
-            immutable: true
-          } : {
-            root: _paths2.default.distDev
-          });
-        }
-      } catch (e) {/* Errors will fall through */}
-      return next();
-    });
-
-    function staticMiddlewareHandler(_x, _x2) {
-      return _ref.apply(this, arguments);
-    }
-
-    return staticMiddlewareHandler;
-  })();
-}
-
-// Function to create a React handler, per the environment's correct
-// manifest files
+// React UI
 function createReactHandler(css = [], scripts = [], chunkManifest = {}) {
-  return (() => {
-    var _ref2 = _asyncToGenerator(function* (ctx) {
-      const routeContext = {};
+  return async function reactHandler(ctx) {
+    const routeContext = {};
 
-      // Create a new server Apollo client for this request
-      const client = (0, _apollo.serverClient)();
+    // Create a new server Apollo client for this request
+    const client = (0, _apollo.serverClient)();
 
-      // Create a new Redux store for this request
-      const store = (0, _redux2.default)(client);
+    // Create a new Redux store for this request
+    const store = (0, _redux2.default)(client);
 
-      // Generate the HTML from our React tree.  We're wrapping the result
-      // in `react-router`'s <StaticRouter> which will pull out URL info and
-      // store it in our empty `route` object
-      const components = _react2.default.createElement(
-        _reactRouter.StaticRouter,
-        { location: ctx.request.url, context: routeContext },
-        _react2.default.createElement(
-          _reactApollo.ApolloProvider,
-          { store: store, client: client },
-          _react2.default.createElement(_app2.default, null)
-        )
-      );
+    // Generate the HTML from our React tree.  We're wrapping the result
+    // in `react-router`'s <StaticRouter> which will pull out URL info and
+    // store it in our empty `route` object
+    const components = _react2.default.createElement(
+      _reactRouter.StaticRouter,
+      { location: ctx.request.url, context: routeContext },
+      _react2.default.createElement(
+        _reactApollo.ApolloProvider,
+        { store: store, client: client },
+        _react2.default.createElement(_app2.default, null)
+      )
+    );
 
-      // Wait for GraphQL data to be available in our initial render,
-      // before dumping HTML back to the client
-      yield (0, _reactApollo.getDataFromTree)(components);
+    // Wait for GraphQL data to be available in our initial render,
+    // before dumping HTML back to the client
+    await (0, _reactApollo.getDataFromTree)(components);
 
-      // Full React HTML render
-      const html = _server2.default.renderToString(components);
+    // Full React HTML render
+    const html = _server2.default.renderToString(components);
 
-      // Handle redirects
-      if ([301, 302].includes(routeContext.status)) {
-        // 301 = permanent redirect, 302 = temporary
-        ctx.status = routeContext.status;
+    // Handle redirects
+    if ([301, 302].includes(routeContext.status)) {
+      // 301 = permanent redirect, 302 = temporary
+      ctx.status = routeContext.status;
 
-        // Issue the new `Location:` header
-        ctx.redirect(routeContext.url);
+      // Issue the new `Location:` header
+      ctx.redirect(routeContext.url);
 
-        // Return early -- no need to set a response body
-        return;
-      }
-
-      // Handle 404 Not Found
-      if (routeContext.status === 404) {
-        // By default, just set the status code to 404.  You can add your
-        // own custom logic here, if you want to redirect to a permanent
-        // 404 route or set a different response on `ctx.body`
-        ctx.status = routeContext.status;
-      }
-
-      // Render the view with our injected React data.  We'll pass in the
-      // Helmet component to generate the <head> tag, as well as our Redux
-      // store state so that the browser can continue from the server
-      ctx.body = `<!DOCTYPE html>\n${_server2.default.renderToStaticMarkup(_react2.default.createElement(_ssr2.default, {
-        html: html,
-        head: _reactHelmet2.default.rewind(),
-        window: {
-          webpackManifest: chunkManifest,
-          __STATE__: store.getState()
-        },
-        css: css,
-        scripts: scripts }))}`;
-    });
-
-    function reactHandler(_x3) {
-      return _ref2.apply(this, arguments);
+      // Return early -- no need to set a response body
+      return;
     }
 
-    return reactHandler;
-  })();
+    // Handle 404 Not Found
+    if (routeContext.status === 404) {
+      // By default, just set the status code to 404.  You can add your
+      // own custom logic here, if you want to redirect to a permanent
+      // 404 route or set a different response on `ctx.body`
+      ctx.status = routeContext.status;
+    }
+
+    // Render the view with our injected React data.  We'll pass in the
+    // Helmet component to generate the <head> tag, as well as our Redux
+    // store state so that the browser can continue from the server
+    ctx.body = `<!DOCTYPE html>\n${_server2.default.renderToStaticMarkup(_react2.default.createElement(_ssr2.default, {
+      html: html,
+      head: _reactHelmet2.default.rewind(),
+      window: {
+        webpackManifest: chunkManifest,
+        __STATE__: store.getState()
+      },
+      css: css,
+      scripts: scripts }))}`;
+  };
 }
 
 // Run the server
 
-exports.default = (() => {
-  var _ref3 = _asyncToGenerator(function* () {
-    return {
-      router: new _koaRouter2.default().
-      // Set-up a general purpose /ping route to check the server is alive
-      get('/ping', (() => {
-        var _ref4 = _asyncToGenerator(function* (ctx) {
-          ctx.body = 'pong';
-        });
+exports.default = async function server() {
+  return {
+    router: new _koaRouter2.default().
+    // Set-up a general purpose /ping route to check the server is alive
+    get('/ping', async ctx => {
+      ctx.body = 'pong';
+    })
 
-        return function (_x4) {
-          return _ref4.apply(this, arguments);
-        };
-      })())
+    // Favicon.ico.  By default, we'll serve this as a 204 No Content.
+    // If /favicon.ico is available as a static file, it'll try that first
+    .get('/favicon.ico', async ctx => {
+      ctx.res.statusCode = 204;
+    }),
+    app: new _koa2.default()
 
-      // Favicon.ico.  By default, we'll serve this as a 204 No Content.
-      // If /favicon.ico is available as a static file, it'll try that first
-      .get('/favicon.ico', (() => {
-        var _ref5 = _asyncToGenerator(function* (ctx) {
-          ctx.res.statusCode = 204;
-        });
+    // Preliminary security for HTTP headers
+    .use((0, _koaHelmet2.default)())
 
-        return function (_x5) {
-          return _ref5.apply(this, arguments);
-        };
-      })()),
-      app: new _koa2.default()
+    // Error wrapper.  If an error manages to slip through the middleware
+    // chain, it will be caught and logged back here
+    .use(async (ctx, next) => {
+      try {
+        await next();
+      } catch (e) {
+        // TODO we've used rudimentary console logging here.  In your own
+        // app, I'd recommend you implement third-party logging so you can
+        // capture errors properly
+        console.log('Error', e.message);
+        ctx.body = 'There was an error. Please try again later.';
+      }
+    })
 
-      // Preliminary security for HTTP headers
-      .use((0, _koaHelmet2.default)())
-
-      // Error wrapper.  If an error manages to slip through the middleware
-      // chain, it will be caught and logged back here
-      .use((() => {
-        var _ref6 = _asyncToGenerator(function* (ctx, next) {
-          try {
-            yield next();
-          } catch (e) {
-            // TODO we've used rudimentary console logging here.  In your own
-            // app, I'd recommend you implement third-party logging so you can
-            // capture errors properly
-            console.log('Error', e.message);
-            ctx.body = 'There was an error. Please try again later.';
-          }
-        });
-
-        return function (_x6, _x7) {
-          return _ref6.apply(this, arguments);
-        };
-      })())
-
-      // It's useful to see how long a request takes to respond.  Add the
-      // timing to a HTTP Response header
-      .use((() => {
-        var _ref7 = _asyncToGenerator(function* (ctx, next) {
-          const start = _microseconds2.default.now();
-          yield next();
-          const end = _microseconds2.default.parse(_microseconds2.default.since(start));
-          const total = end.microseconds + end.milliseconds * 1e3 + end.seconds * 1e6;
-          ctx.set('Response-Time', `${total / 1e3}ms`);
-        });
-
-        return function (_x8, _x9) {
-          return _ref7.apply(this, arguments);
-        };
-      })())
-    };
-  });
-
-  function server() {
-    return _ref3.apply(this, arguments);
-  }
-
-  return server;
-})()();
+    // It's useful to see how long a request takes to respond.  Add the
+    // timing to a HTTP Response header
+    .use(async (ctx, next) => {
+      const start = _microseconds2.default.now();
+      await next();
+      const end = _microseconds2.default.parse(_microseconds2.default.since(start));
+      const total = end.microseconds + end.milliseconds * 1e3 + end.seconds * 1e6;
+      ctx.set('Response-Time', `${total / 1e3}ms`);
+    })
+  };
+}();
 
 /***/ }),
 /* 24 */
@@ -2965,8 +2915,6 @@ var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!) {
     createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis) {
@@ -3002,9 +2950,7 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
 }), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = _dec5(_class = class KorpaPorudzbina extends _react2.default.Component {
 
   constructor(props) {
-    var _this;
-
-    _this = super(props);
+    super(props);
 
     this.izmeniAdresu = event => {
       this.setState({ adresa: event.target.value });
@@ -3018,50 +2964,45 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
       this.setState({ opis: event.target.value });
     };
 
-    this.nekaFunkcija = _asyncToGenerator(function* () {
-      const pravimPorudzbinu = yield _this.props.createPorudzbina({
+    this.nekaFunkcija = async () => {
+      const pravimPorudzbinu = await this.props.createPorudzbina({
         variables: {
-          adresa: _this.state.adresa,
-          brojTelefona: _this.state.brojTelefona,
-          opis: _this.state.opis
+          adresa: this.state.adresa,
+          brojTelefona: this.state.brojTelefona,
+          opis: this.state.opis
         }
       });
 
       if (pravimPorudzbinu) {
-        if (_this.props.orders) {
-          _this.props.orders.map((() => {
-            var _ref2 = _asyncToGenerator(function* (stavka, index) {
-              const pravim = {};
-              pravim.stavku = yield _this.props.createStavkePorudzbine({
-                variables: {
-                  kolicina: parseInt(stavka.kolicina)
-                }
-              });
-              pravim.vezuPorudzbine = yield _this.props.addToPorudzbinaOnStavkePorudzbine({
-                variables: {
-                  stavkePorudzbinesStavkePorudzbineId: pravim.stavku.data.createStavkePorudzbine.id,
-                  porudzbinaPorudzbinaId: pravimPorudzbinu.data.createPorudzbina.id
-                }
-              });
-              pravim.vezuProizvod = yield _this.props.addToStavkePorudzbineOnProizvod({
-                variables: {
-                  stavkePorudzbinesStavkePorudzbineId: pravim.stavku.data.createStavkePorudzbine.id,
-                  proizvodProizvodId: stavka.proizvodid
-                }
-              });
+        if (this.props.orders) {
+          this.props.orders.map(async (stavka, index) => {
+            const pravim = {};
+            pravim.stavku = await this.props.createStavkePorudzbine({
+              variables: {
+                kolicina: parseInt(stavka.kolicina)
+              }
             });
-
-            return function (_x, _x2) {
-              return _ref2.apply(this, arguments);
-            };
-          })());
+            pravim.vezuPorudzbine = await this.props.addToPorudzbinaOnStavkePorudzbine({
+              variables: {
+                stavkePorudzbinesStavkePorudzbineId: pravim.stavku.data.createStavkePorudzbine.id,
+                porudzbinaPorudzbinaId: pravimPorudzbinu.data.createPorudzbina.id
+              }
+            });
+            pravim.vezuProizvod = await this.props.addToStavkePorudzbineOnProizvod({
+              variables: {
+                stavkePorudzbinesStavkePorudzbineId: pravim.stavku.data.createStavkePorudzbine.id,
+                proizvodProizvodId: stavka.proizvodid
+              }
+            });
+          });
         }
       }
-      _this.setState({ poslato: true });
-      _this.props.dispatch({
+      this.setState({ poslato: true });
+      this.props.dispatch({
         type: 'REMOVE_ORDER'
       });
-    });
+    };
+
     this.state = {
       adresa: "Random Adresa",
       brojTelefona: 123456,
@@ -3870,8 +3811,6 @@ var _jsMd2 = _interopRequireDefault(_jsMd);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders, users: state.users })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   query giveMeUsers($password: String!, $userName: String!) {
     allUserAdmins(filter: { password: $password, userName: $userName}) {
@@ -3926,23 +3865,19 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
       userName: event.target.value
     });
   }
-  _checkPin() {
-    var _this = this;
-
-    return _asyncToGenerator(function* () {
-      const respons = yield _this.props.data.refetch();
-      if (!respons.data.loading && respons.data.allUserAdmins.length) {
-        let userName = respons.data.allUserAdmins[0].userName;
-        let password = respons.data.allUserAdmins[0].password;
-        localStorage.setItem("userName", userName);
-        localStorage.setItem("password", password);
-        _this.setState({
-          inputOn: true
-        });
-      } else {
-        console.log("ZAO MI JE NISI ");
-      }
-    })();
+  async _checkPin() {
+    const respons = await this.props.data.refetch();
+    if (!respons.data.loading && respons.data.allUserAdmins.length) {
+      let userName = respons.data.allUserAdmins[0].userName;
+      let password = respons.data.allUserAdmins[0].password;
+      localStorage.setItem("userName", userName);
+      localStorage.setItem("password", password);
+      this.setState({
+        inputOn: true
+      });
+    } else {
+      console.log("ZAO MI JE NISI ");
+    }
   }
   render() {
     let putinput = _react2.default.createElement('div', null);
@@ -3965,13 +3900,9 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
             _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
           ),
           _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'h3',
-              { onClick: this.checkPin },
-              'Unesite \u0160ifru'
-            )
+            'h3',
+            { onClick: this.checkPin },
+            'Unesite \u0160ifru'
           )
         )
       );
@@ -4222,8 +4153,6 @@ var _reactRedux = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.deleted })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
   mutation deletePorudzbinu($id: ID!){
     deletePorudzbina(id: $id){
@@ -4240,9 +4169,7 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
   name: 'deleteStavkePorudzbine'
 }), _dec(_class = _dec2(_class = _dec3(_class = class PorudzbineSingle extends _react2.default.Component {
   constructor() {
-    var _this;
-
-    _this = super();
+    super();
 
     this.button = () => {
       return _react2.default.createElement(
@@ -4256,38 +4183,26 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
 
     this.handleClose = () => this.setState({ isShowingModal: false, kolicina: '' });
 
-    this.brisanjePorudzbina = (() => {
-      var _ref = _asyncToGenerator(function* (ajDi) {
-        console.log(ajDi.id);
-        console.log(ajDi.stavkePorudzbines);
-        const brisemPorudzbinu = yield _this.props.deletePorudzbinu({
-          variables: {
-            id: ajDi.id
-          }
-        });
-
-        ajDi.stavkePorudzbines.map((() => {
-          var _ref2 = _asyncToGenerator(function* (stavka, index) {
-            const brisem = yield _this.props.deleteStavkePorudzbine({
-              variables: {
-                id: stavka.id
-              }
-            });
-          });
-
-          return function (_x2, _x3) {
-            return _ref2.apply(this, arguments);
-          };
-        })());
-        _this.props.dispatch({
-          type: 'DELETE_PROIZVOD'
-        });
+    this.brisanjePorudzbina = async ajDi => {
+      console.log(ajDi.id);
+      console.log(ajDi.stavkePorudzbines);
+      const brisemPorudzbinu = await this.props.deletePorudzbinu({
+        variables: {
+          id: ajDi.id
+        }
       });
 
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    })();
+      ajDi.stavkePorudzbines.map(async (stavka, index) => {
+        const brisem = await this.props.deleteStavkePorudzbine({
+          variables: {
+            id: stavka.id
+          }
+        });
+      });
+      this.props.dispatch({
+        type: 'DELETE_PROIZVOD'
+      });
+    };
 
     this.state = {
       isShowingModal: false
