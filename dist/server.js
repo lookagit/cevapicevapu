@@ -3929,6 +3929,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
       enteredUsername: ''
     };
   }
+
   componentDidMount() {
     if (typeof window !== 'undefined' && window.document) {
       if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {
@@ -3953,26 +3954,22 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
           'div',
           null,
           _react2.default.createElement(
-            'form',
+            'p',
+            null,
+            _react2.default.createElement('input', { value: this.state.enteredUsername, placeholder: 'Username', onChange: () => this.handleChangeUser(), type: 'text' })
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: () => this.handleChangePass(), type: 'text' })
+          ),
+          _react2.default.createElement(
+            'p',
             null,
             _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement('input', { value: () => this.state.enteredUsername(), placeholder: 'Username', onChange: this.handleChangeUser, type: 'text' })
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement('input', { value: () => this.state.enteredPin(), type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              _react2.default.createElement(
-                'h3',
-                { onClick: () => this.checkPin() },
-                'Unesite \u0160ifru'
-              )
+              'h3',
+              { onClick: () => this.checkPin() },
+              'Unesite \u0160ifru'
             )
           )
         )
