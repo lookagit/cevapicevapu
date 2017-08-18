@@ -2426,7 +2426,7 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
       _this.setState({ opis: event.target.value });
     };
 
-    _this.nekaFunkcija = _asyncToGenerator(regeneratorRuntime.mark(function _callee2() {
+    _this.nekaFunkcija = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       var pravimPorudzbinu;
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
         while (1) {
@@ -2448,7 +2448,7 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
               if (pravimPorudzbinu) {
                 if (_this.props.orders) {
                   _this.props.orders.map(function () {
-                    var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee(stavka, index) {
+                    var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(stavka, index) {
                       var pravim;
                       return regeneratorRuntime.wrap(function _callee$(_context) {
                         while (1) {
@@ -3474,7 +3474,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
       });
     };
 
-    _this.checkPin = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+    _this.checkPin = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
       var respons, userName, password;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -3895,7 +3895,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
     };
 
     _this.brisanjePorudzbina = function () {
-      var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(ajDi) {
+      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(ajDi) {
         var brisemPorudzbinu;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
@@ -3915,7 +3915,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
 
 
                 ajDi.stavkePorudzbines.map(function () {
-                  var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee(stavka, index) {
+                  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(stavka, index) {
                     var brisem;
                     return regeneratorRuntime.wrap(function _callee$(_context) {
                       while (1) {

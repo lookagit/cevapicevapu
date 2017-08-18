@@ -81,7 +81,7 @@ export default class Admin extends React.Component {
     }
   }
   render () {
-    let putinput = null;
+    let putinput = <div></div>;
     console.log("OVO JE PROPS", this.props)
     if(!this.state.inputOn) {
       putinput =
