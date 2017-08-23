@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 100);
+/******/ 	return __webpack_require__(__webpack_require__.s = 102);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -543,7 +543,7 @@ var _microseconds = __webpack_require__(86);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(94);
+var _reactRouter = __webpack_require__(96);
 
 var _reactHelmet = __webpack_require__(16);
 
@@ -790,7 +790,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(99);
+var _subscriptionsTransportWs = __webpack_require__(101);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1030,9 +1030,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(96);
+var _redux = __webpack_require__(98);
 
-var _reduxThunk = __webpack_require__(97);
+var _reduxThunk = __webpack_require__(99);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -2029,31 +2029,25 @@ var _loadjs = __webpack_require__(85);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(98);
+var _regex = __webpack_require__(100);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
+
+var _reactLoadScript = __webpack_require__(95);
+
+var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
+
+var _reactIframe = __webpack_require__(93);
+
+var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.reloader })), _dec(_class = class FeaturedLeft extends _react2.default.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount() {
-    console.log(this.props);
-    if (this.props.reloader) {
-      window.location.reload();
-    }
-  }
-
-  componentWillUnmount() {
-    console.log("anmauntujem");
-    this.props.dispatch({
-      type: 'RELOADUJ'
-    });
   }
 
   render() {
@@ -2069,20 +2063,13 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
           { className: _styles2.default.featuredLeftText },
           _react2.default.createElement(
             'div',
-            { id: 'TA_selfserveprop159', className: 'TA_selfserveprop' },
-            _react2.default.createElement(
-              'ul',
-              { id: 'ZxZWq9', className: 'TA_links 439Tw8ih' },
-              _react2.default.createElement(
-                'li',
-                { id: 'TODlRwD', className: 'Bc8aZtVzSly' },
-                _react2.default.createElement(
-                  'a',
-                  { target: '_blank', href: 'https://www.tripadvisor.com/' },
-                  _react2.default.createElement('img', { src: 'https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png', alt: 'TripAdvisor' })
-                )
-              )
-            )
+            null,
+            _react2.default.createElement(_reactIframe2.default, { url: 'http://widget.developcodex.net/',
+              width: '480px',
+              height: '462px',
+              display: 'initial',
+              position: 'relative'
+            })
           )
         )
       )
@@ -2400,7 +2387,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(73);
 
-var _reactImages = __webpack_require__(93);
+var _reactImages = __webpack_require__(94);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -4515,7 +4502,7 @@ var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(95);
+var _reactScrollableAnchor = __webpack_require__(97);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -5032,46 +5019,58 @@ module.exports = require("react-icons/lib/fa/trash");
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-iframe");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-images");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-load-script");
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-router");
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 98 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux");
 
 /***/ }),
 /* 99 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 100 */
+/***/ (function(module, exports) {
+
+module.exports = require("regex");
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21);
