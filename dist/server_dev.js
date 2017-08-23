@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 99);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -429,7 +429,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(85);
+const path = __webpack_require__(86);
 
 // ----------------------
 
@@ -511,7 +511,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(87);
+var _server = __webpack_require__(89);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -533,11 +533,11 @@ var _koaRouter = __webpack_require__(81);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(83);
+var _microseconds = __webpack_require__(84);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(91);
+var _reactRouter = __webpack_require__(93);
 
 var _reactHelmet = __webpack_require__(15);
 
@@ -784,7 +784,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(95);
+var _subscriptionsTransportWs = __webpack_require__(98);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1024,9 +1024,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(93);
+var _redux = __webpack_require__(95);
 
-var _reduxThunk = __webpack_require__(94);
+var _reduxThunk = __webpack_require__(96);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1297,6 +1297,7 @@ const usersInitial = {
   password: ''
 };
 const deletedInitial = false;
+const reloaderInitial = false;
 exports.default = {
 
   // The shape that our Redux handler in `kit/lib/redux` expects is
@@ -1314,7 +1315,15 @@ exports.default = {
       return state;
     }
   },
-
+  reloader: {
+    state: reloaderInitial,
+    reducer(state = reloaderInitial, action) {
+      if (action.type === "RELOADUJ") {
+        state = true;
+      }
+      return state;
+    }
+  },
   users: {
     state: usersInitial,
     reducer(state = usersInitial, action) {
@@ -1396,7 +1405,7 @@ var _sarajevskiCevapDrama = __webpack_require__(67);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(84);
+var _passwordHash = __webpack_require__(85);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1663,7 +1672,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _shoppingCart = __webpack_require__(88);
+var _shoppingCart = __webpack_require__(90);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2006,31 +2015,39 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactAsyncScriptLoader = __webpack_require__(97);
+var _reactAsyncScriptLoader = __webpack_require__(88);
 
 var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
 
+var _loadjs = __webpack_require__(83);
+
+var _loadjs2 = _interopRequireDefault(_loadjs);
+
+var _regex = __webpack_require__(97);
+
+var _regex2 = _interopRequireDefault(_regex);
+
+var _reactRedux = __webpack_require__(6);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-let FeaturedLeft = (_dec = (0, _reactAsyncScriptLoader2.default)(['https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=525&amp;locationId=9874369&amp;lang=sr&amp;rating=true&amp;nreviews=4&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=true&amp;border=false&amp;display_version=2']), _dec(_class = class FeaturedLeft extends _react2.default.Component {
+let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.reloader })), _dec(_class = class FeaturedLeft extends _react2.default.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillReceiveProps({ isScriptLoaded, isScriptLoadSucceed }) {
-    if (isScriptLoaded && !this.props.isScriptLoaded) {
-      // load finished
-      if (isScriptLoadSucceed) {
-        this.initEditor();
-      } else this.props.onError();
+  componentDidMount() {
+    console.log(this.props);
+    if (this.props.reloader) {
+      window.location.reload();
     }
   }
 
-  componentDidMount() {
-    const { isScriptLoaded, isScriptLoadSucceed } = this.props;
-    if (isScriptLoaded && isScriptLoadSucceed) {
-      this.initEditor();
-    }
+  componentWillUnmount() {
+    console.log("anmauntujem");
+    this.props.dispatch({
+      type: 'RELOADUJ'
+    });
   }
 
   render() {
@@ -2046,13 +2063,13 @@ let FeaturedLeft = (_dec = (0, _reactAsyncScriptLoader2.default)(['https://www.j
           { className: _styles2.default.featuredLeftText },
           _react2.default.createElement(
             'div',
-            { id: 'TA_selfserveprop140', 'class': 'TA_selfserveprop' },
+            { id: 'TA_selfserveprop159', className: 'TA_selfserveprop' },
             _react2.default.createElement(
               'ul',
-              { id: 'Xwlvmn9oPM0A', 'class': 'TA_links rfK3moz' },
+              { id: 'ZxZWq9', className: 'TA_links 439Tw8ih' },
               _react2.default.createElement(
                 'li',
-                { id: 'bXYKv4eM', 'class': 'IVnZ4S51MgO' },
+                { id: 'TODlRwD', className: 'Bc8aZtVzSly' },
                 _react2.default.createElement(
                   'a',
                   { target: '_blank', href: 'https://www.tripadvisor.com/' },
@@ -2377,7 +2394,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(73);
 
-var _reactImages = __webpack_require__(90);
+var _reactImages = __webpack_require__(92);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2804,7 +2821,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(89);
+var _trash = __webpack_require__(91);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3484,7 +3501,7 @@ var _reactRedux = __webpack_require__(6);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(86);
+var _reactAlert = __webpack_require__(87);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -4492,7 +4509,7 @@ var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(92);
+var _reactScrollableAnchor = __webpack_require__(94);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4949,92 +4966,104 @@ module.exports = require("koa-send");
 /* 83 */
 /***/ (function(module, exports) {
 
-module.exports = require("microseconds");
+module.exports = require("loadjs");
 
 /***/ }),
 /* 84 */
 /***/ (function(module, exports) {
 
-module.exports = require("password-hash");
+module.exports = require("microseconds");
 
 /***/ }),
 /* 85 */
 /***/ (function(module, exports) {
 
-module.exports = require("path");
+module.exports = require("password-hash");
 
 /***/ }),
 /* 86 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-alert");
+module.exports = require("path");
 
 /***/ }),
 /* 87 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-alert");
 
 /***/ }),
 /* 88 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/shopping-cart");
+module.exports = require("react-async-script-loader");
 
 /***/ }),
 /* 89 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/trash");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 90 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
 /* 91 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-images");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-router");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("redux");
 
 /***/ }),
 /* 96 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__(20);
-
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-async-script-loader");
+module.exports = require("regex");
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(20);
+
 
 /***/ })
 /******/ ]);

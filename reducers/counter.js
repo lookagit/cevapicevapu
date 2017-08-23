@@ -24,6 +24,7 @@ const usersInitial = {
   password: '',
 }
 const deletedInitial = false;
+const reloaderInitial = false;
 export default {
 
   // The shape that our Redux handler in `kit/lib/redux` expects is
@@ -41,7 +42,15 @@ export default {
       return state;
     }
   },
-
+  reloader: {
+    state: reloaderInitial,
+    reducer(state = reloaderInitial, action) {
+      if(action.type === "RELOADUJ"){
+        state = true;
+      }
+      return state;
+    }
+  },
   users: {
     state: usersInitial,
     reducer(state = usersInitial, action) {
