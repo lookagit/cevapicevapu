@@ -1,9 +1,34 @@
 import React from 'react';
 import css from './styles.css';
+import scriptLoader from 'react-async-script-loader';
+
+
+@scriptLoader(
+  [
+    'https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=525&amp;locationId=9874369&amp;lang=sr&amp;rating=true&amp;nreviews=4&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=true&amp;border=false&amp;display_version=2'
+  ]
+)
 class FeaturedLeft extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentWillReceiveProps ({ isScriptLoaded, isScriptLoadSucceed }) {
+    if (isScriptLoaded && !this.props.isScriptLoaded) { // load finished
+      if (isScriptLoadSucceed) {
+        this.initEditor()
+      }
+      else this.props.onError()
+    }
+  }
+
+  componentDidMount () {
+    const { isScriptLoaded, isScriptLoadSucceed } = this.props
+    if (isScriptLoaded && isScriptLoadSucceed) {
+      this.initEditor()
+    }
+  }
+
   render() {
     return (
       <div style={{display: "flex"}}>

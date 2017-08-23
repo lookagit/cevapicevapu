@@ -135,10 +135,10 @@ export default class KorpaPorudzbina extends React.Component {
   render() {
     let forma;
     if(this.state.poslato) {
-      forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Uspesno ste poslali porudzbinu!</h2></div>;
+      forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Uspešno ste poslali porudzbinu!</h2></div>;
     } else {
       if (this.props.orders.length < 1) {
-          forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Niste jos nista porucili kod nas!</h2></div>;
+          forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Niste još nista poručili kod nas!</h2></div>;
       }
       else {
         forma = <form className={scss.korpaForm}>
@@ -155,7 +155,7 @@ export default class KorpaPorudzbina extends React.Component {
           <p>
             <button type="button" onClick={() => {
               this.nekaFunkcija();
-            }}>POSALJI</button>
+            }}>POŠALJI</button>
           </p>
         </form>;
       }

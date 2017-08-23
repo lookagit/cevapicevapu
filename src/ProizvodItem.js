@@ -64,9 +64,9 @@ export default class ProizvodItem extends Component {
 
   button = () => {
     if(this.state.kolicina === 0 || this.state.kolicina === '0' || this.state.kolicina === '') {
-      return (<button disabled={true}>Naruci</button>)
+      return (<button disabled={true}>Naruči</button>)
     } else {
-      return (<button onClick={() => this.handleClick()}>Naruci</button>)
+      return (<button onClick={() => this.handleClick()}>Naruči</button>)
     }
   }
   render () {
@@ -82,7 +82,7 @@ export default class ProizvodItem extends Component {
             <img src={this.props.proiz.urlSlike} />
             <h2>{this.props.proiz.naslov}</h2>
             <h3>{this.props.proiz.cena} RSD</h3>
-            <label>Kolicina &nbsp;</label> <input type="number"  min="1" onChange={this.izmeniKolicinu} value={this.state.kolicina} />
+            <label>Količina &nbsp;</label> <input type="number"  min="1" onChange={this.izmeniKolicinu} value={this.state.kolicina} />
             {
               this.button()
             }

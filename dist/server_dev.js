@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 95);
+/******/ 	return __webpack_require__(__webpack_require__.s = 96);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -291,8 +291,8 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":95}};
-    doc.loc.source = {"body":"query AllProizvods {\r\n  allProizvods {\r\n    id,\r\n    cena,\r\n    naslov,\r\n    urlSlike\r\n  }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":87}};
+    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -511,7 +511,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(86);
+var _server = __webpack_require__(87);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -537,7 +537,7 @@ var _microseconds = __webpack_require__(83);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(90);
+var _reactRouter = __webpack_require__(91);
 
 var _reactHelmet = __webpack_require__(15);
 
@@ -784,7 +784,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(94);
+var _subscriptionsTransportWs = __webpack_require__(95);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1024,9 +1024,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(92);
+var _redux = __webpack_require__(93);
 
-var _reduxThunk = __webpack_require__(93);
+var _reduxThunk = __webpack_require__(94);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1407,7 +1407,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'O NAMA', subtitle: 'Kako je nastala DRAMA', bgImage: { backgroundImage: 'url("' + _sarajevskiCevapDrama2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'Kako je nastala DRAMA', subtitle: ' ', bgImage: { backgroundImage: 'url("' + _sarajevskiCevapDrama2.default + '")' } }),
       _react2.default.createElement(_ContentBoxes2.default, null)
     );
   }
@@ -1663,7 +1663,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _shoppingCart = __webpack_require__(87);
+var _shoppingCart = __webpack_require__(88);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -1808,7 +1808,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                       _react2.default.createElement(
                         'button',
                         { className: _styles2.default.posalji, type: 'submit' },
-                        'POSALJI'
+                        'PO\u0160ALJI'
                       )
                     )
                   )
@@ -1879,7 +1879,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   _react2.default.createElement(
                     'h5',
                     null,
-                    'Dostava od 20:00 do 24:00 putem kurirske sluzbe Potrcko'
+                    'Dostava od 20:00 do 24:00 putem kurirske sluzbe Potr\u010Dko'
                   )
                 )
               )
@@ -1996,6 +1996,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _dec, _class;
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -2004,12 +2006,33 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
+var _reactAsyncScriptLoader = __webpack_require__(97);
+
+var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
+let FeaturedLeft = (_dec = (0, _reactAsyncScriptLoader2.default)(['https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=525&amp;locationId=9874369&amp;lang=sr&amp;rating=true&amp;nreviews=4&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=true&amp;border=false&amp;display_version=2']), _dec(_class = class FeaturedLeft extends _react2.default.Component {
   constructor(props) {
     super(props);
   }
+
+  componentWillReceiveProps({ isScriptLoaded, isScriptLoadSucceed }) {
+    if (isScriptLoaded && !this.props.isScriptLoaded) {
+      // load finished
+      if (isScriptLoadSucceed) {
+        this.initEditor();
+      } else this.props.onError();
+    }
+  }
+
+  componentDidMount() {
+    const { isScriptLoaded, isScriptLoadSucceed } = this.props;
+    if (isScriptLoaded && isScriptLoadSucceed) {
+      this.initEditor();
+    }
+  }
+
   render() {
     return _react2.default.createElement(
       'div',
@@ -2042,7 +2065,7 @@ let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
       )
     );
   }
-};
+}) || _class);
 exports.default = FeaturedLeft;
 
 /***/ }),
@@ -2354,7 +2377,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(73);
 
-var _reactImages = __webpack_require__(89);
+var _reactImages = __webpack_require__(90);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2781,7 +2804,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(88);
+var _trash = __webpack_require__(89);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -2997,7 +3020,7 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
         _react2.default.createElement(
           'h2',
           null,
-          'Uspesno ste poslali porudzbinu!'
+          'Uspe\u0161no ste poslali porudzbinu!'
         )
       );
     } else {
@@ -3008,7 +3031,7 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
           _react2.default.createElement(
             'h2',
             null,
-            'Niste jos nista porucili kod nas!'
+            'Niste jo\u0161 nista poru\u010Dili kod nas!'
           )
         );
       } else {
@@ -3039,7 +3062,7 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
               { type: 'button', onClick: () => {
                   this.nekaFunkcija();
                 } },
-              'POSALJI'
+              'PO\u0160ALJI'
             )
           )
         );
@@ -3461,7 +3484,7 @@ var _reactRedux = __webpack_require__(6);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(96);
+var _reactAlert = __webpack_require__(86);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -3515,13 +3538,13 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
         return _react2.default.createElement(
           'button',
           { disabled: true },
-          'Naruci'
+          'Naru\u010Di'
         );
       } else {
         return _react2.default.createElement(
           'button',
           { onClick: () => this.handleClick() },
-          'Naruci'
+          'Naru\u010Di'
         );
       }
     };
@@ -3562,7 +3585,7 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
           _react2.default.createElement(
             'label',
             null,
-            'Kolicina \xA0'
+            'Koli\u010Dina \xA0'
           ),
           ' ',
           _react2.default.createElement('input', { type: 'number', min: '1', onChange: this.izmeniKolicinu, value: this.state.kolicina }),
@@ -4469,7 +4492,7 @@ var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(91);
+var _reactScrollableAnchor = __webpack_require__(92);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4509,7 +4532,7 @@ const Home = () => _react2.default.createElement(
   _react2.default.createElement(
     'div',
     { style: { backgroundImage: "url('/Pozadina2.jpg')" }, className: _styles2.default.pozadina2 },
-    _react2.default.createElement(_SectionHeadline2.default, { title: 'Najbolji \u0107evapi u gradu', innerText: 'Probajte obave\u017Eno' }),
+    _react2.default.createElement(_SectionHeadline2.default, { title: 'Tradicionalni srpski \u0107evapi u srcu prestonice', innerText: '100% doma\u0107e june\u0107e meso bez aditiva' }),
     _react2.default.createElement(_ThreeGallery2.default, null)
   ),
   _react2.default.createElement(_ParalaxContainer2.default, { stylee: sndlax }),
@@ -4720,7 +4743,7 @@ exports.default = () => _react2.default.createElement(
 /***/ (function(module, exports) {
 
 module.exports = {
-	"proizvodItem": "proizvodItem-2GSv7mfLdIPhOC-xEHBGUV"
+	"proizvodItem": "proizvodItem-cEWGAfW0RjBtn6FS2p2Nq"
 };
 
 /***/ }),
@@ -4758,8 +4781,8 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":225}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\r\n  allPorudzbinas {\r\n    id,\r\n    adresa,\r\n    opis,\r\n    brojTelefona,\r\n    createdAt,\r\n    stavkePorudzbines{\r\n      id,\r\n      kolicina,\r\n      proizvod {\r\n        naslov,\r\n      }\r\n\r\n    }\r\n  }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":208}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4785,8 +4808,8 @@ module.exports = doc;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
+    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4813,8 +4836,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
-    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
+    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4840,8 +4863,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":261}};
-    doc.loc.source = {"body":"subscription {\r\n  Porudzbina {\r\n\t\t\tnode {\r\n        id,\r\n        adresa,\r\n        brojTelefona,\r\n        opis,\r\n        stavkePorudzbines {\r\n          id,\r\n          kolicina,\r\n          proizvod {\r\n            naslov\r\n          }\r\n        }\r\n      }\r\n    }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":244}};
+    doc.loc.source = {"body":"subscription {\n  Porudzbina {\n\t\t\tnode {\n        id,\n        adresa,\n        brojTelefona,\n        opis,\n        stavkePorudzbines {\n          id,\n          kolicina,\n          proizvod {\n            naslov\n          }\n        }\n      }\n    }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4944,68 +4967,74 @@ module.exports = require("path");
 /* 86 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-alert");
 
 /***/ }),
 /* 87 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/shopping-cart");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 88 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/trash");
+module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
 /* 89 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
 /* 90 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-images");
 
 /***/ }),
 /* 91 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-router");
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 95 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(20);
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-alert");
+module.exports = require("react-async-script-loader");
 
 /***/ })
 /******/ ]);

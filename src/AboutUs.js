@@ -9,7 +9,7 @@ export default class AboutUs extends React.Component {
   render() {
     return(
       <div>
-        <TopHero title="O NAMA" subtitle="Kako je nastala DRAMA" bgImage={{backgroundImage: 'url("'+bgImg+'")'}} />
+        <TopHero title="Kako je nastala DRAMA" subtitle=" " bgImage={{backgroundImage: 'url("'+bgImg+'")'}} />
         <ContentBoxes />
       </div>
     );

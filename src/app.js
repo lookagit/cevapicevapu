@@ -50,7 +50,7 @@ const Home = () => (
     </ScrollableAnchor>
     <ParalaxContainer stylee={stylee} />
     <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
-      <SectionHeadline title="Najbolji ćevapi u gradu" innerText="Probajte obavežno" />
+      <SectionHeadline title="Tradicionalni srpski ćevapi u srcu prestonice" innerText="100% domaće juneće meso bez aditiva" />
       <ThreeGallery />
     </div>
     <ParalaxContainer stylee={sndlax} />

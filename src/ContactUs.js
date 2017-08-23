@@ -31,7 +31,7 @@ export default class ContactUs extends React.Component{
                   <textarea type="text" name="ime" placeholder="Poruka"  />
                 </p>
                 <p>
-                  <button className={css.posalji} type="submit">POSALJI</button>
+                  <button className={css.posalji} type="submit">POŠALJI</button>
                 </p>
                 </form>
               </Col>
@@ -48,7 +48,7 @@ export default class ContactUs extends React.Component{
                   <p>Vikendom 09:00h - 01:00h</p>
                   <h5>Dostava:</h5>
                   <p>12:00 - 20:00 h</p>
-                  <h5>Dostava od 20:00 do 24:00 putem kurirske sluzbe Potrcko</h5>
+                  <h5>Dostava od 20:00 do 24:00 putem kurirske sluzbe Potrčko</h5>
                 </Col>
 
               </Row>
