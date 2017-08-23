@@ -1,14 +1,14 @@
 {
-  "assets/img/galerija.jpg": "/assets/img/galerija.9c79bf46e0d5428d28bf83b9e534cb82.jpg",
-  "assets/img/hamburger.png": "/assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png",
-  "assets/img/logodrama.png": "/assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png",
-  "assets/img/o-nama-slika.jpg": "/assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg",
-  "assets/img/pozadina.jpg": "/assets/img/pozadina.555fb9005bc5a8b46130573b5ffc075c.jpg",
-  "assets/img/sarajevski-cevap-drama.jpg": "/assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg",
-  "assets/img/serbianburger.jpg": "/assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg",
-  "browser.css": "/assets/css/style.570ff0e976f97d9b8ca69a9f6e642740.css",
-  "browser.js": "/browser.c443a9d4074f0e4e7bfa.js",
+  "assets\\img\\galerija.jpg": "/assets/img/galerija.b9c1a6cbe5bc6b96217967cb0d262c39.jpg",
+  "assets\\img\\hamburger.png": "/assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png",
+  "assets\\img\\logodrama.png": "/assets/img/logodrama.ab5ed4b08eae7de6c7548f124be3d280.png",
+  "assets\\img\\o-nama-slika.jpg": "/assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg",
+  "assets\\img\\pozadina.jpg": "/assets/img/pozadina.83cb0d098df25f98f13eb0420ea91a8e.jpg",
+  "assets\\img\\sarajevski-cevap-drama.jpg": "/assets/img/sarajevski-cevap-drama.8ff48d3d62cb32101f1577d00a7751d3.jpg",
+  "assets\\img\\serbianburger.jpg": "/assets/img/serbianburger.412051e330e10d39d9aa0d5e3db3c09b.jpg",
+  "browser.css": "/assets/css/style.f50a29bc4c1deb4a12a1967c6d3eead2.css",
+  "browser.js": "/browser.30c65acf50359be6f8df.js",
   "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
   "manifest.json": "/../chunk-manifest.json",
-  "vendor.js": "/vendor.b424b480110fdf08497d.js"
+  "vendor.js": "/vendor.9af63af667f93eda58fa.js"
 }

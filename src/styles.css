@@ -82,11 +82,12 @@ right: 15px;
   padding-bottom: 100px;
   .featuredLeftImage{
     max-width: 500px;
-    width:500px;
+    width:470px;
     height: 500px;
     background-size:cover;
     float:left;
     margin-right: 82px;
+    margin-bottom: 20px;
   }
   .featuredLeftText{
     margin-top: 0px;

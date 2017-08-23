@@ -83,6 +83,7 @@
     "progress-bar-webpack-plugin": "^1.9.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
+    "react-alert": "^2.2.0",
     "react-apollo": "^1.4.2",
     "react-dom": "^15.6.1",
     "react-fa": "^4.2.0",

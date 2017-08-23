@@ -18,21 +18,20 @@ export default class ContentBoxes extends React.Component {
               Srpska tradicionalna hrana koju gotovo svi vole, a čijim kvalitetom po prestoničkim restoranima nismo uopšte bili srećni. Sećala
               nas je nostalgija mirisa ćevapčića iz detinjstva i pomislili smo: "Može to bolje".
               Krenuli smo u misiju: "Ćevapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa
-              interneta nam govore da smo uspeli... Na Vama je da presudite. 
+              interneta nam govore da smo uspeli... Na Vama je da presudite.
               </p>
             </div>
           </Col>
           <Col xs={12} sm={6}>
           <img src="/belo-meso-na-rostilju.jpg" style={{width: "100%", height: "auto"}}/>
-          <h2 style={{textAlign: "center"}}>KVALITET</h2>
-          <h4 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h4>
-          <p style={{textAlign: "justify"}}> Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</p>
           </Col>
           <Col xs={12} sm={6}>
-          <img src="/belo-meso-na-rostilju.jpg" style={{width: "100%", height: "auto"}}/>
-          <h2 style={{textAlign: "center"}}>VAS IZBOR</h2>
-          <h4 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h4>
-          <p style={{textAlign: "justify"}}> Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</p>
+          <img src="/rolovano-drama-rostilj.jpg" style={{width: "100%", height: "auto"}}/>
+          </Col>
+          <Col xs={12}>
+            <h2 style={{textAlign: "center"}}>VAS IZBOR</h2>
+            <h3 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h3>
+            <h3 style={{textAlign: "center"}}> Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</h3>
           </Col>
         </Row>
       </Grid>

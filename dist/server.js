@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 97);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -337,15 +337,15 @@ module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg";
+module.exports = __webpack_require__.p + "assets/img/serbianburger.412051e330e10d39d9aa0d5e3db3c09b.jpg";
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":87}};
-    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":95}};
+    doc.loc.source = {"body":"query AllProizvods {\r\n  allProizvods {\r\n    id,\r\n    cena,\r\n    naslov,\r\n    urlSlike\r\n  }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -517,7 +517,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(87);
+var _server = __webpack_require__(88);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -543,7 +543,7 @@ var _microseconds = __webpack_require__(85);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(91);
+var _reactRouter = __webpack_require__(92);
 
 var _reactHelmet = __webpack_require__(16);
 
@@ -790,7 +790,7 @@ var _reactApollo = __webpack_require__(5);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(95);
+var _subscriptionsTransportWs = __webpack_require__(96);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1030,9 +1030,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(93);
+var _redux = __webpack_require__(94);
 
-var _reduxThunk = __webpack_require__(94);
+var _reduxThunk = __webpack_require__(95);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1669,7 +1669,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(6);
 
-var _shoppingCart = __webpack_require__(88);
+var _shoppingCart = __webpack_require__(89);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -1958,40 +1958,29 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
             { xs: 12, sm: 6 },
-            _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } }),
-            _react2.default.createElement(
-              'h2',
-              { style: { textAlign: "center" } },
-              'KVALITET'
-            ),
-            _react2.default.createElement(
-              'h4',
-              { style: { textAlign: "center" } },
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'p',
-              { style: { textAlign: "justify" } },
-              ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
-            )
+            _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } })
           ),
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
             { xs: 12, sm: 6 },
-            _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } }),
+            _react2.default.createElement('img', { src: '/rolovano-drama-rostilj.jpg', style: { width: "100%", height: "auto" } })
+          ),
+          _react2.default.createElement(
+            _reactStyledFlexboxgrid.Col,
+            { xs: 12 },
             _react2.default.createElement(
               'h2',
               { style: { textAlign: "center" } },
               'VAS IZBOR'
             ),
             _react2.default.createElement(
-              'h4',
+              'h3',
               { style: { textAlign: "center" } },
               'Ko bi to radio da nije nas'
             ),
             _react2.default.createElement(
-              'p',
-              { style: { textAlign: "justify" } },
+              'h3',
+              { style: { textAlign: "center" } },
               ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
             )
           )
@@ -2039,27 +2028,20 @@ let FeaturedLeft = class FeaturedLeft extends _react2.default.Component {
           'div',
           { className: _styles2.default.featuredLeftText },
           _react2.default.createElement(
-            'h2',
-            null,
-            'Osetite duh Sarajeva u centru Beograda'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Kada se rodila ideja da otvorimo Marendu \u017Eelja nam je bila da u srcu Vra\u010Dara kreiramo oazu dobre atmosfere i sjajne hrane. Izazov je bilo na sjajnoj lokaciji kreirati ne\u0161to \u0161to \u0107e Beogra\u0111ani prihvatiti kao svoje, a oni koji dolaze u posetu prepoznati kao kvalitetno i vredno pa\u017Enje.'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'Svesni smo da je to veliki izazov i zato se trudimo da na\u0161im posetiocima ugodimo na razli\u010Dite na\u010Dine - enterijerom, uslugom, kvalitetnom hranom, napicima, predivnom letnjom terasom sa pogledom na Hram Sv. Save, muzikom...'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: _styles2.default.buttonP },
+            'div',
+            { id: 'TA_selfserveprop140', 'class': 'TA_selfserveprop' },
             _react2.default.createElement(
-              'a',
-              null,
-              'Pogledajte na\u0161u ponudu'
+              'ul',
+              { id: 'Xwlvmn9oPM0A', 'class': 'TA_links rfK3moz' },
+              _react2.default.createElement(
+                'li',
+                { id: 'bXYKv4eM', 'class': 'IVnZ4S51MgO' },
+                _react2.default.createElement(
+                  'a',
+                  { target: '_blank', href: 'https://www.tripadvisor.com/' },
+                  _react2.default.createElement('img', { src: 'https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png', alt: 'TripAdvisor' })
+                )
+              )
             )
           )
         )
@@ -2378,7 +2360,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(73);
 
-var _reactImages = __webpack_require__(90);
+var _reactImages = __webpack_require__(91);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2805,7 +2787,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(89);
+var _trash = __webpack_require__(90);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3463,6 +3445,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _dec, _class;
 
 var _react = __webpack_require__(0);
@@ -3483,12 +3467,31 @@ var _reactRedux = __webpack_require__(6);
 
 var _reactModalDialog = __webpack_require__(10);
 
+var _reactAlert = __webpack_require__(87);
+
+var _reactAlert2 = _interopRequireDefault(_reactAlert);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec(_class = class ProizvodItem extends _react.Component {
 
   constructor(props) {
     super(props);
+    this.alertOptions = {
+      offset: 14,
+      position: 'bottom left',
+      theme: 'dark',
+      time: 5000,
+      transition: 'scale'
+    };
+
+    this.showAlert = () => {
+      this.msg.show('Dodali ste ' + this.state.kolicina + 'x ' + this.props.proiz.naslov + ' u korpu!', {
+        time: 2000,
+        type: 'success',
+        icon: _react2.default.createElement('img', { width: '32px', height: '32px', src: this.props.proiz.urlSlike })
+      });
+    };
 
     this.handleClick = () => this.setState({ isShowingModal: true });
 
@@ -3543,6 +3546,7 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Col,
       { xs: 12, sm: 6, md: 4, lg: 3, className: _styles2.default.productBox },
+      _react2.default.createElement(_reactAlert2.default, _extends({ ref: a => this.msg = a }, this.alertOptions)),
       _react2.default.createElement(
         'div',
         { className: _styles2.default.product },
@@ -3608,6 +3612,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                 { style: stylee.buttonStyle, onClick: () => {
                     this.upaliIncrement();
                     this.handleClose();
+                    this.showAlert();
+                    Popup.alert('Dodali ste ' + this.state.kolicina + 'x ' + this.props.proiz.naslov + ' u korpu!');
                   } },
                 'Potvrdi'
               )
@@ -4469,7 +4475,7 @@ var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(92);
+var _reactScrollableAnchor = __webpack_require__(93);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -4720,7 +4726,7 @@ exports.default = () => _react2.default.createElement(
 /***/ (function(module, exports) {
 
 module.exports = {
-	"proizvodItem": "proizvodItem-cEWGAfW0RjBtn6FS2p2Nq"
+	"proizvodItem": "proizvodItem-2GSv7mfLdIPhOC-xEHBGUV"
 };
 
 /***/ }),
@@ -4733,33 +4739,33 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7
 /* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.9c79bf46e0d5428d28bf83b9e534cb82.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.b9c1a6cbe5bc6b96217967cb0d262c39.jpg";
 
 /***/ }),
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/pozadina.555fb9005bc5a8b46130573b5ffc075c.jpg";
+module.exports = __webpack_require__.p + "assets/img/pozadina.83cb0d098df25f98f13eb0420ea91a8e.jpg";
 
 /***/ }),
 /* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg";
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.8ff48d3d62cb32101f1577d00a7751d3.jpg";
 
 /***/ }),
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png";
+module.exports = __webpack_require__.p + "assets/img/logodrama.ab5ed4b08eae7de6c7548f124be3d280.png";
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":208}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":225}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\r\n  allPorudzbinas {\r\n    id,\r\n    adresa,\r\n    opis,\r\n    brojTelefona,\r\n    createdAt,\r\n    stavkePorudzbines{\r\n      id,\r\n      kolicina,\r\n      proizvod {\r\n        naslov,\r\n      }\r\n\r\n    }\r\n  }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4785,8 +4791,8 @@ module.exports = doc;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":91}};
-    doc.loc.source = {"body":"#import \"./message.gql\"\n\nquery AllMessages {\n  allMessages(first:1) {\n    ...Message\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllMessages"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allMessages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"IntValue","value":"1"}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Message"},"directives":[]}]}}]}}],"loc":{"start":0,"end":98}};
+    doc.loc.source = {"body":"#import \"./message.gql\"\r\n\r\nquery AllMessages {\r\n  allMessages(first:1) {\r\n    ...Message\r\n  }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4813,8 +4819,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":39}};
-    doc.loc.source = {"body":"fragment Message on Message {\n  text\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Message"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Message"}},"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"text"},"arguments":[],"directives":[],"selectionSet":null}]}}],"loc":{"start":0,"end":42}};
+    doc.loc.source = {"body":"fragment Message on Message {\r\n  text\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4840,8 +4846,8 @@ module.exports = doc;
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":244}};
-    doc.loc.source = {"body":"subscription {\n  Porudzbina {\n\t\t\tnode {\n        id,\n        adresa,\n        brojTelefona,\n        opis,\n        stavkePorudzbines {\n          id,\n          kolicina,\n          proizvod {\n            naslov\n          }\n        }\n      }\n    }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":261}};
+    doc.loc.source = {"body":"subscription {\r\n  Porudzbina {\r\n\t\t\tnode {\r\n        id,\r\n        adresa,\r\n        brojTelefona,\r\n        opis,\r\n        stavkePorudzbines {\r\n          id,\r\n          kolicina,\r\n          proizvod {\r\n            naslov\r\n          }\r\n        }\r\n      }\r\n    }\r\n}\r\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -4950,58 +4956,64 @@ module.exports = require("password-hash");
 /* 87 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-alert");
 
 /***/ }),
 /* 88 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/shopping-cart");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 89 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/trash");
+module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
 /* 90 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
 /* 91 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-images");
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-router");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 96 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21);

@@ -4,6 +4,7 @@ import scss from './styles.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+import AlertContainer from 'react-alert'
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 export default class ProizvodItem extends Component {
@@ -21,6 +22,24 @@ export default class ProizvodItem extends Component {
       count: PropTypes.number.isRequired,
     }),
   };
+
+  alertOptions = {
+      offset: 14,
+      position: 'bottom left',
+      theme: 'dark',
+      time: 5000,
+      transition: 'scale'
+    }
+
+    showAlert = () => {
+      this.msg.show('Dodali ste '+this.state.kolicina+'x ' + this.props.proiz.naslov + ' u korpu!', {
+        time: 2000,
+        type: 'success',
+        icon: <img width="32px" height="32px" src={this.props.proiz.urlSlike} />
+      })
+    }
+
+
   handleClick = () => this.setState({isShowingModal: true})
   handleClose = () => this.setState({isShowingModal: false, kolicina: ''})
   upaliIncrement = () => {
@@ -57,6 +76,7 @@ export default class ProizvodItem extends Component {
     }
     return (
       <Col xs={12} sm={6} md={4} lg={3} className={scss.productBox}>
+        <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
         <div className={scss.product}>
           <div>
             <img src={this.props.proiz.urlSlike} />
@@ -78,6 +98,8 @@ export default class ProizvodItem extends Component {
                   <button style={stylee.buttonStyle} onClick={() => {
                     this.upaliIncrement();
                     this.handleClose();
+                    this.showAlert();
+                    Popup.alert('Dodali ste '+this.state.kolicina+'x ' + this.props.proiz.naslov + ' u korpu!');
                   }}>Potvrdi</button>
                 </ModalDialog>
               </ModalContainer>
