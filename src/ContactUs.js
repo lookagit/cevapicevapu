@@ -45,7 +45,8 @@ export default class ContactUs extends React.Component{
                   <p>info@drama.rs</p>
                   <h5>Radno Vreme:</h5>
                   <p>09:00h - 24:00h</p>
-                  <p>Vikendom 09:00h - 01:00h</p>
+                  <p>Vikendom:</p>
+                  <p> 09:00h - 01:00h</p>
                   <h5>Dostava:</h5>
                   <p>12:00 - 20:00 h</p>
                   <h5>Dostava od 20:00 do 24:00 putem kurirske sluzbe Potrčko</h5>

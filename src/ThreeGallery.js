@@ -22,7 +22,7 @@ class ThreeGallery extends React.Component {
       <div className={css.threeGallery}>
         <div className={css.flexo}>
           <InstaImage src={srcFirst} tekst="Gurmanska pljeskavica 300gr" />
-          <InstaImage src={srcSecond} tekst="Leskovacka muckalica 300gr" />
+          <InstaImage src={srcSecond} tekst="Leskovačka mućkalica 300gr" />
           <InstaImage src={srcThird} tekst="10 ćevapa 300gr" />
         </div>
       </div>

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 100);
+/******/ 	return __webpack_require__(__webpack_require__.s = 101);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -537,7 +537,7 @@ var _microseconds = __webpack_require__(84);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(94);
+var _reactRouter = __webpack_require__(95);
 
 var _reactHelmet = __webpack_require__(15);
 
@@ -784,7 +784,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(22);
 
-var _subscriptionsTransportWs = __webpack_require__(99);
+var _subscriptionsTransportWs = __webpack_require__(100);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1024,9 +1024,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(96);
+var _redux = __webpack_require__(97);
 
-var _reduxThunk = __webpack_require__(97);
+var _reduxThunk = __webpack_require__(98);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1873,7 +1873,12 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   _react2.default.createElement(
                     'p',
                     null,
-                    'Vikendom 09:00h - 01:00h'
+                    'Vikendom:'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    ' 09:00h - 01:00h'
                   ),
                   _react2.default.createElement(
                     'h5',
@@ -1954,19 +1959,19 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
               _react2.default.createElement(
                 'p',
                 { style: { textAlign: "justify" } },
-                'Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedni\u010Dkog malog restorana izbor \u0107evapa se sam nametnuo. Srpska tradicionalna hrana koju gotovo svi vole, a \u010Dijim kvalitetom po prestoni\u010Dkim restoranima nismo uop\u0161te bili sre\u0107ni. Se\u0107ala nas je nostalgija mirisa \u0107evap\u010Di\u0107a iz detinjstva i pomislili smo: "Mo\u017Ee to bolje". Krenuli smo u misiju: "\u0106evapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa interneta nam govore da smo uspeli... Na Vama je da presudite.'
+                'Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedni\u010Dkog malog restorana izbor \u0107evapa se sam nametnuo. Srpska tradicionalna hrana koju gotovo svi vole, a \u010Dijim kvalitetom po prestoni\u010Dkim restoranima nismo uop\u0161te bili sre\u0107ni. Se\u0107ala nas je nostalgija mirisa \u0107evap\u010Di\u0107a iz detinjstva i pomislili smo: "Mo\u017Ee to bolje". Krenuli smo u misiju: "\u0106evapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa interneta nam govore da smo uspeli... Na vama je da presudite.'
               )
             )
           ),
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
             { xs: 12, sm: 6 },
-            _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } })
+            _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "100%" } })
           ),
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
             { xs: 12, sm: 6 },
-            _react2.default.createElement('img', { src: '/rolovano-drama-rostilj.jpg', style: { width: "100%", height: "auto" } })
+            _react2.default.createElement('img', { src: '/rolovano-drama-rostilj.jpg', style: { width: "100%", height: "100%" } })
           ),
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
@@ -1984,7 +1989,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
             _react2.default.createElement(
               'h3',
               { style: { textAlign: "center" } },
-              ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
+              ' Samo kod nas po najpovoljnijim cenama mo\u017Eete da u\u017Eivate u vrhunskom ukusu i garantovanom kvalitetu. Va\u0161 izbor je na\u0161a stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
             )
           )
         )
@@ -2023,17 +2028,17 @@ var _loadjs = __webpack_require__(83);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(98);
+var _regex = __webpack_require__(99);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
 
-var _reactLoadScript = __webpack_require__(93);
+var _reactLoadScript = __webpack_require__(94);
 
 var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
 
-var _reactIframe = __webpack_require__(101);
+var _reactIframe = __webpack_require__(92);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -2165,17 +2170,8 @@ let Footer = class Footer extends _react2.default.Component {
                 { className: _styles2.default.linkFooter },
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { to: '/page/jelovnik' },
-                  'Jelovnik'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { className: _styles2.default.linkFooter },
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/page/galerija' },
-                  'Galerija'
+                  { to: '/page/naruci' },
+                  'Naru\u010Di'
                 )
               ),
               _react2.default.createElement(
@@ -2185,6 +2181,15 @@ let Footer = class Footer extends _react2.default.Component {
                   _reactRouterDom.Link,
                   { to: '/page/about' },
                   'O nama'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: _styles2.default.linkFooter },
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { to: '/page/galerija' },
+                  'Galerija'
                 )
               ),
               _react2.default.createElement(
@@ -2244,7 +2249,7 @@ let Gally = class Gally extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("' + _galerija2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodo\u0161li na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("' + _galerija2.default + '")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -2381,7 +2386,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(73);
 
-var _reactImages = __webpack_require__(92);
+var _reactImages = __webpack_require__(93);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -3157,7 +3162,11 @@ let MainMenu = class MainMenu extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       { className: _styles2.default.hello },
-      _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo }),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/', onClick: this.opener },
+        _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo })
+      ),
       _react2.default.createElement(
         'div',
         {
@@ -3183,7 +3192,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/page/naruci', onClick: this.opener },
-            'Naruci'
+            'Naru\u010Di'
           )
         ),
         _react2.default.createElement(
@@ -3776,7 +3785,7 @@ let ThreeGallery = class ThreeGallery extends _react2.default.Component {
         'div',
         { className: _styles2.default.flexo },
         _react2.default.createElement(_InstaImage2.default, { src: srcFirst, tekst: 'Gurmanska pljeskavica 300gr' }),
-        _react2.default.createElement(_InstaImage2.default, { src: srcSecond, tekst: 'Leskovacka muckalica 300gr' }),
+        _react2.default.createElement(_InstaImage2.default, { src: srcSecond, tekst: 'Leskova\u010Dka mu\u0107kalica 300gr' }),
         _react2.default.createElement(_InstaImage2.default, { src: srcThird, tekst: '10 \u0107evapa 300gr' })
       )
     );
@@ -4496,7 +4505,7 @@ var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(95);
+var _reactScrollableAnchor = __webpack_require__(96);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -5007,62 +5016,62 @@ module.exports = require("react-icons/lib/fa/trash");
 /* 92 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-iframe");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-load-script");
+module.exports = require("react-images");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-load-script");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-scrollable-anchor");
+module.exports = require("react-router");
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-scrollable-anchor");
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 98 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 99 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("regex");
 
 /***/ }),
 /* 100 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(20);
 
-
-/***/ }),
-/* 101 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-iframe");
 
 /***/ })
 /******/ ]);

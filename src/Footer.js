@@ -29,9 +29,9 @@ class Footer extends React.Component {
             <div className={css.footerItem} style={{width: "450px"}}>
             <ul className={css.linkFooterUl}>
             <li className={css.linkFooter}><Link to="/">Početna</Link></li>
-            <li className={css.linkFooter}><Link to="/page/jelovnik">Jelovnik</Link></li>
-            <li className={css.linkFooter}><Link to="/page/galerija">Galerija</Link></li>
+            <li className={css.linkFooter}><Link to="/page/naruci">Naruči</Link></li>
             <li className={css.linkFooter}><Link to="/page/about">O nama</Link></li>
+            <li className={css.linkFooter}><Link to="/page/galerija">Galerija</Link></li>
             <li className={css.linkFooter}><Link to="/page/contact">Kontakt</Link></li>
             </ul>
             </div>

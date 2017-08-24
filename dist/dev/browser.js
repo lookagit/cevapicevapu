@@ -63,7 +63,7 @@ module.exports = doc;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_regenerator_runtime_runtime__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_regenerator_runtime_runtime__ = __webpack_require__(748);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_regenerator_runtime_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_regenerator_runtime_runtime__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_isomorphic_fetch__ = __webpack_require__(525);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_isomorphic_fetch__);
@@ -211,7 +211,7 @@ var BUNDLE_ANALYZER = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_apollo__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_apollo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react_apollo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_config_project__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws__ = __webpack_require__(780);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws__ = __webpack_require__(781);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_subscriptions_transport_ws__);
 // ----------------------
 // IMPORTS
@@ -278,7 +278,7 @@ function serverClient() {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = createNewStore;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__(743);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__(744);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_thunk__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_seamless_immutable__ = __webpack_require__(298);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_seamless_immutable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_seamless_immutable__);
@@ -1196,7 +1196,12 @@ var ContactUs = function (_React$Component) {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'p',
                       null,
-                      'Vikendom 09:00h - 01:00h'
+                      'Vikendom:'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      null,
+                      ' 09:00h - 01:00h'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'h5',
@@ -1287,19 +1292,19 @@ var ContentBoxes = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'p',
                   { style: { textAlign: "justify" } },
-                  'Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedni\u010Dkog malog restorana izbor \u0107evapa se sam nametnuo. Srpska tradicionalna hrana koju gotovo svi vole, a \u010Dijim kvalitetom po prestoni\u010Dkim restoranima nismo uop\u0161te bili sre\u0107ni. Se\u0107ala nas je nostalgija mirisa \u0107evap\u010Di\u0107a iz detinjstva i pomislili smo: "Mo\u017Ee to bolje". Krenuli smo u misiju: "\u0106evapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa interneta nam govore da smo uspeli... Na Vama je da presudite.'
+                  'Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedni\u010Dkog malog restorana izbor \u0107evapa se sam nametnuo. Srpska tradicionalna hrana koju gotovo svi vole, a \u010Dijim kvalitetom po prestoni\u010Dkim restoranima nismo uop\u0161te bili sre\u0107ni. Se\u0107ala nas je nostalgija mirisa \u0107evap\u010Di\u0107a iz detinjstva i pomislili smo: "Mo\u017Ee to bolje". Krenuli smo u misiju: "\u0106evapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa interneta nam govore da smo uspeli... Na vama je da presudite.'
                 )
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
               { xs: 12, sm: 6 },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "auto" } })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "100%" } })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
               { xs: 12, sm: 6 },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/rolovano-drama-rostilj.jpg', style: { width: "100%", height: "auto" } })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/rolovano-drama-rostilj.jpg', style: { width: "100%", height: "100%" } })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__["c" /* Col */],
@@ -1317,7 +1322,7 @@ var ContentBoxes = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
                 { style: { textAlign: "center" } },
-                ' Samo kod nas po najpovoljnijim cenama mozete da uzivate u vrhunskom ukusu i garantovanom kvalitetu. Vas izbor je nasa stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
+                ' Samo kod nas po najpovoljnijim cenama mo\u017Eete da u\u017Eivate u vrhunskom ukusu i garantovanom kvalitetu. Va\u0161 izbor je na\u0161a stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
               )
             )
           )
@@ -1345,12 +1350,12 @@ var ContentBoxes = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_async_script_loader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_async_script_loader__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_loadjs__ = __webpack_require__(535);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_loadjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_loadjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_regex__ = __webpack_require__(750);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_regex__ = __webpack_require__(751);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_regex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_regex__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_load_script__ = __webpack_require__(682);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_load_script__ = __webpack_require__(683);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_load_script___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_load_script__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_iframe__ = __webpack_require__(799);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_iframe__ = __webpack_require__(667);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_iframe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_iframe__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1513,17 +1518,8 @@ var Footer = function (_React$Component) {
                   { className: __WEBPACK_IMPORTED_MODULE_1__styles_css___default.a.linkFooter },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["d" /* Link */],
-                    { to: '/page/jelovnik' },
-                    'Jelovnik'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  { className: __WEBPACK_IMPORTED_MODULE_1__styles_css___default.a.linkFooter },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["d" /* Link */],
-                    { to: '/page/galerija' },
-                    'Galerija'
+                    { to: '/page/naruci' },
+                    'Naru\u010Di'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -1533,6 +1529,15 @@ var Footer = function (_React$Component) {
                     __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["d" /* Link */],
                     { to: '/page/about' },
                     'O nama'
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'li',
+                  { className: __WEBPACK_IMPORTED_MODULE_1__styles_css___default.a.linkFooter },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["d" /* Link */],
+                    { to: '/page/galerija' },
+                    'Galerija'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -1601,7 +1606,7 @@ var Gally = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TopHero_js__["a" /* default */], { title: 'GALERIJA', subtitle: 'Dobrodosli na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("' + __WEBPACK_IMPORTED_MODULE_4__images_galerija_jpg___default.a + '")' } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TopHero_js__["a" /* default */], { title: 'GALERIJA', subtitle: 'Dobrodo\u0161li na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("' + __WEBPACK_IMPORTED_MODULE_4__images_galerija_jpg___default.a + '")' } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -1751,7 +1756,7 @@ var GallyGrid = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aphrodite_no_important__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aphrodite_no_important___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_aphrodite_no_important__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_images__ = __webpack_require__(667);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_images__ = __webpack_require__(668);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_images___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_images__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_scss__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__styles_scss__);
@@ -2682,7 +2687,11 @@ var MainMenu = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: __WEBPACK_IMPORTED_MODULE_2__styles_css___default.a.hello },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__logodrama_png___default.a, alt: 'Drama logo', className: __WEBPACK_IMPORTED_MODULE_2__styles_css___default.a.logo }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
+          { to: '/', onClick: this.opener },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__logodrama_png___default.a, alt: 'Drama logo', className: __WEBPACK_IMPORTED_MODULE_2__styles_css___default.a.logo })
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           {
@@ -2708,7 +2717,7 @@ var MainMenu = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
               { to: '/page/naruci', onClick: this.opener },
-              'Naruci'
+              'Naru\u010Di'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -3493,7 +3502,7 @@ var ThreeGallery = function (_React$Component) {
           'div',
           { className: __WEBPACK_IMPORTED_MODULE_1__styles_css___default.a.flexo },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__InstaImage_js__["a" /* default */], { src: srcFirst, tekst: 'Gurmanska pljeskavica 300gr' }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__InstaImage_js__["a" /* default */], { src: srcSecond, tekst: 'Leskovacka muckalica 300gr' }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__InstaImage_js__["a" /* default */], { src: srcSecond, tekst: 'Leskova\u010Dka mu\u0107kalica 300gr' }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__InstaImage_js__["a" /* default */], { src: srcThird, tekst: '10 \u0107evapa 300gr' })
         )
       );
@@ -4316,7 +4325,7 @@ ProizvodList.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__Gally_js__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__NaruciNesto__ = __webpack_require__(375);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ContactUs_js__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_react_scrollable_anchor__ = __webpack_require__(715);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_react_scrollable_anchor__ = __webpack_require__(716);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_react_scrollable_anchor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_react_scrollable_anchor__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__admin_Admin__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__Korpa__ = __webpack_require__(372);
@@ -4815,13 +4824,6 @@ module.exports = doc;
 
 /***/ }),
 
-/***/ 795:
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
 /***/ 796:
 /***/ (function(module, exports) {
 
@@ -4837,6 +4839,13 @@ module.exports = doc;
 /***/ }),
 
 /***/ 798:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 799:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(306);
@@ -4844,5 +4853,5 @@ module.exports = __webpack_require__(306);
 
 /***/ })
 
-},[798]);
+},[799]);
 //# sourceMappingURL=browser.js.map

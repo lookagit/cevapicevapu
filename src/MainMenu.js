@@ -28,7 +28,7 @@ class MainMenu extends React.Component {
   render() {
     return (
       <div className={css.hello}>
-        <img src={logo} alt="Drama logo" className={css.logo} />
+        <Link to="/" onClick={this.opener}><img src={logo} alt="Drama logo" className={css.logo} /></Link>
         <div
           className={css.mobileIcon}
           onClick={this.opener} >
@@ -36,7 +36,7 @@ class MainMenu extends React.Component {
         </div>
         <ul style={this.state.stylee}>
         <li><Link to="/" onClick={this.opener}>Početna</Link></li>
-        <li><Link to="/page/naruci" onClick={this.opener}>Naruci</Link></li>
+        <li><Link to="/page/naruci" onClick={this.opener}>Naruči</Link></li>
         <li><Link to="/page/about" onClick={this.opener}>O nama</Link></li>
         <li><Link to="/page/galerija" onClick={this.opener}>Galerija</Link></li>
         <li><Link to="/page/contact" onClick={this.opener}>Kontakt</Link></li>
