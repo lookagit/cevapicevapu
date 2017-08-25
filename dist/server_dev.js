@@ -157,7 +157,8 @@ module.exports = {
 	"korpaForm": "korpaForm-3xBTwwK71Y3k8fSqQnbDkc",
 	"adminLog": "adminLog-1FbsXfLXwhZvvwmYgHLVG1",
 	"adminNavbar": "adminNavbar-2SsCfZupjTp2ePWyYaQX9E",
-	"buttonModal": "buttonModal-oQhRp8mZSwic4C68ZmHUD"
+	"buttonModal": "buttonModal-oQhRp8mZSwic4C68ZmHUD",
+	"cevapiKao": "cevapiKao-1BNwnhXUkAbtrj-Em031Ms"
 };
 
 /***/ }),
