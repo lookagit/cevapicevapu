@@ -31,6 +31,7 @@ import ContactUs from './ContactUs.js'
 import ScrollableAnchor from 'react-scrollable-anchor';
 import Admir from './admin/Admin';
 import Korpa from './Korpa';
+import Homes from './Home';
 const stylee = {
   backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
   height: '300px',
@@ -41,23 +42,7 @@ const sndlax = {
 }
 
 const Home = () => (
-  <div>
-    <Header />
-    <ScrollableAnchor id={'section1'}>
-    <div style={{width:'100%', height:'auto'}}>
-      <img src="/cevapi.jpg" style={{width: "100%", height: "auto", verticalAlign:'top'}}/>
-    </div>
-    </ScrollableAnchor>
-    <ParalaxContainer stylee={stylee} />
-    <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
-      <SectionHeadline title="Tradicionalni srpski ćevapi u srcu prestonice" innerText="100% domaće juneće meso bez aditiva" />
-      <ThreeGallery />
-    </div>
-    <ParalaxContainer stylee={sndlax} />
-    <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
-      <FeaturedLeft />
-    </div>
-  </div>
+  <Homes />
 );
 
 const Admin = () => (

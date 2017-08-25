@@ -6,6 +6,11 @@ import Proizvod from './Proizvod';
 import scss from './styles.scss';
 
 export default class NaruciNesto extends React.Component {
+  componentDidMount() {
+    if(typeof window !== 'undefined') {
+      window.scroll(0,0);
+    }
+  }
   render () {
     return (
       <div>

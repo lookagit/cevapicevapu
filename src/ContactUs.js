@@ -7,6 +7,11 @@ import InstagramSquare from 'react-icons/lib/fa/instagram';
 import YoutubeSquare from 'react-icons/lib/fa/youtube-square';
 import GoogleMaps from './GoogleMaps.js';
 export default class ContactUs extends React.Component{
+  componentDidMount() {
+    if(typeof window !== 'undefined') {
+      window.scroll(0,0);
+    }
+  }
   render(){
     return(
       <div>

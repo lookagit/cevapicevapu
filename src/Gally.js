@@ -4,6 +4,11 @@ import TopHero from './TopHero.js';
 import GallyGrid from './GallyGrid.js'
 import bgImg from './images/galerija.jpg';
 export default class Gally extends React.Component {
+  componentDidMount() {
+    if(typeof window !== 'undefined') {
+      window.scroll(0,0);
+    }
+  }
   render() {
     return(
       <div>

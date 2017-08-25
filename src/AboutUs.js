@@ -6,6 +6,11 @@ import ContentBoxes from './ContentBoxes.js';
 import bgImg from './images/sarajevski-cevap-drama.jpg';
 import passwordHash from 'password-hash';
 export default class AboutUs extends React.Component {
+  componentDidMount() {
+    if(typeof window !== 'undefined') {
+      window.scroll(0,0);
+    }
+  }
   render() {
     return(
       <div>
