@@ -10,5 +10,9 @@
   "browser.js": "/browser.9b562e03821adca22c64.js",
   "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
   "manifest.json": "/../chunk-manifest.json",
+<<<<<<< HEAD
   "vendor.js": "/vendor.52320cf1113442c69d80.js"
+=======
+  "vendor.js": "/vendor.f2f18b82bca442f13f67.js"
+>>>>>>> e290dca38505a0df86bb309800c5c92eb3248df3
 }
