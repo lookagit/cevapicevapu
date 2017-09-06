@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 106);
+/******/ 	return __webpack_require__(__webpack_require__.s = 105);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -305,25 +305,25 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactAsyncScriptLoader = __webpack_require__(93);
+var _reactAsyncScriptLoader = __webpack_require__(92);
 
 var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
 
-var _loadjs = __webpack_require__(88);
+var _loadjs = __webpack_require__(87);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(104);
+var _regex = __webpack_require__(103);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
 
-var _reactLoadScript = __webpack_require__(99);
+var _reactLoadScript = __webpack_require__(98);
 
 var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
 
-var _reactIframe = __webpack_require__(97);
+var _reactIframe = __webpack_require__(96);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -667,11 +667,11 @@ var _server = __webpack_require__(30);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koaCors = __webpack_require__(84);
+var _koaCors = __webpack_require__(83);
 
 var _koaCors2 = _interopRequireDefault(_koaCors);
 
-var _koaBodyparser = __webpack_require__(83);
+var _koaBodyparser = __webpack_require__(82);
 
 var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
 
@@ -735,7 +735,7 @@ _server2.default.then(({ router, app }) => {
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(91);
+const path = __webpack_require__(90);
 
 // ----------------------
 
@@ -811,39 +811,39 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(80);
+__webpack_require__(79);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(94);
+var _server = __webpack_require__(93);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(82);
+var _koa = __webpack_require__(81);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(6);
 
-var _koaSend = __webpack_require__(87);
+var _koaSend = __webpack_require__(86);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(85);
+var _koaHelmet = __webpack_require__(84);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(86);
+var _koaRouter = __webpack_require__(85);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(89);
+var _microseconds = __webpack_require__(88);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(100);
+var _reactRouter = __webpack_require__(99);
 
 var _reactHelmet = __webpack_require__(21);
 
@@ -1107,7 +1107,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(29);
 
-var _subscriptionsTransportWs = __webpack_require__(105);
+var _subscriptionsTransportWs = __webpack_require__(104);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1168,7 +1168,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(77);
+var _boxen = __webpack_require__(76);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
@@ -1176,7 +1176,7 @@ var _chalk = __webpack_require__(20);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(79);
+var _ip = __webpack_require__(78);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -1347,9 +1347,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(102);
+var _redux = __webpack_require__(101);
 
-var _reduxThunk = __webpack_require__(103);
+var _reduxThunk = __webpack_require__(102);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1724,11 +1724,11 @@ var _ContentBoxes = __webpack_require__(43);
 
 var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
 
-var _sarajevskiCevapDrama = __webpack_require__(70);
+var _sarajevskiCevapDrama = __webpack_require__(69);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(90);
+var _passwordHash = __webpack_require__(89);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1783,10 +1783,6 @@ var _AlaCartGridMenu = __webpack_require__(40);
 
 var _AlaCartGridMenu2 = _interopRequireDefault(_AlaCartGridMenu);
 
-var _pozadina = __webpack_require__(69);
-
-var _pozadina2 = _interopRequireDefault(_pozadina);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let AlaCart = class AlaCart extends _react2.default.Component {
@@ -1794,7 +1790,7 @@ let AlaCart = class AlaCart extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok necete zaboraviti', bgImage: { backgroundImage: 'url("' + _pozadina2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok ne\u0107ete zaboraviti', bgImage: { backgroundImage: 'url("/pozadina.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -2000,7 +1996,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _shoppingCart = __webpack_require__(95);
+var _shoppingCart = __webpack_require__(94);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2090,7 +2086,7 @@ var _GoogleMaps = __webpack_require__(48);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(101);
+var _reactTransitions = __webpack_require__(100);
 
 var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
 
@@ -2797,9 +2793,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _noImportant = __webpack_require__(76);
+var _noImportant = __webpack_require__(75);
 
-var _reactImages = __webpack_require__(98);
+var _reactImages = __webpack_require__(97);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2997,7 +2993,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _googleMapReact = __webpack_require__(78);
+var _googleMapReact = __webpack_require__(77);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -3280,7 +3276,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(96);
+var _trash = __webpack_require__(95);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3587,7 +3583,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(71);
+var _logodrama = __webpack_require__(70);
 
 var _logodrama2 = _interopRequireDefault(_logodrama);
 
@@ -3920,7 +3916,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(92);
+var _reactAlert = __webpack_require__(91);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -4147,7 +4143,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _reactRedux = __webpack_require__(5);
 
-var _jsMd = __webpack_require__(81);
+var _jsMd = __webpack_require__(80);
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -4376,7 +4372,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _allPorudzbinas = __webpack_require__(72);
+var _allPorudzbinas = __webpack_require__(71);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
 
@@ -4392,7 +4388,7 @@ var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(5);
 
-var _PorudzbinaAdd = __webpack_require__(75);
+var _PorudzbinaAdd = __webpack_require__(74);
 
 var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
 
@@ -4753,7 +4749,7 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 var _routing = __webpack_require__(35);
 
-var _all_messages = __webpack_require__(73);
+var _all_messages = __webpack_require__(72);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
@@ -5059,22 +5055,16 @@ module.exports = __webpack_require__.p + "assets/img/galerija.b5483bba2ddc874b9c
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/pozadina.0e278f2ee449d398d8242db5b5cb09c4.jpg";
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.7e486aecc2c0f1abc9d2a6dbce72bdad.jpg";
 
 /***/ }),
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.7e486aecc2c0f1abc9d2a6dbce72bdad.jpg";
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
 module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f474e97e9bff36f0c.png";
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports) {
 
 
@@ -5101,7 +5091,7 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.5ae232c68c2a191f4
 module.exports = doc;
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -5124,12 +5114,12 @@ module.exports = doc;
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(74).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(73).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports) {
 
 
@@ -5156,7 +5146,7 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports) {
 
 
@@ -5183,187 +5173,187 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = require("aphrodite/no-important");
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("google-map-react");
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("js-md5");
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-bodyparser");
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-cors");
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("loadjs");
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = require("password-hash");
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-alert");
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-async-script-loader");
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-load-script");
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-transitions");
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports) {
 
 module.exports = require("regex");
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(27);
