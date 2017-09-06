@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit:700,800');
 @import url('https://fonts.googleapis.com/css?family=Lato:500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 /* Define some variables we might want to use elsewhere */
 html, body {
   height: 100%;
   margin:0;
 }
 p, h1, h2, h3, h4, h5, span, a {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 #main {
   height: 100%;
@@ -32,7 +33,17 @@ p, h1, h2, h3, h4, h5, span, a {
   }
 }
 
+.boxes {
+  opacity: 1.0;
+  box-sizing: border-box;
+  transition: height 500ms 0ms, opacity 500ms 500ms;
+}
 
+.hidees {
+  transition: height 500ms 500ms, opacity 500ms 0ms;
+  opacity: 0.0;
+  height: 0px;
+}
 .linkFooterUl{
   padding-left: 0px;
 }
@@ -83,9 +94,10 @@ right: 15px;
   .featuredLeftImage{
     max-width: 500px;
     width:470px;
-    height: 500px;
+    height: 444px;
     background-size:cover;
     float:left;
+    margin-top: 8px;
     margin-right: 82px;
     margin-bottom: 20px;
   }
@@ -426,7 +438,8 @@ right: 15px;
     font-style: italic;
   }
   p{
-    font-size:24px;
+    font-size:21px;
+    font-weight: bold;
   }
 }
 
@@ -441,10 +454,8 @@ right: 15px;
     margin: 20px 0;
   }
 }
-@media(min-width:1200px){
 
-}
-@media (min-width:1026px) and (max-width:1199px){
+@media (min-width:1026px) and (max-width:1259px){
   .aboutNaslov{
     margin-top: 20px;
   }
@@ -455,7 +466,7 @@ right: 15px;
     margin:20px;
   }
 }
-@media (min-width: 768px) and (max-width:1025px){
+@media (min-width: 1025px) and (max-width:1225px){
   .hrDebilni{
     margin:10px;
   }
@@ -477,10 +488,11 @@ right: 15px;
   }
   .tekstTwo p {
     font-size: 18px !important;
+    font-weight: bold;
   }
 }
 
-@media (max-width: 767px){
+@media (max-width: 1024px){
   body {
     overflow-x: hidden;
   }
@@ -582,7 +594,8 @@ right: 15px;
     text-align: center;
   }
   .tekstTwo p {
-    font-size: 18px !important;
+    font-weight: bold;
+    font-size: 15px !important;
   }
   .topHeader {
     font-size: 60px !important;
@@ -664,7 +677,7 @@ right: 15px;
   }
 
   input:focus {
-    border: 3px solid #6b4a1e;
+    border: 3px solid red;
     height: 24px;
   }
 
@@ -704,7 +717,7 @@ right: 15px;
       }
     }
     textarea:focus {
-      border: 3px solid #6b4a1e;
+      border: 3px solid red;
       height: 144px;
     }
   }
@@ -766,7 +779,7 @@ right: 15px;
 }
 
 .rIconsIg:hover{
-  color: #cd486b;
+  color: #d10869;
 }
 
 .rIconsYt {

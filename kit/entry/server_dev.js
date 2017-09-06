@@ -20,7 +20,8 @@ import { logServerStarted } from 'kit/lib/console';
 
 // Extend the server base
 import server, { createReactHandler, staticMiddleware } from './server';
-
+import cors from 'koa-cors';
+import bodyParser from 'koa-bodyparser';
 // ----------------------
 
 // Host and port -- from the environment
@@ -37,9 +38,10 @@ const scripts = [
 server.then(({ router, app }) => {
   // Create proxy to tunnel requests to the browser `webpack-dev-server`
   router.get('/*', createReactHandler(css, scripts));
-
   // Connect the development routes to the server
   app
+    .use(cors())
+    .use(bodyParser())
     .use(staticMiddleware())
     .use(router.routes())
     .use(router.allowedMethods());

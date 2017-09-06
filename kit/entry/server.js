@@ -71,9 +71,9 @@ import App from 'src/app';
 // Import paths.  We'll use this to figure out where our public folder is
 // so we can serve static files
 import PATHS from 'config/paths';
-
+var sendgrid = require("sendgrid")("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");
 // ----------------------
-
+var helper = require('sendgrid').mail;
 // Static file middleware
 export function staticMiddleware() {
   return async function staticMiddlewareHandler(ctx, next) {
@@ -175,6 +175,26 @@ export default (async function server() {
       // If /favicon.ico is available as a static file, it'll try that first
       .get('/favicon.ico', async ctx => {
         ctx.res.statusCode = 204;
+      })
+
+      .post('/ping', async ctx => {
+        console.log("A JA SAM NA SERVERU ", ctx.request.body);
+        let from_email = new helper.Email(ctx.request.body.test.mail);
+        let to_email = new helper.Email("simjanovic.luka@gmail.com");
+        let subject = ctx.request.body.test.sub;
+        let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
+        let mail = new helper.Mail(from_email, subject, to_email, content);
+        var request = sendgrid.emptyRequest({
+          method: 'POST',
+          path: '/v3/mail/send',
+          body: mail.toJSON()
+        });
+        sendgrid.API(request, function(error, response) {
+          console.log(response.statusCode);
+          console.log(response.body);
+          console.log(response.headers);
+        })
+        ctx.body = {"bong": "koko"};
       }),
     app: new Koa()
 

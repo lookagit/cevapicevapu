@@ -16,12 +16,12 @@ class Footer extends React.Component {
           <div className={css.itemWrap}>
             <div className={css.footerItem}>
               <h2>DRUŠTVENE MREŽE</h2>
-              <div className={css.rIconsFb}>
+              <a href="https://www.facebook.com/dramacevapi/?fref=ts" target="_blank"><div className={css.rIconsFb}>
                 <FacebookSquare width="3em" height="3em"/>
-              </div>
-              <div className={css.rIconsIg}>
+              </div></a>
+              <a href="https://www.instagram.com/explore/locations/813855916/" target="_blank"><div className={css.rIconsIg}>
                 <InstagramSquare width="3em" height="3em" />
-              </div>
+              </div></a>
               <div className={css.rIconsYt}>
                 <YoutubeSquare width="3em" height="3em" />
               </div>

@@ -22,7 +22,7 @@ class FeaturedLeft extends React.Component {
           <div>
           <Iframe url="http://widget.developcodex.net/"
             width="480px"
-            height="462px"
+            height="470px"
             display="initial"
             position="relative"
           />
