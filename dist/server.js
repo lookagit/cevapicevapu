@@ -624,13 +624,13 @@ exports.default = ThreeGallery;
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/o-nama-slika.496e65e5caab5480d2a86ca56e6458e8.jpg";
+module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg";
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/serbianburger.67e5e3cda1962c4b18a6d2606ef5c8a9.jpg";
+module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg";
 
 /***/ }),
 /* 20 */
@@ -1789,7 +1789,7 @@ let AlaCart = class AlaCart extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok necete zaboraviti', bgImage: { backgroundImage: 'url("/pozadina.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'JELOVNIK', subtitle: 'Ovaj obrok ne\u0107ete zaboraviti', bgImage: { backgroundImage: 'url("/pozadina.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -5042,25 +5042,25 @@ module.exports = {
 /* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/hamburger.1a2be69e77a7efc51ce054b033dd01c5.png";
+module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png";
 
 /***/ }),
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.896fa86677c2538cd4e709fff1309b77.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.9c79bf46e0d5428d28bf83b9e534cb82.jpg";
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.83caaba8fa31953e2367933027c2df26.jpg";
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg";
 
 /***/ }),
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/logodrama.229d5cafbb0cef329addeeeab7aee084.png";
+module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png";
 
 /***/ }),
 /* 71 */
