@@ -15,7 +15,7 @@ export default class ContentBoxes extends React.Component {
             <div className={css.tekstTwo}>
               <p style={{textAlign: "justify"}}>
               Kada smo 2014. godine, nas nekoliko prijatelja razgovarali o otvaranju zajedničkog malog restorana izbor ćevapa se sam nametnuo.
-              Srpska tradicionalna hrana koju gotovo svi vole, a čijim kvalitetom po prestoničkim restoranima nismo uopšte bili srećni. Sećala
+              Srpska tradicionalna hrana koju gotovo svi vole, a čijim kvalitetom po prestoničkim restoranima nismo uopšte bili srećni, sećala
               nas je nostalgija mirisa ćevapčića iz detinjstva i pomislili smo: "Može to bolje".
               Krenuli smo u misiju: "Ćevapi kao nekad"... i eto. Nekoliko godina kasnije, osmesi na licima, popunjeni stolovi i komentari sa
               interneta nam govore da smo uspeli... Na vama je da presudite.

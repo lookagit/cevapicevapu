@@ -20,7 +20,7 @@ class FeaturedLeft extends React.Component {
           <div className={css.featuredLeftImage} style={{backgroundImage: "url('pleska.jpg')"}}></div>
           <div className={css.featuredLeftText}>
           <div>
-          <Iframe url="http://widget.developcodex.net/"
+          <Iframe url="https://widget.developcodex.net/"
             width="480px"
             height="470px"
             display="initial"
