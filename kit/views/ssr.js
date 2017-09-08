@@ -17,7 +17,7 @@ const Html = ({ head, html, scripts, window, css }) => (
       <meta property="og:type"   content="website" />
       <meta property="og:url"    content="https://young-woodland-61835.herokuapp.com" />
       <meta property="og:title"  content="Drama Ćevapi" />
-      <meta property="og:image"  content="https://young-woodland-61835.herokuapp.com/logo.png" />
+      <meta property="og:image"  content="https://young-woodland-61835.herokuapp.com/share.jpg" />
       <meta property="og:description"
         content="Uživajte u najkvalitetnijim ćevapima kod nas.Drama ćevapi" />
       <meta httpEquiv="Content-Language" content="en" />

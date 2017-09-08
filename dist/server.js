@@ -1549,7 +1549,7 @@ const Html = ({ head, html, scripts, window, css }) => _react2.default.createEle
     _react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
     _react2.default.createElement('meta', { property: 'og:url', content: 'https://young-woodland-61835.herokuapp.com' }),
     _react2.default.createElement('meta', { property: 'og:title', content: 'Drama \u0106evapi' }),
-    _react2.default.createElement('meta', { property: 'og:image', content: 'https://young-woodland-61835.herokuapp.com/logo.png' }),
+    _react2.default.createElement('meta', { property: 'og:image', content: 'https://young-woodland-61835.herokuapp.com/share.jpg' }),
     _react2.default.createElement('meta', { property: 'og:description',
       content: 'U\u017Eivajte u najkvalitetnijim \u0107evapima kod nas.Drama \u0107evapi' }),
     _react2.default.createElement('meta', { httpEquiv: 'Content-Language', content: 'en' }),
