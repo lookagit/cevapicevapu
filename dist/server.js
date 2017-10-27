@@ -2176,7 +2176,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
         var datas = new FormData();
         datas.append("json", JSON.stringify({ "a": "HOHOHOH" }));
         var myHeaders = new Headers();
-        fetch("http://localhost:8081/ping", {
+        fetch("http://wwww.dramacevapi.com/ping", {
           headers: { 'content-type': 'application/json' },
           method: "post",
           mode: 'cors',
