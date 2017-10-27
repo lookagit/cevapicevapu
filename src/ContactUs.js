@@ -116,7 +116,7 @@ export default class ContactUs extends React.Component{
       var myHeaders = new Headers();
       fetch("http://dramacevapi.com/page/ping",
       {
-        headers: {'content-type': 'application/json'},
+        headers: {'content-type': 'application/json','Referrer-Policy': 'no-referrer'},
         method: "post",
         mode: 'no-cors',
         body: JSON.stringify({test: {

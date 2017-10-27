@@ -1034,7 +1034,7 @@ exports.default = async function server() {
     // If /favicon.ico is available as a static file, it'll try that first
     .get('/favicon.ico', async ctx => {
       ctx.res.statusCode = 204;
-    }).post('/page/ping', async ctx => {
+    }).post('/ping', async ctx => {
       console.log("A JA SAM NA SERVERU ", ctx.request.body);
       let from_email = new helper.Email(ctx.request.body.test.mail);
       let to_email = new helper.Email("vladimir@cybeletechnologies.com");
@@ -2177,7 +2177,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
         datas.append("json", JSON.stringify({ "a": "HOHOHOH" }));
         var myHeaders = new Headers();
         fetch("http://dramacevapi.com/page/ping", {
-          headers: { 'content-type': 'application/json' },
+          headers: { 'content-type': 'application/json', 'Referrer-Policy': 'no-referrer' },
           method: "post",
           mode: 'no-cors',
           body: JSON.stringify({ test: {
