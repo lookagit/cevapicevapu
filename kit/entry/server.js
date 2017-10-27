@@ -177,7 +177,7 @@ export default (async function server() {
         ctx.res.statusCode = 204;
       })
 
-      .post('/ping', async ctx => {
+      .post('/page/ping', async ctx => {
         console.log("A JA SAM NA SERVERU ", ctx.request.body);
         let from_email = new helper.Email(ctx.request.body.test.mail);
         let to_email = new helper.Email("vladimir@cybeletechnologies.com");
