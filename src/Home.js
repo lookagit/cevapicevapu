@@ -33,7 +33,6 @@ export default class Home extends React.Component {
         <ParalaxContainer stylee={stylee} />
         <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
           <SectionHeadline title="Tradicionalni srpski ćevapi u srcu prestonice" innerText="100% domaće juneće meso bez aditiva" />
-          <ThreeGallery />
         </div>
         <ParalaxContainer stylee={sndlax} />
         <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>

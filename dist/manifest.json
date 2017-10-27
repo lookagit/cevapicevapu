@@ -1,13 +1,14 @@
 {
+  "assets/img/dostava.jpg": "/assets/img/dostava.701076b302b32fb19c40ffc7c8172506.jpg",
   "assets/img/galerija.jpg": "/assets/img/galerija.9c79bf46e0d5428d28bf83b9e534cb82.jpg",
   "assets/img/hamburger.png": "/assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png",
   "assets/img/logodrama.png": "/assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png",
   "assets/img/o-nama-slika.jpg": "/assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg",
   "assets/img/sarajevski-cevap-drama.jpg": "/assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg",
   "assets/img/serbianburger.jpg": "/assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg",
-  "browser.css": "/assets/css/style.2130b7f6d69d09d34d1b7f3100fa9a0e.css",
-  "browser.js": "/browser.e855f2a6a2efc685823a.js",
+  "browser.css": "/assets/css/style.5ddb49f8c2a90fe5e575061211bf12f6.css",
+  "browser.js": "/browser.4c1bfdddbe381238ed19.js",
   "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
   "manifest.json": "/../chunk-manifest.json",
-  "vendor.js": "/vendor.121eccf5a79eb89c0dbf.js"
+  "vendor.js": "/vendor.27c2f16b3bbb3c933cf5.js"
 }

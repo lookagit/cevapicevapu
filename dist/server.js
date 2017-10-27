@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 104);
+/******/ 	return __webpack_require__(__webpack_require__.s = 105);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -294,7 +294,7 @@ module.exports = require("sendgrid");
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(21);
+const path = __webpack_require__(20);
 
 // ----------------------
 
@@ -358,25 +358,25 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactAsyncScriptLoader = __webpack_require__(91);
+var _reactAsyncScriptLoader = __webpack_require__(92);
 
 var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
 
-var _loadjs = __webpack_require__(87);
+var _loadjs = __webpack_require__(88);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(102);
+var _regex = __webpack_require__(103);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
 
-var _reactLoadScript = __webpack_require__(97);
+var _reactLoadScript = __webpack_require__(98);
 
 var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
 
-var _reactIframe = __webpack_require__(95);
+var _reactIframe = __webpack_require__(96);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -430,7 +430,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HeaderHero = __webpack_require__(49);
+var _HeaderHero = __webpack_require__(48);
 
 var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
 
@@ -584,7 +584,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _InstaImage = __webpack_require__(51);
+var _InstaImage = __webpack_require__(50);
 
 var _InstaImage2 = _interopRequireDefault(_InstaImage);
 
@@ -624,16 +624,10 @@ exports.default = ThreeGallery;
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg";
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
 module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg";
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports) {
 
 
@@ -660,69 +654,69 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039
 module.exports = doc;
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-helmet");
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/facebook-square");
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-scrollable-anchor");
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("seamless-immutable");
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _path = __webpack_require__(21);
+var _path = __webpack_require__(20);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _fs = __webpack_require__(78);
+var _fs = __webpack_require__(79);
 
 var _paths = __webpack_require__(12);
 
 var _paths2 = _interopRequireDefault(_paths);
 
-var _env = __webpack_require__(33);
+var _env = __webpack_require__(32);
 
-var _console = __webpack_require__(32);
+var _console = __webpack_require__(31);
 
-var _server = __webpack_require__(30);
+var _server = __webpack_require__(29);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -778,7 +772,7 @@ _server2.default.then(({ router, app }) => {
 });
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -798,7 +792,7 @@ const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
 };
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -810,55 +804,55 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(81);
+__webpack_require__(82);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(92);
+var _server = __webpack_require__(93);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(83);
+var _koa = __webpack_require__(84);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(6);
 
-var _koaSend = __webpack_require__(86);
+var _koaSend = __webpack_require__(87);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(84);
+var _koaHelmet = __webpack_require__(85);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(85);
+var _koaRouter = __webpack_require__(86);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(88);
+var _microseconds = __webpack_require__(89);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(98);
+var _reactRouter = __webpack_require__(99);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(21);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _apollo = __webpack_require__(31);
+var _apollo = __webpack_require__(30);
 
-var _redux = __webpack_require__(34);
+var _redux = __webpack_require__(33);
 
 var _redux2 = _interopRequireDefault(_redux);
 
-var _ssr = __webpack_require__(36);
+var _ssr = __webpack_require__(35);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(64);
+var _app = __webpack_require__(63);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -1090,7 +1084,7 @@ exports.default = async function server() {
 }();
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1104,9 +1098,9 @@ exports.serverClient = serverClient;
 
 var _reactApollo = __webpack_require__(6);
 
-var _project = __webpack_require__(29);
+var _project = __webpack_require__(28);
 
-var _subscriptionsTransportWs = __webpack_require__(103);
+var _subscriptionsTransportWs = __webpack_require__(104);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1156,7 +1150,7 @@ function serverClient() {
 }
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1167,15 +1161,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(76);
+var _boxen = __webpack_require__(77);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(77);
+var _chalk = __webpack_require__(78);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(80);
+var _ip = __webpack_require__(81);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -1213,7 +1207,7 @@ function logServerStarted(opt = {}) {
 // Display a border around a message
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1315,7 +1309,7 @@ function getURL() {
 }
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1346,17 +1340,17 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(100);
+var _redux = __webpack_require__(101);
 
-var _reduxThunk = __webpack_require__(101);
+var _reduxThunk = __webpack_require__(102);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _seamlessImmutable = __webpack_require__(27);
+var _seamlessImmutable = __webpack_require__(26);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
-var _counter = __webpack_require__(37);
+var _counter = __webpack_require__(36);
 
 var _counter2 = _interopRequireDefault(_counter);
 
@@ -1407,7 +1401,7 @@ function createNewStore(apolloClient) {
 }
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1510,7 +1504,7 @@ Redirect.defaultProps = {
 };
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1583,7 +1577,7 @@ Html.propTypes = {
 exports.default = Html;
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1602,7 +1596,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* NPM */
 
 
-var _seamlessImmutable = __webpack_require__(27);
+var _seamlessImmutable = __webpack_require__(26);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -1698,7 +1692,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1721,11 +1715,11 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _serbianburger = __webpack_require__(19);
+var _serbianburger = __webpack_require__(18);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
-var _ContentBoxes = __webpack_require__(43);
+var _ContentBoxes = __webpack_require__(42);
 
 var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
 
@@ -1733,7 +1727,7 @@ var _sarajevskiCevapDrama = __webpack_require__(69);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(89);
+var _passwordHash = __webpack_require__(90);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1757,7 +1751,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
 exports.default = AboutUs;
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1780,11 +1774,11 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _serbianburger = __webpack_require__(19);
+var _serbianburger = __webpack_require__(18);
 
 var _serbianburger2 = _interopRequireDefault(_serbianburger);
 
-var _AlaCartGridMenu = __webpack_require__(40);
+var _AlaCartGridMenu = __webpack_require__(39);
 
 var _AlaCartGridMenu2 = _interopRequireDefault(_AlaCartGridMenu);
 
@@ -1807,7 +1801,7 @@ let AlaCart = class AlaCart extends _react2.default.Component {
 exports.default = AlaCart;
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1982,7 +1976,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
 exports.default = ContentBoxes;
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2001,7 +1995,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _shoppingCart = __webpack_require__(93);
+var _shoppingCart = __webpack_require__(94);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2050,7 +2044,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
 exports.default = Admin;
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2075,23 +2069,23 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _facebookSquare = __webpack_require__(23);
+var _facebookSquare = __webpack_require__(22);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(24);
+var _instagram = __webpack_require__(23);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(25);
+var _youtubeSquare = __webpack_require__(24);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
-var _GoogleMaps = __webpack_require__(48);
+var _GoogleMaps = __webpack_require__(47);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(99);
+var _reactTransitions = __webpack_require__(100);
 
 var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
 
@@ -2398,7 +2392,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
 exports.default = ContactUs;
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2486,7 +2480,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
 exports.default = ContentBoxes;
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2504,15 +2498,15 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(23);
+var _facebookSquare = __webpack_require__(22);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(24);
+var _instagram = __webpack_require__(23);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(25);
+var _youtubeSquare = __webpack_require__(24);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -2627,7 +2621,7 @@ let Footer = class Footer extends _react2.default.Component {
 exports.default = Footer;
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2650,7 +2644,7 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _GallyGrid = __webpack_require__(46);
+var _GallyGrid = __webpack_require__(45);
 
 var _GallyGrid2 = _interopRequireDefault(_GallyGrid);
 
@@ -2670,7 +2664,7 @@ let Gally = class Gally extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: 'Dobrodo\u0161li na 100% june\u0107u pljeskavicu', bgImage: { backgroundImage: 'url("' + _galerija2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: ' ', bgImage: { backgroundImage: 'url("' + _galerija2.default + '")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
@@ -2682,7 +2676,7 @@ let Gally = class Gally extends _react2.default.Component {
 exports.default = Gally;
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2699,7 +2693,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _GallyLib = __webpack_require__(47);
+var _GallyLib = __webpack_require__(46);
 
 var _GallyLib2 = _interopRequireDefault(_GallyLib);
 
@@ -2780,7 +2774,7 @@ let GallyGrid = class GallyGrid extends _react2.default.Component {
 exports.default = GallyGrid;
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2798,9 +2792,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _noImportant = __webpack_require__(75);
+var _noImportant = __webpack_require__(76);
 
-var _reactImages = __webpack_require__(96);
+var _reactImages = __webpack_require__(97);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -2983,7 +2977,7 @@ const classes = _noImportant.StyleSheet.create({
 exports.default = Gallery;
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2998,7 +2992,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _googleMapReact = __webpack_require__(79);
+var _googleMapReact = __webpack_require__(80);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -3037,7 +3031,7 @@ GoogleMaps.defaultProps = {
 exports.default = GoogleMaps;
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3084,7 +3078,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
 exports.default = HeaderHero;
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3103,7 +3097,7 @@ var _Header = __webpack_require__(14);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _reactScrollableAnchor = __webpack_require__(26);
+var _reactScrollableAnchor = __webpack_require__(25);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
@@ -3162,8 +3156,7 @@ let Home = class Home extends _react2.default.Component {
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/Pozadina2.jpg')" }, className: _styles2.default.pozadina2 },
-        _react2.default.createElement(_SectionHeadline2.default, { title: 'Tradicionalni srpski \u0107evapi u srcu prestonice', innerText: '100% doma\u0107e june\u0107e meso bez aditiva' }),
-        _react2.default.createElement(_ThreeGallery2.default, null)
+        _react2.default.createElement(_SectionHeadline2.default, { title: 'Tradicionalni srpski \u0107evapi u srcu prestonice', innerText: '100% doma\u0107e june\u0107e meso bez aditiva' })
       ),
       _react2.default.createElement(_ParalaxContainer2.default, { stylee: sndlax }),
       _react2.default.createElement(
@@ -3177,7 +3170,7 @@ let Home = class Home extends _react2.default.Component {
 exports.default = Home;
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3240,7 +3233,7 @@ let InstaImage = class InstaImage extends _react2.default.Component {
 exports.default = InstaImage;
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3257,7 +3250,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _oNamaSlika = __webpack_require__(18);
+var _oNamaSlika = __webpack_require__(71);
 
 var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
 
@@ -3271,7 +3264,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(5);
 
-var _KorpaPorudzbina = __webpack_require__(53);
+var _KorpaPorudzbina = __webpack_require__(52);
 
 var _KorpaPorudzbina2 = _interopRequireDefault(_KorpaPorudzbina);
 
@@ -3281,7 +3274,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(94);
+var _trash = __webpack_require__(95);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3350,7 +3343,7 @@ Korpa.propTypes = {
 exports.default = Korpa;
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3377,7 +3370,7 @@ var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _PorudzbinaConfirm = __webpack_require__(56);
+var _PorudzbinaConfirm = __webpack_require__(55);
 
 var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
 
@@ -3568,7 +3561,7 @@ KorpaPorudzbina.propTypes = {
 exports.default = KorpaPorudzbina;
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3596,7 +3589,7 @@ var _hamburger = __webpack_require__(67);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
-var _CartBucket = __webpack_require__(41);
+var _CartBucket = __webpack_require__(40);
 
 var _CartBucket2 = _interopRequireDefault(_CartBucket);
 
@@ -3706,7 +3699,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 exports.default = MainMenu;
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3721,9 +3714,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _oNamaSlika = __webpack_require__(18);
+var _dostava = __webpack_require__(66);
 
-var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
+var _dostava2 = _interopRequireDefault(_dostava);
 
 var _TopHero = __webpack_require__(7);
 
@@ -3731,7 +3724,7 @@ var _TopHero2 = _interopRequireDefault(_TopHero);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _Proizvod = __webpack_require__(57);
+var _Proizvod = __webpack_require__(56);
 
 var _Proizvod2 = _interopRequireDefault(_Proizvod);
 
@@ -3751,7 +3744,7 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'Dostava', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("' + _oNamaSlika2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'Dostava', subtitle: 'Cvr\u010Di, cvr\u010Di \u0107evap Drama, uskoro \u0107e biti s Vama', bgImage: { backgroundImage: 'url("' + _dostava2.default + '")' } }),
       _react2.default.createElement(_Proizvod2.default, null)
     );
   }
@@ -3759,7 +3752,7 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
 exports.default = NaruciNesto;
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3815,7 +3808,7 @@ let PorudzbinaConfirm = (_dec = (0, _reactRedux.connect)(state => ({ counter: st
 exports.default = PorudzbinaConfirm;
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3838,7 +3831,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _getProizvodi = __webpack_require__(20);
+var _getProizvodi = __webpack_require__(19);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
@@ -3848,7 +3841,7 @@ var _styles2 = _interopRequireDefault(_styles);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _ProizvodItem = __webpack_require__(58);
+var _ProizvodItem = __webpack_require__(57);
 
 var _ProizvodItem2 = _interopRequireDefault(_ProizvodItem);
 
@@ -3888,7 +3881,7 @@ Proizvod.propTypes = {
 exports.default = Proizvod;
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3921,7 +3914,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(90);
+var _reactAlert = __webpack_require__(91);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -4101,7 +4094,7 @@ const stylee = {
 };
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4124,15 +4117,15 @@ var _TopHero2 = _interopRequireDefault(_TopHero);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _ProizvodList = __webpack_require__(63);
+var _ProizvodList = __webpack_require__(62);
 
 var _ProizvodList2 = _interopRequireDefault(_ProizvodList);
 
-var _Porudzbine = __webpack_require__(61);
+var _Porudzbine = __webpack_require__(60);
 
 var _Porudzbine2 = _interopRequireDefault(_Porudzbine);
 
-var _NavBar = __webpack_require__(60);
+var _NavBar = __webpack_require__(59);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -4148,7 +4141,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _reactRedux = __webpack_require__(5);
 
-var _jsMd = __webpack_require__(82);
+var _jsMd = __webpack_require__(83);
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -4277,7 +4270,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
 exports.default = Admin;
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4348,7 +4341,7 @@ let NavBar = class NavBar extends _react2.default.Component {
 exports.default = NavBar;
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4367,7 +4360,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _porudzbine = __webpack_require__(66);
+var _porudzbine = __webpack_require__(65);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
@@ -4377,7 +4370,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _allPorudzbinas = __webpack_require__(71);
+var _allPorudzbinas = __webpack_require__(72);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
 
@@ -4387,13 +4380,13 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _PorudzbineSingle = __webpack_require__(62);
+var _PorudzbineSingle = __webpack_require__(61);
 
 var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(5);
 
-var _PorudzbinaAdd = __webpack_require__(74);
+var _PorudzbinaAdd = __webpack_require__(75);
 
 var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
 
@@ -4467,7 +4460,7 @@ Porudzbine.propTypes = {
 exports.default = Porudzbine;
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4639,7 +4632,7 @@ const stylee = {
 };
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4664,7 +4657,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _getProizvodi = __webpack_require__(20);
+var _getProizvodi = __webpack_require__(19);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
@@ -4720,7 +4713,7 @@ ProizvodList.propTypes = {
 exports.default = ProizvodList;
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4748,17 +4741,17 @@ var _reactRedux = __webpack_require__(5);
 
 var _reactRouterDom = __webpack_require__(9);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(21);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _routing = __webpack_require__(35);
+var _routing = __webpack_require__(34);
 
-var _all_messages = __webpack_require__(72);
+var _all_messages = __webpack_require__(73);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(65);
+__webpack_require__(64);
 
 var _styles = __webpack_require__(1);
 
@@ -4784,47 +4777,47 @@ var _FeaturedLeft = __webpack_require__(13);
 
 var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
 
-var _Footer = __webpack_require__(44);
+var _Footer = __webpack_require__(43);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _MainMenu = __webpack_require__(54);
+var _MainMenu = __webpack_require__(53);
 
 var _MainMenu2 = _interopRequireDefault(_MainMenu);
 
-var _AboutUs = __webpack_require__(38);
+var _AboutUs = __webpack_require__(37);
 
 var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
-var _AlaCart = __webpack_require__(39);
+var _AlaCart = __webpack_require__(38);
 
 var _AlaCart2 = _interopRequireDefault(_AlaCart);
 
-var _Gally = __webpack_require__(45);
+var _Gally = __webpack_require__(44);
 
 var _Gally2 = _interopRequireDefault(_Gally);
 
-var _NaruciNesto = __webpack_require__(55);
+var _NaruciNesto = __webpack_require__(54);
 
 var _NaruciNesto2 = _interopRequireDefault(_NaruciNesto);
 
-var _ContactUs = __webpack_require__(42);
+var _ContactUs = __webpack_require__(41);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(26);
+var _reactScrollableAnchor = __webpack_require__(25);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
-var _Admin = __webpack_require__(59);
+var _Admin = __webpack_require__(58);
 
 var _Admin2 = _interopRequireDefault(_Admin);
 
-var _Korpa = __webpack_require__(52);
+var _Korpa = __webpack_require__(51);
 
 var _Korpa2 = _interopRequireDefault(_Korpa);
 
-var _Home = __webpack_require__(50);
+var _Home = __webpack_require__(49);
 
 var _Home2 = _interopRequireDefault(_Home);
 
@@ -4843,8 +4836,6 @@ const Home = () => _react2.default.createElement(_Home2.default, null);
 
 const Admin = () => _react2.default.createElement(_Admin2.default, null);
 
-// Helper component that will be conditionally shown when the route matches.
-// This gives you an idea how React Router v4 works
 const About = ({ match }) => _react2.default.createElement(_AboutUs2.default, null);
 const Contact = ({ match }) => _react2.default.createElement(_ContactUs2.default, null);
 
@@ -5031,18 +5022,24 @@ exports.default = () => _react2.default.createElement(
 );
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports) {
 
 module.exports = {
 	"proizvodItem": "proizvodItem-cEWGAfW0RjBtn6FS2p2Nq"
 };
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/dostava.701076b302b32fb19c40ffc7c8172506.jpg";
 
 /***/ }),
 /* 67 */
@@ -5070,6 +5067,12 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10
 
 /***/ }),
 /* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg";
+
+/***/ }),
+/* 72 */
 /***/ (function(module, exports) {
 
 
@@ -5096,7 +5099,7 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10
 module.exports = doc;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -5119,12 +5122,12 @@ module.exports = doc;
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(73).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(74).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports) {
 
 
@@ -5151,7 +5154,7 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 
@@ -5178,184 +5181,184 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = require("aphrodite/no-important");
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("chalk");
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("google-map-react");
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = require("js-md5");
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = require("loadjs");
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 module.exports = require("password-hash");
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-alert");
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-async-script-loader");
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-load-script");
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-transitions");
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 module.exports = require("regex");
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(28);
+module.exports = __webpack_require__(27);
 
 
 /***/ })

@@ -49,8 +49,6 @@ const Admin = () => (
   <Admir />
 );
 
-// Helper component that will be conditionally shown when the route matches.
-// This gives you an idea how React Router v4 works
 const About = ({ match }) => (
   <AboutUs />
 );

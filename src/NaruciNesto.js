@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImg from './o-nama-slika.jpg';
+import bgImg from './dostava.jpg';
 import TopHero from './TopHero';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import Proizvod from './Proizvod';
@@ -14,7 +14,7 @@ export default class NaruciNesto extends React.Component {
   render () {
     return (
       <div>
-        <TopHero title="Dostava" subtitle="Naručite nešto kod nas skroz dobro" bgImage={{backgroundImage: 'url("'+bgImg+'")'}} />
+        <TopHero title="Dostava" subtitle="Cvrči, cvrči ćevap Drama, uskoro će biti s Vama" bgImage={{backgroundImage: 'url("'+bgImg+'")'}} />
         <Proizvod />
       </div>
     );
