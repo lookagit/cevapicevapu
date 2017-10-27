@@ -1037,7 +1037,7 @@ exports.default = async function server() {
     }).post('/ping', async ctx => {
       console.log("A JA SAM NA SERVERU ", ctx.request.body);
       let from_email = new helper.Email(ctx.request.body.test.mail);
-      let to_email = new helper.Email("simjanovic.luka@gmail.com");
+      let to_email = new helper.Email("vladimir@cybeletechnologies.com");
       let subject = ctx.request.body.test.sub;
       let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
       let mail = new helper.Mail(from_email, subject, to_email, content);
@@ -2176,7 +2176,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
         var datas = new FormData();
         datas.append("json", JSON.stringify({ "a": "HOHOHOH" }));
         var myHeaders = new Headers();
-        fetch("dramacevapi.com/ping", {
+        fetch("http://dramacevapi.com/ping", {
           headers: { 'content-type': 'application/json' },
           method: "post",
           mode: 'cors',
