@@ -2176,7 +2176,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
         var datas = new FormData();
         datas.append("json", JSON.stringify({ "a": "HOHOHOH" }));
         var myHeaders = new Headers();
-        fetch("http://dramacevapi.com/page/ping", {
+        fetch("http://dramacevapi.com/ping", {
           headers: { 'content-type': 'application/json', 'Referrer-Policy': 'no-referrer' },
           method: "post",
           mode: 'no-cors',
