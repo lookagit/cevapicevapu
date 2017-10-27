@@ -139,6 +139,7 @@ module.exports = {
 
 module.exports = {
 	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
+	"kiki": "kiki-ou4QAYpR7_8bOPESrwy8G",
 	"boxStylez": "boxStylez-3xEtHa77Snt19pB6Tn-Ipu",
 	"bsPrice": "bsPrice-3ljTYa9XaCKTLnoE1QLFa2",
 	"bsText": "bsText-3glj6OL5XYMIoQa9X2rcTh",
@@ -2465,11 +2466,6 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
             _react2.default.createElement(
               'h3',
               { style: { textAlign: "center" } },
-              'Ko bi to radio da nije nas'
-            ),
-            _react2.default.createElement(
-              'h3',
-              { style: { textAlign: "center" } },
               ' Samo kod nas po najpovoljnijim cenama mo\u017Eete da u\u017Eivate u vrhunskom ukusu i garantovanom kvalitetu. Va\u0161 izbor je na\u0161a stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.'
             )
           )
@@ -4234,7 +4230,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
           _react2.default.createElement(
             'p',
             null,
-            _react2.default.createElement('input', { value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
+            _react2.default.createElement('input', { className: _styles2.default.kiki, value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass, type: 'text' })
           ),
           _react2.default.createElement(
             'h3',
@@ -5040,7 +5036,7 @@ module.exports = {
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/dostava.fb7f749c4c8e8f346dbc90603a207343.jpg";
+module.exports = __webpack_require__.p + "assets/img/dostava.aa3dd9b14c8ea2dcf741283fb0ccb45c.jpg";
 
 /***/ }),
 /* 67 */

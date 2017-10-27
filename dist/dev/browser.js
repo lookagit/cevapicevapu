@@ -352,7 +352,7 @@ var ThreeGallery = function (_React$Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","iframeClass":"iframeClass-1deH4KayrxMImCQHGFMZ8X","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","trash":"trash-2XX9Y94Iz7AHXzhZJtltHn","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E","buttonModal":"buttonModal-oQhRp8mZSwic4C68ZmHUD","cevapiKao":"cevapiKao-1BNwnhXUkAbtrj-Em031Ms"};
+module.exports = {"example":"example-3q0nqQ9ZKcBd8-DB7rcoyt","kiki":"kiki-ou4QAYpR7_8bOPESrwy8G","boxStylez":"boxStylez-3xEtHa77Snt19pB6Tn-Ipu","bsPrice":"bsPrice-3ljTYa9XaCKTLnoE1QLFa2","bsText":"bsText-3glj6OL5XYMIoQa9X2rcTh","bsInnerInner":"bsInnerInner-Sn87SKTD9jjTjQRG70MrY","boxStylezInner":"boxStylezInner-dPOMWFk0hOl84lqJTVTCX","mbrArrowFloating":"mbrArrowFloating-2H7ACIT3-RYgphXNuk-zWV","mbrArrowIcon":"mbrArrowIcon-3X-jT_gBvLLznHbfVKdTQ0","a":"a-3CLQjXJ95FwwMe6Mc8CB2V","headerTxt":"headerTxt-2380IQRzL_oUTSiFLwSaSW","iframeClass":"iframeClass-1deH4KayrxMImCQHGFMZ8X","gallyNaslov":"gallyNaslov-2nEQ8p-Qc-SltgkpIuwlWW","gallyDiv":"gallyDiv-q57aq7BHmjYCDkCtV3wol","product":"product-rfL07y3RJIeqdPROAh0wO","proizvodList":"proizvodList-269fUlrCyJkVR2zWxxemxX","korpa":"korpa-3_yg0jPsNVfw9Ilw-urZMv","korpaItems":"korpaItems-goX6CZSRXXww1sm6JVSWu","korpaItem":"korpaItem-1QNpyh9mR0F8rn7OE_XTES","trash":"trash-2XX9Y94Iz7AHXzhZJtltHn","korpaForm":"korpaForm-3xBTwwK71Y3k8fSqQnbDkc","adminLog":"adminLog-1FbsXfLXwhZvvwmYgHLVG1","adminNavbar":"adminNavbar-2SsCfZupjTp2ePWyYaQX9E","buttonModal":"buttonModal-oQhRp8mZSwic4C68ZmHUD","cevapiKao":"cevapiKao-1BNwnhXUkAbtrj-Em031Ms"};
 
 /***/ }),
 
@@ -1898,11 +1898,6 @@ var ContentBoxes = function (_React$Component) {
                 'h2',
                 { style: { textAlign: "center" } },
                 'VAS IZBOR'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'h3',
-                { style: { textAlign: "center" } },
-                'Ko bi to radio da nije nas'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
@@ -3960,7 +3955,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
               null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', _defineProperty({ value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass }, 'type', 'text'))
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', _defineProperty({ className: __WEBPACK_IMPORTED_MODULE_6__styles_scss___default.a.kiki, value: this.state.enteredPin, type: 'password', placeholder: 'Password', onChange: this.handleChangePass }, 'type', 'text'))
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'h3',
@@ -4921,7 +4916,7 @@ module.exports = {"proizvodItem":"proizvodItem-cEWGAfW0RjBtn6FS2p2Nq"};
 /***/ 499:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/dostava.fb7f749c4c8e8f346dbc90603a207343.jpg";
+module.exports = __webpack_require__.p + "assets/img/dostava.aa3dd9b14c8ea2dcf741283fb0ccb45c.jpg";
 
 /***/ }),
 

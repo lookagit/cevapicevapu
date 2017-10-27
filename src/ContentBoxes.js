@@ -30,7 +30,6 @@ export default class ContentBoxes extends React.Component {
           </Col>
           <Col xs={12}>
             <h2 style={{textAlign: "center"}}>VAS IZBOR</h2>
-            <h3 style={{textAlign: "center"}}>Ko bi to radio da nije nas</h3>
             <h3 style={{textAlign: "center"}}> Samo kod nas po najpovoljnijim cenama možete da uživate u vrhunskom ukusu i garantovanom kvalitetu. Vaš izbor je naša stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</h3>
           </Col>
         </Row>

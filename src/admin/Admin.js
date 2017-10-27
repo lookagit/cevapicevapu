@@ -92,7 +92,7 @@ export default class Admin extends React.Component {
          <input value={this.state.enteredUsername} placeholder="Username" onChange={this.handleChangeUser} type="text" />
         </p>
         <p>
-         <input value={this.state.enteredPin} type="password" placeholder="Password" onChange={this.handleChangePass} type="text" />
+         <input className={scss.kiki} value={this.state.enteredPin} type="password" placeholder="Password" onChange={this.handleChangePass} type="text" />
         </p>
          <h3 onClick={this.checkPin}>Unesite Šifru</h3>
        </div>

@@ -2,7 +2,11 @@ $background: #ffc107;
 .example {
   background-color: $background;
 }
-
+.kiki {
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+  text-security: disc;
+}
 .boxStylez{
   width: 333px;
   border: 5px solid white;

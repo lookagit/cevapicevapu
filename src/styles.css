@@ -4,10 +4,12 @@
 @import url('https://fonts.googleapis.com/css?family=Merienda:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 /* Define some variables we might want to use elsewhere */
+
 html, body {
   height: 100%;
   margin:0;
 }
+
 p, h1, h2, h3, h4, h5, span, a {
   font-family: 'Open Sans', sans-serif;
 }
