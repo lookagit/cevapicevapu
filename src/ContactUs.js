@@ -118,7 +118,7 @@ export default class ContactUs extends React.Component{
       {
         headers: {'content-type': 'application/json'},
         method: "post",
-        mode: 'cors',
+        mode: 'no-cors',
         body: JSON.stringify({test: {
           mail: this.state.mail,
           name: this.state.name,
