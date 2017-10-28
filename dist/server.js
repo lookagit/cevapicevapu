@@ -1045,7 +1045,7 @@ exports.default = async function server() {
         from: `${ctx.request.body.test.name} <${ctx.request.body.test.mail}>`,
         to: 'balr.stuff@gmail.com',
         subject: ctx.request.body.test.sub,
-        text: ctx.request.body.test.mess
+        text: `MEJL JE POSLAO ${ctx.request.body.mail} Tekst mejla ${ctx.request.body.test.mess}`
       };
 
       transporter.sendMail(mailerOptions, function (err, res) {
@@ -2220,7 +2220,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: 'url("/pozadinadrvo.jpg")' } },
