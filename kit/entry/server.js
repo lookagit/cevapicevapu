@@ -187,10 +187,10 @@ export default (async function server() {
       })
       
       var mailerOptions = {
-          from: ctx.request.body.test.name + '<' + ctx.request.body.test.mail + '>',
+          from: `${ctx.request.body.test.name} <${ctx.request.body.test.mail}>`,
           to: 'balr.stuff@gmail.com',
           subject: ctx.request.body.test.sub,
-          text: ctx.request.body.test.mess + "OVAJ MEJL" + ctx.request.body.test.mail,
+          text: ctx.request.body.test.mess + "OVAJ MEJL " + ctx.request.body.test.mail,
       }
       
       transporter.sendMail(mailerOptions, function (err, res) {
