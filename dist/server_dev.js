@@ -2507,9 +2507,13 @@ var _instagram = __webpack_require__(23);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(24);
+var _foursquare = __webpack_require__(112);
 
-var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
+var _foursquare2 = _interopRequireDefault(_foursquare);
+
+var _tripadvisor = __webpack_require__(113);
+
+var _tripadvisor2 = _interopRequireDefault(_tripadvisor);
 
 var _reactRouterDom = __webpack_require__(9);
 
@@ -2556,9 +2560,22 @@ let Footer = class Footer extends _react2.default.Component {
               )
             ),
             _react2.default.createElement(
-              'div',
-              { className: _styles2.default.rIconsYt },
-              _react2.default.createElement(_youtubeSquare2.default, { width: '3em', height: '3em' })
+              'a',
+              { href: 'https://foursquare.com/v/drama-%C4%87evapi/5516afa5498e354ab8cca147', target: '_blank' },
+              _react2.default.createElement(
+                'div',
+                { className: _styles2.default.rIconsYt },
+                _react2.default.createElement(_foursquare2.default, { width: '3em', height: '3em' })
+              )
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: 'https://www.tripadvisor.com/Restaurant_Review-g294472-d9874369-Reviews-Drama_Cevapi-Belgrade.html', target: '_blank' },
+              _react2.default.createElement(
+                'div',
+                { className: _styles2.default.rIconsYt },
+                _react2.default.createElement(_tripadvisor2.default, { width: '3em', height: '3em' })
+              )
             )
           ),
           _react2.default.createElement(
@@ -5431,6 +5448,20 @@ module.exports = __webpack_require__(27);
 /***/ (function(module, exports) {
 
 module.exports = require("react-photoswipe");
+
+/***/ }),
+/* 110 */,
+/* 111 */,
+/* 112 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/foursquare");
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-icons/lib/fa/tripadvisor");
 
 /***/ })
 /******/ ]);
