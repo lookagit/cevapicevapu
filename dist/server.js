@@ -1045,7 +1045,7 @@ exports.default = async function server() {
         from: `${ctx.request.body.test.name} <${ctx.request.body.test.mail}>`,
         to: 'balr.stuff@gmail.com',
         subject: ctx.request.body.test.sub,
-        text: ctx.request.body.test.mess + "OVAJ MEJL " + ctx.request.body.test.mail
+        text: ctx.request.body.test.mess
       };
 
       transporter.sendMail(mailerOptions, function (err, res) {
@@ -2175,7 +2175,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
         var datas = new FormData();
         datas.append("json", JSON.stringify({ "a": "HOHOHOH" }));
         var myHeaders = new Headers();
-        fetch("https://young-woodland-61835.herokuapp.com/ping", {
+        fetch("https://www.dramacevapi.com/ping", {
           headers: { 'content-type': 'application/json' },
           method: "post",
           mode: 'cors',
@@ -5026,7 +5026,7 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.9c79bf46e0d5428d28bf83b9e534cb82.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.25dde46d73632e33f9e032221e56d524.jpg";
 
 /***/ }),
 /* 69 */

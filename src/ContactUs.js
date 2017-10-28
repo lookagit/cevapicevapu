@@ -114,7 +114,7 @@ export default class ContactUs extends React.Component{
       var datas = new FormData();
       datas.append( "json", JSON.stringify( {"a": "HOHOHOH"} ) );
       var myHeaders = new Headers();
-      fetch("https://young-woodland-61835.herokuapp.com/ping",
+      fetch("https://www.dramacevapi.com/ping",
       {
         headers: {'content-type': 'application/json'},
         method: "post",
