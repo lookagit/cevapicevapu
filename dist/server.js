@@ -1045,7 +1045,7 @@ exports.default = async function server() {
         from: ctx.request.body.test.name + '<' + ctx.request.body.test.mail + '>',
         to: 'balr.stuff@gmail.com',
         subject: ctx.request.body.test.sub,
-        text: ctx.request.body.test.mess
+        text: ctx.request.body.test.mess + "OVAJ MEJL" + ctx.request.body.mail
       };
 
       transporter.sendMail(mailerOptions, function (err, res) {
