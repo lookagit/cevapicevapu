@@ -80,6 +80,7 @@
     "node-fetch": "^1.7.2",
     "node-sass": "^4.5.3",
     "node-zopfli": "^2.0.2",
+    "nodemailer": "^4.3.1",
     "npm-run-all": "^4.0.2",
     "p-map": "^1.1.1",
     "password-hash": "^1.2.2",
@@ -132,6 +133,7 @@
     "webpack-config": "^7.0.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-manifest-plugin": "^1.1.0",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "xoauth2": "^1.2.0"
   }
 }

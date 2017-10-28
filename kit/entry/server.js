@@ -14,7 +14,10 @@ import { ApolloProvider, getDataFromTree } from 'react-apollo';
 
 import koaSend from 'koa-send';
 
-// HTTP header hardening
+import nodemailer from 'nodemailer';
+
+import xoauth2 from 'xoauth2';
+
 import koaHelmet from 'koa-helmet';
 
 // Koa Router, for handling URL requests
@@ -156,22 +159,50 @@ export default (async function server() {
       })
 
       .post('/ping', async ctx => {
-        console.log("A JA SAM NA SERVERU ", ctx.request.body);
-        let from_email = new helper.Email(ctx.request.body.test.mail);
-        let to_email = new helper.Email("vladimir@cybeletechnologies.com");
-        let subject = ctx.request.body.test.sub;
-        let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
-        let mail = new helper.Mail(from_email, subject, to_email, content);
-        var request = sendgrid.emptyRequest({
-          method: 'POST',
-          path: '/v3/mail/send',
-          body: mail.toJSON()
-        });
-        sendgrid.API(request, function(error, response) {
-          console.log(response.statusCode);
-          console.log(response.body);
-          console.log(response.headers);
-        })
+        // console.log("A JA SAM NA SERVERU ", ctx.request.body);
+        // let from_email = new helper.Email(ctx.request.body.test.mail);
+        // let to_email = new helper.Email("luka@cybeletechnologies.com");
+        // let subject = ctx.request.body.test.sub;
+        // let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
+        // let mail = new helper.Mail(from_email, subject, to_email, content);
+        // var request = sendgrid.emptyRequest({
+        //   method: 'POST',
+        //   path: '/v3/mail/send',
+        //   body: mail.toJSON()
+        // });
+        // sendgrid.API(request, function(error, response) {
+        //   console.log(response.statusCode);
+        //   console.log(response.body);
+        //   console.log(response.headers);
+        // })
+        var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+              type: 'OAuth2',
+              user: 'balr.stuff@gmail.com',
+              clientId: '1098430474978-jkgjpcdsagolblpsi6d1852ne71kd2r0.apps.googleusercontent.com',
+              clientSecret: 'cPoJp_U0t-GiahRYqxHaouDL',
+              refreshToken: '1/5VLn1SBQwHBcNacv07VhfokWMxawNPdzJGW2V-7RlOw',
+          }
+      })
+      
+      var mailerOptions = {
+          from: ctx.request.body.test.name + '<' + ctx.request.body.test.mail + '>',
+          to: 'balr.stuff@gmail.com',
+          subject: ctx.request.body.test.sub,
+          text: ctx.request.body.test.mess,
+      }
+      
+      transporter.sendMail(mailerOptions, function (err, res) {
+          if(err) {
+              console.log("EEEEEEEEEEROR", err);
+          } else {
+              console.log("EMAIL JE SENT ");
+          }
+      })
+
+
+
         ctx.body = {"bong": "koko"};
       }),
     app: new Koa()

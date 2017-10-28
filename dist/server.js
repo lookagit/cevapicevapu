@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 106);
+/******/ 	return __webpack_require__(__webpack_require__.s = 108);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -359,7 +359,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactAsyncScriptLoader = __webpack_require__(93);
+var _reactAsyncScriptLoader = __webpack_require__(94);
 
 var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
 
@@ -367,17 +367,17 @@ var _loadjs = __webpack_require__(89);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(104);
+var _regex = __webpack_require__(105);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
 
-var _reactLoadScript = __webpack_require__(99);
+var _reactLoadScript = __webpack_require__(100);
 
 var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
 
-var _reactIframe = __webpack_require__(97);
+var _reactIframe = __webpack_require__(98);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -811,7 +811,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(94);
+var _server = __webpack_require__(95);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -825,6 +825,14 @@ var _koaSend = __webpack_require__(88);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
+var _nodemailer = __webpack_require__(91);
+
+var _nodemailer2 = _interopRequireDefault(_nodemailer);
+
+var _xoauth = __webpack_require__(107);
+
+var _xoauth2 = _interopRequireDefault(_xoauth);
+
 var _koaHelmet = __webpack_require__(86);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
@@ -837,7 +845,7 @@ var _microseconds = __webpack_require__(90);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(100);
+var _reactRouter = __webpack_require__(101);
 
 var _reactHelmet = __webpack_require__(21);
 
@@ -901,9 +909,6 @@ var sendgrid = __webpack_require__(11)("SG.AqYibOBpQMGdxQinuEcYpw.poJVUmlM7nsEh2
 
 
 // High-precision timing, so we can debug response time to serve a request
-
-
-// HTTP header hardening
 
 
 // React utility to transform JSX to HTML (to send back to the client)
@@ -1009,22 +1014,48 @@ exports.default = async function server() {
     .get('/favicon.ico', async ctx => {
       ctx.res.statusCode = 204;
     }).post('/ping', async ctx => {
-      console.log("A JA SAM NA SERVERU ", ctx.request.body);
-      let from_email = new helper.Email(ctx.request.body.test.mail);
-      let to_email = new helper.Email("vladimir@cybeletechnologies.com");
-      let subject = ctx.request.body.test.sub;
-      let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
-      let mail = new helper.Mail(from_email, subject, to_email, content);
-      var request = sendgrid.emptyRequest({
-        method: 'POST',
-        path: '/v3/mail/send',
-        body: mail.toJSON()
+      // console.log("A JA SAM NA SERVERU ", ctx.request.body);
+      // let from_email = new helper.Email(ctx.request.body.test.mail);
+      // let to_email = new helper.Email("luka@cybeletechnologies.com");
+      // let subject = ctx.request.body.test.sub;
+      // let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
+      // let mail = new helper.Mail(from_email, subject, to_email, content);
+      // var request = sendgrid.emptyRequest({
+      //   method: 'POST',
+      //   path: '/v3/mail/send',
+      //   body: mail.toJSON()
+      // });
+      // sendgrid.API(request, function(error, response) {
+      //   console.log(response.statusCode);
+      //   console.log(response.body);
+      //   console.log(response.headers);
+      // })
+      var transporter = _nodemailer2.default.createTransport({
+        service: 'gmail',
+        auth: {
+          type: 'OAuth2',
+          user: 'balr.stuff@gmail.com',
+          clientId: '1098430474978-jkgjpcdsagolblpsi6d1852ne71kd2r0.apps.googleusercontent.com',
+          clientSecret: 'cPoJp_U0t-GiahRYqxHaouDL',
+          refreshToken: '1/5VLn1SBQwHBcNacv07VhfokWMxawNPdzJGW2V-7RlOw'
+        }
       });
-      sendgrid.API(request, function (error, response) {
-        console.log(response.statusCode);
-        console.log(response.body);
-        console.log(response.headers);
+
+      var mailerOptions = {
+        from: ctx.request.body.test.name + '<' + ctx.request.body.test.mail + '>',
+        to: 'balr.stuff@gmail.com',
+        subject: ctx.request.body.test.sub,
+        text: ctx.request.body.test.mess
+      };
+
+      transporter.sendMail(mailerOptions, function (err, res) {
+        if (err) {
+          console.log("EEEEEEEEEEROR", err);
+        } else {
+          console.log("EMAIL JE SENT ");
+        }
       });
+
       ctx.body = { "bong": "koko" };
     }),
     app: new _koa2.default()
@@ -1074,7 +1105,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(28);
 
-var _subscriptionsTransportWs = __webpack_require__(105);
+var _subscriptionsTransportWs = __webpack_require__(106);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1314,9 +1345,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(102);
+var _redux = __webpack_require__(103);
 
-var _reduxThunk = __webpack_require__(103);
+var _reduxThunk = __webpack_require__(104);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1701,7 +1732,7 @@ var _sarajevskiCevapDrama = __webpack_require__(69);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(91);
+var _passwordHash = __webpack_require__(92);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1969,7 +2000,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _shoppingCart = __webpack_require__(95);
+var _shoppingCart = __webpack_require__(96);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2059,7 +2090,7 @@ var _GoogleMaps = __webpack_require__(47);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(101);
+var _reactTransitions = __webpack_require__(102);
 
 var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
 
@@ -2763,7 +2794,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(76);
 
-var _reactImages = __webpack_require__(98);
+var _reactImages = __webpack_require__(99);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -3243,7 +3274,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(96);
+var _trash = __webpack_require__(97);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3883,7 +3914,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(92);
+var _reactAlert = __webpack_require__(93);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -5243,94 +5274,106 @@ module.exports = require("microseconds");
 /* 91 */
 /***/ (function(module, exports) {
 
-module.exports = require("password-hash");
+module.exports = require("nodemailer");
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-alert");
+module.exports = require("password-hash");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-async-script-loader");
+module.exports = require("react-alert");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-async-script-loader");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/shopping-cart");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/trash");
+module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-iframe");
+module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
 /* 98 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-iframe");
 
 /***/ }),
 /* 99 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-load-script");
+module.exports = require("react-images");
 
 /***/ }),
 /* 100 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-load-script");
 
 /***/ }),
 /* 101 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-transitions");
+module.exports = require("react-router");
 
 /***/ }),
 /* 102 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-transitions");
 
 /***/ }),
 /* 103 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 104 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 105 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("regex");
 
 /***/ }),
 /* 106 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports) {
+
+module.exports = require("xoauth2");
+
+/***/ }),
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(27);
