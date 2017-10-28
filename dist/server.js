@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 105);
+/******/ 	return __webpack_require__(__webpack_require__.s = 106);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -359,25 +359,25 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactAsyncScriptLoader = __webpack_require__(92);
+var _reactAsyncScriptLoader = __webpack_require__(93);
 
 var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
 
-var _loadjs = __webpack_require__(88);
+var _loadjs = __webpack_require__(89);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(103);
+var _regex = __webpack_require__(104);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
 
-var _reactLoadScript = __webpack_require__(98);
+var _reactLoadScript = __webpack_require__(99);
 
 var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
 
-var _reactIframe = __webpack_require__(96);
+var _reactIframe = __webpack_require__(97);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
@@ -811,7 +811,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(93);
+var _server = __webpack_require__(94);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -821,27 +821,31 @@ var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(6);
 
-var _koaSend = __webpack_require__(87);
+var _koaSend = __webpack_require__(88);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _koaHelmet = __webpack_require__(85);
+var _koaHelmet = __webpack_require__(86);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(86);
+var _koaRouter = __webpack_require__(87);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(89);
+var _microseconds = __webpack_require__(90);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(99);
+var _reactRouter = __webpack_require__(100);
 
 var _reactHelmet = __webpack_require__(21);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+
+var _koaBodyparser = __webpack_require__(85);
+
+var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
 
 var _apollo = __webpack_require__(30);
 
@@ -871,6 +875,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // tools in the browser
 
 
+// React Router HOC for figuring out the exact React hierarchy to display
+// based on the URL
+
+
+// Koa Router, for handling URL requests
+
+
+// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
+// the React render, or any of the static assets being compiled
+
+
+// React UI
+var sendgrid = __webpack_require__(11)("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");
+
+// Initial view to send back HTML render
+
+/* Local */
+
+// Grab the shared Apollo Client
+
+
 // <Helmet> component for retrieving <head> section, so we can set page
 // title, meta info, etc along with the initial HTML
 
@@ -881,62 +906,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // HTTP header hardening
 
 
-// Apollo tools to connect to a GraphQL server.  We'll grab the
-// `ApolloProvider` HOC component, which will inject any 'listening' React
-// components with GraphQL data props.  We'll also use `getDataFromTree`
-// to await data being ready before rendering back HTML to the client
-
-
 // React utility to transform JSX to HTML (to send back to the client)
-/* eslint-disable no-param-reassign, no-console */
-
-// Server entry point, for Webpack.  This will spawn a Koa web server
-// and listen for HTTP requests.  Clients will get a return render of React
-// or the file they have requested
-//
-// Note:  No HTTP optimisation is performed here (gzip, http/2, etc).  Node.js
-// will nearly always be slower than Nginx or an equivalent, dedicated proxy,
-// so it's usually better to leave that stuff to a faster upstream provider
-
-// ----------------------
-// IMPORTS
-
-/* NPM */
-
-// Patch global.`fetch` so that Apollo calls to GraphQL work
-var sendgrid = __webpack_require__(11)("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");
-// ----------------------
 
 
-// Import paths.  We'll use this to figure out where our public folder is
-// so we can serve static files
-
-
-// Initial view to send back HTML render
-
-
-/* Local */
-
-// Grab the shared Apollo Client
-
-
-// React Router HOC for figuring out the exact React hierarchy to display
-// based on the URL
-
-
-// Koa Router, for handling URL requests
-
-
-// Static file handler
-
-
-// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
-// the React render, or any of the static assets being compiled
-
-
-// React UI
 var helper = __webpack_require__(11).mail;
-// Static file middleware
+
 function staticMiddleware() {
   return async function staticMiddlewareHandler(ctx, next) {
     try {
@@ -1024,9 +998,9 @@ function createReactHandler(css = [], scripts = [], chunkManifest = {}) {
 
 exports.default = async function server() {
   return {
-    router: new _koaRouter2.default().
+    router: new _koaRouter2.default().use((0, _koaBodyparser2.default)())
     // Set-up a general purpose /ping route to check the server is alive
-    get('/ping', async ctx => {
+    .get('/ping', async ctx => {
       ctx.body = 'pong';
     })
 
@@ -1056,8 +1030,7 @@ exports.default = async function server() {
     app: new _koa2.default()
 
     // Preliminary security for HTTP headers
-    .use((0, _koaHelmet2.default)())
-
+    .use((0, _koaHelmet2.default)()).use((0, _koaBodyparser2.default)())
     // Error wrapper.  If an error manages to slip through the middleware
     // chain, it will be caught and logged back here
     .use(async (ctx, next) => {
@@ -1101,7 +1074,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(28);
 
-var _subscriptionsTransportWs = __webpack_require__(104);
+var _subscriptionsTransportWs = __webpack_require__(105);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1341,9 +1314,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(101);
+var _redux = __webpack_require__(102);
 
-var _reduxThunk = __webpack_require__(102);
+var _reduxThunk = __webpack_require__(103);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1728,7 +1701,7 @@ var _sarajevskiCevapDrama = __webpack_require__(69);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(90);
+var _passwordHash = __webpack_require__(91);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -1996,7 +1969,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _shoppingCart = __webpack_require__(94);
+var _shoppingCart = __webpack_require__(95);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2086,7 +2059,7 @@ var _GoogleMaps = __webpack_require__(47);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(100);
+var _reactTransitions = __webpack_require__(101);
 
 var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
 
@@ -2790,7 +2763,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _noImportant = __webpack_require__(76);
 
-var _reactImages = __webpack_require__(97);
+var _reactImages = __webpack_require__(98);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -3270,7 +3243,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(95);
+var _trash = __webpack_require__(96);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3910,7 +3883,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(91);
+var _reactAlert = __webpack_require__(92);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -5234,124 +5207,130 @@ module.exports = require("koa");
 /* 85 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-helmet");
+module.exports = require("koa-bodyparser");
 
 /***/ }),
 /* 86 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-router");
+module.exports = require("koa-helmet");
 
 /***/ }),
 /* 87 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-send");
+module.exports = require("koa-router");
 
 /***/ }),
 /* 88 */
 /***/ (function(module, exports) {
 
-module.exports = require("loadjs");
+module.exports = require("koa-send");
 
 /***/ }),
 /* 89 */
 /***/ (function(module, exports) {
 
-module.exports = require("microseconds");
+module.exports = require("loadjs");
 
 /***/ }),
 /* 90 */
 /***/ (function(module, exports) {
 
-module.exports = require("password-hash");
+module.exports = require("microseconds");
 
 /***/ }),
 /* 91 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-alert");
+module.exports = require("password-hash");
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-async-script-loader");
+module.exports = require("react-alert");
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-async-script-loader");
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/shopping-cart");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/trash");
+module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-iframe");
+module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-images");
+module.exports = require("react-iframe");
 
 /***/ }),
 /* 98 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-load-script");
+module.exports = require("react-images");
 
 /***/ }),
 /* 99 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-load-script");
 
 /***/ }),
 /* 100 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-transitions");
+module.exports = require("react-router");
 
 /***/ }),
 /* 101 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-transitions");
 
 /***/ }),
 /* 102 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 103 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 104 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("regex");
 
 /***/ }),
 /* 105 */
+/***/ (function(module, exports) {
+
+module.exports = require("subscriptions-transport-ws");
+
+/***/ }),
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(27);

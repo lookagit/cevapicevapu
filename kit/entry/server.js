@@ -1,19 +1,3 @@
-/* eslint-disable no-param-reassign, no-console */
-
-// Server entry point, for Webpack.  This will spawn a Koa web server
-// and listen for HTTP requests.  Clients will get a return render of React
-// or the file they have requested
-//
-// Note:  No HTTP optimisation is performed here (gzip, http/2, etc).  Node.js
-// will nearly always be slower than Nginx or an equivalent, dedicated proxy,
-// so it's usually better to leave that stuff to a faster upstream provider
-
-// ----------------------
-// IMPORTS
-
-/* NPM */
-
-// Patch global.`fetch` so that Apollo calls to GraphQL work
 import 'isomorphic-fetch';
 
 // React UI
@@ -26,13 +10,8 @@ import ReactDOMServer from 'react-dom/server';
 // the React render, or any of the static assets being compiled
 import Koa from 'koa';
 
-// Apollo tools to connect to a GraphQL server.  We'll grab the
-// `ApolloProvider` HOC component, which will inject any 'listening' React
-// components with GraphQL data props.  We'll also use `getDataFromTree`
-// to await data being ready before rendering back HTML to the client
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 
-// Static file handler
 import koaSend from 'koa-send';
 
 // HTTP header hardening
@@ -51,7 +30,7 @@ import { StaticRouter } from 'react-router';
 // <Helmet> component for retrieving <head> section, so we can set page
 // title, meta info, etc along with the initial HTML
 import Helmet from 'react-helmet';
-
+import bodyParser from 'koa-bodyparser';
 /* Local */
 
 // Grab the shared Apollo Client
@@ -68,13 +47,11 @@ import Html from 'kit/views/ssr';
 // App entry point
 import App from 'src/app';
 
-// Import paths.  We'll use this to figure out where our public folder is
-// so we can serve static files
 import PATHS from 'config/paths';
 var sendgrid = require("sendgrid")("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");
-// ----------------------
+
 var helper = require('sendgrid').mail;
-// Static file middleware
+
 export function staticMiddleware() {
   return async function staticMiddlewareHandler(ctx, next) {
     try {
@@ -166,6 +143,7 @@ export function createReactHandler(css = [], scripts = [], chunkManifest = {}) {
 export default (async function server() {
   return {
     router: (new KoaRouter())
+      .use(bodyParser())
       // Set-up a general purpose /ping route to check the server is alive
       .get('/ping', async ctx => {
         ctx.body = 'pong';
@@ -200,7 +178,7 @@ export default (async function server() {
 
       // Preliminary security for HTTP headers
       .use(koaHelmet())
-
+      .use(bodyParser())
       // Error wrapper.  If an error manages to slip through the middleware
       // chain, it will be caught and logged back here
       .use(async (ctx, next) => {
