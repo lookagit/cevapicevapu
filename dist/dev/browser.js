@@ -942,7 +942,7 @@ Redirect.defaultProps = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_seamless_immutable__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_seamless_immutable__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_seamless_immutable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_seamless_immutable__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -1030,7 +1030,6 @@ var reloaderInitial = false;
       var action = arguments[1];
 
       if (action.type === 'ADD_ORDER') {
-        console.log(action.orders);
         var newState = [].concat(_toConsumableArray(state));
         newState.push(action.orders);
         return newState;
@@ -1060,7 +1059,6 @@ var reloaderInitial = false;
     }
   }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -1384,7 +1382,7 @@ var ContentBoxes = function (_React$Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Admin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Admin; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(27);
@@ -1420,15 +1418,9 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
   }
 
   _createClass(Admin, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      console.log("PROPS, ", this.props);
-    }
-  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.orders.length) {
-        console.log("KOMPONENT ", nextProps.orders);
 
         var numb = nextProps.orders.reduce(function (sum, b) {
           return sum + parseInt(b.kolicina);
@@ -1436,7 +1428,6 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
         this.setState({
           cartCount: numb
         });
-        console.log("OVO JE numb", this.state.cartCount);
       } else {
         this.setState({
           cartCount: ""
@@ -1462,7 +1453,6 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
   return Admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -1593,7 +1583,7 @@ var ContactUs = function (_React$Component) {
         var datas = new FormData();
         datas.append("json", JSON.stringify({ "a": "HOHOHOH" }));
         var myHeaders = new Headers();
-        fetch("http://localhost:8081/ping", {
+        fetch("https://www.dramacevapi.com/ping", {
           headers: { 'content-type': 'application/json' },
           method: "post",
           mode: 'cors',
@@ -1644,11 +1634,10 @@ var ContactUs = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log("STATE ", this.state);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TopHero_js__["a" /* default */], { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama.jpg")' } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TopHero_js__["a" /* default */], { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")' } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { style: { backgroundImage: 'url("/pozadinadrvo.jpg")' } },
@@ -2080,6 +2069,8 @@ var Footer = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__GallyGrid_js__ = __webpack_require__(394);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__images_galerija_jpg__ = __webpack_require__(501);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__images_galerija_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__images_galerija_jpg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_photoswipe__ = __webpack_require__(882);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_photoswipe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_photoswipe__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2094,13 +2085,76 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+var items = [{
+  src: '/galerija/drama4.jpg',
+  thumbnail: '/galerija/drama4.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama5.jpg',
+  thumbnail: '/galerija/drama5.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}, {
+  src: '/galerija/drama1.jpg',
+  thumbnail: '/galerija/drama1.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama2.jpg',
+  thumbnail: '/galerija/drama2.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}, {
+  src: '/galerija/drama3.jpg',
+  thumbnail: '/galerija/drama3.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama6.jpg',
+  thumbnail: '/galerija/drama6.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}, {
+  src: '/galerija/drama7.jpg',
+  thumbnail: '/galerija/drama7.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama8.jpg',
+  thumbnail: '/galerija/drama8.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}];
+var options = {
+  //http://photoswipe.com/documentation/options.html
+};
+
 var Gally = function (_React$Component) {
   _inherits(Gally, _React$Component);
 
   function Gally() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Gally);
 
-    return _possibleConstructorReturn(this, (Gally.__proto__ || Object.getPrototypeOf(Gally)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Gally.__proto__ || Object.getPrototypeOf(Gally)).call.apply(_ref, [this].concat(args))), _this), _this.getThumbnailContent = function (item) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: item.thumbnail, width: 290, height: 200 });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Gally, [{
@@ -2120,7 +2174,15 @@ var Gally = function (_React$Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__GallyGrid_js__["a" /* default */], null)
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { style: { display: 'flex', alignItems: 'center', justifyContent: 'center' } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { style: { display: 'flex', justifyContent: 'center', alignItems: 'center' } },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_photoswipe__["PhotoSwipeGallery"], { items: items, options: options, thumbnailContent: this.getThumbnailContent })
+            )
+          )
         )
       );
     }
@@ -2137,7 +2199,7 @@ var Gally = function (_React$Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GallyGrid; });
+/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__ = __webpack_require__(23);
@@ -2710,7 +2772,7 @@ var Home = function (_React$Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_scss__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_scss__);
@@ -2749,7 +2811,6 @@ var InstaImage = function (_React$Component) {
           src: this.props.src,
           tekst: this.props.tekst
         });
-        console.log("YOYO");
       }
     }
   }, {
@@ -2781,7 +2842,6 @@ var InstaImage = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (InstaImage);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -3386,7 +3446,7 @@ var NaruciNesto = function (_React$Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbinaConfirm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbinaConfirm; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
@@ -3424,9 +3484,7 @@ var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
         this.props.dispatch({
           type: 'REMOVE_ORDER'
         });
-        console.log("BRISEM");
       }
-      console.log('Mauntovan');
     }
   }, {
     key: 'render',
@@ -3450,7 +3508,6 @@ var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
   return PorudzbinaConfirm;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -3458,7 +3515,7 @@ var PorudzbinaConfirm = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Proizvod; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Proizvod; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
@@ -3493,19 +3550,9 @@ var Proizvod = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_react_a
   _inherits(Proizvod, _React$PureComponent);
 
   function Proizvod() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, Proizvod);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Proizvod.__proto__ || Object.getPrototypeOf(Proizvod)).call.apply(_ref, [this].concat(args))), _this), _this.ubaciProizvod = function (proizvod) {
-      console.log(proizvod);
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return _possibleConstructorReturn(this, (Proizvod.__proto__ || Object.getPrototypeOf(Proizvod)).apply(this, arguments));
   }
 
   _createClass(Proizvod, [{
@@ -3514,7 +3561,6 @@ var Proizvod = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_react_a
       var data = this.props.data;
 
       var naziv = data.allProizvods && data.allProizvods[2].naslov;
-      console.log(data.allProizvods);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_5_react_styled_flexboxgrid__["a" /* Grid */],
         null,
@@ -3539,7 +3585,6 @@ Proizvod.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -3783,7 +3828,7 @@ var stylee = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Admin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Admin; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TopHero__ = __webpack_require__(38);
@@ -3864,13 +3909,10 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (typeof window !== 'undefined' && window.document) {
-        if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {
-          console.log("JOJO00", localStorage.getItem("userName"));
-        } else {
+        if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {} else {
           this.setState({
             inputOn: true
           });
-          console.log("EVO ME");
         }
       }
     }
@@ -3917,8 +3959,6 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
                   this.setState({
                     inputOn: true
                   });
-                } else {
-                  console.log("ZAO MI JE NISI ");
                 }
 
               case 4:
@@ -3939,7 +3979,6 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
     key: 'render',
     value: function render() {
       var putinput = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
-      console.log("OVO JE PROPS", this.props);
       if (!this.state.inputOn) {
         putinput = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
@@ -3993,7 +4032,6 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react_redu
   return Admin;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -4221,7 +4259,7 @@ Porudzbine.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbineSingle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbineSingle; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__(29);
@@ -4295,16 +4333,14 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                console.log(ajDi.id);
-                console.log(ajDi.stavkePorudzbines);
-                _context2.next = 4;
+                _context2.next = 2;
                 return _this.props.deletePorudzbinu({
                   variables: {
                     id: ajDi.id
                   }
                 });
 
-              case 4:
+              case 2:
                 brisemPorudzbinu = _context2.sent;
 
 
@@ -4341,7 +4377,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
                   type: 'DELETE_PROIZVOD'
                 });
 
-              case 7:
+              case 5:
               case 'end':
                 return _context2.stop();
             }
@@ -4456,7 +4492,6 @@ var stylee = {
     cursor: 'pointer'
   }
 };
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -4930,7 +4965,7 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f
 /***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.b5483bba2ddc874b9c43234af5e9efd9.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.27da109d6c92ff0c1090c5e1d6e68252.jpg";
 
 /***/ }),
 

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 108);
+/******/ 	return __webpack_require__(__webpack_require__.s = 109);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -367,7 +367,7 @@ var _loadjs = __webpack_require__(89);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(105);
+var _regex = __webpack_require__(106);
 
 var _regex2 = _interopRequireDefault(_regex);
 
@@ -829,7 +829,7 @@ var _nodemailer = __webpack_require__(91);
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
-var _xoauth = __webpack_require__(107);
+var _xoauth = __webpack_require__(108);
 
 var _xoauth2 = _interopRequireDefault(_xoauth);
 
@@ -845,7 +845,7 @@ var _microseconds = __webpack_require__(90);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(101);
+var _reactRouter = __webpack_require__(102);
 
 var _reactHelmet = __webpack_require__(21);
 
@@ -1105,7 +1105,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(28);
 
-var _subscriptionsTransportWs = __webpack_require__(106);
+var _subscriptionsTransportWs = __webpack_require__(107);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1345,9 +1345,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(103);
+var _redux = __webpack_require__(104);
 
-var _reduxThunk = __webpack_require__(104);
+var _reduxThunk = __webpack_require__(105);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -2085,7 +2085,7 @@ var _GoogleMaps = __webpack_require__(47);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(102);
+var _reactTransitions = __webpack_require__(103);
 
 var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
 
@@ -2646,14 +2646,77 @@ var _galerija = __webpack_require__(68);
 
 var _galerija2 = _interopRequireDefault(_galerija);
 
+var _reactPhotoswipe = __webpack_require__(101);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+let items = [{
+  src: '/galerija/drama4.jpg',
+  thumbnail: '/galerija/drama4.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama5.jpg',
+  thumbnail: '/galerija/drama5.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}, {
+  src: '/galerija/drama1.jpg',
+  thumbnail: '/galerija/drama1.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama2.jpg',
+  thumbnail: '/galerija/drama2.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}, {
+  src: '/galerija/drama3.jpg',
+  thumbnail: '/galerija/drama3.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama6.jpg',
+  thumbnail: '/galerija/drama6.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}, {
+  src: '/galerija/drama7.jpg',
+  thumbnail: '/galerija/drama7.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 1'
+}, {
+  src: '/galerija/drama8.jpg',
+  thumbnail: '/galerija/drama8.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Image 2'
+}];
+let options = {
+  //http://photoswipe.com/documentation/options.html
+};
 let Gally = class Gally extends _react2.default.Component {
+  constructor(...args) {
+    var _temp;
+
+    return _temp = super(...args), this.getThumbnailContent = item => {
+      return _react2.default.createElement('img', { src: item.thumbnail, width: 290, height: 200 });
+    }, _temp;
+  }
+
   componentDidMount() {
     if (typeof window !== 'undefined') {
       window.scroll(0, 0);
     }
   }
+
   render() {
     return _react2.default.createElement(
       'div',
@@ -2662,7 +2725,15 @@ let Gally = class Gally extends _react2.default.Component {
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
-        _react2.default.createElement(_GallyGrid2.default, null)
+        _react2.default.createElement(
+          'div',
+          { style: { display: 'flex', alignItems: 'center', justifyContent: 'center' } },
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex', justifyContent: 'center', alignItems: 'center' } },
+            _react2.default.createElement(_reactPhotoswipe.PhotoSwipeGallery, { items: items, options: options, thumbnailContent: this.getThumbnailContent })
+          )
+        )
       )
     );
   }
@@ -5309,46 +5380,52 @@ module.exports = require("react-load-script");
 /* 101 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-photoswipe");
 
 /***/ }),
 /* 102 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-transitions");
+module.exports = require("react-router");
 
 /***/ }),
 /* 103 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-transitions");
 
 /***/ }),
 /* 104 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 105 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 106 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("regex");
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports) {
 
-module.exports = require("xoauth2");
+module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
 /* 108 */
+/***/ (function(module, exports) {
+
+module.exports = require("xoauth2");
+
+/***/ }),
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(27);
