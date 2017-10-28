@@ -43,12 +43,10 @@ export default class Admin extends React.Component {
   componentDidMount() {
     if(typeof window !== 'undefined' && window.document) {
       if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {
-        console.log("JOJO00", localStorage.getItem("userName"));
       } else {
         this.setState({
           inputOn: true,
         })
-        console.log("EVO ME");
       }
     }
   }
@@ -77,13 +75,10 @@ export default class Admin extends React.Component {
       this.setState({
         inputOn: true,
       });
-    } else {
-      console.log("ZAO MI JE NISI ");
     }
   }
   render () {
     let putinput = <div></div>;
-    console.log("OVO JE PROPS", this.props)
     if(!this.state.inputOn) {
       putinput =
       <div className={scss.adminLog}>

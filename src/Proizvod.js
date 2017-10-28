@@ -18,14 +18,9 @@ export default class Proizvod extends React.PureComponent {
     }),
   }
 
-  ubaciProizvod = (proizvod) => {
-    console.log(proizvod);
-  }
-
   render() {
     const { data } = this.props;
     const naziv = data.allProizvods && data.allProizvods[2].naslov;
-    console.log(data.allProizvods);
     return(
       <Grid>
         <Row>

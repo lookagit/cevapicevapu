@@ -131,7 +131,6 @@ export default class ContactUs extends React.Component{
     }
   }
   render(){
-    console.log("STATE ", this.state);
     return(
       <div>
         <TopHero title="KONTAKT" subtitle=" " bgImage={{backgroundImage: 'url("/sarajevski-cevap-drama.jpg")'}} />

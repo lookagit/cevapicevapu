@@ -11,9 +11,7 @@ export default class PorudzbinaConfirm extends React.Component {
       this.props.dispatch({
         type: 'REMOVE_ORDER',
       });
-      console.log("BRISEM");
     }
-    console.log('Mauntovan');
   }
 
 

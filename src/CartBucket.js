@@ -9,12 +9,9 @@ export default class Admin extends React.Component {
       cartCount: "",
     }
   }
-  componentWillMount() {
-    console.log("PROPS, ", this.props);
-  }
+
   componentWillReceiveProps(nextProps) {
     if(nextProps.orders.length) {
-      console.log("KOMPONENT ", nextProps.orders);
 
       const numb = nextProps.orders.reduce(function (sum, b) {
         return  sum + parseInt(b.kolicina);
@@ -22,7 +19,6 @@ export default class Admin extends React.Component {
       this.setState({
         cartCount: numb,
       })
-      console.log("OVO JE numb", this.state.cartCount);
     } else {
       this.setState({
         cartCount: "",

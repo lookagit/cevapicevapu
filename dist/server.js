@@ -1045,7 +1045,7 @@ exports.default = async function server() {
         from: ctx.request.body.test.name + '<' + ctx.request.body.test.mail + '>',
         to: 'balr.stuff@gmail.com',
         subject: ctx.request.body.test.sub,
-        text: ctx.request.body.test.mess + "OVAJ MEJL" + ctx.request.body.mail
+        text: ctx.request.body.test.mess + "OVAJ MEJL" + ctx.request.body.test.mail
       };
 
       transporter.sendMail(mailerOptions, function (err, res) {
@@ -1668,7 +1668,6 @@ exports.default = {
     state: ordersInitial,
     reducer(state = ordersInitial, action) {
       if (action.type === 'ADD_ORDER') {
-        console.log(action.orders);
         const newState = [...state];
         newState.push(action.orders);
         return newState;
@@ -2013,12 +2012,9 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
       cartCount: ""
     };
   }
-  componentWillMount() {
-    console.log("PROPS, ", this.props);
-  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.orders.length) {
-      console.log("KOMPONENT ", nextProps.orders);
 
       const numb = nextProps.orders.reduce(function (sum, b) {
         return sum + parseInt(b.kolicina);
@@ -2026,7 +2022,6 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
       this.setState({
         cartCount: numb
       });
-      console.log("OVO JE numb", this.state.cartCount);
     } else {
       this.setState({
         cartCount: ""
@@ -2222,7 +2217,6 @@ let ContactUs = class ContactUs extends _react2.default.Component {
   }
 
   render() {
-    console.log("STATE ", this.state);
     return _react2.default.createElement(
       'div',
       null,
@@ -3205,7 +3199,6 @@ let InstaImage = class InstaImage extends _react2.default.Component {
         src: this.props.src,
         tekst: this.props.tekst
       });
-      console.log("YOYO");
     }
   }
   render() {
@@ -3784,9 +3777,7 @@ let PorudzbinaConfirm = (_dec = (0, _reactRedux.connect)(state => ({ counter: st
       this.props.dispatch({
         type: 'REMOVE_ORDER'
       });
-      console.log("BRISEM");
     }
-    console.log('Mauntovan');
   }
 
   render() {
@@ -3848,18 +3839,10 @@ var _ProizvodItem2 = _interopRequireDefault(_ProizvodItem);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Proizvod = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _dec(_class = class Proizvod extends _react2.default.PureComponent {
-  constructor(...args) {
-    var _temp;
-
-    return _temp = super(...args), this.ubaciProizvod = proizvod => {
-      console.log(proizvod);
-    }, _temp;
-  }
 
   render() {
     const { data } = this.props;
     const naziv = data.allProizvods && data.allProizvods[2].naslov;
-    console.log(data.allProizvods);
     return _react2.default.createElement(
       _reactStyledFlexboxgrid.Grid,
       null,
@@ -4176,13 +4159,10 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
 
   componentDidMount() {
     if (typeof window !== 'undefined' && window.document) {
-      if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {
-        console.log("JOJO00", localStorage.getItem("userName"));
-      } else {
+      if (localStorage.getItem("userName") === null || localStorage.getItem("password") === null) {} else {
         this.setState({
           inputOn: true
         });
-        console.log("EVO ME");
       }
     }
   }
@@ -4211,13 +4191,10 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
       this.setState({
         inputOn: true
       });
-    } else {
-      console.log("ZAO MI JE NISI ");
     }
   }
   render() {
     let putinput = _react2.default.createElement('div', null);
-    console.log("OVO JE PROPS", this.props);
     if (!this.state.inputOn) {
       putinput = _react2.default.createElement(
         'div',
@@ -4520,8 +4497,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
     this.handleClose = () => this.setState({ isShowingModal: false, kolicina: '' });
 
     this.brisanjePorudzbina = async ajDi => {
-      console.log(ajDi.id);
-      console.log(ajDi.stavkePorudzbines);
       const brisemPorudzbinu = await this.props.deletePorudzbinu({
         variables: {
           id: ajDi.id

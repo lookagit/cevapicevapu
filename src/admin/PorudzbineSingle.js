@@ -42,8 +42,6 @@ export default class PorudzbineSingle extends React.Component {
   handleClose = () => this.setState({isShowingModal: false, kolicina: ''})
 
   brisanjePorudzbina = async(ajDi) => {
-    console.log(ajDi.id);
-    console.log(ajDi.stavkePorudzbines);
     const brisemPorudzbinu = await this.props.deletePorudzbinu({
       variables: {
         id: ajDi.id,

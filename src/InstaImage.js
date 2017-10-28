@@ -15,7 +15,6 @@ class InstaImage extends React.Component {
         src: this.props.src,
         tekst: this.props.tekst,
       });
-      console.log("YOYO");
     }
   }
   render() {
