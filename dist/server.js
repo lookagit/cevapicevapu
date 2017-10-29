@@ -632,8 +632,8 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":87}};
-    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"tip"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":96}};
+    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike,\n    tip\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -3979,7 +3979,12 @@ let Proizvod = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _dec(_
       _react2.default.createElement(
         _reactStyledFlexboxgrid.Row,
         null,
-        data.allProizvods && data.allProizvods.map((proiz, index) => _react2.default.createElement(_ProizvodItem2.default, { proiz: proiz }))
+        data.allProizvods && data.allProizvods.filter(item => item.tip === 'hrana').map((proiz, index) => {
+          return _react2.default.createElement(_ProizvodItem2.default, { proiz: proiz, key: index });
+        }),
+        data.allProizvods && data.allProizvods.filter(item => item.tip === 'pice').map((proiz, index) => {
+          return _react2.default.createElement(_ProizvodItem2.default, { proiz: proiz, key: index });
+        })
       )
     );
   }
@@ -4787,22 +4792,25 @@ let ProizvodList = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _d
       _react2.default.createElement(
         'div',
         { className: _styles2.default.proizvodList },
-        data.allProizvods && data.allProizvods.map((proiz, index) => _react2.default.createElement(
-          'div',
-          { className: _styles2.default.proizvodItem },
-          _react2.default.createElement('img', { src: proiz.urlSlike }),
-          _react2.default.createElement(
-            'h4',
-            null,
-            proiz.naslov
-          ),
-          _react2.default.createElement(
-            'h4',
-            null,
-            proiz.cena,
-            ' RSD'
-          )
-        ))
+        data.allProizvods && data.allProizvods.map((proiz, index) => {
+          console.log("ITEEEM ", proiz);
+          return _react2.default.createElement(
+            'div',
+            { className: _styles2.default.proizvodItem },
+            _react2.default.createElement('img', { src: proiz.urlSlike }),
+            _react2.default.createElement(
+              'h4',
+              null,
+              proiz.naslov
+            ),
+            _react2.default.createElement(
+              'h4',
+              null,
+              proiz.cena,
+              ' RSD'
+            )
+          );
+        })
       )
     );
   }
