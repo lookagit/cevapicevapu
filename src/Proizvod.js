@@ -24,9 +24,18 @@ export default class Proizvod extends React.PureComponent {
     return(
       <Grid>
         <Row>
-      {data.allProizvods && data.allProizvods.map((proiz, index) => (
-        <ProizvodItem proiz={proiz} />
-      ))}
+      {data.allProizvods && data.allProizvods.filter(item => item.tip === 'hrana').map((proiz, index) => {
+        return (
+          <ProizvodItem proiz={proiz} key={index}/>
+        )
+      }
+      )}
+      {data.allProizvods && data.allProizvods.filter(item => item.tip === 'pice').map((proiz, index) => {
+        return (
+          <ProizvodItem proiz={proiz} key={index}/>
+        )
+      }
+      )}
         </Row>
       </Grid>
     );

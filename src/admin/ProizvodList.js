@@ -26,13 +26,17 @@ export default class ProizvodList extends React.Component {
       <Col xs={12} sm={12} md={4} lg={4}>
         <h3>Lista Proizvoda</h3>
         <div className={scss.proizvodList}>
-          {data.allProizvods && data.allProizvods.map((proiz, index) => (
-            <div className={scss.proizvodItem}>
-              <img src={proiz.urlSlike} />
-              <h4>{proiz.naslov}</h4>
-              <h4>{proiz.cena} RSD</h4>
-            </div>
-          ))}
+          {data.allProizvods && data.allProizvods.map((proiz, index) => {
+            console.log("ITEEEM ", proiz)
+            return (
+              <div className={scss.proizvodItem}>
+                <img src={proiz.urlSlike} />
+                <h4>{proiz.naslov}</h4>
+                <h4>{proiz.cena} RSD</h4>
+              </div>
+            )
+          }  
+        )}
         </div>
       </Col>
     );

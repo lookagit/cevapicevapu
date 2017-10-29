@@ -367,8 +367,8 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.5977e5e437030
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":87}};
-    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllProizvods"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allProizvods"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"cena"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"urlSlike"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"tip"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":96}};
+    doc.loc.source = {"body":"query AllProizvods {\n  allProizvods {\n    id,\n    cena,\n    naslov,\n    urlSlike,\n    tip\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -3631,8 +3631,15 @@ var Proizvod = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_react_a
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_5_react_styled_flexboxgrid__["b" /* Row */],
           null,
-          data.allProizvods && data.allProizvods.map(function (proiz, index) {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ProizvodItem__["a" /* default */], { proiz: proiz });
+          data.allProizvods && data.allProizvods.filter(function (item) {
+            return item.tip === 'hrana';
+          }).map(function (proiz, index) {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ProizvodItem__["a" /* default */], { proiz: proiz, key: index });
+          }),
+          data.allProizvods && data.allProizvods.filter(function (item) {
+            return item.tip === 'pice';
+          }).map(function (proiz, index) {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__ProizvodItem__["a" /* default */], { proiz: proiz, key: index });
           })
         )
       );
@@ -4563,7 +4570,7 @@ var stylee = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodList; });
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__ = __webpack_require__(23);
@@ -4618,6 +4625,7 @@ var ProizvodList = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_rea
           'div',
           { className: __WEBPACK_IMPORTED_MODULE_5__styles_scss___default.a.proizvodList },
           data.allProizvods && data.allProizvods.map(function (proiz, index) {
+            console.log("ITEEEM ", proiz);
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: __WEBPACK_IMPORTED_MODULE_5__styles_scss___default.a.proizvodItem },
@@ -4651,6 +4659,7 @@ ProizvodList.propTypes = {
   })
 };
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 

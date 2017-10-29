@@ -3,6 +3,7 @@ query AllProizvods {
     id,
     cena,
     naslov,
-    urlSlike
+    urlSlike,
+    tip
   }
 }
