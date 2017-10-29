@@ -7,7 +7,15 @@ html {
     font-size: 2rem;
   }
 }
-
+.pswp-thumbnail {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+}
+.pswp-gallery {
+  width: 1200px;
+  display: flex;
+}
 .pswp {
   display: none;
   position: absolute;
