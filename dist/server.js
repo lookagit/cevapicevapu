@@ -2439,12 +2439,12 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
             { xs: 12, sm: 6 },
-            _react2.default.createElement('img', { src: '/belo-meso-na-rostilju.jpg', style: { width: "100%", height: "100%" } })
+            _react2.default.createElement('img', { src: '/drama-cevapi-napolju.jpg', style: { width: "100%", height: "100%" } })
           ),
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
             { xs: 12, sm: 6 },
-            _react2.default.createElement('img', { src: '/rolovano-drama-rostilj.jpg', style: { width: "100%", height: "100%" } })
+            _react2.default.createElement('img', { src: '/drama-cevap-specijal-basta.jpg', style: { width: "100%", height: "100%" } })
           ),
           _react2.default.createElement(
             _reactStyledFlexboxgrid.Col,
@@ -2662,53 +2662,101 @@ var _reactPhotoswipe = __webpack_require__(103);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let items = [{
-  src: '/galerija/drama4.jpg',
-  thumbnail: '/galerija/drama4.jpg',
-  w: 1200,
-  h: 900,
-  title: 'Image 1'
-}, {
-  src: '/galerija/drama5.jpg',
-  thumbnail: '/galerija/drama5.jpg',
-  w: 1200,
-  h: 900,
-  title: 'Image 2'
-}, {
   src: '/galerija/drama1.jpg',
   thumbnail: '/galerija/drama1.jpg',
   w: 1200,
   h: 900,
-  title: 'Image 1'
+  title: 'Drama ćevapi'
 }, {
   src: '/galerija/drama2.jpg',
   thumbnail: '/galerija/drama2.jpg',
   w: 1200,
   h: 900,
-  title: 'Image 2'
+  title: 'Drama ćevapi'
 }, {
   src: '/galerija/drama3.jpg',
   thumbnail: '/galerija/drama3.jpg',
   w: 1200,
   h: 900,
-  title: 'Image 1'
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama4.jpg',
+  thumbnail: '/galerija/drama4.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama5.jpg',
+  thumbnail: '/galerija/drama5.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
 }, {
   src: '/galerija/drama6.jpg',
   thumbnail: '/galerija/drama6.jpg',
   w: 1200,
   h: 900,
-  title: 'Image 2'
+  title: 'Drama ćevapi'
 }, {
   src: '/galerija/drama7.jpg',
   thumbnail: '/galerija/drama7.jpg',
   w: 1200,
   h: 900,
-  title: 'Image 1'
+  title: 'Drama ćevapi'
 }, {
   src: '/galerija/drama8.jpg',
   thumbnail: '/galerija/drama8.jpg',
   w: 1200,
   h: 900,
-  title: 'Image 2'
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama9.jpg',
+  thumbnail: '/galerija/drama9.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama10.jpg',
+  thumbnail: '/galerija/drama10.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama11.jpg',
+  thumbnail: '/galerija/drama11.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama12.jpg',
+  thumbnail: '/galerija/drama12.jpg',
+  w: 900,
+  h: 1200,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama13.jpg',
+  thumbnail: '/galerija/drama13.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama14.jpg',
+  thumbnail: '/galerija/drama14.jpg',
+  w: 1200,
+  h: 900,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama15.jpg',
+  thumbnail: '/galerija/drama15.jpg',
+  w: 900,
+  h: 1200,
+  title: 'Drama ćevapi'
+}, {
+  src: '/galerija/drama16.jpg',
+  thumbnail: '/galerija/drama16.jpg',
+  w: 1200,
+  h: 800,
+  title: 'Drama ćevapi'
 }];
 let options = {
   //http://photoswipe.com/documentation/options.html
@@ -2735,7 +2783,7 @@ let Gally = class Gally extends _react2.default.Component {
       _react2.default.createElement(_TopHero2.default, { title: 'GALERIJA', subtitle: ' ', bgImage: { backgroundImage: 'url("' + _galerija2.default + '")' } }),
       _react2.default.createElement(
         'div',
-        { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover' } },
+        { style: { backgroundImage: "url('/pozadinadrvo.jpg')", backgroundSize: 'cover', paddingTop: '50px', paddingBottom: '50px' } },
         _react2.default.createElement(
           'div',
           { style: { display: 'flex', alignItems: 'center', justifyContent: 'center' } },

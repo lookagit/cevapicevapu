@@ -23,10 +23,10 @@ export default class ContentBoxes extends React.Component {
             </div>
           </Col>
           <Col xs={12} sm={6}>
-          <img src="/belo-meso-na-rostilju.jpg" style={{width: "100%", height: "100%"}}/>
+          <img src="/drama-cevapi-napolju.jpg" style={{width: "100%", height: "100%"}}/>
           </Col>
           <Col xs={12} sm={6}>
-          <img src="/rolovano-drama-rostilj.jpg" style={{width: "100%", height: "100%"}}/>
+          <img src="/drama-cevap-specijal-basta.jpg" style={{width: "100%", height: "100%"}}/>
           </Col>
           <Col xs={12}>
             <h2 style={{textAlign: "center"}}>VAS IZBOR</h2>
