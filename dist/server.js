@@ -1028,16 +1028,16 @@ exports.default = async function server() {
         service: 'gmail',
         auth: {
           type: 'OAuth2',
-          user: 'balr.stuff@gmail.com',
+          user: 'cevapidrama@gmail.com',
           clientId: '1098430474978-jkgjpcdsagolblpsi6d1852ne71kd2r0.apps.googleusercontent.com',
           clientSecret: 'cPoJp_U0t-GiahRYqxHaouDL',
-          refreshToken: '1/5VLn1SBQwHBcNacv07VhfokWMxawNPdzJGW2V-7RlOw'
+          refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY'
         }
       });
 
       var mailerOptions = {
         from: `${ctx.request.body.test.name} <${ctx.request.body.test.mail}>`,
-        to: 'balr.stuff@gmail.com',
+        to: 'cevapidrama@gmail.com',
         subject: ctx.request.body.test.sub,
         text: `MEJL JE POSLAO ${ctx.request.body.test.mail} Tekst mejla ${ctx.request.body.test.mess}`
       };
