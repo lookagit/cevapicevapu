@@ -113,6 +113,7 @@
     "react-scrollable-anchor": "^0.4.2",
     "react-styled-flexboxgrid": "^2.0.3",
     "react-transitions": "^1.0.0",
+    "react-window-size": "^1.0.1",
     "redux": "^3.7.0",
     "redux-thunk": "^2.2.0",
     "regenerator-runtime": "^0.10.5",

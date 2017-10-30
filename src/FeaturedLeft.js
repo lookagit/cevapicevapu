@@ -6,6 +6,7 @@ import Regex from 'regex';
 import { connect } from 'react-redux';
 import Script from 'react-load-script';
 import Iframe from 'react-iframe';
+import windowSize from 'react-window-size';
 
 @connect(state => ({reloader: state.reloader}))
 class FeaturedLeft extends React.Component {
@@ -14,18 +15,31 @@ class FeaturedLeft extends React.Component {
   }
 
   render() {
+    console.log("AHAAAA ", this.props.windowWidth, this.props.windowHeight);
     return (
       <div style={{display: "flex"}}>
         <div className={css.featured}>
           <div className={css.featuredLeftImage} style={{backgroundImage: "url('pleska.jpg')"}}></div>
           <div className={css.featuredLeftText}>
-          <div>
-          <Iframe url="https://widget.developcodex.net/"
-            width="100%"
-            height="470px"
-            display="initial"
-            position="relative"
-          />
+          <div className={css.featuredTrick}>
+          {
+            this.props.windowWidth > 1024 ? 
+              <Iframe url="https://widget.developcodex.net/468"
+                minWidth="460px"
+                width="100%"
+                height="470px"
+                display="initial"
+                position="relative"
+              /> : 
+              <Iframe url="https://widget.developcodex.net/240"
+              minWidth="280px"
+              width="100%"
+              height="470px"
+              display="initial"
+              position="relative"
+            />
+          }
+          
           </div>
           </div>
         </div>
@@ -33,4 +47,4 @@ class FeaturedLeft extends React.Component {
     )
   }
 }
-export default FeaturedLeft;
+export default windowSize(FeaturedLeft);

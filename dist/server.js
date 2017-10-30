@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 111);
+/******/ 	return __webpack_require__(__webpack_require__.s = 112);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -90,6 +90,7 @@ module.exports = {
 	"featured": "featured-tBVkb2dk8NKSVh-MiZvpy",
 	"featuredLeftImage": "featuredLeftImage-1Gox6liBJlELhedy2ZEoQ4",
 	"featuredLeftText": "featuredLeftText-2ulA7B5hZq3aI0K1nomPKa",
+	"featuredTrick": "featuredTrick-2qlOOpnWrLLKh7apl6IesV",
 	"buttonP": "buttonP-2o61Dqeeal8MbCZT8JYmre",
 	"hello": "hello-1P9zCbIx8YQ5eID6A-67d6",
 	"logo": "logo-1tNzgJsJwXMqFQ0a4xMkPk",
@@ -367,7 +368,7 @@ var _loadjs = __webpack_require__(88);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(108);
+var _regex = __webpack_require__(109);
 
 var _regex2 = _interopRequireDefault(_regex);
 
@@ -381,6 +382,10 @@ var _reactIframe = __webpack_require__(100);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
+var _reactWindowSize = __webpack_require__(106);
+
+var _reactWindowSize2 = _interopRequireDefault(_reactWindowSize);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.reloader })), _dec(_class = class FeaturedLeft extends _react2.default.Component {
@@ -389,6 +394,7 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
   }
 
   render() {
+    console.log("AHAAAA ", this.props.windowWidth, this.props.windowHeight);
     return _react2.default.createElement(
       'div',
       { style: { display: "flex" } },
@@ -401,8 +407,15 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
           { className: _styles2.default.featuredLeftText },
           _react2.default.createElement(
             'div',
-            null,
-            _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/',
+            { className: _styles2.default.featuredTrick },
+            this.props.windowWidth > 1024 ? _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/468',
+              minWidth: '460px',
+              width: '100%',
+              height: '470px',
+              display: 'initial',
+              position: 'relative'
+            }) : _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/240',
+              minWidth: '280px',
               width: '100%',
               height: '470px',
               display: 'initial',
@@ -414,7 +427,7 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
     );
   }
 }) || _class);
-exports.default = FeaturedLeft;
+exports.default = (0, _reactWindowSize2.default)(FeaturedLeft);
 
 /***/ }),
 /* 14 */
@@ -823,7 +836,7 @@ var _nodemailer = __webpack_require__(90);
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
-var _xoauth = __webpack_require__(110);
+var _xoauth = __webpack_require__(111);
 
 var _xoauth2 = _interopRequireDefault(_xoauth);
 
@@ -1099,7 +1112,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(27);
 
-var _subscriptionsTransportWs = __webpack_require__(109);
+var _subscriptionsTransportWs = __webpack_require__(110);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1339,9 +1352,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(106);
+var _redux = __webpack_require__(107);
 
-var _reduxThunk = __webpack_require__(107);
+var _reduxThunk = __webpack_require__(108);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -5483,34 +5496,40 @@ module.exports = require("react-transitions");
 /* 106 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-window-size");
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 108 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 109 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("regex");
 
 /***/ }),
 /* 110 */
 /***/ (function(module, exports) {
 
-module.exports = require("xoauth2");
+module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
 /* 111 */
+/***/ (function(module, exports) {
+
+module.exports = require("xoauth2");
+
+/***/ }),
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(26);
