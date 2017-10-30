@@ -403,7 +403,10 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
             'div',
             null,
             _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/',
-              style: { position: 'relative', display: 'initial', height: '470px', width: '100%', maxWidth: '480px' }
+              width: '100%',
+              height: '470px',
+              display: 'initial',
+              position: 'relative'
             })
           )
         )
