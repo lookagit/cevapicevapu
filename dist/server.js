@@ -403,10 +403,7 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
             'div',
             null,
             _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/',
-              width: '480px',
-              height: '470px',
-              display: 'initial',
-              position: 'relative'
+              style: { position: 'relative', display: 'initial', height: '470px', width: '100%', maxWidth: '480px' }
             })
           )
         )
@@ -1031,8 +1028,7 @@ exports.default = async function server() {
           user: 'cevapidrama@gmail.com',
           clientId: '1098430474978-lb2lmoq6gafvar6l1dvq753cmb1s0qnn.apps.googleusercontent.com',
           clientSecret: 'sKb7qT9OHrgoIGCBv5PKCoAF',
-          refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY',
-          accessToken: 'ya29.Glv0BLXaYBPKHzpCO1utsMd1FYrpanQOxFIqSDZxxUJsq_wmrOvv29lHzH-Oe-_KR18onc7cmhVjn2PLJTgmUjlT_RS5EebE-eVABTpS7jkL41aZeoEsa6h1A7Pf'
+          refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY'
         }
       });
 

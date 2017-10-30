@@ -21,10 +21,7 @@ class FeaturedLeft extends React.Component {
           <div className={css.featuredLeftText}>
           <div>
           <Iframe url="https://widget.developcodex.net/"
-            width="480px"
-            height="470px"
-            display="initial"
-            position="relative"
+            style={{position: 'relative', display: 'initial', height: '470px', width: '100%', maxWidth: '480px'}}
           />
           </div>
           </div>
