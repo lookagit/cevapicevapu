@@ -137,39 +137,39 @@ export default class ContactUs extends React.Component{
         <div style={{backgroundImage:'url("/pozadinadrvo.jpg")'}}>
         <Grid>
           <Row className={css.contactRowOne}>
-            <Col xsOffset={1} md={10} smOffset={0} mdOffset={1}>
+            <Col className={css.contactColWidth} xsOffset={1} md={10} smOffset={0} mdOffset={1}>
               <Row>
-              <Col xs={12} sm={8} md={8} lg={8} className={css.contactColTwo}>
-                <form>
-                <p>
-                  <input type="text" name="ime" placeholder="Ime" style={{border: !this.state.nameBool ? '' : '3px solid green'}} onChange={(text) => {
-                    this.checkName(text);
-                  }}/>
-                </p>
-                <p className={!this.state.nameBool ? css.boxes : css.hidees}>{this.state.textFromTheBottomName}</p>
-                <p>
-                  <input type="text" name="mail" placeholder="Email Adresa" style={{border: !this.state.mailBool ? '' : '3px solid green'}} onChange={(text) => {
-                    this.checkMail(text);
-                  }}/>
-                </p>
-                <p className={!this.state.mailBool ? css.boxes : css.hidees}>{this.state.textFromTheEmail}</p>
-                <p>
-                  <input type="text" name="subj" placeholder="Predmet"  style={{border: !this.state.subBool ? '' : '3px solid green'}} onChange={(text) => {
-                    this.checkSub(text);
-                  }}/>
-                </p>
-                <p className={!this.state.subBool ? css.boxes : css.hidees}>{this.state.textFromSub}</p>
-                <p className={css.poruka}>
-                  <textarea type="text" name="ime" placeholder="Poruka" style={{border: !this.state.messBool ? '' : '3px solid green'}} onChange={(text) => {
-                    this.checkMess(text);
-                  }} />
-                </p>
-                <p className={!this.state.messBool ? css.boxes : css.hidees}>{this.state.textFromMess}</p>
-                <p>
-                  <button className={css.posalji} type="button" onClick={this.sendMess}>POŠALJI</button>
-                </p>
-                </form>
-              </Col>
+                <Col xs={12} sm={8} md={8} lg={8} className={css.contactColTwo}>
+                  <form>
+                    <p>
+                      <input type="text" name="ime" placeholder="Ime" style={{border: !this.state.nameBool ? '' : '3px solid green'}} onChange={(text) => {
+                        this.checkName(text);
+                      }}/>
+                    </p>
+                    <p className={!this.state.nameBool ? css.boxes : css.hidees}>{this.state.textFromTheBottomName}</p>
+                    <p>
+                      <input type="text" name="mail" placeholder="Email Adresa" style={{border: !this.state.mailBool ? '' : '3px solid green'}} onChange={(text) => {
+                        this.checkMail(text);
+                      }}/>
+                    </p>
+                    <p className={!this.state.mailBool ? css.boxes : css.hidees}>{this.state.textFromTheEmail}</p>
+                    <p>
+                      <input type="text" name="subj" placeholder="Predmet"  style={{border: !this.state.subBool ? '' : '3px solid green'}} onChange={(text) => {
+                        this.checkSub(text);
+                      }}/>
+                    </p>
+                    <p className={!this.state.subBool ? css.boxes : css.hidees}>{this.state.textFromSub}</p>
+                    <p className={css.poruka}>
+                      <textarea type="text" name="ime" placeholder="Poruka" style={{border: !this.state.messBool ? '' : '3px solid green'}} onChange={(text) => {
+                        this.checkMess(text);
+                      }} />
+                    </p>
+                    <p className={!this.state.messBool ? css.boxes : css.hidees}>{this.state.textFromMess}</p>
+                    <p>
+                      <button className={css.posalji} type="button" onClick={this.sendMess}>POŠALJI</button>
+                    </p>
+                  </form>
+                </Col>
                 <Col xs={12} sm={4} md={4} lg={4} className={css.contactColOne}>
                   <h4 styles="margin:0;">INFORMACIJE</h4>
                   <h5>Adresa: </h5>

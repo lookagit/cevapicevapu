@@ -123,6 +123,7 @@ module.exports = {
 	"pleskaBgTwo": "pleskaBgTwo-L6PMiWuJodAv0Y2AtAd_",
 	"pleskaTekstTwo": "pleskaTekstTwo-DHz89PWqxLvJcevMrzVsL",
 	"contactRowOne": "contactRowOne-1nZU0KIdfd41SekjLRq53J",
+	"contactColWidth": "contactColWidth-1VLzc80dhj3W0vPN7GJH6h",
 	"contactColOne": "contactColOne-21cueNmJZV0dhJJuBgSlOR",
 	"contactColTwo": "contactColTwo-1KTocX6dZheO6pJMM_3ipI",
 	"poruka": "poruka-1Wiy7B2-Qz19i1zdBZtaYn",
@@ -2239,7 +2240,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
             { className: _styles2.default.contactRowOne },
             _react2.default.createElement(
               _reactStyledFlexboxgrid.Col,
-              { xsOffset: 1, md: 10, smOffset: 0, mdOffset: 1 },
+              { className: _styles2.default.contactColWidth, xsOffset: 1, md: 10, smOffset: 0, mdOffset: 1 },
               _react2.default.createElement(
                 _reactStyledFlexboxgrid.Row,
                 null,

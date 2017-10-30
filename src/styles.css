@@ -638,6 +638,13 @@ right: 15px;
 .contactRowOne{
   padding-top: 25px;
   padding-bottom: 50px;
+  width: 100%;
+}
+
+.contactColWidth {
+  width: 100%;
+  margin: 0 !important;
+  padding-left: 8% !important;
 }
 .contactColOne{
   background-color:rgba(200,200,200,0.3);
