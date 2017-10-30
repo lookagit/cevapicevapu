@@ -180,8 +180,8 @@ export default (async function server() {
           auth: {
               type: 'OAuth2',
               user: 'cevapidrama@gmail.com',
-              clientId: '1098430474978-jkgjpcdsagolblpsi6d1852ne71kd2r0.apps.googleusercontent.com',
-              clientSecret: 'cPoJp_U0t-GiahRYqxHaouDL',
+              clientId: '1098430474978-lb2lmoq6gafvar6l1dvq753cmb1s0qnn.apps.googleusercontent.com',
+              clientSecret: 'sKb7qT9OHrgoIGCBv5PKCoAF',
               refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY',
           }
       })
