@@ -668,7 +668,6 @@ right: 15px;
 
 .contactColTwo{
   input{
-
     padding-top:25px;
     width:500px;
     height: 30px;
@@ -780,12 +779,15 @@ right: 15px;
 
 }
 @media  (max-width:767px){
+  .posaljiParagraf {
+    text-align: center;
+  }
   input{
-    width:300px;
+    width: 90%;
   }
   .poruka{
     textarea{
-      width:300px;
+      width: 90%;
     }
 
   }

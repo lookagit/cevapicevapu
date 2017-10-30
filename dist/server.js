@@ -128,6 +128,7 @@ module.exports = {
 	"contactColTwo": "contactColTwo-1KTocX6dZheO6pJMM_3ipI",
 	"poruka": "poruka-1Wiy7B2-Qz19i1zdBZtaYn",
 	"posalji": "posalji-3YQJFzJVTxq-e-8jjv6HFC",
+	"posaljiParagraf": "posaljiParagraf-1ezqBOOX2ckYAIKQtz060X",
 	"rIconsFb": "rIconsFb-JUIQwKp17pNLrHEtbIS7Z",
 	"rIconsIg": "rIconsIg-vPm7Jwe3uYLvV9KFqr1Zg",
 	"rIconsYt": "rIconsYt-XWoktoihdcDSZ_Ehg1Wk_",
@@ -2300,7 +2301,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                     ),
                     _react2.default.createElement(
                       'p',
-                      null,
+                      { className: _styles2.default.posaljiParagraf },
                       _react2.default.createElement(
                         'button',
                         { className: _styles2.default.posalji, type: 'button', onClick: this.sendMess },

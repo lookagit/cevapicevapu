@@ -165,7 +165,7 @@ export default class ContactUs extends React.Component{
                       }} />
                     </p>
                     <p className={!this.state.messBool ? css.boxes : css.hidees}>{this.state.textFromMess}</p>
-                    <p>
+                    <p className={css.posaljiParagraf}> 
                       <button className={css.posalji} type="button" onClick={this.sendMess}>POŠALJI</button>
                     </p>
                   </form>
