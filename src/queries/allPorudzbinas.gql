@@ -2,6 +2,7 @@ query AllPorudzbinas {
   allPorudzbinas {
     id,
     adresa,
+    vreme,
     opis,
     brojTelefona,
     createdAt,

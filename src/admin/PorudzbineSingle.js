@@ -26,11 +26,22 @@ import { connect } from 'react-redux';
     name: 'deleteStavkePorudzbine',
   }
 )
+@graphql(gql`
+  mutation updatePorudzbina($id: ID! $vreme: Int!) {
+    updatePorudzbina(id: $id, vreme: $vreme){
+      id
+    }
+  }`,
+  {
+    name: 'updatePorudzbina',
+  }
+)
 export default class PorudzbineSingle extends React.Component {
   constructor(){
     super();
     this.state = {
       isShowingModal: false,
+      vreme: '',
     }
   };
 
@@ -38,8 +49,28 @@ export default class PorudzbineSingle extends React.Component {
       return (<button onClick={() => this.handleClick()}>Obrisi porudzbinu</button>)
   }
 
+  nekaFunkcija = async (ajDi) => {
+    console.log(ajDi.id);
+    console.log(this.state.vreme);
+    const pravimVreme = await this.props.updatePorudzbina({
+      variables: {
+        id: ajDi.id,
+        vreme: this.state.vreme,
+      }
+    });
+    console.log(pravimVreme.id);
+  }
+
   handleClick = () => this.setState({isShowingModal: true})
   handleClose = () => this.setState({isShowingModal: false, kolicina: ''})
+
+  izmeniVreme = (event) => {
+    this.setState({vreme: parseInt(event.target.value)});
+  }
+
+  apdejtVreme = () => {
+    console.log(this.state.vreme);
+  }
 
   brisanjePorudzbina = async(ajDi) => {
     const brisemPorudzbinu = await this.props.deletePorudzbinu({
@@ -75,6 +106,9 @@ export default class PorudzbineSingle extends React.Component {
             <h4>Kolicina: {item.kolicina}</h4>
           </div>
         ))}
+        <h4 style={{marginBottom: '0px'}}>Vreme pripremanja porudzbine (minuti):</h4>
+        <input type="number" onChange={this.izmeniVreme} placeholder={this.props.porudzbina.vreme} />
+        <button style={stylee.buttonStyle} onClick={() => {this.nekaFunkcija(this.props.porudzbina)}}>Pošalji</button>
         <h3>Opis: {this.props.porudzbina.opis}</h3>
         {
           this.button()

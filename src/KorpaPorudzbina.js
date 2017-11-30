@@ -7,6 +7,7 @@ import PorudzbinaConfirm from './PorudzbinaConfirm';
 import { connect } from 'react-redux';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import scss from './styles.scss';
+import PovratnoVreme from './PovratnoVreme.js';
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 @graphql(gql`
@@ -64,6 +65,7 @@ export default class KorpaPorudzbina extends React.Component {
       porudzbinaId: '123',
       poslato: false,
       opis: "Bez Opisa",
+      id: 'NaN',
     }
   }
 
@@ -101,6 +103,8 @@ export default class KorpaPorudzbina extends React.Component {
       }
     });
 
+
+
     if(pravimPorudzbinu) {
       if(this.props.orders) {
         this.props.orders.map( async (stavka, index) => {
@@ -126,6 +130,7 @@ export default class KorpaPorudzbina extends React.Component {
         })
       }
     }
+    this.setState({id: pravimPorudzbinu.data.createPorudzbina.id});
     this.setState({poslato: true});
     this.props.dispatch({
       type: 'REMOVE_ORDER',
@@ -135,7 +140,7 @@ export default class KorpaPorudzbina extends React.Component {
   render() {
     let forma;
     if(this.state.poslato) {
-      forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Uspešno ste poslali porudžbinu!</h2></div>;
+      forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><PovratnoVreme id={this.state.id} /></div>;
     } else {
       if (this.props.orders.length < 1) {
           forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Niste još ništa poručili kod nas!</h2></div>;
