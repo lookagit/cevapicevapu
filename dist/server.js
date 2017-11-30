@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 112);
+/******/ 	return __webpack_require__(__webpack_require__.s = 114);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -362,29 +362,29 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactAsyncScriptLoader = __webpack_require__(93);
+var _reactAsyncScriptLoader = __webpack_require__(95);
 
 var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
 
-var _loadjs = __webpack_require__(88);
+var _loadjs = __webpack_require__(90);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(109);
+var _regex = __webpack_require__(111);
 
 var _regex2 = _interopRequireDefault(_regex);
 
 var _reactRedux = __webpack_require__(5);
 
-var _reactLoadScript = __webpack_require__(102);
+var _reactLoadScript = __webpack_require__(104);
 
 var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
 
-var _reactIframe = __webpack_require__(100);
+var _reactIframe = __webpack_require__(102);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
-var _reactWindowSize = __webpack_require__(106);
+var _reactWindowSize = __webpack_require__(108);
 
 var _reactWindowSize2 = _interopRequireDefault(_reactWindowSize);
 
@@ -716,7 +716,7 @@ var _path = __webpack_require__(20);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _fs = __webpack_require__(78);
+var _fs = __webpack_require__(80);
 
 var _paths = __webpack_require__(12);
 
@@ -814,53 +814,53 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(81);
+__webpack_require__(83);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(94);
+var _server = __webpack_require__(96);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(83);
+var _koa = __webpack_require__(85);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(6);
 
-var _koaSend = __webpack_require__(87);
+var _koaSend = __webpack_require__(89);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _nodemailer = __webpack_require__(90);
+var _nodemailer = __webpack_require__(92);
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
-var _xoauth = __webpack_require__(111);
+var _xoauth = __webpack_require__(113);
 
 var _xoauth2 = _interopRequireDefault(_xoauth);
 
-var _koaHelmet = __webpack_require__(85);
+var _koaHelmet = __webpack_require__(87);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(86);
+var _koaRouter = __webpack_require__(88);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(89);
+var _microseconds = __webpack_require__(91);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(104);
+var _reactRouter = __webpack_require__(106);
 
 var _reactHelmet = __webpack_require__(21);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _koaBodyparser = __webpack_require__(84);
+var _koaBodyparser = __webpack_require__(86);
 
 var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
 
@@ -874,7 +874,7 @@ var _ssr = __webpack_require__(34);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(62);
+var _app = __webpack_require__(63);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -1114,7 +1114,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(27);
 
-var _subscriptionsTransportWs = __webpack_require__(110);
+var _subscriptionsTransportWs = __webpack_require__(112);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1175,15 +1175,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(76);
+var _boxen = __webpack_require__(78);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(77);
+var _chalk = __webpack_require__(79);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(80);
+var _ip = __webpack_require__(82);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -1354,9 +1354,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(107);
+var _redux = __webpack_require__(109);
 
-var _reduxThunk = __webpack_require__(108);
+var _reduxThunk = __webpack_require__(110);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1736,11 +1736,11 @@ var _ContentBoxes = __webpack_require__(41);
 
 var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
 
-var _sarajevskiCevapDrama = __webpack_require__(68);
+var _sarajevskiCevapDrama = __webpack_require__(69);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
 
-var _passwordHash = __webpack_require__(91);
+var _passwordHash = __webpack_require__(93);
 
 var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
@@ -2008,7 +2008,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(5);
 
-var _shoppingCart = __webpack_require__(96);
+var _shoppingCart = __webpack_require__(98);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -2086,7 +2086,7 @@ var _instagram = __webpack_require__(23);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(99);
+var _youtubeSquare = __webpack_require__(101);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -2094,7 +2094,7 @@ var _GoogleMaps = __webpack_require__(46);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(105);
+var _reactTransitions = __webpack_require__(107);
 
 var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
 
@@ -2509,11 +2509,11 @@ var _instagram = __webpack_require__(23);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _foursquare = __webpack_require__(95);
+var _foursquare = __webpack_require__(97);
 
 var _foursquare2 = _interopRequireDefault(_foursquare);
 
-var _tripadvisor = __webpack_require__(98);
+var _tripadvisor = __webpack_require__(100);
 
 var _tripadvisor2 = _interopRequireDefault(_tripadvisor);
 
@@ -2668,11 +2668,11 @@ var _GallyGrid = __webpack_require__(44);
 
 var _GallyGrid2 = _interopRequireDefault(_GallyGrid);
 
-var _galerija = __webpack_require__(67);
+var _galerija = __webpack_require__(68);
 
 var _galerija2 = _interopRequireDefault(_galerija);
 
-var _reactPhotoswipe = __webpack_require__(103);
+var _reactPhotoswipe = __webpack_require__(105);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2931,9 +2931,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _noImportant = __webpack_require__(75);
+var _noImportant = __webpack_require__(77);
 
-var _reactImages = __webpack_require__(101);
+var _reactImages = __webpack_require__(103);
 
 var _reactImages2 = _interopRequireDefault(_reactImages);
 
@@ -3131,7 +3131,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _googleMapReact = __webpack_require__(79);
+var _googleMapReact = __webpack_require__(81);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -3388,7 +3388,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _oNamaSlika = __webpack_require__(70);
+var _oNamaSlika = __webpack_require__(71);
 
 var _oNamaSlika2 = _interopRequireDefault(_oNamaSlika);
 
@@ -3412,7 +3412,7 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(97);
+var _trash = __webpack_require__(99);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3520,6 +3520,10 @@ var _styles = __webpack_require__(2);
 
 var _styles2 = _interopRequireDefault(_styles);
 
+var _PovratnoVreme = __webpack_require__(55);
+
+var _PovratnoVreme2 = _interopRequireDefault(_PovratnoVreme);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
@@ -3604,6 +3608,7 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
           });
         }
       }
+      this.setState({ id: pravimPorudzbinu.data.createPorudzbina.id });
       this.setState({ poslato: true });
       this.props.dispatch({
         type: 'REMOVE_ORDER'
@@ -3615,7 +3620,8 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
       brojTelefona: 123456,
       porudzbinaId: '123',
       poslato: false,
-      opis: "Bez Opisa"
+      opis: "Bez Opisa",
+      id: 'NaN'
     };
   }
 
@@ -3625,11 +3631,7 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
       forma = _react2.default.createElement(
         'div',
         { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
-        _react2.default.createElement(
-          'h2',
-          null,
-          'Uspe\u0161no ste poslali porud\u017Ebinu!'
-        )
+        _react2.default.createElement(_PovratnoVreme2.default, { id: this.state.id })
       );
     } else {
       if (this.props.orders.length < 1) {
@@ -3719,11 +3721,11 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _logodrama = __webpack_require__(69);
+var _logodrama = __webpack_require__(70);
 
 var _logodrama2 = _interopRequireDefault(_logodrama);
 
-var _hamburger = __webpack_require__(66);
+var _hamburger = __webpack_require__(67);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
@@ -3852,7 +3854,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _dostava = __webpack_require__(65);
+var _dostava = __webpack_require__(66);
 
 var _dostava2 = _interopRequireDefault(_dostava);
 
@@ -3862,7 +3864,7 @@ var _TopHero2 = _interopRequireDefault(_TopHero);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _Proizvod = __webpack_require__(55);
+var _Proizvod = __webpack_require__(56);
 
 var _Proizvod2 = _interopRequireDefault(_Proizvod);
 
@@ -3961,6 +3963,117 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactApollo = __webpack_require__(6);
+
+var _graphqlTag = __webpack_require__(8);
+
+var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
+
+var _propTypes = __webpack_require__(4);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(5);
+
+var _reactStyledFlexboxgrid = __webpack_require__(3);
+
+var _styles = __webpack_require__(2);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _getVreme = __webpack_require__(74);
+
+var _getVreme2 = _interopRequireDefault(_getVreme);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let PovratnoVreme = (_dec = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  query getVreme($id: ID!) {
+    Porudzbina(id: $id) {
+      vreme,
+      adresa,
+      id
+    }
+  }`, {
+  options: props => ({
+    variables: {
+      id: ' '
+    }
+  })
+}), _dec(_class = class PovratnoVreme extends _react2.default.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.ovoJeReFetch = async () => {
+      this.setState({ loading: 'no' });
+      console.log('POZVANA JEEE');
+      await this.props.data.refetch({
+        id: this.props.id
+      });
+      this.setState({ loading: 'yes' });
+    };
+
+    this.state = {
+      id: 'NaN',
+      loading: ''
+    };
+  }
+
+  componentWillMount() {
+    this.props.data.refetch({
+      id: this.props.id
+    });
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(this.ovoJeReFetch, 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    const { data } = this.props;
+    const vreme = data.Porudzbina && data.Porudzbina.vreme;
+    console.log(this.props);
+    if (vreme == null) {
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'Molimo vas sa\u010Dekajte odgovor!'
+      );
+    } else {
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'Va\u0161a porud\u017Ebina \u0107e biti gotova za ',
+        vreme,
+        ' minuta'
+      );
+    }
+  }
+}) || _class);
+exports.default = PovratnoVreme;
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -3977,7 +4090,7 @@ var _styles2 = _interopRequireDefault(_styles);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _ProizvodItem = __webpack_require__(56);
+var _ProizvodItem = __webpack_require__(57);
 
 var _ProizvodItem2 = _interopRequireDefault(_ProizvodItem);
 
@@ -4014,7 +4127,7 @@ Proizvod.propTypes = {
 exports.default = Proizvod;
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4047,7 +4160,7 @@ var _reactRedux = __webpack_require__(5);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(92);
+var _reactAlert = __webpack_require__(94);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -4227,7 +4340,7 @@ const stylee = {
 };
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4250,15 +4363,15 @@ var _TopHero2 = _interopRequireDefault(_TopHero);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _ProizvodList = __webpack_require__(61);
+var _ProizvodList = __webpack_require__(62);
 
 var _ProizvodList2 = _interopRequireDefault(_ProizvodList);
 
-var _Porudzbine = __webpack_require__(59);
+var _Porudzbine = __webpack_require__(60);
 
 var _Porudzbine2 = _interopRequireDefault(_Porudzbine);
 
-var _NavBar = __webpack_require__(58);
+var _NavBar = __webpack_require__(59);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -4274,7 +4387,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _reactRedux = __webpack_require__(5);
 
-var _jsMd = __webpack_require__(82);
+var _jsMd = __webpack_require__(84);
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -4397,7 +4510,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
 exports.default = Admin;
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4468,7 +4581,7 @@ let NavBar = class NavBar extends _react2.default.Component {
 exports.default = NavBar;
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4487,7 +4600,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(3);
 
-var _porudzbine = __webpack_require__(64);
+var _porudzbine = __webpack_require__(65);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
@@ -4497,7 +4610,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _allPorudzbinas = __webpack_require__(71);
+var _allPorudzbinas = __webpack_require__(72);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
 
@@ -4507,13 +4620,13 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _PorudzbineSingle = __webpack_require__(60);
+var _PorudzbineSingle = __webpack_require__(61);
 
 var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(5);
 
-var _PorudzbinaAdd = __webpack_require__(74);
+var _PorudzbinaAdd = __webpack_require__(76);
 
 var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
 
@@ -4587,7 +4700,7 @@ Porudzbine.propTypes = {
 exports.default = Porudzbine;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4598,7 +4711,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _dec, _dec2, _dec3, _class;
+var _dec, _dec2, _dec3, _dec4, _class;
 
 var _react = __webpack_require__(0);
 
@@ -4630,7 +4743,14 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
     }
   }`, {
   name: 'deleteStavkePorudzbine'
-}), _dec(_class = _dec2(_class = _dec3(_class = class PorudzbineSingle extends _react2.default.Component {
+}), _dec4 = (0, _reactApollo.graphql)(_graphqlTag2.default`
+  mutation updatePorudzbina($id: ID! $vreme: Int!) {
+    updatePorudzbina(id: $id, vreme: $vreme){
+      id
+    }
+  }`, {
+  name: 'updatePorudzbina'
+}), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = class PorudzbineSingle extends _react2.default.Component {
   constructor() {
     super();
 
@@ -4642,9 +4762,29 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
       );
     };
 
+    this.nekaFunkcija = async ajDi => {
+      console.log(ajDi.id);
+      console.log(this.state.vreme);
+      const pravimVreme = await this.props.updatePorudzbina({
+        variables: {
+          id: ajDi.id,
+          vreme: this.state.vreme
+        }
+      });
+      console.log(pravimVreme.id);
+    };
+
     this.handleClick = () => this.setState({ isShowingModal: true });
 
     this.handleClose = () => this.setState({ isShowingModal: false, kolicina: '' });
+
+    this.izmeniVreme = event => {
+      this.setState({ vreme: parseInt(event.target.value) });
+    };
+
+    this.apdejtVreme = () => {
+      console.log(this.state.vreme);
+    };
 
     this.brisanjePorudzbina = async ajDi => {
       const brisemPorudzbinu = await this.props.deletePorudzbinu({
@@ -4666,7 +4806,8 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
     };
 
     this.state = {
-      isShowingModal: false
+      isShowingModal: false,
+      vreme: ''
     };
   }
 
@@ -4704,6 +4845,19 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
         )
       )),
       _react2.default.createElement(
+        'h4',
+        { style: { marginBottom: '0px' } },
+        'Vreme pripremanja porudzbine (minuti):'
+      ),
+      _react2.default.createElement('input', { type: 'number', onChange: this.izmeniVreme, placeholder: this.props.porudzbina.vreme }),
+      _react2.default.createElement(
+        'button',
+        { style: stylee.buttonStyle, onClick: () => {
+            this.nekaFunkcija(this.props.porudzbina);
+          } },
+        'Po\u0161alji'
+      ),
+      _react2.default.createElement(
         'h3',
         null,
         'Opis: ',
@@ -4738,7 +4892,7 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
       )
     );
   }
-}) || _class) || _class) || _class);
+}) || _class) || _class) || _class) || _class);
 exports.default = PorudzbineSingle;
 
 const stylee = {
@@ -4757,7 +4911,7 @@ const stylee = {
 };
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4841,7 +4995,7 @@ ProizvodList.propTypes = {
 exports.default = ProizvodList;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4875,11 +5029,11 @@ var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 var _routing = __webpack_require__(33);
 
-var _all_messages = __webpack_require__(72);
+var _all_messages = __webpack_require__(73);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(63);
+__webpack_require__(64);
 
 var _styles = __webpack_require__(1);
 
@@ -4937,7 +5091,7 @@ var _reactScrollableAnchor = __webpack_require__(24);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
-var _Admin = __webpack_require__(57);
+var _Admin = __webpack_require__(58);
 
 var _Admin2 = _interopRequireDefault(_Admin);
 
@@ -5150,13 +5304,13 @@ exports.default = () => _react2.default.createElement(
 );
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -5164,48 +5318,48 @@ module.exports = {
 };
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/dostava.aa3dd9b14c8ea2dcf741283fb0ccb45c.jpg";
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png";
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/galerija.25dde46d73632e33f9e032221e56d524.jpg";
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg";
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png";
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg";
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":208}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"vreme"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":219}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    vreme,\n    opis,\n    brojTelefona,\n    createdAt,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};
@@ -5227,7 +5381,7 @@ module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee
 module.exports = doc;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -5250,12 +5404,39 @@ module.exports = doc;
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(73).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(75).definitions));
 
 module.exports = doc;
 
 /***/ }),
-/* 73 */
+/* 74 */
+/***/ (function(module, exports) {
+
+
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getVreme"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"identifikacija"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},"defaultValue":null}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"identifikacija"}}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"vreme"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}],"loc":{"start":0,"end":115}};
+    doc.loc.source = {"body":"query getVreme($identifikacija: String!) {\n  Porudzbina(id: $identifikacija) {\n    vreme,\n    adresa,\n    id\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+  
+
+    var names = {};
+    function unique(defs) {
+      return defs.filter(
+        function(def) {
+          if (def.kind !== 'FragmentDefinition') return true;
+          var name = def.name.value
+          if (names[name]) {
+            return false;
+          } else {
+            names[name] = true;
+            return true;
+          }
+        }
+      )
+    }
+  
+module.exports = doc;
+
+/***/ }),
+/* 75 */
 /***/ (function(module, exports) {
 
 
@@ -5282,7 +5463,7 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports) {
 
 
@@ -5309,229 +5490,229 @@ module.exports = doc;
 module.exports = doc;
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("aphrodite/no-important");
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("chalk");
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("google-map-react");
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("js-md5");
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-bodyparser");
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports) {
 
 module.exports = require("loadjs");
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = require("nodemailer");
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = require("password-hash");
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-alert");
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-async-script-loader");
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/foursquare");
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/tripadvisor");
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-images");
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-load-script");
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-photoswipe");
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-transitions");
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-window-size");
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = require("regex");
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports) {
 
 module.exports = require("xoauth2");
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(26);
