@@ -4642,6 +4642,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.deleted })), _dec2 = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = _dec2(_class = class Porudzbine extends _react2.default.Component {
   constructor() {
     super();
+
+    this.ddelay = ms => {
+      var ctr,
+          rej,
+          p = new Promise(function (resolve, reject) {
+        ctr = setTimeout(resolve, ms);
+        rej = reject;
+      });
+      p.cancel = function () {
+        clearTimeout(ctr);rej(Error("Cancelled"));
+      };
+      return p;
+    };
+
     this.state = {
       fakestejt: 'fejkstejt',
       isShowingModal: false
@@ -4653,10 +4667,14 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
       document: _PorudzbinaAdd2.default,
       updateQuery: (prev, { subscriptionData }) => {
         if (subscriptionData.data) {
-          this.props.data.refetch();
+          this.ddelay(2000).then(() => {
+            this.props.data.refetch();
+          });
         }
         if (!subscriptionData.data) {
-          return prev;
+          this.ddelay(2000).then(() => {
+            return prev;
+          });
         }
       }
     });
@@ -4667,7 +4685,9 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
       this.props.dispatch({
         type: 'DELETION_ACK'
       });
-      this.props.data.refetch();
+      this.ddelay(2000).then(() => {
+        this.props.data.refetch();
+      });
     }
   }
 
@@ -4770,15 +4790,12 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
     };
 
     this.nekaFunkcija = async ajDi => {
-      console.log(ajDi.id);
-      console.log(this.state.vreme);
       const pravimVreme = await this.props.updatePorudzbina({
         variables: {
           id: ajDi.id,
           vreme: this.state.vreme
         }
       });
-      console.log(pravimVreme.id);
     };
 
     this.handleClick = () => this.setState({ isShowingModal: true });
@@ -4787,10 +4804,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
 
     this.izmeniVreme = event => {
       this.setState({ vreme: parseInt(event.target.value) });
-    };
-
-    this.apdejtVreme = () => {
-      console.log(this.state.vreme);
     };
 
     this.brisanjePorudzbina = async ajDi => {
@@ -4835,6 +4848,7 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
         'Broj Telefona: ',
         this.props.porudzbina.brojTelefona
       ),
+      console.log(this.props.porudzbina.stavkePorudzbines),
       this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => _react2.default.createElement(
         'div',
         null,
@@ -4851,19 +4865,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
           item.kolicina
         )
       )),
-      _react2.default.createElement(
-        'h4',
-        { style: { marginBottom: '0px' } },
-        'Vreme pripremanja porudzbine (minuti):'
-      ),
-      _react2.default.createElement('input', { type: 'number', onChange: this.izmeniVreme, placeholder: this.props.porudzbina.vreme }),
-      _react2.default.createElement(
-        'button',
-        { style: stylee.buttonStyle, onClick: () => {
-            this.nekaFunkcija(this.props.porudzbina);
-          } },
-        'Po\u0161alji'
-      ),
       _react2.default.createElement(
         'h3',
         null,

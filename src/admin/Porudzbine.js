@@ -23,15 +23,24 @@ export default class Porudzbine extends React.Component {
   };
 
 
+  ddelay = (ms) => {
+    var ctr, rej, p = new Promise(function (resolve, reject) {
+        ctr = setTimeout(resolve, ms);
+        rej = reject;
+    });
+    p.cancel = function(){ clearTimeout(ctr); rej(Error("Cancelled"))};
+    return p; 
+  }
+
   componentDidMount() {
     this.props.data.subscribeToMore({
       document: PorudzbinaAdd,
       updateQuery: (prev, {subscriptionData}) => {
         if(subscriptionData.data) {
-          this.props.data.refetch();
+          this.ddelay(2000).then(()=>{this.props.data.refetch();});          
         }
         if(!subscriptionData.data) {
-          return prev;
+          this.ddelay(2000).then(()=>{return prev;});
         }
       },
     });
@@ -42,7 +51,7 @@ export default class Porudzbine extends React.Component {
       this.props.dispatch({
         type: 'DELETION_ACK',
       });
-      this.props.data.refetch();
+      this.ddelay(2000).then(()=>{this.props.data.refetch();});
 
     }
   }

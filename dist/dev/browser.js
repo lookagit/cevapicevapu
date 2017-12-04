@@ -4398,6 +4398,19 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react
 
     var _this = _possibleConstructorReturn(this, (Porudzbine.__proto__ || Object.getPrototypeOf(Porudzbine)).call(this));
 
+    _this.ddelay = function (ms) {
+      var ctr,
+          rej,
+          p = new Promise(function (resolve, reject) {
+        ctr = setTimeout(resolve, ms);
+        rej = reject;
+      });
+      p.cancel = function () {
+        clearTimeout(ctr);rej(Error("Cancelled"));
+      };
+      return p;
+    };
+
     _this.state = {
       fakestejt: 'fejkstejt',
       isShowingModal: false
@@ -4416,10 +4429,14 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react
           var subscriptionData = _ref.subscriptionData;
 
           if (subscriptionData.data) {
-            _this2.props.data.refetch();
+            _this2.ddelay(2000).then(function () {
+              _this2.props.data.refetch();
+            });
           }
           if (!subscriptionData.data) {
-            return prev;
+            _this2.ddelay(2000).then(function () {
+              return prev;
+            });
           }
         }
       });
@@ -4427,11 +4444,15 @@ var Porudzbine = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9_react
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(newProps) {
+      var _this3 = this;
+
       if (newProps.deleted) {
         this.props.dispatch({
           type: 'DELETION_ACK'
         });
-        this.props.data.refetch();
+        this.ddelay(2000).then(function () {
+          _this3.props.data.refetch();
+        });
       }
     }
   }, {
@@ -4552,9 +4573,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log(ajDi.id);
-                console.log(_this.state.vreme);
-                _context.next = 4;
+                _context.next = 2;
                 return _this.props.updatePorudzbina({
                   variables: {
                     id: ajDi.id,
@@ -4562,12 +4581,10 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
                   }
                 });
 
-              case 4:
+              case 2:
                 pravimVreme = _context.sent;
 
-                console.log(pravimVreme.id);
-
-              case 6:
+              case 3:
               case 'end':
                 return _context.stop();
             }
@@ -4590,10 +4607,6 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
 
     _this.izmeniVreme = function (event) {
       _this.setState({ vreme: parseInt(event.target.value) });
-    };
-
-    _this.apdejtVreme = function () {
-      console.log(_this.state.vreme);
     };
 
     _this.brisanjePorudzbina = function () {
@@ -4688,6 +4701,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
           'Broj Telefona: ',
           this.props.porudzbina.brojTelefona
         ),
+        console.log(this.props.porudzbina.stavkePorudzbines),
         this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map(function (item, index) {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
@@ -4706,19 +4720,6 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
             )
           );
         }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h4',
-          { style: { marginBottom: '0px' } },
-          'Vreme pripremanja porudzbine (minuti):'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', onChange: this.izmeniVreme, placeholder: this.props.porudzbina.vreme }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { style: stylee.buttonStyle, onClick: function onClick() {
-              _this3.nekaFunkcija(_this3.props.porudzbina);
-            } },
-          'Po\u0161alji'
-        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h3',
           null,

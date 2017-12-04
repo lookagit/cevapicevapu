@@ -50,15 +50,12 @@ export default class PorudzbineSingle extends React.Component {
   }
 
   nekaFunkcija = async (ajDi) => {
-    console.log(ajDi.id);
-    console.log(this.state.vreme);
     const pravimVreme = await this.props.updatePorudzbina({
       variables: {
         id: ajDi.id,
         vreme: this.state.vreme,
       }
     });
-    console.log(pravimVreme.id);
   }
 
   handleClick = () => this.setState({isShowingModal: true})
@@ -68,9 +65,6 @@ export default class PorudzbineSingle extends React.Component {
     this.setState({vreme: parseInt(event.target.value)});
   }
 
-  apdejtVreme = () => {
-    console.log(this.state.vreme);
-  }
 
   brisanjePorudzbina = async(ajDi) => {
     const brisemPorudzbinu = await this.props.deletePorudzbinu({
@@ -100,6 +94,7 @@ export default class PorudzbineSingle extends React.Component {
       <div>
         <h4>Adresa: {this.props.porudzbina.adresa}</h4>
         <h4>Broj Telefona: {this.props.porudzbina.brojTelefona}</h4>
+        {console.log(this.props.porudzbina.stavkePorudzbines)}
         {this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => (
           <div>
             <h4>Proizvod: {item.proizvod.naslov}</h4>

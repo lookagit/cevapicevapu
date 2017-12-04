@@ -27,7 +27,6 @@ export default class ProizvodList extends React.Component {
         <h3>Lista Proizvoda</h3>
         <div className={scss.proizvodList}>
           {data.allProizvods && data.allProizvods.map((proiz, index) => {
-            console.log("ITEEEM ", proiz)
             return (
               <div className={scss.proizvodItem}>
                 <img src={proiz.urlSlike} />
