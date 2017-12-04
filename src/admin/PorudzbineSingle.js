@@ -94,7 +94,6 @@ export default class PorudzbineSingle extends React.Component {
       <div>
         <h4>Adresa: {this.props.porudzbina.adresa}</h4>
         <h4>Broj Telefona: {this.props.porudzbina.brojTelefona}</h4>
-        {console.log(this.props.porudzbina.stavkePorudzbines)}
         {this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => (
           <div>
             <h4>Proizvod: {item.proizvod.naslov}</h4>

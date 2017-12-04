@@ -4848,7 +4848,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
         'Broj Telefona: ',
         this.props.porudzbina.brojTelefona
       ),
-      console.log(this.props.porudzbina.stavkePorudzbines),
       this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => _react2.default.createElement(
         'div',
         null,
@@ -4865,6 +4864,19 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
           item.kolicina
         )
       )),
+      _react2.default.createElement(
+        'h4',
+        { style: { marginBottom: '0px' } },
+        'Vreme pripremanja porudzbine (minuti):'
+      ),
+      _react2.default.createElement('input', { type: 'number', onChange: this.izmeniVreme, placeholder: this.props.porudzbina.vreme }),
+      _react2.default.createElement(
+        'button',
+        { style: stylee.buttonStyle, onClick: () => {
+            this.nekaFunkcija(this.props.porudzbina);
+          } },
+        'Po\u0161alji'
+      ),
       _react2.default.createElement(
         'h3',
         null,
@@ -4970,7 +4982,6 @@ let ProizvodList = (_dec = (0, _reactApollo.graphql)(_getProizvodi2.default), _d
         'div',
         { className: _styles2.default.proizvodList },
         data.allProizvods && data.allProizvods.map((proiz, index) => {
-          console.log("ITEEEM ", proiz);
           return _react2.default.createElement(
             'div',
             { className: _styles2.default.proizvodItem },
@@ -5329,7 +5340,7 @@ module.exports = {
 /* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/dostava.aa3dd9b14c8ea2dcf741283fb0ccb45c.jpg";
+module.exports = __webpack_require__.p + "assets/img/dostava.3641c850da251bbca5974b180acfb213.jpg";
 
 /***/ }),
 /* 68 */
@@ -5341,13 +5352,13 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.27da109d6c92ff0c1090c5e1d6e68252.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.8dbaaa0c76ff1188ffa3693af83b5e92.jpg";
 
 /***/ }),
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.7e486aecc2c0f1abc9d2a6dbce72bdad.jpg";
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.455913187f99c5a71d08fc38a0d05e68.jpg";
 
 /***/ }),
 /* 71 */

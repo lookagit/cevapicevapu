@@ -4841,7 +4841,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
         'Broj Telefona: ',
         this.props.porudzbina.brojTelefona
       ),
-      console.log(this.props.porudzbina.stavkePorudzbines),
       this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => _react2.default.createElement(
         'div',
         null,
@@ -5334,7 +5333,7 @@ module.exports = {
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/dostava.aa3dd9b14c8ea2dcf741283fb0ccb45c.jpg";
+module.exports = __webpack_require__.p + "assets/img/dostava.ee0babbd4b90e54931e4e2018e647117.jpg";
 
 /***/ }),
 /* 67 */
@@ -5346,13 +5345,13 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.25dde46d73632e33f9e032221e56d524.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.5f86cbd0e9660435673d2f9bb09c3423.jpg";
 
 /***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.d472d4a52d57d7c3b3135315b7e4e37e.jpg";
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b88271218fedb0f07494d373e48f9.jpg";
 
 /***/ }),
 /* 70 */

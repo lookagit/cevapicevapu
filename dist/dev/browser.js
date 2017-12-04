@@ -4504,7 +4504,7 @@ Porudzbine.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbineSingle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PorudzbineSingle; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__(27);
@@ -4701,7 +4701,6 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
           'Broj Telefona: ',
           this.props.porudzbina.brojTelefona
         ),
-        console.log(this.props.porudzbina.stavkePorudzbines),
         this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map(function (item, index) {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
@@ -4720,6 +4719,19 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
             )
           );
         }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h4',
+          { style: { marginBottom: '0px' } },
+          'Vreme pripremanja porudzbine (minuti):'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', onChange: this.izmeniVreme, placeholder: this.props.porudzbina.vreme }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { style: stylee.buttonStyle, onClick: function onClick() {
+              _this3.nekaFunkcija(_this3.props.porudzbina);
+            } },
+          'Po\u0161alji'
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h3',
           null,
@@ -4777,7 +4789,6 @@ var stylee = {
     cursor: 'pointer'
   }
 };
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -4785,7 +4796,7 @@ var stylee = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProizvodList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_styled_flexboxgrid__ = __webpack_require__(20);
@@ -4840,7 +4851,6 @@ var ProizvodList = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_rea
           'div',
           { className: __WEBPACK_IMPORTED_MODULE_5__styles_scss___default.a.proizvodList },
           data.allProizvods && data.allProizvods.map(function (proiz, index) {
-            console.log("ITEEEM ", proiz);
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: __WEBPACK_IMPORTED_MODULE_5__styles_scss___default.a.proizvodItem },
@@ -4874,7 +4884,6 @@ ProizvodList.propTypes = {
   })
 };
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -5239,7 +5248,7 @@ module.exports = {"proizvodItem":"proizvodItem-cEWGAfW0RjBtn6FS2p2Nq"};
 /***/ 503:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/dostava.aa3dd9b14c8ea2dcf741283fb0ccb45c.jpg";
+module.exports = __webpack_require__.p + "assets/img/dostava.3641c850da251bbca5974b180acfb213.jpg";
 
 /***/ }),
 
@@ -5253,14 +5262,14 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.714d4d80b4e78ae0f
 /***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/galerija.27da109d6c92ff0c1090c5e1d6e68252.jpg";
+module.exports = __webpack_require__.p + "assets/img/galerija.8dbaaa0c76ff1188ffa3693af83b5e92.jpg";
 
 /***/ }),
 
 /***/ 506:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.7e486aecc2c0f1abc9d2a6dbce72bdad.jpg";
+module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.455913187f99c5a71d08fc38a0d05e68.jpg";
 
 /***/ }),
 
