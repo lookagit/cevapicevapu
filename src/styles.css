@@ -90,6 +90,9 @@ right: 15px;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+
 .featured {
   display: flex;
   width: 80%;
@@ -170,6 +173,13 @@ right: 15px;
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .featuredLeftImage {
+    display: none;
+  }
+}
+
 .hello {
   position: absolute;
   top: 0;
