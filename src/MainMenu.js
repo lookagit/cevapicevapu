@@ -23,7 +23,7 @@ class MainMenu extends React.Component {
   }
 
   componentDidMount() {
-    this.ddelay(4000).then(()=>{this.setState({
+    this.ddelay(2000).then(()=>{this.setState({
         blinker: {opacity: 0, pointerEvents: 'none'}
       });});
   }

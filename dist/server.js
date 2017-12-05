@@ -3845,7 +3845,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 
 
   componentDidMount() {
-    this.ddelay(4000).then(() => {
+    this.ddelay(2000).then(() => {
       this.setState({
         blinker: { opacity: 0, pointerEvents: 'none' }
       });
