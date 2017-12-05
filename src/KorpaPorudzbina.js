@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import PorudzbinaConfirm from './PorudzbinaConfirm';
 import { connect } from 'react-redux';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
@@ -143,7 +144,7 @@ export default class KorpaPorudzbina extends React.Component {
       forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><PovratnoVreme id={this.state.id} /></div>;
     } else {
       if (this.props.orders.length < 1) {
-          forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Niste još ništa poručili kod nas!</h2></div>;
+          forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><h2>Niste još ništa poručili kod nas!</h2><h2>Idite u <Link style={{color: 'gray',textDecoraation: 'none'}} to="/page/naruci" onClick={this.opener}>Naruči</Link></h2></div>;
       }
       else {
         forma = <form className={scss.korpaForm}>

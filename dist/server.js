@@ -1763,7 +1763,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'Kako je nastala DRAMA', subtitle: ' ', bgImage: { backgroundImage: 'url("' + _sarajevskiCevapDrama2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'Kako je nastala DRAMA', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")' } }),
       _react2.default.createElement(_ContentBoxes2.default, null)
     );
   }
@@ -2299,7 +2299,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/kontakt.jpg")' } }),
       _react2.default.createElement(
         'div',
         { style: { backgroundImage: 'url("/pozadinadrvo.jpg")' } },
@@ -2537,7 +2537,7 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
             _react2.default.createElement(
               'h2',
               { style: { textAlign: "center" } },
-              'VAS IZBOR'
+              'VA\u0160 IZBOR'
             ),
             _react2.default.createElement(
               'h3',
@@ -3504,7 +3504,7 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_TopHero2.default, { title: 'Dostava', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("' + _oNamaSlika2.default + '")' } }),
+      _react2.default.createElement(_TopHero2.default, { title: 'Korpa', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("/dvecevape.jpg")' } }),
       _react2.default.createElement(
         'div',
         { className: _styles2.default.korpa },
@@ -3577,6 +3577,8 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 var _propTypes = __webpack_require__(4);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(9);
 
 var _PorudzbinaConfirm = __webpack_require__(56);
 
@@ -3712,6 +3714,16 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
             'h2',
             null,
             'Niste jo\u0161 ni\u0161ta poru\u010Dili kod nas!'
+          ),
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Idite u ',
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { style: { color: 'gray', textDecoraation: 'none' }, to: '/page/naruci', onClick: this.opener },
+              'Naru\u010Di'
+            )
           )
         );
       } else {

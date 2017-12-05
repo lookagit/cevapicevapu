@@ -29,7 +29,7 @@ export default class ContentBoxes extends React.Component {
           <img src="/drama-cevap-specijal-basta.jpg" style={{width: "100%", height: "100%"}}/>
           </Col>
           <Col xs={12}>
-            <h2 style={{textAlign: "center"}}>VAS IZBOR</h2>
+            <h2 style={{textAlign: "center"}}>VAŠ IZBOR</h2>
             <h3 style={{textAlign: "center"}}> Samo kod nas po najpovoljnijim cenama možete da uživate u vrhunskom ukusu i garantovanom kvalitetu. Vaš izbor je naša stvar. Uvek smo tu za vas. Hranite se zdravo i ukusno.</h3>
           </Col>
         </Row>

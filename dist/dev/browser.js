@@ -1136,7 +1136,7 @@ var AboutUs = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TopHero_js__["a" /* default */], { title: 'Kako je nastala DRAMA', subtitle: ' ', bgImage: { backgroundImage: 'url("' + __WEBPACK_IMPORTED_MODULE_5__images_sarajevski_cevap_drama_jpg___default.a + '")' } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TopHero_js__["a" /* default */], { title: 'Kako je nastala DRAMA', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")' } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__ContentBoxes_js__["a" /* default */], null)
       );
     }
@@ -1734,7 +1734,7 @@ var ContactUs = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TopHero_js__["a" /* default */], { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")' } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TopHero_js__["a" /* default */], { title: 'KONTAKT', subtitle: ' ', bgImage: { backgroundImage: 'url("/kontakt.jpg")' } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { style: { backgroundImage: 'url("/pozadinadrvo.jpg")' } },
@@ -1983,7 +1983,7 @@ var ContentBoxes = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h2',
                 { style: { textAlign: "center" } },
-                'VAS IZBOR'
+                'VA\u0160 IZBOR'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h3',
@@ -3077,7 +3077,7 @@ var Korpa = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_redu
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TopHero__["a" /* default */], { title: 'Dostava', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("' + __WEBPACK_IMPORTED_MODULE_1__o_nama_slika_jpg___default.a + '")' } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TopHero__["a" /* default */], { title: 'Korpa', subtitle: 'Naru\u010Dite ne\u0161to kod nas skroz dobro', bgImage: { backgroundImage: 'url("/dvecevape.jpg")' } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: __WEBPACK_IMPORTED_MODULE_7__styles_scss___default.a.korpa },
@@ -3145,12 +3145,13 @@ Korpa.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__ = __webpack_require__(409);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_scss__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__styles_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__PovratnoVreme_js__ = __webpack_require__(410);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_router_dom__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PorudzbinaConfirm__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_styled_flexboxgrid__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__styles_scss__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__styles_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__PovratnoVreme_js__ = __webpack_require__(410);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _dec2, _dec3, _dec4, _dec5, _class;
@@ -3180,7 +3181,8 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 
 
-var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_react_redux__["a" /* connect */])(function (state) {
+
+var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux__["a" /* connect */])(function (state) {
   return { counter: state.counter, orders: state.orders };
 }), _dec2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_apollo__["graphql"])(__WEBPACK_IMPORTED_MODULE_2_graphql_tag___default()(_templateObject), {
   name: 'createPorudzbina'
@@ -3320,7 +3322,7 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
         forma = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { style: { textAlign: 'center', marginTop: '100px', marginBottom: '100px' } },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__PovratnoVreme_js__["a" /* default */], { id: this.state.id })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__PovratnoVreme_js__["a" /* default */], { id: this.state.id })
         );
       } else {
         if (this.props.orders.length < 1) {
@@ -3331,13 +3333,23 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
               'h2',
               null,
               'Niste jo\u0161 ni\u0161ta poru\u010Dili kod nas!'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h2',
+              null,
+              'Idite u ',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_4_react_router_dom__["d" /* Link */],
+                { style: { color: 'gray', textDecoraation: 'none' }, to: '/page/naruci', onClick: this.opener },
+                'Naru\u010Di'
+              )
             )
           );
         } else {
           forma = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'form',
-            { className: __WEBPACK_IMPORTED_MODULE_7__styles_scss___default.a.korpaForm },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__PorudzbinaConfirm__["a" /* default */], { poslato: this.state.poslato }),
+            { className: __WEBPACK_IMPORTED_MODULE_8__styles_scss___default.a.korpaForm },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__PorudzbinaConfirm__["a" /* default */], { poslato: this.state.poslato }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'p',
               null,
@@ -3368,10 +3380,10 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_
         }
       }
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["b" /* Row */],
+        __WEBPACK_IMPORTED_MODULE_7_react_styled_flexboxgrid__["b" /* Row */],
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_6_react_styled_flexboxgrid__["c" /* Col */],
+          __WEBPACK_IMPORTED_MODULE_7_react_styled_flexboxgrid__["c" /* Col */],
           { xs: 12 },
           forma
         )
@@ -3471,7 +3483,7 @@ var MainMenu = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.ddelay(4000).then(function () {
+      this.ddelay(2000).then(function () {
         _this2.setState({
           blinker: { opacity: 0, pointerEvents: 'none' }
         });

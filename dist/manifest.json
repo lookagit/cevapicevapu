@@ -1,4 +1,5 @@
 {
+  "assets/fonts/BADGRUNGE.ttf": "/assets/fonts/BADGRUNGE.9940eb554216bb36559f837fa4c0e73d.ttf",
   "assets/img/dostava.jpg": "/assets/img/dostava.ee0babbd4b90e54931e4e2018e647117.jpg",
   "assets/img/galerija.jpg": "/assets/img/galerija.5f86cbd0e9660435673d2f9bb09c3423.jpg",
   "assets/img/hamburger.png": "/assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png",
@@ -6,8 +7,8 @@
   "assets/img/o-nama-slika.jpg": "/assets/img/o-nama-slika.58aaee291248ee9defc04cb5aa37d7af.jpg",
   "assets/img/sarajevski-cevap-drama.jpg": "/assets/img/sarajevski-cevap-drama.301b88271218fedb0f07494d373e48f9.jpg",
   "assets/img/serbianburger.jpg": "/assets/img/serbianburger.57c4100c39039e7126d6ed124f24e63a.jpg",
-  "browser.css": "/assets/css/style.2115ee20053933029e69907d44a40165.css",
-  "browser.js": "/browser.e97e8903e9e8e9f37c24.js",
+  "browser.css": "/assets/css/style.b606ac55a11cb826a3c3b227209a71c3.css",
+  "browser.js": "/browser.315f9e45287534566ed4.js",
   "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
   "manifest.json": "/../chunk-manifest.json",
   "vendor.js": "/vendor.1e0bbdb629d56b14da1b.js"
