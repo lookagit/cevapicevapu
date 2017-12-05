@@ -10,8 +10,24 @@ class MainMenu extends React.Component {
     this.state = {
       open: false,
       stylee: {},
+      blinker: {display: 'flex'},
     }
   }
+  ddelay = (ms) => {
+    var ctr, rej, p = new Promise(function (resolve, reject) {
+        ctr = setTimeout(resolve, ms);
+        rej = reject;
+    });
+    p.cancel = function(){ clearTimeout(ctr); rej(Error("Cancelled"))};
+    return p; 
+  }
+
+  componentDidMount() {
+    this.ddelay(4000).then(()=>{this.setState({
+        blinker: {display: 'none'}
+      });});
+  }
+
   opener = () => {
     if(!this.state.open) {
       this.setState({
@@ -28,6 +44,9 @@ class MainMenu extends React.Component {
   render() {
     return (
       <div className={css.hello}>
+        <div style={this.state.blinker} className={css.blinkDrama}>
+          <img src={logo} />
+        </div>
         <Link to="/" onClick={this.opener}><img src={logo} alt="Drama logo" className={css.logo} /></Link>
         <div
           className={css.mobileIcon}
