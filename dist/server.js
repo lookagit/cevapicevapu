@@ -3839,7 +3839,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
     this.state = {
       open: false,
       stylee: {},
-      blinker: { display: 'flex' }
+      blinker: { display: 'flex', opacity: 1 }
     };
   }
 
@@ -3847,7 +3847,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
   componentDidMount() {
     this.ddelay(4000).then(() => {
       this.setState({
-        blinker: { display: 'none' }
+        blinker: { opacity: 0, pointerEvents: 'none' }
       });
     });
   }

@@ -3461,7 +3461,7 @@ var MainMenu = function (_React$Component) {
     _this.state = {
       open: false,
       stylee: {},
-      blinker: { display: 'flex' }
+      blinker: { display: 'flex', opacity: 1 }
     };
     return _this;
   }
@@ -3473,7 +3473,7 @@ var MainMenu = function (_React$Component) {
 
       this.ddelay(4000).then(function () {
         _this2.setState({
-          blinker: { display: 'none' }
+          blinker: { opacity: 0, pointerEvents: 'none' }
         });
       });
     }
