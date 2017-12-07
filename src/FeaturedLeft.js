@@ -30,6 +30,7 @@ class FeaturedLeft extends React.Component {
                 height="470px"
                 display="initial"
                 position="relative"
+                style={{zIndex: 0}}
               /> : 
               <Iframe url="https://widget.developcodex.net/240"
               minWidth="280px"
@@ -37,6 +38,7 @@ class FeaturedLeft extends React.Component {
               height="470px"
               display="initial"
               position="relative"
+              style={{zIndex: 0}}
             />
           }
           

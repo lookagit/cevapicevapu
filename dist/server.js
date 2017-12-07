@@ -416,13 +416,15 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
               width: '100%',
               height: '470px',
               display: 'initial',
-              position: 'relative'
+              position: 'relative',
+              style: { zIndex: 0 }
             }) : _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/240',
               minWidth: '280px',
               width: '100%',
               height: '470px',
               display: 'initial',
-              position: 'relative'
+              position: 'relative',
+              style: { zIndex: 0 }
             })
           )
         )
