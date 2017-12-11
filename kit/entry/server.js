@@ -158,6 +158,39 @@ export default (async function server() {
         ctx.res.statusCode = 204;
       })
 
+      .post('/poslata', async ctx => {
+        var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+              type: 'OAuth2',
+              user: 'cevapidrama@gmail.com',
+              clientId: '1098430474978-lb2lmoq6gafvar6l1dvq753cmb1s0qnn.apps.googleusercontent.com',
+              clientSecret: 'sKb7qT9OHrgoIGCBv5PKCoAF',
+              refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY',
+          }
+      })
+      
+      var mailerOptions = {
+          from: `'Porudzbina' <'cevapidrama@gmail.com'>`,
+          to: 'cevapidrama@gmail.com',
+          subject: 'Stigla je nova porudzbina',
+          text: `Adresa Porudzbine ${ctx.request.body.porudzbina.adresa}
+                 Broj telefona ${ctx.request.body.porudzbina.telefon}
+                 ${ctx.request.body.porudzbina.stavkePorudzbines && ctx.request.body.porudzbina.stavkePorudzbines.map((item, index) => (
+                  `Proizvod: ${item.proizvod.naslov}
+                   Kolicina: ${item.kolicina}`
+                ))}`
+      }
+      
+      transporter.sendMail(mailerOptions, function (err, res) {
+          if(err) {
+              console.log("EEEEEEEEEEROR", err);
+          } else {
+              console.log("EMAIL JE SENT ");
+          }
+      })
+      })
+
       .post('/ping', async ctx => {
         // console.log("A JA SAM NA SERVERU ", ctx.request.body);
         // let from_email = new helper.Email(ctx.request.body.test.mail);

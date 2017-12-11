@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import { connect } from 'react-redux';
-
+import scss from './css/porudzbine.scss';
 
 @connect(state => ({ deleted: state.deleted }))
 @graphql(gql`
@@ -42,8 +42,10 @@ export default class PorudzbineSingle extends React.Component {
     this.state = {
       isShowingModal: false,
       vreme: '',
+      color: {},
     }
   };
+
 
   button = () => {
       return (<button onClick={() => this.handleClick()}>Obrisi porudzbinu</button>)
@@ -57,6 +59,8 @@ export default class PorudzbineSingle extends React.Component {
       }
     });
   }
+
+
 
   handleClick = () => this.setState({isShowingModal: true})
   handleClose = () => this.setState({isShowingModal: false, kolicina: ''})
@@ -85,12 +89,16 @@ export default class PorudzbineSingle extends React.Component {
     });
   }
 
-
-
-
-  render() {
+  render () {
     let datum = Date.parse(this.props.porudzbina.createdAt);
+    let notifyColor = {}
+    if(this.props.porudzbina.potvrdjen == 'da') {
+      notifyColor = {backgroundColor: 'green'}
+    } else if (this.props.porudzbina.potvrdjen == 'ne') {
+      notifyColor = {backgroundColor: 'red'}
+    }
     return(
+      <div className={scss.proizvodItem}  style={notifyColor}>
       <div>
         <h4>Adresa: {this.props.porudzbina.adresa}</h4>
         <h4>Broj Telefona: {this.props.porudzbina.brojTelefona}</h4>
@@ -103,6 +111,7 @@ export default class PorudzbineSingle extends React.Component {
         <h4 style={{marginBottom: '0px'}}>Vreme pripremanja porudzbine (minuti):</h4>
         <input type="number" onChange={this.izmeniVreme} placeholder={this.props.porudzbina.vreme} />
         <button style={stylee.buttonStyle} onClick={() => {this.nekaFunkcija(this.props.porudzbina)}}>Pošalji</button>
+        <h4>Potvrdjeno: {this.props.porudzbina.potvrdjen}</h4>
         <h3>Opis: {this.props.porudzbina.opis}</h3>
         {
           this.button()
@@ -121,9 +130,12 @@ export default class PorudzbineSingle extends React.Component {
           </ModalContainer>
         }
       </div>
+      </div>
     );
   }
 }
+
+
 const stylee = {
   buttonStyle: {
     fontSize: '19px',

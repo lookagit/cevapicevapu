@@ -1,0 +1,23 @@
+subscription {
+  Porudzbina(
+    filter: {
+      mutation_in: [UPDATED]
+    }
+  ) {
+    mutation
+    node {
+      id,
+        adresa,
+        brojTelefona,
+        opis,
+        potvrdjen,
+        stavkePorudzbines {
+          id,
+          kolicina,
+          proizvod {
+            naslov
+          }
+        }
+    }
+  }
+}

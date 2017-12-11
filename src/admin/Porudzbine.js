@@ -9,6 +9,7 @@ import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import PorudzbineSingle from './PorudzbineSingle';
 import { connect } from 'react-redux';
 import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';
+import PorudzbinaUpdate from '../subscriptions/PorudzbinaUpdate.gql';
 
 
 @connect(state => ({ deleted: state.deleted }))
@@ -19,6 +20,7 @@ export default class Porudzbine extends React.Component {
     this.state = {
       fakestejt: 'fejkstejt',
       isShowingModal: false,
+      reload: []
     }
   };
 
@@ -37,10 +39,10 @@ export default class Porudzbine extends React.Component {
       document: PorudzbinaAdd,
       updateQuery: (prev, {subscriptionData}) => {
         if(subscriptionData.data) {
-          this.ddelay(2000).then(()=>{this.props.data.refetch();});          
+          this.ddelay(1000).then(()=>{this.props.data.refetch();});      
         }
         if(!subscriptionData.data) {
-          this.ddelay(2000).then(()=>{return prev;});
+          this.ddelay(1000).then(()=>{return prev;});
         }
       },
     });
@@ -51,8 +53,7 @@ export default class Porudzbine extends React.Component {
       this.props.dispatch({
         type: 'DELETION_ACK',
       });
-      this.ddelay(2000).then(()=>{this.props.data.refetch();});
-
+      this.ddelay(1000).then(()=>{this.props.data.refetch();});
     }
   }
 
@@ -81,9 +82,7 @@ export default class Porudzbine extends React.Component {
       <Col xs={12} sm={12} md={8} lg={8}>
         <div className={scss.porudzbine}>
           {porudzbine.revers && porudzbine.revers.map((porudz, index) => (
-            <div className={scss.proizvodItem}>
               <PorudzbineSingle porudzbina={porudz} />
-            </div>
           ))}
         </div>
       </Col>
