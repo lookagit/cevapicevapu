@@ -5041,7 +5041,7 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
         }
       });
       this.showAlert();
-      Popup.alert('Dodali ste ' + this.state.kolicina + 'x ' + this.props.proiz.naslov + ' u korpu!');
+      Popup.alert('Vreme je poslato!');
     };
 
     this.alertOptions = {
