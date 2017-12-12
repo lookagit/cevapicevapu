@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 116);
+/******/ 	return __webpack_require__(__webpack_require__.s = 117);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -371,7 +371,7 @@ var _loadjs = __webpack_require__(93);
 
 var _loadjs2 = _interopRequireDefault(_loadjs);
 
-var _regex = __webpack_require__(113);
+var _regex = __webpack_require__(114);
 
 var _regex2 = _interopRequireDefault(_regex);
 
@@ -385,7 +385,7 @@ var _reactIframe = __webpack_require__(104);
 
 var _reactIframe2 = _interopRequireDefault(_reactIframe);
 
-var _reactWindowSize = __webpack_require__(110);
+var _reactWindowSize = __webpack_require__(111);
 
 var _reactWindowSize2 = _interopRequireDefault(_reactWindowSize);
 
@@ -684,7 +684,10 @@ module.exports = __webpack_require__.p + "assets/img/serbianburger.57c4100c39039
       )
     }
   
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 22 */
@@ -861,7 +864,7 @@ var _nodemailer = __webpack_require__(95);
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
-var _xoauth = __webpack_require__(115);
+var _xoauth = __webpack_require__(116);
 
 var _xoauth2 = _interopRequireDefault(_xoauth);
 
@@ -1166,7 +1169,7 @@ var _reactApollo = __webpack_require__(6);
 
 var _project = __webpack_require__(30);
 
-var _subscriptionsTransportWs = __webpack_require__(114);
+var _subscriptionsTransportWs = __webpack_require__(115);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
@@ -1406,9 +1409,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(111);
+var _redux = __webpack_require__(112);
 
-var _reduxThunk = __webpack_require__(112);
+var _reduxThunk = __webpack_require__(113);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -4876,6 +4879,10 @@ var _PorudzbinaUpdate = __webpack_require__(79);
 
 var _PorudzbinaUpdate2 = _interopRequireDefault(_PorudzbinaUpdate);
 
+var _reactWebNotification = __webpack_require__(110);
+
+var _reactWebNotification2 = _interopRequireDefault(_reactWebNotification);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.deleted })), _dec2 = (0, _reactApollo.graphql)(_allPorudzbinas2.default), _dec(_class = _dec2(_class = class Porudzbine extends _react2.default.Component {
@@ -4898,7 +4905,9 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
     this.state = {
       fakestejt: 'fejkstejt',
       isShowingModal: false,
-      reload: []
+      reload: [],
+      ignore: true,
+      title: ''
     };
   }
 
@@ -4908,7 +4917,7 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
       updateQuery: (prev, { subscriptionData }) => {
         if (subscriptionData.data) {
           this.ddelay(1000).then(() => {
-            this.props.data.refetch();
+            this.props.data.refetch();this.handleButtonClick('Stigla je nova porudzbina!');
           });
         }
         if (!subscriptionData.data) {
@@ -4931,6 +4940,72 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
     }
   }
 
+  handlePermissionGranted() {
+    console.log('Permission Granted');
+    this.setState({
+      ignore: false
+    });
+  }
+
+  handlePermissionDenied() {
+    console.log('Permission Denied');
+    this.setState({
+      ignore: true
+    });
+  }
+
+  handleNotSupported() {
+    console.log('Web Notification not Supported');
+    this.setState({
+      ignore: true
+    });
+  }
+
+  handleNotificationOnClick(e, tag) {
+    console.log(e, 'Notification clicked tag:' + tag);
+  }
+
+  handleNotificationOnError(e, tag) {
+    console.log(e, 'Notification error tag:' + tag);
+  }
+
+  handleNotificationOnClose(e, tag) {
+    console.log(e, 'Notification closed tag:' + tag);
+  }
+
+  handleNotificationOnShow(e, tag) {
+    console.log(e, 'Notification shown tag:' + tag);
+  }
+
+  handleButtonClick(titl) {
+
+    if (this.state.ignore) {
+      return;
+    }
+
+    const now = Date.now();
+
+    const title = 'React-Web-Notification' + now;
+    const body = 'Proverite admin panel!';
+    const tag = now;
+    const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
+    // const icon = 'http://localhost:3000/Notifications_button_24.png';
+
+    // Available options
+    // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+    const options = {
+      tag: tag,
+      body: body,
+      icon: icon,
+      lang: 'en',
+      dir: 'ltr'
+    };
+    this.setState({
+      title: titl,
+      options: options
+    });
+  }
+
   render() {
     const { data } = this.props;
 
@@ -4948,7 +5023,20 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
         'div',
         { className: _porudzbine2.default.porudzbine },
         porudzbine.revers && porudzbine.revers.map((porudz, index) => _react2.default.createElement(_PorudzbineSingle2.default, { porudzbina: porudz }))
-      )
+      ),
+      _react2.default.createElement(_reactWebNotification2.default, {
+        ignore: this.state.ignore && this.state.title !== '',
+        notSupported: this.handleNotSupported.bind(this),
+        onPermissionGranted: this.handlePermissionGranted.bind(this),
+        onPermissionDenied: this.handlePermissionDenied.bind(this),
+        onShow: this.handleNotificationOnShow.bind(this),
+        onClick: this.handleNotificationOnClick.bind(this),
+        onClose: this.handleNotificationOnClose.bind(this),
+        onError: this.handleNotificationOnError.bind(this),
+        timeout: 5000,
+        title: this.state.title,
+        options: this.state.options
+      })
     );
   }
 }) || _class) || _class);
@@ -5666,7 +5754,10 @@ module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee
       )
     }
   
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 75 */
@@ -5694,7 +5785,10 @@ module.exports = doc;
     }
   doc.definitions = doc.definitions.concat(unique(__webpack_require__(77).definitions));
 
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 76 */
@@ -5721,7 +5815,10 @@ module.exports = doc;
       )
     }
   
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 77 */
@@ -5748,7 +5845,10 @@ module.exports = doc;
       )
     }
   
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 78 */
@@ -5775,7 +5875,10 @@ module.exports = doc;
       )
     }
   
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 79 */
@@ -5802,7 +5905,10 @@ module.exports = doc;
       )
     }
   
-module.exports = doc;
+
+      module.exports = doc;
+    
+
 
 /***/ }),
 /* 80 */
@@ -5988,40 +6094,46 @@ module.exports = require("react-transitions");
 /* 110 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-window-size");
+module.exports = require("react-web-notification");
 
 /***/ }),
 /* 111 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-window-size");
 
 /***/ }),
 /* 112 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 113 */
 /***/ (function(module, exports) {
 
-module.exports = require("regex");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 114 */
 /***/ (function(module, exports) {
 
-module.exports = require("subscriptions-transport-ws");
+module.exports = require("regex");
 
 /***/ }),
 /* 115 */
 /***/ (function(module, exports) {
 
-module.exports = require("xoauth2");
+module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
 /* 116 */
+/***/ (function(module, exports) {
+
+module.exports = require("xoauth2");
+
+/***/ }),
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(29);
