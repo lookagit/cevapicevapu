@@ -60,6 +60,7 @@ export default class PorudzbineSingle extends React.Component {
       }
     });
     this.showAlert();
+    Popup.alert('Dodali ste '+this.state.kolicina+'x ' + this.props.proiz.naslov + ' u korpu!');
   }
 
   alertOptions = {
