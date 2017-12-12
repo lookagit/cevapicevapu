@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import { connect } from 'react-redux';
 import scss from './css/porudzbine.scss';
+import AlertContainer from 'react-alert'
 
 @connect(state => ({ deleted: state.deleted }))
 @graphql(gql`
@@ -58,8 +59,23 @@ export default class PorudzbineSingle extends React.Component {
         vreme: this.state.vreme,
       }
     });
+    this.showAlert();
   }
 
+  alertOptions = {
+    offset: 14,
+    position: 'bottom left',
+    theme: 'dark',
+    time: 5000,
+    transition: 'scale'
+  }
+
+  showAlert = () => {
+    this.msg.show('Vreme je poslato!', {
+      time: 2000,
+      type: 'success',
+    })
+  }
 
 
   handleClick = () => this.setState({isShowingModal: true})

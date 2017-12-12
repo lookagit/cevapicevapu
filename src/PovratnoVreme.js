@@ -116,10 +116,24 @@ export default class PovratnoVreme extends React.PureComponent {
       return(
         <div>
           <h1>Vaša porudžbina će biti gotova za {vreme} minuta</h1>
-          <button onClick={()=>{this.dugmePotvrdi(data.Porudzbina);}}>Potvrdi</button>
-          <button onClick={()=>{this.dugmeOtkazi();}}>Otkaži</button>
+          <button style={stylee.buttonStyle} onClick={()=>{this.dugmePotvrdi(data.Porudzbina);}}>Potvrdi</button>
+          <button style={stylee.buttonStyle} onClick={()=>{this.dugmeOtkazi();}}>Otkaži</button>
         </div>
       );
     }
+  }
+}
+const stylee = {
+  buttonStyle: {
+    fontSize: '19px',
+    height: '40px',
+    width: '100px',
+    color: 'white',
+    fontWeight: '900',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    margin: '20px 20px',
+    border: '2px solid white',
+    borderRadius: '5px',
+    cursor: 'pointer',
   }
 }
