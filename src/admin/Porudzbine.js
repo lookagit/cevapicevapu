@@ -42,7 +42,7 @@ export default class Porudzbine extends React.Component {
       document: PorudzbinaAdd,
       updateQuery: (prev, {subscriptionData}) => {
         if(subscriptionData.data) {
-          this.ddelay(1000).then(()=>{this.props.data.refetch();this.handleButtonClick('Stigla je nova porudzbina!');});      
+          this.ddelay(1000).then(()=>{this.props.data.refetch();/*this.handleButtonClick('Stigla je nova porudzbina!');*/});      
         }
         if(!subscriptionData.data) {
           this.ddelay(1000).then(()=>{return prev;});

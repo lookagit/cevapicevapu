@@ -5,6 +5,7 @@ import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import { connect } from 'react-redux';
 import scss from './css/porudzbine.scss';
 import AlertContainer from 'react-alert'
+import Notification from 'react-web-notification';
 
 @connect(state => ({ deleted: state.deleted }))
 @graphql(gql`
@@ -44,8 +45,84 @@ export default class PorudzbineSingle extends React.Component {
       isShowingModal: false,
       vreme: '',
       color: {},
+      ignore: true,
+      title: '',
+      options: {
+        body: 'Proverite admin panel!',
+        icon: 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png',
+        lang: 'en',
+        dir: 'ltr',
+      }
     }
   };
+
+  handlePermissionGranted(){
+    console.log('Permission Granted');
+    this.setState({
+      ignore: false
+    });
+  }
+  
+  handlePermissionDenied(){
+    console.log('Permission Denied');
+    this.setState({
+      ignore: true
+    });
+  }
+
+  handleNotSupported(){
+    console.log('Web Notification not Supported');
+    this.setState({
+      ignore: true
+    });
+  }
+
+  handleNotificationOnClick(e, tag){
+    console.log(e, 'Notification clicked tag:' + tag);
+  }
+
+  handleNotificationOnError(e, tag){
+    console.log(e, 'Notification error tag:' + tag);
+  
+  }
+
+  handleNotificationOnClose(e, tag){
+    
+  }
+
+  handleNotificationOnShow(e, tag){
+    console.log(e, 'Notification shown tag:' + tag);
+  }
+
+  handleButtonClick(titl) {
+    
+        if(this.state.ignore) {
+          return;
+        }
+    
+        const now = Date.now();
+    
+        const title = 'React-Web-Notification' + now;
+        const body = 'Proverite admin panel!';
+        const tag = now;
+        const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
+        // const icon = 'http://localhost:3000/Notifications_button_24.png';
+    
+        // Available options
+        // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+        const options = {
+          tag: tag,
+          body: body,
+          icon: icon,
+          lang: 'en',
+          dir: 'ltr',
+        }
+        this.setState({
+          title: titl,
+          options: options
+        });
+        console.log('BRAATE');
+    }
 
 
   button = () => {
@@ -106,6 +183,20 @@ export default class PorudzbineSingle extends React.Component {
     });
   }
 
+
+  componentDidMount() {
+    this.setState({
+      title: "Stigla je nova porudzbina!"
+    })
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.porudzbina.potvrdjen == null && this.props.porudzbina.potvrdjen == 'da'){
+      this.handleButtonClick('Porudzbina je potvrdjena!');
+    }
+    console.log(this.state.title)
+  }
+
   render () {
     let datum = Date.parse(this.props.porudzbina.createdAt);
     let notifyColor = {}
@@ -147,6 +238,19 @@ export default class PorudzbineSingle extends React.Component {
           </ModalContainer>
         }
       </div>
+      <Notification
+          ignore={this.state.ignore && this.state.title !== ''}
+          notSupported={this.handleNotSupported.bind(this)}
+          onPermissionGranted={this.handlePermissionGranted.bind(this)}
+          onPermissionDenied={this.handlePermissionDenied.bind(this)}
+          onShow={this.handleNotificationOnShow.bind(this)}
+          onClick={this.handleNotificationOnClick.bind(this)}
+          onClose={this.handleNotificationOnClose.bind(this)}
+          onError={this.handleNotificationOnError.bind(this)}
+          timeout={1800000}
+          title={this.state.title}
+          options={this.state.options}
+        />
       </div>
     );
   }
