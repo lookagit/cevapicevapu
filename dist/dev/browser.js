@@ -3149,7 +3149,7 @@ Korpa.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaPorudzbina; });
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KorpaPorudzbina; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_apollo__ = __webpack_require__(27);
@@ -3169,7 +3169,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _dec, _dec2, _dec3, _dec4, _dec5, _class;
 
-var _templateObject = _taggedTemplateLiteral(['\n  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!) {\n    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis) {\n      id\n    },\n  }'], ['\n  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!) {\n    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis) {\n      id\n    },\n  }']),
+var _templateObject = _taggedTemplateLiteral(['\n  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!, $uredjaj: String!) {\n    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis, uredjaj: $uredjaj) {\n      id\n    },\n  }'], ['\n  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!, $uredjaj: String!) {\n    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis, uredjaj: $uredjaj) {\n      id\n    },\n  }']),
     _templateObject2 = _taggedTemplateLiteral(['\n  mutation createStavkePorudzbine($kolicina: Int!) {\n    createStavkePorudzbine (kolicina: $kolicina) {\n      id\n    }\n  }'], ['\n  mutation createStavkePorudzbine($kolicina: Int!) {\n    createStavkePorudzbine (kolicina: $kolicina) {\n      id\n    }\n  }']),
     _templateObject3 = _taggedTemplateLiteral(['\n  mutation addToPorudzbinaOnStavkePorudzbine($stavkePorudzbinesStavkePorudzbineId: ID!, $porudzbinaPorudzbinaId: ID!) {\n    addToPorudzbinaOnStavkePorudzbine (stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, porudzbinaPorudzbinaId: $porudzbinaPorudzbinaId) {\n      porudzbinaPorudzbina {\n        adresa\n      }\n    }\n  }'], ['\n  mutation addToPorudzbinaOnStavkePorudzbine($stavkePorudzbinesStavkePorudzbineId: ID!, $porudzbinaPorudzbinaId: ID!) {\n    addToPorudzbinaOnStavkePorudzbine (stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, porudzbinaPorudzbinaId: $porudzbinaPorudzbinaId) {\n      porudzbinaPorudzbina {\n        adresa\n      }\n    }\n  }']),
     _templateObject4 = _taggedTemplateLiteral(['\n  mutation addToStavkePorudzbineOnProizvod($stavkePorudzbinesStavkePorudzbineId: ID!, $proizvodProizvodId: ID!){\n    addToStavkePorudzbineOnProizvod(stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, proizvodProizvodId: $proizvodProizvodId){\n      stavkePorudzbinesStavkePorudzbine{\n        id\n      }\n    }\n  }'], ['\n  mutation addToStavkePorudzbineOnProizvod($stavkePorudzbinesStavkePorudzbineId: ID!, $proizvodProizvodId: ID!){\n    addToStavkePorudzbineOnProizvod(stavkePorudzbinesStavkePorudzbineId: $stavkePorudzbinesStavkePorudzbineId, proizvodProizvodId: $proizvodProizvodId){\n      stavkePorudzbinesStavkePorudzbine{\n        id\n      }\n    }\n  }']);
@@ -3238,7 +3238,8 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_
                 variables: {
                   adresa: _this.state.adresa,
                   brojTelefona: _this.state.brojTelefona,
-                  opis: _this.state.opis
+                  opis: _this.state.opis,
+                  uredjaj: _this.state.uredjaj
                 }
               });
 
@@ -3320,12 +3321,44 @@ var KorpaPorudzbina = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_
       porudzbinaId: '123',
       poslato: false,
       opis: "Bez Opisa",
-      id: 'NaN'
+      id: 'NaN',
+      uredjaj: ''
     };
     return _this;
   }
 
   _createClass(KorpaPorudzbina, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var isMobile = {
+        Android: function Android() {
+          return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function BlackBerry() {
+          return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function iOS() {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function Opera() {
+          return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function Windows() {
+          return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function any() {
+          return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        }
+      };
+
+      if (isMobile.any()) {
+        this.setState({
+          uredjaj: 'da'
+        });
+      }
+      console.log(this.state.uredjaj);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this3 = this;
@@ -3416,6 +3449,7 @@ KorpaPorudzbina.propTypes = {
   })
 };
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 
@@ -5194,6 +5228,11 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
             'Broj Telefona: ',
             this.props.porudzbina.brojTelefona
           ),
+          this.props.porudzbina.uredjaj != '' ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h4',
+            null,
+            'Poslato sa telefona'
+          ) : '',
           this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map(function (item, index) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
@@ -5276,7 +5315,7 @@ var PorudzbineSingle = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4
           onClick: this.handleNotificationOnClick.bind(this),
           onClose: this.handleNotificationOnClose.bind(this),
           onError: this.handleNotificationOnError.bind(this),
-          timeout: 5000,
+          timeout: 1800000,
           title: this.state.title,
           options: this.state.options
         })
@@ -5793,8 +5832,8 @@ module.exports = __webpack_require__.p + "assets/img/o-nama-slika.58aaee291248ee
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"vreme"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"potvrdjen"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":234}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    vreme,\n    opis,\n    brojTelefona,\n    createdAt,\n    potvrdjen,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"vreme"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"potvrdjen"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"uredjaj"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":247}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    vreme,\n    opis,\n    brojTelefona,\n    createdAt,\n    potvrdjen,\n    uredjaj,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      proizvod {\n        naslov,\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};

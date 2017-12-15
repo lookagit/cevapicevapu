@@ -12,8 +12,8 @@ import PovratnoVreme from './PovratnoVreme.js';
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 @graphql(gql`
-  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!) {
-    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis) {
+  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!, $uredjaj: String!) {
+    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis, uredjaj: $uredjaj) {
       id
     },
   }`,
@@ -67,8 +67,11 @@ export default class KorpaPorudzbina extends React.Component {
       poslato: false,
       opis: "Bez Opisa",
       id: 'NaN',
+      uredjaj: ''
     }
   }
+
+  
 
   izmeniAdresu = (event) => {
     this.setState({adresa: event.target.value});
@@ -101,6 +104,7 @@ export default class KorpaPorudzbina extends React.Component {
         adresa: this.state.adresa,
         brojTelefona: this.state.brojTelefona,
         opis: this.state.opis,
+        uredjaj: this.state.uredjaj
       }
     });
 
@@ -138,7 +142,39 @@ export default class KorpaPorudzbina extends React.Component {
     });
   }
 
+  componentDidMount() {
+    let isMobile = {
+      Android: function() {
+          return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function() {
+          return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function() {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function() {
+          return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function() {
+          return navigator.userAgent.match(/IEMobile/i);
+      },
+      any: function() {
+          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      }
+    };
+
+    if(isMobile.any()) {
+      this.setState({
+        uredjaj:'da'
+      })
+    }
+    console.log(this.state.uredjaj)
+  }
+
   render() {
+    
+
     let forma;
     if(this.state.poslato) {
       forma = <div style={{textAlign: 'center', marginTop: '100px', marginBottom: '100px'}}><PovratnoVreme id={this.state.id} /></div>;
