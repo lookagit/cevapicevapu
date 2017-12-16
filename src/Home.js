@@ -7,11 +7,11 @@ import ThreeGallery from './ThreeGallery.js';
 import FeaturedLeft from './FeaturedLeft.js';
 import css from './styles.css';
 const stylee = {
-  backgroundImage : 'url("https://image.ibb.co/kA7M26/slika_za_parallax_drama_rostilj.jpg")',
+  backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
   height: '300px',
 }
 const sndlax = {
-  backgroundImage : 'url("https://image.ibb.co/nHCtFR/parallax_nova_drama_rostilj.jpg")',
+  backgroundImage : 'url("/parallax-nova-drama-rostilj.jpg")',
   height: '350px',
 }
 
