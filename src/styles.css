@@ -876,3 +876,9 @@ right: 15px;
 .blinkDrama>img {
   width: 200px;
 }
+
+@media only screen and (max-width: 700px) {
+  .cartNumber {
+    display: none;
+  }
+}

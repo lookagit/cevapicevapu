@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CartIcon from 'react-icons/lib/fa/shopping-cart';
+import css from './styles.css';
 @connect(state => ({ orders: state.orders}))
 export default class Admin extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class Admin extends React.Component {
   render() {
     return(
       <span>
-        <span style={{position: 'absolute', marginTop: '3px',color: 'orange',marginLeft: '18px', fontSize: '16px'}}>{this.state.cartCount}</span>
+        <span className={css.cartNumber} style={{position: 'absolute', marginTop: '3px',color: 'orange',marginLeft: '18px', fontSize: '16px'}}>{this.state.cartCount}</span>
         <CartIcon style={{fontSize: '40px', verticalAlign: 'middle', marginTop: '-10px'}} />
       </span>
     )
