@@ -172,7 +172,7 @@ export default (async function server() {
       
       var mailerOptions = {
           from: `'Porudzbina' <'cevapidrama@gmail.com'>`,
-          to: 'cevapidrama@gmail.com',
+          to: 'dusan.shane.markovic@gmail.com',
           subject: 'Stigla je nova porudzbina',
           text: `Adresa Porudzbine ${ctx.request.body.porudzbina.adresa}
                  Broj telefona ${ctx.request.body.porudzbina.telefon}
