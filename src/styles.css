@@ -72,7 +72,6 @@ top: 30px;
 right: 15px;
 }
 .parallax {
-  position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

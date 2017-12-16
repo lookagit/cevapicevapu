@@ -3387,7 +3387,7 @@ var _styles2 = _interopRequireDefault(_styles);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const stylee = {
-  backgroundImage: 'url("https://image.ibb.co/kA7M26/slika_za_parallax_drama_rostilj.jpg")',
+  backgroundImage: 'url("/slika-za-parallax-drama-rostilj.jpg")',
   height: '300px'
 };
 const sndlax = {
