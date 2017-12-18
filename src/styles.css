@@ -889,4 +889,7 @@ right: 15px;
   .cartNumber {
     display: none;
   }
+  .topHero {
+    height: 250px;
+  }
 }
