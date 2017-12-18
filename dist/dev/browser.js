@@ -4,7 +4,7 @@ webpackJsonp([0],{
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"main":"main-vv2718wGHLD6lThS8mcwI","linkFooter":"linkFooter-1q4bO9K2r8_AM0vXma5jzK","boxes":"boxes-1pHjUY6vdRXMN8sL9tHpAn","hidees":"hidees-67d_7--gp7MlP2UfiRH_V","linkFooterUl":"linkFooterUl-2mLK5p9nce_rPqTupocKcL","mobileIcon":"mobileIcon-2icoMzpdrZbPYIfQjxivTq","parallax":"parallax-3oYy3E6XoJCClgZR0R7xDr","caption":"caption-21tp0xAudjV1bavcaINc0T","border":"border-aQNY2OtxwHs6C26ekD14K","heroHomepage":"heroHomepage-3cr8Nd5W9Je_pIy-MhMdqV","featured":"featured-tBVkb2dk8NKSVh-MiZvpy","featuredLeftImage":"featuredLeftImage-1Gox6liBJlELhedy2ZEoQ4","featuredLeftText":"featuredLeftText-2ulA7B5hZq3aI0K1nomPKa","featuredTrick":"featuredTrick-2qlOOpnWrLLKh7apl6IesV","buttonP":"buttonP-2o61Dqeeal8MbCZT8JYmre","hello":"hello-1P9zCbIx8YQ5eID6A-67d6","logo":"logo-1tNzgJsJwXMqFQ0a4xMkPk","data":"data-1oklYPlS4mQJRj2Dp24Czw","styleExamples":"styleExamples-2cmVxjYoxVhR_tpCfyIq_T","example":"example-3quOHBYrr7YOUvefuRPyGa","footer":"footer-3k9kabI8HJWNNVio6VNJUN","itemWrap":"itemWrap-17n62GBEbcZ0YKeiE5pH_p","footerItem":"footerItem-3WuDvZVUsFhM8FTQboIhu","botFooter":"botFooter-GqWr1UPbpIsarc8kMzKLs","showing":"showing-3xt5gLGL3jWtxcqt2fKVHR","sectionHeadlineMain":"sectionHeadlineMain-3BS5Nojw6gcyNS7jnqmoOV","sectionHeadlineTitle":"sectionHeadlineTitle-3EJeE510K8dqtj9UpGRobp","sectionHeadlineInnerText":"sectionHeadlineInnerText-2rGs1qrSJSuR3vUGVNiPn4","threeGallery":"threeGallery-1S3vfrzqPjPi0_s-_tCQbv","flexo":"flexo-3dzWYlf-9R2_5EYj5quZCB","topHero":"topHero-14OIZyWV1neWIczIqc2ndD","topHeroInner":"topHeroInner-1R18bJ737GlmHsja_ddmAW","topHeader":"topHeader-2ri4gaarPV6WmDH6vNh10V","topSubHeader":"topSubHeader-nYw22H9bj_R5j6XFCrO5v","aboutNaslov":"aboutNaslov-d4SC59v7D83X9vn1noPVn","rowOne":"rowOne-1ZsZTwNatJNARSw-jUxDls","pleskaOne":"pleskaOne-2JKZfl6X9YnWW2SPZRZaTo","pleskaBgOne":"pleskaBgOne-1wnnaVKyyasxnkvVHaP3Hs","pleskaTekstOne":"pleskaTekstOne-33M7mQhjuVcjKCeWb5G3Rv","hrDebilni":"hrDebilni-3zeZ5gSEsPkrgWlN-__jJk","rowTwo":"rowTwo-337mFG2UpEw6hK2VQwwrfR","tekstTwo":"tekstTwo-3kXEBwp22JH95sjgbOWm5E","pleskaTwo":"pleskaTwo-2zs2ikr9x8Sa5YpP0kmzKH","pleskaBgTwo":"pleskaBgTwo-L6PMiWuJodAv0Y2AtAd_","pleskaTekstTwo":"pleskaTekstTwo-DHz89PWqxLvJcevMrzVsL","contactRowOne":"contactRowOne-1nZU0KIdfd41SekjLRq53J","contactColWidth":"contactColWidth-1VLzc80dhj3W0vPN7GJH6h","contactColOne":"contactColOne-21cueNmJZV0dhJJuBgSlOR","contactColTwo":"contactColTwo-1KTocX6dZheO6pJMM_3ipI","poruka":"poruka-1Wiy7B2-Qz19i1zdBZtaYn","posalji":"posalji-3YQJFzJVTxq-e-8jjv6HFC","posaljiParagraf":"posaljiParagraf-1ezqBOOX2ckYAIKQtz060X","rIconsFb":"rIconsFb-JUIQwKp17pNLrHEtbIS7Z","rIconsIg":"rIconsIg-vPm7Jwe3uYLvV9KFqr1Zg","rIconsYt":"rIconsYt-XWoktoihdcDSZ_Ehg1Wk_","pozadina2":"pozadina2-30GqqfhEqYCObRVJgJn3vh","alaHeader":"alaHeader-1YAOiL77EhgdfKZtV2CW5i","blinkDrama":"blinkDrama-2ZRyxyJhcmvmE3p7ky922k"};
+module.exports = {"main":"main-vv2718wGHLD6lThS8mcwI","linkFooter":"linkFooter-1q4bO9K2r8_AM0vXma5jzK","boxes":"boxes-1pHjUY6vdRXMN8sL9tHpAn","hidees":"hidees-67d_7--gp7MlP2UfiRH_V","linkFooterUl":"linkFooterUl-2mLK5p9nce_rPqTupocKcL","mobileIcon":"mobileIcon-2icoMzpdrZbPYIfQjxivTq","parallax":"parallax-3oYy3E6XoJCClgZR0R7xDr","caption":"caption-21tp0xAudjV1bavcaINc0T","border":"border-aQNY2OtxwHs6C26ekD14K","heroHomepage":"heroHomepage-3cr8Nd5W9Je_pIy-MhMdqV","featured":"featured-tBVkb2dk8NKSVh-MiZvpy","featuredLeftImage":"featuredLeftImage-1Gox6liBJlELhedy2ZEoQ4","featuredLeftText":"featuredLeftText-2ulA7B5hZq3aI0K1nomPKa","featuredTrick":"featuredTrick-2qlOOpnWrLLKh7apl6IesV","buttonP":"buttonP-2o61Dqeeal8MbCZT8JYmre","hello":"hello-1P9zCbIx8YQ5eID6A-67d6","logo":"logo-1tNzgJsJwXMqFQ0a4xMkPk","data":"data-1oklYPlS4mQJRj2Dp24Czw","styleExamples":"styleExamples-2cmVxjYoxVhR_tpCfyIq_T","example":"example-3quOHBYrr7YOUvefuRPyGa","footer":"footer-3k9kabI8HJWNNVio6VNJUN","itemWrap":"itemWrap-17n62GBEbcZ0YKeiE5pH_p","footerItem":"footerItem-3WuDvZVUsFhM8FTQboIhu","botFooter":"botFooter-GqWr1UPbpIsarc8kMzKLs","showing":"showing-3xt5gLGL3jWtxcqt2fKVHR","sectionHeadlineMain":"sectionHeadlineMain-3BS5Nojw6gcyNS7jnqmoOV","sectionHeadlineTitle":"sectionHeadlineTitle-3EJeE510K8dqtj9UpGRobp","sectionHeadlineInnerText":"sectionHeadlineInnerText-2rGs1qrSJSuR3vUGVNiPn4","threeGallery":"threeGallery-1S3vfrzqPjPi0_s-_tCQbv","flexo":"flexo-3dzWYlf-9R2_5EYj5quZCB","topHero":"topHero-14OIZyWV1neWIczIqc2ndD","topHeroInner":"topHeroInner-1R18bJ737GlmHsja_ddmAW","topHeader":"topHeader-2ri4gaarPV6WmDH6vNh10V","topSubHeader":"topSubHeader-nYw22H9bj_R5j6XFCrO5v","aboutNaslov":"aboutNaslov-d4SC59v7D83X9vn1noPVn","rowOne":"rowOne-1ZsZTwNatJNARSw-jUxDls","pleskaOne":"pleskaOne-2JKZfl6X9YnWW2SPZRZaTo","pleskaBgOne":"pleskaBgOne-1wnnaVKyyasxnkvVHaP3Hs","pleskaTekstOne":"pleskaTekstOne-33M7mQhjuVcjKCeWb5G3Rv","hrDebilni":"hrDebilni-3zeZ5gSEsPkrgWlN-__jJk","rowTwo":"rowTwo-337mFG2UpEw6hK2VQwwrfR","tekstTwo":"tekstTwo-3kXEBwp22JH95sjgbOWm5E","pleskaTwo":"pleskaTwo-2zs2ikr9x8Sa5YpP0kmzKH","pleskaBgTwo":"pleskaBgTwo-L6PMiWuJodAv0Y2AtAd_","pleskaTekstTwo":"pleskaTekstTwo-DHz89PWqxLvJcevMrzVsL","contactRowOne":"contactRowOne-1nZU0KIdfd41SekjLRq53J","contactColWidth":"contactColWidth-1VLzc80dhj3W0vPN7GJH6h","contactColOne":"contactColOne-21cueNmJZV0dhJJuBgSlOR","contactColTwo":"contactColTwo-1KTocX6dZheO6pJMM_3ipI","poruka":"poruka-1Wiy7B2-Qz19i1zdBZtaYn","posalji":"posalji-3YQJFzJVTxq-e-8jjv6HFC","posaljiParagraf":"posaljiParagraf-1ezqBOOX2ckYAIKQtz060X","rIconsFb":"rIconsFb-JUIQwKp17pNLrHEtbIS7Z","rIconsIg":"rIconsIg-vPm7Jwe3uYLvV9KFqr1Zg","rIconsYt":"rIconsYt-XWoktoihdcDSZ_Ehg1Wk_","pozadina2":"pozadina2-30GqqfhEqYCObRVJgJn3vh","alaHeader":"alaHeader-1YAOiL77EhgdfKZtV2CW5i","blinkDrama":"blinkDrama-2ZRyxyJhcmvmE3p7ky922k","cartNumber":"cartNumber-2FH0eoVBerIbJSEuFgcAb8"};
 
 /***/ }),
 
@@ -1498,6 +1498,8 @@ var BlinkDrama = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart__ = __webpack_require__(751);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_css__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__styles_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
@@ -1507,6 +1509,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1552,7 +1555,7 @@ var Admin = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_react_redu
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'span',
-          { style: { position: 'absolute', marginTop: '3px', color: 'orange', marginLeft: '18px', fontSize: '16px' } },
+          { className: __WEBPACK_IMPORTED_MODULE_3__styles_css___default.a.cartNumber, style: { position: 'absolute', marginTop: '3px', color: 'orange', marginLeft: '18px', fontSize: '16px' } },
           this.state.cartCount
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_icons_lib_fa_shopping_cart___default.a, { style: { fontSize: '40px', verticalAlign: 'middle', marginTop: '-10px' } })
@@ -2826,15 +2829,7 @@ var HeaderHero = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: __WEBPACK_IMPORTED_MODULE_1__styles_css___default.a.heroHomepage, style: { backgroundImage: 'url("/kover-drama.jpg")' } },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.mbrArrowFloating },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('a', { href: '#section1', className: __WEBPACK_IMPORTED_MODULE_2__styles_scss___default.a.mbrArrowIcon })
-          )
-        )
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_1__styles_css___default.a.heroHomepage, style: { backgroundImage: 'url("/kover-drama.jpg")' } })
       );
     }
   }]);
@@ -3561,6 +3556,19 @@ var MainMenu = function (_React$Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'ul',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'li',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
+              { className: __WEBPACK_IMPORTED_MODULE_2__styles_css___default.a.cartIcon, to: '/korpa' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__CartBucket_js__["a" /* default */], null)
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'ul',
           { style: this.state.stylee },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'li',
@@ -3605,15 +3613,6 @@ var MainMenu = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
               { to: '/page/contact', onClick: this.opener },
               'Kontakt'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-              { to: '/korpa', onClick: this.opener },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__CartBucket_js__["a" /* default */], null)
             )
           )
         )

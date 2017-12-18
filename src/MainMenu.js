@@ -47,19 +47,19 @@ class MainMenu extends React.Component {
         <div style={this.state.blinker} className={css.blinkDrama}>
           <img src={logo} />
         </div>
-        <Link to="/" onClick={this.opener}><img src={logo} alt="Drama logo" className={css.logo} /></Link>
+        <Link to="/" ><img src={logo} alt="Drama logo" className={css.logo} /></Link>
         <div
           className={css.mobileIcon}
           onClick={this.opener} >
           <img src={menuIcon} alt="menu" height="35px" width="45px"/>
         </div>
+        <ul><li><Link className={css.cartIcon} to="/korpa"><CartBucket /></Link></li></ul>
         <ul style={this.state.stylee}>
         <li><Link to="/" onClick={this.opener}>Početna</Link></li>
         <li><Link to="/page/naruci" onClick={this.opener}>Naruči</Link></li>
         <li><Link to="/page/about" onClick={this.opener}>O nama</Link></li>
         <li><Link to="/page/galerija" onClick={this.opener}>Galerija</Link></li>
         <li><Link to="/page/contact" onClick={this.opener}>Kontakt</Link></li>
-        <li><Link to="/korpa" onClick={this.opener}><CartBucket /></Link></li>
         </ul>
       </div>
     )

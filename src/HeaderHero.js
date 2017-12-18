@@ -9,9 +9,6 @@ class HeaderHero extends React.Component {
     return (
       <div>
        <div className={css.heroHomepage} style={{backgroundImage: 'url("/kover-drama.jpg")'}}>
-         <div className={scss.mbrArrowFloating}>
-          <a href="#section1" className={scss.mbrArrowIcon}></a>
-         </div>
        </div>
       </div>
     );

@@ -71,6 +71,7 @@ position: absolute;
 top: 30px;
 right: 15px;
 }
+
 .parallax {
   background-attachment: fixed;
   background-position: center;
@@ -94,7 +95,7 @@ right: 15px;
 }
 .heroHomepage {
 
-  min-height: 100vh;
+  min-height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

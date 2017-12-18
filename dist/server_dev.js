@@ -134,7 +134,8 @@ module.exports = {
 	"rIconsYt": "rIconsYt-XWoktoihdcDSZ_Ehg1Wk_",
 	"pozadina2": "pozadina2-30GqqfhEqYCObRVJgJn3vh",
 	"alaHeader": "alaHeader-1YAOiL77EhgdfKZtV2CW5i",
-	"blinkDrama": "blinkDrama-2ZRyxyJhcmvmE3p7ky922k"
+	"blinkDrama": "blinkDrama-2ZRyxyJhcmvmE3p7ky922k",
+	"cartNumber": "cartNumber-2FH0eoVBerIbJSEuFgcAb8"
 };
 
 /***/ }),
@@ -2143,6 +2144,10 @@ var _shoppingCart = __webpack_require__(101);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })), _dec(_class = class Admin extends _react2.default.Component {
@@ -2174,7 +2179,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
       null,
       _react2.default.createElement(
         'span',
-        { style: { position: 'absolute', marginTop: '3px', color: 'orange', marginLeft: '18px', fontSize: '16px' } },
+        { className: _styles2.default.cartNumber, style: { position: 'absolute', marginTop: '3px', color: 'orange', marginLeft: '18px', fontSize: '16px' } },
         this.state.cartCount
       ),
       _react2.default.createElement(_shoppingCart2.default, { style: { fontSize: '40px', verticalAlign: 'middle', marginTop: '-10px' } })
@@ -3333,15 +3338,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.heroHomepage, style: { backgroundImage: 'url("/kover-drama.jpg")' } },
-        _react2.default.createElement(
-          'div',
-          { className: _styles4.default.mbrArrowFloating },
-          _react2.default.createElement('a', { href: '#section1', className: _styles4.default.mbrArrowIcon })
-        )
-      )
+      _react2.default.createElement('div', { className: _styles2.default.heroHomepage, style: { backgroundImage: 'url("/kover-drama.jpg")' } })
     );
   }
 };
@@ -3981,6 +3978,19 @@ let MainMenu = class MainMenu extends _react2.default.Component {
       ),
       _react2.default.createElement(
         'ul',
+        null,
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { className: _styles2.default.cartIcon, to: '/korpa' },
+            _react2.default.createElement(_CartBucket2.default, null)
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'ul',
         { style: this.state.stylee },
         _react2.default.createElement(
           'li',
@@ -4025,15 +4035,6 @@ let MainMenu = class MainMenu extends _react2.default.Component {
             _reactRouterDom.Link,
             { to: '/page/contact', onClick: this.opener },
             'Kontakt'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/korpa', onClick: this.opener },
-            _react2.default.createElement(_CartBucket2.default, null)
           )
         )
       )
