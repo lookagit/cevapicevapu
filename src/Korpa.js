@@ -22,6 +22,12 @@ export default class Korpa extends Component {
      });
    }
 
+   componentDidMount() {
+    if(typeof window !== 'undefined') {
+      window.scroll(0,0);
+    }
+  }
+
   render() {
     return(
       <div>

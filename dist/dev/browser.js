@@ -3078,6 +3078,13 @@ var Korpa = (_dec = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_react_redu
   }
 
   _createClass(Korpa, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (typeof window !== 'undefined') {
+        window.scroll(0, 0);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -3544,7 +3551,7 @@ var MainMenu = function (_React$Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Link */],
-          { to: '/', onClick: this.opener },
+          { to: '/' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__logodrama_png___default.a, alt: 'Drama logo', className: __WEBPACK_IMPORTED_MODULE_2__styles_css___default.a.logo })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -5768,7 +5775,9 @@ ReduxCounter.propTypes = {
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_17__MainMenu_js__["a" /* default */], null),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* Switch */],
-      null,
+      { onUpdate: function onUpdate() {
+          return window.scrollTo(0, 0);
+        }, ignoreScrollBehavior: true },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: Home }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/page/jelovnik', component: Jelovnik }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/page/about', component: About }),

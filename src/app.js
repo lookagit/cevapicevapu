@@ -182,7 +182,7 @@ export default () => (
         content: '100% organsko meso'
       }]} />
     <MainMenu />
-    <Switch>
+    <Switch onUpdate={() => window.scrollTo(0, 0)} ignoreScrollBehavior>
       <Route exact path="/" component={Home} />
       <Route path="/page/jelovnik" component={Jelovnik} />
       <Route path="/page/about" component={About} />

@@ -190,6 +190,8 @@ right: 15px;
   }
 }
 
+
+
 .hello {
   position: absolute;
   top: 0;
@@ -379,6 +381,8 @@ right: 15px;
   maxWidth: 1200px;
   display: flex;
 }
+
+
 .topHero{
   height: 500px;
   width: 100%;
@@ -804,6 +808,9 @@ right: 15px;
 
 }
 @media  (max-width:767px){
+  .topHero {
+    height: 250px;
+  }
   .posaljiParagraf {
     text-align: center;
   }

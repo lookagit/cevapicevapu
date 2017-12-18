@@ -3558,6 +3558,12 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
     }, _temp;
   }
 
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      window.scroll(0, 0);
+    }
+  }
+
   render() {
     return _react2.default.createElement(
       'div',
@@ -3966,7 +3972,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: '/', onClick: this.opener },
+        { to: '/' },
         _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo })
       ),
       _react2.default.createElement(
@@ -5834,7 +5840,7 @@ exports.default = () => _react2.default.createElement(
   _react2.default.createElement(_MainMenu2.default, null),
   _react2.default.createElement(
     _reactRouterDom.Switch,
-    null,
+    { onUpdate: () => window.scrollTo(0, 0), ignoreScrollBehavior: true },
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/jelovnik', component: Jelovnik }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),

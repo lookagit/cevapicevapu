@@ -3551,6 +3551,12 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
     }, _temp;
   }
 
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      window.scroll(0, 0);
+    }
+  }
+
   render() {
     return _react2.default.createElement(
       'div',
@@ -5827,7 +5833,7 @@ exports.default = () => _react2.default.createElement(
   _react2.default.createElement(_MainMenu2.default, null),
   _react2.default.createElement(
     _reactRouterDom.Switch,
-    null,
+    { onUpdate: () => window.scrollTo(0, 0), ignoreScrollBehavior: true },
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/jelovnik', component: Jelovnik }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
