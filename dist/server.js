@@ -3331,15 +3331,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.heroHomepage, style: { backgroundImage: 'url("/kover-drama.jpg")' } },
-        _react2.default.createElement(
-          'div',
-          { className: _styles4.default.mbrArrowFloating },
-          _react2.default.createElement('a', { href: '#section1', className: _styles4.default.mbrArrowIcon })
-        )
-      )
+      _react2.default.createElement('div', { className: _styles2.default.heroHomepage, style: { backgroundImage: 'url("/kover-drama.jpg")' } })
     );
   }
 };
@@ -3967,7 +3959,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: '/', onClick: this.opener },
+        { to: '/' },
         _react2.default.createElement('img', { src: _logodrama2.default, alt: 'Drama logo', className: _styles2.default.logo })
       ),
       _react2.default.createElement(
@@ -3976,6 +3968,19 @@ let MainMenu = class MainMenu extends _react2.default.Component {
           className: _styles2.default.mobileIcon,
           onClick: this.opener },
         _react2.default.createElement('img', { src: _hamburger2.default, alt: 'menu', height: '35px', width: '45px' })
+      ),
+      _react2.default.createElement(
+        'ul',
+        null,
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { className: _styles2.default.cartIcon, to: '/korpa' },
+            _react2.default.createElement(_CartBucket2.default, null)
+          )
+        )
       ),
       _react2.default.createElement(
         'ul',
@@ -4023,15 +4028,6 @@ let MainMenu = class MainMenu extends _react2.default.Component {
             _reactRouterDom.Link,
             { to: '/page/contact', onClick: this.opener },
             'Kontakt'
-          )
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/korpa', onClick: this.opener },
-            _react2.default.createElement(_CartBucket2.default, null)
           )
         )
       )
