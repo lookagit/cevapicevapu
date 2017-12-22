@@ -98,9 +98,9 @@ export default class ProizvodItem extends Component {
                   <p>{this.props.proiz.naslov}</p>
                   <p>Količina: {this.state.kolicina} </p>
                   <p>Cena: {ukupno}</p>
-                  <h3>Somun</h3>
-                  <div>
-                    <div>
+                  {this.props.proiz.tip == 'hrana' ? <h3>Somun</h3> : null}
+                   <div>
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' checked={this.state.uSomunu}
                       onClick={() => {
                         this.setState({
@@ -111,11 +111,11 @@ export default class ProizvodItem extends Component {
                     <span>
                       Da
                     </span>
-                    </div>
-                    </div>
-                  <h3>Prilozi</h3>
-                  <div>
-                    <div>
+                    </div> : null}
+                  </div>
+                  {this.props.proiz.tip == 'hrana' ? <h3>Prilozi</h3> : null }
+                   <div>
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={(a, b) => {
                       if(this.state.prilozi.includes('kečap')) {
                         let a = this.state.prilozi.filter(item => item !== 'kečap');
@@ -132,8 +132,8 @@ export default class ProizvodItem extends Component {
                     <span>
                       Kečap
                     </span>
-                    </div>
-                    <div>
+                    </div> : null }
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('majonez')) {
                         let removedItem = this.state.prilozi.filter(item => item !== 'majonez');
@@ -149,8 +149,8 @@ export default class ProizvodItem extends Component {
                     <span>
                       Majonez
                     </span>
-                    </div>
-                    <div>
+                    </div> : null }
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('senf')) {
                         let a = this.state.prilozi.filter(item => item !== 'senf');
@@ -166,8 +166,8 @@ export default class ProizvodItem extends Component {
                     <span>
                       Senf
                     </span>
-                    </div>
-                    <div>
+                    </div> : null }
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('pavlaka')) {
                         let a = this.state.prilozi.filter(item => item !== 'pavlaka');
@@ -183,8 +183,8 @@ export default class ProizvodItem extends Component {
                     <span>
                       Pavlaka
                     </span>
-                    </div>
-                    <div>
+                    </div> : null }
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('kupus')) {
                         let a = this.state.prilozi.filter(item => item !== 'kupus');
@@ -201,8 +201,8 @@ export default class ProizvodItem extends Component {
                     <span>
                       Kupus
                     </span>
-                    </div>
-                    <div>
+                    </div> : null }
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('luk')) {
                         let a = this.state.prilozi.filter(item => item !== 'luk');
@@ -219,9 +219,9 @@ export default class ProizvodItem extends Component {
                     <span>
                       Luk
                     </span>
-                    </div>
+                    </div> : null }
 
-                    <div>
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('ljutenica')) {
                         let a = this.state.prilozi.filter(item => item !== 'ljutenica');
@@ -238,8 +238,8 @@ export default class ProizvodItem extends Component {
                     <span>
                       Ljutenica
                     </span>
-                    </div>
-                    <div>
+                    </div> : null }
+                    {this.props.proiz.tip == 'hrana' ? <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('tucana paprika')) {
                         let a = this.state.prilozi.filter(item => item !== 'tucana paprika');
@@ -256,7 +256,7 @@ export default class ProizvodItem extends Component {
                     <span>
                       Tucana paprika
                     </span>
-                    </div>
+                    </div> : null }
 
                   </div>
                   <div>

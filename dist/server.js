@@ -3782,15 +3782,15 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                 'Cena: ',
                 ukupno
               ),
-              _react2.default.createElement(
+              this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                 'h3',
                 null,
                 'Somun'
-              ),
+              ) : null,
               _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', checked: this.state.uSomunu,
@@ -3805,17 +3805,17 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Da'
                   )
-                )
+                ) : null
               ),
-              _react2.default.createElement(
+              this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                 'h3',
                 null,
                 'Prilozi'
-              ),
+              ) : null,
               _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: (a, b) => {
@@ -3836,8 +3836,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Ke\u010Dap'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3857,8 +3857,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Majonez'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3878,8 +3878,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Senf'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3899,8 +3899,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Pavlaka'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3921,8 +3921,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Kupus'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3943,8 +3943,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Luk'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3965,8 +3965,8 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Ljutenica'
                   )
-                ),
-                _react2.default.createElement(
+                ) : null,
+                this.props.proiz.tip == 'hrana' ? _react2.default.createElement(
                   'div',
                   null,
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
@@ -3987,7 +3987,7 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                     null,
                     'Tucana paprika'
                   )
-                )
+                ) : null
               ),
               _react2.default.createElement(
                 'div',
@@ -4792,18 +4792,18 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
               'Kolicina: ',
               item.kolicina
             ),
-            _react2.default.createElement(
+            item.proizvod.tip == 'hrana' ? _react2.default.createElement(
               'h5',
               null,
               'Prilozi: ',
               item.prilozi
-            ),
-            _react2.default.createElement(
+            ) : null,
+            item.proizvod.tip == 'hrana' ? _react2.default.createElement(
               'h5',
               null,
               'U somunu: ',
               item.uSomunu ? "Da" : "Ne"
-            )
+            ) : null
           );
         }),
         _react2.default.createElement(
@@ -5120,8 +5120,8 @@ module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7
 /***/ (function(module, exports) {
 
 
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"vreme"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"potvrdjen"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"uredjaj"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"prilozi"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"uSomunu"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":278}};
-    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    vreme,\n    opis,\n    brojTelefona,\n    createdAt,\n    potvrdjen,\n    uredjaj,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      prilozi,\n      uSomunu,\n      proizvod {\n        naslov,\n\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
+    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"AllPorudzbinas"},"variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"allPorudzbinas"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"vreme"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"createdAt"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"potvrdjen"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"uredjaj"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"prilozi"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"uSomunu"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"tip"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}],"loc":{"start":0,"end":291}};
+    doc.loc.source = {"body":"query AllPorudzbinas {\n  allPorudzbinas {\n    id,\n    adresa,\n    vreme,\n    opis,\n    brojTelefona,\n    createdAt,\n    potvrdjen,\n    uredjaj,\n    stavkePorudzbines{\n      id,\n      kolicina,\n      prilozi,\n      uSomunu,\n      proizvod {\n        naslov,\n        tip,\n\n      }\n\n    }\n  }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
   
 
     var names = {};

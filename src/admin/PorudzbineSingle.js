@@ -216,8 +216,12 @@ export default class PorudzbineSingle extends React.Component {
             <div style={{margin: '3px',padding: '5px', backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid #fff'}}>
               <h4>Proizvod: {item.proizvod.naslov}</h4>
               <h4>Kolicina: {item.kolicina}</h4>
-              <h5>Prilozi: {item.prilozi}</h5>
-              <h5>U somunu: {item.uSomunu ? "Da" : "Ne"}</h5>
+              {
+                item.proizvod.tip == 'hrana' ? <h5>Prilozi: {item.prilozi}</h5> : null
+              }
+              {
+                item.proizvod.tip == 'hrana' ? <h5>U somunu: {item.uSomunu ? "Da" : "Ne"}</h5> : null
+              }
             </div>
           )
         })}
