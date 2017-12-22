@@ -223,10 +223,6 @@ export default class PorudzbineSingle extends React.Component {
           notSupported={this.handleNotSupported.bind(this)}
           onPermissionGranted={this.handlePermissionGranted.bind(this)}
           onPermissionDenied={this.handlePermissionDenied.bind(this)}
-          onShow={this.handleNotificationOnShow.bind(this)}
-          onClick={this.handleNotificationOnClick.bind(this)}
-          onClose={this.handleNotificationOnClose.bind(this)}
-          onError={this.handleNotificationOnError.bind(this)}
           timeout={1800000}
           title={this.state.title}
           options={this.state.options}
