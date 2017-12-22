@@ -1,7 +1,6 @@
 import React from 'react';
 import css from './styles.css'
 import TopHero from './TopHero.js';
-import GallyGrid from './GallyGrid.js'
 import bgImg from './images/galerija.jpg';
 import {PhotoSwipeGallery} from 'react-photoswipe';
 let items = [
@@ -40,7 +39,7 @@ let items = [
     h: 900,
     title: 'Drama ćevapi'
   },
-  
+
   {
     src: '/galerija/drama6.jpg',
     thumbnail: '/galerija/drama6.jpg',
@@ -69,7 +68,7 @@ let items = [
     h: 900,
     title: 'Drama ćevapi'
   },
-  
+
   {
     src: '/galerija/drama10.jpg',
     thumbnail: '/galerija/drama10.jpg',
@@ -98,7 +97,7 @@ let items = [
     h: 900,
     title: 'Drama ćevapi'
   },
-  
+
   {
     src: '/galerija/drama14.jpg',
     thumbnail: '/galerija/drama14.jpg',

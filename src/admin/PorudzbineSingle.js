@@ -4,7 +4,6 @@ import gql from 'graphql-tag';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import { connect } from 'react-redux';
 import scss from './css/porudzbine.scss';
-import AlertContainer from 'react-alert'
 import Notification from 'react-web-notification';
 
 @connect(state => ({ deleted: state.deleted }))
@@ -62,7 +61,7 @@ export default class PorudzbineSingle extends React.Component {
       ignore: false
     });
   }
-  
+
   handlePermissionDenied(){
     console.log('Permission Denied');
     this.setState({
@@ -83,11 +82,11 @@ export default class PorudzbineSingle extends React.Component {
 
   handleNotificationOnError(e, tag){
     console.log(e, 'Notification error tag:' + tag);
-  
+
   }
 
   handleNotificationOnClose(e, tag){
-    
+
   }
 
   handleNotificationOnShow(e, tag){
@@ -95,19 +94,19 @@ export default class PorudzbineSingle extends React.Component {
   }
 
   handleButtonClick(titl) {
-    
+
         if(this.state.ignore) {
           return;
         }
-    
+
         const now = Date.now();
-    
+
         const title = 'React-Web-Notification' + now;
         const body = 'Proverite admin panel!';
         const tag = now;
         const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
         // const icon = 'http://localhost:3000/Notifications_button_24.png';
-    
+
         // Available options
         // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
         const options = {

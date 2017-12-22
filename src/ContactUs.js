@@ -6,9 +6,7 @@ import FacebookSquare from 'react-icons/lib/fa/facebook-square';
 import InstagramSquare from 'react-icons/lib/fa/instagram';
 import YoutubeSquare from 'react-icons/lib/fa/youtube-square';
 import GoogleMaps from './GoogleMaps.js';
-import ReactTransitions from 'react-transitions';
 
-var helper = require('sendgrid').mail;
 export default class ContactUs extends React.Component{
   constructor(props) {
     super(props);
@@ -165,7 +163,7 @@ export default class ContactUs extends React.Component{
                       }} />
                     </p>
                     <p className={!this.state.messBool ? css.boxes : css.hidees}>{this.state.textFromMess}</p>
-                    <p className={css.posaljiParagraf}> 
+                    <p className={css.posaljiParagraf}>
                       <button className={css.posalji} type="button" onClick={this.sendMess}>POŠALJI</button>
                     </p>
                   </form>

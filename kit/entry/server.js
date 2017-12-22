@@ -51,10 +51,6 @@ import Html from 'kit/views/ssr';
 import App from 'src/app';
 
 import PATHS from 'config/paths';
-var sendgrid = require("sendgrid")("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");
-
-var helper = require('sendgrid').mail;
-
 export function staticMiddleware() {
   return async function staticMiddlewareHandler(ctx, next) {
     try {
@@ -169,7 +165,7 @@ export default (async function server() {
               refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY',
           }
       })
-      
+
       var mailerOptions = {
           from: `'Porudzbina' <'cevapidrama@gmail.com'>`,
           to: 'dusan.shane.markovic@gmail.com',
@@ -181,7 +177,7 @@ export default (async function server() {
                    Kolicina: ${item.kolicina}`
                 ))}`
       }
-      
+
       transporter.sendMail(mailerOptions, function (err, res) {
           if(err) {
               console.log("EEEEEEEEEEROR", err);
@@ -192,22 +188,6 @@ export default (async function server() {
       })
 
       .post('/ping', async ctx => {
-        // console.log("A JA SAM NA SERVERU ", ctx.request.body);
-        // let from_email = new helper.Email(ctx.request.body.test.mail);
-        // let to_email = new helper.Email("luka@cybeletechnologies.com");
-        // let subject = ctx.request.body.test.sub;
-        // let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
-        // let mail = new helper.Mail(from_email, subject, to_email, content);
-        // var request = sendgrid.emptyRequest({
-        //   method: 'POST',
-        //   path: '/v3/mail/send',
-        //   body: mail.toJSON()
-        // });
-        // sendgrid.API(request, function(error, response) {
-        //   console.log(response.statusCode);
-        //   console.log(response.body);
-        //   console.log(response.headers);
-        // })
         var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
@@ -218,14 +198,14 @@ export default (async function server() {
               refreshToken: '1/fGSKbDEceNB5BNCKj0hmn342TcwcUnl_HaY9JyIuGUY',
           }
       })
-      
+
       var mailerOptions = {
           from: `${ctx.request.body.test.name} <${ctx.request.body.test.mail}>`,
           to: 'cevapidrama@gmail.com',
           subject: ctx.request.body.test.sub,
           text: `MEJL JE POSLAO ${ctx.request.body.test.mail} Tekst mejla ${ctx.request.body.test.mess}`,
       }
-      
+
       transporter.sendMail(mailerOptions, function (err, res) {
           if(err) {
               console.log("EEEEEEEEEEROR", err);

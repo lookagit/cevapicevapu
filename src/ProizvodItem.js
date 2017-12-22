@@ -101,7 +101,7 @@ export default class ProizvodItem extends Component {
                   <h3>Somun</h3>
                   <div>
                     <div>
-                    <input type='checkbox' checked={this.state.uSomunu}  
+                    <input type='checkbox' checked={this.state.uSomunu}
                       onClick={() => {
                         this.setState({
                           uSomunu: !this.state.uSomunu,
@@ -119,7 +119,7 @@ export default class ProizvodItem extends Component {
                     <input type='checkbox' onClick={(a, b) => {
                       if(this.state.prilozi.includes('kečap')) {
                         let a = this.state.prilozi.filter(item => item !== 'kečap');
-                        
+
                         this.setState({
                           prilozi: a,
                         })
@@ -206,7 +206,7 @@ export default class ProizvodItem extends Component {
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('luk')) {
                         let a = this.state.prilozi.filter(item => item !== 'luk');
-                        
+
                         this.setState({
                           prilozi: a,
                         })
@@ -220,12 +220,12 @@ export default class ProizvodItem extends Component {
                       Luk
                     </span>
                     </div>
-                   
+
                     <div>
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('ljutenica')) {
                         let a = this.state.prilozi.filter(item => item !== 'ljutenica');
-                        
+
                         this.setState({
                           prilozi: a,
                         })
@@ -243,7 +243,7 @@ export default class ProizvodItem extends Component {
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('tucana paprika')) {
                         let a = this.state.prilozi.filter(item => item !== 'tucana paprika');
-                        
+
                         this.setState({
                           prilozi: a,
                         })
@@ -257,7 +257,7 @@ export default class ProizvodItem extends Component {
                       Tucana paprika
                     </span>
                     </div>
-                   
+
                   </div>
                   <div>
                   <button style={stylee.buttonStyle} onClick={() => this.handleClose()}>Otkaži</button>

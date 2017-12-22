@@ -1,10 +1,6 @@
 import React from 'react';
 import css from './styles.css';
-import scriptLoader from 'react-async-script-loader';
-import loadjs from 'loadjs';
-import Regex from 'regex';
 import { connect } from 'react-redux';
-import Script from 'react-load-script';
 import Iframe from 'react-iframe';
 import windowSize from 'react-window-size';
 
@@ -23,7 +19,7 @@ class FeaturedLeft extends React.Component {
           <div className={css.featuredLeftText}>
           <div className={css.featuredTrick}>
           {
-            this.props.windowWidth > 1024 ? 
+            this.props.windowWidth > 1024 ?
               <Iframe url="https://widget.developcodex.net/468"
                 minWidth="460px"
                 width="100%"
@@ -31,7 +27,7 @@ class FeaturedLeft extends React.Component {
                 display="initial"
                 position="relative"
                 style={{zIndex: 0}}
-              /> : 
+              /> :
               <Iframe url="https://widget.developcodex.net/240"
               minWidth="280px"
               width="100%"
@@ -41,7 +37,7 @@ class FeaturedLeft extends React.Component {
               style={{zIndex: 0}}
             />
           }
-          
+
           </div>
           </div>
         </div>

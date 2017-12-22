@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 110);
+/******/ 	return __webpack_require__(__webpack_require__.s = 95);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -142,6 +142,24 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports) {
 
+module.exports = require("react-redux");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-styled-flexboxgrid");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
 module.exports = {
 	"example": "example-3q0nqQ9ZKcBd8-DB7rcoyt",
 	"kiki": "kiki-ou4QAYpR7_8bOPESrwy8G",
@@ -160,24 +178,6 @@ module.exports = {
 	"buttonModal": "buttonModal-oQhRp8mZSwic4C68ZmHUD",
 	"cevapiKao": "cevapiKao-1BNwnhXUkAbtrj-Em031Ms"
 };
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
 /* 6 */
@@ -277,12 +277,6 @@ module.exports = require("react-modal-dialog");
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports) {
-
-module.exports = require("sendgrid");
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -291,7 +285,7 @@ module.exports = require("sendgrid");
 // ----------------------
 // IMPORTS
 
-const path = __webpack_require__(20);
+const path = __webpack_require__(15);
 
 // ----------------------
 
@@ -335,249 +329,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _dec, _class;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-var _reactAsyncScriptLoader = __webpack_require__(92);
-
-var _reactAsyncScriptLoader2 = _interopRequireDefault(_reactAsyncScriptLoader);
-
-var _loadjs = __webpack_require__(88);
-
-var _loadjs2 = _interopRequireDefault(_loadjs);
-
-var _regex = __webpack_require__(107);
-
-var _regex2 = _interopRequireDefault(_regex);
-
-var _reactRedux = __webpack_require__(4);
-
-var _reactLoadScript = __webpack_require__(100);
-
-var _reactLoadScript2 = _interopRequireDefault(_reactLoadScript);
-
-var _reactIframe = __webpack_require__(98);
-
-var _reactIframe2 = _interopRequireDefault(_reactIframe);
-
-var _reactWindowSize = __webpack_require__(104);
-
-var _reactWindowSize2 = _interopRequireDefault(_reactWindowSize);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.reloader })), _dec(_class = class FeaturedLeft extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    console.log("AHAAAA ", this.props.windowWidth, this.props.windowHeight);
-    return _react2.default.createElement(
-      'div',
-      { style: { display: "flex" } },
-      _react2.default.createElement(
-        'div',
-        { className: _styles2.default.featured },
-        _react2.default.createElement('div', { className: _styles2.default.featuredLeftImage, style: { backgroundImage: "url('pleska.jpg')" } }),
-        _react2.default.createElement(
-          'div',
-          { className: _styles2.default.featuredLeftText },
-          _react2.default.createElement(
-            'div',
-            { className: _styles2.default.featuredTrick },
-            this.props.windowWidth > 1024 ? _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/468',
-              minWidth: '460px',
-              width: '100%',
-              height: '470px',
-              display: 'initial',
-              position: 'relative',
-              style: { zIndex: 0 }
-            }) : _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/240',
-              minWidth: '280px',
-              width: '100%',
-              height: '470px',
-              display: 'initial',
-              position: 'relative',
-              style: { zIndex: 0 }
-            })
-          )
-        )
-      )
-    );
-  }
-}) || _class);
-exports.default = (0, _reactWindowSize2.default)(FeaturedLeft);
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _HeaderHero = __webpack_require__(49);
-
-var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let Header = class Header extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_HeaderHero2.default, null)
-    );
-  }
-};
-exports.default = Header;
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let ParalaxContainer = class ParalaxContainer extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      stylee: {}
-    };
-  }
-  componentWillMount() {
-    if (this.props.stylee) {
-      const stylee = this.props.stylee;
-      this.setState({
-        stylee
-      });
-    } else {
-      this.setState({
-        stylee: {
-          backgroundImage: 'url("http://www.cevabdzinica.de/wp-content/uploads/2016/02/Cevapcici-beste-in-Muenchen-mit-Ajvar-Schmand-und-Brot-in-Butter-vom-Grill-IMG_3815-e1455037381718.jpg")',
-          height: '400px'
-        }
-      });
-    }
-  }
-  render() {
-    return _react2.default.createElement('div', { className: _styles2.default.parallax, style: this.state.stylee });
-  }
-};
-exports.default = ParalaxContainer;
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let SectionHeadline = class SectionHeadline extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      innerText: ""
-    };
-  }
-  componentWillMount() {
-    const title = this.props.title;
-    const innerText = this.props.innerText;
-    if (!innerText) {
-      this.setState({
-        title
-      });
-    } else {
-      this.setState({
-        title,
-        innerText
-      });
-    }
-  }
-  render() {
-    return _react2.default.createElement(
-      'div',
-      { className: _styles2.default.sectionHeadlineMain },
-      _react2.default.createElement(
-        'h1',
-        { className: _styles2.default.sectionHeadlineTitle },
-        this.state.title
-      ),
-      _react2.default.createElement(
-        'p',
-        { className: _styles2.default.sectionHeadlineInnerText },
-        this.state.innerText
-      )
-    );
-  }
-};
-exports.default = SectionHeadline;
-
-/***/ }),
-/* 17 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -585,13 +337,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 18 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png";
 
 /***/ }),
-/* 19 */
+/* 14 */
 /***/ (function(module, exports) {
 
 
@@ -621,81 +373,69 @@ module.exports = __webpack_require__.p + "assets/img/logodrama.ee96729289acfab10
 
 
 /***/ }),
-/* 20 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-alert");
-
-/***/ }),
-/* 22 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-helmet");
 
 /***/ }),
-/* 23 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/facebook-square");
 
 /***/ }),
-/* 24 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ }),
-/* 25 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/shopping-cart");
 
 /***/ }),
-/* 26 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-scrollable-anchor");
-
-/***/ }),
-/* 27 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-web-notification");
 
 /***/ }),
-/* 28 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("seamless-immutable");
 
 /***/ }),
-/* 29 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _path = __webpack_require__(20);
+var _path = __webpack_require__(15);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _fs = __webpack_require__(78);
+var _fs = __webpack_require__(70);
 
-var _paths = __webpack_require__(12);
+var _paths = __webpack_require__(11);
 
 var _paths2 = _interopRequireDefault(_paths);
 
-var _env = __webpack_require__(34);
+var _env = __webpack_require__(27);
 
-var _console = __webpack_require__(33);
+var _console = __webpack_require__(26);
 
-var _server = __webpack_require__(31);
+var _server = __webpack_require__(24);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -751,7 +491,7 @@ _server2.default.then(({ router, app }) => {
 });
 
 /***/ }),
-/* 30 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -771,7 +511,7 @@ const BUNDLE_ANALYZER = exports.BUNDLE_ANALYZER = {
 };
 
 /***/ }),
-/* 31 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -783,71 +523,71 @@ Object.defineProperty(exports, "__esModule", {
 exports.staticMiddleware = staticMiddleware;
 exports.createReactHandler = createReactHandler;
 
-__webpack_require__(81);
+__webpack_require__(73);
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(93);
+var _server = __webpack_require__(83);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _koa = __webpack_require__(83);
+var _koa = __webpack_require__(75);
 
 var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(6);
 
-var _koaSend = __webpack_require__(87);
+var _koaSend = __webpack_require__(79);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _nodemailer = __webpack_require__(90);
+var _nodemailer = __webpack_require__(81);
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
-var _xoauth = __webpack_require__(109);
+var _xoauth = __webpack_require__(94);
 
 var _xoauth2 = _interopRequireDefault(_xoauth);
 
-var _koaHelmet = __webpack_require__(85);
+var _koaHelmet = __webpack_require__(77);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(86);
+var _koaRouter = __webpack_require__(78);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(89);
+var _microseconds = __webpack_require__(80);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(102);
+var _reactRouter = __webpack_require__(90);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(16);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _koaBodyparser = __webpack_require__(84);
+var _koaBodyparser = __webpack_require__(76);
 
 var _koaBodyparser2 = _interopRequireDefault(_koaBodyparser);
 
-var _apollo = __webpack_require__(32);
+var _apollo = __webpack_require__(25);
 
-var _redux = __webpack_require__(35);
+var _redux = __webpack_require__(28);
 
 var _redux2 = _interopRequireDefault(_redux);
 
-var _ssr = __webpack_require__(37);
+var _ssr = __webpack_require__(30);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
-var _app = __webpack_require__(64);
+var _app = __webpack_require__(59);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _paths = __webpack_require__(12);
+var _paths = __webpack_require__(11);
 
 var _paths2 = _interopRequireDefault(_paths);
 
@@ -873,27 +613,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 // React UI
-var sendgrid = __webpack_require__(11)("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");
-
-// Initial view to send back HTML render
-
-/* Local */
-
-// Grab the shared Apollo Client
-
-
-// <Helmet> component for retrieving <head> section, so we can set page
-// title, meta info, etc along with the initial HTML
-
-
-// High-precision timing, so we can debug response time to serve a request
-
-
-// React utility to transform JSX to HTML (to send back to the client)
-
-
-var helper = __webpack_require__(11).mail;
-
 function staticMiddleware() {
   return async function staticMiddlewareHandler(ctx, next) {
     try {
@@ -912,6 +631,23 @@ function staticMiddleware() {
 
 // Function to create a React handler, per the environment's correct
 // manifest files
+
+
+// Initial view to send back HTML render
+
+/* Local */
+
+// Grab the shared Apollo Client
+
+
+// <Helmet> component for retrieving <head> section, so we can set page
+// title, meta info, etc along with the initial HTML
+
+
+// High-precision timing, so we can debug response time to serve a request
+
+
+// React utility to transform JSX to HTML (to send back to the client)
 function createReactHandler(css = [], scripts = [], chunkManifest = {}) {
   return async function reactHandler(ctx) {
     const routeContext = {};
@@ -1021,22 +757,6 @@ exports.default = async function server() {
         }
       });
     }).post('/ping', async ctx => {
-      // console.log("A JA SAM NA SERVERU ", ctx.request.body);
-      // let from_email = new helper.Email(ctx.request.body.test.mail);
-      // let to_email = new helper.Email("luka@cybeletechnologies.com");
-      // let subject = ctx.request.body.test.sub;
-      // let content = new helper.Content("text/plain", "Poslao: " + ctx.request.body.test.name + "\n Poruka: " + ctx.request.body.test.mess);
-      // let mail = new helper.Mail(from_email, subject, to_email, content);
-      // var request = sendgrid.emptyRequest({
-      //   method: 'POST',
-      //   path: '/v3/mail/send',
-      //   body: mail.toJSON()
-      // });
-      // sendgrid.API(request, function(error, response) {
-      //   console.log(response.statusCode);
-      //   console.log(response.body);
-      //   console.log(response.headers);
-      // })
       var transporter = _nodemailer2.default.createTransport({
         service: 'gmail',
         auth: {
@@ -1096,7 +816,7 @@ exports.default = async function server() {
 }();
 
 /***/ }),
-/* 32 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1110,16 +830,15 @@ exports.serverClient = serverClient;
 
 var _reactApollo = __webpack_require__(6);
 
-var _project = __webpack_require__(30);
-
-var _subscriptionsTransportWs = __webpack_require__(108);
+var _project = __webpack_require__(23);
 
 // Create a new Apollo network interface, to point to our API server.
 // Note:  By default in this kit, we'll connect to a sample endpoint that
 // repsonds with simple messages.  Update [root]/config.js as needed.
+// ----------------------
+// IMPORTS
 
-
-// Custom configuration/settings
+// Apollo client library
 const networkInterface = (0, _reactApollo.createNetworkInterface)({
   uri: _project.APOLLO.uri
 });
@@ -1127,10 +846,7 @@ const networkInterface = (0, _reactApollo.createNetworkInterface)({
 // Helper function to create a new Apollo client, by merging in
 // passed options alongside the defaults
 
-// ----------------------
-// IMPORTS
-
-// Apollo client library
+// Custom configuration/settings
 function createClient(opt = {}) {
   if (process.browser) {
     return new _reactApollo.ApolloClient(Object.assign({
@@ -1158,7 +874,7 @@ function serverClient() {
 }
 
 /***/ }),
-/* 33 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1169,15 +885,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.logServerStarted = logServerStarted;
 
-var _boxen = __webpack_require__(76);
+var _boxen = __webpack_require__(68);
 
 var _boxen2 = _interopRequireDefault(_boxen);
 
-var _chalk = __webpack_require__(77);
+var _chalk = __webpack_require__(69);
 
 var _chalk2 = _interopRequireDefault(_chalk);
 
-var _ip = __webpack_require__(80);
+var _ip = __webpack_require__(72);
 
 var _ip2 = _interopRequireDefault(_ip);
 
@@ -1215,7 +931,7 @@ function logServerStarted(opt = {}) {
 // Display a border around a message
 
 /***/ }),
-/* 34 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1317,7 +1033,7 @@ function getURL() {
 }
 
 /***/ }),
-/* 35 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1348,17 +1064,17 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(105);
+var _redux = __webpack_require__(92);
 
-var _reduxThunk = __webpack_require__(106);
+var _reduxThunk = __webpack_require__(93);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _seamlessImmutable = __webpack_require__(28);
+var _seamlessImmutable = __webpack_require__(21);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
-var _counter = __webpack_require__(38);
+var _counter = __webpack_require__(31);
 
 var _counter2 = _interopRequireDefault(_counter);
 
@@ -1409,7 +1125,7 @@ function createNewStore(apolloClient) {
 }
 
 /***/ }),
-/* 36 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1512,7 +1228,7 @@ Redirect.defaultProps = {
 };
 
 /***/ }),
-/* 37 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1585,7 +1301,7 @@ Html.propTypes = {
 exports.default = Html;
 
 /***/ }),
-/* 38 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1604,7 +1320,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 /* NPM */
 
 
-var _seamlessImmutable = __webpack_require__(28);
+var _seamlessImmutable = __webpack_require__(21);
 
 var _seamlessImmutable2 = _interopRequireDefault(_seamlessImmutable);
 
@@ -1700,7 +1416,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 39 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1723,17 +1439,13 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _ContentBoxes = __webpack_require__(43);
+var _ContentBoxes = __webpack_require__(36);
 
 var _ContentBoxes2 = _interopRequireDefault(_ContentBoxes);
 
-var _sarajevskiCevapDrama = __webpack_require__(68);
+var _sarajevskiCevapDrama = __webpack_require__(63);
 
 var _sarajevskiCevapDrama2 = _interopRequireDefault(_sarajevskiCevapDrama);
-
-var _passwordHash = __webpack_require__(91);
-
-var _passwordHash2 = _interopRequireDefault(_passwordHash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1755,7 +1467,7 @@ let AboutUs = class AboutUs extends _react2.default.Component {
 exports.default = AboutUs;
 
 /***/ }),
-/* 40 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1772,9 +1484,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _shoppingCart = __webpack_require__(25);
+var _shoppingCart = __webpack_require__(19);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -1823,7 +1535,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
 exports.default = Admin;
 
 /***/ }),
-/* 41 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1840,9 +1552,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _shoppingCart = __webpack_require__(25);
+var _shoppingCart = __webpack_require__(19);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
@@ -1891,7 +1603,7 @@ let CartBucketMini = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.
 exports.default = CartBucketMini;
 
 /***/ }),
-/* 42 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1910,35 +1622,30 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _facebookSquare = __webpack_require__(23);
+var _facebookSquare = __webpack_require__(17);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(24);
+var _instagram = __webpack_require__(18);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(97);
+var _youtubeSquare = __webpack_require__(87);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
-var _GoogleMaps = __webpack_require__(48);
+var _GoogleMaps = __webpack_require__(40);
 
 var _GoogleMaps2 = _interopRequireDefault(_GoogleMaps);
 
-var _reactTransitions = __webpack_require__(103);
-
-var _reactTransitions2 = _interopRequireDefault(_reactTransitions);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var helper = __webpack_require__(11).mail;
 let ContactUs = class ContactUs extends _react2.default.Component {
   constructor(props) {
     super(props);
@@ -2238,7 +1945,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
 exports.default = ContactUs;
 
 /***/ }),
-/* 43 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2253,7 +1960,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _styles = __webpack_require__(1);
 
@@ -2321,7 +2028,83 @@ let ContentBoxes = class ContentBoxes extends _react2.default.Component {
 exports.default = ContentBoxes;
 
 /***/ }),
-/* 44 */
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+var _reactRedux = __webpack_require__(2);
+
+var _reactIframe = __webpack_require__(88);
+
+var _reactIframe2 = _interopRequireDefault(_reactIframe);
+
+var _reactWindowSize = __webpack_require__(91);
+
+var _reactWindowSize2 = _interopRequireDefault(_reactWindowSize);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.reloader })), _dec(_class = class FeaturedLeft extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    console.log("AHAAAA ", this.props.windowWidth, this.props.windowHeight);
+    return _react2.default.createElement(
+      'div',
+      { style: { display: "flex" } },
+      _react2.default.createElement(
+        'div',
+        { className: _styles2.default.featured },
+        _react2.default.createElement('div', { className: _styles2.default.featuredLeftImage, style: { backgroundImage: "url('pleska.jpg')" } }),
+        _react2.default.createElement(
+          'div',
+          { className: _styles2.default.featuredLeftText },
+          _react2.default.createElement(
+            'div',
+            { className: _styles2.default.featuredTrick },
+            this.props.windowWidth > 1024 ? _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/468',
+              minWidth: '460px',
+              width: '100%',
+              height: '470px',
+              display: 'initial',
+              position: 'relative',
+              style: { zIndex: 0 }
+            }) : _react2.default.createElement(_reactIframe2.default, { url: 'https://widget.developcodex.net/240',
+              minWidth: '280px',
+              width: '100%',
+              height: '470px',
+              display: 'initial',
+              position: 'relative',
+              style: { zIndex: 0 }
+            })
+          )
+        )
+      )
+    );
+  }
+}) || _class);
+exports.default = (0, _reactWindowSize2.default)(FeaturedLeft);
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2339,19 +2122,19 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _facebookSquare = __webpack_require__(23);
+var _facebookSquare = __webpack_require__(17);
 
 var _facebookSquare2 = _interopRequireDefault(_facebookSquare);
 
-var _instagram = __webpack_require__(24);
+var _instagram = __webpack_require__(18);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _foursquare = __webpack_require__(94);
+var _foursquare = __webpack_require__(84);
 
 var _foursquare2 = _interopRequireDefault(_foursquare);
 
-var _tripadvisor = __webpack_require__(96);
+var _tripadvisor = __webpack_require__(86);
 
 var _tripadvisor2 = _interopRequireDefault(_tripadvisor);
 
@@ -2479,7 +2262,7 @@ let Footer = class Footer extends _react2.default.Component {
 exports.default = Footer;
 
 /***/ }),
-/* 45 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2502,15 +2285,11 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _GallyGrid = __webpack_require__(46);
-
-var _GallyGrid2 = _interopRequireDefault(_GallyGrid);
-
-var _galerija = __webpack_require__(67);
+var _galerija = __webpack_require__(62);
 
 var _galerija2 = _interopRequireDefault(_galerija);
 
-var _reactPhotoswipe = __webpack_require__(101);
+var _reactPhotoswipe = __webpack_require__(89);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2653,7 +2432,7 @@ let Gally = class Gally extends _react2.default.Component {
 exports.default = Gally;
 
 /***/ }),
-/* 46 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2668,308 +2447,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
-
-var _GallyLib = __webpack_require__(47);
-
-var _GallyLib2 = _interopRequireDefault(_GallyLib);
-
-var _styles = __webpack_require__(2);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function makeUnsplashSrc(id) {
-  return `/galerija/IMAG4935.jpg`;
-}
-
-function makeUnsplashSrcSet(id, size) {
-  return `/galerija/IMAG4935.jpg`;
-}
-
-function makeUnsplashThumbnail(id, orientation = 'landscape') {
-  const dimensions = orientation === 'square' ? 'w=300&h=300' : 'w=240&h=159';
-
-  return `/galerija/IMAG4935.jpg`;
-}
-
-// Unsplash images from the "Spirit Animals" collection
-// https://unsplash.com/collections/158825/spirit-animals
-
-const DEFAULT_IMAGES = [{ image: '/galerija/IMAG4935.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/SYzUF6XcWBY (Flamingo)
-{ image: '/galerija/IMAG4937.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/GIpGxe2_cT4 (Turtle)
-{ image: '/galerija/IMAG4940.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/LmVSKeDy6EA (Tiger)
-{ image: '/galerija/IMAG4941.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/GXMr7BadXQo (Hedgehog)
-{ image: '/galerija/IMAG4944.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/XgF9e93Tkt0 (Ladybug)
-{ image: '/galerija/IMAG5142-3.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/XgF9e93Tkt0 (Ladybug)
-{ image: '/galerija/IMAG5148.jpg', caption: 'Drama ćevapi', orientation: 'landscape', useForDemo: true }];
-
-let GallyGrid = class GallyGrid extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-
-    this.closeLightbox = () => {
-      this.setState({
-        lightboxIsOpen: false
-      });
-    };
-
-    this.state = {
-      lightboxIsOpen: true
-    };
-  }
-
-  render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        _reactStyledFlexboxgrid.Grid,
-        null,
-        _react2.default.createElement('div', { className: _styles2.default.gallyNaslov }),
-        _react2.default.createElement(
-          _reactStyledFlexboxgrid.Row,
-          null,
-          _react2.default.createElement(
-            _reactStyledFlexboxgrid.Col,
-            { xs: 12 },
-            _react2.default.createElement(_GallyLib2.default, { images: DEFAULT_IMAGES.map(({ caption, image, orientation, useForDemo }) => ({
-                src: image,
-                thumbnail: image,
-                srcset: [image],
-                caption,
-                orientation,
-                useForDemo
-              })) })
-          )
-        )
-      )
-    );
-  }
-};
-exports.default = GallyGrid;
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _noImportant = __webpack_require__(75);
-
-var _reactImages = __webpack_require__(99);
-
-var _reactImages2 = _interopRequireDefault(_reactImages);
-
-var _styles = __webpack_require__(2);
-
-var _styles2 = _interopRequireDefault(_styles);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-let Gallery = class Gallery extends _react.Component {
-	constructor() {
-		super();
-
-		this.state = {
-			lightboxIsOpen: false,
-			currentImage: 0
-		};
-
-		this.closeLightbox = this.closeLightbox.bind(this);
-		this.gotoNext = this.gotoNext.bind(this);
-		this.gotoPrevious = this.gotoPrevious.bind(this);
-		this.gotoImage = this.gotoImage.bind(this);
-		this.handleClickImage = this.handleClickImage.bind(this);
-		this.openLightbox = this.openLightbox.bind(this);
-	}
-	openLightbox(index, event) {
-		event.preventDefault();
-		this.setState({
-			currentImage: index,
-			lightboxIsOpen: true
-		});
-	}
-	closeLightbox() {
-		this.setState({
-			currentImage: 0,
-			lightboxIsOpen: false
-		});
-	}
-	gotoPrevious() {
-		this.setState({
-			currentImage: this.state.currentImage - 1
-		});
-	}
-	gotoNext() {
-		this.setState({
-			currentImage: this.state.currentImage + 1
-		});
-	}
-	gotoImage(index) {
-		this.setState({
-			currentImage: index
-		});
-	}
-	handleClickImage() {
-		if (this.state.currentImage === this.props.images.length - 1) return;
-
-		this.gotoNext();
-	}
-	renderGallery() {
-		const { images } = this.props;
-
-		if (!images) return;
-
-		const gallery = images.filter(i => i.useForDemo).map((obj, i) => {
-			return _react2.default.createElement(
-				'a',
-				{
-					href: obj.src,
-					className: (0, _noImportant.css)(classes.thumbnail, classes[obj.orientation]),
-					key: i,
-					onClick: e => this.openLightbox(i, e)
-				},
-				_react2.default.createElement(
-					'div',
-					{ className: _styles2.default.gallyDiv },
-					_react2.default.createElement('img', { src: obj.thumbnail, className: (0, _noImportant.css)(classes.source) })
-				)
-			);
-		});
-
-		return _react2.default.createElement(
-			'div',
-			{ className: (0, _noImportant.css)(classes.gallery) },
-			gallery
-		);
-	}
-	render() {
-		return _react2.default.createElement(
-			'div',
-			{ className: 'section' },
-			this.props.heading && _react2.default.createElement(
-				'h2',
-				null,
-				this.props.heading
-			),
-			this.props.subheading && _react2.default.createElement(
-				'p',
-				null,
-				this.props.subheading
-			),
-			this.renderGallery(),
-			_react2.default.createElement(_reactImages2.default, {
-				currentImage: this.state.currentImage,
-				images: this.props.images,
-				isOpen: this.state.lightboxIsOpen,
-				onClickImage: this.handleClickImage,
-				onClickNext: this.gotoNext,
-				onClickPrev: this.gotoPrevious,
-				onClickThumbnail: this.gotoImage,
-				onClose: this.closeLightbox,
-				showThumbnails: this.props.showThumbnails,
-				theme: this.props.theme
-			})
-		);
-	}
-};
-
-
-Gallery.displayName = 'Gallery';
-Gallery.propTypes = {
-	heading: _propTypes2.default.string,
-	images: _propTypes2.default.array,
-	showThumbnails: _propTypes2.default.bool,
-	subheading: _propTypes2.default.string
-};
-
-const gutter = {
-	small: 2,
-	large: 4
-};
-const classes = _noImportant.StyleSheet.create({
-	gallery: {
-		marginRight: -gutter.small,
-		overflow: 'hidden',
-
-		'@media (min-width: 500px)': {
-			marginRight: -gutter.large
-		}
-	},
-
-	// anchor
-	thumbnail: {
-		boxSizing: 'border-box',
-		display: 'block',
-		float: 'left',
-		lineHeight: 0,
-		paddingRight: gutter.small,
-		paddingBottom: gutter.small,
-		overflow: 'hidden',
-
-		'@media (min-width: 500px)': {
-			paddingRight: gutter.large,
-			paddingBottom: gutter.large
-		}
-	},
-
-	// orientation
-	landscape: {
-		width: '33.3%'
-	},
-	square: {
-		paddingBottom: 0,
-		width: '40%',
-
-		'@media (min-width: 500px)': {
-			paddingBottom: 0
-		}
-	},
-
-	// actual <img />
-	source: {
-		border: 0,
-		display: 'block',
-		height: 'auto',
-		maxWidth: '100%',
-		width: 'auto'
-	}
-});
-
-exports.default = Gallery;
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _googleMapReact = __webpack_require__(79);
+var _googleMapReact = __webpack_require__(71);
 
 var _googleMapReact2 = _interopRequireDefault(_googleMapReact);
 
@@ -3008,7 +2486,46 @@ GoogleMaps.defaultProps = {
 exports.default = GoogleMaps;
 
 /***/ }),
-/* 49 */
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _HeaderHero = __webpack_require__(42);
+
+var _HeaderHero2 = _interopRequireDefault(_HeaderHero);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let Header = class Header extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_HeaderHero2.default, null)
+    );
+  }
+};
+exports.default = Header;
+
+/***/ }),
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3026,7 +2543,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _styles3 = __webpack_require__(2);
+var _styles3 = __webpack_require__(5);
 
 var _styles4 = _interopRequireDefault(_styles3);
 
@@ -3047,7 +2564,7 @@ let HeaderHero = class HeaderHero extends _react2.default.Component {
 exports.default = HeaderHero;
 
 /***/ }),
-/* 50 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3062,23 +2579,19 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(14);
+var _Header = __webpack_require__(41);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _reactScrollableAnchor = __webpack_require__(26);
-
-var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
-
-var _ParalaxContainer = __webpack_require__(15);
+var _ParalaxContainer = __webpack_require__(48);
 
 var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
 
-var _SectionHeadline = __webpack_require__(16);
+var _SectionHeadline = __webpack_require__(53);
 
 var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
 
-var _FeaturedLeft = __webpack_require__(13);
+var _FeaturedLeft = __webpack_require__(37);
 
 var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
 
@@ -3109,13 +2622,9 @@ let Home = class Home extends _react2.default.Component {
       null,
       _react2.default.createElement(_Header2.default, null),
       _react2.default.createElement(
-        _reactScrollableAnchor2.default,
-        { id: 'section1' },
-        _react2.default.createElement(
-          'div',
-          { style: { width: '100%', height: 'auto' } },
-          _react2.default.createElement('img', { src: '/cevapi.jpg', style: { width: "100%", height: "auto", verticalAlign: 'top' } })
-        )
+        'div',
+        { style: { width: '100%', height: 'auto' } },
+        _react2.default.createElement('img', { src: '/cevapi.jpg', style: { width: "100%", height: "auto", verticalAlign: 'top' } })
       ),
       _react2.default.createElement(_ParalaxContainer2.default, { stylee: stylee }),
       _react2.default.createElement(
@@ -3135,7 +2644,7 @@ let Home = class Home extends _react2.default.Component {
 exports.default = Home;
 
 /***/ }),
-/* 51 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3160,19 +2669,19 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _KorpaPorudzbina = __webpack_require__(52);
+var _KorpaPorudzbina = __webpack_require__(45);
 
 var _KorpaPorudzbina2 = _interopRequireDefault(_KorpaPorudzbina);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(95);
+var _trash = __webpack_require__(85);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3247,7 +2756,7 @@ Korpa.propTypes = {
 exports.default = Korpa;
 
 /***/ }),
-/* 52 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3276,19 +2785,19 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRouterDom = __webpack_require__(9);
 
-var _PorudzbinaConfirm = __webpack_require__(55);
+var _PorudzbinaConfirm = __webpack_require__(49);
 
 var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _PovratnoVreme = __webpack_require__(56);
+var _PovratnoVreme = __webpack_require__(50);
 
 var _PovratnoVreme2 = _interopRequireDefault(_PovratnoVreme);
 
@@ -3514,7 +3023,7 @@ KorpaPorudzbina.propTypes = {
 exports.default = KorpaPorudzbina;
 
 /***/ }),
-/* 53 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3534,15 +3043,15 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _hamburger = __webpack_require__(66);
+var _hamburger = __webpack_require__(61);
 
 var _hamburger2 = _interopRequireDefault(_hamburger);
 
-var _CartBucketMini = __webpack_require__(41);
+var _CartBucketMini = __webpack_require__(34);
 
 var _CartBucketMini2 = _interopRequireDefault(_CartBucketMini);
 
-var _CartBucket = __webpack_require__(40);
+var _CartBucket = __webpack_require__(33);
 
 var _CartBucket2 = _interopRequireDefault(_CartBucket);
 
@@ -3602,12 +3111,12 @@ let MainMenu = class MainMenu extends _react2.default.Component {
       _react2.default.createElement(
         'div',
         { style: this.state.blinker, className: _styles2.default.blinkDrama },
-        _react2.default.createElement('img', { src: __webpack_require__(18) })
+        _react2.default.createElement('img', { src: __webpack_require__(13) })
       ),
       _react2.default.createElement(
         _reactRouterDom.Link,
         { to: '/' },
-        _react2.default.createElement('img', { src: __webpack_require__(18), alt: 'Drama logo', className: _styles2.default.logo })
+        _react2.default.createElement('img', { src: __webpack_require__(13), alt: 'Drama logo', className: _styles2.default.logo })
       ),
       _react2.default.createElement(
         'div',
@@ -3691,7 +3200,7 @@ let MainMenu = class MainMenu extends _react2.default.Component {
 exports.default = MainMenu;
 
 /***/ }),
-/* 54 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3710,13 +3219,13 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _Proizvod = __webpack_require__(57);
+var _Proizvod = __webpack_require__(51);
 
 var _Proizvod2 = _interopRequireDefault(_Proizvod);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -3740,7 +3249,56 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
 exports.default = NaruciNesto;
 
 /***/ }),
-/* 55 */
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let ParalaxContainer = class ParalaxContainer extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stylee: {}
+    };
+  }
+  componentWillMount() {
+    if (this.props.stylee) {
+      const stylee = this.props.stylee;
+      this.setState({
+        stylee
+      });
+    } else {
+      this.setState({
+        stylee: {
+          backgroundImage: 'url("http://www.cevabdzinica.de/wp-content/uploads/2016/02/Cevapcici-beste-in-Muenchen-mit-Ajvar-Schmand-und-Brot-in-Butter-vom-Grill-IMG_3815-e1455037381718.jpg")',
+          height: '400px'
+        }
+      });
+    }
+  }
+  render() {
+    return _react2.default.createElement('div', { className: _styles2.default.parallax, style: this.state.stylee });
+  }
+};
+exports.default = ParalaxContainer;
+
+/***/ }),
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3761,7 +3319,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3794,7 +3352,7 @@ let PorudzbinaConfirm = (_dec = (0, _reactRedux.connect)(state => ({ counter: st
 exports.default = PorudzbinaConfirm;
 
 /***/ }),
-/* 56 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3821,15 +3379,15 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _getVreme = __webpack_require__(71);
+var _getVreme = __webpack_require__(66);
 
 var _getVreme2 = _interopRequireDefault(_getVreme);
 
@@ -3992,7 +3550,7 @@ const stylee = {
 };
 
 /***/ }),
-/* 57 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4015,17 +3573,17 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _getProizvodi = __webpack_require__(19);
+var _getProizvodi = __webpack_require__(14);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _ProizvodItem = __webpack_require__(58);
+var _ProizvodItem = __webpack_require__(52);
 
 var _ProizvodItem2 = _interopRequireDefault(_ProizvodItem);
 
@@ -4062,7 +3620,7 @@ Proizvod.propTypes = {
 exports.default = Proizvod;
 
 /***/ }),
-/* 58 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4081,9 +3639,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -4091,11 +3649,11 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactAlert = __webpack_require__(21);
+var _reactAlert = __webpack_require__(82);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -4491,7 +4049,69 @@ const stylee = {
 };
 
 /***/ }),
-/* 59 */
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(1);
+
+var _styles2 = _interopRequireDefault(_styles);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+let SectionHeadline = class SectionHeadline extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      innerText: ""
+    };
+  }
+  componentWillMount() {
+    const title = this.props.title;
+    const innerText = this.props.innerText;
+    if (!innerText) {
+      this.setState({
+        title
+      });
+    } else {
+      this.setState({
+        title,
+        innerText
+      });
+    }
+  }
+  render() {
+    return _react2.default.createElement(
+      'div',
+      { className: _styles2.default.sectionHeadlineMain },
+      _react2.default.createElement(
+        'h1',
+        { className: _styles2.default.sectionHeadlineTitle },
+        this.state.title
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: _styles2.default.sectionHeadlineInnerText },
+        this.state.innerText
+      )
+    );
+  }
+};
+exports.default = SectionHeadline;
+
+/***/ }),
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4512,21 +4132,21 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _ProizvodList = __webpack_require__(63);
+var _ProizvodList = __webpack_require__(58);
 
 var _ProizvodList2 = _interopRequireDefault(_ProizvodList);
 
-var _Porudzbine = __webpack_require__(61);
+var _Porudzbine = __webpack_require__(56);
 
 var _Porudzbine2 = _interopRequireDefault(_Porudzbine);
 
-var _NavBar = __webpack_require__(60);
+var _NavBar = __webpack_require__(55);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -4536,9 +4156,9 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
 var _reactApollo = __webpack_require__(6);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _jsMd = __webpack_require__(82);
+var _jsMd = __webpack_require__(74);
 
 var _jsMd2 = _interopRequireDefault(_jsMd);
 
@@ -4661,7 +4281,7 @@ let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter,
 exports.default = Admin;
 
 /***/ }),
-/* 60 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4676,7 +4296,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -4732,7 +4352,7 @@ let NavBar = class NavBar extends _react2.default.Component {
 exports.default = NavBar;
 
 /***/ }),
-/* 61 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4749,9 +4369,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _porudzbine = __webpack_require__(17);
+var _porudzbine = __webpack_require__(12);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
@@ -4761,7 +4381,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _allPorudzbinas = __webpack_require__(69);
+var _allPorudzbinas = __webpack_require__(64);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
 
@@ -4771,21 +4391,13 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _PorudzbineSingle = __webpack_require__(62);
+var _PorudzbineSingle = __webpack_require__(57);
 
 var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _PorudzbinaAdd = __webpack_require__(73);
-
-var _PorudzbinaAdd2 = _interopRequireDefault(_PorudzbinaAdd);
-
-var _PorudzbinaUpdate = __webpack_require__(74);
-
-var _PorudzbinaUpdate2 = _interopRequireDefault(_PorudzbinaUpdate);
-
-var _reactWebNotification = __webpack_require__(27);
+var _reactWebNotification = __webpack_require__(20);
 
 var _reactWebNotification2 = _interopRequireDefault(_reactWebNotification);
 
@@ -4802,13 +4414,11 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
       title: ''
     };
   }
-
   componentDidMount() {
     setInterval(() => {
       this.props.data.refetch();
     }, 10000);
   }
-
   componentWillReceiveProps(newProps) {
     if (newProps.deleted) {
       this.props.dispatch({
@@ -4929,7 +4539,7 @@ Porudzbine.propTypes = {
 exports.default = Porudzbine;
 
 /***/ }),
-/* 62 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4954,17 +4564,13 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
 var _reactModalDialog = __webpack_require__(10);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
-var _porudzbine = __webpack_require__(17);
+var _porudzbine = __webpack_require__(12);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
-var _reactAlert = __webpack_require__(21);
-
-var _reactAlert2 = _interopRequireDefault(_reactAlert);
-
-var _reactWebNotification = __webpack_require__(27);
+var _reactWebNotification = __webpack_require__(20);
 
 var _reactWebNotification2 = _interopRequireDefault(_reactWebNotification);
 
@@ -5299,7 +4905,7 @@ const stylee = {
 };
 
 /***/ }),
-/* 63 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5316,7 +4922,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _propTypes = __webpack_require__(3);
 
@@ -5324,11 +4930,11 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _getProizvodi = __webpack_require__(19);
+var _getProizvodi = __webpack_require__(14);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
-var _styles = __webpack_require__(2);
+var _styles = __webpack_require__(5);
 
 var _styles2 = _interopRequireDefault(_styles);
 
@@ -5382,7 +4988,7 @@ ProizvodList.propTypes = {
 exports.default = ProizvodList;
 
 /***/ }),
-/* 64 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5391,10 +4997,6 @@ exports.default = ProizvodList;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _dec, _class, _dec2, _class2; /*WEBPACK KOMPRESION PLUGIN U BROWSER PROD JE ZAKOMENTARISAN DA RADI ZOPLI ALGORITAM
-                                  JER TRENUTNO NE RADI Zopfli REPO OK? XD
-                                   */
 
 var _react = __webpack_require__(0);
 
@@ -5406,79 +5008,59 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(6);
 
-var _reactRedux = __webpack_require__(4);
+var _reactRedux = __webpack_require__(2);
 
 var _reactRouterDom = __webpack_require__(9);
 
-var _reactHelmet = __webpack_require__(22);
+var _reactHelmet = __webpack_require__(16);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _routing = __webpack_require__(36);
+var _routing = __webpack_require__(29);
 
-var _all_messages = __webpack_require__(70);
+var _all_messages = __webpack_require__(65);
 
 var _all_messages2 = _interopRequireDefault(_all_messages);
 
-__webpack_require__(65);
+__webpack_require__(60);
 
 var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _Header = __webpack_require__(14);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _SectionHeadline = __webpack_require__(16);
-
-var _SectionHeadline2 = _interopRequireDefault(_SectionHeadline);
-
-var _ParalaxContainer = __webpack_require__(15);
-
-var _ParalaxContainer2 = _interopRequireDefault(_ParalaxContainer);
-
-var _FeaturedLeft = __webpack_require__(13);
-
-var _FeaturedLeft2 = _interopRequireDefault(_FeaturedLeft);
-
-var _Footer = __webpack_require__(44);
+var _Footer = __webpack_require__(38);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _MainMenu = __webpack_require__(53);
+var _MainMenu = __webpack_require__(46);
 
 var _MainMenu2 = _interopRequireDefault(_MainMenu);
 
-var _AboutUs = __webpack_require__(39);
+var _AboutUs = __webpack_require__(32);
 
 var _AboutUs2 = _interopRequireDefault(_AboutUs);
 
-var _Gally = __webpack_require__(45);
+var _Gally = __webpack_require__(39);
 
 var _Gally2 = _interopRequireDefault(_Gally);
 
-var _NaruciNesto = __webpack_require__(54);
+var _NaruciNesto = __webpack_require__(47);
 
 var _NaruciNesto2 = _interopRequireDefault(_NaruciNesto);
 
-var _ContactUs = __webpack_require__(42);
+var _ContactUs = __webpack_require__(35);
 
 var _ContactUs2 = _interopRequireDefault(_ContactUs);
 
-var _reactScrollableAnchor = __webpack_require__(26);
-
-var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
-
-var _Admin = __webpack_require__(59);
+var _Admin = __webpack_require__(54);
 
 var _Admin2 = _interopRequireDefault(_Admin);
 
-var _Korpa = __webpack_require__(51);
+var _Korpa = __webpack_require__(44);
 
 var _Korpa2 = _interopRequireDefault(_Korpa);
 
-var _Home = __webpack_require__(50);
+var _Home = __webpack_require__(43);
 
 var _Home2 = _interopRequireDefault(_Home);
 
@@ -5516,144 +5098,6 @@ const WhenNotFound = () => _react2.default.createElement(
   )
 );
 
-// Specify PropTypes if the `match` object, which is injected to props by
-// the <Route> component
-
-
-// Stats pulled from the environment.  This demonstrates how data will
-// change depending where we're running the code (environment vars, etc)
-// and also how we can connect a 'vanilla' React component to an RxJS
-// observable source, and feed eventual values in as properties
-const Stats = () => {
-  const info = [['Environment', "production"]];
-
-  return _react2.default.createElement(
-    'ul',
-    { className: _styles2.default.data },
-    info.map(([key, val]) => _react2.default.createElement(
-      'li',
-      { key: key },
-      key,
-      ': ',
-      _react2.default.createElement(
-        'span',
-        null,
-        val
-      )
-    ))
-  );
-};
-
-// Now, let's create a GraphQL-enabled component...
-
-// ... then, let's create the component and decorate it with the `graphql`
-// HOC that will automatically populate `this.props` with the query data
-// once the GraphQL API request has been completed
-let GraphQLMessage = (_dec = (0, _reactApollo.graphql)(_all_messages2.default), _dec(_class = class GraphQLMessage extends _react2.default.PureComponent {
-
-  render() {
-    const { data } = this.props;
-    const message = data.allMessages && data.allMessages[0].text;
-    const isLoading = data.loading ? 'yes' : 'nope';
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Message from GraphQL server: ',
-        _react2.default.createElement(
-          'em',
-          null,
-          message
-        )
-      ),
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Currently loading?: ',
-        isLoading
-      )
-    );
-  }
-}) || _class);
-
-// Example of CSS, SASS and LESS styles being used together
-
-GraphQLMessage.propTypes = {
-  data: _propTypes2.default.shape({
-    allMessages: _propTypes2.default.arrayOf(_propTypes2.default.shape({
-      text: _propTypes2.default.string.isRequired
-    }))
-  })
-};
-const Styles = () => _react2.default.createElement(
-  'ul',
-  { className: _styles2.default.styleExamples },
-  _react2.default.createElement(
-    'li',
-    { className: _styles2.default.example },
-    'Styled by CSS'
-  ),
-  _react2.default.createElement(
-    'li',
-    { className: sass.example },
-    'Styled by SASS'
-  ),
-  _react2.default.createElement(
-    'li',
-    { className: less.example },
-    'Styled by LESS'
-  )
-);
-
-// Sample component that demonstrates using a part of the Redux store
-// outside of Apollo.  We can import own custom reducers in `kit/lib/redux`
-// and 'listen' to them here
-let ReduxCounter = (_dec2 = (0, _reactRedux.connect)(state => ({ counter: state.counter })), _dec2(_class2 = class ReduxCounter extends _react2.default.PureComponent {
-  constructor(...args) {
-    var _temp;
-
-    return _temp = super(...args), this.triggerIncrement = () => {
-      this.props.dispatch({
-        type: 'INCREMENT_COUNTER'
-      });
-    }, _temp;
-  }
-
-  // Trigger the `INCREMENT_COUNTER` action in Redux, to add 1 to the total
-
-
-  render() {
-    const { count } = this.props.counter;
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'h2',
-        null,
-        'Listening to Redux counter: ',
-        count
-      ),
-      _react2.default.createElement(
-        'button',
-        { onClick: this.triggerIncrement },
-        'Increment'
-      )
-    );
-  }
-}) || _class2);
-
-// Export a simple component that allows clicking on list items to change
-// the route, along with a <Route> 'listener' that will conditionally display
-// the <Page> component based on the route name
-
-ReduxCounter.propTypes = {
-  counter: _propTypes2.default.shape({
-    count: _propTypes2.default.number.isRequired
-  })
-};
-
 exports.default = () => _react2.default.createElement(
   'div',
   null,
@@ -5680,31 +5124,31 @@ exports.default = () => _react2.default.createElement(
 );
 
 /***/ }),
-/* 65 */
+/* 60 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 66 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png";
 
 /***/ }),
-/* 67 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/galerija.5f86cbd0e9660435673d2f9bb09c3423.jpg";
 
 /***/ }),
-/* 68 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b88271218fedb0f07494d373e48f9.jpg";
 
 /***/ }),
-/* 69 */
+/* 64 */
 /***/ (function(module, exports) {
 
 
@@ -5734,7 +5178,7 @@ module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b
 
 
 /***/ }),
-/* 70 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -5757,7 +5201,7 @@ module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b
         }
       )
     }
-  doc.definitions = doc.definitions.concat(unique(__webpack_require__(72).definitions));
+  doc.definitions = doc.definitions.concat(unique(__webpack_require__(67).definitions));
 
 
       module.exports = doc;
@@ -5765,7 +5209,7 @@ module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b
 
 
 /***/ }),
-/* 71 */
+/* 66 */
 /***/ (function(module, exports) {
 
 
@@ -5795,7 +5239,7 @@ module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b
 
 
 /***/ }),
-/* 72 */
+/* 67 */
 /***/ (function(module, exports) {
 
 
@@ -5825,280 +5269,172 @@ module.exports = __webpack_require__.p + "assets/img/sarajevski-cevap-drama.301b
 
 
 /***/ }),
-/* 73 */
-/***/ (function(module, exports) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":244}};
-    doc.loc.source = {"body":"subscription {\n  Porudzbina {\n\t\t\tnode {\n        id,\n        adresa,\n        brojTelefona,\n        opis,\n        stavkePorudzbines {\n          id,\n          kolicina,\n          proizvod {\n            naslov\n          }\n        }\n      }\n    }\n}\n","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
-  
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  
-
-      module.exports = doc;
-    
-
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports) {
-
-
-    var doc = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","variableDefinitions":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"Porudzbina"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"mutation_in"},"value":{"kind":"ListValue","values":[{"kind":"EnumValue","value":"UPDATED"}]}}]}}],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"mutation"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"node"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"adresa"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"brojTelefona"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"opis"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"potvrdjen"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"stavkePorudzbines"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"id"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"kolicina"},"arguments":[],"directives":[],"selectionSet":null},{"kind":"Field","alias":null,"name":{"kind":"Name","value":"proizvod"},"arguments":[],"directives":[],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":null,"name":{"kind":"Name","value":"naslov"},"arguments":[],"directives":[],"selectionSet":null}]}}]}}]}}]}}]}}],"loc":{"start":0,"end":324}};
-    doc.loc.source = {"body":"subscription {\n  Porudzbina(\n    filter: {\n      mutation_in: [UPDATED]\n    }\n  ) {\n    mutation\n    node {\n      id,\n        adresa,\n        brojTelefona,\n        opis,\n        potvrdjen,\n        stavkePorudzbines {\n          id,\n          kolicina,\n          proizvod {\n            naslov\n          }\n        }\n    }\n  }\n}","name":"GraphQL request","locationOffset":{"line":1,"column":1}};
-  
-
-    var names = {};
-    function unique(defs) {
-      return defs.filter(
-        function(def) {
-          if (def.kind !== 'FragmentDefinition') return true;
-          var name = def.name.value
-          if (names[name]) {
-            return false;
-          } else {
-            names[name] = true;
-            return true;
-          }
-        }
-      )
-    }
-  
-
-      module.exports = doc;
-    
-
-
-/***/ }),
-/* 75 */
-/***/ (function(module, exports) {
-
-module.exports = require("aphrodite/no-important");
-
-/***/ }),
-/* 76 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = require("boxen");
 
 /***/ }),
-/* 77 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = require("chalk");
 
 /***/ }),
-/* 78 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
-/* 79 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("google-map-react");
 
 /***/ }),
-/* 80 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("ip");
 
 /***/ }),
-/* 81 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
 
 /***/ }),
-/* 82 */
+/* 74 */
 /***/ (function(module, exports) {
 
 module.exports = require("js-md5");
 
 /***/ }),
-/* 83 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa");
 
 /***/ }),
-/* 84 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-bodyparser");
 
 /***/ }),
-/* 85 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-helmet");
 
 /***/ }),
-/* 86 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-router");
 
 /***/ }),
-/* 87 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("koa-send");
 
 /***/ }),
-/* 88 */
-/***/ (function(module, exports) {
-
-module.exports = require("loadjs");
-
-/***/ }),
-/* 89 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("microseconds");
 
 /***/ }),
-/* 90 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("nodemailer");
 
 /***/ }),
-/* 91 */
+/* 82 */
 /***/ (function(module, exports) {
 
-module.exports = require("password-hash");
+module.exports = require("react-alert");
 
 /***/ }),
-/* 92 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-async-script-loader");
-
-/***/ }),
-/* 93 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 94 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/foursquare");
 
 /***/ }),
-/* 95 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
-/* 96 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/tripadvisor");
 
 /***/ }),
-/* 97 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
-/* 98 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 99 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-images");
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-load-script");
-
-/***/ }),
-/* 101 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-photoswipe");
 
 /***/ }),
-/* 102 */
+/* 90 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 103 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-transitions");
-
-/***/ }),
-/* 104 */
+/* 91 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-window-size");
 
 /***/ }),
-/* 105 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux");
 
 /***/ }),
-/* 106 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 107 */
-/***/ (function(module, exports) {
-
-module.exports = require("regex");
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports) {
-
-module.exports = require("subscriptions-transport-ws");
-
-/***/ }),
-/* 109 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = require("xoauth2");
 
 /***/ }),
-/* 110 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(29);
+module.exports = __webpack_require__(22);
 
 
 /***/ })

@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header.js';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import ParalaxContainer from './ParalaxContainer.js';
 import SectionHeadline from './SectionHeadline';
 import FeaturedLeft from './FeaturedLeft.js';
@@ -24,11 +23,9 @@ export default class Home extends React.Component {
     return (
       <div>
         <Header />
-        <ScrollableAnchor id={'section1'}>
         <div style={{width:'100%', height:'auto'}}>
           <img src="/cevapi.jpg" style={{width: "100%", height: "auto", verticalAlign:'top'}}/>
         </div>
-        </ScrollableAnchor>
         <ParalaxContainer stylee={stylee} />
         <div style={{backgroundImage:"url('/Pozadina2.jpg')"}}  className={css.pozadina2}>
           <SectionHeadline title="Tradicionalni srpski ćevapi u srcu prestonice" innerText="100% domaće juneće meso bez aditiva" />

@@ -8,11 +8,7 @@ import gql from 'graphql-tag';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import PorudzbineSingle from './PorudzbineSingle';
 import { connect } from 'react-redux';
-import PorudzbinaAdd from '../subscriptions/PorudzbinaAdd.gql';
-import PorudzbinaUpdate from '../subscriptions/PorudzbinaUpdate.gql';
 import Notification from 'react-web-notification';
-
-
 @connect(state => ({ deleted: state.deleted }))
 @graphql(allPorudzbinas)
 export default class Porudzbine extends React.Component {
@@ -26,15 +22,11 @@ export default class Porudzbine extends React.Component {
       title: ''
     }
   };
-
-
-
   componentDidMount() {
     setInterval(() => {
       this.props.data.refetch();
     }, 10000);
   }
-
   componentWillReceiveProps(newProps) {
     if(newProps.deleted) {
       this.props.dispatch({
@@ -61,7 +53,7 @@ export default class Porudzbine extends React.Component {
       ignore: false
     });
   }
-  
+
   handlePermissionDenied(){
     console.log('Permission Denied');
     this.setState({
@@ -82,12 +74,12 @@ export default class Porudzbine extends React.Component {
 
   handleNotificationOnError(e, tag){
     console.log(e, 'Notification error tag:' + tag);
-  
+
   }
 
   handleNotificationOnClose(e, tag){
     console.log(e, 'Notification closed tag:' + tag);
-  
+
   }
 
   handleNotificationOnShow(e, tag){
@@ -95,19 +87,19 @@ export default class Porudzbine extends React.Component {
   }
 
   handleButtonClick(titl) {
-    
+
         if(this.state.ignore) {
           return;
         }
-    
+
         const now = Date.now();
-    
+
         const title = 'React-Web-Notification' + now;
         const body = 'Proverite admin panel!';
         const tag = now;
         const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
         // const icon = 'http://localhost:3000/Notifications_button_24.png';
-    
+
         // Available options
         // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
         const options = {

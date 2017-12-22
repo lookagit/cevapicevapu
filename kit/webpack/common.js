@@ -24,10 +24,6 @@ export const css = {
       ext: 's(c|a)ss',
       use: ['resolve-url-loader', 'sass-loader?sourceMap'],
     },
-    {
-      ext: 'less',
-      use: ['less-loader'],
-    },
   ],
 
   // Defaults to use with `css-loader` in all environments

@@ -6,8 +6,6 @@ import { createNetworkInterface, ApolloClient } from 'react-apollo';
 
 // Custom configuration/settings
 import { APOLLO } from 'config/project';
-import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws';
-
 
 
 // Create a new Apollo network interface, to point to our API server.
