@@ -8,7 +8,7 @@ export default class ContentBoxes extends React.Component {
   }
   render() {
     return(
-      <div style={{backgroundImage:"url('/Pozadina2.jpg')",backgroundSize:'cover'}}>
+      <div style={{backgroundImage:"url('https://res.cloudinary.com/drama/image/upload/c_scale,q_39,w_1117/v1513947423/Pozadina2_eqdfqq.jpg')",backgroundSize:'cover'}}>
       <Grid>
         <Row className={css.rowTwo} style={{padding: '0 0 60px 0'}}>
           <Col xs={12} sm={8} smOffset={2} >
@@ -23,10 +23,10 @@ export default class ContentBoxes extends React.Component {
             </div>
           </Col>
           <Col xs={12} sm={6}>
-          <img src="/drama-cevapi-napolju.jpg" style={{width: "100%", height: "100%"}}/>
+          <img src="https://res.cloudinary.com/drama/image/upload/c_scale,q_65,w_414/v1513959811/drama-cevapi-napolju_dkrhf5.jpg" style={{width: "100%", height: "100%"}}/>
           </Col>
           <Col xs={12} sm={6}>
-          <img src="/drama-cevap-specijal-basta.jpg" style={{width: "100%", height: "100%"}}/>
+          <img src="https://res.cloudinary.com/drama/image/upload/c_scale,q_47,w_421/v1513959944/drama-cevap-specijal-basta_ejnzyt.jpg" style={{width: "100%", height: "100%"}}/>
           </Col>
           <Col xs={12}>
             <h2 style={{textAlign: "center"}}>VAŠ IZBOR</h2>

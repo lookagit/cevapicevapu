@@ -2,7 +2,6 @@ import React from 'react';
 import css from './styles.css'
 import TopHero from './TopHero.js';
 import ContentBoxes from './ContentBoxes.js';
-import bgImg from './images/sarajevski-cevap-drama.jpg';
 export default class AboutUs extends React.Component {
   componentDidMount() {
     if(typeof window !== 'undefined') {
@@ -12,7 +11,7 @@ export default class AboutUs extends React.Component {
   render() {
     return(
       <div>
-        <TopHero title="Kako je nastala DRAMA" subtitle=" " bgImage={{backgroundImage: 'url("/sarajevski-cevap-drama-cover.jpg")'}} />
+        <TopHero title="Kako je nastala DRAMA" subtitle=" " bgImage={{backgroundImage: 'url("https://res.cloudinary.com/drama/image/upload/c_scale,w_1918/v1513949723/sarajevski-cevap-drama-cover_juhdlz.jpg")'}} />
         <ContentBoxes />
       </div>
     );

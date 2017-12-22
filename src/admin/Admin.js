@@ -107,7 +107,7 @@ export default class Admin extends React.Component {
     }
     return (
       <div>
-        <TopHero title="ADMIN" subtitle="Kontrolni Panel"  bgImage={{backgroundImage: 'url("/admin.jpg")'}} />
+        <TopHero title="ADMIN" subtitle="Kontrolni Panel"  bgImage={{backgroundImage: 'url("https://res.cloudinary.com/drama/image/upload/q_53/v1513960509/admin_et97zo.jpg")'}} />
         {putinput}
       </div>
     );

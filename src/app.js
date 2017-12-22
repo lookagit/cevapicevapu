@@ -21,14 +21,6 @@ import ContactUs from './ContactUs.js'
 import Admir from './admin/Admin';
 import Korpa from './Korpa';
 import Homes from './Home';
-const stylee = {
-  backgroundImage : 'url("/slika-za-parallax-drama-rostilj.jpg")',
-  height: '300px',
-}
-const sndlax = {
-  backgroundImage : 'url("/parallax-nova-drama-rostilj.jpg")',
-  height: '350px',
-}
 
 const Home = () => (
   <Homes />

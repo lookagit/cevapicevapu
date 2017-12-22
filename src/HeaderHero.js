@@ -8,7 +8,7 @@ class HeaderHero extends React.Component {
   render() {
     return (
       <div>
-       <div className={css.heroHomepage} style={{backgroundImage: 'url("/kover-drama.jpg")'}}>
+       <div className={css.heroHomepage} style={{backgroundImage: 'url("https://res.cloudinary.com/drama/image/upload/c_scale,h_909,q_40/v1513947397/kover-drama_rullwx.jpg")'}}>
        </div>
       </div>
     );

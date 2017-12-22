@@ -15,7 +15,7 @@ class FeaturedLeft extends React.Component {
     return (
       <div style={{display: "flex"}}>
         <div className={css.featured}>
-          <div className={css.featuredLeftImage} style={{backgroundImage: "url('pleska.jpg')"}}></div>
+          <div className={css.featuredLeftImage} style={{backgroundImage: "url('https://res.cloudinary.com/drama/image/upload/c_scale,q_52,w_395/v1513960228/pleska_gjm992.jpg')"}}></div>
           <div className={css.featuredLeftText}>
           <div className={css.featuredTrick}>
           {

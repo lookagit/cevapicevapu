@@ -131,8 +131,8 @@ export default class ContactUs extends React.Component{
   render(){
     return(
       <div>
-        <TopHero title="KONTAKT" subtitle=" " bgImage={{backgroundImage: 'url("/kontakt.jpg")'}} />
-        <div style={{backgroundImage:'url("/pozadinadrvo.jpg")'}}>
+        <TopHero title="KONTAKT" subtitle=" " bgImage={{backgroundImage: 'url("https://res.cloudinary.com/drama/image/upload/c_fit,h_682,q_60,w_1286/v1513960101/kontakt_kmcxwz.jpg")'}} />
+        <div style={{backgroundImage:'url("https://res.cloudinary.com/drama/image/upload/c_scale,q_39,w_1117/v1513947423/Pozadina2_eqdfqq.jpg")'}}>
         <Grid>
           <Row className={css.contactRowOne}>
             <Col className={css.contactColWidth} xsOffset={1} md={10} smOffset={0} mdOffset={1}>

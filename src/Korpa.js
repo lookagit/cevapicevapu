@@ -30,7 +30,7 @@ export default class Korpa extends Component {
   render() {
     return(
       <div>
-        <TopHero title="Korpa" subtitle="Naručite nešto kod nas skroz dobro" bgImage={{backgroundImage: 'url("/dvecevape.jpg")'}} />
+        <TopHero title="Korpa" subtitle="Naručite nešto kod nas skroz dobro" bgImage={{backgroundImage: 'url("https://res.cloudinary.com/drama/image/upload/c_scale,w_1388/v1513960303/dvecevape_rpa7mc.jpg")'}} />
         <div className={scss.korpa}>
           <Grid style={{width: '100%'}}>
             <Row style={{width: '100%'}} className={scss.korpaItems}>
