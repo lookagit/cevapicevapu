@@ -197,6 +197,7 @@ export default class PorudzbineSingle extends React.Component {
   }
 
   render () {
+    console.log("PORUDZBINAAAA ", this.props.porudzbina)
     let datum = Date.parse(this.props.porudzbina.createdAt);
     let notifyColor = {}
     if(this.props.porudzbina.potvrdjen == 'da') {
@@ -207,7 +208,9 @@ export default class PorudzbineSingle extends React.Component {
     return(
       <div className={scss.proizvodItem}  style={notifyColor}>
       <div>
+        <h4>Ime i prezime: {this.props.porudzbina.imeIPrezime}</h4>
         <h4>Adresa: {this.props.porudzbina.adresa}</h4>
+        <h4>Broj stana: {this.props.porudzbina.brojStana}</h4>
         <h4>Broj Telefona: {this.props.porudzbina.brojTelefona}</h4>
         {this.props.porudzbina.uredjaj != '' ? <h4>Poslato sa telefona</h4> : ''}
         {this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => {

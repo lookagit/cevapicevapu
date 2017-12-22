@@ -12,8 +12,8 @@ import PovratnoVreme from './PovratnoVreme.js';
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 @graphql(gql`
-  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!, $uredjaj: String!) {
-    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis, uredjaj: $uredjaj) {
+  mutation createPorudzbina($adresa: String!, $brojTelefona: Int!, $opis: String!, $uredjaj: String!, $brojStana: String, $imeIPrezime: String) {
+    createPorudzbina (adresa: $adresa, brojTelefona: $brojTelefona, opis: $opis, uredjaj: $uredjaj, brojStana: $brojStana, imeIPrezime: $imeIPrezime) {
       id
     },
   }`,
@@ -66,15 +66,25 @@ export default class KorpaPorudzbina extends React.Component {
       porudzbinaId: '123',
       poslato: false,
       opis: "Bez Opisa",
+      imeIPrezime: '',
+      brojStana: '',
       id: 'NaN',
       uredjaj: ''
     }
   }
 
-  
+
 
   izmeniAdresu = (event) => {
     this.setState({adresa: event.target.value});
+  }
+
+  izmeniBrojStana = (event) => {
+    this.setState({brojStana: event.target.value});
+  }
+
+  izmeniImeIprezime = (event) => {
+    this.setState({imeIPrezime: event.target.value});
   }
 
   izmeniBroj = (event) => {
@@ -104,7 +114,9 @@ export default class KorpaPorudzbina extends React.Component {
         adresa: this.state.adresa,
         brojTelefona: this.state.brojTelefona,
         opis: this.state.opis,
-        uredjaj: this.state.uredjaj
+        uredjaj: this.state.uredjaj,
+        brojStana: this.state.brojStana,
+        imeIPrezime: this.state.imeIPrezime,
       }
     });
 
@@ -175,7 +187,7 @@ export default class KorpaPorudzbina extends React.Component {
   }
 
   render() {
-    
+
 
     let forma;
     if(this.state.poslato) {
@@ -188,7 +200,13 @@ export default class KorpaPorudzbina extends React.Component {
         forma = <form className={scss.korpaForm}>
           <PorudzbinaConfirm poslato={this.state.poslato} />
           <p>
+            <input type="text" onChange={this.izmeniImeIprezime} placeholder="Vasa Ime:" />
+          </p>
+          <p>
             <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
+          </p>
+          <p>
+            <input type="text" onChange={this.izmeniBrojStana} placeholder="Broj Stana" />
           </p>
           <p>
             <input type="text" onChange={this.izmeniBroj} placeholder="Broj Telefona" />

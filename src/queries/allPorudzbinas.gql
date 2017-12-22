@@ -3,6 +3,8 @@ query AllPorudzbinas {
     id,
     adresa,
     vreme,
+    brojStana,
+    imeIPrezime,
     opis,
     brojTelefona,
     createdAt,
