@@ -12,7 +12,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import BlinkDrama from './BlinkDrama.js';
 import { NotFound, Redirect } from 'kit/lib/routing';
 import allMessages from 'src/queries/all_messages.gql';
 import './styles.global.css';
