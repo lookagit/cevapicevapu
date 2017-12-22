@@ -56,59 +56,31 @@ export default class PorudzbineSingle extends React.Component {
   };
 
   handlePermissionGranted(){
-    console.log('Permission Granted');
     this.setState({
       ignore: false
     });
   }
 
   handlePermissionDenied(){
-    console.log('Permission Denied');
     this.setState({
       ignore: true
     });
   }
 
   handleNotSupported(){
-    console.log('Web Notification not Supported');
     this.setState({
       ignore: true
     });
   }
-
-  handleNotificationOnClick(e, tag){
-    console.log(e, 'Notification clicked tag:' + tag);
-  }
-
-  handleNotificationOnError(e, tag){
-    console.log(e, 'Notification error tag:' + tag);
-
-  }
-
-  handleNotificationOnClose(e, tag){
-
-  }
-
-  handleNotificationOnShow(e, tag){
-    console.log(e, 'Notification shown tag:' + tag);
-  }
-
   handleButtonClick(titl) {
-
         if(this.state.ignore) {
           return;
         }
-
         const now = Date.now();
-
         const title = 'React-Web-Notification' + now;
         const body = 'Proverite admin panel!';
         const tag = now;
         const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
-        // const icon = 'http://localhost:3000/Notifications_button_24.png';
-
-        // Available options
-        // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
         const options = {
           tag: tag,
           body: body,
@@ -120,7 +92,6 @@ export default class PorudzbineSingle extends React.Component {
           title: titl,
           options: options
         });
-        console.log('BRAATE');
     }
 
 
@@ -193,11 +164,9 @@ export default class PorudzbineSingle extends React.Component {
     if(prevProps.porudzbina.potvrdjen == null && this.props.porudzbina.potvrdjen == 'da'){
       this.handleButtonClick('Porudzbina je potvrdjena!');
     }
-    console.log(this.state.title)
   }
 
   render () {
-    console.log("PORUDZBINAAAA ", this.props.porudzbina)
     let datum = Date.parse(this.props.porudzbina.createdAt);
     let notifyColor = {}
     if(this.props.porudzbina.potvrdjen == 'da') {
@@ -214,7 +183,6 @@ export default class PorudzbineSingle extends React.Component {
         <h4>Broj Telefona: {this.props.porudzbina.brojTelefona}</h4>
         {this.props.porudzbina.uredjaj != '' ? <h4>Poslato sa telefona</h4> : ''}
         {this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => {
-          console.log("OVO JE ITEM ", item);
           return (
             <div style={{margin: '3px',padding: '5px', backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid #fff'}}>
               <h4>Proizvod: {item.proizvod.naslov}</h4>

@@ -49,7 +49,6 @@ export default class PovratnoVreme extends React.PureComponent {
 
   ovoJeReFetch = async() => {
     this.setState({loading: 'no'});
-    console.log('POZVANA JEEE');
     await this.props.data.refetch({
       id: this.props.id,
     });
@@ -74,7 +73,6 @@ export default class PovratnoVreme extends React.PureComponent {
               podaci
           }),
       })
-    console.log('Potvrdjeno');
   }
 
   dugmeOtkazi = async() => {
@@ -87,7 +85,6 @@ export default class PovratnoVreme extends React.PureComponent {
     this.setState({
       answered: 'ne'
     });
-    console.log('otkazano');
   }
 
   componentDidMount () {
@@ -101,7 +98,6 @@ export default class PovratnoVreme extends React.PureComponent {
   render() {
     const { data } = this.props;
     const vreme = data.Porudzbina && data.Porudzbina.vreme;
-    console.log(this.props);
     if(vreme == null) {
       return(
         <h1>Molimo vas sačekajte odgovor!</h1>

@@ -11,7 +11,6 @@ class FeaturedLeft extends React.Component {
   }
 
   render() {
-    console.log("AHAAAA ", this.props.windowWidth, this.props.windowHeight);
     return (
       <div style={{display: "flex"}}>
         <div className={css.featured}>

@@ -1737,7 +1737,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
             } })
         }).then(function (res) {
           return res.json();
-        }).then(data => console.log(data));
+        });
       }
     };
 
@@ -2062,7 +2062,6 @@ let FeaturedLeft = (_dec = (0, _reactRedux.connect)(state => ({ reloader: state.
   }
 
   render() {
-    console.log("AHAAAA ", this.props.windowWidth, this.props.windowHeight);
     return _react2.default.createElement(
       'div',
       { style: { display: "flex" } },
@@ -2934,7 +2933,6 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
         uredjaj: 'da'
       });
     }
-    console.log(this.state.uredjaj);
   }
 
   render() {
@@ -2975,12 +2973,12 @@ let KorpaPorudzbina = (_dec = (0, _reactRedux.connect)(state => ({ counter: stat
           _react2.default.createElement(
             'p',
             null,
-            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniImeIprezime, placeholder: 'Vasa Ime:' })
+            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniImeIprezime, placeholder: 'Va\u0161e Ime:' })
           ),
           _react2.default.createElement(
             'p',
             null,
-            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Vasa Adresa:' })
+            _react2.default.createElement('input', { type: 'text', onChange: this.izmeniAdresu, placeholder: 'Va\u0161a Adresa:' })
           ),
           _react2.default.createElement(
             'p',
@@ -3430,7 +3428,6 @@ mutation updatePorudzbina($id: ID! $potvrdjen: String!) {
 
     this.ovoJeReFetch = async () => {
       this.setState({ loading: 'no' });
-      console.log('POZVANA JEEE');
       await this.props.data.refetch({
         id: this.props.id
       });
@@ -3455,7 +3452,6 @@ mutation updatePorudzbina($id: ID! $potvrdjen: String!) {
           podaci
         })
       });
-      console.log('Potvrdjeno');
     };
 
     this.dugmeOtkazi = async () => {
@@ -3468,7 +3464,6 @@ mutation updatePorudzbina($id: ID! $potvrdjen: String!) {
       this.setState({
         answered: 'ne'
       });
-      console.log('otkazano');
     };
 
     this.state = {
@@ -3495,7 +3490,6 @@ mutation updatePorudzbina($id: ID! $potvrdjen: String!) {
   render() {
     const { data } = this.props;
     const vreme = data.Porudzbina && data.Porudzbina.vreme;
-    console.log(this.props);
     if (vreme == null) {
       return _react2.default.createElement(
         'h1',
@@ -3740,7 +3734,6 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
   }
 
   render() {
-    console.log("STATE ", this.state);
     let ukupno = "";
     if (this.state.kolicina !== 0 || this.state.kolicina !== '' || this.state.kolicina !== '0' || this.props.proiz) {
       ukupno = parseInt(this.state.kolicina) * parseInt(this.props.proiz.cena);
@@ -3928,7 +3921,6 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
                   _react2.default.createElement('input', { type: 'checkbox', onClick: () => {
                       if (this.state.prilozi.includes('kupus')) {
                         let a = this.state.prilozi.filter(item => item !== 'kupus');
-                        console.log("ja sam a", a);
                         this.setState({
                           prilozi: a
                         });
@@ -4440,58 +4432,31 @@ let Porudzbine = (_dec = (0, _reactRedux.connect)(state => ({ deleted: state.del
   }
 
   handlePermissionGranted() {
-    console.log('Permission Granted');
     this.setState({
       ignore: false
     });
   }
 
   handlePermissionDenied() {
-    console.log('Permission Denied');
     this.setState({
       ignore: true
     });
   }
 
   handleNotSupported() {
-    console.log('Web Notification not Supported');
     this.setState({
       ignore: true
     });
   }
-
-  handleNotificationOnClick(e, tag) {
-    console.log(e, 'Notification clicked tag:' + tag);
-  }
-
-  handleNotificationOnError(e, tag) {
-    console.log(e, 'Notification error tag:' + tag);
-  }
-
-  handleNotificationOnClose(e, tag) {
-    console.log(e, 'Notification closed tag:' + tag);
-  }
-
-  handleNotificationOnShow(e, tag) {
-    console.log(e, 'Notification shown tag:' + tag);
-  }
-
   handleButtonClick(titl) {
-
     if (this.state.ignore) {
       return;
     }
-
     const now = Date.now();
-
     const title = 'React-Web-Notification' + now;
     const body = 'Proverite admin panel!';
     const tag = now;
     const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
-    // const icon = 'http://localhost:3000/Notifications_button_24.png';
-
-    // Available options
-    // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
     const options = {
       tag: tag,
       body: body,
@@ -4689,56 +4654,31 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
   }
 
   handlePermissionGranted() {
-    console.log('Permission Granted');
     this.setState({
       ignore: false
     });
   }
 
   handlePermissionDenied() {
-    console.log('Permission Denied');
     this.setState({
       ignore: true
     });
   }
 
   handleNotSupported() {
-    console.log('Web Notification not Supported');
     this.setState({
       ignore: true
     });
   }
-
-  handleNotificationOnClick(e, tag) {
-    console.log(e, 'Notification clicked tag:' + tag);
-  }
-
-  handleNotificationOnError(e, tag) {
-    console.log(e, 'Notification error tag:' + tag);
-  }
-
-  handleNotificationOnClose(e, tag) {}
-
-  handleNotificationOnShow(e, tag) {
-    console.log(e, 'Notification shown tag:' + tag);
-  }
-
   handleButtonClick(titl) {
-
     if (this.state.ignore) {
       return;
     }
-
     const now = Date.now();
-
     const title = 'React-Web-Notification' + now;
     const body = 'Proverite admin panel!';
     const tag = now;
     const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
-    // const icon = 'http://localhost:3000/Notifications_button_24.png';
-
-    // Available options
-    // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
     const options = {
       tag: tag,
       body: body,
@@ -4750,7 +4690,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
       title: titl,
       options: options
     });
-    console.log('BRAATE');
   }
 
   componentDidMount() {
@@ -4763,11 +4702,9 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
     if (prevProps.porudzbina.potvrdjen == null && this.props.porudzbina.potvrdjen == 'da') {
       this.handleButtonClick('Porudzbina je potvrdjena!');
     }
-    console.log(this.state.title);
   }
 
   render() {
-    console.log("PORUDZBINAAAA ", this.props.porudzbina);
     let datum = Date.parse(this.props.porudzbina.createdAt);
     let notifyColor = {};
     if (this.props.porudzbina.potvrdjen == 'da') {
@@ -4811,7 +4748,6 @@ let PorudzbineSingle = (_dec = (0, _reactRedux.connect)(state => ({ deleted: sta
           'Poslato sa telefona'
         ) : '',
         this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => {
-          console.log("OVO JE ITEM ", item);
           return _react2.default.createElement(
             'div',
             { style: { margin: '3px', padding: '5px', backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid #fff' } },

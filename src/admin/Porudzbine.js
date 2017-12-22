@@ -48,60 +48,31 @@ export default class Porudzbine extends React.Component {
   }
 
   handlePermissionGranted(){
-    console.log('Permission Granted');
     this.setState({
       ignore: false
     });
   }
 
   handlePermissionDenied(){
-    console.log('Permission Denied');
     this.setState({
       ignore: true
     });
   }
 
   handleNotSupported(){
-    console.log('Web Notification not Supported');
     this.setState({
       ignore: true
     });
   }
-
-  handleNotificationOnClick(e, tag){
-    console.log(e, 'Notification clicked tag:' + tag);
-  }
-
-  handleNotificationOnError(e, tag){
-    console.log(e, 'Notification error tag:' + tag);
-
-  }
-
-  handleNotificationOnClose(e, tag){
-    console.log(e, 'Notification closed tag:' + tag);
-
-  }
-
-  handleNotificationOnShow(e, tag){
-    console.log(e, 'Notification shown tag:' + tag);
-  }
-
   handleButtonClick(titl) {
-
         if(this.state.ignore) {
           return;
         }
-
         const now = Date.now();
-
         const title = 'React-Web-Notification' + now;
         const body = 'Proverite admin panel!';
         const tag = now;
         const icon = 'http://georgeosddev.github.io/react-web-notification/example/Notifications_button_24.png';
-        // const icon = 'http://localhost:3000/Notifications_button_24.png';
-
-        // Available options
-        // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
         const options = {
           tag: tag,
           body: body,

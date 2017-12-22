@@ -73,7 +73,6 @@ export default class ProizvodItem extends Component {
     }
   }
   render () {
-    console.log("STATE ", this.state);
     let ukupno = "";
     if(this.state.kolicina !== 0 || this.state.kolicina !== '' || this.state.kolicina !== '0' || this.props.proiz) {
       ukupno = parseInt(this.state.kolicina) * parseInt(this.props.proiz.cena);
@@ -188,7 +187,6 @@ export default class ProizvodItem extends Component {
                     <input type='checkbox' onClick={() => {
                       if(this.state.prilozi.includes('kupus')) {
                         let a = this.state.prilozi.filter(item => item !== 'kupus');
-                        console.log("ja sam a", a);
                         this.setState({
                           prilozi: a,
                         })

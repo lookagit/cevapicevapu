@@ -183,7 +183,6 @@ export default class KorpaPorudzbina extends React.Component {
         uredjaj:'da'
       })
     }
-    console.log(this.state.uredjaj)
   }
 
   render() {
@@ -200,10 +199,10 @@ export default class KorpaPorudzbina extends React.Component {
         forma = <form className={scss.korpaForm}>
           <PorudzbinaConfirm poslato={this.state.poslato} />
           <p>
-            <input type="text" onChange={this.izmeniImeIprezime} placeholder="Vase Ime:" />
+            <input type="text" onChange={this.izmeniImeIprezime} placeholder="Vaše Ime:" />
           </p>
           <p>
-            <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
+            <input type="text" onChange={this.izmeniAdresu} placeholder="Vaša Adresa:" />
           </p>
           <p>
             <input type="text" onChange={this.izmeniBrojStana} placeholder="Broj Stana" />

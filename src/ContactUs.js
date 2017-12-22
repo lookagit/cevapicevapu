@@ -125,7 +125,6 @@ export default class ContactUs extends React.Component{
         }}),
       })
       .then(function(res){ return res.json()})
-      .then( data => console.log(data))
     }
   }
   render(){
