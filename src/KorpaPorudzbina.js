@@ -200,7 +200,7 @@ export default class KorpaPorudzbina extends React.Component {
         forma = <form className={scss.korpaForm}>
           <PorudzbinaConfirm poslato={this.state.poslato} />
           <p>
-            <input type="text" onChange={this.izmeniImeIprezime} placeholder="Vasa Ime:" />
+            <input type="text" onChange={this.izmeniImeIprezime} placeholder="Vase Ime:" />
           </p>
           <p>
             <input type="text" onChange={this.izmeniAdresu} placeholder="Vasa Adresa:" />
