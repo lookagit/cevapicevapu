@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import css from './styles.css';
-import logo from './logodrama.png';
 import menuIcon from './hamburger.png';
+import CartBucketMini from './CartBucketMini.js';
 import CartBucket from './CartBucket.js';
 class MainMenu extends React.Component {
   constructor(props) {
@@ -45,13 +45,12 @@ class MainMenu extends React.Component {
     return (
       <div className={css.hello}>
         <div style={this.state.blinker} className={css.blinkDrama}>
-          <img src={logo} />
+          <img src={require("../static/logodrama.png")} />
         </div>
-        <Link to="/" ><img src={logo} alt="Drama logo" className={css.logo} /></Link>
-        <div
-          className={css.mobileIcon}
-          onClick={this.opener} >
-          <img src={menuIcon} alt="menu" height="35px" width="45px"/>
+        <Link to="/" ><img src={require("../static/logodrama.png")} alt="Drama logo" className={css.logo} /></Link>
+        <div className={css.mobileIcon} >
+          <img onClick={this.opener} src={menuIcon} alt="menu" height="35px" width="45px"/>
+          <div className={css.miniBucket}style={{position: 'absolute',right: "55px", top: 0,}}><Link to="/korpa"><CartBucketMini /></Link></div>
         </div>
         <ul><li><Link className={css.cartIcon} to="/korpa"><CartBucket /></Link></li></ul>
         <ul style={this.state.stylee}>

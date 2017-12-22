@@ -1,7 +1,6 @@
 import React from 'react';
 import css from './styles.css'
 import TopHero from './TopHero.js';
-import SerbianBurger from './serbianburger.jpg';
 import ContentBoxes from './ContentBoxes.js';
 import bgImg from './images/sarajevski-cevap-drama.jpg';
 import passwordHash from 'password-hash';

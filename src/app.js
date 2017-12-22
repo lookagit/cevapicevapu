@@ -20,12 +20,10 @@ import css from './styles.css';
 import Header from './Header.js';
 import SectionHeadline from './SectionHeadline';
 import ParalaxContainer from './ParalaxContainer.js';
-import ThreeGallery from './ThreeGallery.js';
 import FeaturedLeft from './FeaturedLeft.js';
 import Footer from './Footer.js';
 import MainMenu from './MainMenu.js';
 import AboutUs from './AboutUs.js';
-import AlaCart from './AlaCart.js';
 import Gally from './Gally.js';
 import NaruciNesto from './NaruciNesto';
 import ContactUs from './ContactUs.js'
@@ -57,9 +55,6 @@ const Contact = ({ match }) => (
   <ContactUs />
 );
 
-const Jelovnik = ({ match }) => (
-  <AlaCart />
-);
 
 const Galerija = ({ match }) => (
   <Gally />
@@ -184,7 +179,6 @@ export default () => (
     <MainMenu />
     <Switch onUpdate={() => window.scrollTo(0, 0)} ignoreScrollBehavior>
       <Route exact path="/" component={Home} />
-      <Route path="/page/jelovnik" component={Jelovnik} />
       <Route path="/page/about" component={About} />
       <Route path="/page/galerija" component={Galerija} />
       <Route path="/page/contact" component={Contact} />

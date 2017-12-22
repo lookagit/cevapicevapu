@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import bgImg from './o-nama-slika.jpg';
 import TopHero from './TopHero';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

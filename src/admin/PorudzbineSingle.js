@@ -211,12 +211,17 @@ export default class PorudzbineSingle extends React.Component {
         <h4>Adresa: {this.props.porudzbina.adresa}</h4>
         <h4>Broj Telefona: {this.props.porudzbina.brojTelefona}</h4>
         {this.props.porudzbina.uredjaj != '' ? <h4>Poslato sa telefona</h4> : ''}
-        {this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => (
-          <div>
-            <h4>Proizvod: {item.proizvod.naslov}</h4>
-            <h4>Kolicina: {item.kolicina}</h4>
-          </div>
-        ))}
+        {this.props.porudzbina.stavkePorudzbines && this.props.porudzbina.stavkePorudzbines.map((item, index) => {
+          console.log("OVO JE ITEM ", item);
+          return (
+            <div style={{margin: '3px',padding: '5px', backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid #fff'}}>
+              <h4>Proizvod: {item.proizvod.naslov}</h4>
+              <h4>Kolicina: {item.kolicina}</h4>
+              <h5>Prilozi: {item.prilozi}</h5>
+              <h5>U somunu: {item.uSomunu ? "Da" : "Ne"}</h5>
+            </div>
+          )
+        })}
         <h4 style={{marginBottom: '0px'}}>Vreme pripremanja porudzbine (minuti):</h4>
         <input type="number" onChange={this.izmeniVreme} placeholder={this.props.porudzbina.vreme} />
         <button style={stylee.buttonStyle} onClick={() => {this.nekaFunkcija(this.props.porudzbina)}}>Pošalji</button>

@@ -22,8 +22,8 @@ import PovratnoVreme from './PovratnoVreme.js';
   }
 )
 @graphql(gql`
-  mutation createStavkePorudzbine($kolicina: Int!) {
-    createStavkePorudzbine (kolicina: $kolicina) {
+  mutation createStavkePorudzbine($kolicina: Int!, $prilozi: String!, $uSomunu: Boolean!) {
+    createStavkePorudzbine (kolicina: $kolicina, prilozi: $prilozi, uSomunu: $uSomunu) {
       id
     }
   }`,
@@ -117,6 +117,8 @@ export default class KorpaPorudzbina extends React.Component {
           pravim.stavku = await this.props.createStavkePorudzbine({
             variables: {
               kolicina: parseInt(stavka.kolicina),
+              prilozi: stavka.prilozi,
+              uSomunu: stavka.uSomunu,
             }
           });
           pravim.vezuPorudzbine = await this.props.addToPorudzbinaOnStavkePorudzbine({

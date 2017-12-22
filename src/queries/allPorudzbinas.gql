@@ -11,8 +11,11 @@ query AllPorudzbinas {
     stavkePorudzbines{
       id,
       kolicina,
+      prilozi,
+      uSomunu,
       proizvod {
         naslov,
+
       }
 
     }

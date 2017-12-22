@@ -1,6 +1,5 @@
 import React from 'react';
 import css from './styles.css';
-import logo from './logodrama.png';
 
 class BlinkDrama extends React.Component {
     constructor(props) {

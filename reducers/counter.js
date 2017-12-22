@@ -70,6 +70,7 @@ export default {
       if(action.type === 'ADD_ORDER') {
         const newState = [...state];
         newState.push(action.orders);
+        console.log("JA SAM NOCI STATE ", newState);
         return newState;
       } else if (action.type === 'REMOVE_ORDER') {
         state = [];

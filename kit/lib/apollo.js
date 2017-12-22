@@ -25,16 +25,9 @@ const networkInterface = createNetworkInterface({
 
 function createClient(opt = {}) {
   if(process.browser) {
-    const wsClient = new SubscriptionClient(`wss://subscriptions.graph.cool/v1/cj5s24jocv1ft0122c36eji5n`, {
-      reconnect: true
-    });
-    const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(
-      networkInterface,
-      wsClient
-    );
     return new ApolloClient(Object.assign({
       reduxRootSelector: state => state.apollo,
-      networkInterface: networkInterfaceWithSubscriptions,
+      networkInterface,
     }, opt));
   } else {
     return new ApolloClient(Object.assign({

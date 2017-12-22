@@ -3,7 +3,6 @@ import Header from './Header.js';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import ParalaxContainer from './ParalaxContainer.js';
 import SectionHeadline from './SectionHeadline';
-import ThreeGallery from './ThreeGallery.js';
 import FeaturedLeft from './FeaturedLeft.js';
 import css from './styles.css';
 const stylee = {
