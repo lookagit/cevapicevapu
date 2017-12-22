@@ -9,7 +9,6 @@
 /* Define some variables we might want to use elsewhere */
 
 html, body {
-  height: 100%;
   margin:0;
   font-family: 'Ubuntu';
   overflow-x: hidden;
@@ -18,9 +17,7 @@ html, body {
 p, h1, h2, h3, h4, h5, span, a {
   font-family: 'Ubuntu';
 }
-#main {
-  height: 100%;
-}
+
 :root {
   --fg: #0b2296;
   --bg: #00bcd4;
@@ -186,7 +183,7 @@ right: 15px;
 
 
 .hello {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

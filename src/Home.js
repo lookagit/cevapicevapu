@@ -15,8 +15,8 @@ const sndlax = {
 
 export default class Home extends React.Component {
   componentDidMount() {
-    if(typeof window !== 'undefined') {
-      window.scroll(0,0);
+    if(typeof window !== 'undefined')  {
+      window.scrollTo(0,0);
     }
   }
   render () {

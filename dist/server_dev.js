@@ -77,7 +77,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = {
-	"main": "main-vv2718wGHLD6lThS8mcwI",
 	"linkFooter": "linkFooter-1q4bO9K2r8_AM0vXma5jzK",
 	"boxes": "boxes-1pHjUY6vdRXMN8sL9tHpAn",
 	"hidees": "hidees-67d_7--gp7MlP2UfiRH_V",
@@ -1863,7 +1862,7 @@ let ContactUs = class ContactUs extends _react2.default.Component {
                   { xs: 12, sm: 4, md: 4, lg: 4, className: _styles2.default.contactColOne },
                   _react2.default.createElement(
                     'h4',
-                    { styles: 'margin:0;' },
+                    null,
                     'INFORMACIJE'
                   ),
                   _react2.default.createElement(
@@ -2398,9 +2397,7 @@ let Gally = class Gally extends _react2.default.Component {
   }
 
   componentDidMount() {
-    if (typeof window !== 'undefined') {
-      window.scroll(0, 0);
-    }
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
   }
 
   render() {
@@ -2608,7 +2605,7 @@ const sndlax = {
 let Home = class Home extends _react2.default.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      window.scroll(0, 0);
+      window.scrollTo(0, 0);
     }
   }
   render() {
@@ -2695,9 +2692,7 @@ let Korpa = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })
   }
 
   componentDidMount() {
-    if (typeof window !== 'undefined') {
-      window.scroll(0, 0);
-    }
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
   }
 
   render() {
@@ -5025,7 +5020,9 @@ var _Home2 = _interopRequireDefault(_Home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const Home = () => _react2.default.createElement(_Home2.default, null);
+const Home = ({ match }) => {
+  return _react2.default.createElement(_Home2.default, null);
+};
 
 const Admin = () => _react2.default.createElement(_Admin2.default, null);
 
@@ -5060,7 +5057,7 @@ exports.default = () => _react2.default.createElement(
   _react2.default.createElement(_MainMenu2.default, null),
   _react2.default.createElement(
     _reactRouterDom.Switch,
-    { onUpdate: () => window.scrollTo(0, 0), ignoreScrollBehavior: true },
+    null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: Home }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/about', component: About }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/page/galerija', component: Galerija }),

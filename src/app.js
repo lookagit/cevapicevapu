@@ -22,9 +22,11 @@ import Admir from './admin/Admin';
 import Korpa from './Korpa';
 import Homes from './Home';
 
-const Home = () => (
-  <Homes />
-);
+const Home = ({match}) => {
+  return (
+    <Homes />
+  );
+}
 
 const Admin = () => (
   <Admir />
@@ -65,7 +67,7 @@ export default () => (
         content: '100% organsko meso'
       }]} />
     <MainMenu />
-    <Switch onUpdate={() => window.scrollTo(0, 0)} ignoreScrollBehavior>
+    <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/page/about" component={About} />
       <Route path="/page/galerija" component={Galerija} />

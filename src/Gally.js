@@ -121,9 +121,7 @@ let items = [
 ];
 export default class Gally extends React.Component {
   componentDidMount() {
-    if(typeof window !== 'undefined') {
-      window.scroll(0,0);
-    }
+    if(typeof window !== 'undefined') window.scrollTo(0,0);
   }
   getThumbnailContent = (item) => {
     return (

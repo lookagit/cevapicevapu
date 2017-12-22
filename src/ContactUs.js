@@ -168,7 +168,7 @@ export default class ContactUs extends React.Component{
                   </form>
                 </Col>
                 <Col xs={12} sm={4} md={4} lg={4} className={css.contactColOne}>
-                  <h4 styles="margin:0;">INFORMACIJE</h4>
+                  <h4>INFORMACIJE</h4>
                   <h5>Adresa: </h5>
                   <p>Beograd, Ugao Dositejeve i Braće Jugović.</p>
                   <h5>Telefon:</h5>
