@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import {Col} from 'react-styled-flexboxgrid';
 import scss from './styles.scss';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import AlertContainer from 'react-alert';
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 export default class ProizvodItem extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -17,30 +15,20 @@ export default class ProizvodItem extends Component {
       isShowingModal: false,
     }
   }
-
-  static propTypes = {
-    counter: PropTypes.shape({
-      count: PropTypes.number.isRequired,
-    }),
-  };
-
   alertOptions = {
-      offset: 14,
-      position: 'bottom left',
-      theme: 'dark',
-      time: 5000,
-      transition: 'scale'
-    }
-
-    showAlert = () => {
-      this.msg.show('Dodali ste '+this.state.kolicina+'x ' + this.props.proiz.naslov + ' u korpu!', {
-        time: 2000,
-        type: 'success',
-        icon: <img width="32px" height="32px" src={this.props.proiz.urlSlike} />
-      })
-    }
-
-
+    offset: 14,
+    position: 'bottom left',
+    theme: 'dark',
+    time: 5000,
+    transition: 'scale'
+  }
+  showAlert = () => {
+    this.msg.show('Dodali ste '+this.state.kolicina+'x ' + this.props.proiz.naslov + ' u korpu!', {
+      time: 2000,
+      type: 'success',
+      icon: <img width="32px" height="32px" src={this.props.proiz.urlSlike} />
+    })
+  }
   handleClick = () => this.setState({isShowingModal: true})
   handleClose = () => this.setState({isShowingModal: false, kolicina: ''})
   upaliIncrement = () => {
@@ -59,12 +47,9 @@ export default class ProizvodItem extends Component {
       });
     }
   }
-
   izmeniKolicinu = (event) => {
     this.setState({kolicina: event.target.value});
   }
-
-
   button = () => {
     if(this.state.kolicina === 0 || this.state.kolicina === '0' || this.state.kolicina === '') {
       return (<button disabled={true}>Naruči</button>)
@@ -86,9 +71,7 @@ export default class ProizvodItem extends Component {
             <h2>{this.props.proiz.naslov}</h2>
             <h3>{this.props.proiz.cena} RSD</h3>
             <label>Količina &nbsp;</label> <input type="number"  min="1" onChange={this.izmeniKolicinu} value={this.state.kolicina} />
-            {
-              this.button()
-            }
+            { this.button() }
             {
               this.state.isShowingModal &&
               <ModalContainer onClose={this.handleClose}>

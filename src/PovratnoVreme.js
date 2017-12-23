@@ -3,10 +3,6 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
-import scss from './styles.scss';
-import getVreme from 'src/queries/getVreme.gql';
-
 @graphql(gql`
   query getVreme($id: ID!) {
     Porudzbina(id: $id) {

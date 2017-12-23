@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import allProizvods from 'src/queries/getProizvodi.gql';
-import scss from './styles.scss';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import {Grid, Row} from 'react-styled-flexboxgrid';
 import ProizvodItem from './ProizvodItem';
 
 @graphql(allProizvods)

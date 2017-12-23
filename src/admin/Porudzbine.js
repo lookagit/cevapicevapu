@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import {Col} from 'react-styled-flexboxgrid';
 import scss from './css/porudzbine.scss';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';

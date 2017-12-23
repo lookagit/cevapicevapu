@@ -1,9 +1,7 @@
 import React from 'react';
 import TopHero from './DumbComponents/Helpers/TopHero';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import Proizvod from './Proizvod';
-import scss from './styles.scss';
-
+import Closed from './DumbComponents/NaruciDumb/Closed';
 export default class NaruciNesto extends React.Component {
   componentDidMount() {
     if(typeof window !== 'undefined') {
@@ -16,16 +14,19 @@ export default class NaruciNesto extends React.Component {
     if(today.getDay() == 0) {
       return false
     } else if(today.getDay() != 0) {
-      var n = today.getHours();
-      console.log("OVO JE N ", n);
+      let n = today.getHours();
+      let getBack = n >= 11 && n <= 20 ? true : false;
+      return getBack;
     }
   }
   render () {
-    this.calculateThisDate();
+    let areWeWorking = this.calculateThisDate();
     return (
       <div>
         <TopHero title="Dostava" subtitle="Cvrči, cvrči ćevap Drama, uskoro će biti s Vama" bgImage={{backgroundImage: "url('https://res.cloudinary.com/drama/image/upload/c_scale,q_58,w_1766/v1513947368/dostava_murmvd.jpg')"}} />
-        <Proizvod />
+        {
+          areWeWorking ? <Proizvod /> : <Closed />
+        }
       </div>
     );
   }

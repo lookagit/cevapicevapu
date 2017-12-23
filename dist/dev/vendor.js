@@ -226,7 +226,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */(function(global) {/*global window, global*/
 var util = __webpack_require__(212)
 var assert = __webpack_require__(233)
-var now = __webpack_require__(270)
+var now = __webpack_require__(271)
 
 var slice = Array.prototype.slice
 var console
@@ -310,7 +310,7 @@ function consoleAssert(expression) {
     }
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 3 */
@@ -571,7 +571,7 @@ module.exports = reactProdInvariant;
 
 var _prodInvariant = __webpack_require__(6);
 
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var ReactDOMComponentFlags = __webpack_require__(162);
 
 var invariant = __webpack_require__(1);
@@ -936,7 +936,7 @@ module.exports = invariant;
 
 var _prodInvariant = __webpack_require__(40);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -1390,6 +1390,990 @@ module.exports = emptyFunction;
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(console) {(function (global, factory) {
+	 true ? factory(exports, __webpack_require__(0), __webpack_require__(4), __webpack_require__(66), __webpack_require__(221), __webpack_require__(27)) :
+	typeof define === 'function' && define.amd ? define(['exports', 'react', 'prop-types', 'redux', 'apollo-client', 'graphql-tag'], factory) :
+	(factory((global['react-apollo'] = {}),global.React,global.PropTypes,global.redux,global.apolloClient,global.graphqlTag));
+}(this, (function (exports,React,PropTypes,redux,apolloClient,graphqlTag) { 'use strict';
+
+graphqlTag = graphqlTag && graphqlTag.hasOwnProperty('default') ? graphqlTag['default'] : graphqlTag;
+
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
+var ObservableQueryRecycler = (function () {
+    function ObservableQueryRecycler() {
+        this.observableQueries = [];
+    }
+    ObservableQueryRecycler.prototype.recycle = function (observableQuery) {
+        observableQuery.setOptions({
+            fetchPolicy: 'standby',
+            pollInterval: 0,
+            fetchResults: false,
+        });
+        this.observableQueries.push({
+            observableQuery: observableQuery,
+            subscription: observableQuery.subscribe({}),
+        });
+    };
+    ObservableQueryRecycler.prototype.reuse = function (options) {
+        if (this.observableQueries.length <= 0) {
+            return null;
+        }
+        var _a = this.observableQueries.pop(), observableQuery = _a.observableQuery, subscription = _a.subscription;
+        subscription.unsubscribe();
+        var ssr = options.ssr, skip = options.skip, client = options.client, modifiableOpts = __rest(options, ["ssr", "skip", "client"]);
+        observableQuery.setOptions(__assign({}, modifiableOpts, { pollInterval: options.pollInterval, fetchPolicy: options.fetchPolicy }));
+        return observableQuery;
+    };
+    return ObservableQueryRecycler;
+}());
+
+var __extends$1 = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var QueryRecyclerProvider = (function (_super) {
+    __extends$1(QueryRecyclerProvider, _super);
+    function QueryRecyclerProvider(props) {
+        var _this = _super.call(this, props) || this;
+        _this.recyclers = new WeakMap();
+        _this.getQueryRecycler = _this.getQueryRecycler.bind(_this);
+        return _this;
+    }
+    QueryRecyclerProvider.prototype.componentWillReceiveProps = function (nextProps, nextContext) {
+        if (this.context.client !== nextContext.client) {
+            this.recyclers = new WeakMap();
+        }
+    };
+    QueryRecyclerProvider.prototype.getQueryRecycler = function (component) {
+        if (!this.recyclers.has(component)) {
+            this.recyclers.set(component, new ObservableQueryRecycler());
+        }
+        return this.recyclers.get(component);
+    };
+    QueryRecyclerProvider.prototype.getChildContext = function () {
+        return ({
+            getQueryRecycler: this.getQueryRecycler
+        });
+    };
+    QueryRecyclerProvider.prototype.render = function () {
+        return React.Children.only(this.props.children);
+    };
+    QueryRecyclerProvider.propTypes = {
+        children: PropTypes.element.isRequired
+    };
+    QueryRecyclerProvider.contextTypes = {
+        client: PropTypes.object
+    };
+    QueryRecyclerProvider.childContextTypes = {
+        getQueryRecycler: PropTypes.func.isRequired
+    };
+    return QueryRecyclerProvider;
+}(React.Component));
+
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var invariant = __webpack_require__(11);
+var ApolloProvider = (function (_super) {
+    __extends(ApolloProvider, _super);
+    function ApolloProvider(props, context) {
+        var _this = _super.call(this, props, context) || this;
+        invariant(props.client, 'ApolloClient was not passed a client instance. Make ' +
+            'sure you pass in your client via the "client" prop.');
+        if (!props.store && typeof props.client.initStore === 'function') {
+            props.client.initStore();
+        }
+        return _this;
+    }
+    ApolloProvider.prototype.componentWillReceiveProps = function (nextProps) {
+        if (nextProps.client !== this.props.client &&
+            !nextProps.store &&
+            typeof nextProps.client.initStore === 'function') {
+            nextProps.client.initStore();
+        }
+    };
+    ApolloProvider.prototype.getChildContext = function () {
+        return {
+            store: this.props.store || this.context.store,
+            client: this.props.client,
+        };
+    };
+    ApolloProvider.prototype.render = function () {
+        return (React.createElement(QueryRecyclerProvider, null, React.Children.only(this.props.children)));
+    };
+    ApolloProvider.propTypes = {
+        store: PropTypes.shape({
+            subscribe: PropTypes.func.isRequired,
+            dispatch: PropTypes.func.isRequired,
+            getState: PropTypes.func.isRequired,
+        }),
+        client: PropTypes.object.isRequired,
+        children: PropTypes.element.isRequired,
+    };
+    ApolloProvider.childContextTypes = {
+        store: PropTypes.object,
+        client: PropTypes.object.isRequired,
+    };
+    ApolloProvider.contextTypes = {
+        store: PropTypes.object,
+    };
+    return ApolloProvider;
+}(React.Component));
+
+function shallowEqual(objA, objB) {
+    if (!objA || !objB)
+        return false;
+    if (objA === objB)
+        return true;
+    var keysA = Object.keys(objA);
+    var keysB = Object.keys(objB);
+    if (keysA.length !== keysB.length)
+        return false;
+    var hasOwn = Object.prototype.hasOwnProperty;
+    for (var i = 0; i < keysA.length; i++) {
+        if (!hasOwn.call(objB, keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+var invariant$2 = __webpack_require__(11);
+var DocumentType;
+(function (DocumentType) {
+    DocumentType[DocumentType["Query"] = 0] = "Query";
+    DocumentType[DocumentType["Mutation"] = 1] = "Mutation";
+    DocumentType[DocumentType["Subscription"] = 2] = "Subscription";
+})(DocumentType || (DocumentType = {}));
+function parser(document) {
+    var variables, type, name;
+    invariant$2(!!document && !!document.kind, "Argument of " + document + " passed to parser was not a valid GraphQL DocumentNode. You may need to use 'graphql-tag' or another method to convert your operation into a document");
+    var fragments = document.definitions.filter(function (x) { return x.kind === 'FragmentDefinition'; });
+    var queries = document.definitions.filter(function (x) {
+        return x.kind === 'OperationDefinition' && x.operation === 'query';
+    });
+    var mutations = document.definitions.filter(function (x) {
+        return x.kind === 'OperationDefinition' && x.operation === 'mutation';
+    });
+    var subscriptions = document.definitions.filter(function (x) {
+        return x.kind === 'OperationDefinition' && x.operation === 'subscription';
+    });
+    invariant$2(!fragments.length ||
+        (queries.length || mutations.length || subscriptions.length), "Passing only a fragment to 'graphql' is not yet supported. You must include a query, subscription or mutation as well");
+    invariant$2(queries.length + mutations.length + subscriptions.length <= 1, "react-apollo only supports a query, subscription, or a mutation per HOC. " + document + " had " + queries.length + " queries, " + subscriptions.length + " subscriptions and " + mutations.length + " mutations. You can use 'compose' to join multiple operation types to a component");
+    type = queries.length ? DocumentType.Query : DocumentType.Mutation;
+    if (!queries.length && !mutations.length)
+        type = DocumentType.Subscription;
+    var definitions = queries.length
+        ? queries
+        : mutations.length ? mutations : subscriptions;
+    invariant$2(definitions.length === 1, "react-apollo only supports one defintion per HOC. " + document + " had " + definitions.length + " definitions. You can use 'compose' to join multiple operation types to a component");
+    var definition = definitions[0];
+    variables = definition.variableDefinitions || [];
+    var hasName = definition.name && definition.name.kind === 'Name';
+    name = hasName ? definition.name.value : 'data';
+    return { name: name, type: type, variables: variables };
+}
+
+var __extends$2 = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign$1 = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var pick = __webpack_require__(151);
+var invariant$1 = __webpack_require__(11);
+var assign = __webpack_require__(5);
+var hoistNonReactStatics = __webpack_require__(58);
+var defaultMapPropsToOptions = function (props) { return ({}); };
+var defaultMapResultToProps = function (props) { return props; };
+var defaultMapPropsToSkip = function (props) { return false; };
+function observableQueryFields(observable) {
+    var fields = pick(observable, 'variables', 'refetch', 'fetchMore', 'updateQuery', 'startPolling', 'stopPolling', 'subscribeToMore');
+    Object.keys(fields).forEach(function (key) {
+        if (typeof fields[key] === 'function') {
+            fields[key] = fields[key].bind(observable);
+        }
+    });
+    return fields;
+}
+function getDisplayName(WrappedComponent) {
+    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+var nextVersion = 0;
+function graphql(document, operationOptions) {
+    if (operationOptions === void 0) { operationOptions = {}; }
+    var _a = operationOptions.options, options = _a === void 0 ? defaultMapPropsToOptions : _a, _b = operationOptions.skip, skip = _b === void 0 ? defaultMapPropsToSkip : _b, _c = operationOptions.alias, alias = _c === void 0 ? 'Apollo' : _c;
+    var mapPropsToOptions = options;
+    if (typeof mapPropsToOptions !== 'function')
+        mapPropsToOptions = function () { return options; };
+    var mapPropsToSkip = skip;
+    if (typeof mapPropsToSkip !== 'function')
+        mapPropsToSkip = function () { return skip; };
+    var mapResultToProps = operationOptions.props;
+    var operation = parser(document);
+    var version = nextVersion++;
+    function wrapWithApolloComponent(WrappedComponent) {
+        var graphQLDisplayName = alias + "(" + getDisplayName(WrappedComponent) + ")";
+        var GraphQL = (function (_super) {
+            __extends$2(GraphQL, _super);
+            function GraphQL(props, context) {
+                var _this = _super.call(this, props, context) || this;
+                _this.previousData = {};
+                _this.version = version;
+                _this.type = operation.type;
+                _this.dataForChildViaMutation = _this.dataForChildViaMutation.bind(_this);
+                _this.setWrappedInstance = _this.setWrappedInstance.bind(_this);
+                return _this;
+            }
+            GraphQL.prototype.componentWillMount = function () {
+                if (!this.shouldSkip(this.props)) {
+                    this.setInitialProps();
+                }
+            };
+            GraphQL.prototype.componentDidMount = function () {
+                this.hasMounted = true;
+                if (this.type === DocumentType.Mutation)
+                    return;
+                if (!this.shouldSkip(this.props)) {
+                    this.subscribeToQuery();
+                    if (this.refetcherQueue) {
+                        var _a = this.refetcherQueue, args = _a.args, resolve = _a.resolve, reject = _a.reject;
+                        this.queryObservable.refetch(args).then(resolve).catch(reject);
+                    }
+                }
+            };
+            GraphQL.prototype.componentWillReceiveProps = function (nextProps, nextContext) {
+                var client = mapPropsToOptions(nextProps).client;
+                if (shallowEqual(this.props, nextProps) &&
+                    (this.client === client || this.client === nextContext.client)) {
+                    return;
+                }
+                this.shouldRerender = true;
+                if (this.client !== client && this.client !== nextContext.client) {
+                    if (client) {
+                        this.client = client;
+                    }
+                    else {
+                        this.client = nextContext.client;
+                    }
+                    this.unsubscribeFromQuery();
+                    this.queryObservable = null;
+                    this.previousData = {};
+                    this.updateQuery(nextProps);
+                    if (!this.shouldSkip(nextProps)) {
+                        this.subscribeToQuery();
+                    }
+                    return;
+                }
+                if (this.type === DocumentType.Mutation) {
+                    return;
+                }
+                if (this.type === DocumentType.Subscription &&
+                    operationOptions.shouldResubscribe &&
+                    operationOptions.shouldResubscribe(this.props, nextProps)) {
+                    this.unsubscribeFromQuery();
+                    delete this.queryObservable;
+                    this.updateQuery(nextProps);
+                    this.subscribeToQuery();
+                    return;
+                }
+                if (this.shouldSkip(nextProps)) {
+                    if (!this.shouldSkip(this.props)) {
+                        this.unsubscribeFromQuery();
+                    }
+                    return;
+                }
+                this.updateQuery(nextProps);
+                this.subscribeToQuery();
+            };
+            GraphQL.prototype.componentWillUnmount = function () {
+                if (this.type === DocumentType.Query) {
+                    if (this.queryObservable) {
+                        var recycler = this.getQueryRecycler();
+                        if (recycler) {
+                            recycler.recycle(this.queryObservable);
+                            delete this.queryObservable;
+                        }
+                    }
+                    this.unsubscribeFromQuery();
+                }
+                if (this.type === DocumentType.Subscription)
+                    this.unsubscribeFromQuery();
+                this.hasMounted = false;
+            };
+            GraphQL.prototype.getQueryRecycler = function () {
+                return (this.context.getQueryRecycler &&
+                    this.context.getQueryRecycler(GraphQL));
+            };
+            GraphQL.prototype.getClient = function (props) {
+                if (this.client)
+                    return this.client;
+                var client = mapPropsToOptions(props).client;
+                if (client) {
+                    this.client = client;
+                }
+                else {
+                    this.client = this.context.client;
+                }
+                invariant$1(!!this.client, "Could not find \"client\" in the context of " +
+                    ("\"" + graphQLDisplayName + "\". ") +
+                    "Wrap the root component in an <ApolloProvider>");
+                return this.client;
+            };
+            GraphQL.prototype.calculateOptions = function (props, newOpts) {
+                if (props === void 0) { props = this.props; }
+                var opts = mapPropsToOptions(props);
+                if (newOpts && newOpts.variables) {
+                    newOpts.variables = assign({}, opts.variables, newOpts.variables);
+                }
+                if (newOpts)
+                    opts = assign({}, opts, newOpts);
+                if (opts.variables || !operation.variables.length)
+                    return opts;
+                var variables = {};
+                for (var _i = 0, _a = operation.variables; _i < _a.length; _i++) {
+                    var _b = _a[_i], variable = _b.variable, type = _b.type;
+                    if (!variable.name || !variable.name.value)
+                        continue;
+                    if (typeof props[variable.name.value] !== 'undefined') {
+                        variables[variable.name.value] = props[variable.name.value];
+                        continue;
+                    }
+                    if (type.kind !== 'NonNullType') {
+                        variables[variable.name.value] = null;
+                        continue;
+                    }
+                    invariant$1(typeof props[variable.name.value] !== 'undefined', "The operation '" + operation.name + "' wrapping '" + getDisplayName(WrappedComponent) + "' " +
+                        ("is expecting a variable: '" + variable.name
+                            .value + "' but it was not found in the props ") +
+                        ("passed to '" + graphQLDisplayName + "'"));
+                }
+                opts = __assign$1({}, opts, { variables: variables });
+                return opts;
+            };
+            GraphQL.prototype.calculateResultProps = function (result) {
+                var name = this.type === DocumentType.Mutation ? 'mutate' : 'data';
+                if (operationOptions.name)
+                    name = operationOptions.name;
+                var newResult = (_a = {},
+                    _a[name] = result,
+                    _a.ownProps = this.props,
+                    _a);
+                if (mapResultToProps)
+                    return mapResultToProps(newResult);
+                return _b = {}, _b[name] = defaultMapResultToProps(result), _b;
+                var _a, _b;
+            };
+            GraphQL.prototype.setInitialProps = function () {
+                if (this.type === DocumentType.Mutation) {
+                    return;
+                }
+                var opts = this.calculateOptions(this.props);
+                this.createQuery(opts);
+            };
+            GraphQL.prototype.createQuery = function (opts, props) {
+                if (props === void 0) { props = this.props; }
+                if (this.type === DocumentType.Subscription) {
+                    this.queryObservable = this.getClient(props).subscribe(assign({
+                        query: document,
+                    }, opts));
+                }
+                else {
+                    var recycler = this.getQueryRecycler();
+                    var queryObservable = null;
+                    if (recycler)
+                        queryObservable = recycler.reuse(opts);
+                    if (queryObservable === null) {
+                        this.queryObservable = this.getClient(props).watchQuery(assign({
+                            query: document,
+                            metadata: {
+                                reactComponent: {
+                                    displayName: graphQLDisplayName,
+                                },
+                            },
+                        }, opts));
+                    }
+                    else {
+                        this.queryObservable = queryObservable;
+                    }
+                }
+            };
+            GraphQL.prototype.updateQuery = function (props) {
+                var opts = this.calculateOptions(props);
+                if (!this.queryObservable) {
+                    this.createQuery(opts, props);
+                }
+                if (this.queryObservable._setOptionsNoResult) {
+                    this.queryObservable._setOptionsNoResult(opts);
+                }
+                else {
+                    if (this.queryObservable.setOptions) {
+                        this.queryObservable
+                            .setOptions(opts)
+                            .catch(function (error) { return null; });
+                    }
+                }
+            };
+            GraphQL.prototype.fetchData = function () {
+                if (this.shouldSkip())
+                    return false;
+                if (operation.type === DocumentType.Mutation ||
+                    operation.type === DocumentType.Subscription)
+                    return false;
+                var opts = this.calculateOptions();
+                if (opts.ssr === false)
+                    return false;
+                if (opts.fetchPolicy === 'network-only' ||
+                    opts.fetchPolicy === 'cache-and-network') {
+                    opts.fetchPolicy = 'cache-first';
+                }
+                var observable = this.getClient(this.props).watchQuery(assign({ query: document }, opts));
+                var result = observable.currentResult();
+                if (result.loading) {
+                    return observable.result();
+                }
+                else {
+                    return false;
+                }
+            };
+            GraphQL.prototype.subscribeToQuery = function () {
+                var _this = this;
+                if (this.querySubscription) {
+                    return;
+                }
+                var next = function (results) {
+                    if (_this.type === DocumentType.Subscription) {
+                        _this.lastSubscriptionData = results;
+                        results = { data: results };
+                    }
+                    var clashingKeys = Object.keys(observableQueryFields(results.data));
+                    invariant$1(clashingKeys.length === 0, "the result of the '" + graphQLDisplayName + "' operation contains keys that " +
+                        "conflict with the return object." +
+                        clashingKeys.map(function (k) { return "'" + k + "'"; }).join(', ') +
+                        " not allowed.");
+                    _this.forceRenderChildren();
+                };
+                var handleError = function (error) {
+                    if (error.hasOwnProperty('graphQLErrors'))
+                        return next({ error: error });
+                    throw error;
+                };
+                this.querySubscription = this.queryObservable.subscribe({
+                    next: next,
+                    error: handleError,
+                });
+            };
+            GraphQL.prototype.unsubscribeFromQuery = function () {
+                if (this.querySubscription) {
+                    this.querySubscription.unsubscribe();
+                    delete this.querySubscription;
+                }
+            };
+            GraphQL.prototype.shouldSkip = function (props) {
+                if (props === void 0) { props = this.props; }
+                return (mapPropsToSkip(props) || mapPropsToOptions(props).skip);
+            };
+            GraphQL.prototype.forceRenderChildren = function () {
+                this.shouldRerender = true;
+                if (this.hasMounted)
+                    this.forceUpdate();
+            };
+            GraphQL.prototype.getWrappedInstance = function () {
+                invariant$1(operationOptions.withRef, "To access the wrapped instance, you need to specify " +
+                    "{ withRef: true } in the options");
+                return this.wrappedInstance;
+            };
+            GraphQL.prototype.setWrappedInstance = function (ref) {
+                this.wrappedInstance = ref;
+            };
+            GraphQL.prototype.dataForChildViaMutation = function (mutationOpts) {
+                var opts = this.calculateOptions(this.props, mutationOpts);
+                if (typeof opts.variables === 'undefined')
+                    delete opts.variables;
+                opts.mutation = document;
+                return this.getClient(this.props).mutate(opts);
+            };
+            GraphQL.prototype.dataForChild = function () {
+                var _this = this;
+                if (this.type === DocumentType.Mutation) {
+                    return this.dataForChildViaMutation;
+                }
+                var opts = this.calculateOptions(this.props);
+                var data = {};
+                assign(data, observableQueryFields(this.queryObservable));
+                if (this.type === DocumentType.Subscription) {
+                    assign(data, {
+                        loading: !this.lastSubscriptionData,
+                        variables: opts.variables,
+                    }, this.lastSubscriptionData);
+                }
+                else {
+                    var currentResult = this.queryObservable.currentResult();
+                    var loading = currentResult.loading, error_1 = currentResult.error, networkStatus = currentResult.networkStatus;
+                    assign(data, { loading: loading, networkStatus: networkStatus });
+                    var logErrorTimeoutId_1 = setTimeout(function () {
+                        if (error_1) {
+                            console.error('Unhandled (in react-apollo)', error_1.stack || error_1);
+                        }
+                    }, 10);
+                    Object.defineProperty(data, 'error', {
+                        configurable: true,
+                        enumerable: true,
+                        get: function () {
+                            clearTimeout(logErrorTimeoutId_1);
+                            return error_1;
+                        },
+                    });
+                    if (loading) {
+                        assign(data, this.previousData, currentResult.data);
+                    }
+                    else if (error_1) {
+                        assign(data, (this.queryObservable.getLastResult() || {}).data);
+                    }
+                    else {
+                        assign(data, currentResult.data);
+                        this.previousData = currentResult.data;
+                    }
+                    if (!this.querySubscription) {
+                        data.refetch = function (args) {
+                            return new Promise(function (r, f) {
+                                _this.refetcherQueue = { resolve: r, reject: f, args: args };
+                            });
+                        };
+                    }
+                }
+                return data;
+            };
+            GraphQL.prototype.render = function () {
+                if (this.shouldSkip()) {
+                    if (operationOptions.withRef) {
+                        return React.createElement(WrappedComponent, assign({}, this.props, { ref: this.setWrappedInstance }));
+                    }
+                    return React.createElement(WrappedComponent, this.props);
+                }
+                var _a = this, shouldRerender = _a.shouldRerender, renderedElement = _a.renderedElement, props = _a.props;
+                this.shouldRerender = false;
+                if (!shouldRerender &&
+                    renderedElement &&
+                    renderedElement.type === WrappedComponent) {
+                    return renderedElement;
+                }
+                var data = this.dataForChild();
+                var clientProps = this.calculateResultProps(data);
+                var mergedPropsAndData = assign({}, props, clientProps);
+                if (operationOptions.withRef)
+                    mergedPropsAndData.ref = this.setWrappedInstance;
+                this.renderedElement = React.createElement(WrappedComponent, mergedPropsAndData);
+                return this.renderedElement;
+            };
+            GraphQL.displayName = graphQLDisplayName;
+            GraphQL.WrappedComponent = WrappedComponent;
+            GraphQL.contextTypes = {
+                client: PropTypes.object,
+                getQueryRecycler: PropTypes.func,
+            };
+            return GraphQL;
+        }(React.Component));
+        return hoistNonReactStatics(GraphQL, WrappedComponent, {});
+    }
+    return wrapWithApolloComponent;
+}
+
+var __extends$3 = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var invariant$3 = __webpack_require__(11);
+var assign$1 = __webpack_require__(5);
+var hoistNonReactStatics$1 = __webpack_require__(58);
+function getDisplayName$1(WrappedComponent) {
+    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+function withApollo(WrappedComponent, operationOptions) {
+    if (operationOptions === void 0) { operationOptions = {}; }
+    var withDisplayName = "withApollo(" + getDisplayName$1(WrappedComponent) + ")";
+    var WithApollo = (function (_super) {
+        __extends$3(WithApollo, _super);
+        function WithApollo(props, context) {
+            var _this = _super.call(this, props, context) || this;
+            _this.client = context.client;
+            _this.setWrappedInstance = _this.setWrappedInstance.bind(_this);
+            invariant$3(!!_this.client, "Could not find \"client\" in the context of " +
+                ("\"" + withDisplayName + "\". ") +
+                "Wrap the root component in an <ApolloProvider>");
+            return _this;
+        }
+        WithApollo.prototype.getWrappedInstance = function () {
+            invariant$3(operationOptions.withRef, "To access the wrapped instance, you need to specify " +
+                "{ withRef: true } in the options");
+            return this.wrappedInstance;
+        };
+        WithApollo.prototype.setWrappedInstance = function (ref) {
+            this.wrappedInstance = ref;
+        };
+        WithApollo.prototype.render = function () {
+            var props = assign$1({}, this.props);
+            props.client = this.client;
+            if (operationOptions.withRef)
+                props.ref = this.setWrappedInstance;
+            return React.createElement(WrappedComponent, props);
+        };
+        WithApollo.displayName = withDisplayName;
+        WithApollo.WrappedComponent = WrappedComponent;
+        WithApollo.contextTypes = { client: PropTypes.object.isRequired };
+        return WithApollo;
+    }(React.Component));
+    return hoistNonReactStatics$1(WithApollo, WrappedComponent, {});
+}
+
+exports.ApolloProvider = ApolloProvider;
+exports.graphql = graphql;
+exports.withApollo = withApollo;
+exports.compose = redux.compose;
+exports.gql = graphqlTag;
+Object.keys(apolloClient).forEach(function (key) { exports[key] = apolloClient[key]; });
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+//# sourceMappingURL=react-apollo.browser.umd.js.map
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(console) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+var _prodInvariant = __webpack_require__(6),
+    _assign = __webpack_require__(5);
+
+var CallbackQueue = __webpack_require__(160);
+var PooledClass = __webpack_require__(29);
+var ReactFeatureFlags = __webpack_require__(165);
+var ReactReconciler = __webpack_require__(37);
+var Transaction = __webpack_require__(62);
+
+var invariant = __webpack_require__(1);
+
+var dirtyComponents = [];
+var updateBatchNumber = 0;
+var asapCallbackQueue = CallbackQueue.getPooled();
+var asapEnqueued = false;
+
+var batchingStrategy = null;
+
+function ensureInjected() {
+  !(ReactUpdates.ReactReconcileTransaction && batchingStrategy) ?  true ? invariant(false, 'ReactUpdates: must inject a reconcile transaction class and batching strategy') : _prodInvariant('123') : void 0;
+}
+
+var NESTED_UPDATES = {
+  initialize: function () {
+    this.dirtyComponentsLength = dirtyComponents.length;
+  },
+  close: function () {
+    if (this.dirtyComponentsLength !== dirtyComponents.length) {
+      // Additional updates were enqueued by componentDidUpdate handlers or
+      // similar; before our own UPDATE_QUEUEING wrapper closes, we want to run
+      // these new updates so that if A's componentDidUpdate calls setState on
+      // B, B will update before the callback A's updater provided when calling
+      // setState.
+      dirtyComponents.splice(0, this.dirtyComponentsLength);
+      flushBatchedUpdates();
+    } else {
+      dirtyComponents.length = 0;
+    }
+  }
+};
+
+var UPDATE_QUEUEING = {
+  initialize: function () {
+    this.callbackQueue.reset();
+  },
+  close: function () {
+    this.callbackQueue.notifyAll();
+  }
+};
+
+var TRANSACTION_WRAPPERS = [NESTED_UPDATES, UPDATE_QUEUEING];
+
+function ReactUpdatesFlushTransaction() {
+  this.reinitializeTransaction();
+  this.dirtyComponentsLength = null;
+  this.callbackQueue = CallbackQueue.getPooled();
+  this.reconcileTransaction = ReactUpdates.ReactReconcileTransaction.getPooled(
+  /* useCreateElement */true);
+}
+
+_assign(ReactUpdatesFlushTransaction.prototype, Transaction, {
+  getTransactionWrappers: function () {
+    return TRANSACTION_WRAPPERS;
+  },
+
+  destructor: function () {
+    this.dirtyComponentsLength = null;
+    CallbackQueue.release(this.callbackQueue);
+    this.callbackQueue = null;
+    ReactUpdates.ReactReconcileTransaction.release(this.reconcileTransaction);
+    this.reconcileTransaction = null;
+  },
+
+  perform: function (method, scope, a) {
+    // Essentially calls `this.reconcileTransaction.perform(method, scope, a)`
+    // with this transaction's wrappers around it.
+    return Transaction.perform.call(this, this.reconcileTransaction.perform, this.reconcileTransaction, method, scope, a);
+  }
+});
+
+PooledClass.addPoolingTo(ReactUpdatesFlushTransaction);
+
+function batchedUpdates(callback, a, b, c, d, e) {
+  ensureInjected();
+  return batchingStrategy.batchedUpdates(callback, a, b, c, d, e);
+}
+
+/**
+ * Array comparator for ReactComponents by mount ordering.
+ *
+ * @param {ReactComponent} c1 first component you're comparing
+ * @param {ReactComponent} c2 second component you're comparing
+ * @return {number} Return value usable by Array.prototype.sort().
+ */
+function mountOrderComparator(c1, c2) {
+  return c1._mountOrder - c2._mountOrder;
+}
+
+function runBatchedUpdates(transaction) {
+  var len = transaction.dirtyComponentsLength;
+  !(len === dirtyComponents.length) ?  true ? invariant(false, 'Expected flush transaction\'s stored dirty-components length (%s) to match dirty-components array length (%s).', len, dirtyComponents.length) : _prodInvariant('124', len, dirtyComponents.length) : void 0;
+
+  // Since reconciling a component higher in the owner hierarchy usually (not
+  // always -- see shouldComponentUpdate()) will reconcile children, reconcile
+  // them before their children by sorting the array.
+  dirtyComponents.sort(mountOrderComparator);
+
+  // Any updates enqueued while reconciling must be performed after this entire
+  // batch. Otherwise, if dirtyComponents is [A, B] where A has children B and
+  // C, B could update twice in a single batch if C's render enqueues an update
+  // to B (since B would have already updated, we should skip it, and the only
+  // way we can know to do so is by checking the batch counter).
+  updateBatchNumber++;
+
+  for (var i = 0; i < len; i++) {
+    // If a component is unmounted before pending changes apply, it will still
+    // be here, but we assume that it has cleared its _pendingCallbacks and
+    // that performUpdateIfNecessary is a noop.
+    var component = dirtyComponents[i];
+
+    // If performUpdateIfNecessary happens to enqueue any new updates, we
+    // shouldn't execute the callbacks until the next render happens, so
+    // stash the callbacks first
+    var callbacks = component._pendingCallbacks;
+    component._pendingCallbacks = null;
+
+    var markerName;
+    if (ReactFeatureFlags.logTopLevelRenders) {
+      var namedComponent = component;
+      // Duck type TopLevelWrapper. This is probably always true.
+      if (component._currentElement.type.isReactTopLevelWrapper) {
+        namedComponent = component._renderedComponent;
+      }
+      markerName = 'React update: ' + namedComponent.getName();
+      console.time(markerName);
+    }
+
+    ReactReconciler.performUpdateIfNecessary(component, transaction.reconcileTransaction, updateBatchNumber);
+
+    if (markerName) {
+      console.timeEnd(markerName);
+    }
+
+    if (callbacks) {
+      for (var j = 0; j < callbacks.length; j++) {
+        transaction.callbackQueue.enqueue(callbacks[j], component.getPublicInstance());
+      }
+    }
+  }
+}
+
+var flushBatchedUpdates = function () {
+  // ReactUpdatesFlushTransaction's wrappers will clear the dirtyComponents
+  // array and perform any updates enqueued by mount-ready handlers (i.e.,
+  // componentDidUpdate) but we need to check here too in order to catch
+  // updates enqueued by setState callbacks and asap calls.
+  while (dirtyComponents.length || asapEnqueued) {
+    if (dirtyComponents.length) {
+      var transaction = ReactUpdatesFlushTransaction.getPooled();
+      transaction.perform(runBatchedUpdates, null, transaction);
+      ReactUpdatesFlushTransaction.release(transaction);
+    }
+
+    if (asapEnqueued) {
+      asapEnqueued = false;
+      var queue = asapCallbackQueue;
+      asapCallbackQueue = CallbackQueue.getPooled();
+      queue.notifyAll();
+      CallbackQueue.release(queue);
+    }
+  }
+};
+
+/**
+ * Mark a component as needing a rerender, adding an optional callback to a
+ * list of functions which will be executed once the rerender occurs.
+ */
+function enqueueUpdate(component) {
+  ensureInjected();
+
+  // Various parts of our code (such as ReactCompositeComponent's
+  // _renderValidatedComponent) assume that calls to render aren't nested;
+  // verify that that's the case. (This is called by each top-level update
+  // function, like setState, forceUpdate, etc.; creation and
+  // destruction of top-level components is guarded in ReactMount.)
+
+  if (!batchingStrategy.isBatchingUpdates) {
+    batchingStrategy.batchedUpdates(enqueueUpdate, component);
+    return;
+  }
+
+  dirtyComponents.push(component);
+  if (component._updateBatchNumber == null) {
+    component._updateBatchNumber = updateBatchNumber + 1;
+  }
+}
+
+/**
+ * Enqueue a callback to be run at the end of the current batching cycle. Throws
+ * if no updates are currently being performed.
+ */
+function asap(callback, context) {
+  invariant(batchingStrategy.isBatchingUpdates, "ReactUpdates.asap: Can't enqueue an asap callback in a context where" + 'updates are not being batched.');
+  asapCallbackQueue.enqueue(callback, context);
+  asapEnqueued = true;
+}
+
+var ReactUpdatesInjection = {
+  injectReconcileTransaction: function (ReconcileTransaction) {
+    !ReconcileTransaction ?  true ? invariant(false, 'ReactUpdates: must provide a reconcile transaction class') : _prodInvariant('126') : void 0;
+    ReactUpdates.ReactReconcileTransaction = ReconcileTransaction;
+  },
+
+  injectBatchingStrategy: function (_batchingStrategy) {
+    !_batchingStrategy ?  true ? invariant(false, 'ReactUpdates: must provide a batching strategy') : _prodInvariant('127') : void 0;
+    !(typeof _batchingStrategy.batchedUpdates === 'function') ?  true ? invariant(false, 'ReactUpdates: must provide a batchedUpdates() function') : _prodInvariant('128') : void 0;
+    !(typeof _batchingStrategy.isBatchingUpdates === 'boolean') ?  true ? invariant(false, 'ReactUpdates: must provide an isBatchingUpdates boolean attribute') : _prodInvariant('129') : void 0;
+    batchingStrategy = _batchingStrategy;
+  }
+};
+
+var ReactUpdates = {
+  /**
+   * React references `ReactReconcileTransaction` using this property in order
+   * to allow dependency injection.
+   *
+   * @internal
+   */
+  ReactReconcileTransaction: null,
+
+  batchedUpdates: batchedUpdates,
+  enqueueUpdate: enqueueUpdate,
+  flushBatchedUpdates: flushBatchedUpdates,
+  injection: ReactUpdatesInjection,
+  asap: asap
+};
+
+module.exports = ReactUpdates;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2957,992 +3941,7 @@ Col.propTypes = _extends({}, DimensionPropTypes, {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 18 */,
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(console) {(function (global, factory) {
-	 true ? factory(exports, __webpack_require__(0), __webpack_require__(4), __webpack_require__(66), __webpack_require__(221), __webpack_require__(27)) :
-	typeof define === 'function' && define.amd ? define(['exports', 'react', 'prop-types', 'redux', 'apollo-client', 'graphql-tag'], factory) :
-	(factory((global['react-apollo'] = {}),global.React,global.PropTypes,global.redux,global.apolloClient,global.graphqlTag));
-}(this, (function (exports,React,PropTypes,redux,apolloClient,graphqlTag) { 'use strict';
-
-graphqlTag = graphqlTag && graphqlTag.hasOwnProperty('default') ? graphqlTag['default'] : graphqlTag;
-
-var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __rest = (undefined && undefined.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-var ObservableQueryRecycler = (function () {
-    function ObservableQueryRecycler() {
-        this.observableQueries = [];
-    }
-    ObservableQueryRecycler.prototype.recycle = function (observableQuery) {
-        observableQuery.setOptions({
-            fetchPolicy: 'standby',
-            pollInterval: 0,
-            fetchResults: false,
-        });
-        this.observableQueries.push({
-            observableQuery: observableQuery,
-            subscription: observableQuery.subscribe({}),
-        });
-    };
-    ObservableQueryRecycler.prototype.reuse = function (options) {
-        if (this.observableQueries.length <= 0) {
-            return null;
-        }
-        var _a = this.observableQueries.pop(), observableQuery = _a.observableQuery, subscription = _a.subscription;
-        subscription.unsubscribe();
-        var ssr = options.ssr, skip = options.skip, client = options.client, modifiableOpts = __rest(options, ["ssr", "skip", "client"]);
-        observableQuery.setOptions(__assign({}, modifiableOpts, { pollInterval: options.pollInterval, fetchPolicy: options.fetchPolicy }));
-        return observableQuery;
-    };
-    return ObservableQueryRecycler;
-}());
-
-var __extends$1 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var QueryRecyclerProvider = (function (_super) {
-    __extends$1(QueryRecyclerProvider, _super);
-    function QueryRecyclerProvider(props) {
-        var _this = _super.call(this, props) || this;
-        _this.recyclers = new WeakMap();
-        _this.getQueryRecycler = _this.getQueryRecycler.bind(_this);
-        return _this;
-    }
-    QueryRecyclerProvider.prototype.componentWillReceiveProps = function (nextProps, nextContext) {
-        if (this.context.client !== nextContext.client) {
-            this.recyclers = new WeakMap();
-        }
-    };
-    QueryRecyclerProvider.prototype.getQueryRecycler = function (component) {
-        if (!this.recyclers.has(component)) {
-            this.recyclers.set(component, new ObservableQueryRecycler());
-        }
-        return this.recyclers.get(component);
-    };
-    QueryRecyclerProvider.prototype.getChildContext = function () {
-        return ({
-            getQueryRecycler: this.getQueryRecycler
-        });
-    };
-    QueryRecyclerProvider.prototype.render = function () {
-        return React.Children.only(this.props.children);
-    };
-    QueryRecyclerProvider.propTypes = {
-        children: PropTypes.element.isRequired
-    };
-    QueryRecyclerProvider.contextTypes = {
-        client: PropTypes.object
-    };
-    QueryRecyclerProvider.childContextTypes = {
-        getQueryRecycler: PropTypes.func.isRequired
-    };
-    return QueryRecyclerProvider;
-}(React.Component));
-
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var invariant = __webpack_require__(11);
-var ApolloProvider = (function (_super) {
-    __extends(ApolloProvider, _super);
-    function ApolloProvider(props, context) {
-        var _this = _super.call(this, props, context) || this;
-        invariant(props.client, 'ApolloClient was not passed a client instance. Make ' +
-            'sure you pass in your client via the "client" prop.');
-        if (!props.store && typeof props.client.initStore === 'function') {
-            props.client.initStore();
-        }
-        return _this;
-    }
-    ApolloProvider.prototype.componentWillReceiveProps = function (nextProps) {
-        if (nextProps.client !== this.props.client &&
-            !nextProps.store &&
-            typeof nextProps.client.initStore === 'function') {
-            nextProps.client.initStore();
-        }
-    };
-    ApolloProvider.prototype.getChildContext = function () {
-        return {
-            store: this.props.store || this.context.store,
-            client: this.props.client,
-        };
-    };
-    ApolloProvider.prototype.render = function () {
-        return (React.createElement(QueryRecyclerProvider, null, React.Children.only(this.props.children)));
-    };
-    ApolloProvider.propTypes = {
-        store: PropTypes.shape({
-            subscribe: PropTypes.func.isRequired,
-            dispatch: PropTypes.func.isRequired,
-            getState: PropTypes.func.isRequired,
-        }),
-        client: PropTypes.object.isRequired,
-        children: PropTypes.element.isRequired,
-    };
-    ApolloProvider.childContextTypes = {
-        store: PropTypes.object,
-        client: PropTypes.object.isRequired,
-    };
-    ApolloProvider.contextTypes = {
-        store: PropTypes.object,
-    };
-    return ApolloProvider;
-}(React.Component));
-
-function shallowEqual(objA, objB) {
-    if (!objA || !objB)
-        return false;
-    if (objA === objB)
-        return true;
-    var keysA = Object.keys(objA);
-    var keysB = Object.keys(objB);
-    if (keysA.length !== keysB.length)
-        return false;
-    var hasOwn = Object.prototype.hasOwnProperty;
-    for (var i = 0; i < keysA.length; i++) {
-        if (!hasOwn.call(objB, keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
-            return false;
-        }
-    }
-    return true;
-}
-
-var invariant$2 = __webpack_require__(11);
-var DocumentType;
-(function (DocumentType) {
-    DocumentType[DocumentType["Query"] = 0] = "Query";
-    DocumentType[DocumentType["Mutation"] = 1] = "Mutation";
-    DocumentType[DocumentType["Subscription"] = 2] = "Subscription";
-})(DocumentType || (DocumentType = {}));
-function parser(document) {
-    var variables, type, name;
-    invariant$2(!!document && !!document.kind, "Argument of " + document + " passed to parser was not a valid GraphQL DocumentNode. You may need to use 'graphql-tag' or another method to convert your operation into a document");
-    var fragments = document.definitions.filter(function (x) { return x.kind === 'FragmentDefinition'; });
-    var queries = document.definitions.filter(function (x) {
-        return x.kind === 'OperationDefinition' && x.operation === 'query';
-    });
-    var mutations = document.definitions.filter(function (x) {
-        return x.kind === 'OperationDefinition' && x.operation === 'mutation';
-    });
-    var subscriptions = document.definitions.filter(function (x) {
-        return x.kind === 'OperationDefinition' && x.operation === 'subscription';
-    });
-    invariant$2(!fragments.length ||
-        (queries.length || mutations.length || subscriptions.length), "Passing only a fragment to 'graphql' is not yet supported. You must include a query, subscription or mutation as well");
-    invariant$2(queries.length + mutations.length + subscriptions.length <= 1, "react-apollo only supports a query, subscription, or a mutation per HOC. " + document + " had " + queries.length + " queries, " + subscriptions.length + " subscriptions and " + mutations.length + " mutations. You can use 'compose' to join multiple operation types to a component");
-    type = queries.length ? DocumentType.Query : DocumentType.Mutation;
-    if (!queries.length && !mutations.length)
-        type = DocumentType.Subscription;
-    var definitions = queries.length
-        ? queries
-        : mutations.length ? mutations : subscriptions;
-    invariant$2(definitions.length === 1, "react-apollo only supports one defintion per HOC. " + document + " had " + definitions.length + " definitions. You can use 'compose' to join multiple operation types to a component");
-    var definition = definitions[0];
-    variables = definition.variableDefinitions || [];
-    var hasName = definition.name && definition.name.kind === 'Name';
-    name = hasName ? definition.name.value : 'data';
-    return { name: name, type: type, variables: variables };
-}
-
-var __extends$2 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign$1 = (undefined && undefined.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var pick = __webpack_require__(151);
-var invariant$1 = __webpack_require__(11);
-var assign = __webpack_require__(5);
-var hoistNonReactStatics = __webpack_require__(58);
-var defaultMapPropsToOptions = function (props) { return ({}); };
-var defaultMapResultToProps = function (props) { return props; };
-var defaultMapPropsToSkip = function (props) { return false; };
-function observableQueryFields(observable) {
-    var fields = pick(observable, 'variables', 'refetch', 'fetchMore', 'updateQuery', 'startPolling', 'stopPolling', 'subscribeToMore');
-    Object.keys(fields).forEach(function (key) {
-        if (typeof fields[key] === 'function') {
-            fields[key] = fields[key].bind(observable);
-        }
-    });
-    return fields;
-}
-function getDisplayName(WrappedComponent) {
-    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
-var nextVersion = 0;
-function graphql(document, operationOptions) {
-    if (operationOptions === void 0) { operationOptions = {}; }
-    var _a = operationOptions.options, options = _a === void 0 ? defaultMapPropsToOptions : _a, _b = operationOptions.skip, skip = _b === void 0 ? defaultMapPropsToSkip : _b, _c = operationOptions.alias, alias = _c === void 0 ? 'Apollo' : _c;
-    var mapPropsToOptions = options;
-    if (typeof mapPropsToOptions !== 'function')
-        mapPropsToOptions = function () { return options; };
-    var mapPropsToSkip = skip;
-    if (typeof mapPropsToSkip !== 'function')
-        mapPropsToSkip = function () { return skip; };
-    var mapResultToProps = operationOptions.props;
-    var operation = parser(document);
-    var version = nextVersion++;
-    function wrapWithApolloComponent(WrappedComponent) {
-        var graphQLDisplayName = alias + "(" + getDisplayName(WrappedComponent) + ")";
-        var GraphQL = (function (_super) {
-            __extends$2(GraphQL, _super);
-            function GraphQL(props, context) {
-                var _this = _super.call(this, props, context) || this;
-                _this.previousData = {};
-                _this.version = version;
-                _this.type = operation.type;
-                _this.dataForChildViaMutation = _this.dataForChildViaMutation.bind(_this);
-                _this.setWrappedInstance = _this.setWrappedInstance.bind(_this);
-                return _this;
-            }
-            GraphQL.prototype.componentWillMount = function () {
-                if (!this.shouldSkip(this.props)) {
-                    this.setInitialProps();
-                }
-            };
-            GraphQL.prototype.componentDidMount = function () {
-                this.hasMounted = true;
-                if (this.type === DocumentType.Mutation)
-                    return;
-                if (!this.shouldSkip(this.props)) {
-                    this.subscribeToQuery();
-                    if (this.refetcherQueue) {
-                        var _a = this.refetcherQueue, args = _a.args, resolve = _a.resolve, reject = _a.reject;
-                        this.queryObservable.refetch(args).then(resolve).catch(reject);
-                    }
-                }
-            };
-            GraphQL.prototype.componentWillReceiveProps = function (nextProps, nextContext) {
-                var client = mapPropsToOptions(nextProps).client;
-                if (shallowEqual(this.props, nextProps) &&
-                    (this.client === client || this.client === nextContext.client)) {
-                    return;
-                }
-                this.shouldRerender = true;
-                if (this.client !== client && this.client !== nextContext.client) {
-                    if (client) {
-                        this.client = client;
-                    }
-                    else {
-                        this.client = nextContext.client;
-                    }
-                    this.unsubscribeFromQuery();
-                    this.queryObservable = null;
-                    this.previousData = {};
-                    this.updateQuery(nextProps);
-                    if (!this.shouldSkip(nextProps)) {
-                        this.subscribeToQuery();
-                    }
-                    return;
-                }
-                if (this.type === DocumentType.Mutation) {
-                    return;
-                }
-                if (this.type === DocumentType.Subscription &&
-                    operationOptions.shouldResubscribe &&
-                    operationOptions.shouldResubscribe(this.props, nextProps)) {
-                    this.unsubscribeFromQuery();
-                    delete this.queryObservable;
-                    this.updateQuery(nextProps);
-                    this.subscribeToQuery();
-                    return;
-                }
-                if (this.shouldSkip(nextProps)) {
-                    if (!this.shouldSkip(this.props)) {
-                        this.unsubscribeFromQuery();
-                    }
-                    return;
-                }
-                this.updateQuery(nextProps);
-                this.subscribeToQuery();
-            };
-            GraphQL.prototype.componentWillUnmount = function () {
-                if (this.type === DocumentType.Query) {
-                    if (this.queryObservable) {
-                        var recycler = this.getQueryRecycler();
-                        if (recycler) {
-                            recycler.recycle(this.queryObservable);
-                            delete this.queryObservable;
-                        }
-                    }
-                    this.unsubscribeFromQuery();
-                }
-                if (this.type === DocumentType.Subscription)
-                    this.unsubscribeFromQuery();
-                this.hasMounted = false;
-            };
-            GraphQL.prototype.getQueryRecycler = function () {
-                return (this.context.getQueryRecycler &&
-                    this.context.getQueryRecycler(GraphQL));
-            };
-            GraphQL.prototype.getClient = function (props) {
-                if (this.client)
-                    return this.client;
-                var client = mapPropsToOptions(props).client;
-                if (client) {
-                    this.client = client;
-                }
-                else {
-                    this.client = this.context.client;
-                }
-                invariant$1(!!this.client, "Could not find \"client\" in the context of " +
-                    ("\"" + graphQLDisplayName + "\". ") +
-                    "Wrap the root component in an <ApolloProvider>");
-                return this.client;
-            };
-            GraphQL.prototype.calculateOptions = function (props, newOpts) {
-                if (props === void 0) { props = this.props; }
-                var opts = mapPropsToOptions(props);
-                if (newOpts && newOpts.variables) {
-                    newOpts.variables = assign({}, opts.variables, newOpts.variables);
-                }
-                if (newOpts)
-                    opts = assign({}, opts, newOpts);
-                if (opts.variables || !operation.variables.length)
-                    return opts;
-                var variables = {};
-                for (var _i = 0, _a = operation.variables; _i < _a.length; _i++) {
-                    var _b = _a[_i], variable = _b.variable, type = _b.type;
-                    if (!variable.name || !variable.name.value)
-                        continue;
-                    if (typeof props[variable.name.value] !== 'undefined') {
-                        variables[variable.name.value] = props[variable.name.value];
-                        continue;
-                    }
-                    if (type.kind !== 'NonNullType') {
-                        variables[variable.name.value] = null;
-                        continue;
-                    }
-                    invariant$1(typeof props[variable.name.value] !== 'undefined', "The operation '" + operation.name + "' wrapping '" + getDisplayName(WrappedComponent) + "' " +
-                        ("is expecting a variable: '" + variable.name
-                            .value + "' but it was not found in the props ") +
-                        ("passed to '" + graphQLDisplayName + "'"));
-                }
-                opts = __assign$1({}, opts, { variables: variables });
-                return opts;
-            };
-            GraphQL.prototype.calculateResultProps = function (result) {
-                var name = this.type === DocumentType.Mutation ? 'mutate' : 'data';
-                if (operationOptions.name)
-                    name = operationOptions.name;
-                var newResult = (_a = {},
-                    _a[name] = result,
-                    _a.ownProps = this.props,
-                    _a);
-                if (mapResultToProps)
-                    return mapResultToProps(newResult);
-                return _b = {}, _b[name] = defaultMapResultToProps(result), _b;
-                var _a, _b;
-            };
-            GraphQL.prototype.setInitialProps = function () {
-                if (this.type === DocumentType.Mutation) {
-                    return;
-                }
-                var opts = this.calculateOptions(this.props);
-                this.createQuery(opts);
-            };
-            GraphQL.prototype.createQuery = function (opts, props) {
-                if (props === void 0) { props = this.props; }
-                if (this.type === DocumentType.Subscription) {
-                    this.queryObservable = this.getClient(props).subscribe(assign({
-                        query: document,
-                    }, opts));
-                }
-                else {
-                    var recycler = this.getQueryRecycler();
-                    var queryObservable = null;
-                    if (recycler)
-                        queryObservable = recycler.reuse(opts);
-                    if (queryObservable === null) {
-                        this.queryObservable = this.getClient(props).watchQuery(assign({
-                            query: document,
-                            metadata: {
-                                reactComponent: {
-                                    displayName: graphQLDisplayName,
-                                },
-                            },
-                        }, opts));
-                    }
-                    else {
-                        this.queryObservable = queryObservable;
-                    }
-                }
-            };
-            GraphQL.prototype.updateQuery = function (props) {
-                var opts = this.calculateOptions(props);
-                if (!this.queryObservable) {
-                    this.createQuery(opts, props);
-                }
-                if (this.queryObservable._setOptionsNoResult) {
-                    this.queryObservable._setOptionsNoResult(opts);
-                }
-                else {
-                    if (this.queryObservable.setOptions) {
-                        this.queryObservable
-                            .setOptions(opts)
-                            .catch(function (error) { return null; });
-                    }
-                }
-            };
-            GraphQL.prototype.fetchData = function () {
-                if (this.shouldSkip())
-                    return false;
-                if (operation.type === DocumentType.Mutation ||
-                    operation.type === DocumentType.Subscription)
-                    return false;
-                var opts = this.calculateOptions();
-                if (opts.ssr === false)
-                    return false;
-                if (opts.fetchPolicy === 'network-only' ||
-                    opts.fetchPolicy === 'cache-and-network') {
-                    opts.fetchPolicy = 'cache-first';
-                }
-                var observable = this.getClient(this.props).watchQuery(assign({ query: document }, opts));
-                var result = observable.currentResult();
-                if (result.loading) {
-                    return observable.result();
-                }
-                else {
-                    return false;
-                }
-            };
-            GraphQL.prototype.subscribeToQuery = function () {
-                var _this = this;
-                if (this.querySubscription) {
-                    return;
-                }
-                var next = function (results) {
-                    if (_this.type === DocumentType.Subscription) {
-                        _this.lastSubscriptionData = results;
-                        results = { data: results };
-                    }
-                    var clashingKeys = Object.keys(observableQueryFields(results.data));
-                    invariant$1(clashingKeys.length === 0, "the result of the '" + graphQLDisplayName + "' operation contains keys that " +
-                        "conflict with the return object." +
-                        clashingKeys.map(function (k) { return "'" + k + "'"; }).join(', ') +
-                        " not allowed.");
-                    _this.forceRenderChildren();
-                };
-                var handleError = function (error) {
-                    if (error.hasOwnProperty('graphQLErrors'))
-                        return next({ error: error });
-                    throw error;
-                };
-                this.querySubscription = this.queryObservable.subscribe({
-                    next: next,
-                    error: handleError,
-                });
-            };
-            GraphQL.prototype.unsubscribeFromQuery = function () {
-                if (this.querySubscription) {
-                    this.querySubscription.unsubscribe();
-                    delete this.querySubscription;
-                }
-            };
-            GraphQL.prototype.shouldSkip = function (props) {
-                if (props === void 0) { props = this.props; }
-                return (mapPropsToSkip(props) || mapPropsToOptions(props).skip);
-            };
-            GraphQL.prototype.forceRenderChildren = function () {
-                this.shouldRerender = true;
-                if (this.hasMounted)
-                    this.forceUpdate();
-            };
-            GraphQL.prototype.getWrappedInstance = function () {
-                invariant$1(operationOptions.withRef, "To access the wrapped instance, you need to specify " +
-                    "{ withRef: true } in the options");
-                return this.wrappedInstance;
-            };
-            GraphQL.prototype.setWrappedInstance = function (ref) {
-                this.wrappedInstance = ref;
-            };
-            GraphQL.prototype.dataForChildViaMutation = function (mutationOpts) {
-                var opts = this.calculateOptions(this.props, mutationOpts);
-                if (typeof opts.variables === 'undefined')
-                    delete opts.variables;
-                opts.mutation = document;
-                return this.getClient(this.props).mutate(opts);
-            };
-            GraphQL.prototype.dataForChild = function () {
-                var _this = this;
-                if (this.type === DocumentType.Mutation) {
-                    return this.dataForChildViaMutation;
-                }
-                var opts = this.calculateOptions(this.props);
-                var data = {};
-                assign(data, observableQueryFields(this.queryObservable));
-                if (this.type === DocumentType.Subscription) {
-                    assign(data, {
-                        loading: !this.lastSubscriptionData,
-                        variables: opts.variables,
-                    }, this.lastSubscriptionData);
-                }
-                else {
-                    var currentResult = this.queryObservable.currentResult();
-                    var loading = currentResult.loading, error_1 = currentResult.error, networkStatus = currentResult.networkStatus;
-                    assign(data, { loading: loading, networkStatus: networkStatus });
-                    var logErrorTimeoutId_1 = setTimeout(function () {
-                        if (error_1) {
-                            console.error('Unhandled (in react-apollo)', error_1.stack || error_1);
-                        }
-                    }, 10);
-                    Object.defineProperty(data, 'error', {
-                        configurable: true,
-                        enumerable: true,
-                        get: function () {
-                            clearTimeout(logErrorTimeoutId_1);
-                            return error_1;
-                        },
-                    });
-                    if (loading) {
-                        assign(data, this.previousData, currentResult.data);
-                    }
-                    else if (error_1) {
-                        assign(data, (this.queryObservable.getLastResult() || {}).data);
-                    }
-                    else {
-                        assign(data, currentResult.data);
-                        this.previousData = currentResult.data;
-                    }
-                    if (!this.querySubscription) {
-                        data.refetch = function (args) {
-                            return new Promise(function (r, f) {
-                                _this.refetcherQueue = { resolve: r, reject: f, args: args };
-                            });
-                        };
-                    }
-                }
-                return data;
-            };
-            GraphQL.prototype.render = function () {
-                if (this.shouldSkip()) {
-                    if (operationOptions.withRef) {
-                        return React.createElement(WrappedComponent, assign({}, this.props, { ref: this.setWrappedInstance }));
-                    }
-                    return React.createElement(WrappedComponent, this.props);
-                }
-                var _a = this, shouldRerender = _a.shouldRerender, renderedElement = _a.renderedElement, props = _a.props;
-                this.shouldRerender = false;
-                if (!shouldRerender &&
-                    renderedElement &&
-                    renderedElement.type === WrappedComponent) {
-                    return renderedElement;
-                }
-                var data = this.dataForChild();
-                var clientProps = this.calculateResultProps(data);
-                var mergedPropsAndData = assign({}, props, clientProps);
-                if (operationOptions.withRef)
-                    mergedPropsAndData.ref = this.setWrappedInstance;
-                this.renderedElement = React.createElement(WrappedComponent, mergedPropsAndData);
-                return this.renderedElement;
-            };
-            GraphQL.displayName = graphQLDisplayName;
-            GraphQL.WrappedComponent = WrappedComponent;
-            GraphQL.contextTypes = {
-                client: PropTypes.object,
-                getQueryRecycler: PropTypes.func,
-            };
-            return GraphQL;
-        }(React.Component));
-        return hoistNonReactStatics(GraphQL, WrappedComponent, {});
-    }
-    return wrapWithApolloComponent;
-}
-
-var __extends$3 = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var invariant$3 = __webpack_require__(11);
-var assign$1 = __webpack_require__(5);
-var hoistNonReactStatics$1 = __webpack_require__(58);
-function getDisplayName$1(WrappedComponent) {
-    return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-}
-function withApollo(WrappedComponent, operationOptions) {
-    if (operationOptions === void 0) { operationOptions = {}; }
-    var withDisplayName = "withApollo(" + getDisplayName$1(WrappedComponent) + ")";
-    var WithApollo = (function (_super) {
-        __extends$3(WithApollo, _super);
-        function WithApollo(props, context) {
-            var _this = _super.call(this, props, context) || this;
-            _this.client = context.client;
-            _this.setWrappedInstance = _this.setWrappedInstance.bind(_this);
-            invariant$3(!!_this.client, "Could not find \"client\" in the context of " +
-                ("\"" + withDisplayName + "\". ") +
-                "Wrap the root component in an <ApolloProvider>");
-            return _this;
-        }
-        WithApollo.prototype.getWrappedInstance = function () {
-            invariant$3(operationOptions.withRef, "To access the wrapped instance, you need to specify " +
-                "{ withRef: true } in the options");
-            return this.wrappedInstance;
-        };
-        WithApollo.prototype.setWrappedInstance = function (ref) {
-            this.wrappedInstance = ref;
-        };
-        WithApollo.prototype.render = function () {
-            var props = assign$1({}, this.props);
-            props.client = this.client;
-            if (operationOptions.withRef)
-                props.ref = this.setWrappedInstance;
-            return React.createElement(WrappedComponent, props);
-        };
-        WithApollo.displayName = withDisplayName;
-        WithApollo.WrappedComponent = WrappedComponent;
-        WithApollo.contextTypes = { client: PropTypes.object.isRequired };
-        return WithApollo;
-    }(React.Component));
-    return hoistNonReactStatics$1(WithApollo, WrappedComponent, {});
-}
-
-exports.ApolloProvider = ApolloProvider;
-exports.graphql = graphql;
-exports.withApollo = withApollo;
-exports.compose = redux.compose;
-exports.gql = graphqlTag;
-Object.keys(apolloClient).forEach(function (key) { exports[key] = apolloClient[key]; });
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=react-apollo.browser.umd.js.map
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
 /* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(console) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var _prodInvariant = __webpack_require__(6),
-    _assign = __webpack_require__(5);
-
-var CallbackQueue = __webpack_require__(160);
-var PooledClass = __webpack_require__(29);
-var ReactFeatureFlags = __webpack_require__(165);
-var ReactReconciler = __webpack_require__(37);
-var Transaction = __webpack_require__(62);
-
-var invariant = __webpack_require__(1);
-
-var dirtyComponents = [];
-var updateBatchNumber = 0;
-var asapCallbackQueue = CallbackQueue.getPooled();
-var asapEnqueued = false;
-
-var batchingStrategy = null;
-
-function ensureInjected() {
-  !(ReactUpdates.ReactReconcileTransaction && batchingStrategy) ?  true ? invariant(false, 'ReactUpdates: must inject a reconcile transaction class and batching strategy') : _prodInvariant('123') : void 0;
-}
-
-var NESTED_UPDATES = {
-  initialize: function () {
-    this.dirtyComponentsLength = dirtyComponents.length;
-  },
-  close: function () {
-    if (this.dirtyComponentsLength !== dirtyComponents.length) {
-      // Additional updates were enqueued by componentDidUpdate handlers or
-      // similar; before our own UPDATE_QUEUEING wrapper closes, we want to run
-      // these new updates so that if A's componentDidUpdate calls setState on
-      // B, B will update before the callback A's updater provided when calling
-      // setState.
-      dirtyComponents.splice(0, this.dirtyComponentsLength);
-      flushBatchedUpdates();
-    } else {
-      dirtyComponents.length = 0;
-    }
-  }
-};
-
-var UPDATE_QUEUEING = {
-  initialize: function () {
-    this.callbackQueue.reset();
-  },
-  close: function () {
-    this.callbackQueue.notifyAll();
-  }
-};
-
-var TRANSACTION_WRAPPERS = [NESTED_UPDATES, UPDATE_QUEUEING];
-
-function ReactUpdatesFlushTransaction() {
-  this.reinitializeTransaction();
-  this.dirtyComponentsLength = null;
-  this.callbackQueue = CallbackQueue.getPooled();
-  this.reconcileTransaction = ReactUpdates.ReactReconcileTransaction.getPooled(
-  /* useCreateElement */true);
-}
-
-_assign(ReactUpdatesFlushTransaction.prototype, Transaction, {
-  getTransactionWrappers: function () {
-    return TRANSACTION_WRAPPERS;
-  },
-
-  destructor: function () {
-    this.dirtyComponentsLength = null;
-    CallbackQueue.release(this.callbackQueue);
-    this.callbackQueue = null;
-    ReactUpdates.ReactReconcileTransaction.release(this.reconcileTransaction);
-    this.reconcileTransaction = null;
-  },
-
-  perform: function (method, scope, a) {
-    // Essentially calls `this.reconcileTransaction.perform(method, scope, a)`
-    // with this transaction's wrappers around it.
-    return Transaction.perform.call(this, this.reconcileTransaction.perform, this.reconcileTransaction, method, scope, a);
-  }
-});
-
-PooledClass.addPoolingTo(ReactUpdatesFlushTransaction);
-
-function batchedUpdates(callback, a, b, c, d, e) {
-  ensureInjected();
-  return batchingStrategy.batchedUpdates(callback, a, b, c, d, e);
-}
-
-/**
- * Array comparator for ReactComponents by mount ordering.
- *
- * @param {ReactComponent} c1 first component you're comparing
- * @param {ReactComponent} c2 second component you're comparing
- * @return {number} Return value usable by Array.prototype.sort().
- */
-function mountOrderComparator(c1, c2) {
-  return c1._mountOrder - c2._mountOrder;
-}
-
-function runBatchedUpdates(transaction) {
-  var len = transaction.dirtyComponentsLength;
-  !(len === dirtyComponents.length) ?  true ? invariant(false, 'Expected flush transaction\'s stored dirty-components length (%s) to match dirty-components array length (%s).', len, dirtyComponents.length) : _prodInvariant('124', len, dirtyComponents.length) : void 0;
-
-  // Since reconciling a component higher in the owner hierarchy usually (not
-  // always -- see shouldComponentUpdate()) will reconcile children, reconcile
-  // them before their children by sorting the array.
-  dirtyComponents.sort(mountOrderComparator);
-
-  // Any updates enqueued while reconciling must be performed after this entire
-  // batch. Otherwise, if dirtyComponents is [A, B] where A has children B and
-  // C, B could update twice in a single batch if C's render enqueues an update
-  // to B (since B would have already updated, we should skip it, and the only
-  // way we can know to do so is by checking the batch counter).
-  updateBatchNumber++;
-
-  for (var i = 0; i < len; i++) {
-    // If a component is unmounted before pending changes apply, it will still
-    // be here, but we assume that it has cleared its _pendingCallbacks and
-    // that performUpdateIfNecessary is a noop.
-    var component = dirtyComponents[i];
-
-    // If performUpdateIfNecessary happens to enqueue any new updates, we
-    // shouldn't execute the callbacks until the next render happens, so
-    // stash the callbacks first
-    var callbacks = component._pendingCallbacks;
-    component._pendingCallbacks = null;
-
-    var markerName;
-    if (ReactFeatureFlags.logTopLevelRenders) {
-      var namedComponent = component;
-      // Duck type TopLevelWrapper. This is probably always true.
-      if (component._currentElement.type.isReactTopLevelWrapper) {
-        namedComponent = component._renderedComponent;
-      }
-      markerName = 'React update: ' + namedComponent.getName();
-      console.time(markerName);
-    }
-
-    ReactReconciler.performUpdateIfNecessary(component, transaction.reconcileTransaction, updateBatchNumber);
-
-    if (markerName) {
-      console.timeEnd(markerName);
-    }
-
-    if (callbacks) {
-      for (var j = 0; j < callbacks.length; j++) {
-        transaction.callbackQueue.enqueue(callbacks[j], component.getPublicInstance());
-      }
-    }
-  }
-}
-
-var flushBatchedUpdates = function () {
-  // ReactUpdatesFlushTransaction's wrappers will clear the dirtyComponents
-  // array and perform any updates enqueued by mount-ready handlers (i.e.,
-  // componentDidUpdate) but we need to check here too in order to catch
-  // updates enqueued by setState callbacks and asap calls.
-  while (dirtyComponents.length || asapEnqueued) {
-    if (dirtyComponents.length) {
-      var transaction = ReactUpdatesFlushTransaction.getPooled();
-      transaction.perform(runBatchedUpdates, null, transaction);
-      ReactUpdatesFlushTransaction.release(transaction);
-    }
-
-    if (asapEnqueued) {
-      asapEnqueued = false;
-      var queue = asapCallbackQueue;
-      asapCallbackQueue = CallbackQueue.getPooled();
-      queue.notifyAll();
-      CallbackQueue.release(queue);
-    }
-  }
-};
-
-/**
- * Mark a component as needing a rerender, adding an optional callback to a
- * list of functions which will be executed once the rerender occurs.
- */
-function enqueueUpdate(component) {
-  ensureInjected();
-
-  // Various parts of our code (such as ReactCompositeComponent's
-  // _renderValidatedComponent) assume that calls to render aren't nested;
-  // verify that that's the case. (This is called by each top-level update
-  // function, like setState, forceUpdate, etc.; creation and
-  // destruction of top-level components is guarded in ReactMount.)
-
-  if (!batchingStrategy.isBatchingUpdates) {
-    batchingStrategy.batchedUpdates(enqueueUpdate, component);
-    return;
-  }
-
-  dirtyComponents.push(component);
-  if (component._updateBatchNumber == null) {
-    component._updateBatchNumber = updateBatchNumber + 1;
-  }
-}
-
-/**
- * Enqueue a callback to be run at the end of the current batching cycle. Throws
- * if no updates are currently being performed.
- */
-function asap(callback, context) {
-  invariant(batchingStrategy.isBatchingUpdates, "ReactUpdates.asap: Can't enqueue an asap callback in a context where" + 'updates are not being batched.');
-  asapCallbackQueue.enqueue(callback, context);
-  asapEnqueued = true;
-}
-
-var ReactUpdatesInjection = {
-  injectReconcileTransaction: function (ReconcileTransaction) {
-    !ReconcileTransaction ?  true ? invariant(false, 'ReactUpdates: must provide a reconcile transaction class') : _prodInvariant('126') : void 0;
-    ReactUpdates.ReactReconcileTransaction = ReconcileTransaction;
-  },
-
-  injectBatchingStrategy: function (_batchingStrategy) {
-    !_batchingStrategy ?  true ? invariant(false, 'ReactUpdates: must provide a batching strategy') : _prodInvariant('127') : void 0;
-    !(typeof _batchingStrategy.batchedUpdates === 'function') ?  true ? invariant(false, 'ReactUpdates: must provide a batchedUpdates() function') : _prodInvariant('128') : void 0;
-    !(typeof _batchingStrategy.isBatchingUpdates === 'boolean') ?  true ? invariant(false, 'ReactUpdates: must provide an isBatchingUpdates boolean attribute') : _prodInvariant('129') : void 0;
-    batchingStrategy = _batchingStrategy;
-  }
-};
-
-var ReactUpdates = {
-  /**
-   * React references `ReactReconcileTransaction` using this property in order
-   * to allow dependency injection.
-   *
-   * @internal
-   */
-  ReactReconcileTransaction: null,
-
-  batchedUpdates: batchedUpdates,
-  enqueueUpdate: enqueueUpdate,
-  flushBatchedUpdates: flushBatchedUpdates,
-  injection: ReactUpdatesInjection,
-  asap: asap
-};
-
-module.exports = ReactUpdates;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
-/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3974,7 +3973,7 @@ var ReactCurrentOwner = {
 module.exports = ReactCurrentOwner;
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4248,7 +4247,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 }
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4403,7 +4402,7 @@ function isJsonValue(jsonObject) {
 //# sourceMappingURL=storeUtils.js.map
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4417,7 +4416,7 @@ function isJsonValue(jsonObject) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = createFragmentMap;
 /* harmony export (immutable) */ __webpack_exports__["e"] = getFragmentQueryDocument;
 /* harmony export (immutable) */ __webpack_exports__["g"] = getDefaultValues;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_storeUtils__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_storeUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_assign__ = __webpack_require__(33);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -4591,7 +4590,7 @@ function getDefaultValues(definition) {
 //# sourceMappingURL=getFromAST.js.map
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -4781,7 +4780,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4993,6 +4992,7 @@ var DOMProperty = {
 module.exports = DOMProperty;
 
 /***/ }),
+/* 26 */,
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5378,7 +5378,7 @@ module.exports = exports['default'];
 
 var _assign = __webpack_require__(5);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 
 var warning = __webpack_require__(3);
 var canDefineProperty = __webpack_require__(65);
@@ -5714,10 +5714,10 @@ module.exports = ReactElement;
 /* harmony export (immutable) */ __webpack_exports__["a"] = readQueryFromStore;
 /* harmony export (immutable) */ __webpack_exports__["b"] = diffQueryAgainstStore;
 /* unused harmony export assertIdValue */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_anywhere__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_anywhere__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_anywhere___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_graphql_anywhere__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__storeUtils__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__queries_getFromAST__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__storeUtils__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__queries_getFromAST__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_isEqual__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_assign__ = __webpack_require__(33);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
@@ -5914,7 +5914,7 @@ function isTest() {
     return isEnv('test') === true;
 }
 //# sourceMappingURL=environment.js.map
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(25)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(24)))
 
 /***/ }),
 /* 35 */,
@@ -6450,8 +6450,8 @@ module.exports = reactProdInvariant;
 /* WEBPACK VAR INJECTION */(function(console) {/* harmony export (immutable) */ __webpack_exports__["a"] = writeQueryToStore;
 /* harmony export (immutable) */ __webpack_exports__["b"] = writeResultToStore;
 /* unused harmony export writeSelectionSetToStore */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__queries_getFromAST__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__storeUtils__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__queries_getFromAST__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__storeUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__queries_directives__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_environment__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_assign__ = __webpack_require__(33);
@@ -6777,7 +6777,7 @@ function isNetworkRequestInFlight(networkStatus) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(console) {/* harmony export (immutable) */ __webpack_exports__["a"] = addTypenameToDocument;
 /* harmony export (immutable) */ __webpack_exports__["b"] = removeConnectionDirectiveFromDocument;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__getFromAST__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__getFromAST__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_cloneDeep__ = __webpack_require__(229);
 
 
@@ -6968,7 +6968,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = __webpack_require__(0);
 var React__default = _interopDefault(React);
-var glamor = __webpack_require__(298);
+var glamor = __webpack_require__(299);
 
 var PropTypes = void 0;
 
@@ -8127,7 +8127,7 @@ module.exports = ReactInstanceMap;
 
 
 
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 var getEventTarget = __webpack_require__(91);
 
@@ -9974,7 +9974,7 @@ function isWriteAction(action) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_isEqual__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_maybeDeepFreeze__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__queries_networkStatus__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__queries_getFromAST__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__queries_getFromAST__ = __webpack_require__(23);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -12221,10 +12221,10 @@ module.exports = ReactErrorUtils;
 
 var _prodInvariant = __webpack_require__(6);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var ReactInstanceMap = __webpack_require__(51);
 var ReactInstrumentation = __webpack_require__(13);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -14374,7 +14374,7 @@ module.exports = exports['default'];
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReduxDataProxy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TransactionDataProxy; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__queries_getFromAST__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__queries_getFromAST__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__optimistic_data_store__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__readFromStore__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__writeToStore__ = __webpack_require__(41);
@@ -14587,8 +14587,8 @@ var TransactionDataProxy = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actions__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__writeToStore__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_proxy__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__queries_getFromAST__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storeUtils__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__queries_getFromAST__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storeUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__replaceQueryResults__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__readFromStore__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_errorHandling__ = __webpack_require__(108);
@@ -17345,7 +17345,7 @@ module.exports = EventListener;
 
 
 
-var camelize = __webpack_require__(282);
+var camelize = __webpack_require__(283);
 
 var msPattern = /^-ms-/;
 
@@ -17460,7 +17460,7 @@ module.exports = getActiveElement;
 
 
 
-var hyphenate = __webpack_require__(288);
+var hyphenate = __webpack_require__(289);
 
 var msPattern = /^ms-/;
 
@@ -17537,7 +17537,7 @@ var _camelizeStyleName = __webpack_require__(116);
 
 var _camelizeStyleName2 = _interopRequireDefault(_camelizeStyleName);
 
-var _dangerousStyleValue = __webpack_require__(295);
+var _dangerousStyleValue = __webpack_require__(296);
 
 var _dangerousStyleValue2 = _interopRequireDefault(_dangerousStyleValue);
 
@@ -18133,8 +18133,8 @@ exports.default = omit;
 
 "use strict";
 
-var getFromAST_1 = __webpack_require__(319);
-var directives_1 = __webpack_require__(318);
+var getFromAST_1 = __webpack_require__(320);
+var directives_1 = __webpack_require__(319);
 var storeUtils_1 = __webpack_require__(128);
 function graphql(resolver, document, rootValue, contextValue, variableValues, execOptions) {
     if (execOptions === void 0) { execOptions = {}; }
@@ -18865,7 +18865,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = transition;
 
-var _hyphenateProperty = __webpack_require__(269);
+var _hyphenateProperty = __webpack_require__(270);
 
 var _hyphenateProperty2 = _interopRequireDefault(_hyphenateProperty);
 
@@ -19718,7 +19718,7 @@ var pick = baseRest(function(object, props) {
 
 module.exports = pick;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 152 */
@@ -20812,7 +20812,7 @@ module.exports = PooledClass.addPoolingTo(CallbackQueue);
 
 
 
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var ReactDOMComponentTree = __webpack_require__(7);
 var ReactInstrumentation = __webpack_require__(13);
 
@@ -21075,7 +21075,7 @@ var _assign = __webpack_require__(5);
 
 var LinkedValueUtils = __webpack_require__(84);
 var ReactDOMComponentTree = __webpack_require__(7);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var warning = __webpack_require__(3);
 
@@ -21405,7 +21405,7 @@ module.exports = ReactHostComponent;
 
 var ReactDOMSelection = __webpack_require__(414);
 
-var containsNode = __webpack_require__(283);
+var containsNode = __webpack_require__(284);
 var focusNode = __webpack_require__(117);
 var getActiveElement = __webpack_require__(118);
 
@@ -21532,10 +21532,10 @@ module.exports = ReactInputSelection;
 var _prodInvariant = __webpack_require__(6);
 
 var DOMLazyTree = __webpack_require__(36);
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var React = __webpack_require__(39);
 var ReactBrowserEventEmitter = __webpack_require__(60);
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(7);
 var ReactDOMContainerInfo = __webpack_require__(406);
 var ReactDOMFeatureFlags = __webpack_require__(408);
@@ -21545,7 +21545,7 @@ var ReactInstrumentation = __webpack_require__(13);
 var ReactMarkupChecksum = __webpack_require__(428);
 var ReactReconciler = __webpack_require__(37);
 var ReactUpdateQueue = __webpack_require__(87);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var emptyObject = __webpack_require__(55);
 var instantiateReactComponent = __webpack_require__(177);
@@ -22695,7 +22695,7 @@ module.exports = setTextContent;
 
 var _prodInvariant = __webpack_require__(6);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var REACT_ELEMENT_TYPE = __webpack_require__(422);
 
 var getIteratorFn = __webpack_require__(456);
@@ -24583,7 +24583,7 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _chainFunction = __webpack_require__(267);
+var _chainFunction = __webpack_require__(268);
 
 var _chainFunction2 = _interopRequireDefault(_chainFunction);
 
@@ -25322,7 +25322,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var ReactComponentTreeHook = __webpack_require__(12);
 var ReactElement = __webpack_require__(31);
 
@@ -27461,7 +27461,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17), __webpack_require__(25), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(24), __webpack_require__(2)))
 
 /***/ }),
 /* 213 */
@@ -39894,7 +39894,7 @@ module.exports = function(module) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(214)(module), __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(214)(module), __webpack_require__(16)))
 
 /***/ }),
 /* 217 */
@@ -39908,7 +39908,7 @@ module.exports = function(module) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_QueryManager__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_environment__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_storeUtils__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_storeUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_proxy__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__version__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__version___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__version__);
@@ -40220,7 +40220,7 @@ var ApolloClient = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__queries_store__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__queries_networkStatus__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__queries_getFromAST__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__queries_getFromAST__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__queries_queryTransform__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__data_resultReducers__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__data_fragmentMatcher__ = __webpack_require__(70);
@@ -41162,12 +41162,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_ObservableQuery__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__data_readFromStore__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_writeToStore__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__queries_getFromAST__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__queries_getFromAST__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__queries_networkStatus__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__queries_queryTransform__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__errors_ApolloError__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ApolloClient__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__data_storeUtils__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__data_storeUtils__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__data_fragmentMatcher__ = __webpack_require__(70);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createNetworkInterface", function() { return __WEBPACK_IMPORTED_MODULE_0__transport_networkInterface__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createBatchingNetworkInterface", function() { return __WEBPACK_IMPORTED_MODULE_1__transport_batchedNetworkInterface__["a"]; });
@@ -42430,7 +42430,7 @@ var objectKeys = Object.keys || function (obj) {
   return keys;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 234 */,
@@ -42466,7 +42466,8 @@ var objectKeys = Object.keys || function (obj) {
 /* 264 */,
 /* 265 */,
 /* 266 */,
-/* 267 */
+/* 267 */,
+/* 268 */
 /***/ (function(module, exports) {
 
 
@@ -42492,7 +42493,7 @@ module.exports = function chain(){
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43369,7 +43370,7 @@ module.exports = factory;
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43392,7 +43393,7 @@ function hyphenateProperty(property) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports) {
 
 module.exports = now
@@ -43403,12 +43404,12 @@ function now() {
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var pSlice = Array.prototype.slice;
-var objectKeys = __webpack_require__(273);
-var isArguments = __webpack_require__(272);
+var objectKeys = __webpack_require__(274);
+var isArguments = __webpack_require__(273);
 
 var deepEqual = module.exports = function (actual, expected, opts) {
   if (!opts) opts = {};
@@ -43503,7 +43504,7 @@ function objEquiv(a, b, opts) {
 
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports) {
 
 var supportsArgumentsClass = (function(){
@@ -43529,7 +43530,7 @@ function unsupported(object){
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports) {
 
 exports = module.exports = typeof Object.keys === 'function'
@@ -43544,7 +43545,7 @@ function shim (obj) {
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43555,7 +43556,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = addClass;
 
-var _hasClass = __webpack_require__(275);
+var _hasClass = __webpack_require__(276);
 
 var _hasClass2 = _interopRequireDefault(_hasClass);
 
@@ -43567,7 +43568,7 @@ function addClass(element, className) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43583,7 +43584,7 @@ function hasClass(element, className) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43598,7 +43599,7 @@ module.exports = function removeClass(element, className) {
 };
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43714,7 +43715,7 @@ function getTransitionProperties() {
 }
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43773,7 +43774,7 @@ exports.default = compatRaf;
 module.exports = exports['default'];
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44069,7 +44070,7 @@ if (true) {
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -44116,8 +44117,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 281 */,
-/* 282 */
+/* 282 */,
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44152,7 +44153,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44167,7 +44168,7 @@ module.exports = camelize;
  * 
  */
 
-var isTextNode = __webpack_require__(290);
+var isTextNode = __webpack_require__(291);
 
 /*eslint-disable no-bitwise */
 
@@ -44195,7 +44196,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44325,7 +44326,7 @@ function createArrayFromMixed(obj) {
 module.exports = createArrayFromMixed;
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44344,8 +44345,8 @@ module.exports = createArrayFromMixed;
 
 var ExecutionEnvironment = __webpack_require__(8);
 
-var createArrayFromMixed = __webpack_require__(284);
-var getMarkupWrap = __webpack_require__(286);
+var createArrayFromMixed = __webpack_require__(285);
+var getMarkupWrap = __webpack_require__(287);
 var invariant = __webpack_require__(1);
 
 /**
@@ -44412,7 +44413,7 @@ function createNodesFromMarkup(markup, handleScript) {
 module.exports = createNodesFromMarkup;
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44510,7 +44511,7 @@ function getMarkupWrap(nodeName) {
 module.exports = getMarkupWrap;
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44552,7 +44553,7 @@ function getUnboundedScrollPosition(scrollable) {
 module.exports = getUnboundedScrollPosition;
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44588,7 +44589,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44616,7 +44617,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44631,7 +44632,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(289);
+var isNode = __webpack_require__(290);
 
 /**
  * @param {*} object The object to check.
@@ -44644,7 +44645,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44670,7 +44671,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = performance || {};
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44685,7 +44686,7 @@ module.exports = performance || {};
  * @typechecks
  */
 
-var performance = __webpack_require__(291);
+var performance = __webpack_require__(292);
 
 var performanceNow;
 
@@ -44707,8 +44708,8 @@ if (performance.now) {
 module.exports = performanceNow;
 
 /***/ }),
-/* 293 */,
-/* 294 */
+/* 294 */,
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44868,7 +44869,7 @@ var CSSProperty = {
 exports.default = CSSProperty;
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44878,7 +44879,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _CSSProperty = __webpack_require__(294);
+var _CSSProperty = __webpack_require__(295);
 
 var _CSSProperty2 = _interopRequireDefault(_CSSProperty);
 
@@ -44964,7 +44965,7 @@ function dangerousStyleValue(name, value, component) {
 exports.default = dangerousStyleValue;
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45024,7 +45025,7 @@ function clean(input) {
 }
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45100,7 +45101,7 @@ function Umul32(n, m) {
 }
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45177,17 +45178,17 @@ var _objectAssign = __webpack_require__(5);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _sheet = __webpack_require__(301);
+var _sheet = __webpack_require__(302);
 
 var _CSSPropertyOperations = __webpack_require__(122);
 
-var _clean = __webpack_require__(296);
+var _clean = __webpack_require__(297);
 
 var _clean2 = _interopRequireDefault(_clean);
 
-var _plugins = __webpack_require__(299);
+var _plugins = __webpack_require__(300);
 
-var _hash = __webpack_require__(297);
+var _hash = __webpack_require__(298);
 
 var _hash2 = _interopRequireDefault(_hash);
 
@@ -46119,7 +46120,7 @@ function attribsFor() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46142,7 +46143,7 @@ var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
 var _CSSPropertyOperations = __webpack_require__(122);
 
-var _prefixer = __webpack_require__(300);
+var _prefixer = __webpack_require__(301);
 
 var _prefixer2 = _interopRequireDefault(_prefixer);
 
@@ -46232,7 +46233,7 @@ function prefixes(node) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46319,7 +46320,7 @@ function prefixer(style) {
 }
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46558,7 +46559,7 @@ function StyleSheet() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46588,11 +46589,11 @@ var _shallowEqual = __webpack_require__(45);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _marker_dispatcher = __webpack_require__(306);
+var _marker_dispatcher = __webpack_require__(307);
 
 var _marker_dispatcher2 = _interopRequireDefault(_marker_dispatcher);
 
-var _google_map_map = __webpack_require__(303);
+var _google_map_map = __webpack_require__(304);
 
 var _google_map_map2 = _interopRequireDefault(_google_map_map);
 
@@ -46600,43 +46601,43 @@ var _google_map_markers = __webpack_require__(123);
 
 var _google_map_markers2 = _interopRequireDefault(_google_map_markers);
 
-var _google_map_markers_prerender = __webpack_require__(304);
+var _google_map_markers_prerender = __webpack_require__(305);
 
 var _google_map_markers_prerender2 = _interopRequireDefault(_google_map_markers_prerender);
 
-var _google_map_loader = __webpack_require__(314);
+var _google_map_loader = __webpack_require__(315);
 
 var _google_map_loader2 = _interopRequireDefault(_google_map_loader);
 
-var _detect = __webpack_require__(308);
+var _detect = __webpack_require__(309);
 
 var _detect2 = _interopRequireDefault(_detect);
 
-var _geo = __webpack_require__(310);
+var _geo = __webpack_require__(311);
 
 var _geo2 = _interopRequireDefault(_geo);
 
-var _array_helper = __webpack_require__(307);
+var _array_helper = __webpack_require__(308);
 
 var _array_helper2 = _interopRequireDefault(_array_helper);
 
-var _is_plain_object = __webpack_require__(312);
+var _is_plain_object = __webpack_require__(313);
 
 var _is_plain_object2 = _interopRequireDefault(_is_plain_object);
 
-var _pick = __webpack_require__(316);
+var _pick = __webpack_require__(317);
 
 var _pick2 = _interopRequireDefault(_pick);
 
-var _raf = __webpack_require__(317);
+var _raf = __webpack_require__(318);
 
 var _raf2 = _interopRequireDefault(_raf);
 
-var _log = __webpack_require__(315);
+var _log = __webpack_require__(316);
 
 var _log2 = _interopRequireDefault(_log);
 
-var _isNumber = __webpack_require__(311);
+var _isNumber = __webpack_require__(312);
 
 var _isNumber2 = _interopRequireDefault(_isNumber);
 
@@ -46644,7 +46645,7 @@ var _omit = __webpack_require__(126);
 
 var _omit2 = _interopRequireDefault(_omit);
 
-var _detectElementResize = __webpack_require__(309);
+var _detectElementResize = __webpack_require__(310);
 
 var _detectElementResize2 = _interopRequireDefault(_detectElementResize);
 
@@ -47612,7 +47613,7 @@ exports.default = GoogleMap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47675,7 +47676,7 @@ var GoogleMapMap = function (_Component) {
 exports.default = GoogleMapMap;
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47717,7 +47718,7 @@ var style = {
 };
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47728,7 +47729,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _google_map = __webpack_require__(302);
+var _google_map = __webpack_require__(303);
 
 var _google_map2 = _interopRequireDefault(_google_map);
 
@@ -47737,7 +47738,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _google_map2.default;
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47749,7 +47750,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _eventemitter = __webpack_require__(279);
+var _eventemitter = __webpack_require__(280);
 
 var _eventemitter2 = _interopRequireDefault(_eventemitter);
 
@@ -47802,7 +47803,7 @@ var MarkerDispatcher = function (_EventEmitter) {
 exports.default = MarkerDispatcher;
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47825,7 +47826,7 @@ function isArraysEqualEps(arrayA, arrayB, eps) {
 }
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47881,7 +47882,7 @@ function detectBrowser() {
 }
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48060,7 +48061,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48082,7 +48083,7 @@ var _lat_lng = __webpack_require__(124);
 
 var _lat_lng2 = _interopRequireDefault(_lat_lng);
 
-var _transform = __webpack_require__(313);
+var _transform = __webpack_require__(314);
 
 var _transform2 = _interopRequireDefault(_transform);
 
@@ -48220,7 +48221,7 @@ var Geo = function () {
 exports.default = Geo;
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48245,7 +48246,7 @@ function isNumber(value) {
 }
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48284,7 +48285,7 @@ function isPlainObject(obj) {
 }
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48466,7 +48467,7 @@ var Transform = function () {
 exports.default = Transform;
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48546,7 +48547,7 @@ function googleMapLoader(bootstrapURLKeys) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48562,7 +48563,7 @@ var log2 = Math.log2 ? Math.log2 : function (x) {
 exports.default = log2;
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48584,7 +48585,7 @@ function pick(obj, fn) {
 }
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48605,7 +48606,7 @@ function raf(callback) {
 }
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48672,7 +48673,7 @@ exports.shouldInclude = shouldInclude;
 //# sourceMappingURL=directives.js.map
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48733,12 +48734,12 @@ exports.getMainDefinition = getMainDefinition;
 //# sourceMappingURL=getFromAST.js.map
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var utilities_1 = __webpack_require__(321);
+var utilities_1 = __webpack_require__(322);
 exports.filter = utilities_1.filter;
 exports.check = utilities_1.check;
 exports.propType = utilities_1.propType;
@@ -48748,7 +48749,7 @@ exports.default = graphql_1.graphql;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48824,7 +48825,6 @@ exports.propType = propType;
 //# sourceMappingURL=utilities.js.map
 
 /***/ }),
-/* 322 */,
 /* 323 */,
 /* 324 */,
 /* 325 */,
@@ -58635,7 +58635,7 @@ module.exports = self.fetch.bind(self);
   }
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25), __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24), __webpack_require__(16)))
 
 /***/ }),
 /* 351 */
@@ -58685,7 +58685,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 /* harmony default export */ __webpack_exports__["a"] = (freeGlobal);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(16)))
 
 /***/ }),
 /* 353 */
@@ -58902,7 +58902,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 361 */
@@ -66357,8 +66357,8 @@ var EventPluginHub = __webpack_require__(49);
 var EventPropagators = __webpack_require__(50);
 var ExecutionEnvironment = __webpack_require__(8);
 var ReactDOMComponentTree = __webpack_require__(7);
-var ReactUpdates = __webpack_require__(20);
-var SyntheticEvent = __webpack_require__(22);
+var ReactUpdates = __webpack_require__(18);
+var SyntheticEvent = __webpack_require__(21);
 
 var inputValueTracking = __webpack_require__(176);
 var getEventTarget = __webpack_require__(91);
@@ -66673,7 +66673,7 @@ var _prodInvariant = __webpack_require__(6);
 var DOMLazyTree = __webpack_require__(36);
 var ExecutionEnvironment = __webpack_require__(8);
 
-var createNodesFromMarkup = __webpack_require__(285);
+var createNodesFromMarkup = __webpack_require__(286);
 var emptyFunction = __webpack_require__(15);
 var invariant = __webpack_require__(1);
 
@@ -66945,7 +66945,7 @@ module.exports = FallbackCompositionState;
 
 
 
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 
 var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -67325,7 +67325,7 @@ var ReactChildReconciler = {
 };
 
 module.exports = ReactChildReconciler;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
 
 /***/ }),
 /* 402 */
@@ -67378,7 +67378,7 @@ var _prodInvariant = __webpack_require__(6),
 
 var React = __webpack_require__(39);
 var ReactComponentEnvironment = __webpack_require__(85);
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var ReactErrorUtils = __webpack_require__(86);
 var ReactInstanceMap = __webpack_require__(51);
 var ReactInstrumentation = __webpack_require__(13);
@@ -68282,7 +68282,7 @@ var ReactDOMComponentTree = __webpack_require__(7);
 var ReactDefaultInjection = __webpack_require__(421);
 var ReactMount = __webpack_require__(168);
 var ReactReconciler = __webpack_require__(37);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 var ReactVersion = __webpack_require__(436);
 
 var findDOMNode = __webpack_require__(453);
@@ -68400,7 +68400,7 @@ var AutoFocusUtils = __webpack_require__(392);
 var CSSPropertyOperations = __webpack_require__(394);
 var DOMLazyTree = __webpack_require__(36);
 var DOMNamespaces = __webpack_require__(81);
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var DOMPropertyOperations = __webpack_require__(161);
 var EventPluginHub = __webpack_require__(49);
 var EventPluginRegistry = __webpack_require__(59);
@@ -69571,7 +69571,7 @@ var _prodInvariant = __webpack_require__(6),
 var DOMPropertyOperations = __webpack_require__(161);
 var LinkedValueUtils = __webpack_require__(84);
 var ReactDOMComponentTree = __webpack_require__(7);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -69855,7 +69855,7 @@ module.exports = ReactDOMInput;
 
 
 
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var ReactComponentTreeHook = __webpack_require__(12);
 
 var warning = __webpack_require__(3);
@@ -70507,7 +70507,7 @@ var _prodInvariant = __webpack_require__(6),
 
 var LinkedValueUtils = __webpack_require__(84);
 var ReactDOMComponentTree = __webpack_require__(7);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -70804,7 +70804,7 @@ module.exports = {
 
 
 
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var EventPluginRegistry = __webpack_require__(59);
 var ReactComponentTreeHook = __webpack_require__(12);
 
@@ -70925,7 +70925,7 @@ var ReactHostOperationHistoryHook = __webpack_require__(425);
 var ReactComponentTreeHook = __webpack_require__(12);
 var ExecutionEnvironment = __webpack_require__(8);
 
-var performanceNow = __webpack_require__(292);
+var performanceNow = __webpack_require__(293);
 var warning = __webpack_require__(3);
 
 var hooks = [];
@@ -71285,7 +71285,7 @@ module.exports = ReactDebugTool;
 
 var _assign = __webpack_require__(5);
 
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 var Transaction = __webpack_require__(62);
 
 var emptyFunction = __webpack_require__(15);
@@ -71507,10 +71507,10 @@ var EventListener = __webpack_require__(115);
 var ExecutionEnvironment = __webpack_require__(8);
 var PooledClass = __webpack_require__(29);
 var ReactDOMComponentTree = __webpack_require__(7);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var getEventTarget = __webpack_require__(91);
-var getUnboundedScrollPosition = __webpack_require__(287);
+var getUnboundedScrollPosition = __webpack_require__(288);
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -71696,14 +71696,14 @@ module.exports = ReactHostOperationHistoryHook;
 
 
 
-var DOMProperty = __webpack_require__(26);
+var DOMProperty = __webpack_require__(25);
 var EventPluginHub = __webpack_require__(49);
 var EventPluginUtils = __webpack_require__(82);
 var ReactComponentEnvironment = __webpack_require__(85);
 var ReactEmptyComponent = __webpack_require__(164);
 var ReactBrowserEventEmitter = __webpack_require__(60);
 var ReactHostComponent = __webpack_require__(166);
-var ReactUpdates = __webpack_require__(20);
+var ReactUpdates = __webpack_require__(18);
 
 var ReactInjection = {
   Component: ReactComponentEnvironment.injection,
@@ -71832,7 +71832,7 @@ var ReactComponentEnvironment = __webpack_require__(85);
 var ReactInstanceMap = __webpack_require__(51);
 var ReactInstrumentation = __webpack_require__(13);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var ReactReconciler = __webpack_require__(37);
 var ReactChildReconciler = __webpack_require__(401);
 
@@ -73233,7 +73233,7 @@ var EventPropagators = __webpack_require__(50);
 var ExecutionEnvironment = __webpack_require__(8);
 var ReactDOMComponentTree = __webpack_require__(7);
 var ReactInputSelection = __webpack_require__(167);
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 var getActiveElement = __webpack_require__(118);
 var isTextInputElement = __webpack_require__(178);
@@ -73428,7 +73428,7 @@ var EventPropagators = __webpack_require__(50);
 var ReactDOMComponentTree = __webpack_require__(7);
 var SyntheticAnimationEvent = __webpack_require__(440);
 var SyntheticClipboardEvent = __webpack_require__(441);
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 var SyntheticFocusEvent = __webpack_require__(444);
 var SyntheticKeyboardEvent = __webpack_require__(446);
 var SyntheticMouseEvent = __webpack_require__(61);
@@ -73649,7 +73649,7 @@ module.exports = SimpleEventPlugin;
 
 
 
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 /**
  * @interface Event
@@ -73691,7 +73691,7 @@ module.exports = SyntheticAnimationEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 /**
  * @interface Event
@@ -73732,7 +73732,7 @@ module.exports = SyntheticClipboardEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 /**
  * @interface Event
@@ -73849,7 +73849,7 @@ module.exports = SyntheticFocusEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 /**
  * @interface Event
@@ -74024,7 +74024,7 @@ module.exports = SyntheticTouchEvent;
 
 
 
-var SyntheticEvent = __webpack_require__(22);
+var SyntheticEvent = __webpack_require__(21);
 
 /**
  * @interface Event
@@ -74241,7 +74241,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 }
 
 module.exports = checkReactTypeSpec;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
 
 /***/ }),
 /* 452 */
@@ -74342,7 +74342,7 @@ module.exports = dangerousStyleValue;
 
 var _prodInvariant = __webpack_require__(6);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(7);
 var ReactInstanceMap = __webpack_require__(51);
 
@@ -74466,7 +74466,7 @@ function flattenChildren(children, selfDebugID) {
 }
 
 module.exports = flattenChildren;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
 
 /***/ }),
 /* 455 */
@@ -74879,7 +74879,7 @@ var _reactSideEffect = __webpack_require__(498);
 
 var _reactSideEffect2 = _interopRequireDefault(_reactSideEffect);
 
-var _deepEqual = __webpack_require__(271);
+var _deepEqual = __webpack_require__(272);
 
 var _deepEqual2 = _interopRequireDefault(_deepEqual);
 
@@ -75693,7 +75693,7 @@ exports.mapStateOnServer = mapStateOnServer;
 exports.reducePropsToState = reducePropsToState;
 exports.requestAnimationFrame = requestAnimationFrame;
 exports.warn = warn;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(2)))
 
 /***/ }),
 /* 463 */
@@ -78000,7 +78000,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _exenv = __webpack_require__(280);
+var _exenv = __webpack_require__(281);
 
 var _exenv2 = _interopRequireDefault(_exenv);
 
@@ -78224,19 +78224,19 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _addClass = __webpack_require__(274);
+var _addClass = __webpack_require__(275);
 
 var _addClass2 = _interopRequireDefault(_addClass);
 
-var _removeClass = __webpack_require__(276);
+var _removeClass = __webpack_require__(277);
 
 var _removeClass2 = _interopRequireDefault(_removeClass);
 
-var _requestAnimationFrame = __webpack_require__(278);
+var _requestAnimationFrame = __webpack_require__(279);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
-var _properties = __webpack_require__(277);
+var _properties = __webpack_require__(278);
 
 var _react = __webpack_require__(0);
 
@@ -79443,7 +79443,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 }
 
 module.exports = checkReactTypeSpec;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
 
 /***/ }),
 /* 514 */
@@ -79467,7 +79467,7 @@ var _require2 = __webpack_require__(31),
     isValidElement = _require2.isValidElement;
 
 var ReactNoopUpdateQueue = __webpack_require__(204);
-var factory = __webpack_require__(268);
+var factory = __webpack_require__(269);
 
 module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
@@ -79553,7 +79553,7 @@ module.exports = onlyChild;
 
 var _prodInvariant = __webpack_require__(40);
 
-var ReactCurrentOwner = __webpack_require__(21);
+var ReactCurrentOwner = __webpack_require__(20);
 var REACT_ELEMENT_TYPE = __webpack_require__(202);
 
 var getIteratorFn = __webpack_require__(205);
@@ -80735,7 +80735,7 @@ function combineReducers(reducers) {
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 523 */
@@ -84380,7 +84380,7 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17), __webpack_require__(214)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(214)(module)))
 
 /***/ }),
 /* 529 */

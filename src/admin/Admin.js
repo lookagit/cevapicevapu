@@ -1,6 +1,6 @@
 import React from 'react';
 import TopHero from '../DumbComponents/Helpers/TopHero';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
+import {Grid, Row} from 'react-styled-flexboxgrid';
 import ProizvodList from './ProizvodList';
 import Porudzbine from './Porudzbine';
 import NavBar from './NavBar';
