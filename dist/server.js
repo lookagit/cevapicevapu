@@ -3354,6 +3354,7 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
   }
   calculateThisDate() {
     let today = new Date();
+    console.log(today.getHours());
     if (today.getDay() == 0) {
       return false;
     } else if (today.getDay() != 0) {
