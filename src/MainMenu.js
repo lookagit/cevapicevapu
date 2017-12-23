@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import css from './styles.css';
 import menuIcon from './hamburger.png';
-import CartBucketMini from './CartBucketMini.js';
-import CartBucket from './CartBucket.js';
+import CartBucketMini from './DumbComponents/DumbCart/CartBucketMini.js';
+import CartBucket from './DumbComponents/DumbCart/CartBucket.js';
 class MainMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class MainMenu extends React.Component {
         rej = reject;
     });
     p.cancel = function(){ clearTimeout(ctr); rej(Error("Cancelled"))};
-    return p; 
+    return p;
   }
 
   componentDidMount() {

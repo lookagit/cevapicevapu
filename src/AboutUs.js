@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './styles.css'
-import TopHero from './TopHero.js';
-import ContentBoxes from './ContentBoxes.js';
+import TopHero from './DumbComponents/Helpers/TopHero.js';
+import ContentBoxes from './DumbComponents/AboutDumb/ContentBoxes.js';
 export default class AboutUs extends React.Component {
   componentDidMount() {
     if(typeof window !== 'undefined') {

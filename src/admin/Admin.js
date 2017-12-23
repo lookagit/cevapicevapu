@@ -1,5 +1,5 @@
 import React from 'react';
-import TopHero from '../TopHero';
+import TopHero from '../DumbComponents/Helpers/TopHero';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import ProizvodList from './ProizvodList';
 import Porudzbine from './Porudzbine';

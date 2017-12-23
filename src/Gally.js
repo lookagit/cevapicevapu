@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './styles.css'
-import TopHero from './TopHero.js';
+import TopHero from './DumbComponents/Helpers/TopHero.js';
 import {PhotoSwipeGallery} from 'react-photoswipe';
 let items = [
   {

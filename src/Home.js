@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header.js';
-import ParalaxContainer from './ParalaxContainer.js';
-import SectionHeadline from './SectionHeadline';
-import FeaturedLeft from './FeaturedLeft.js';
+import Header from './DumbComponents/Helpers/Header.js';
+import ParalaxContainer from './DumbComponents/Helpers/ParalaxContainer.js';
+import SectionHeadline from './DumbComponents/Helpers/SectionHeadline';
+import FeaturedLeft from './DumbComponents/Helpers/FeaturedLeft.js';
 import css from './styles.css';
 const stylee = {
   backgroundImage : 'url("https://res.cloudinary.com/drama/image/upload/q_78/v1513947427/slika-za-parallax-drama-rostilj_vaxorb.jpg")',

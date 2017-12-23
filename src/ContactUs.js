@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './styles.css';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
-import TopHero from './TopHero.js';
+import TopHero from './DumbComponents/Helpers/TopHero.js';
 import FacebookSquare from 'react-icons/lib/fa/facebook-square';
 import InstagramSquare from 'react-icons/lib/fa/instagram';
 import YoutubeSquare from 'react-icons/lib/fa/youtube-square';

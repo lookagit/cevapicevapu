@@ -8,7 +8,7 @@ import PorudzbinaConfirm from './PorudzbinaConfirm';
 import { connect } from 'react-redux';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import scss from './styles.scss';
-import PovratnoVreme from './PovratnoVreme.js';
+import PovratnoVreme from './PovratnoVreme';
 
 @connect(state => ({ counter: state.counter, orders: state.orders }))
 @graphql(gql`

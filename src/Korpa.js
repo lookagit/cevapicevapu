@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopHero from './TopHero';
+import TopHero from './DumbComponents/Helpers/TopHero';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import KorpaPorudzbina from './KorpaPorudzbina';
