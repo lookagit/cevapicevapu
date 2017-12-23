@@ -3362,6 +3362,7 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
     }
   }
   render() {
+    this.calculateThisDate();
     return _react2.default.createElement(
       'div',
       null,

@@ -20,6 +20,7 @@ export default class NaruciNesto extends React.Component {
     }
   }
   render () {
+    this.calculateThisDate();
     return (
       <div>
         <TopHero title="Dostava" subtitle="Cvrči, cvrči ćevap Drama, uskoro će biti s Vama" bgImage={{backgroundImage: "url('https://res.cloudinary.com/drama/image/upload/c_scale,q_58,w_1766/v1513947368/dostava_murmvd.jpg')"}} />
