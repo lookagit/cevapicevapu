@@ -18,6 +18,8 @@ query AllPorudzbinas {
       proizvod {
         naslov,
         tip,
+        lepinjaIde,
+        priloziIdu
 
       }
 

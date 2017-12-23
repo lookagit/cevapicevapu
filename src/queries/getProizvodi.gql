@@ -4,6 +4,8 @@ query AllProizvods {
     cena,
     naslov,
     urlSlike,
-    tip
+    tip,
+    lepinjaIde,
+    priloziIdu
   }
 }

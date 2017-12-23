@@ -89,11 +89,11 @@ export default class Porudzbine extends React.Component {
   render () {
     const { data } = this.props;
 
-    const porudzbine = {};
+    let porudzbine = {};
 
     if(data.allPorudzbinas) {
-      porudzbine.lista = data.allPorudzbinas;
-      porudzbine.revers = porudzbine.lista;
+      porudzbine.lista = [...data.allPorudzbinas];
+      porudzbine.revers = porudzbine.lista.reverse();
     }
 
     return (

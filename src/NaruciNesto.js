@@ -10,6 +10,15 @@ export default class NaruciNesto extends React.Component {
       window.scroll(0,0);
     }
   }
+  calculateThisDate() {
+    let today = new Date();
+    if(today.getDay() == 0) {
+      return false
+    } else if(today.getDay() != 0) {
+      var n = today.getHours();
+      console.log("OVO JE N ", n);
+    }
+  }
   render () {
     return (
       <div>

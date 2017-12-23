@@ -1,0 +1,10 @@
+{
+  "assets/fonts/BADGRUNGE.ttf": "/assets/fonts/BADGRUNGE.9940eb554216bb36559f837fa4c0e73d.ttf",
+  "assets/img/hamburger.png": "/assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png",
+  "assets/img/logodrama.png": "/assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png",
+  "browser.css": "/assets/css/style.4d7f2984cbc2353fca5ae7d2b298643c.css",
+  "browser.js": "/browser.9c10733f426dbd692e7f.js",
+  "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
+  "manifest.json": "/../chunk-manifest.json",
+  "vendor.js": "/vendor.528adef3adfbc38e3455.js"
+}
