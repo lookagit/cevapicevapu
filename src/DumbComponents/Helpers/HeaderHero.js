@@ -1,6 +1,5 @@
 import React from 'react';
 import css from '../../styles.css';
-import scss from '../../styles.scss';
 class HeaderHero extends React.Component {
   constructor(props) {
     super(props);

@@ -24,11 +24,7 @@ class ParalaxContainer extends React.Component {
     }
   }
   render() {
-    return (
-      <div className={css.parallax} style={this.state.stylee}>
-
-      </div>
-    )
+    return (<div className={css.parallax} style={this.state.stylee}></div>)
   }
 }
 export default ParalaxContainer;

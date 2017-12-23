@@ -147,19 +147,19 @@ module.exports = require("react-redux");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("prop-types");
+module.exports = require("react-apollo");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-apollo");
+module.exports = require("react-styled-flexboxgrid");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-styled-flexboxgrid");
+module.exports = require("prop-types");
 
 /***/ }),
 /* 6 */
@@ -536,7 +536,7 @@ var _koa = __webpack_require__(73);
 
 var _koa2 = _interopRequireDefault(_koa);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _koaSend = __webpack_require__(77);
 
@@ -827,7 +827,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.browserClient = browserClient;
 exports.serverClient = serverClient;
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _project = __webpack_require__(23);
 
@@ -1139,7 +1139,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1241,7 +1241,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1481,7 +1481,7 @@ var _styles = __webpack_require__(1);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _TopHero = __webpack_require__(7);
 
@@ -1799,7 +1799,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _styles = __webpack_require__(1);
 
@@ -1958,10 +1958,6 @@ var _shoppingCart = __webpack_require__(19);
 
 var _shoppingCart2 = _interopRequireDefault(_shoppingCart);
 
-var _styles = __webpack_require__(1);
-
-var _styles2 = _interopRequireDefault(_styles);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let CartBucketMini = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.orders })), _dec(_class = class CartBucketMini extends _react2.default.Component {
@@ -1971,10 +1967,8 @@ let CartBucketMini = (_dec = (0, _reactRedux.connect)(state => ({ orders: state.
       cartCount: ""
     };
   }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.orders.length) {
-
       const numb = nextProps.orders.reduce(function (sum, b) {
         return sum + parseInt(b.kolicina);
       }, 0);
@@ -2282,7 +2276,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2803,7 +2797,7 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2813,7 +2807,7 @@ var _KorpaPorudzbina = __webpack_require__(48);
 
 var _KorpaPorudzbina2 = _interopRequireDefault(_KorpaPorudzbina);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _styles = __webpack_require__(6);
 
@@ -2909,13 +2903,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _graphqlTag = __webpack_require__(8);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2927,7 +2921,7 @@ var _PorudzbinaConfirm2 = _interopRequireDefault(_PorudzbinaConfirm);
 
 var _reactRedux = __webpack_require__(2);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _styles = __webpack_require__(6);
 
@@ -3481,13 +3475,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _graphqlTag = __webpack_require__(8);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3665,17 +3659,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _getProizvodi = __webpack_require__(14);
 
 var _getProizvodi2 = _interopRequireDefault(_getProizvodi);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _ProizvodItem = __webpack_require__(54);
 
@@ -3733,15 +3727,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _styles = __webpack_require__(6);
 
 var _styles2 = _interopRequireDefault(_styles);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -3754,7 +3744,6 @@ var _reactAlert2 = _interopRequireDefault(_reactAlert);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders })), _dec(_class = class ProizvodItem extends _react.Component {
-
   constructor(props) {
     super(props);
     this.alertOptions = {
@@ -4117,11 +4106,6 @@ let ProizvodItem = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.c
     );
   }
 }) || _class);
-ProizvodItem.propTypes = {
-  counter: _propTypes2.default.shape({
-    count: _propTypes2.default.number.isRequired
-  })
-};
 exports.default = ProizvodItem;
 
 const stylee = {
@@ -4161,7 +4145,7 @@ var _TopHero = __webpack_require__(7);
 
 var _TopHero2 = _interopRequireDefault(_TopHero);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _ProizvodList = __webpack_require__(59);
 
@@ -4183,7 +4167,7 @@ var _graphqlTag = __webpack_require__(8);
 
 var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -4398,17 +4382,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
 var _porudzbine = __webpack_require__(12);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _allPorudzbinas = __webpack_require__(63);
 
@@ -4554,7 +4538,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _graphqlTag = __webpack_require__(8);
 
@@ -4900,13 +4884,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactStyledFlexboxgrid = __webpack_require__(5);
+var _reactStyledFlexboxgrid = __webpack_require__(4);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _getProizvodi = __webpack_require__(14);
 
@@ -4980,11 +4964,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactApollo = __webpack_require__(4);
+var _reactApollo = __webpack_require__(3);
 
 var _reactRedux = __webpack_require__(2);
 
