@@ -19,7 +19,6 @@ var options = {
     left: '50%',
     shadow: false,
     hwaccel: false,
-    position: 'absolute'
 };
 export default function MyLoadingComponent() {
     return <div style={{
@@ -44,3 +43,6 @@ export default function MyLoadingComponent() {
       </div>
     </div>;
 }
+export const load = () => (
+    <div>Loading...</div>
+  )

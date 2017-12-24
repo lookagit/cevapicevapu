@@ -2,7 +2,14 @@ import React from 'react';
 import Header from './DumbComponents/Helpers/Header.js';
 import ParalaxContainer from './DumbComponents/Helpers/ParalaxContainer.js';
 import SectionHeadline from './DumbComponents/Helpers/SectionHeadline';
-import FeaturedLeft from './DumbComponents/Helpers/FeaturedLeft.js';
+import Loadable from 'react-loadable';
+import {load} from './DumbComponents/Helpers/Loading';
+
+const LoadableComponentForHome = Loadable({
+  loader: () => import('./DumbComponents/Helpers/FeaturedLeft.js'),
+  loading: load,
+});
+
 import css from './styles.css';
 const stylee = {
   backgroundImage : 'url("https://res.cloudinary.com/drama/image/upload/q_78/v1513947427/slika-za-parallax-drama-rostilj_vaxorb.jpg")',
@@ -14,7 +21,24 @@ const sndlax = {
 }
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrolled: false,
+      DynamicHomeIframe: null,
+    }
+  }
   componentDidMount() {
+    if(typeof window !== 'undefined')  {
+      window.addEventListener('scroll', () => {
+        if(!this.state.scrolled) {
+          console.log("JOJO ");
+          this.setState({
+            scrolled: true,
+          })
+        }
+      })
+    }
     if(typeof window !== 'undefined')  {
       window.scrollTo(0,0);
     }
@@ -32,7 +56,7 @@ export default class Home extends React.Component {
         </div>
         <ParalaxContainer stylee={sndlax} />
         <div style={{backgroundImage:"url('https://res.cloudinary.com/drama/image/upload/c_scale,q_39,w_1117/v1513947423/Pozadina2_eqdfqq.jpg')"}}  className={css.pozadina2}>
-          <FeaturedLeft />
+          { this.state.scrolled && <LoadableComponentForHome />}
         </div>
       </div>
     );
