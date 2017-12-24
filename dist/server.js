@@ -4297,6 +4297,16 @@ var _Home2 = _interopRequireDefault(_Home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+if (typeof window !== 'undefined') {
+  new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 90)).then(WebFont => {
+    WebFont.load({
+      google: {
+        families: ['Ubuntu', 'sans-serif']
+      }
+    });
+  });
+}
+
 const Home = ({ match }) => {
   return _react2.default.createElement(_Home2.default, null);
 };
@@ -4582,31 +4592,37 @@ module.exports = __webpack_require__(20);
 /* 87 */,
 /* 88 */,
 /* 89 */,
-/* 90 */,
+/* 90 */
+/***/ (function(module, exports) {
+
+module.exports = require("webfontloader");
+
+/***/ }),
 /* 91 */,
 /* 92 */,
 /* 93 */,
 /* 94 */,
 /* 95 */,
-/* 96 */
+/* 96 */,
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-web-notification");
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-photoswipe");
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-window-size");

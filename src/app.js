@@ -21,6 +21,15 @@ import ContactUs from './ContactUs.js'
 import Admir from './admin/Admin';
 import Korpa from './Korpa';
 import Homes from './Home';
+if(typeof window !== 'undefined') {
+  import('webfontloader').then(WebFont => {
+    WebFont.load({
+      google: {
+        families: ['Ubuntu', 'sans-serif']
+      }
+    });
+  })
+}
 
 const Home = ({match}) => {
   return (

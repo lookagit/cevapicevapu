@@ -17,11 +17,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(5);
 
-var _ProizvodList = __webpack_require__(94);
+var _ProizvodList = __webpack_require__(95);
 
 var _ProizvodList2 = _interopRequireDefault(_ProizvodList);
 
-var _Porudzbine = __webpack_require__(92);
+var _Porudzbine = __webpack_require__(93);
 
 var _Porudzbine2 = _interopRequireDefault(_Porudzbine);
 
@@ -41,7 +41,7 @@ exports.default = AdminDyn;
 
 /***/ }),
 
-/***/ 90:
+/***/ 91:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -50,7 +50,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 92:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69,7 +69,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactStyledFlexboxgrid = __webpack_require__(5);
 
-var _porudzbine = __webpack_require__(90);
+var _porudzbine = __webpack_require__(91);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
@@ -79,7 +79,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactApollo = __webpack_require__(3);
 
-var _allPorudzbinas = __webpack_require__(95);
+var _allPorudzbinas = __webpack_require__(96);
 
 var _allPorudzbinas2 = _interopRequireDefault(_allPorudzbinas);
 
@@ -89,13 +89,13 @@ var _graphqlTag2 = _interopRequireDefault(_graphqlTag);
 
 var _reactModalDialog = __webpack_require__(21);
 
-var _PorudzbineSingle = __webpack_require__(93);
+var _PorudzbineSingle = __webpack_require__(94);
 
 var _PorudzbineSingle2 = _interopRequireDefault(_PorudzbineSingle);
 
 var _reactRedux = __webpack_require__(2);
 
-var _reactWebNotification = __webpack_require__(96);
+var _reactWebNotification = __webpack_require__(97);
 
 var _reactWebNotification2 = _interopRequireDefault(_reactWebNotification);
 
@@ -207,7 +207,7 @@ exports.default = Porudzbine;
 
 /***/ }),
 
-/***/ 93:
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -234,11 +234,11 @@ var _reactModalDialog = __webpack_require__(21);
 
 var _reactRedux = __webpack_require__(2);
 
-var _porudzbine = __webpack_require__(90);
+var _porudzbine = __webpack_require__(91);
 
 var _porudzbine2 = _interopRequireDefault(_porudzbine);
 
-var _reactWebNotification = __webpack_require__(96);
+var _reactWebNotification = __webpack_require__(97);
 
 var _reactWebNotification2 = _interopRequireDefault(_reactWebNotification);
 
@@ -554,7 +554,7 @@ const stylee = {
 
 /***/ }),
 
-/***/ 94:
+/***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -638,7 +638,7 @@ exports.default = ProizvodList;
 
 /***/ }),
 
-/***/ 95:
+/***/ 96:
 /***/ (function(module, exports) {
 
 
