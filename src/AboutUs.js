@@ -1,7 +1,14 @@
 import React from 'react';
 import css from './styles.css'
 import TopHero from './DumbComponents/Helpers/TopHero.js';
-import ContentBoxes from './DumbComponents/AboutDumb/ContentBoxes.js';
+import Loadable from 'react-loadable';
+import Loading from './DumbComponents/Helpers/Loading';
+
+const LoadableComponentForAbout = Loadable({
+  loader: () => import('./DumbComponents/AboutDumb/ContentBoxes.js'),
+  loading: Loading,
+});
+
 export default class AboutUs extends React.Component {
   componentDidMount() {
     if(typeof window !== 'undefined') {
@@ -12,7 +19,7 @@ export default class AboutUs extends React.Component {
     return(
       <div>
         <TopHero title="Kako je nastala DRAMA" subtitle=" " bgImage={{backgroundImage: 'url("https://res.cloudinary.com/drama/image/upload/c_scale,w_1918/v1513949723/sarajevski-cevap-drama-cover_juhdlz.jpg")'}} />
-        <ContentBoxes />
+        <LoadableComponentForAbout />
       </div>
     );
   }

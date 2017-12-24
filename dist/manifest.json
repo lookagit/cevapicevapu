@@ -1,10 +1,13 @@
 {
+  "0.6da4fdf47dc05bab4b9e.js": "/0.6da4fdf47dc05bab4b9e.js",
+  "1.8b1b752002880ca3f7cf.js": "/1.8b1b752002880ca3f7cf.js",
+  "2.3bcb2e3cbe7b992ab027.js": "/2.3bcb2e3cbe7b992ab027.js",
   "assets/fonts/BADGRUNGE.ttf": "/assets/fonts/BADGRUNGE.9940eb554216bb36559f837fa4c0e73d.ttf",
   "assets/img/hamburger.png": "/assets/img/hamburger.07e5a738b24d339d7aef5c49a8f6dbf0.png",
   "assets/img/logodrama.png": "/assets/img/logodrama.ee96729289acfab10c7abd75725d93e2.png",
   "browser.css": "/assets/css/style.4d7f2984cbc2353fca5ae7d2b298643c.css",
-  "browser.js": "/browser.ec41988b5d578a311b35.js",
+  "browser.js": "/browser.83332df74cd90fe4f48d.js",
   "manifest.js": "/manifest.d41d8cd98f00b204e980.js",
   "manifest.json": "/../chunk-manifest.json",
-  "vendor.js": "/vendor.528adef3adfbc38e3455.js"
+  "vendor.js": "/vendor.c466ea3a25310b2ad14e.js"
 }

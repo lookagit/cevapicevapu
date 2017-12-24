@@ -1,14 +1,18 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import TopHero from '../DumbComponents/Helpers/TopHero';
-import {Grid, Row} from 'react-styled-flexboxgrid';
-import ProizvodList from './ProizvodList';
-import Porudzbine from './Porudzbine';
 import NavBar from './NavBar';
 import scss from '../styles.scss';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { connect } from 'react-redux';
 import md5 from 'js-md5';
+import Loading from '../DumbComponents/Helpers/Loading';
+
+const LoadableComponentForAdmin = Loadable({
+  loader: () => import('./AdminDyn'),
+  loading: Loading,
+})
 @connect(state => ({ counter: state.counter, orders: state.orders, users: state.users }))
 @graphql(gql`
   query giveMeUsers($password: String!, $userName: String!) {
@@ -96,12 +100,7 @@ export default class Admin extends React.Component {
       putinput =
         <div>
           <NavBar />
-          <Grid>
-            <Row>
-              <Porudzbine />
-              <ProizvodList />
-            </Row>
-          </Grid>
+          <LoadableComponentForAdmin />
         </div>
         ;
     }
