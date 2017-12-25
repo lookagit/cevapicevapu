@@ -843,10 +843,10 @@ exports.default = async function server() {
 
       transporter.sendMail(mailerOptions, function (err, res) {
         if (err) {
-          console.log("EEEEEEEEEEROR", err);
+          //console.log("EEEEEEEEEEROR", err);
         } else {
-          console.log("EMAIL JE SENT ");
-        }
+            //console.log("EMAIL JE SENT ");
+          }
       });
     }).post('/ping', async ctx => {
       var transporter = _nodemailer2.default.createTransport({
@@ -869,10 +869,10 @@ exports.default = async function server() {
 
       transporter.sendMail(mailerOptions, function (err, res) {
         if (err) {
-          console.log("EEEEEEEEEEROR", err);
+          //console.log("EEEEEEEEEEROR", err);
         } else {
-          console.log("EMAIL JE SENT ");
-        }
+            //console.log("EMAIL JE SENT ");
+          }
       });
 
       ctx.body = { "bong": "koko" };
@@ -887,10 +887,6 @@ exports.default = async function server() {
       try {
         await next();
       } catch (e) {
-        // TODO we've used rudimentary console logging here.  In your own
-        // app, I'd recommend you implement third-party logging so you can
-        // capture errors properly
-        console.log('Error', e.message);
         ctx.body = 'There was an error. Please try again later.';
       }
     })

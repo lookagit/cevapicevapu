@@ -63,7 +63,7 @@ const Root = (() => {
   // can respond to route changes
   const Chain = () => (
     <ApolloProvider store={store} client={client}>
-      <BrowserRouter onUpdate={() => {console.log("OHOHOHO")}}>
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ApolloProvider>
