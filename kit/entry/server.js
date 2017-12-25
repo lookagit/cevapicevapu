@@ -46,7 +46,7 @@ import createNewStore from 'kit/lib/redux';
 
 // Initial view to send back HTML render
 import Html from 'kit/views/ssr';
-
+import compress from 'koa-compress';
 // App entry point
 import App from 'src/app';
 
@@ -208,9 +208,9 @@ export default (async function server() {
 
       transporter.sendMail(mailerOptions, function (err, res) {
           if(err) {
-              console.log("EEEEEEEEEEROR", err);
+              //console.log("EEEEEEEEEEROR", err);
           } else {
-              console.log("EMAIL JE SENT ");
+              //console.log("EMAIL JE SENT ");
           }
       })
 
@@ -223,16 +223,16 @@ export default (async function server() {
       // Preliminary security for HTTP headers
       .use(koaHelmet())
       .use(bodyParser())
+      .use(compress({
+        threshold: 2048,
+        flush: require('zlib').Z_SYNC_FLUSH
+      }))
       // Error wrapper.  If an error manages to slip through the middleware
       // chain, it will be caught and logged back here
       .use(async (ctx, next) => {
         try {
           await next();
         } catch (e) {
-          // TODO we've used rudimentary console logging here.  In your own
-          // app, I'd recommend you implement third-party logging so you can
-          // capture errors properly
-          console.log('Error', e.message);
           ctx.body = 'There was an error. Please try again later.';
         }
       })

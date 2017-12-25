@@ -1,7 +1,7 @@
 exports.ids = [1];
 exports.modules = {
 
-/***/ 88:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16,11 +16,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GallyImgs = __webpack_require__(92);
+var _GallyImgs = __webpack_require__(94);
 
 var _GallyImgs2 = _interopRequireDefault(_GallyImgs);
 
-var _reactPhotoswipe = __webpack_require__(99);
+var _reactPhotoswipe = __webpack_require__(101);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45,7 +45,7 @@ exports.default = GallyHelper;
 
 /***/ }),
 
-/***/ 92:
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

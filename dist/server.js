@@ -91,7 +91,7 @@
 /******/ 	};
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 85);
+/******/ 	return __webpack_require__(__webpack_require__.s = 87);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -309,7 +309,7 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Loader = __webpack_require__(80);
+var Loader = __webpack_require__(81);
 var options = {
     lines: 13,
     length: 20,
@@ -621,7 +621,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(75);
+var _server = __webpack_require__(76);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -631,31 +631,31 @@ var _koa2 = _interopRequireDefault(_koa);
 
 var _reactApollo = __webpack_require__(3);
 
-var _koaSend = __webpack_require__(71);
+var _koaSend = __webpack_require__(72);
 
 var _koaSend2 = _interopRequireDefault(_koaSend);
 
-var _nodemailer = __webpack_require__(73);
+var _nodemailer = __webpack_require__(74);
 
 var _nodemailer2 = _interopRequireDefault(_nodemailer);
 
-var _xoauth = __webpack_require__(84);
+var _xoauth = __webpack_require__(85);
 
 var _xoauth2 = _interopRequireDefault(_xoauth);
 
-var _koaHelmet = __webpack_require__(69);
+var _koaHelmet = __webpack_require__(70);
 
 var _koaHelmet2 = _interopRequireDefault(_koaHelmet);
 
-var _koaRouter = __webpack_require__(70);
+var _koaRouter = __webpack_require__(71);
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
-var _microseconds = __webpack_require__(72);
+var _microseconds = __webpack_require__(73);
 
 var _microseconds2 = _interopRequireDefault(_microseconds);
 
-var _reactRouter = __webpack_require__(81);
+var _reactRouter = __webpack_require__(82);
 
 var _reactHelmet = __webpack_require__(15);
 
@@ -675,6 +675,10 @@ var _ssr = __webpack_require__(30);
 
 var _ssr2 = _interopRequireDefault(_ssr);
 
+var _koaCompress = __webpack_require__(69);
+
+var _koaCompress2 = _interopRequireDefault(_koaCompress);
+
 var _app = __webpack_require__(55);
 
 var _app2 = _interopRequireDefault(_app);
@@ -688,23 +692,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // App entry point
 
 
-// Custom redux store creator.  This will allow us to create a store 'outside'
-// of Apollo, so we can apply our own reducers and make use of the Redux dev
-// tools in the browser
+// Initial view to send back HTML render
+
+/* Local */
+
+// Grab the shared Apollo Client
 
 
-// React Router HOC for figuring out the exact React hierarchy to display
-// based on the URL
+// <Helmet> component for retrieving <head> section, so we can set page
+// title, meta info, etc along with the initial HTML
 
 
-// Koa Router, for handling URL requests
+// High-precision timing, so we can debug response time to serve a request
 
 
-// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
-// the React render, or any of the static assets being compiled
-
-
-// React UI
+// React utility to transform JSX to HTML (to send back to the client)
 function staticMiddleware() {
   return async function staticMiddlewareHandler(ctx, next) {
     try {
@@ -725,21 +727,23 @@ function staticMiddleware() {
 // manifest files
 
 
-// Initial view to send back HTML render
-
-/* Local */
-
-// Grab the shared Apollo Client
+// Custom redux store creator.  This will allow us to create a store 'outside'
+// of Apollo, so we can apply our own reducers and make use of the Redux dev
+// tools in the browser
 
 
-// <Helmet> component for retrieving <head> section, so we can set page
-// title, meta info, etc along with the initial HTML
+// React Router HOC for figuring out the exact React hierarchy to display
+// based on the URL
 
 
-// High-precision timing, so we can debug response time to serve a request
+// Koa Router, for handling URL requests
 
 
-// React utility to transform JSX to HTML (to send back to the client)
+// Koa 2 web server.  Handles incoming HTTP requests, and will serve back
+// the React render, or any of the static assets being compiled
+
+
+// React UI
 function createReactHandler(css = [], scripts = [], chunkManifest = {}) {
   return async function reactHandler(ctx) {
     const routeContext = {};
@@ -869,10 +873,10 @@ exports.default = async function server() {
 
       transporter.sendMail(mailerOptions, function (err, res) {
         if (err) {
-          console.log("EEEEEEEEEEROR", err);
+          //console.log("EEEEEEEEEEROR", err);
         } else {
-          console.log("EMAIL JE SENT ");
-        }
+            //console.log("EMAIL JE SENT ");
+          }
       });
 
       ctx.body = { "bong": "koko" };
@@ -880,17 +884,16 @@ exports.default = async function server() {
     app: new _koa2.default()
 
     // Preliminary security for HTTP headers
-    .use((0, _koaHelmet2.default)()).use((0, _koaBodyparser2.default)())
+    .use((0, _koaHelmet2.default)()).use((0, _koaBodyparser2.default)()).use((0, _koaCompress2.default)({
+      threshold: 2048,
+      flush: __webpack_require__(86).Z_SYNC_FLUSH
+    }))
     // Error wrapper.  If an error manages to slip through the middleware
     // chain, it will be caught and logged back here
     .use(async (ctx, next) => {
       try {
         await next();
       } catch (e) {
-        // TODO we've used rudimentary console logging here.  In your own
-        // app, I'd recommend you implement third-party logging so you can
-        // capture errors properly
-        console.log('Error', e.message);
         ctx.body = 'There was an error. Please try again later.';
       }
     })
@@ -1156,9 +1159,9 @@ own reducers for store state outside of Apollo
 
 exports.default = createNewStore;
 
-var _redux = __webpack_require__(82);
+var _redux = __webpack_require__(83);
 
-var _reduxThunk = __webpack_require__(83);
+var _reduxThunk = __webpack_require__(84);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1542,7 +1545,7 @@ var _Loading2 = _interopRequireDefault(_Loading);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const LoadableComponentForAbout = (0, _reactLoadable2.default)({
-  loader: () => __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 86)),
+  loader: () => __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 88)),
   loading: _Loading2.default
 });
 
@@ -1597,7 +1600,7 @@ var _instagram = __webpack_require__(17);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _youtubeSquare = __webpack_require__(79);
+var _youtubeSquare = __webpack_require__(80);
 
 var _youtubeSquare2 = _interopRequireDefault(_youtubeSquare);
 
@@ -2285,11 +2288,11 @@ var _instagram = __webpack_require__(17);
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
-var _foursquare = __webpack_require__(76);
+var _foursquare = __webpack_require__(77);
 
 var _foursquare2 = _interopRequireDefault(_foursquare);
 
-var _tripadvisor = __webpack_require__(78);
+var _tripadvisor = __webpack_require__(79);
 
 var _tripadvisor2 = _interopRequireDefault(_tripadvisor);
 
@@ -2451,7 +2454,7 @@ var _Loading2 = _interopRequireDefault(_Loading);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const LoadableComponentForGally = (0, _reactLoadable2.default)({
-  loader: () => __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 88)),
+  loader: () => __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 90)),
   loading: _Loading2.default
 });
 let Gally = class Gally extends _react2.default.Component {
@@ -2573,7 +2576,7 @@ var _styles2 = _interopRequireDefault(_styles);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const LoadableComponentForHome = (0, _reactLoadable2.default)({
-  loader: () => __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 87)),
+  loader: () => __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 89)),
   loading: _Loading.load
 });
 
@@ -2674,7 +2677,7 @@ var _styles = __webpack_require__(7);
 
 var _styles2 = _interopRequireDefault(_styles);
 
-var _trash = __webpack_require__(77);
+var _trash = __webpack_require__(78);
 
 var _trash2 = _interopRequireDefault(_trash);
 
@@ -3598,7 +3601,7 @@ var _reactRedux = __webpack_require__(2);
 
 var _reactModalDialog = __webpack_require__(21);
 
-var _reactAlert = __webpack_require__(74);
+var _reactAlert = __webpack_require__(75);
 
 var _reactAlert2 = _interopRequireDefault(_reactAlert);
 
@@ -4037,7 +4040,7 @@ var _Loading2 = _interopRequireDefault(_Loading);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const LoadableComponentForAdmin = (0, _reactLoadable2.default)({
-  loader: () => __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 89)),
+  loader: () => __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 91)),
   loading: _Loading2.default
 });
 let Admin = (_dec = (0, _reactRedux.connect)(state => ({ counter: state.counter, orders: state.orders, users: state.users })), _dec2 = (0, _reactApollo.graphql)(_graphqlTag2.default`
@@ -4298,7 +4301,7 @@ var _Home2 = _interopRequireDefault(_Home);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (typeof window !== 'undefined') {
-  new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 90)).then(WebFont => {
+  new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 92)).then(WebFont => {
     WebFont.load({
       google: {
         families: ['Ubuntu', 'sans-serif']
@@ -4488,141 +4491,153 @@ module.exports = require("koa-bodyparser");
 /* 69 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-helmet");
+module.exports = require("koa-compress");
 
 /***/ }),
 /* 70 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-router");
+module.exports = require("koa-helmet");
 
 /***/ }),
 /* 71 */
 /***/ (function(module, exports) {
 
-module.exports = require("koa-send");
+module.exports = require("koa-router");
 
 /***/ }),
 /* 72 */
 /***/ (function(module, exports) {
 
-module.exports = require("microseconds");
+module.exports = require("koa-send");
 
 /***/ }),
 /* 73 */
 /***/ (function(module, exports) {
 
-module.exports = require("nodemailer");
+module.exports = require("microseconds");
 
 /***/ }),
 /* 74 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-alert");
+module.exports = require("nodemailer");
 
 /***/ }),
 /* 75 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom/server");
+module.exports = require("react-alert");
 
 /***/ }),
 /* 76 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/foursquare");
+module.exports = require("react-dom/server");
 
 /***/ }),
 /* 77 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/trash");
+module.exports = require("react-icons/lib/fa/foursquare");
 
 /***/ }),
 /* 78 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/tripadvisor");
+module.exports = require("react-icons/lib/fa/trash");
 
 /***/ }),
 /* 79 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-icons/lib/fa/youtube-square");
+module.exports = require("react-icons/lib/fa/tripadvisor");
 
 /***/ }),
 /* 80 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-loader");
+module.exports = require("react-icons/lib/fa/youtube-square");
 
 /***/ }),
 /* 81 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router");
+module.exports = require("react-loader");
 
 /***/ }),
 /* 82 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-router");
 
 /***/ }),
 /* 83 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("redux");
 
 /***/ }),
 /* 84 */
 /***/ (function(module, exports) {
 
-module.exports = require("xoauth2");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 85 */
+/***/ (function(module, exports) {
+
+module.exports = require("xoauth2");
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+module.exports = require("zlib");
+
+/***/ }),
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(20);
 
 
 /***/ }),
-/* 86 */,
-/* 87 */,
 /* 88 */,
 /* 89 */,
-/* 90 */
+/* 90 */,
+/* 91 */,
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = require("webfontloader");
 
 /***/ }),
-/* 91 */,
-/* 92 */,
 /* 93 */,
 /* 94 */,
 /* 95 */,
 /* 96 */,
-/* 97 */
+/* 97 */,
+/* 98 */,
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-web-notification");
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-iframe");
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-photoswipe");
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-window-size");
