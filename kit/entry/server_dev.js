@@ -22,7 +22,6 @@ import { logServerStarted } from 'kit/lib/console';
 import server, { createReactHandler, staticMiddleware } from './server';
 import cors from 'koa-cors';
 import bodyParser from 'koa-bodyparser';
-import compress from 'koa-compress';
 // ----------------------
 
 // Host and port -- from the environment
@@ -45,11 +44,8 @@ server.then(({ router, app }) => {
     .use(bodyParser())
     .use(staticMiddleware())
     .use(router.routes())
-    .use(router.allowedMethods())
-    .use(compress({
-      threshold: 2048,
-      flush: require('zlib').Z_SYNC_FLUSH
-    }))
+    .use(router.allowedMethods());
+
   app.listen({ host: HOST, port: PORT }, () => {
     logServerStarted({
       type: 'server-side rendering',
