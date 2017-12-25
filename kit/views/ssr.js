@@ -17,7 +17,7 @@ const Html = ({ head, html, scripts, window, css }) => (
       <meta property="og:type"   content="website" />
       <meta property="og:url"    content="https://dramacevapi.com" />
       <meta property="og:title"  content="Drama Ćevapi" />
-      <meta property="og:image"  content="https://dramacevapi.com/share.jpg" />
+      <meta property="og:image"  content="https://res.cloudinary.com/drama/image/upload/v1514202893/naruci/share.jpg" />
       <meta property="og:description"
         content="Uživajte u najkvalitetnijim ćevapima kod nas.Drama ćevapi" />
       <meta httpEquiv="Content-Language" content="en" />
