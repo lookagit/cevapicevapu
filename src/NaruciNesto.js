@@ -15,7 +15,7 @@ export default class NaruciNesto extends React.Component {
       return false
     } else if(today.getDay() != 0) {
       let n = today.getHours();
-      let getBack = n >= 11 && n <= 20 ? true : false;
+      let getBack = n >= 11 && n <= 20 ? false : false;
       return getBack;
     }
   }

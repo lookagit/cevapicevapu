@@ -2230,13 +2230,13 @@ let Proizvod = class Proizvod extends _react2.default.PureComponent {
         null,
         _react2.default.createElement(
           'div',
-          { style: { display: 'flex' } },
+          { style: { display: 'flex', padding: '20px' } },
           _react2.default.createElement(
             'div',
             { style: { margin: '0 auto', width: '100%' } },
             _react2.default.createElement(
               'h1',
-              null,
+              { style: { fontSize: '15px' } },
               'Dostava trenutno ne radi'
             ),
             _react2.default.createElement(
@@ -3258,7 +3258,7 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
       return false;
     } else if (today.getDay() != 0) {
       let n = today.getHours();
-      let getBack = n >= 11 && n <= 20 ? true : false;
+      let getBack = n >= 11 && n <= 20 ? false : false;
       return getBack;
     }
   }
