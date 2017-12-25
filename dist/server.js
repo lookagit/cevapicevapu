@@ -3258,7 +3258,7 @@ let NaruciNesto = class NaruciNesto extends _react2.default.Component {
       return false;
     } else if (today.getDay() != 0) {
       let n = today.getHours();
-      let getBack = n >= 11 && n <= 20 ? false : false;
+      let getBack = n >= 11 && n <= 20 ? true : false;
       return getBack;
     }
   }
