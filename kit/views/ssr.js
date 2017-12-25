@@ -15,12 +15,13 @@ const Html = ({ head, html, scripts, window, css }) => (
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta property="og:type"   content="website" />
-      <meta property="og:url"    content="https://young-woodland-61835.herokuapp.com" />
+      <meta property="og:url"    content="https://dramacevapi.com" />
       <meta property="og:title"  content="Drama Ćevapi" />
-      <meta property="og:image"  content="https://young-woodland-61835.herokuapp.com/share.jpg" />
+      <meta property="og:image"  content="https://dramacevapi.com/share.jpg" />
       <meta property="og:description"
         content="Uživajte u najkvalitetnijim ćevapima kod nas.Drama ćevapi" />
       <meta httpEquiv="Content-Language" content="en" />
+      <meta name="google-site-verification" content="OWDThsPE4blECEVwH4uR00zrrekPTmAAtsePnDgHtpI" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {head.meta.toComponent()}
       <link rel="stylesheet" href={css} />
